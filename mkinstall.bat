@@ -115,8 +115,15 @@ cd %BUILD_DIR%
 
 dir
 
+if "%platform%"=="win32" (
 echo Creating the new simapi-c-win32-%CLIENT_LIBRARY_VERSION_VALUE%.zip...
 jar Mcf simapi-c-win32-%CLIENT_LIBRARY_VERSION_VALUE%.zip simapi-c-win32-%CLIENT_LIBRARY_VERSION_VALUE%
+)
+
+if "%platform%"=="win64" (
+echo Creating the new simapi-c-win64-%CLIENT_LIBRARY_VERSION_VALUE%.zip...
+jar Mcf simapi-c-win64-%CLIENT_LIBRARY_VERSION_VALUE%.zip simapi-c-win64-%CLIENT_LIBRARY_VERSION_VALUE%
+)
 echo Listing %DIST_DIR_PREFIX%.zip...
 dir %DIST_DIR_PREFIX%.zip 
 
