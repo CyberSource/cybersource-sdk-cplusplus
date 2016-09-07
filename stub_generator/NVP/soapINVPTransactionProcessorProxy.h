@@ -51,8 +51,6 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         virtual void reset();
         /// Disables and removes SOAP Header from message by setting soap->header = NULL
         virtual void soap_noheader();
-        /// Add SOAP Header to message
-        virtual void soap_header(struct _wsse__Security *wsse__Security);
         /// Get SOAP Header structure (i.e. soap->header, which is NULL when absent)
         virtual ::SOAP_ENV__Header *soap_header();
         /// Get SOAP Fault structure (i.e. soap->fault, which is NULL when absent)

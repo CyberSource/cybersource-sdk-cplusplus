@@ -1,24 +1,23 @@
-/* A Bison parser, made by GNU Bison 2.3.  */
+
+/* A Bison parser, made by GNU Bison 2.4.1.  */
 
 /* Skeleton implementation for Bison's Yacc-like parsers in C
-
-   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   
+      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
    Free Software Foundation, Inc.
-
-   This program is free software; you can redistribute it and/or modify
+   
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
-
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -29,7 +28,7 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-
+   
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
@@ -47,7 +46,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "2.3"
+#define YYBISON_VERSION "2.4.1"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -55,9 +54,138 @@
 /* Pure parsers.  */
 #define YYPURE 0
 
+/* Push parsers.  */
+#define YYPUSH 0
+
+/* Pull parsers.  */
+#define YYPULL 1
+
 /* Using locations.  */
 #define YYLSP_NEEDED 0
 
+
+
+/* Copy the first part of user declarations.  */
+
+/* Line 189 of yacc.c  */
+#line 51 "soapcpp2_yacc.y"
+
+
+#include "soapcpp2.h"
+
+#ifdef WIN32
+#ifndef __STDC__
+#define __STDC__
+#endif
+#define YYINCLUDED_STDLIB_H
+#ifdef WIN32_WITHOUT_SOLARIS_FLEX
+extern int soapcpp2lex(void);
+#else
+extern int yylex(void);
+#endif
+#else
+extern int yylex(void);
+#endif
+
+#define MAXNEST 16      /* max. nesting depth of scopes */
+
+typedef struct Scope
+{
+  Table   *table;
+  Entry   *entry;
+  Node    node;
+  LONG64  val;
+  int     offset;
+  Bool    grow;   /* true if offset grows with declarations */
+  Bool    mask;   /* true if enum is mask */
+} Scope;
+
+Scope stack[MAXNEST], /* stack of tables and offsets */
+      *sp;            /* current scope stack pointer */
+
+Table *classtable = NULL,
+      *enumtable = NULL,
+      *typetable = NULL,
+      *booltable = NULL,
+      *templatetable = NULL;
+
+const char *namespaceid = NULL;
+
+int     transient = 0;
+int     permission = 0;
+int     custom_header = 1;
+int     custom_fault = 1;
+Pragma  *pragmas = NULL;
+Tnode   *qname = NULL;
+Tnode   *xml = NULL;
+
+/* function prototypes for support routine section */
+static Entry      *undefined(Symbol*);
+static Tnode      *mgtype(Tnode*, Tnode*);
+static Node       op(const char*, Node, Node),
+                  iop(const char*, Node, Node),
+                  relop(const char*, Node, Node);
+static void       mkscope(Table*, int),
+                  enterscope(Table*, int),
+                  exitscope(void);
+static int        integer(Tnode*),
+                  real(Tnode*),
+                  numeric(Tnode*);
+static void       add_soap(void),
+                  add_XML(void),
+                  add_qname(void),
+                  add_header(void),
+                  add_fault(void),
+                  add_response(Entry*, Entry*),
+                  add_result(Tnode*),
+                  add_request(Symbol*, Scope*);
+
+/* imported from symbol2.c */
+extern int        is_string(Tnode*),
+                  is_wstring(Tnode*),
+                  is_XML(Tnode*),
+                  is_smart(Tnode*);
+extern char       *c_storage(Storage);
+extern const char *c_type(Tnode*);
+extern int        is_primitive_or_string(Tnode*),
+                  is_stdstr(Tnode*),
+                  is_binary(Tnode*),
+                  is_external(Tnode*),
+                  is_mutable(Entry*);
+extern Entry      *unlinklast(Table*);
+
+/* Temporaries used in semantic rules */
+int        i;
+char       *s, *s1;
+const char *s2;
+Symbol     *sym;
+Entry      *p, *q;
+Tnode      *t;
+Node       tmp, c;
+Pragma     **pp;
+
+
+
+/* Line 189 of yacc.c  */
+#line 171 "soapcpp2_yacc.tab.c"
+
+/* Enabling traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+
+/* Enabling verbose error messages.  */
+#ifdef YYERROR_VERBOSE
+# undef YYERROR_VERBOSE
+# define YYERROR_VERBOSE 1
+#else
+# define YYERROR_VERBOSE 0
+#endif
+
+/* Enabling the token table.  */
+#ifndef YYTOKEN_TABLE
+# define YYTOKEN_TABLE 0
+#endif
 
 
 /* Tokens.  */
@@ -162,226 +290,16 @@
      NN = 351
    };
 #endif
-/* Tokens.  */
-#define PRAGMA 258
-#define AUTO 259
-#define DOUBLE 260
-#define INT 261
-#define STRUCT 262
-#define BREAK 263
-#define ELSE 264
-#define LONG 265
-#define SWITCH 266
-#define CASE 267
-#define ENUM 268
-#define REGISTER 269
-#define TYPEDEF 270
-#define CHAR 271
-#define EXTERN 272
-#define RETURN 273
-#define UNION 274
-#define CONST 275
-#define FLOAT 276
-#define SHORT 277
-#define UNSIGNED 278
-#define CONTINUE 279
-#define FOR 280
-#define SIGNED 281
-#define VOID 282
-#define DEFAULT 283
-#define GOTO 284
-#define SIZEOF 285
-#define VOLATILE 286
-#define DO 287
-#define IF 288
-#define STATIC 289
-#define WHILE 290
-#define CLASS 291
-#define PRIVATE 292
-#define PROTECTED 293
-#define PUBLIC 294
-#define VIRTUAL 295
-#define INLINE 296
-#define OPERATOR 297
-#define LLONG 298
-#define BOOL 299
-#define CFALSE 300
-#define CTRUE 301
-#define WCHAR 302
-#define TIME 303
-#define USING 304
-#define NAMESPACE 305
-#define ULLONG 306
-#define MUSTUNDERSTAND 307
-#define SIZE 308
-#define FRIEND 309
-#define TEMPLATE 310
-#define EXPLICIT 311
-#define TYPENAME 312
-#define MUTABLE 313
-#define FINAL 314
-#define null 315
-#define RESTRICT 316
-#define OVERRIDE 317
-#define UCHAR 318
-#define USHORT 319
-#define UINT 320
-#define ULONG 321
-#define NONE 322
-#define ID 323
-#define LAB 324
-#define TYPE 325
-#define LNG 326
-#define DBL 327
-#define CHR 328
-#define TAG 329
-#define STR 330
-#define RA 331
-#define LA 332
-#define OA 333
-#define XA 334
-#define AA 335
-#define MA 336
-#define DA 337
-#define TA 338
-#define NA 339
-#define PA 340
-#define OR 341
-#define AN 342
-#define NE 343
-#define EQ 344
-#define GE 345
-#define LE 346
-#define RS 347
-#define LS 348
-#define AR 349
-#define PP 350
-#define NN 351
 
 
-
-
-/* Copy the first part of user declarations.  */
-#line 51 "soapcpp2_yacc.y"
-
-
-#include "soapcpp2.h"
-
-#ifdef WIN32
-#ifndef __STDC__
-#define __STDC__
-#endif
-#define YYINCLUDED_STDLIB_H
-#ifdef WIN32_WITHOUT_SOLARIS_FLEX
-extern int soapcpp2lex(void);
-#else
-extern int yylex(void);
-#endif
-#else
-extern int yylex(void);
-#endif
-
-#define MAXNEST 16      /* max. nesting depth of scopes */
-
-typedef struct Scope
-{
-  Table   *table;
-  Entry   *entry;
-  Node    node;
-  LONG64  val;
-  int     offset;
-  Bool    grow;   /* true if offset grows with declarations */
-  Bool    mask;   /* true if enum is mask */
-} Scope;
-
-Scope stack[MAXNEST], /* stack of tables and offsets */
-      *sp;            /* current scope stack pointer */
-
-Table *classtable = NULL,
-      *enumtable = NULL,
-      *typetable = NULL,
-      *booltable = NULL,
-      *templatetable = NULL;
-
-const char *namespaceid = NULL;
-
-int     transient = 0;
-int     permission = 0;
-int     custom_header = 1;
-int     custom_fault = 1;
-Pragma  *pragmas = NULL;
-Tnode   *qname = NULL;
-Tnode   *xml = NULL;
-
-/* function prototypes for support routine section */
-static Entry      *undefined(Symbol*);
-static Tnode      *mgtype(Tnode*, Tnode*);
-static Node       op(const char*, Node, Node),
-                  iop(const char*, Node, Node),
-                  relop(const char*, Node, Node);
-static void       mkscope(Table*, int),
-                  enterscope(Table*, int),
-                  exitscope(void);
-static int        integer(Tnode*),
-                  real(Tnode*),
-                  numeric(Tnode*);
-static void       add_soap(void),
-                  add_XML(void),
-                  add_qname(void),
-                  add_header(void),
-                  add_fault(void),
-                  add_response(Entry*, Entry*),
-                  add_result(Tnode*),
-                  add_request(Symbol*, Scope*);
-
-/* imported from symbol2.c */
-extern int        is_string(Tnode*),
-                  is_wstring(Tnode*),
-                  is_XML(Tnode*),
-                  is_smart(Tnode*);
-extern char       *c_storage(Storage);
-extern const char *c_type(Tnode*);
-extern int        is_primitive_or_string(Tnode*),
-                  is_stdstr(Tnode*),
-                  is_binary(Tnode*),
-                  is_external(Tnode*),
-                  is_mutable(Entry*);
-extern Entry      *unlinklast(Table*);
-
-/* Temporaries used in semantic rules */
-int        i;
-char       *s, *s1;
-const char *s2;
-Symbol     *sym;
-Entry      *p, *q;
-Tnode      *t;
-Node       tmp, c;
-Pragma     **pp;
-
-
-
-/* Enabling traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-
-/* Enabling verbose error messages.  */
-#ifdef YYERROR_VERBOSE
-# undef YYERROR_VERBOSE
-# define YYERROR_VERBOSE 1
-#else
-# define YYERROR_VERBOSE 0
-#endif
-
-/* Enabling the token table.  */
-#ifndef YYTOKEN_TABLE
-# define YYTOKEN_TABLE 0
-#endif
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 153 "soapcpp2_yacc.y"
 {
+
+/* Line 214 of yacc.c  */
+#line 153 "soapcpp2_yacc.y"
+
   Symbol  *sym;
   LONG64  i;
   double  r;
@@ -391,22 +309,23 @@ typedef union YYSTYPE
   Storage sto;
   Node    rec;
   Entry   *e;
-}
-/* Line 193 of yacc.c.  */
-#line 397 "soapcpp2_yacc.tab.c"
-	YYSTYPE;
+
+
+
+/* Line 214 of yacc.c  */
+#line 317 "soapcpp2_yacc.tab.c"
+} YYSTYPE;
+# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
-# define YYSTYPE_IS_TRIVIAL 1
 #endif
-
 
 
 /* Copy the second part of user declarations.  */
 
 
-/* Line 216 of yacc.c.  */
-#line 410 "soapcpp2_yacc.tab.c"
+/* Line 264 of yacc.c  */
+#line 329 "soapcpp2_yacc.tab.c"
 
 #ifdef short
 # undef short
@@ -456,7 +375,7 @@ typedef short int yytype_int16;
 #define YYSIZE_MAXIMUM ((YYSIZE_T) -1)
 
 #ifndef YY_
-# if defined YYENABLE_NLS && YYENABLE_NLS
+# if YYENABLE_NLS
 #  if ENABLE_NLS
 #   include <libintl.h> /* INFRINGES ON USER NAME SPACE */
 #   define YY_(msgid) dgettext ("bison-runtime", msgid)
@@ -481,14 +400,14 @@ typedef short int yytype_int16;
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static int
-YYID (int i)
+YYID (int yyi)
 #else
 static int
-YYID (i)
-    int i;
+YYID (yyi)
+    int yyi;
 #endif
 {
-  return i;
+  return yyi;
 }
 #endif
 
@@ -569,9 +488,9 @@ void free (void *); /* INFRINGES ON USER NAME SPACE */
 /* A type that is properly aligned for any stack member.  */
 union yyalloc
 {
-  yytype_int16 yyss;
-  YYSTYPE yyvs;
-  };
+  yytype_int16 yyss_alloc;
+  YYSTYPE yyvs_alloc;
+};
 
 /* The size of the maximum gap between one aligned stack and the next.  */
 # define YYSTACK_GAP_MAXIMUM (sizeof (union yyalloc) - 1)
@@ -605,12 +524,12 @@ union yyalloc
    elements in the stack, and YYPTR gives the new location of the
    stack.  Advance YYPTR to a properly aligned location for the next
    stack.  */
-# define YYSTACK_RELOCATE(Stack)					\
+# define YYSTACK_RELOCATE(Stack_alloc, Stack)				\
     do									\
       {									\
 	YYSIZE_T yynewbytes;						\
-	YYCOPY (&yyptr->Stack, Stack, yysize);				\
-	Stack = &yyptr->Stack;						\
+	YYCOPY (&yyptr->Stack_alloc, Stack, yysize);			\
+	Stack = &yyptr->Stack_alloc;					\
 	yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \
 	yyptr += yynewbytes / sizeof (*yyptr);				\
       }									\
@@ -1593,7 +1512,7 @@ while (YYID (0))
    we won't break user code: when these are the locations we know.  */
 
 #ifndef YY_LOCATION_PRINT
-# if defined YYLTYPE_IS_TRIVIAL && YYLTYPE_IS_TRIVIAL
+# if YYLTYPE_IS_TRIVIAL
 #  define YY_LOCATION_PRINT(File, Loc)			\
      fprintf (File, "%d.%d-%d.%d",			\
 	      (Loc).first_line, (Loc).first_column,	\
@@ -1704,17 +1623,20 @@ yy_symbol_print (yyoutput, yytype, yyvaluep)
 #if (defined __STDC__ || defined __C99__FUNC__ \
      || defined __cplusplus || defined _MSC_VER)
 static void
-yy_stack_print (yytype_int16 *bottom, yytype_int16 *top)
+yy_stack_print (yytype_int16 *yybottom, yytype_int16 *yytop)
 #else
 static void
-yy_stack_print (bottom, top)
-    yytype_int16 *bottom;
-    yytype_int16 *top;
+yy_stack_print (yybottom, yytop)
+    yytype_int16 *yybottom;
+    yytype_int16 *yytop;
 #endif
 {
   YYFPRINTF (stderr, "Stack now");
-  for (; bottom <= top; ++bottom)
-    YYFPRINTF (stderr, " %d", *bottom);
+  for (; yybottom <= yytop; yybottom++)
+    {
+      int yybot = *yybottom;
+      YYFPRINTF (stderr, " %d", yybot);
+    }
   YYFPRINTF (stderr, "\n");
 }
 
@@ -1748,11 +1670,11 @@ yy_reduce_print (yyvsp, yyrule)
   /* The symbols being reduced.  */
   for (yyi = 0; yyi < yynrhs; yyi++)
     {
-      fprintf (stderr, "   $%d = ", yyi + 1);
+      YYFPRINTF (stderr, "   $%d = ", yyi + 1);
       yy_symbol_print (stderr, yyrhs[yyprhs[yyrule] + yyi],
 		       &(yyvsp[(yyi + 1) - (yynrhs)])
 		       		       );
-      fprintf (stderr, "\n");
+      YYFPRINTF (stderr, "\n");
     }
 }
 
@@ -2032,10 +1954,8 @@ yydestruct (yymsg, yytype, yyvaluep)
 	break;
     }
 }
-
 
 /* Prevent warnings from -Wmissing-prototypes.  */
-
 #ifdef YYPARSE_PARAM
 #if defined __STDC__ || defined __cplusplus
 int yyparse (void *YYPARSE_PARAM);
@@ -2051,11 +1971,10 @@ int yyparse ();
 #endif /* ! YYPARSE_PARAM */
 
 
-
-/* The look-ahead symbol.  */
+/* The lookahead symbol.  */
 int yychar;
 
-/* The semantic value of the look-ahead symbol.  */
+/* The semantic value of the lookahead symbol.  */
 YYSTYPE yylval;
 
 /* Number of syntax errors so far.  */
@@ -2063,9 +1982,9 @@ int yynerrs;
 
 
 
-/*----------.
-| yyparse.  |
-`----------*/
+/*-------------------------.
+| yyparse or yypush_parse.  |
+`-------------------------*/
 
 #ifdef YYPARSE_PARAM
 #if (defined __STDC__ || defined __C99__FUNC__ \
@@ -2089,14 +2008,39 @@ yyparse ()
 #endif
 #endif
 {
-  
-  int yystate;
+
+
+    int yystate;
+    /* Number of tokens to shift before error messages enabled.  */
+    int yyerrstatus;
+
+    /* The stacks and their tools:
+       `yyss': related to states.
+       `yyvs': related to semantic values.
+
+       Refer to the stacks thru separate pointers, to allow yyoverflow
+       to reallocate them elsewhere.  */
+
+    /* The state stack.  */
+    yytype_int16 yyssa[YYINITDEPTH];
+    yytype_int16 *yyss;
+    yytype_int16 *yyssp;
+
+    /* The semantic value stack.  */
+    YYSTYPE yyvsa[YYINITDEPTH];
+    YYSTYPE *yyvs;
+    YYSTYPE *yyvsp;
+
+    YYSIZE_T yystacksize;
+
   int yyn;
   int yyresult;
-  /* Number of tokens to shift before error messages enabled.  */
-  int yyerrstatus;
-  /* Look-ahead token as an internal (translated) token number.  */
-  int yytoken = 0;
+  /* Lookahead token as an internal (translated) token number.  */
+  int yytoken;
+  /* The variables used to return semantic value and location from the
+     action routines.  */
+  YYSTYPE yyval;
+
 #if YYERROR_VERBOSE
   /* Buffer for error messages, and its allocated size.  */
   char yymsgbuf[128];
@@ -2104,51 +2048,28 @@ yyparse ()
   YYSIZE_T yymsg_alloc = sizeof yymsgbuf;
 #endif
 
-  /* Three stacks and their tools:
-     `yyss': related to states,
-     `yyvs': related to semantic values,
-     `yyls': related to locations.
-
-     Refer to the stacks thru separate pointers, to allow yyoverflow
-     to reallocate them elsewhere.  */
-
-  /* The state stack.  */
-  yytype_int16 yyssa[YYINITDEPTH];
-  yytype_int16 *yyss = yyssa;
-  yytype_int16 *yyssp;
-
-  /* The semantic value stack.  */
-  YYSTYPE yyvsa[YYINITDEPTH];
-  YYSTYPE *yyvs = yyvsa;
-  YYSTYPE *yyvsp;
-
-
-
 #define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N))
-
-  YYSIZE_T yystacksize = YYINITDEPTH;
-
-  /* The variables used to return semantic value and location from the
-     action routines.  */
-  YYSTYPE yyval;
-
 
   /* The number of symbols on the RHS of the reduced rule.
      Keep to zero when no symbol should be popped.  */
   int yylen = 0;
+
+  yytoken = 0;
+  yyss = yyssa;
+  yyvs = yyvsa;
+  yystacksize = YYINITDEPTH;
 
   YYDPRINTF ((stderr, "Starting parse\n"));
 
   yystate = 0;
   yyerrstatus = 0;
   yynerrs = 0;
-  yychar = YYEMPTY;		/* Cause a token to be read.  */
+  yychar = YYEMPTY; /* Cause a token to be read.  */
 
   /* Initialize stack pointers.
      Waste one element of value and location stack
      so that they stay on the same level as the state stack.
      The wasted elements are never initialized.  */
-
   yyssp = yyss;
   yyvsp = yyvs;
 
@@ -2178,7 +2099,6 @@ yyparse ()
 	YYSTYPE *yyvs1 = yyvs;
 	yytype_int16 *yyss1 = yyss;
 
-
 	/* Each stack pointer address is followed by the size of the
 	   data in use in that stack, in bytes.  This used to be a
 	   conditional around just the two extra args, but that might
@@ -2186,7 +2106,6 @@ yyparse ()
 	yyoverflow (YY_("memory exhausted"),
 		    &yyss1, yysize * sizeof (*yyssp),
 		    &yyvs1, yysize * sizeof (*yyvsp),
-
 		    &yystacksize);
 
 	yyss = yyss1;
@@ -2209,9 +2128,8 @@ yyparse ()
 	  (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
 	if (! yyptr)
 	  goto yyexhaustedlab;
-	YYSTACK_RELOCATE (yyss);
-	YYSTACK_RELOCATE (yyvs);
-
+	YYSTACK_RELOCATE (yyss_alloc, yyss);
+	YYSTACK_RELOCATE (yyvs_alloc, yyvs);
 #  undef YYSTACK_RELOCATE
 	if (yyss1 != yyssa)
 	  YYSTACK_FREE (yyss1);
@@ -2222,7 +2140,6 @@ yyparse ()
       yyssp = yyss + yysize - 1;
       yyvsp = yyvs + yysize - 1;
 
-
       YYDPRINTF ((stderr, "Stack size increased to %lu\n",
 		  (unsigned long int) yystacksize));
 
@@ -2232,6 +2149,9 @@ yyparse ()
 
   YYDPRINTF ((stderr, "Entering state %d\n", yystate));
 
+  if (yystate == YYFINAL)
+    YYACCEPT;
+
   goto yybackup;
 
 /*-----------.
@@ -2240,16 +2160,16 @@ yyparse ()
 yybackup:
 
   /* Do appropriate processing given the current state.  Read a
-     look-ahead token if we need one and don't already have one.  */
+     lookahead token if we need one and don't already have one.  */
 
-  /* First try to decide what to do without reference to look-ahead token.  */
+  /* First try to decide what to do without reference to lookahead token.  */
   yyn = yypact[yystate];
   if (yyn == YYPACT_NINF)
     goto yydefault;
 
-  /* Not known => get a look-ahead token if don't already have one.  */
+  /* Not known => get a lookahead token if don't already have one.  */
 
-  /* YYCHAR is either YYEMPTY or YYEOF or a valid look-ahead symbol.  */
+  /* YYCHAR is either YYEMPTY or YYEOF or a valid lookahead symbol.  */
   if (yychar == YYEMPTY)
     {
       YYDPRINTF ((stderr, "Reading a token: "));
@@ -2281,20 +2201,16 @@ yybackup:
       goto yyreduce;
     }
 
-  if (yyn == YYFINAL)
-    YYACCEPT;
-
   /* Count tokens shifted since error; after three, turn off error
      status.  */
   if (yyerrstatus)
     yyerrstatus--;
 
-  /* Shift the look-ahead token.  */
+  /* Shift the lookahead token.  */
   YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
 
-  /* Discard the shifted token unless it is eof.  */
-  if (yychar != YYEOF)
-    yychar = YYEMPTY;
+  /* Discard the shifted token.  */
+  yychar = YYEMPTY;
 
   yystate = yyn;
   *++yyvsp = yylval;
@@ -2334,6 +2250,8 @@ yyreduce:
   switch (yyn)
     {
         case 2:
+
+/* Line 1455 of yacc.c  */
 #line 229 "soapcpp2_yacc.y"
     {
                           if (lflag)
@@ -2357,6 +2275,8 @@ yyreduce:
     break;
 
   case 3:
+
+/* Line 1455 of yacc.c  */
 #line 249 "soapcpp2_yacc.y"
     {
                           classtable = mktable(NULL);
@@ -2375,16 +2295,22 @@ yyreduce:
     break;
 
   case 4:
+
+/* Line 1455 of yacc.c  */
 #line 265 "soapcpp2_yacc.y"
     { namespaceid = (yyvsp[(2) - (5)].sym)->name; ;}
     break;
 
   case 5:
+
+/* Line 1455 of yacc.c  */
 #line 266 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 6:
+
+/* Line 1455 of yacc.c  */
 #line 268 "soapcpp2_yacc.y"
     {
                           add_soap();
@@ -2394,31 +2320,43 @@ yyreduce:
     break;
 
   case 7:
+
+/* Line 1455 of yacc.c  */
 #line 273 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 8:
+
+/* Line 1455 of yacc.c  */
 #line 275 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 9:
+
+/* Line 1455 of yacc.c  */
 #line 276 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 10:
+
+/* Line 1455 of yacc.c  */
 #line 277 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 11:
+
+/* Line 1455 of yacc.c  */
 #line 278 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 12:
+
+/* Line 1455 of yacc.c  */
 #line 279 "soapcpp2_yacc.y"
     {
                           synerror("input before ; skipped");
@@ -2432,6 +2370,8 @@ yyreduce:
     break;
 
   case 13:
+
+/* Line 1455 of yacc.c  */
 #line 289 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(1) - (1)].s)[1] >= 'a' && (yyvsp[(1) - (1)].s)[1] <= 'z')
@@ -2458,6 +2398,8 @@ yyreduce:
     break;
 
   case 14:
+
+/* Line 1455 of yacc.c  */
 #line 319 "soapcpp2_yacc.y"
     {
                           transient &= ~6;
@@ -2466,31 +2408,43 @@ yyreduce:
     break;
 
   case 15:
+
+/* Line 1455 of yacc.c  */
 #line 324 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 16:
+
+/* Line 1455 of yacc.c  */
 #line 326 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 17:
+
+/* Line 1455 of yacc.c  */
 #line 328 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 18:
+
+/* Line 1455 of yacc.c  */
 #line 330 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 19:
+
+/* Line 1455 of yacc.c  */
 #line 332 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 20:
+
+/* Line 1455 of yacc.c  */
 #line 333 "soapcpp2_yacc.y"
     {
                           synerror("declaration expected");
@@ -2499,66 +2453,92 @@ yyreduce:
     break;
 
   case 21:
+
+/* Line 1455 of yacc.c  */
 #line 338 "soapcpp2_yacc.y"
     { transient |= 1; ;}
     break;
 
   case 22:
+
+/* Line 1455 of yacc.c  */
 #line 340 "soapcpp2_yacc.y"
     { transient &= ~1; ;}
     break;
 
   case 23:
+
+/* Line 1455 of yacc.c  */
 #line 342 "soapcpp2_yacc.y"
     { permission = Sprivate; ;}
     break;
 
   case 24:
+
+/* Line 1455 of yacc.c  */
 #line 344 "soapcpp2_yacc.y"
     { permission = Sprotected; ;}
     break;
 
   case 25:
+
+/* Line 1455 of yacc.c  */
 #line 346 "soapcpp2_yacc.y"
     { permission = 0; ;}
     break;
 
   case 26:
+
+/* Line 1455 of yacc.c  */
 #line 348 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 27:
+
+/* Line 1455 of yacc.c  */
 #line 349 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 28:
+
+/* Line 1455 of yacc.c  */
 #line 351 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 29:
+
+/* Line 1455 of yacc.c  */
 #line 352 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 30:
+
+/* Line 1455 of yacc.c  */
 #line 353 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 31:
+
+/* Line 1455 of yacc.c  */
 #line 354 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 32:
+
+/* Line 1455 of yacc.c  */
 #line 356 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 33:
+
+/* Line 1455 of yacc.c  */
 #line 357 "soapcpp2_yacc.y"
     {
                           sprintf(errbuf, "undefined type in declaration of '%s'", (yyvsp[(2) - (2)].sym)->name);
@@ -2568,6 +2548,8 @@ yyreduce:
     break;
 
   case 34:
+
+/* Line 1455 of yacc.c  */
 #line 362 "soapcpp2_yacc.y"
     {
                           synerror("function declaration?");
@@ -2576,6 +2558,8 @@ yyreduce:
     break;
 
   case 35:
+
+/* Line 1455 of yacc.c  */
 #line 368 "soapcpp2_yacc.y"
     {
                           if (((yyvsp[(3) - (6)].rec).sto & Stypedef) && sp->table->level == GLOBAL)
@@ -2800,6 +2784,8 @@ yyreduce:
     break;
 
   case 36:
+
+/* Line 1455 of yacc.c  */
 #line 589 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(1) - (2)].rec).sto & Stypedef)
@@ -2821,201 +2807,281 @@ yyreduce:
     break;
 
   case 37:
+
+/* Line 1455 of yacc.c  */
 #line 607 "soapcpp2_yacc.y"
     { (yyval.sym) = (yyvsp[(1) - (1)].sym); ;}
     break;
 
   case 38:
+
+/* Line 1455 of yacc.c  */
 #line 608 "soapcpp2_yacc.y"
     { (yyval.sym) = (yyvsp[(1) - (1)].sym); ;}
     break;
 
   case 39:
+
+/* Line 1455 of yacc.c  */
 #line 610 "soapcpp2_yacc.y"
     { (yyval.sym) = (yyvsp[(1) - (1)].sym); ;}
     break;
 
   case 40:
+
+/* Line 1455 of yacc.c  */
 #line 611 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator!"); ;}
     break;
 
   case 41:
+
+/* Line 1455 of yacc.c  */
 #line 612 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator~"); ;}
     break;
 
   case 42:
+
+/* Line 1455 of yacc.c  */
 #line 613 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator="); ;}
     break;
 
   case 43:
+
+/* Line 1455 of yacc.c  */
 #line 614 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator+="); ;}
     break;
 
   case 44:
+
+/* Line 1455 of yacc.c  */
 #line 615 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator-="); ;}
     break;
 
   case 45:
+
+/* Line 1455 of yacc.c  */
 #line 616 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator*="); ;}
     break;
 
   case 46:
+
+/* Line 1455 of yacc.c  */
 #line 617 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator/="); ;}
     break;
 
   case 47:
+
+/* Line 1455 of yacc.c  */
 #line 618 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator%="); ;}
     break;
 
   case 48:
+
+/* Line 1455 of yacc.c  */
 #line 619 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator&="); ;}
     break;
 
   case 49:
+
+/* Line 1455 of yacc.c  */
 #line 620 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator^="); ;}
     break;
 
   case 50:
+
+/* Line 1455 of yacc.c  */
 #line 621 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator|="); ;}
     break;
 
   case 51:
+
+/* Line 1455 of yacc.c  */
 #line 622 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator<<="); ;}
     break;
 
   case 52:
+
+/* Line 1455 of yacc.c  */
 #line 623 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator>>="); ;}
     break;
 
   case 53:
+
+/* Line 1455 of yacc.c  */
 #line 624 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator||"); ;}
     break;
 
   case 54:
+
+/* Line 1455 of yacc.c  */
 #line 625 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator&&"); ;}
     break;
 
   case 55:
+
+/* Line 1455 of yacc.c  */
 #line 626 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator|"); ;}
     break;
 
   case 56:
+
+/* Line 1455 of yacc.c  */
 #line 627 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator^"); ;}
     break;
 
   case 57:
+
+/* Line 1455 of yacc.c  */
 #line 628 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator&"); ;}
     break;
 
   case 58:
+
+/* Line 1455 of yacc.c  */
 #line 629 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator=="); ;}
     break;
 
   case 59:
+
+/* Line 1455 of yacc.c  */
 #line 630 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator!="); ;}
     break;
 
   case 60:
+
+/* Line 1455 of yacc.c  */
 #line 631 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator<"); ;}
     break;
 
   case 61:
+
+/* Line 1455 of yacc.c  */
 #line 632 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator<="); ;}
     break;
 
   case 62:
+
+/* Line 1455 of yacc.c  */
 #line 633 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator>"); ;}
     break;
 
   case 63:
+
+/* Line 1455 of yacc.c  */
 #line 634 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator>="); ;}
     break;
 
   case 64:
+
+/* Line 1455 of yacc.c  */
 #line 635 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator<<"); ;}
     break;
 
   case 65:
+
+/* Line 1455 of yacc.c  */
 #line 636 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator>>"); ;}
     break;
 
   case 66:
+
+/* Line 1455 of yacc.c  */
 #line 637 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator+"); ;}
     break;
 
   case 67:
+
+/* Line 1455 of yacc.c  */
 #line 638 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator-"); ;}
     break;
 
   case 68:
+
+/* Line 1455 of yacc.c  */
 #line 639 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator*"); ;}
     break;
 
   case 69:
+
+/* Line 1455 of yacc.c  */
 #line 640 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator/"); ;}
     break;
 
   case 70:
+
+/* Line 1455 of yacc.c  */
 #line 641 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator%"); ;}
     break;
 
   case 71:
+
+/* Line 1455 of yacc.c  */
 #line 642 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator++"); ;}
     break;
 
   case 72:
+
+/* Line 1455 of yacc.c  */
 #line 643 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator--"); ;}
     break;
 
   case 73:
+
+/* Line 1455 of yacc.c  */
 #line 644 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator->"); ;}
     break;
 
   case 74:
+
+/* Line 1455 of yacc.c  */
 #line 645 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator[]"); ;}
     break;
 
   case 75:
+
+/* Line 1455 of yacc.c  */
 #line 646 "soapcpp2_yacc.y"
     { (yyval.sym) = lookup("operator()"); ;}
     break;
 
   case 76:
+
+/* Line 1455 of yacc.c  */
 #line 647 "soapcpp2_yacc.y"
     {
                           s1 = c_storage((yyvsp[(2) - (2)].rec).sto);
@@ -3031,6 +3097,8 @@ yyreduce:
     break;
 
   case 77:
+
+/* Line 1455 of yacc.c  */
 #line 659 "soapcpp2_yacc.y"
     {
                           if (!(p = entry(classtable, (yyvsp[(1) - (1)].sym))))
@@ -3045,6 +3113,8 @@ yyreduce:
     break;
 
   case 78:
+
+/* Line 1455 of yacc.c  */
 #line 671 "soapcpp2_yacc.y"
     {
                           if (!(p = entry(classtable, (yyvsp[(3) - (3)].sym))))
@@ -3075,6 +3145,8 @@ yyreduce:
     break;
 
   case 79:
+
+/* Line 1455 of yacc.c  */
 #line 699 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(1) - (7)].e)->level == GLOBAL)
@@ -3138,31 +3210,43 @@ yyreduce:
     break;
 
   case 80:
+
+/* Line 1455 of yacc.c  */
 #line 759 "soapcpp2_yacc.y"
     { (yyval.e) = sp->entry; ;}
     break;
 
   case 81:
+
+/* Line 1455 of yacc.c  */
 #line 761 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 82:
+
+/* Line 1455 of yacc.c  */
 #line 762 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 83:
+
+/* Line 1455 of yacc.c  */
 #line 764 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 84:
+
+/* Line 1455 of yacc.c  */
 #line 765 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 85:
+
+/* Line 1455 of yacc.c  */
 #line 766 "soapcpp2_yacc.y"
     {
                           sprintf(errbuf, "undefined '%s'", (yyvsp[(2) - (2)].sym)->name);
@@ -3171,6 +3255,8 @@ yyreduce:
     break;
 
   case 86:
+
+/* Line 1455 of yacc.c  */
 #line 770 "soapcpp2_yacc.y"
     {
                           synerror("formal argument expected");
@@ -3179,6 +3265,8 @@ yyreduce:
     break;
 
   case 87:
+
+/* Line 1455 of yacc.c  */
 #line 776 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(4) - (6)].rec).sto & Stypedef)
@@ -3309,6 +3397,8 @@ yyreduce:
     break;
 
   case 88:
+
+/* Line 1455 of yacc.c  */
 #line 903 "soapcpp2_yacc.y"
     {
                           if (sp->table->level != PARAM)
@@ -3321,6 +3411,8 @@ yyreduce:
     break;
 
   case 89:
+
+/* Line 1455 of yacc.c  */
 #line 911 "soapcpp2_yacc.y"
     {
                           if (soap_version == 2 && *(yyvsp[(1) - (1)].sym)->name == '_' && sp->table->level == GLOBAL)
@@ -3333,11 +3425,15 @@ yyreduce:
     break;
 
   case 90:
+
+/* Line 1455 of yacc.c  */
 #line 928 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 91:
+
+/* Line 1455 of yacc.c  */
 #line 930 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkmethod(tmp.typ, sp->table);
@@ -3347,16 +3443,22 @@ yyreduce:
     break;
 
   case 92:
+
+/* Line 1455 of yacc.c  */
 #line 937 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(3) - (3)].rec); ;}
     break;
 
   case 93:
+
+/* Line 1455 of yacc.c  */
 #line 939 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(4) - (4)].rec); ;}
     break;
 
   case 94:
+
+/* Line 1455 of yacc.c  */
 #line 941 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkint();
@@ -3366,6 +3468,8 @@ yyreduce:
     break;
 
   case 95:
+
+/* Line 1455 of yacc.c  */
 #line 946 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = (yyvsp[(2) - (2)].rec).typ;
@@ -3411,6 +3515,8 @@ yyreduce:
     break;
 
   case 96:
+
+/* Line 1455 of yacc.c  */
 #line 987 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(1) - (2)].typ)->type == Tint)
@@ -3466,6 +3572,8 @@ yyreduce:
     break;
 
   case 97:
+
+/* Line 1455 of yacc.c  */
 #line 1039 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkint();
@@ -3477,6 +3585,8 @@ yyreduce:
     break;
 
   case 98:
+
+/* Line 1455 of yacc.c  */
 #line 1046 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = (yyvsp[(1) - (1)].typ);
@@ -3486,6 +3596,8 @@ yyreduce:
     break;
 
   case 99:
+
+/* Line 1455 of yacc.c  */
 #line 1051 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = (yyvsp[(2) - (2)].rec).typ;
@@ -3531,6 +3643,8 @@ yyreduce:
     break;
 
   case 100:
+
+/* Line 1455 of yacc.c  */
 #line 1092 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(1) - (2)].typ)->type == Tint)
@@ -3586,101 +3700,141 @@ yyreduce:
     break;
 
   case 101:
+
+/* Line 1455 of yacc.c  */
 #line 1144 "soapcpp2_yacc.y"
     { (yyval.typ) = mkvoid(); ;}
     break;
 
   case 102:
+
+/* Line 1455 of yacc.c  */
 #line 1145 "soapcpp2_yacc.y"
     { (yyval.typ) = mkbool(); ;}
     break;
 
   case 103:
+
+/* Line 1455 of yacc.c  */
 #line 1146 "soapcpp2_yacc.y"
     { (yyval.typ) = mkchar(); ;}
     break;
 
   case 104:
+
+/* Line 1455 of yacc.c  */
 #line 1147 "soapcpp2_yacc.y"
     { (yyval.typ) = mkwchart(); ;}
     break;
 
   case 105:
+
+/* Line 1455 of yacc.c  */
 #line 1148 "soapcpp2_yacc.y"
     { (yyval.typ) = mkshort(); ;}
     break;
 
   case 106:
+
+/* Line 1455 of yacc.c  */
 #line 1149 "soapcpp2_yacc.y"
     { (yyval.typ) = mkint(); ;}
     break;
 
   case 107:
+
+/* Line 1455 of yacc.c  */
 #line 1150 "soapcpp2_yacc.y"
     { (yyval.typ) = mklong(); ;}
     break;
 
   case 108:
+
+/* Line 1455 of yacc.c  */
 #line 1151 "soapcpp2_yacc.y"
     { (yyval.typ) = mkllong(); ;}
     break;
 
   case 109:
+
+/* Line 1455 of yacc.c  */
 #line 1152 "soapcpp2_yacc.y"
     { (yyval.typ) = mkullong(); ;}
     break;
 
   case 110:
+
+/* Line 1455 of yacc.c  */
 #line 1153 "soapcpp2_yacc.y"
     { (yyval.typ) = mksize(); ;}
     break;
 
   case 111:
+
+/* Line 1455 of yacc.c  */
 #line 1154 "soapcpp2_yacc.y"
     { (yyval.typ) = mkfloat(); ;}
     break;
 
   case 112:
+
+/* Line 1455 of yacc.c  */
 #line 1155 "soapcpp2_yacc.y"
     { (yyval.typ) = mkdouble(); ;}
     break;
 
   case 113:
+
+/* Line 1455 of yacc.c  */
 #line 1156 "soapcpp2_yacc.y"
     { (yyval.typ) = mkint(); ;}
     break;
 
   case 114:
+
+/* Line 1455 of yacc.c  */
 #line 1157 "soapcpp2_yacc.y"
     { (yyval.typ) = mkuint(); ;}
     break;
 
   case 115:
+
+/* Line 1455 of yacc.c  */
 #line 1158 "soapcpp2_yacc.y"
     { (yyval.typ) = mkuchar(); ;}
     break;
 
   case 116:
+
+/* Line 1455 of yacc.c  */
 #line 1159 "soapcpp2_yacc.y"
     { (yyval.typ) = mkushort(); ;}
     break;
 
   case 117:
+
+/* Line 1455 of yacc.c  */
 #line 1160 "soapcpp2_yacc.y"
     { (yyval.typ) = mkuint(); ;}
     break;
 
   case 118:
+
+/* Line 1455 of yacc.c  */
 #line 1161 "soapcpp2_yacc.y"
     { (yyval.typ) = mkulong(); ;}
     break;
 
   case 119:
+
+/* Line 1455 of yacc.c  */
 #line 1162 "soapcpp2_yacc.y"
     { (yyval.typ) = mktimet(); ;}
     break;
 
   case 120:
+
+/* Line 1455 of yacc.c  */
 #line 1164 "soapcpp2_yacc.y"
     {
                           if (!(p = entry(templatetable, (yyvsp[(7) - (7)].sym))))
@@ -3694,6 +3848,8 @@ yyreduce:
     break;
 
   case 121:
+
+/* Line 1455 of yacc.c  */
 #line 1174 "soapcpp2_yacc.y"
     {
                           sym = gensym("_Struct");
@@ -3723,6 +3879,8 @@ yyreduce:
     break;
 
   case 122:
+
+/* Line 1455 of yacc.c  */
 #line 1200 "soapcpp2_yacc.y"
     {
                           if ((p = entry(classtable, (yyvsp[(1) - (5)].e)->sym)) && p->info.typ->ref)
@@ -3753,6 +3911,8 @@ yyreduce:
     break;
 
   case 123:
+
+/* Line 1455 of yacc.c  */
 #line 1227 "soapcpp2_yacc.y"
     {
                           p = reenter(classtable, (yyvsp[(1) - (7)].e)->sym);
@@ -3780,6 +3940,8 @@ yyreduce:
     break;
 
   case 124:
+
+/* Line 1455 of yacc.c  */
 #line 1250 "soapcpp2_yacc.y"
     {
                           (yyvsp[(1) - (1)].e)->info.typ->id = (yyvsp[(1) - (1)].e)->sym;
@@ -3788,6 +3950,8 @@ yyreduce:
     break;
 
   case 125:
+
+/* Line 1455 of yacc.c  */
 #line 1255 "soapcpp2_yacc.y"
     {
                           if (!(yyvsp[(3) - (3)].e))
@@ -3809,6 +3973,8 @@ yyreduce:
     break;
 
   case 126:
+
+/* Line 1455 of yacc.c  */
 #line 1273 "soapcpp2_yacc.y"
     {
                           sym = gensym("_Struct");
@@ -3839,6 +4005,8 @@ yyreduce:
     break;
 
   case 127:
+
+/* Line 1455 of yacc.c  */
 #line 1300 "soapcpp2_yacc.y"
     {
                           if ((p = entry(classtable, (yyvsp[(1) - (5)].e)->sym)) && p->info.typ->ref)
@@ -3866,6 +4034,8 @@ yyreduce:
     break;
 
   case 128:
+
+/* Line 1455 of yacc.c  */
 #line 1323 "soapcpp2_yacc.y"
     {
                           if ((p = entry(classtable, (yyvsp[(2) - (2)].sym))))
@@ -3891,6 +4061,8 @@ yyreduce:
     break;
 
   case 129:
+
+/* Line 1455 of yacc.c  */
 #line 1345 "soapcpp2_yacc.y"
     {
                           sym = gensym("_Union");
@@ -3921,6 +4093,8 @@ yyreduce:
     break;
 
   case 130:
+
+/* Line 1455 of yacc.c  */
 #line 1372 "soapcpp2_yacc.y"
     {
                           if ((p = entry(classtable, (yyvsp[(2) - (6)].sym))))
@@ -3949,6 +4123,8 @@ yyreduce:
     break;
 
   case 131:
+
+/* Line 1455 of yacc.c  */
 #line 1396 "soapcpp2_yacc.y"
     {
                           if ((p = entry(classtable, (yyvsp[(2) - (2)].sym))))
@@ -3974,6 +4150,8 @@ yyreduce:
     break;
 
   case 132:
+
+/* Line 1455 of yacc.c  */
 #line 1418 "soapcpp2_yacc.y"
     {
                           sym = gensym("_Enum");
@@ -4004,6 +4182,8 @@ yyreduce:
     break;
 
   case 133:
+
+/* Line 1455 of yacc.c  */
 #line 1445 "soapcpp2_yacc.y"
     {
                           sym = gensym("_Enum");
@@ -4034,6 +4214,8 @@ yyreduce:
     break;
 
   case 134:
+
+/* Line 1455 of yacc.c  */
 #line 1472 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(1) - (6)].e)->sym)))
@@ -4046,6 +4228,8 @@ yyreduce:
     break;
 
   case 135:
+
+/* Line 1455 of yacc.c  */
 #line 1481 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(1) - (6)].e)->sym)))
@@ -4058,6 +4242,8 @@ yyreduce:
     break;
 
   case 136:
+
+/* Line 1455 of yacc.c  */
 #line 1490 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(1) - (6)].e)->sym)))
@@ -4075,6 +4261,8 @@ yyreduce:
     break;
 
   case 137:
+
+/* Line 1455 of yacc.c  */
 #line 1504 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(1) - (6)].e)->sym)))
@@ -4092,6 +4280,8 @@ yyreduce:
     break;
 
   case 138:
+
+/* Line 1455 of yacc.c  */
 #line 1517 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(2) - (2)].sym))))
@@ -4113,6 +4303,8 @@ yyreduce:
     break;
 
   case 139:
+
+/* Line 1455 of yacc.c  */
 #line 1534 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(2) - (2)].sym))))
@@ -4135,6 +4327,8 @@ yyreduce:
     break;
 
   case 140:
+
+/* Line 1455 of yacc.c  */
 #line 1552 "soapcpp2_yacc.y"
     {
                           if ((p = entry(typetable, (yyvsp[(1) - (1)].sym))))
@@ -4169,6 +4363,8 @@ yyreduce:
     break;
 
   case 141:
+
+/* Line 1455 of yacc.c  */
 #line 1583 "soapcpp2_yacc.y"
     {
                           if ((p = entry(templatetable, (yyvsp[(1) - (4)].sym))))
@@ -4229,6 +4425,8 @@ yyreduce:
     break;
 
   case 142:
+
+/* Line 1455 of yacc.c  */
 #line 1640 "soapcpp2_yacc.y"
     {
                           sprintf(errbuf, "undeclared '%s'", (yyvsp[(2) - (3)].sym)->name);
@@ -4238,6 +4436,8 @@ yyreduce:
     break;
 
   case 143:
+
+/* Line 1455 of yacc.c  */
 #line 1645 "soapcpp2_yacc.y"
     {
                           sprintf(errbuf, "perhaps trying to use a template with an undefined type parameter '%s'?", (yyvsp[(2) - (3)].sym)->name);
@@ -4247,6 +4447,8 @@ yyreduce:
     break;
 
   case 144:
+
+/* Line 1455 of yacc.c  */
 #line 1650 "soapcpp2_yacc.y"
     {
                           synerror("perhaps trying to use an undefined template or template with a non-type template parameter? Declare 'template <typename T> class name'");
@@ -4255,6 +4457,8 @@ yyreduce:
     break;
 
   case 145:
+
+/* Line 1455 of yacc.c  */
 #line 1655 "soapcpp2_yacc.y"
     {
                           synerror("malformed class definition (use spacing around ':' to separate derived : base)");
@@ -4264,6 +4468,8 @@ yyreduce:
     break;
 
   case 146:
+
+/* Line 1455 of yacc.c  */
 #line 1661 "soapcpp2_yacc.y"
     {
                           synerror("malformed struct definition");
@@ -4273,6 +4479,8 @@ yyreduce:
     break;
 
   case 147:
+
+/* Line 1455 of yacc.c  */
 #line 1667 "soapcpp2_yacc.y"
     {
                           synerror("malformed union definition");
@@ -4282,6 +4490,8 @@ yyreduce:
     break;
 
   case 148:
+
+/* Line 1455 of yacc.c  */
 #line 1673 "soapcpp2_yacc.y"
     {
                           synerror("malformed enum definition");
@@ -4291,6 +4501,8 @@ yyreduce:
     break;
 
   case 149:
+
+/* Line 1455 of yacc.c  */
 #line 1679 "soapcpp2_yacc.y"
     {
                           if ((p = entry(classtable, (yyvsp[(2) - (2)].sym))))
@@ -4319,6 +4531,8 @@ yyreduce:
     break;
 
   case 150:
+
+/* Line 1455 of yacc.c  */
 #line 1704 "soapcpp2_yacc.y"
     {
                           if ((p = entry(classtable, (yyvsp[(2) - (2)].sym))))
@@ -4349,6 +4563,8 @@ yyreduce:
     break;
 
   case 151:
+
+/* Line 1455 of yacc.c  */
 #line 1731 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(2) - (3)].sym))))
@@ -4370,6 +4586,8 @@ yyreduce:
     break;
 
   case 152:
+
+/* Line 1455 of yacc.c  */
 #line 1749 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(2) - (3)].sym))))
@@ -4392,6 +4610,8 @@ yyreduce:
     break;
 
   case 153:
+
+/* Line 1455 of yacc.c  */
 #line 1769 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(3) - (4)].sym))))
@@ -4416,6 +4636,8 @@ yyreduce:
     break;
 
   case 154:
+
+/* Line 1455 of yacc.c  */
 #line 1791 "soapcpp2_yacc.y"
     {
                           if ((p = entry(enumtable, (yyvsp[(3) - (4)].sym))))
@@ -4441,6 +4663,8 @@ yyreduce:
     break;
 
   case 155:
+
+/* Line 1455 of yacc.c  */
 #line 1813 "soapcpp2_yacc.y"
     {
                           (yyval.sym) = (yyvsp[(2) - (2)].sym);
@@ -4450,6 +4674,8 @@ yyreduce:
     break;
 
   case 156:
+
+/* Line 1455 of yacc.c  */
 #line 1818 "soapcpp2_yacc.y"
     {
                           (yyval.sym) = (yyvsp[(2) - (2)].sym);
@@ -4459,36 +4685,50 @@ yyreduce:
     break;
 
   case 157:
+
+/* Line 1455 of yacc.c  */
 #line 1824 "soapcpp2_yacc.y"
     { (yyval.i) = 1; ;}
     break;
 
   case 158:
+
+/* Line 1455 of yacc.c  */
 #line 1825 "soapcpp2_yacc.y"
     { (yyval.i) = 4; ;}
     break;
 
   case 159:
+
+/* Line 1455 of yacc.c  */
 #line 1826 "soapcpp2_yacc.y"
     { (yyval.i) = 2; ;}
     break;
 
   case 160:
+
+/* Line 1455 of yacc.c  */
 #line 1827 "soapcpp2_yacc.y"
     { (yyval.i) = 4; ;}
     break;
 
   case 161:
+
+/* Line 1455 of yacc.c  */
 #line 1828 "soapcpp2_yacc.y"
     { (yyval.i) = 4; ;}
     break;
 
   case 162:
+
+/* Line 1455 of yacc.c  */
 #line 1829 "soapcpp2_yacc.y"
     { (yyval.i) = 8; ;}
     break;
 
   case 163:
+
+/* Line 1455 of yacc.c  */
 #line 1830 "soapcpp2_yacc.y"
     {
                           (yyval.i) = 4;
@@ -4503,6 +4743,8 @@ yyreduce:
     break;
 
   case 164:
+
+/* Line 1455 of yacc.c  */
 #line 1840 "soapcpp2_yacc.y"
     {
                           semerror("enum underlying type must be one of int8_t, int16_t, int32_t, int64_t");
@@ -4511,36 +4753,50 @@ yyreduce:
     break;
 
   case 165:
+
+/* Line 1455 of yacc.c  */
 #line 1844 "soapcpp2_yacc.y"
     { (yyval.i) = 4; /* 4 = enum */ ;}
     break;
 
   case 166:
+
+/* Line 1455 of yacc.c  */
 #line 1846 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 167:
+
+/* Line 1455 of yacc.c  */
 #line 1847 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 168:
+
+/* Line 1455 of yacc.c  */
 #line 1849 "soapcpp2_yacc.y"
     { (yyval.e) = (yyvsp[(2) - (2)].e); ;}
     break;
 
   case 169:
+
+/* Line 1455 of yacc.c  */
 #line 1850 "soapcpp2_yacc.y"
     { (yyval.e) = (yyvsp[(2) - (2)].e); ;}
     break;
 
   case 170:
+
+/* Line 1455 of yacc.c  */
 #line 1851 "soapcpp2_yacc.y"
     { (yyval.e) = (yyvsp[(2) - (2)].e); ;}
     break;
 
   case 171:
+
+/* Line 1455 of yacc.c  */
 #line 1852 "soapcpp2_yacc.y"
     {
                           (yyval.e) = entry(classtable, (yyvsp[(1) - (1)].sym));
@@ -4554,11 +4810,15 @@ yyreduce:
     break;
 
   case 172:
+
+/* Line 1455 of yacc.c  */
 #line 1861 "soapcpp2_yacc.y"
     { (yyval.e) = entry(classtable, (yyvsp[(2) - (2)].sym)); ;}
     break;
 
   case 173:
+
+/* Line 1455 of yacc.c  */
 #line 1863 "soapcpp2_yacc.y"
     {
                           if (transient <= -2)
@@ -4570,6 +4830,8 @@ yyreduce:
     break;
 
   case 174:
+
+/* Line 1455 of yacc.c  */
 #line 1871 "soapcpp2_yacc.y"
     {
                           if (transient <= -2)
@@ -4582,6 +4844,8 @@ yyreduce:
     break;
 
   case 175:
+
+/* Line 1455 of yacc.c  */
 #line 1880 "soapcpp2_yacc.y"
     {
                           enterscope(mktable(NULL), 0);
@@ -4592,16 +4856,22 @@ yyreduce:
     break;
 
   case 176:
+
+/* Line 1455 of yacc.c  */
 #line 1887 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 177:
+
+/* Line 1455 of yacc.c  */
 #line 1888 "soapcpp2_yacc.y"
     { ;}
     break;
 
   case 178:
+
+/* Line 1455 of yacc.c  */
 #line 1890 "soapcpp2_yacc.y"
     {
                           if (sp->table->level == INTERNAL)
@@ -4614,76 +4884,106 @@ yyreduce:
     break;
 
   case 179:
+
+/* Line 1455 of yacc.c  */
 #line 1899 "soapcpp2_yacc.y"
     { (yyval.sto) = Sauto; ;}
     break;
 
   case 180:
+
+/* Line 1455 of yacc.c  */
 #line 1900 "soapcpp2_yacc.y"
     { (yyval.sto) = Sregister; ;}
     break;
 
   case 181:
+
+/* Line 1455 of yacc.c  */
 #line 1901 "soapcpp2_yacc.y"
     { (yyval.sto) = Sstatic; ;}
     break;
 
   case 182:
+
+/* Line 1455 of yacc.c  */
 #line 1902 "soapcpp2_yacc.y"
     { (yyval.sto) = Sexplicit; ;}
     break;
 
   case 183:
+
+/* Line 1455 of yacc.c  */
 #line 1903 "soapcpp2_yacc.y"
     { (yyval.sto) = Sextern; transient = 1; ;}
     break;
 
   case 184:
+
+/* Line 1455 of yacc.c  */
 #line 1904 "soapcpp2_yacc.y"
     { (yyval.sto) = Stypedef; ;}
     break;
 
   case 185:
+
+/* Line 1455 of yacc.c  */
 #line 1905 "soapcpp2_yacc.y"
     { (yyval.sto) = Svirtual; ;}
     break;
 
   case 186:
+
+/* Line 1455 of yacc.c  */
 #line 1906 "soapcpp2_yacc.y"
     { (yyval.sto) = Sconst; ;}
     break;
 
   case 187:
+
+/* Line 1455 of yacc.c  */
 #line 1907 "soapcpp2_yacc.y"
     { (yyval.sto) = Sfinal; ;}
     break;
 
   case 188:
+
+/* Line 1455 of yacc.c  */
 #line 1908 "soapcpp2_yacc.y"
     { (yyval.sto) = Soverride; ;}
     break;
 
   case 189:
+
+/* Line 1455 of yacc.c  */
 #line 1909 "soapcpp2_yacc.y"
     { (yyval.sto) = Sfriend; ;}
     break;
 
   case 190:
+
+/* Line 1455 of yacc.c  */
 #line 1910 "soapcpp2_yacc.y"
     { (yyval.sto) = Sinline; ;}
     break;
 
   case 191:
+
+/* Line 1455 of yacc.c  */
 #line 1911 "soapcpp2_yacc.y"
     { (yyval.sto) = SmustUnderstand; ;}
     break;
 
   case 192:
+
+/* Line 1455 of yacc.c  */
 #line 1912 "soapcpp2_yacc.y"
     { (yyval.sto) = Sreturn; ;}
     break;
 
   case 193:
+
+/* Line 1455 of yacc.c  */
 #line 1913 "soapcpp2_yacc.y"
     {
                           (yyval.sto) = Sattribute;
@@ -4693,66 +4993,92 @@ yyreduce:
     break;
 
   case 194:
+
+/* Line 1455 of yacc.c  */
 #line 1918 "soapcpp2_yacc.y"
     { (yyval.sto) = Sspecial; ;}
     break;
 
   case 195:
+
+/* Line 1455 of yacc.c  */
 #line 1919 "soapcpp2_yacc.y"
     { (yyval.sto) = Sextern; transient = -2; ;}
     break;
 
   case 196:
+
+/* Line 1455 of yacc.c  */
 #line 1920 "soapcpp2_yacc.y"
     { (yyval.sto) = Smutable; transient = -4; ;}
     break;
 
   case 197:
+
+/* Line 1455 of yacc.c  */
 #line 1922 "soapcpp2_yacc.y"
     { (yyval.sto) = Snone; ;}
     break;
 
   case 198:
+
+/* Line 1455 of yacc.c  */
 #line 1923 "soapcpp2_yacc.y"
     { (yyval.sto) |= Sconstobj; ;}
     break;
 
   case 199:
+
+/* Line 1455 of yacc.c  */
 #line 1924 "soapcpp2_yacc.y"
     { (yyval.sto) |= Sfinal; ;}
     break;
 
   case 200:
+
+/* Line 1455 of yacc.c  */
 #line 1925 "soapcpp2_yacc.y"
     { (yyval.sto) |= Soverride; ;}
     break;
 
   case 201:
+
+/* Line 1455 of yacc.c  */
 #line 1927 "soapcpp2_yacc.y"
     { (yyval.sto) = Snone; ;}
     break;
 
   case 202:
+
+/* Line 1455 of yacc.c  */
 #line 1928 "soapcpp2_yacc.y"
     { (yyval.sto) = Sabstract; ;}
     break;
 
   case 203:
+
+/* Line 1455 of yacc.c  */
 #line 1930 "soapcpp2_yacc.y"
     { (yyval.sto) = Snone; ;}
     break;
 
   case 204:
+
+/* Line 1455 of yacc.c  */
 #line 1931 "soapcpp2_yacc.y"
     { (yyval.sto) = Svirtual; ;}
     break;
 
   case 205:
+
+/* Line 1455 of yacc.c  */
 #line 1933 "soapcpp2_yacc.y"
     { (yyval.rec) = tmp = sp->node; ;}
     break;
 
   case 206:
+
+/* Line 1455 of yacc.c  */
 #line 1934 "soapcpp2_yacc.y"
     {
                           /* handle const pointers, such as const char* */
@@ -4765,6 +5091,8 @@ yyreduce:
     break;
 
   case 207:
+
+/* Line 1455 of yacc.c  */
 #line 1942 "soapcpp2_yacc.y"
     {
                           tmp.typ = mkreference(tmp.typ);
@@ -4774,6 +5102,8 @@ yyreduce:
     break;
 
   case 208:
+
+/* Line 1455 of yacc.c  */
 #line 1947 "soapcpp2_yacc.y"
     {
                           tmp.typ = mkrvalueref(tmp.typ);
@@ -4783,11 +5113,15 @@ yyreduce:
     break;
 
   case 209:
+
+/* Line 1455 of yacc.c  */
 #line 1953 "soapcpp2_yacc.y"
     { (yyval.rec) = tmp; ;}
     break;
 
   case 210:
+
+/* Line 1455 of yacc.c  */
 #line 1955 "soapcpp2_yacc.y"
     {
                           if (!bflag && (yyvsp[(4) - (4)].rec).typ->type == Tchar)
@@ -4809,6 +5143,8 @@ yyreduce:
     break;
 
   case 211:
+
+/* Line 1455 of yacc.c  */
 #line 1972 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkpointer((yyvsp[(3) - (3)].rec).typ); /* zero size array = pointer */
@@ -4817,6 +5153,8 @@ yyreduce:
     break;
 
   case 212:
+
+/* Line 1455 of yacc.c  */
 #line 1977 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(1) - (1)].rec).typ->type == Tstruct || (yyvsp[(1) - (1)].rec).typ->type == Tclass)
@@ -4835,11 +5173,15 @@ yyreduce:
     break;
 
   case 213:
+
+/* Line 1455 of yacc.c  */
 #line 1992 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 214:
+
+/* Line 1455 of yacc.c  */
 #line 1993 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(2) - (3)].rec).hasval)
@@ -4857,11 +5199,15 @@ yyreduce:
     break;
 
   case 215:
+
+/* Line 1455 of yacc.c  */
 #line 2007 "soapcpp2_yacc.y"
     { (yyval.rec).hasval = False; ;}
     break;
 
   case 216:
+
+/* Line 1455 of yacc.c  */
 #line 2008 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(2) - (2)].rec).hasval)
@@ -4879,16 +5225,22 @@ yyreduce:
     break;
 
   case 217:
+
+/* Line 1455 of yacc.c  */
 #line 2022 "soapcpp2_yacc.y"
     { (yyval.s) = NULL; ;}
     break;
 
   case 218:
+
+/* Line 1455 of yacc.c  */
 #line 2023 "soapcpp2_yacc.y"
     { (yyval.s) = (yyvsp[(1) - (1)].s); ;}
     break;
 
   case 219:
+
+/* Line 1455 of yacc.c  */
 #line 2025 "soapcpp2_yacc.y"
     {
                           (yyval.rec).minOccurs = -1;
@@ -4904,6 +5256,8 @@ yyreduce:
     break;
 
   case 220:
+
+/* Line 1455 of yacc.c  */
 #line 2036 "soapcpp2_yacc.y"
     {
                           (yyval.rec).minOccurs = (yyvsp[(1) - (1)].i);
@@ -4921,6 +5275,8 @@ yyreduce:
     break;
 
   case 221:
+
+/* Line 1455 of yacc.c  */
 #line 2049 "soapcpp2_yacc.y"
     {
                           (yyval.rec).minOccurs = (yyvsp[(1) - (2)].i);
@@ -4938,6 +5294,8 @@ yyreduce:
     break;
 
   case 222:
+
+/* Line 1455 of yacc.c  */
 #line 2062 "soapcpp2_yacc.y"
     {
                           (yyval.rec).minOccurs = (yyvsp[(1) - (3)].i);
@@ -4963,6 +5321,8 @@ yyreduce:
     break;
 
   case 223:
+
+/* Line 1455 of yacc.c  */
 #line 2083 "soapcpp2_yacc.y"
     {
                           (yyval.rec).minOccurs = -1;
@@ -4983,6 +5343,8 @@ yyreduce:
     break;
 
   case 224:
+
+/* Line 1455 of yacc.c  */
 #line 2100 "soapcpp2_yacc.y"
     {
                           (yyval.rec).hasmin = False;
@@ -4998,6 +5360,8 @@ yyreduce:
     break;
 
   case 225:
+
+/* Line 1455 of yacc.c  */
 #line 2112 "soapcpp2_yacc.y"
     {
                           (yyval.rec).hasmin = True;
@@ -5015,6 +5379,8 @@ yyreduce:
     break;
 
   case 226:
+
+/* Line 1455 of yacc.c  */
 #line 2126 "soapcpp2_yacc.y"
     {
                           (yyval.rec).hasmin = True;
@@ -5040,6 +5406,8 @@ yyreduce:
     break;
 
   case 227:
+
+/* Line 1455 of yacc.c  */
 #line 2147 "soapcpp2_yacc.y"
     {
                           (yyval.rec).hasmin = False;
@@ -5060,111 +5428,155 @@ yyreduce:
     break;
 
   case 228:
+
+/* Line 1455 of yacc.c  */
 #line 2164 "soapcpp2_yacc.y"
     { (yyval.s) = NULL; ;}
     break;
 
   case 229:
+
+/* Line 1455 of yacc.c  */
 #line 2165 "soapcpp2_yacc.y"
     { (yyval.s) = (yyvsp[(1) - (1)].s); ;}
     break;
 
   case 230:
+
+/* Line 1455 of yacc.c  */
 #line 2167 "soapcpp2_yacc.y"
     { (yyval.r) = (yyvsp[(1) - (1)].r); ;}
     break;
 
   case 231:
+
+/* Line 1455 of yacc.c  */
 #line 2168 "soapcpp2_yacc.y"
     { (yyval.r) = (double)(yyvsp[(1) - (1)].i); ;}
     break;
 
   case 232:
+
+/* Line 1455 of yacc.c  */
 #line 2169 "soapcpp2_yacc.y"
     { (yyval.r) = (double)(yyvsp[(1) - (1)].c); ;}
     break;
 
   case 233:
+
+/* Line 1455 of yacc.c  */
 #line 2170 "soapcpp2_yacc.y"
     { (yyval.r) = +(yyvsp[(2) - (2)].r); ;}
     break;
 
   case 234:
+
+/* Line 1455 of yacc.c  */
 #line 2171 "soapcpp2_yacc.y"
     { (yyval.r) = -(yyvsp[(2) - (2)].r); ;}
     break;
 
   case 235:
+
+/* Line 1455 of yacc.c  */
 #line 2173 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = (yyval.rec).incmax = True; ;}
     break;
 
   case 236:
+
+/* Line 1455 of yacc.c  */
 #line 2174 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = (yyval.rec).incmax = True; ;}
     break;
 
   case 237:
+
+/* Line 1455 of yacc.c  */
 #line 2175 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = False; (yyval.rec).incmax = True; ;}
     break;
 
   case 238:
+
+/* Line 1455 of yacc.c  */
 #line 2176 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = False; (yyval.rec).incmax = True; ;}
     break;
 
   case 239:
+
+/* Line 1455 of yacc.c  */
 #line 2178 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = (yyval.rec).incmax = True; ;}
     break;
 
   case 240:
+
+/* Line 1455 of yacc.c  */
 #line 2179 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = False; (yyval.rec).incmax = True; ;}
     break;
 
   case 241:
+
+/* Line 1455 of yacc.c  */
 #line 2180 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = True; (yyval.rec).incmax = False; ;}
     break;
 
   case 242:
+
+/* Line 1455 of yacc.c  */
 #line 2181 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = False; (yyval.rec).incmax = False; ;}
     break;
 
   case 243:
+
+/* Line 1455 of yacc.c  */
 #line 2182 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = False; (yyval.rec).incmax = False; ;}
     break;
 
   case 244:
+
+/* Line 1455 of yacc.c  */
 #line 2184 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = (yyval.rec).incmax = True; ;}
     break;
 
   case 245:
+
+/* Line 1455 of yacc.c  */
 #line 2185 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = True; (yyval.rec).incmax = False; ;}
     break;
 
   case 246:
+
+/* Line 1455 of yacc.c  */
 #line 2186 "soapcpp2_yacc.y"
     { (yyval.rec).incmin = True; (yyval.rec).incmax = False; ;}
     break;
 
   case 247:
+
+/* Line 1455 of yacc.c  */
 #line 2195 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(3) - (3)].rec); ;}
     break;
 
   case 248:
+
+/* Line 1455 of yacc.c  */
 #line 2196 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 249:
+
+/* Line 1455 of yacc.c  */
 #line 2200 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = (yyvsp[(3) - (5)].rec).typ;
@@ -5174,11 +5586,15 @@ yyreduce:
     break;
 
   case 251:
+
+/* Line 1455 of yacc.c  */
 #line 2208 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 252:
+
+/* Line 1455 of yacc.c  */
 #line 2211 "soapcpp2_yacc.y"
     {
                           (yyval.rec).hasval = False;
@@ -5187,16 +5603,22 @@ yyreduce:
     break;
 
   case 253:
+
+/* Line 1455 of yacc.c  */
 #line 2215 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 254:
+
+/* Line 1455 of yacc.c  */
 #line 2217 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 255:
+
+/* Line 1455 of yacc.c  */
 #line 2220 "soapcpp2_yacc.y"
     { (yyval.rec).hasval = False;
                           (yyval.rec).typ = mkint();
@@ -5204,101 +5626,141 @@ yyreduce:
     break;
 
   case 256:
+
+/* Line 1455 of yacc.c  */
 #line 2223 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 257:
+
+/* Line 1455 of yacc.c  */
 #line 2225 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 258:
+
+/* Line 1455 of yacc.c  */
 #line 2228 "soapcpp2_yacc.y"
     { (yyval.rec) = iop("|", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 259:
+
+/* Line 1455 of yacc.c  */
 #line 2229 "soapcpp2_yacc.y"
     { (yyval.rec) = iop("^", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 260:
+
+/* Line 1455 of yacc.c  */
 #line 2230 "soapcpp2_yacc.y"
     { (yyval.rec) = iop("&", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 261:
+
+/* Line 1455 of yacc.c  */
 #line 2231 "soapcpp2_yacc.y"
     { (yyval.rec) = relop("==", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 262:
+
+/* Line 1455 of yacc.c  */
 #line 2232 "soapcpp2_yacc.y"
     { (yyval.rec) = relop("!=", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 263:
+
+/* Line 1455 of yacc.c  */
 #line 2233 "soapcpp2_yacc.y"
     { (yyval.rec) = relop("<", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 264:
+
+/* Line 1455 of yacc.c  */
 #line 2234 "soapcpp2_yacc.y"
     { (yyval.rec) = relop("<=", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 265:
+
+/* Line 1455 of yacc.c  */
 #line 2235 "soapcpp2_yacc.y"
     { (yyval.rec) = relop(">", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 266:
+
+/* Line 1455 of yacc.c  */
 #line 2236 "soapcpp2_yacc.y"
     { (yyval.rec) = relop(">=", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 267:
+
+/* Line 1455 of yacc.c  */
 #line 2237 "soapcpp2_yacc.y"
     { (yyval.rec) = iop("<<", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 268:
+
+/* Line 1455 of yacc.c  */
 #line 2238 "soapcpp2_yacc.y"
     { (yyval.rec) = iop(">>", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 269:
+
+/* Line 1455 of yacc.c  */
 #line 2239 "soapcpp2_yacc.y"
     { (yyval.rec) = op("+", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 270:
+
+/* Line 1455 of yacc.c  */
 #line 2240 "soapcpp2_yacc.y"
     { (yyval.rec) = op("-", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 271:
+
+/* Line 1455 of yacc.c  */
 #line 2241 "soapcpp2_yacc.y"
     { (yyval.rec) = op("*", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 272:
+
+/* Line 1455 of yacc.c  */
 #line 2242 "soapcpp2_yacc.y"
     { (yyval.rec) = op("/", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 273:
+
+/* Line 1455 of yacc.c  */
 #line 2243 "soapcpp2_yacc.y"
     { (yyval.rec) = iop("%", (yyvsp[(1) - (3)].rec), (yyvsp[(3) - (3)].rec)); ;}
     break;
 
   case 274:
+
+/* Line 1455 of yacc.c  */
 #line 2244 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 275:
+
+/* Line 1455 of yacc.c  */
 #line 2247 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(2) - (2)].rec).hasval)
@@ -5309,6 +5771,8 @@ yyreduce:
     break;
 
   case 276:
+
+/* Line 1455 of yacc.c  */
 #line 2253 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(2) - (2)].rec).hasval)
@@ -5319,6 +5783,8 @@ yyreduce:
     break;
 
   case 277:
+
+/* Line 1455 of yacc.c  */
 #line 2259 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(2) - (2)].rec).hasval)
@@ -5336,11 +5802,15 @@ yyreduce:
     break;
 
   case 278:
+
+/* Line 1455 of yacc.c  */
 #line 2272 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(2) - (2)].rec); ;}
     break;
 
   case 279:
+
+/* Line 1455 of yacc.c  */
 #line 2273 "soapcpp2_yacc.y"
     {
                           if ((yyvsp[(2) - (2)].rec).typ->type == Tpointer)
@@ -5353,6 +5823,8 @@ yyreduce:
     break;
 
   case 280:
+
+/* Line 1455 of yacc.c  */
 #line 2281 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkpointer((yyvsp[(2) - (2)].rec).typ);
@@ -5362,6 +5834,8 @@ yyreduce:
     break;
 
   case 281:
+
+/* Line 1455 of yacc.c  */
 #line 2287 "soapcpp2_yacc.y"
     {
                           (yyval.rec).hasval = True;
@@ -5371,16 +5845,22 @@ yyreduce:
     break;
 
   case 282:
+
+/* Line 1455 of yacc.c  */
 #line 2292 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(1) - (1)].rec); ;}
     break;
 
   case 283:
+
+/* Line 1455 of yacc.c  */
 #line 2295 "soapcpp2_yacc.y"
     { (yyval.rec) = (yyvsp[(2) - (3)].rec); ;}
     break;
 
   case 284:
+
+/* Line 1455 of yacc.c  */
 #line 2296 "soapcpp2_yacc.y"
     {
                           if (!(p = enumentry((yyvsp[(1) - (1)].sym))))
@@ -5393,6 +5873,8 @@ yyreduce:
     break;
 
   case 285:
+
+/* Line 1455 of yacc.c  */
 #line 2304 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkint();
@@ -5402,6 +5884,8 @@ yyreduce:
     break;
 
   case 286:
+
+/* Line 1455 of yacc.c  */
 #line 2309 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkint();
@@ -5411,6 +5895,8 @@ yyreduce:
     break;
 
   case 287:
+
+/* Line 1455 of yacc.c  */
 #line 2314 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkfloat();
@@ -5420,6 +5906,8 @@ yyreduce:
     break;
 
   case 288:
+
+/* Line 1455 of yacc.c  */
 #line 2319 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkchar();
@@ -5429,6 +5917,8 @@ yyreduce:
     break;
 
   case 289:
+
+/* Line 1455 of yacc.c  */
 #line 2324 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkstring();
@@ -5438,6 +5928,8 @@ yyreduce:
     break;
 
   case 290:
+
+/* Line 1455 of yacc.c  */
 #line 2329 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkbool();
@@ -5447,6 +5939,8 @@ yyreduce:
     break;
 
   case 291:
+
+/* Line 1455 of yacc.c  */
 #line 2334 "soapcpp2_yacc.y"
     {
                           (yyval.rec).typ = mkbool();
@@ -5456,8 +5950,9 @@ yyreduce:
     break;
 
 
-/* Line 1267 of yacc.c.  */
-#line 5461 "soapcpp2_yacc.tab.c"
+
+/* Line 1455 of yacc.c  */
+#line 5956 "soapcpp2_yacc.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -5467,7 +5962,6 @@ yyreduce:
   YY_STACK_PRINT (yyss, yyssp);
 
   *++yyvsp = yyval;
-
 
   /* Now `shift' the result of the reduction.  Determine what state
      that goes to, based on the state we popped back to and the rule
@@ -5533,7 +6027,7 @@ yyerrlab:
 
   if (yyerrstatus == 3)
     {
-      /* If just tried and failed to reuse look-ahead token after an
+      /* If just tried and failed to reuse lookahead token after an
 	 error, discard it.  */
 
       if (yychar <= YYEOF)
@@ -5550,7 +6044,7 @@ yyerrlab:
 	}
     }
 
-  /* Else will try to reuse look-ahead token after shifting the error
+  /* Else will try to reuse lookahead token after shifting the error
      token.  */
   goto yyerrlab1;
 
@@ -5607,9 +6101,6 @@ yyerrlab1:
       YY_STACK_PRINT (yyss, yyssp);
     }
 
-  if (yyn == YYFINAL)
-    YYACCEPT;
-
   *++yyvsp = yylval;
 
 
@@ -5634,7 +6125,7 @@ yyabortlab:
   yyresult = 1;
   goto yyreturn;
 
-#ifndef yyoverflow
+#if !defined(yyoverflow) || YYERROR_VERBOSE
 /*-------------------------------------------------.
 | yyexhaustedlab -- memory exhaustion comes here.  |
 `-------------------------------------------------*/
@@ -5645,7 +6136,7 @@ yyexhaustedlab:
 #endif
 
 yyreturn:
-  if (yychar != YYEOF && yychar != YYEMPTY)
+  if (yychar != YYEMPTY)
      yydestruct ("Cleanup: discarding lookahead",
 		 yytoken, &yylval);
   /* Do not reclaim the symbols of the rule which action triggered
@@ -5671,6 +6162,8 @@ yyreturn:
 }
 
 
+
+/* Line 1675 of yacc.c  */
 #line 2341 "soapcpp2_yacc.y"
 
 

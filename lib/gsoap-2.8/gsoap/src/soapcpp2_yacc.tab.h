@@ -1,24 +1,23 @@
-/* A Bison parser, made by GNU Bison 2.3.  */
+
+/* A Bison parser, made by GNU Bison 2.4.1.  */
 
 /* Skeleton interface for Bison's Yacc-like parsers in C
-
-   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   
+      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
    Free Software Foundation, Inc.
-
-   This program is free software; you can redistribute it and/or modify
+   
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
-
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -29,9 +28,10 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-
+   
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
+
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -135,109 +135,16 @@
      NN = 351
    };
 #endif
-/* Tokens.  */
-#define PRAGMA 258
-#define AUTO 259
-#define DOUBLE 260
-#define INT 261
-#define STRUCT 262
-#define BREAK 263
-#define ELSE 264
-#define LONG 265
-#define SWITCH 266
-#define CASE 267
-#define ENUM 268
-#define REGISTER 269
-#define TYPEDEF 270
-#define CHAR 271
-#define EXTERN 272
-#define RETURN 273
-#define UNION 274
-#define CONST 275
-#define FLOAT 276
-#define SHORT 277
-#define UNSIGNED 278
-#define CONTINUE 279
-#define FOR 280
-#define SIGNED 281
-#define VOID 282
-#define DEFAULT 283
-#define GOTO 284
-#define SIZEOF 285
-#define VOLATILE 286
-#define DO 287
-#define IF 288
-#define STATIC 289
-#define WHILE 290
-#define CLASS 291
-#define PRIVATE 292
-#define PROTECTED 293
-#define PUBLIC 294
-#define VIRTUAL 295
-#define INLINE 296
-#define OPERATOR 297
-#define LLONG 298
-#define BOOL 299
-#define CFALSE 300
-#define CTRUE 301
-#define WCHAR 302
-#define TIME 303
-#define USING 304
-#define NAMESPACE 305
-#define ULLONG 306
-#define MUSTUNDERSTAND 307
-#define SIZE 308
-#define FRIEND 309
-#define TEMPLATE 310
-#define EXPLICIT 311
-#define TYPENAME 312
-#define MUTABLE 313
-#define FINAL 314
-#define null 315
-#define RESTRICT 316
-#define OVERRIDE 317
-#define UCHAR 318
-#define USHORT 319
-#define UINT 320
-#define ULONG 321
-#define NONE 322
-#define ID 323
-#define LAB 324
-#define TYPE 325
-#define LNG 326
-#define DBL 327
-#define CHR 328
-#define TAG 329
-#define STR 330
-#define RA 331
-#define LA 332
-#define OA 333
-#define XA 334
-#define AA 335
-#define MA 336
-#define DA 337
-#define TA 338
-#define NA 339
-#define PA 340
-#define OR 341
-#define AN 342
-#define NE 343
-#define EQ 344
-#define GE 345
-#define LE 346
-#define RS 347
-#define LS 348
-#define AR 349
-#define PP 350
-#define NN 351
-
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 153 "soapcpp2_yacc.y"
 {
+
+/* Line 1676 of yacc.c  */
+#line 153 "soapcpp2_yacc.y"
+
   Symbol  *sym;
   LONG64  i;
   double  r;
@@ -247,14 +154,17 @@ typedef union YYSTYPE
   Storage sto;
   Node    rec;
   Entry   *e;
-}
-/* Line 1529 of yacc.c.  */
-#line 253 "soapcpp2_yacc.tab.h"
-	YYSTYPE;
+
+
+
+/* Line 1676 of yacc.c  */
+#line 162 "soapcpp2_yacc.tab.h"
+} YYSTYPE;
+# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
-# define YYSTYPE_IS_TRIVIAL 1
 #endif
 
 extern YYSTYPE yylval;
+
 

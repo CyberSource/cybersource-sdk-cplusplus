@@ -85,9 +85,6 @@ char *run () {
 	soap *ctx = soap_new();
 	ns2__ReplyMessage *reply = new ns2__ReplyMessage();
 	ITransactionProcessorProxy proxy = ITransactionProcessorProxy ();
-	//proxy.soap = soap_new();
-	//proxy.soap_own = true;
-	//proxy.ITransactionProcessorProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
 	soap_mode(proxy.soap, (soap_mode)SOAP_XML_CANONICAL);
 	ns2__RequestMessage req = authTransaction(ctx);
 	CybsMap *configMap = cybs_create_map();
@@ -137,7 +134,7 @@ char *run () {
 			}
 	}
 
-	reply->~ns2__ReplyMessage();
+	//reply->~ns2__ReplyMessage();
 	delete reply;
 
 	proxy.destroy();
@@ -191,7 +188,7 @@ void printResponse(ITransactionProcessorProxy proxy, ns2__ReplyMessage *reply)
 	soap_mode(proxy.soap, (soap_mode)SOAP_XML_CANONICAL);
 }
 
-int _tmain(int argc, _TCHAR* argv[])
+int main (void)
 {
 	char *requestID;
 	run();

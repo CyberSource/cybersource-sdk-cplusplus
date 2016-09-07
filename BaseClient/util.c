@@ -1,4 +1,9 @@
-#include "stdafx.h"
+#ifdef WIN32
+	#include "stdafx.h"
+#else
+	#include "ctype.h"
+	#include "string.h"
+#endif
 #include "stdio.h"
 #include "util.h"
 

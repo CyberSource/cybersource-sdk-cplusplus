@@ -127,254 +127,254 @@ struct wsc__DerivedKeyTokenType;	/* wsc.h:109 */
 struct wsc__PropertiesType;	/* wsc.h:113 */
 struct _wsse__Security;	/* wsse.h:191 */
 struct _wsse__Password;	/* wsse.h:129 */
-class ns2__Item;	/* CyberSourceTransaction_nvp_1.129.h:153 */
-class ns2__CCAuthService;	/* CyberSourceTransaction_nvp_1.129.h:156 */
-class ns2__OCTService;	/* CyberSourceTransaction_nvp_1.129.h:159 */
-class ns2__VerificationService;	/* CyberSourceTransaction_nvp_1.129.h:162 */
-class ns2__CCSaleService;	/* CyberSourceTransaction_nvp_1.129.h:165 */
-class ns2__CCSaleCreditService;	/* CyberSourceTransaction_nvp_1.129.h:168 */
-class ns2__CCSaleReversalService;	/* CyberSourceTransaction_nvp_1.129.h:171 */
-class ns2__CCIncrementalAuthService;	/* CyberSourceTransaction_nvp_1.129.h:174 */
-class ns2__CCCaptureService;	/* CyberSourceTransaction_nvp_1.129.h:177 */
-class ns2__CCCreditService;	/* CyberSourceTransaction_nvp_1.129.h:180 */
-class ns2__CCAuthReversalService;	/* CyberSourceTransaction_nvp_1.129.h:183 */
-class ns2__CCAutoAuthReversalService;	/* CyberSourceTransaction_nvp_1.129.h:186 */
-class ns2__CCDCCService;	/* CyberSourceTransaction_nvp_1.129.h:189 */
-class ns2__ServiceFeeCalculateService;	/* CyberSourceTransaction_nvp_1.129.h:192 */
-class ns2__ECDebitService;	/* CyberSourceTransaction_nvp_1.129.h:195 */
-class ns2__ECCreditService;	/* CyberSourceTransaction_nvp_1.129.h:198 */
-class ns2__ECAuthenticateService;	/* CyberSourceTransaction_nvp_1.129.h:201 */
-class ns2__PayerAuthEnrollService;	/* CyberSourceTransaction_nvp_1.129.h:204 */
-class ns2__PayerAuthValidateService;	/* CyberSourceTransaction_nvp_1.129.h:207 */
-class ns2__TaxService;	/* CyberSourceTransaction_nvp_1.129.h:210 */
-class ns2__DMEService;	/* CyberSourceTransaction_nvp_1.129.h:213 */
-class ns2__AFSService;	/* CyberSourceTransaction_nvp_1.129.h:216 */
-class ns2__DAVService;	/* CyberSourceTransaction_nvp_1.129.h:219 */
-class ns2__ExportService;	/* CyberSourceTransaction_nvp_1.129.h:222 */
-class ns2__FXRatesService;	/* CyberSourceTransaction_nvp_1.129.h:225 */
-class ns2__BankTransferService;	/* CyberSourceTransaction_nvp_1.129.h:228 */
-class ns2__BankTransferRefundService;	/* CyberSourceTransaction_nvp_1.129.h:231 */
-class ns2__BankTransferRealTimeService;	/* CyberSourceTransaction_nvp_1.129.h:234 */
-class ns2__DirectDebitMandateService;	/* CyberSourceTransaction_nvp_1.129.h:237 */
-class ns2__DirectDebitService;	/* CyberSourceTransaction_nvp_1.129.h:240 */
-class ns2__DirectDebitRefundService;	/* CyberSourceTransaction_nvp_1.129.h:243 */
-class ns2__DirectDebitValidateService;	/* CyberSourceTransaction_nvp_1.129.h:246 */
-class ns2__PaySubscriptionCreateService;	/* CyberSourceTransaction_nvp_1.129.h:249 */
-class ns2__PaySubscriptionUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:252 */
-class ns2__PaySubscriptionEventUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:255 */
-class ns2__PaySubscriptionRetrieveService;	/* CyberSourceTransaction_nvp_1.129.h:258 */
-class ns2__PaySubscriptionDeleteService;	/* CyberSourceTransaction_nvp_1.129.h:261 */
-class ns2__PayPalPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:264 */
-class ns2__PayPalCreditService;	/* CyberSourceTransaction_nvp_1.129.h:267 */
-class ns2__PayPalEcSetService;	/* CyberSourceTransaction_nvp_1.129.h:270 */
-class ns2__PayPalEcGetDetailsService;	/* CyberSourceTransaction_nvp_1.129.h:273 */
-class ns2__PayPalEcDoPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:276 */
-class ns2__PayPalDoCaptureService;	/* CyberSourceTransaction_nvp_1.129.h:279 */
-class ns2__PayPalAuthReversalService;	/* CyberSourceTransaction_nvp_1.129.h:282 */
-class ns2__PayPalRefundService;	/* CyberSourceTransaction_nvp_1.129.h:285 */
-class ns2__PayPalEcOrderSetupService;	/* CyberSourceTransaction_nvp_1.129.h:288 */
-class ns2__PayPalAuthorizationService;	/* CyberSourceTransaction_nvp_1.129.h:291 */
-class ns2__PayPalUpdateAgreementService;	/* CyberSourceTransaction_nvp_1.129.h:294 */
-class ns2__PayPalCreateAgreementService;	/* CyberSourceTransaction_nvp_1.129.h:297 */
-class ns2__PayPalDoRefTransactionService;	/* CyberSourceTransaction_nvp_1.129.h:300 */
-class ns2__VoidService;	/* CyberSourceTransaction_nvp_1.129.h:303 */
-class ns2__PinlessDebitService;	/* CyberSourceTransaction_nvp_1.129.h:306 */
-class ns2__PinlessDebitValidateService;	/* CyberSourceTransaction_nvp_1.129.h:309 */
-class ns2__PinlessDebitReversalService;	/* CyberSourceTransaction_nvp_1.129.h:312 */
-class ns2__PinDebitPurchaseService;	/* CyberSourceTransaction_nvp_1.129.h:315 */
-class ns2__PinDebitCreditService;	/* CyberSourceTransaction_nvp_1.129.h:318 */
-class ns2__PinDebitReversalService;	/* CyberSourceTransaction_nvp_1.129.h:321 */
-class ns2__PayPalButtonCreateService;	/* CyberSourceTransaction_nvp_1.129.h:324 */
-class ns2__PayPalPreapprovedPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:327 */
-class ns2__PayPalPreapprovedUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:330 */
-class ns2__ChinaPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:333 */
-class ns2__ChinaRefundService;	/* CyberSourceTransaction_nvp_1.129.h:336 */
-class ns2__BoletoPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:339 */
-class ns2__PersonalId;	/* CyberSourceTransaction_nvp_1.129.h:342 */
-class ns2__Address;	/* CyberSourceTransaction_nvp_1.129.h:345 */
-class ns2__APInitiateService;	/* CyberSourceTransaction_nvp_1.129.h:348 */
-class ns2__APCheckStatusService;	/* CyberSourceTransaction_nvp_1.129.h:351 */
-class ns2__RiskUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:354 */
-class ns2__FraudUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:357 */
-class ns2__CaseManagementActionService;	/* CyberSourceTransaction_nvp_1.129.h:360 */
-class ns2__EncryptPaymentDataService;	/* CyberSourceTransaction_nvp_1.129.h:363 */
-class ns2__InvoiceHeader;	/* CyberSourceTransaction_nvp_1.129.h:366 */
-class ns2__BusinessRules;	/* CyberSourceTransaction_nvp_1.129.h:369 */
-class ns2__BillTo;	/* CyberSourceTransaction_nvp_1.129.h:372 */
-class ns2__ShipTo;	/* CyberSourceTransaction_nvp_1.129.h:375 */
-class ns2__ShipFrom;	/* CyberSourceTransaction_nvp_1.129.h:378 */
-class ns2__Card;	/* CyberSourceTransaction_nvp_1.129.h:381 */
-class ns2__Check;	/* CyberSourceTransaction_nvp_1.129.h:384 */
-class ns2__BML;	/* CyberSourceTransaction_nvp_1.129.h:387 */
-class ns2__OtherTax;	/* CyberSourceTransaction_nvp_1.129.h:390 */
-class ns2__Aft;	/* CyberSourceTransaction_nvp_1.129.h:393 */
-class ns2__Wallet;	/* CyberSourceTransaction_nvp_1.129.h:396 */
-class ns2__PurchaseTotals;	/* CyberSourceTransaction_nvp_1.129.h:399 */
-class ns2__FundingTotals;	/* CyberSourceTransaction_nvp_1.129.h:402 */
-class ns2__GECC;	/* CyberSourceTransaction_nvp_1.129.h:405 */
-class ns2__UCAF;	/* CyberSourceTransaction_nvp_1.129.h:408 */
-class ns2__FundTransfer;	/* CyberSourceTransaction_nvp_1.129.h:411 */
-class ns2__BankInfo;	/* CyberSourceTransaction_nvp_1.129.h:414 */
-class ns2__RecurringSubscriptionInfo;	/* CyberSourceTransaction_nvp_1.129.h:417 */
-class ns2__PaySubscriptionEvent;	/* CyberSourceTransaction_nvp_1.129.h:420 */
-class ns2__Subscription;	/* CyberSourceTransaction_nvp_1.129.h:423 */
-class ns2__PaymentNetworkToken;	/* CyberSourceTransaction_nvp_1.129.h:426 */
-class ns2__DecisionManager;	/* CyberSourceTransaction_nvp_1.129.h:429 */
-class ns2__DecisionManagerTravelData;	/* CyberSourceTransaction_nvp_1.129.h:432 */
-class ns2__DecisionManagerTravelLeg;	/* CyberSourceTransaction_nvp_1.129.h:435 */
-class ns2__Batch;	/* CyberSourceTransaction_nvp_1.129.h:438 */
-class ns2__PayPal;	/* CyberSourceTransaction_nvp_1.129.h:441 */
-class ns2__JPO;	/* CyberSourceTransaction_nvp_1.129.h:444 */
-class ns2__Token;	/* CyberSourceTransaction_nvp_1.129.h:447 */
-class ns2__AP;	/* CyberSourceTransaction_nvp_1.129.h:450 */
-class ns2__APDevice;	/* CyberSourceTransaction_nvp_1.129.h:453 */
-class ns2__APAuthService;	/* CyberSourceTransaction_nvp_1.129.h:456 */
-class ns2__APAuthReversalService;	/* CyberSourceTransaction_nvp_1.129.h:459 */
-class ns2__APCaptureService;	/* CyberSourceTransaction_nvp_1.129.h:462 */
-class ns2__APOptionsService;	/* CyberSourceTransaction_nvp_1.129.h:465 */
-class ns2__APRefundService;	/* CyberSourceTransaction_nvp_1.129.h:468 */
-class ns2__APSaleService;	/* CyberSourceTransaction_nvp_1.129.h:471 */
-class ns2__APCheckOutDetailsService;	/* CyberSourceTransaction_nvp_1.129.h:474 */
-class ns2__APTransactionDetailsService;	/* CyberSourceTransaction_nvp_1.129.h:477 */
-class ns2__APConfirmPurchaseService;	/* CyberSourceTransaction_nvp_1.129.h:480 */
-class ns2__PayPalGetTxnDetailsService;	/* CyberSourceTransaction_nvp_1.129.h:483 */
-class ns2__PayPalTransactionSearchService;	/* CyberSourceTransaction_nvp_1.129.h:486 */
-class ns2__Recipient;	/* CyberSourceTransaction_nvp_1.129.h:489 */
-class ns2__Sender;	/* CyberSourceTransaction_nvp_1.129.h:492 */
-class ns2__RequestMessage;	/* CyberSourceTransaction_nvp_1.129.h:495 */
-class ns2__VC;	/* CyberSourceTransaction_nvp_1.129.h:498 */
-class ns2__DecryptVisaCheckoutDataService;	/* CyberSourceTransaction_nvp_1.129.h:501 */
-class ns2__DCC;	/* CyberSourceTransaction_nvp_1.129.h:504 */
-class ns2__Promotion;	/* CyberSourceTransaction_nvp_1.129.h:507 */
-class ns2__PromotionGroup;	/* CyberSourceTransaction_nvp_1.129.h:510 */
-class ns2__PromotionGroupReply;	/* CyberSourceTransaction_nvp_1.129.h:513 */
-class ns2__CCAuthReply;	/* CyberSourceTransaction_nvp_1.129.h:516 */
-class ns2__OCTReply;	/* CyberSourceTransaction_nvp_1.129.h:519 */
-class ns2__VerificationReply;	/* CyberSourceTransaction_nvp_1.129.h:522 */
-class ns2__CCSaleReply;	/* CyberSourceTransaction_nvp_1.129.h:525 */
-class ns2__CCSaleCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:528 */
-class ns2__CCSaleReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:531 */
-class ns2__CCIncrementalAuthReply;	/* CyberSourceTransaction_nvp_1.129.h:534 */
-class ns2__CCCaptureReply;	/* CyberSourceTransaction_nvp_1.129.h:537 */
-class ns2__ServiceFeeCalculateReply;	/* CyberSourceTransaction_nvp_1.129.h:540 */
-class ns2__CCCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:543 */
-class ns2__PinDebitPurchaseReply;	/* CyberSourceTransaction_nvp_1.129.h:546 */
-class ns2__PinDebitCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:549 */
-class ns2__PinDebitReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:552 */
-class ns2__CCAuthReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:555 */
-class ns2__CCAutoAuthReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:558 */
-class ns2__ECDebitReply;	/* CyberSourceTransaction_nvp_1.129.h:561 */
-class ns2__ECCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:564 */
-class ns2__ECAuthenticateReply;	/* CyberSourceTransaction_nvp_1.129.h:567 */
-class ns2__PayerAuthEnrollReply;	/* CyberSourceTransaction_nvp_1.129.h:570 */
-class ns2__PayerAuthValidateReply;	/* CyberSourceTransaction_nvp_1.129.h:573 */
-class ns2__TaxReplyItem;	/* CyberSourceTransaction_nvp_1.129.h:576 */
-class ns2__TaxReply;	/* CyberSourceTransaction_nvp_1.129.h:579 */
-class ns2__DeviceFingerprint;	/* CyberSourceTransaction_nvp_1.129.h:582 */
-class ns2__AFSReply;	/* CyberSourceTransaction_nvp_1.129.h:585 */
-class ns2__DAVReply;	/* CyberSourceTransaction_nvp_1.129.h:588 */
-class ns2__DeniedPartiesMatch;	/* CyberSourceTransaction_nvp_1.129.h:591 */
-class ns2__ExportReply;	/* CyberSourceTransaction_nvp_1.129.h:594 */
-class ns2__FXQuote;	/* CyberSourceTransaction_nvp_1.129.h:597 */
-class ns2__FXRatesReply;	/* CyberSourceTransaction_nvp_1.129.h:600 */
-class ns2__BankTransferReply;	/* CyberSourceTransaction_nvp_1.129.h:603 */
-class ns2__BankTransferRealTimeReply;	/* CyberSourceTransaction_nvp_1.129.h:606 */
-class ns2__DirectDebitMandateReply;	/* CyberSourceTransaction_nvp_1.129.h:609 */
-class ns2__BankTransferRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:612 */
-class ns2__DirectDebitReply;	/* CyberSourceTransaction_nvp_1.129.h:615 */
-class ns2__DirectDebitValidateReply;	/* CyberSourceTransaction_nvp_1.129.h:618 */
-class ns2__DirectDebitRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:621 */
-class ns2__PaySubscriptionCreateReply;	/* CyberSourceTransaction_nvp_1.129.h:624 */
-class ns2__PaySubscriptionUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:627 */
-class ns2__PaySubscriptionEventUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:630 */
-class ns2__PaySubscriptionRetrieveReply;	/* CyberSourceTransaction_nvp_1.129.h:633 */
-class ns2__PaySubscriptionDeleteReply;	/* CyberSourceTransaction_nvp_1.129.h:636 */
-class ns2__PayPalPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:639 */
-class ns2__PayPalCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:642 */
-class ns2__VoidReply;	/* CyberSourceTransaction_nvp_1.129.h:645 */
-class ns2__PinlessDebitReply;	/* CyberSourceTransaction_nvp_1.129.h:648 */
-class ns2__PinlessDebitValidateReply;	/* CyberSourceTransaction_nvp_1.129.h:651 */
-class ns2__PinlessDebitReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:654 */
-class ns2__PayPalButtonCreateReply;	/* CyberSourceTransaction_nvp_1.129.h:657 */
-class ns2__PayPalPreapprovedPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:660 */
-class ns2__PayPalPreapprovedUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:663 */
-class ns2__PayPalEcSetReply;	/* CyberSourceTransaction_nvp_1.129.h:666 */
-class ns2__PayPalEcGetDetailsReply;	/* CyberSourceTransaction_nvp_1.129.h:669 */
-class ns2__PayPalEcDoPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:672 */
-class ns2__PayPalDoCaptureReply;	/* CyberSourceTransaction_nvp_1.129.h:675 */
-class ns2__PayPalAuthReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:678 */
-class ns2__PayPalRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:681 */
-class ns2__PayPalEcOrderSetupReply;	/* CyberSourceTransaction_nvp_1.129.h:684 */
-class ns2__PayPalAuthorizationReply;	/* CyberSourceTransaction_nvp_1.129.h:687 */
-class ns2__PayPalUpdateAgreementReply;	/* CyberSourceTransaction_nvp_1.129.h:690 */
-class ns2__PayPalCreateAgreementReply;	/* CyberSourceTransaction_nvp_1.129.h:693 */
-class ns2__PayPalDoRefTransactionReply;	/* CyberSourceTransaction_nvp_1.129.h:696 */
-class ns2__RiskUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:699 */
-class ns2__FraudUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:702 */
-class ns2__CaseManagementActionReply;	/* CyberSourceTransaction_nvp_1.129.h:705 */
-class ns2__RuleResultItem;	/* CyberSourceTransaction_nvp_1.129.h:708 */
-class ns2__RuleResultItems;	/* CyberSourceTransaction_nvp_1.129.h:711 */
-class ns2__DecisionReply;	/* CyberSourceTransaction_nvp_1.129.h:714 */
-class ns2__AdditionalFields;	/* CyberSourceTransaction_nvp_1.129.h:717 */
-class ns2__Field;	/* CyberSourceTransaction_nvp_1.129.h:720 */
-class ns2__DMEReply;	/* CyberSourceTransaction_nvp_1.129.h:723 */
-class ns2__ProfileReply;	/* CyberSourceTransaction_nvp_1.129.h:726 */
-class ns2__CCDCCReply;	/* CyberSourceTransaction_nvp_1.129.h:729 */
-class ns2__CCDCCUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:732 */
-class ns2__ChinaPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:735 */
-class ns2__ChinaRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:738 */
-class ns2__BoletoPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:741 */
-class ns2__APInitiateReply;	/* CyberSourceTransaction_nvp_1.129.h:744 */
-class ns2__APCheckStatusReply;	/* CyberSourceTransaction_nvp_1.129.h:747 */
-class ns2__APReply;	/* CyberSourceTransaction_nvp_1.129.h:750 */
-class ns2__APAuthReply;	/* CyberSourceTransaction_nvp_1.129.h:753 */
-class ns2__APAuthReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:756 */
-class ns2__APCaptureReply;	/* CyberSourceTransaction_nvp_1.129.h:759 */
-class ns2__APOptionsReply;	/* CyberSourceTransaction_nvp_1.129.h:762 */
-class ns2__APOptionsOption;	/* CyberSourceTransaction_nvp_1.129.h:765 */
-class ns2__APRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:768 */
-class ns2__APSaleReply;	/* CyberSourceTransaction_nvp_1.129.h:771 */
-class ns2__APCheckOutDetailsReply;	/* CyberSourceTransaction_nvp_1.129.h:774 */
-class ns2__APTransactionDetailsReply;	/* CyberSourceTransaction_nvp_1.129.h:777 */
-class ns2__APConfirmPurchaseReply;	/* CyberSourceTransaction_nvp_1.129.h:780 */
-class ns2__ReplyMessage;	/* CyberSourceTransaction_nvp_1.129.h:783 */
-class ns2__FaultDetails;	/* CyberSourceTransaction_nvp_1.129.h:786 */
-class ns2__AirlineData;	/* CyberSourceTransaction_nvp_1.129.h:789 */
-class ns2__Leg;	/* CyberSourceTransaction_nvp_1.129.h:792 */
-class ns2__AncillaryData;	/* CyberSourceTransaction_nvp_1.129.h:795 */
-class ns2__Service;	/* CyberSourceTransaction_nvp_1.129.h:798 */
-class ns2__LodgingData;	/* CyberSourceTransaction_nvp_1.129.h:801 */
-class ns2__Pos;	/* CyberSourceTransaction_nvp_1.129.h:804 */
-class ns2__EncryptedPayment;	/* CyberSourceTransaction_nvp_1.129.h:807 */
-class ns2__Installment;	/* CyberSourceTransaction_nvp_1.129.h:810 */
-class ns2__MerchantDefinedData;	/* CyberSourceTransaction_nvp_1.129.h:816 */
-class ns2__MerchantSecureData;	/* CyberSourceTransaction_nvp_1.129.h:819 */
-class ns2__ReplyReserved;	/* CyberSourceTransaction_nvp_1.129.h:822 */
-class ns2__RequestReserved;	/* CyberSourceTransaction_nvp_1.129.h:825 */
-class ns2__PayPalGetTxnDetailsReply;	/* CyberSourceTransaction_nvp_1.129.h:828 */
-class ns2__PayPalTransactionSearchReply;	/* CyberSourceTransaction_nvp_1.129.h:831 */
-class ns2__PaypalTransaction;	/* CyberSourceTransaction_nvp_1.129.h:834 */
-class ns2__CCDCCUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:837 */
-class ns2__ServiceFee;	/* CyberSourceTransaction_nvp_1.129.h:840 */
-class ns2__EmvRequest;	/* CyberSourceTransaction_nvp_1.129.h:843 */
-class ns2__EmvReply;	/* CyberSourceTransaction_nvp_1.129.h:846 */
-class ns2__OriginalTransaction;	/* CyberSourceTransaction_nvp_1.129.h:849 */
-class ns2__HostedDataCreateService;	/* CyberSourceTransaction_nvp_1.129.h:852 */
-class ns2__HostedDataRetrieveService;	/* CyberSourceTransaction_nvp_1.129.h:855 */
-class ns2__HostedDataCreateReply;	/* CyberSourceTransaction_nvp_1.129.h:858 */
-class ns2__HostedDataRetrieveReply;	/* CyberSourceTransaction_nvp_1.129.h:861 */
-class ns2__AutoRentalData;	/* CyberSourceTransaction_nvp_1.129.h:864 */
-class ns2__VCReply;	/* CyberSourceTransaction_nvp_1.129.h:867 */
-class ns2__VCCardArt;	/* CyberSourceTransaction_nvp_1.129.h:870 */
-class ns2__VCCustomData;	/* CyberSourceTransaction_nvp_1.129.h:873 */
-class ns2__DecryptVisaCheckoutDataReply;	/* CyberSourceTransaction_nvp_1.129.h:876 */
-class ns2__EncryptPaymentDataReply;	/* CyberSourceTransaction_nvp_1.129.h:879 */
-class ns2__BinLookupService;	/* CyberSourceTransaction_nvp_1.129.h:882 */
-class ns2__BinLookupReply;	/* CyberSourceTransaction_nvp_1.129.h:885 */
-class ns2__issuer;	/* CyberSourceTransaction_nvp_1.129.h:888 */
-class ns2__MDDField;	/* CyberSourceTransaction_nvp_1.129.h:813 */
-struct __ns1__runTransactionResponse;	/* CyberSourceTransaction_nvp_1.129.h:10712 */
-struct __ns1__runTransaction;	/* CyberSourceTransaction_nvp_1.129.h:10712 */
+class ns2__Item;	/* CyberSourceTransaction_nvp_1.129.h:152 */
+class ns2__CCAuthService;	/* CyberSourceTransaction_nvp_1.129.h:155 */
+class ns2__OCTService;	/* CyberSourceTransaction_nvp_1.129.h:158 */
+class ns2__VerificationService;	/* CyberSourceTransaction_nvp_1.129.h:161 */
+class ns2__CCSaleService;	/* CyberSourceTransaction_nvp_1.129.h:164 */
+class ns2__CCSaleCreditService;	/* CyberSourceTransaction_nvp_1.129.h:167 */
+class ns2__CCSaleReversalService;	/* CyberSourceTransaction_nvp_1.129.h:170 */
+class ns2__CCIncrementalAuthService;	/* CyberSourceTransaction_nvp_1.129.h:173 */
+class ns2__CCCaptureService;	/* CyberSourceTransaction_nvp_1.129.h:176 */
+class ns2__CCCreditService;	/* CyberSourceTransaction_nvp_1.129.h:179 */
+class ns2__CCAuthReversalService;	/* CyberSourceTransaction_nvp_1.129.h:182 */
+class ns2__CCAutoAuthReversalService;	/* CyberSourceTransaction_nvp_1.129.h:185 */
+class ns2__CCDCCService;	/* CyberSourceTransaction_nvp_1.129.h:188 */
+class ns2__ServiceFeeCalculateService;	/* CyberSourceTransaction_nvp_1.129.h:191 */
+class ns2__ECDebitService;	/* CyberSourceTransaction_nvp_1.129.h:194 */
+class ns2__ECCreditService;	/* CyberSourceTransaction_nvp_1.129.h:197 */
+class ns2__ECAuthenticateService;	/* CyberSourceTransaction_nvp_1.129.h:200 */
+class ns2__PayerAuthEnrollService;	/* CyberSourceTransaction_nvp_1.129.h:203 */
+class ns2__PayerAuthValidateService;	/* CyberSourceTransaction_nvp_1.129.h:206 */
+class ns2__TaxService;	/* CyberSourceTransaction_nvp_1.129.h:209 */
+class ns2__DMEService;	/* CyberSourceTransaction_nvp_1.129.h:212 */
+class ns2__AFSService;	/* CyberSourceTransaction_nvp_1.129.h:215 */
+class ns2__DAVService;	/* CyberSourceTransaction_nvp_1.129.h:218 */
+class ns2__ExportService;	/* CyberSourceTransaction_nvp_1.129.h:221 */
+class ns2__FXRatesService;	/* CyberSourceTransaction_nvp_1.129.h:224 */
+class ns2__BankTransferService;	/* CyberSourceTransaction_nvp_1.129.h:227 */
+class ns2__BankTransferRefundService;	/* CyberSourceTransaction_nvp_1.129.h:230 */
+class ns2__BankTransferRealTimeService;	/* CyberSourceTransaction_nvp_1.129.h:233 */
+class ns2__DirectDebitMandateService;	/* CyberSourceTransaction_nvp_1.129.h:236 */
+class ns2__DirectDebitService;	/* CyberSourceTransaction_nvp_1.129.h:239 */
+class ns2__DirectDebitRefundService;	/* CyberSourceTransaction_nvp_1.129.h:242 */
+class ns2__DirectDebitValidateService;	/* CyberSourceTransaction_nvp_1.129.h:245 */
+class ns2__PaySubscriptionCreateService;	/* CyberSourceTransaction_nvp_1.129.h:248 */
+class ns2__PaySubscriptionUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:251 */
+class ns2__PaySubscriptionEventUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:254 */
+class ns2__PaySubscriptionRetrieveService;	/* CyberSourceTransaction_nvp_1.129.h:257 */
+class ns2__PaySubscriptionDeleteService;	/* CyberSourceTransaction_nvp_1.129.h:260 */
+class ns2__PayPalPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:263 */
+class ns2__PayPalCreditService;	/* CyberSourceTransaction_nvp_1.129.h:266 */
+class ns2__PayPalEcSetService;	/* CyberSourceTransaction_nvp_1.129.h:269 */
+class ns2__PayPalEcGetDetailsService;	/* CyberSourceTransaction_nvp_1.129.h:272 */
+class ns2__PayPalEcDoPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:275 */
+class ns2__PayPalDoCaptureService;	/* CyberSourceTransaction_nvp_1.129.h:278 */
+class ns2__PayPalAuthReversalService;	/* CyberSourceTransaction_nvp_1.129.h:281 */
+class ns2__PayPalRefundService;	/* CyberSourceTransaction_nvp_1.129.h:284 */
+class ns2__PayPalEcOrderSetupService;	/* CyberSourceTransaction_nvp_1.129.h:287 */
+class ns2__PayPalAuthorizationService;	/* CyberSourceTransaction_nvp_1.129.h:290 */
+class ns2__PayPalUpdateAgreementService;	/* CyberSourceTransaction_nvp_1.129.h:293 */
+class ns2__PayPalCreateAgreementService;	/* CyberSourceTransaction_nvp_1.129.h:296 */
+class ns2__PayPalDoRefTransactionService;	/* CyberSourceTransaction_nvp_1.129.h:299 */
+class ns2__VoidService;	/* CyberSourceTransaction_nvp_1.129.h:302 */
+class ns2__PinlessDebitService;	/* CyberSourceTransaction_nvp_1.129.h:305 */
+class ns2__PinlessDebitValidateService;	/* CyberSourceTransaction_nvp_1.129.h:308 */
+class ns2__PinlessDebitReversalService;	/* CyberSourceTransaction_nvp_1.129.h:311 */
+class ns2__PinDebitPurchaseService;	/* CyberSourceTransaction_nvp_1.129.h:314 */
+class ns2__PinDebitCreditService;	/* CyberSourceTransaction_nvp_1.129.h:317 */
+class ns2__PinDebitReversalService;	/* CyberSourceTransaction_nvp_1.129.h:320 */
+class ns2__PayPalButtonCreateService;	/* CyberSourceTransaction_nvp_1.129.h:323 */
+class ns2__PayPalPreapprovedPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:326 */
+class ns2__PayPalPreapprovedUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:329 */
+class ns2__ChinaPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:332 */
+class ns2__ChinaRefundService;	/* CyberSourceTransaction_nvp_1.129.h:335 */
+class ns2__BoletoPaymentService;	/* CyberSourceTransaction_nvp_1.129.h:338 */
+class ns2__PersonalId;	/* CyberSourceTransaction_nvp_1.129.h:341 */
+class ns2__Address;	/* CyberSourceTransaction_nvp_1.129.h:344 */
+class ns2__APInitiateService;	/* CyberSourceTransaction_nvp_1.129.h:347 */
+class ns2__APCheckStatusService;	/* CyberSourceTransaction_nvp_1.129.h:350 */
+class ns2__RiskUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:353 */
+class ns2__FraudUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:356 */
+class ns2__CaseManagementActionService;	/* CyberSourceTransaction_nvp_1.129.h:359 */
+class ns2__EncryptPaymentDataService;	/* CyberSourceTransaction_nvp_1.129.h:362 */
+class ns2__InvoiceHeader;	/* CyberSourceTransaction_nvp_1.129.h:365 */
+class ns2__BusinessRules;	/* CyberSourceTransaction_nvp_1.129.h:368 */
+class ns2__BillTo;	/* CyberSourceTransaction_nvp_1.129.h:371 */
+class ns2__ShipTo;	/* CyberSourceTransaction_nvp_1.129.h:374 */
+class ns2__ShipFrom;	/* CyberSourceTransaction_nvp_1.129.h:377 */
+class ns2__Card;	/* CyberSourceTransaction_nvp_1.129.h:380 */
+class ns2__Check;	/* CyberSourceTransaction_nvp_1.129.h:383 */
+class ns2__BML;	/* CyberSourceTransaction_nvp_1.129.h:386 */
+class ns2__OtherTax;	/* CyberSourceTransaction_nvp_1.129.h:389 */
+class ns2__Aft;	/* CyberSourceTransaction_nvp_1.129.h:392 */
+class ns2__Wallet;	/* CyberSourceTransaction_nvp_1.129.h:395 */
+class ns2__PurchaseTotals;	/* CyberSourceTransaction_nvp_1.129.h:398 */
+class ns2__FundingTotals;	/* CyberSourceTransaction_nvp_1.129.h:401 */
+class ns2__GECC;	/* CyberSourceTransaction_nvp_1.129.h:404 */
+class ns2__UCAF;	/* CyberSourceTransaction_nvp_1.129.h:407 */
+class ns2__FundTransfer;	/* CyberSourceTransaction_nvp_1.129.h:410 */
+class ns2__BankInfo;	/* CyberSourceTransaction_nvp_1.129.h:413 */
+class ns2__RecurringSubscriptionInfo;	/* CyberSourceTransaction_nvp_1.129.h:416 */
+class ns2__PaySubscriptionEvent;	/* CyberSourceTransaction_nvp_1.129.h:419 */
+class ns2__Subscription;	/* CyberSourceTransaction_nvp_1.129.h:422 */
+class ns2__PaymentNetworkToken;	/* CyberSourceTransaction_nvp_1.129.h:425 */
+class ns2__DecisionManager;	/* CyberSourceTransaction_nvp_1.129.h:428 */
+class ns2__DecisionManagerTravelData;	/* CyberSourceTransaction_nvp_1.129.h:431 */
+class ns2__DecisionManagerTravelLeg;	/* CyberSourceTransaction_nvp_1.129.h:434 */
+class ns2__Batch;	/* CyberSourceTransaction_nvp_1.129.h:437 */
+class ns2__PayPal;	/* CyberSourceTransaction_nvp_1.129.h:440 */
+class ns2__JPO;	/* CyberSourceTransaction_nvp_1.129.h:443 */
+class ns2__Token;	/* CyberSourceTransaction_nvp_1.129.h:446 */
+class ns2__AP;	/* CyberSourceTransaction_nvp_1.129.h:449 */
+class ns2__APDevice;	/* CyberSourceTransaction_nvp_1.129.h:452 */
+class ns2__APAuthService;	/* CyberSourceTransaction_nvp_1.129.h:455 */
+class ns2__APAuthReversalService;	/* CyberSourceTransaction_nvp_1.129.h:458 */
+class ns2__APCaptureService;	/* CyberSourceTransaction_nvp_1.129.h:461 */
+class ns2__APOptionsService;	/* CyberSourceTransaction_nvp_1.129.h:464 */
+class ns2__APRefundService;	/* CyberSourceTransaction_nvp_1.129.h:467 */
+class ns2__APSaleService;	/* CyberSourceTransaction_nvp_1.129.h:470 */
+class ns2__APCheckOutDetailsService;	/* CyberSourceTransaction_nvp_1.129.h:473 */
+class ns2__APTransactionDetailsService;	/* CyberSourceTransaction_nvp_1.129.h:476 */
+class ns2__APConfirmPurchaseService;	/* CyberSourceTransaction_nvp_1.129.h:479 */
+class ns2__PayPalGetTxnDetailsService;	/* CyberSourceTransaction_nvp_1.129.h:482 */
+class ns2__PayPalTransactionSearchService;	/* CyberSourceTransaction_nvp_1.129.h:485 */
+class ns2__Recipient;	/* CyberSourceTransaction_nvp_1.129.h:488 */
+class ns2__Sender;	/* CyberSourceTransaction_nvp_1.129.h:491 */
+class ns2__RequestMessage;	/* CyberSourceTransaction_nvp_1.129.h:494 */
+class ns2__VC;	/* CyberSourceTransaction_nvp_1.129.h:497 */
+class ns2__DecryptVisaCheckoutDataService;	/* CyberSourceTransaction_nvp_1.129.h:500 */
+class ns2__DCC;	/* CyberSourceTransaction_nvp_1.129.h:503 */
+class ns2__Promotion;	/* CyberSourceTransaction_nvp_1.129.h:506 */
+class ns2__PromotionGroup;	/* CyberSourceTransaction_nvp_1.129.h:509 */
+class ns2__PromotionGroupReply;	/* CyberSourceTransaction_nvp_1.129.h:512 */
+class ns2__CCAuthReply;	/* CyberSourceTransaction_nvp_1.129.h:515 */
+class ns2__OCTReply;	/* CyberSourceTransaction_nvp_1.129.h:518 */
+class ns2__VerificationReply;	/* CyberSourceTransaction_nvp_1.129.h:521 */
+class ns2__CCSaleReply;	/* CyberSourceTransaction_nvp_1.129.h:524 */
+class ns2__CCSaleCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:527 */
+class ns2__CCSaleReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:530 */
+class ns2__CCIncrementalAuthReply;	/* CyberSourceTransaction_nvp_1.129.h:533 */
+class ns2__CCCaptureReply;	/* CyberSourceTransaction_nvp_1.129.h:536 */
+class ns2__ServiceFeeCalculateReply;	/* CyberSourceTransaction_nvp_1.129.h:539 */
+class ns2__CCCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:542 */
+class ns2__PinDebitPurchaseReply;	/* CyberSourceTransaction_nvp_1.129.h:545 */
+class ns2__PinDebitCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:548 */
+class ns2__PinDebitReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:551 */
+class ns2__CCAuthReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:554 */
+class ns2__CCAutoAuthReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:557 */
+class ns2__ECDebitReply;	/* CyberSourceTransaction_nvp_1.129.h:560 */
+class ns2__ECCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:563 */
+class ns2__ECAuthenticateReply;	/* CyberSourceTransaction_nvp_1.129.h:566 */
+class ns2__PayerAuthEnrollReply;	/* CyberSourceTransaction_nvp_1.129.h:569 */
+class ns2__PayerAuthValidateReply;	/* CyberSourceTransaction_nvp_1.129.h:572 */
+class ns2__TaxReplyItem;	/* CyberSourceTransaction_nvp_1.129.h:575 */
+class ns2__TaxReply;	/* CyberSourceTransaction_nvp_1.129.h:578 */
+class ns2__DeviceFingerprint;	/* CyberSourceTransaction_nvp_1.129.h:581 */
+class ns2__AFSReply;	/* CyberSourceTransaction_nvp_1.129.h:584 */
+class ns2__DAVReply;	/* CyberSourceTransaction_nvp_1.129.h:587 */
+class ns2__DeniedPartiesMatch;	/* CyberSourceTransaction_nvp_1.129.h:590 */
+class ns2__ExportReply;	/* CyberSourceTransaction_nvp_1.129.h:593 */
+class ns2__FXQuote;	/* CyberSourceTransaction_nvp_1.129.h:596 */
+class ns2__FXRatesReply;	/* CyberSourceTransaction_nvp_1.129.h:599 */
+class ns2__BankTransferReply;	/* CyberSourceTransaction_nvp_1.129.h:602 */
+class ns2__BankTransferRealTimeReply;	/* CyberSourceTransaction_nvp_1.129.h:605 */
+class ns2__DirectDebitMandateReply;	/* CyberSourceTransaction_nvp_1.129.h:608 */
+class ns2__BankTransferRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:611 */
+class ns2__DirectDebitReply;	/* CyberSourceTransaction_nvp_1.129.h:614 */
+class ns2__DirectDebitValidateReply;	/* CyberSourceTransaction_nvp_1.129.h:617 */
+class ns2__DirectDebitRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:620 */
+class ns2__PaySubscriptionCreateReply;	/* CyberSourceTransaction_nvp_1.129.h:623 */
+class ns2__PaySubscriptionUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:626 */
+class ns2__PaySubscriptionEventUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:629 */
+class ns2__PaySubscriptionRetrieveReply;	/* CyberSourceTransaction_nvp_1.129.h:632 */
+class ns2__PaySubscriptionDeleteReply;	/* CyberSourceTransaction_nvp_1.129.h:635 */
+class ns2__PayPalPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:638 */
+class ns2__PayPalCreditReply;	/* CyberSourceTransaction_nvp_1.129.h:641 */
+class ns2__VoidReply;	/* CyberSourceTransaction_nvp_1.129.h:644 */
+class ns2__PinlessDebitReply;	/* CyberSourceTransaction_nvp_1.129.h:647 */
+class ns2__PinlessDebitValidateReply;	/* CyberSourceTransaction_nvp_1.129.h:650 */
+class ns2__PinlessDebitReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:653 */
+class ns2__PayPalButtonCreateReply;	/* CyberSourceTransaction_nvp_1.129.h:656 */
+class ns2__PayPalPreapprovedPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:659 */
+class ns2__PayPalPreapprovedUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:662 */
+class ns2__PayPalEcSetReply;	/* CyberSourceTransaction_nvp_1.129.h:665 */
+class ns2__PayPalEcGetDetailsReply;	/* CyberSourceTransaction_nvp_1.129.h:668 */
+class ns2__PayPalEcDoPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:671 */
+class ns2__PayPalDoCaptureReply;	/* CyberSourceTransaction_nvp_1.129.h:674 */
+class ns2__PayPalAuthReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:677 */
+class ns2__PayPalRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:680 */
+class ns2__PayPalEcOrderSetupReply;	/* CyberSourceTransaction_nvp_1.129.h:683 */
+class ns2__PayPalAuthorizationReply;	/* CyberSourceTransaction_nvp_1.129.h:686 */
+class ns2__PayPalUpdateAgreementReply;	/* CyberSourceTransaction_nvp_1.129.h:689 */
+class ns2__PayPalCreateAgreementReply;	/* CyberSourceTransaction_nvp_1.129.h:692 */
+class ns2__PayPalDoRefTransactionReply;	/* CyberSourceTransaction_nvp_1.129.h:695 */
+class ns2__RiskUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:698 */
+class ns2__FraudUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:701 */
+class ns2__CaseManagementActionReply;	/* CyberSourceTransaction_nvp_1.129.h:704 */
+class ns2__RuleResultItem;	/* CyberSourceTransaction_nvp_1.129.h:707 */
+class ns2__RuleResultItems;	/* CyberSourceTransaction_nvp_1.129.h:710 */
+class ns2__DecisionReply;	/* CyberSourceTransaction_nvp_1.129.h:713 */
+class ns2__AdditionalFields;	/* CyberSourceTransaction_nvp_1.129.h:716 */
+class ns2__Field;	/* CyberSourceTransaction_nvp_1.129.h:719 */
+class ns2__DMEReply;	/* CyberSourceTransaction_nvp_1.129.h:722 */
+class ns2__ProfileReply;	/* CyberSourceTransaction_nvp_1.129.h:725 */
+class ns2__CCDCCReply;	/* CyberSourceTransaction_nvp_1.129.h:728 */
+class ns2__CCDCCUpdateReply;	/* CyberSourceTransaction_nvp_1.129.h:731 */
+class ns2__ChinaPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:734 */
+class ns2__ChinaRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:737 */
+class ns2__BoletoPaymentReply;	/* CyberSourceTransaction_nvp_1.129.h:740 */
+class ns2__APInitiateReply;	/* CyberSourceTransaction_nvp_1.129.h:743 */
+class ns2__APCheckStatusReply;	/* CyberSourceTransaction_nvp_1.129.h:746 */
+class ns2__APReply;	/* CyberSourceTransaction_nvp_1.129.h:749 */
+class ns2__APAuthReply;	/* CyberSourceTransaction_nvp_1.129.h:752 */
+class ns2__APAuthReversalReply;	/* CyberSourceTransaction_nvp_1.129.h:755 */
+class ns2__APCaptureReply;	/* CyberSourceTransaction_nvp_1.129.h:758 */
+class ns2__APOptionsReply;	/* CyberSourceTransaction_nvp_1.129.h:761 */
+class ns2__APOptionsOption;	/* CyberSourceTransaction_nvp_1.129.h:764 */
+class ns2__APRefundReply;	/* CyberSourceTransaction_nvp_1.129.h:767 */
+class ns2__APSaleReply;	/* CyberSourceTransaction_nvp_1.129.h:770 */
+class ns2__APCheckOutDetailsReply;	/* CyberSourceTransaction_nvp_1.129.h:773 */
+class ns2__APTransactionDetailsReply;	/* CyberSourceTransaction_nvp_1.129.h:776 */
+class ns2__APConfirmPurchaseReply;	/* CyberSourceTransaction_nvp_1.129.h:779 */
+class ns2__ReplyMessage;	/* CyberSourceTransaction_nvp_1.129.h:782 */
+class ns2__FaultDetails;	/* CyberSourceTransaction_nvp_1.129.h:785 */
+class ns2__AirlineData;	/* CyberSourceTransaction_nvp_1.129.h:788 */
+class ns2__Leg;	/* CyberSourceTransaction_nvp_1.129.h:791 */
+class ns2__AncillaryData;	/* CyberSourceTransaction_nvp_1.129.h:794 */
+class ns2__Service;	/* CyberSourceTransaction_nvp_1.129.h:797 */
+class ns2__LodgingData;	/* CyberSourceTransaction_nvp_1.129.h:800 */
+class ns2__Pos;	/* CyberSourceTransaction_nvp_1.129.h:803 */
+class ns2__EncryptedPayment;	/* CyberSourceTransaction_nvp_1.129.h:806 */
+class ns2__Installment;	/* CyberSourceTransaction_nvp_1.129.h:809 */
+class ns2__MerchantDefinedData;	/* CyberSourceTransaction_nvp_1.129.h:815 */
+class ns2__MerchantSecureData;	/* CyberSourceTransaction_nvp_1.129.h:818 */
+class ns2__ReplyReserved;	/* CyberSourceTransaction_nvp_1.129.h:821 */
+class ns2__RequestReserved;	/* CyberSourceTransaction_nvp_1.129.h:824 */
+class ns2__PayPalGetTxnDetailsReply;	/* CyberSourceTransaction_nvp_1.129.h:827 */
+class ns2__PayPalTransactionSearchReply;	/* CyberSourceTransaction_nvp_1.129.h:830 */
+class ns2__PaypalTransaction;	/* CyberSourceTransaction_nvp_1.129.h:833 */
+class ns2__CCDCCUpdateService;	/* CyberSourceTransaction_nvp_1.129.h:836 */
+class ns2__ServiceFee;	/* CyberSourceTransaction_nvp_1.129.h:839 */
+class ns2__EmvRequest;	/* CyberSourceTransaction_nvp_1.129.h:842 */
+class ns2__EmvReply;	/* CyberSourceTransaction_nvp_1.129.h:845 */
+class ns2__OriginalTransaction;	/* CyberSourceTransaction_nvp_1.129.h:848 */
+class ns2__HostedDataCreateService;	/* CyberSourceTransaction_nvp_1.129.h:851 */
+class ns2__HostedDataRetrieveService;	/* CyberSourceTransaction_nvp_1.129.h:854 */
+class ns2__HostedDataCreateReply;	/* CyberSourceTransaction_nvp_1.129.h:857 */
+class ns2__HostedDataRetrieveReply;	/* CyberSourceTransaction_nvp_1.129.h:860 */
+class ns2__AutoRentalData;	/* CyberSourceTransaction_nvp_1.129.h:863 */
+class ns2__VCReply;	/* CyberSourceTransaction_nvp_1.129.h:866 */
+class ns2__VCCardArt;	/* CyberSourceTransaction_nvp_1.129.h:869 */
+class ns2__VCCustomData;	/* CyberSourceTransaction_nvp_1.129.h:872 */
+class ns2__DecryptVisaCheckoutDataReply;	/* CyberSourceTransaction_nvp_1.129.h:875 */
+class ns2__EncryptPaymentDataReply;	/* CyberSourceTransaction_nvp_1.129.h:878 */
+class ns2__BinLookupService;	/* CyberSourceTransaction_nvp_1.129.h:881 */
+class ns2__BinLookupReply;	/* CyberSourceTransaction_nvp_1.129.h:884 */
+class ns2__issuer;	/* CyberSourceTransaction_nvp_1.129.h:887 */
+class ns2__MDDField;	/* CyberSourceTransaction_nvp_1.129.h:812 */
+struct __ns1__runTransactionResponse;	/* CyberSourceTransaction_nvp_1.129.h:10711 */
+struct __ns1__runTransaction;	/* CyberSourceTransaction_nvp_1.129.h:10711 */
 
 /* wsu.h:76 */
 #ifndef SOAP_TYPE__wsu__Timestamp
@@ -1651,7 +1651,7 @@ struct SOAP_ENV__Header {
 #endif
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:153 */
+/* CyberSourceTransaction_nvp_1.129.h:152 */
 #ifndef SOAP_TYPE_ns2__Item
 #define SOAP_TYPE_ns2__Item (110)
 /* complex XSD type 'ns2:Item': */
@@ -1952,7 +1952,7 @@ class SOAP_CMAC ns2__Item {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:156 */
+/* CyberSourceTransaction_nvp_1.129.h:155 */
 #ifndef SOAP_TYPE_ns2__CCAuthService
 #define SOAP_TYPE_ns2__CCAuthService (111)
 /* complex XSD type 'ns2:CCAuthService': */
@@ -2078,7 +2078,7 @@ class SOAP_CMAC ns2__CCAuthService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:159 */
+/* CyberSourceTransaction_nvp_1.129.h:158 */
 #ifndef SOAP_TYPE_ns2__OCTService
 #define SOAP_TYPE_ns2__OCTService (112)
 /* complex XSD type 'ns2:OCTService': */
@@ -2126,7 +2126,7 @@ class SOAP_CMAC ns2__OCTService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:162 */
+/* CyberSourceTransaction_nvp_1.129.h:161 */
 #ifndef SOAP_TYPE_ns2__VerificationService
 #define SOAP_TYPE_ns2__VerificationService (113)
 /* complex XSD type 'ns2:VerificationService': */
@@ -2168,7 +2168,7 @@ class SOAP_CMAC ns2__VerificationService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:165 */
+/* CyberSourceTransaction_nvp_1.129.h:164 */
 #ifndef SOAP_TYPE_ns2__CCSaleService
 #define SOAP_TYPE_ns2__CCSaleService (114)
 /* complex XSD type 'ns2:CCSaleService': */
@@ -2228,7 +2228,7 @@ class SOAP_CMAC ns2__CCSaleService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:168 */
+/* CyberSourceTransaction_nvp_1.129.h:167 */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditService
 #define SOAP_TYPE_ns2__CCSaleCreditService (115)
 /* complex XSD type 'ns2:CCSaleCreditService': */
@@ -2282,7 +2282,7 @@ class SOAP_CMAC ns2__CCSaleCreditService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:171 */
+/* CyberSourceTransaction_nvp_1.129.h:170 */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalService
 #define SOAP_TYPE_ns2__CCSaleReversalService (116)
 /* complex XSD type 'ns2:CCSaleReversalService': */
@@ -2324,7 +2324,7 @@ class SOAP_CMAC ns2__CCSaleReversalService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:174 */
+/* CyberSourceTransaction_nvp_1.129.h:173 */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthService
 #define SOAP_TYPE_ns2__CCIncrementalAuthService (117)
 /* complex XSD type 'ns2:CCIncrementalAuthService': */
@@ -2369,7 +2369,7 @@ class SOAP_CMAC ns2__CCIncrementalAuthService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:177 */
+/* CyberSourceTransaction_nvp_1.129.h:176 */
 #ifndef SOAP_TYPE_ns2__CCCaptureService
 #define SOAP_TYPE_ns2__CCCaptureService (118)
 /* complex XSD type 'ns2:CCCaptureService': */
@@ -2468,7 +2468,7 @@ class SOAP_CMAC ns2__CCCaptureService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:180 */
+/* CyberSourceTransaction_nvp_1.129.h:179 */
 #ifndef SOAP_TYPE_ns2__CCCreditService
 #define SOAP_TYPE_ns2__CCCreditService (119)
 /* complex XSD type 'ns2:CCCreditService': */
@@ -2564,7 +2564,7 @@ class SOAP_CMAC ns2__CCCreditService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:183 */
+/* CyberSourceTransaction_nvp_1.129.h:182 */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalService
 #define SOAP_TYPE_ns2__CCAuthReversalService (120)
 /* complex XSD type 'ns2:CCAuthReversalService': */
@@ -2612,7 +2612,7 @@ class SOAP_CMAC ns2__CCAuthReversalService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:186 */
+/* CyberSourceTransaction_nvp_1.129.h:185 */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalService
 #define SOAP_TYPE_ns2__CCAutoAuthReversalService (121)
 /* complex XSD type 'ns2:CCAutoAuthReversalService': */
@@ -2681,7 +2681,7 @@ class SOAP_CMAC ns2__CCAutoAuthReversalService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:189 */
+/* CyberSourceTransaction_nvp_1.129.h:188 */
 #ifndef SOAP_TYPE_ns2__CCDCCService
 #define SOAP_TYPE_ns2__CCDCCService (122)
 /* complex XSD type 'ns2:CCDCCService': */
@@ -2720,7 +2720,7 @@ class SOAP_CMAC ns2__CCDCCService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:192 */
+/* CyberSourceTransaction_nvp_1.129.h:191 */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateService
 #define SOAP_TYPE_ns2__ServiceFeeCalculateService (123)
 /* complex XSD type 'ns2:ServiceFeeCalculateService': */
@@ -2759,7 +2759,7 @@ class SOAP_CMAC ns2__ServiceFeeCalculateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:195 */
+/* CyberSourceTransaction_nvp_1.129.h:194 */
 #ifndef SOAP_TYPE_ns2__ECDebitService
 #define SOAP_TYPE_ns2__ECDebitService (124)
 /* complex XSD type 'ns2:ECDebitService': */
@@ -2825,7 +2825,7 @@ class SOAP_CMAC ns2__ECDebitService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:198 */
+/* CyberSourceTransaction_nvp_1.129.h:197 */
 #ifndef SOAP_TYPE_ns2__ECCreditService
 #define SOAP_TYPE_ns2__ECCreditService (125)
 /* complex XSD type 'ns2:ECCreditService': */
@@ -2888,7 +2888,7 @@ class SOAP_CMAC ns2__ECCreditService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:201 */
+/* CyberSourceTransaction_nvp_1.129.h:200 */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateService
 #define SOAP_TYPE_ns2__ECAuthenticateService (126)
 /* complex XSD type 'ns2:ECAuthenticateService': */
@@ -2930,7 +2930,7 @@ class SOAP_CMAC ns2__ECAuthenticateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:204 */
+/* CyberSourceTransaction_nvp_1.129.h:203 */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollService
 #define SOAP_TYPE_ns2__PayerAuthEnrollService (127)
 /* complex XSD type 'ns2:PayerAuthEnrollService': */
@@ -3014,7 +3014,7 @@ class SOAP_CMAC ns2__PayerAuthEnrollService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:207 */
+/* CyberSourceTransaction_nvp_1.129.h:206 */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateService
 #define SOAP_TYPE_ns2__PayerAuthValidateService (128)
 /* complex XSD type 'ns2:PayerAuthValidateService': */
@@ -3056,7 +3056,7 @@ class SOAP_CMAC ns2__PayerAuthValidateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:210 */
+/* CyberSourceTransaction_nvp_1.129.h:209 */
 #ifndef SOAP_TYPE_ns2__TaxService
 #define SOAP_TYPE_ns2__TaxService (129)
 /* complex XSD type 'ns2:TaxService': */
@@ -3173,7 +3173,7 @@ class SOAP_CMAC ns2__TaxService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:213 */
+/* CyberSourceTransaction_nvp_1.129.h:212 */
 #ifndef SOAP_TYPE_ns2__DMEService
 #define SOAP_TYPE_ns2__DMEService (130)
 /* complex XSD type 'ns2:DMEService': */
@@ -3218,7 +3218,7 @@ class SOAP_CMAC ns2__DMEService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:216 */
+/* CyberSourceTransaction_nvp_1.129.h:215 */
 #ifndef SOAP_TYPE_ns2__AFSService
 #define SOAP_TYPE_ns2__AFSService (131)
 /* complex XSD type 'ns2:AFSService': */
@@ -3269,7 +3269,7 @@ class SOAP_CMAC ns2__AFSService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:219 */
+/* CyberSourceTransaction_nvp_1.129.h:218 */
 #ifndef SOAP_TYPE_ns2__DAVService
 #define SOAP_TYPE_ns2__DAVService (132)
 /* complex XSD type 'ns2:DAVService': */
@@ -3308,7 +3308,7 @@ class SOAP_CMAC ns2__DAVService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:222 */
+/* CyberSourceTransaction_nvp_1.129.h:221 */
 #ifndef SOAP_TYPE_ns2__ExportService
 #define SOAP_TYPE_ns2__ExportService (133)
 /* complex XSD type 'ns2:ExportService': */
@@ -3359,7 +3359,7 @@ class SOAP_CMAC ns2__ExportService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:225 */
+/* CyberSourceTransaction_nvp_1.129.h:224 */
 #ifndef SOAP_TYPE_ns2__FXRatesService
 #define SOAP_TYPE_ns2__FXRatesService (134)
 /* complex XSD type 'ns2:FXRatesService': */
@@ -3398,7 +3398,7 @@ class SOAP_CMAC ns2__FXRatesService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:228 */
+/* CyberSourceTransaction_nvp_1.129.h:227 */
 #ifndef SOAP_TYPE_ns2__BankTransferService
 #define SOAP_TYPE_ns2__BankTransferService (135)
 /* complex XSD type 'ns2:BankTransferService': */
@@ -3437,7 +3437,7 @@ class SOAP_CMAC ns2__BankTransferService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:231 */
+/* CyberSourceTransaction_nvp_1.129.h:230 */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundService
 #define SOAP_TYPE_ns2__BankTransferRefundService (136)
 /* complex XSD type 'ns2:BankTransferRefundService': */
@@ -3494,7 +3494,7 @@ class SOAP_CMAC ns2__BankTransferRefundService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:234 */
+/* CyberSourceTransaction_nvp_1.129.h:233 */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeService
 #define SOAP_TYPE_ns2__BankTransferRealTimeService (137)
 /* complex XSD type 'ns2:BankTransferRealTimeService': */
@@ -3536,7 +3536,7 @@ class SOAP_CMAC ns2__BankTransferRealTimeService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:237 */
+/* CyberSourceTransaction_nvp_1.129.h:236 */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateService
 #define SOAP_TYPE_ns2__DirectDebitMandateService (138)
 /* complex XSD type 'ns2:DirectDebitMandateService': */
@@ -3581,7 +3581,7 @@ class SOAP_CMAC ns2__DirectDebitMandateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:240 */
+/* CyberSourceTransaction_nvp_1.129.h:239 */
 #ifndef SOAP_TYPE_ns2__DirectDebitService
 #define SOAP_TYPE_ns2__DirectDebitService (139)
 /* complex XSD type 'ns2:DirectDebitService': */
@@ -3653,7 +3653,7 @@ class SOAP_CMAC ns2__DirectDebitService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:243 */
+/* CyberSourceTransaction_nvp_1.129.h:242 */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundService
 #define SOAP_TYPE_ns2__DirectDebitRefundService (140)
 /* complex XSD type 'ns2:DirectDebitRefundService': */
@@ -3713,7 +3713,7 @@ class SOAP_CMAC ns2__DirectDebitRefundService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:246 */
+/* CyberSourceTransaction_nvp_1.129.h:245 */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateService
 #define SOAP_TYPE_ns2__DirectDebitValidateService (141)
 /* complex XSD type 'ns2:DirectDebitValidateService': */
@@ -3755,7 +3755,7 @@ class SOAP_CMAC ns2__DirectDebitValidateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:249 */
+/* CyberSourceTransaction_nvp_1.129.h:248 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateService
 #define SOAP_TYPE_ns2__PaySubscriptionCreateService (142)
 /* complex XSD type 'ns2:PaySubscriptionCreateService': */
@@ -3803,7 +3803,7 @@ class SOAP_CMAC ns2__PaySubscriptionCreateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:252 */
+/* CyberSourceTransaction_nvp_1.129.h:251 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateService
 #define SOAP_TYPE_ns2__PaySubscriptionUpdateService (143)
 /* complex XSD type 'ns2:PaySubscriptionUpdateService': */
@@ -3842,7 +3842,7 @@ class SOAP_CMAC ns2__PaySubscriptionUpdateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:255 */
+/* CyberSourceTransaction_nvp_1.129.h:254 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateService
 #define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (144)
 /* complex XSD type 'ns2:PaySubscriptionEventUpdateService': */
@@ -3884,7 +3884,7 @@ class SOAP_CMAC ns2__PaySubscriptionEventUpdateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:258 */
+/* CyberSourceTransaction_nvp_1.129.h:257 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveService
 #define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (145)
 /* complex XSD type 'ns2:PaySubscriptionRetrieveService': */
@@ -3923,7 +3923,7 @@ class SOAP_CMAC ns2__PaySubscriptionRetrieveService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:261 */
+/* CyberSourceTransaction_nvp_1.129.h:260 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteService
 #define SOAP_TYPE_ns2__PaySubscriptionDeleteService (146)
 /* complex XSD type 'ns2:PaySubscriptionDeleteService': */
@@ -3962,7 +3962,7 @@ class SOAP_CMAC ns2__PaySubscriptionDeleteService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:264 */
+/* CyberSourceTransaction_nvp_1.129.h:263 */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentService
 #define SOAP_TYPE_ns2__PayPalPaymentService (147)
 /* complex XSD type 'ns2:PayPalPaymentService': */
@@ -4010,7 +4010,7 @@ class SOAP_CMAC ns2__PayPalPaymentService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:267 */
+/* CyberSourceTransaction_nvp_1.129.h:266 */
 #ifndef SOAP_TYPE_ns2__PayPalCreditService
 #define SOAP_TYPE_ns2__PayPalCreditService (148)
 /* complex XSD type 'ns2:PayPalCreditService': */
@@ -4058,7 +4058,7 @@ class SOAP_CMAC ns2__PayPalCreditService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:270 */
+/* CyberSourceTransaction_nvp_1.129.h:269 */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetService
 #define SOAP_TYPE_ns2__PayPalEcSetService (149)
 /* complex XSD type 'ns2:PayPalEcSetService': */
@@ -4172,7 +4172,7 @@ class SOAP_CMAC ns2__PayPalEcSetService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:273 */
+/* CyberSourceTransaction_nvp_1.129.h:272 */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsService
 #define SOAP_TYPE_ns2__PayPalEcGetDetailsService (150)
 /* complex XSD type 'ns2:PayPalEcGetDetailsService': */
@@ -4220,7 +4220,7 @@ class SOAP_CMAC ns2__PayPalEcGetDetailsService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:276 */
+/* CyberSourceTransaction_nvp_1.129.h:275 */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentService
 #define SOAP_TYPE_ns2__PayPalEcDoPaymentService (151)
 /* complex XSD type 'ns2:PayPalEcDoPaymentService': */
@@ -4283,7 +4283,7 @@ class SOAP_CMAC ns2__PayPalEcDoPaymentService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:279 */
+/* CyberSourceTransaction_nvp_1.129.h:278 */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureService
 #define SOAP_TYPE_ns2__PayPalDoCaptureService (152)
 /* complex XSD type 'ns2:PayPalDoCaptureService': */
@@ -4343,7 +4343,7 @@ class SOAP_CMAC ns2__PayPalDoCaptureService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:282 */
+/* CyberSourceTransaction_nvp_1.129.h:281 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalService
 #define SOAP_TYPE_ns2__PayPalAuthReversalService (153)
 /* complex XSD type 'ns2:PayPalAuthReversalService': */
@@ -4403,7 +4403,7 @@ class SOAP_CMAC ns2__PayPalAuthReversalService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:285 */
+/* CyberSourceTransaction_nvp_1.129.h:284 */
 #ifndef SOAP_TYPE_ns2__PayPalRefundService
 #define SOAP_TYPE_ns2__PayPalRefundService (154)
 /* complex XSD type 'ns2:PayPalRefundService': */
@@ -4454,7 +4454,7 @@ class SOAP_CMAC ns2__PayPalRefundService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:288 */
+/* CyberSourceTransaction_nvp_1.129.h:287 */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupService
 #define SOAP_TYPE_ns2__PayPalEcOrderSetupService (155)
 /* complex XSD type 'ns2:PayPalEcOrderSetupService': */
@@ -4517,7 +4517,7 @@ class SOAP_CMAC ns2__PayPalEcOrderSetupService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:291 */
+/* CyberSourceTransaction_nvp_1.129.h:290 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationService
 #define SOAP_TYPE_ns2__PayPalAuthorizationService (156)
 /* complex XSD type 'ns2:PayPalAuthorizationService': */
@@ -4574,7 +4574,7 @@ class SOAP_CMAC ns2__PayPalAuthorizationService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:294 */
+/* CyberSourceTransaction_nvp_1.129.h:293 */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementService
 #define SOAP_TYPE_ns2__PayPalUpdateAgreementService (157)
 /* complex XSD type 'ns2:PayPalUpdateAgreementService': */
@@ -4625,7 +4625,7 @@ class SOAP_CMAC ns2__PayPalUpdateAgreementService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:297 */
+/* CyberSourceTransaction_nvp_1.129.h:296 */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementService
 #define SOAP_TYPE_ns2__PayPalCreateAgreementService (158)
 /* complex XSD type 'ns2:PayPalCreateAgreementService': */
@@ -4673,7 +4673,7 @@ class SOAP_CMAC ns2__PayPalCreateAgreementService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:300 */
+/* CyberSourceTransaction_nvp_1.129.h:299 */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionService
 #define SOAP_TYPE_ns2__PayPalDoRefTransactionService (159)
 /* complex XSD type 'ns2:PayPalDoRefTransactionService': */
@@ -4739,7 +4739,7 @@ class SOAP_CMAC ns2__PayPalDoRefTransactionService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:303 */
+/* CyberSourceTransaction_nvp_1.129.h:302 */
 #ifndef SOAP_TYPE_ns2__VoidService
 #define SOAP_TYPE_ns2__VoidService (160)
 /* complex XSD type 'ns2:VoidService': */
@@ -4784,7 +4784,7 @@ class SOAP_CMAC ns2__VoidService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:306 */
+/* CyberSourceTransaction_nvp_1.129.h:305 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitService
 #define SOAP_TYPE_ns2__PinlessDebitService (161)
 /* complex XSD type 'ns2:PinlessDebitService': */
@@ -4829,7 +4829,7 @@ class SOAP_CMAC ns2__PinlessDebitService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:309 */
+/* CyberSourceTransaction_nvp_1.129.h:308 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateService
 #define SOAP_TYPE_ns2__PinlessDebitValidateService (162)
 /* complex XSD type 'ns2:PinlessDebitValidateService': */
@@ -4868,7 +4868,7 @@ class SOAP_CMAC ns2__PinlessDebitValidateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:312 */
+/* CyberSourceTransaction_nvp_1.129.h:311 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalService
 #define SOAP_TYPE_ns2__PinlessDebitReversalService (163)
 /* complex XSD type 'ns2:PinlessDebitReversalService': */
@@ -4916,7 +4916,7 @@ class SOAP_CMAC ns2__PinlessDebitReversalService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:315 */
+/* CyberSourceTransaction_nvp_1.129.h:314 */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseService
 #define SOAP_TYPE_ns2__PinDebitPurchaseService (164)
 /* complex XSD type 'ns2:PinDebitPurchaseService': */
@@ -4985,7 +4985,7 @@ class SOAP_CMAC ns2__PinDebitPurchaseService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:318 */
+/* CyberSourceTransaction_nvp_1.129.h:317 */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditService
 #define SOAP_TYPE_ns2__PinDebitCreditService (165)
 /* complex XSD type 'ns2:PinDebitCreditService': */
@@ -5045,7 +5045,7 @@ class SOAP_CMAC ns2__PinDebitCreditService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:321 */
+/* CyberSourceTransaction_nvp_1.129.h:320 */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalService
 #define SOAP_TYPE_ns2__PinDebitReversalService (166)
 /* complex XSD type 'ns2:PinDebitReversalService': */
@@ -5087,7 +5087,7 @@ class SOAP_CMAC ns2__PinDebitReversalService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:324 */
+/* CyberSourceTransaction_nvp_1.129.h:323 */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateService
 #define SOAP_TYPE_ns2__PayPalButtonCreateService (167)
 /* complex XSD type 'ns2:PayPalButtonCreateService': */
@@ -5132,7 +5132,7 @@ class SOAP_CMAC ns2__PayPalButtonCreateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:327 */
+/* CyberSourceTransaction_nvp_1.129.h:326 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentService
 #define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (168)
 /* complex XSD type 'ns2:PayPalPreapprovedPaymentService': */
@@ -5177,7 +5177,7 @@ class SOAP_CMAC ns2__PayPalPreapprovedPaymentService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:330 */
+/* CyberSourceTransaction_nvp_1.129.h:329 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateService
 #define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (169)
 /* complex XSD type 'ns2:PayPalPreapprovedUpdateService': */
@@ -5222,7 +5222,7 @@ class SOAP_CMAC ns2__PayPalPreapprovedUpdateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:333 */
+/* CyberSourceTransaction_nvp_1.129.h:332 */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentService
 #define SOAP_TYPE_ns2__ChinaPaymentService (170)
 /* complex XSD type 'ns2:ChinaPaymentService': */
@@ -5279,7 +5279,7 @@ class SOAP_CMAC ns2__ChinaPaymentService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:336 */
+/* CyberSourceTransaction_nvp_1.129.h:335 */
 #ifndef SOAP_TYPE_ns2__ChinaRefundService
 #define SOAP_TYPE_ns2__ChinaRefundService (171)
 /* complex XSD type 'ns2:ChinaRefundService': */
@@ -5327,7 +5327,7 @@ class SOAP_CMAC ns2__ChinaRefundService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:339 */
+/* CyberSourceTransaction_nvp_1.129.h:338 */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentService
 #define SOAP_TYPE_ns2__BoletoPaymentService (172)
 /* complex XSD type 'ns2:BoletoPaymentService': */
@@ -5375,7 +5375,7 @@ class SOAP_CMAC ns2__BoletoPaymentService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:342 */
+/* CyberSourceTransaction_nvp_1.129.h:341 */
 #ifndef SOAP_TYPE_ns2__PersonalId
 #define SOAP_TYPE_ns2__PersonalId (173)
 /* complex XSD type 'ns2:PersonalId': */
@@ -5427,7 +5427,7 @@ class SOAP_CMAC ns2__PersonalId {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:345 */
+/* CyberSourceTransaction_nvp_1.129.h:344 */
 #ifndef SOAP_TYPE_ns2__Address
 #define SOAP_TYPE_ns2__Address (174)
 /* complex XSD type 'ns2:Address': */
@@ -5482,7 +5482,7 @@ class SOAP_CMAC ns2__Address {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:348 */
+/* CyberSourceTransaction_nvp_1.129.h:347 */
 #ifndef SOAP_TYPE_ns2__APInitiateService
 #define SOAP_TYPE_ns2__APInitiateService (175)
 /* complex XSD type 'ns2:APInitiateService': */
@@ -5560,7 +5560,7 @@ class SOAP_CMAC ns2__APInitiateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:351 */
+/* CyberSourceTransaction_nvp_1.129.h:350 */
 #ifndef SOAP_TYPE_ns2__APCheckStatusService
 #define SOAP_TYPE_ns2__APCheckStatusService (176)
 /* complex XSD type 'ns2:APCheckStatusService': */
@@ -5608,7 +5608,7 @@ class SOAP_CMAC ns2__APCheckStatusService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:354 */
+/* CyberSourceTransaction_nvp_1.129.h:353 */
 #ifndef SOAP_TYPE_ns2__RiskUpdateService
 #define SOAP_TYPE_ns2__RiskUpdateService (177)
 /* complex XSD type 'ns2:RiskUpdateService': */
@@ -5677,7 +5677,7 @@ class SOAP_CMAC ns2__RiskUpdateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:357 */
+/* CyberSourceTransaction_nvp_1.129.h:356 */
 #ifndef SOAP_TYPE_ns2__FraudUpdateService
 #define SOAP_TYPE_ns2__FraudUpdateService (178)
 /* complex XSD type 'ns2:FraudUpdateService': */
@@ -5731,7 +5731,7 @@ class SOAP_CMAC ns2__FraudUpdateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:360 */
+/* CyberSourceTransaction_nvp_1.129.h:359 */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionService
 #define SOAP_TYPE_ns2__CaseManagementActionService (179)
 /* complex XSD type 'ns2:CaseManagementActionService': */
@@ -5779,7 +5779,7 @@ class SOAP_CMAC ns2__CaseManagementActionService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:363 */
+/* CyberSourceTransaction_nvp_1.129.h:362 */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataService
 #define SOAP_TYPE_ns2__EncryptPaymentDataService (180)
 /* complex XSD type 'ns2:EncryptPaymentDataService': */
@@ -5818,7 +5818,7 @@ class SOAP_CMAC ns2__EncryptPaymentDataService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:366 */
+/* CyberSourceTransaction_nvp_1.129.h:365 */
 #ifndef SOAP_TYPE_ns2__InvoiceHeader
 #define SOAP_TYPE_ns2__InvoiceHeader (181)
 /* complex XSD type 'ns2:InvoiceHeader': */
@@ -5981,7 +5981,7 @@ class SOAP_CMAC ns2__InvoiceHeader {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:369 */
+/* CyberSourceTransaction_nvp_1.129.h:368 */
 #ifndef SOAP_TYPE_ns2__BusinessRules
 #define SOAP_TYPE_ns2__BusinessRules (182)
 /* complex XSD type 'ns2:BusinessRules': */
@@ -6039,7 +6039,7 @@ class SOAP_CMAC ns2__BusinessRules {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:372 */
+/* CyberSourceTransaction_nvp_1.129.h:371 */
 #ifndef SOAP_TYPE_ns2__BillTo
 #define SOAP_TYPE_ns2__BillTo (183)
 /* complex XSD type 'ns2:BillTo': */
@@ -6193,7 +6193,7 @@ class SOAP_CMAC ns2__BillTo {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:375 */
+/* CyberSourceTransaction_nvp_1.129.h:374 */
 #ifndef SOAP_TYPE_ns2__ShipTo
 #define SOAP_TYPE_ns2__ShipTo (184)
 /* complex XSD type 'ns2:ShipTo': */
@@ -6299,7 +6299,7 @@ class SOAP_CMAC ns2__ShipTo {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:378 */
+/* CyberSourceTransaction_nvp_1.129.h:377 */
 #ifndef SOAP_TYPE_ns2__ShipFrom
 #define SOAP_TYPE_ns2__ShipFrom (185)
 /* complex XSD type 'ns2:ShipFrom': */
@@ -6387,7 +6387,7 @@ class SOAP_CMAC ns2__ShipFrom {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:381 */
+/* CyberSourceTransaction_nvp_1.129.h:380 */
 #ifndef SOAP_TYPE_ns2__Card
 #define SOAP_TYPE_ns2__Card (186)
 /* complex XSD type 'ns2:Card': */
@@ -6472,7 +6472,7 @@ class SOAP_CMAC ns2__Card {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:384 */
+/* CyberSourceTransaction_nvp_1.129.h:383 */
 #ifndef SOAP_TYPE_ns2__Check
 #define SOAP_TYPE_ns2__Check (187)
 /* complex XSD type 'ns2:Check': */
@@ -6545,7 +6545,7 @@ class SOAP_CMAC ns2__Check {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:387 */
+/* CyberSourceTransaction_nvp_1.129.h:386 */
 #ifndef SOAP_TYPE_ns2__BML
 #define SOAP_TYPE_ns2__BML (188)
 /* complex XSD type 'ns2:BML': */
@@ -6840,7 +6840,7 @@ class SOAP_CMAC ns2__BML {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:390 */
+/* CyberSourceTransaction_nvp_1.129.h:389 */
 #ifndef SOAP_TYPE_ns2__OtherTax
 #define SOAP_TYPE_ns2__OtherTax (189)
 /* complex XSD type 'ns2:OtherTax': */
@@ -6907,7 +6907,7 @@ class SOAP_CMAC ns2__OtherTax {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:393 */
+/* CyberSourceTransaction_nvp_1.129.h:392 */
 #ifndef SOAP_TYPE_ns2__Aft
 #define SOAP_TYPE_ns2__Aft (190)
 /* complex XSD type 'ns2:Aft': */
@@ -6953,7 +6953,7 @@ class SOAP_CMAC ns2__Aft {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:396 */
+/* CyberSourceTransaction_nvp_1.129.h:395 */
 #ifndef SOAP_TYPE_ns2__Wallet
 #define SOAP_TYPE_ns2__Wallet (191)
 /* complex XSD type 'ns2:Wallet': */
@@ -6993,7 +6993,7 @@ class SOAP_CMAC ns2__Wallet {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:399 */
+/* CyberSourceTransaction_nvp_1.129.h:398 */
 #ifndef SOAP_TYPE_ns2__PurchaseTotals
 #define SOAP_TYPE_ns2__PurchaseTotals (192)
 /* complex XSD type 'ns2:PurchaseTotals': */
@@ -7111,7 +7111,7 @@ class SOAP_CMAC ns2__PurchaseTotals {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:402 */
+/* CyberSourceTransaction_nvp_1.129.h:401 */
 #ifndef SOAP_TYPE_ns2__FundingTotals
 #define SOAP_TYPE_ns2__FundingTotals (193)
 /* complex XSD type 'ns2:FundingTotals': */
@@ -7154,7 +7154,7 @@ class SOAP_CMAC ns2__FundingTotals {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:405 */
+/* CyberSourceTransaction_nvp_1.129.h:404 */
 #ifndef SOAP_TYPE_ns2__GECC
 #define SOAP_TYPE_ns2__GECC (194)
 /* complex XSD type 'ns2:GECC': */
@@ -7208,7 +7208,7 @@ class SOAP_CMAC ns2__GECC {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:408 */
+/* CyberSourceTransaction_nvp_1.129.h:407 */
 #ifndef SOAP_TYPE_ns2__UCAF
 #define SOAP_TYPE_ns2__UCAF (195)
 /* complex XSD type 'ns2:UCAF': */
@@ -7251,7 +7251,7 @@ class SOAP_CMAC ns2__UCAF {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:411 */
+/* CyberSourceTransaction_nvp_1.129.h:410 */
 #ifndef SOAP_TYPE_ns2__FundTransfer
 #define SOAP_TYPE_ns2__FundTransfer (196)
 /* complex XSD type 'ns2:FundTransfer': */
@@ -7300,7 +7300,7 @@ class SOAP_CMAC ns2__FundTransfer {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:414 */
+/* CyberSourceTransaction_nvp_1.129.h:413 */
 #ifndef SOAP_TYPE_ns2__BankInfo
 #define SOAP_TYPE_ns2__BankInfo (197)
 /* complex XSD type 'ns2:BankInfo': */
@@ -7364,7 +7364,7 @@ class SOAP_CMAC ns2__BankInfo {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:417 */
+/* CyberSourceTransaction_nvp_1.129.h:416 */
 #ifndef SOAP_TYPE_ns2__RecurringSubscriptionInfo
 #define SOAP_TYPE_ns2__RecurringSubscriptionInfo (198)
 /* complex XSD type 'ns2:RecurringSubscriptionInfo': */
@@ -7437,7 +7437,7 @@ class SOAP_CMAC ns2__RecurringSubscriptionInfo {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:420 */
+/* CyberSourceTransaction_nvp_1.129.h:419 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEvent
 #define SOAP_TYPE_ns2__PaySubscriptionEvent (199)
 /* complex XSD type 'ns2:PaySubscriptionEvent': */
@@ -7483,7 +7483,7 @@ class SOAP_CMAC ns2__PaySubscriptionEvent {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:423 */
+/* CyberSourceTransaction_nvp_1.129.h:422 */
 #ifndef SOAP_TYPE_ns2__Subscription
 #define SOAP_TYPE_ns2__Subscription (200)
 /* complex XSD type 'ns2:Subscription': */
@@ -7526,7 +7526,7 @@ class SOAP_CMAC ns2__Subscription {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:426 */
+/* CyberSourceTransaction_nvp_1.129.h:425 */
 #ifndef SOAP_TYPE_ns2__PaymentNetworkToken
 #define SOAP_TYPE_ns2__PaymentNetworkToken (201)
 /* complex XSD type 'ns2:PaymentNetworkToken': */
@@ -7581,7 +7581,7 @@ class SOAP_CMAC ns2__PaymentNetworkToken {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:429 */
+/* CyberSourceTransaction_nvp_1.129.h:428 */
 #ifndef SOAP_TYPE_ns2__DecisionManager
 #define SOAP_TYPE_ns2__DecisionManager (202)
 /* complex XSD type 'ns2:DecisionManager': */
@@ -7627,7 +7627,7 @@ class SOAP_CMAC ns2__DecisionManager {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:432 */
+/* CyberSourceTransaction_nvp_1.129.h:431 */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelData
 #define SOAP_TYPE_ns2__DecisionManagerTravelData (203)
 /* complex XSD type 'ns2:DecisionManagerTravelData': */
@@ -7675,7 +7675,7 @@ class SOAP_CMAC ns2__DecisionManagerTravelData {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:435 */
+/* CyberSourceTransaction_nvp_1.129.h:434 */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelLeg
 #define SOAP_TYPE_ns2__DecisionManagerTravelLeg (204)
 /* complex XSD type 'ns2:DecisionManagerTravelLeg': */
@@ -7721,7 +7721,7 @@ class SOAP_CMAC ns2__DecisionManagerTravelLeg {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:438 */
+/* CyberSourceTransaction_nvp_1.129.h:437 */
 #ifndef SOAP_TYPE_ns2__Batch
 #define SOAP_TYPE_ns2__Batch (205)
 /* complex XSD type 'ns2:Batch': */
@@ -7764,7 +7764,7 @@ class SOAP_CMAC ns2__Batch {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:441 */
+/* CyberSourceTransaction_nvp_1.129.h:440 */
 #ifndef SOAP_TYPE_ns2__PayPal
 #define SOAP_TYPE_ns2__PayPal (206)
 /* complex XSD type 'ns2:PayPal': */
@@ -7802,7 +7802,7 @@ class SOAP_CMAC ns2__PayPal {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:444 */
+/* CyberSourceTransaction_nvp_1.129.h:443 */
 #ifndef SOAP_TYPE_ns2__JPO
 #define SOAP_TYPE_ns2__JPO (207)
 /* complex XSD type 'ns2:JPO': */
@@ -7860,7 +7860,7 @@ class SOAP_CMAC ns2__JPO {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:447 */
+/* CyberSourceTransaction_nvp_1.129.h:446 */
 #ifndef SOAP_TYPE_ns2__Token
 #define SOAP_TYPE_ns2__Token (208)
 /* complex XSD type 'ns2:Token': */
@@ -7909,7 +7909,7 @@ class SOAP_CMAC ns2__Token {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:450 */
+/* CyberSourceTransaction_nvp_1.129.h:449 */
 #ifndef SOAP_TYPE_ns2__AP
 #define SOAP_TYPE_ns2__AP (209)
 /* complex XSD type 'ns2:AP': */
@@ -7991,7 +7991,7 @@ class SOAP_CMAC ns2__AP {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:453 */
+/* CyberSourceTransaction_nvp_1.129.h:452 */
 #ifndef SOAP_TYPE_ns2__APDevice
 #define SOAP_TYPE_ns2__APDevice (210)
 /* complex XSD type 'ns2:APDevice': */
@@ -8037,7 +8037,7 @@ class SOAP_CMAC ns2__APDevice {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:456 */
+/* CyberSourceTransaction_nvp_1.129.h:455 */
 #ifndef SOAP_TYPE_ns2__APAuthService
 #define SOAP_TYPE_ns2__APAuthService (211)
 /* complex XSD type 'ns2:APAuthService': */
@@ -8094,7 +8094,7 @@ class SOAP_CMAC ns2__APAuthService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:459 */
+/* CyberSourceTransaction_nvp_1.129.h:458 */
 #ifndef SOAP_TYPE_ns2__APAuthReversalService
 #define SOAP_TYPE_ns2__APAuthReversalService (212)
 /* complex XSD type 'ns2:APAuthReversalService': */
@@ -8139,7 +8139,7 @@ class SOAP_CMAC ns2__APAuthReversalService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:462 */
+/* CyberSourceTransaction_nvp_1.129.h:461 */
 #ifndef SOAP_TYPE_ns2__APCaptureService
 #define SOAP_TYPE_ns2__APCaptureService (213)
 /* complex XSD type 'ns2:APCaptureService': */
@@ -8184,7 +8184,7 @@ class SOAP_CMAC ns2__APCaptureService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:465 */
+/* CyberSourceTransaction_nvp_1.129.h:464 */
 #ifndef SOAP_TYPE_ns2__APOptionsService
 #define SOAP_TYPE_ns2__APOptionsService (214)
 /* complex XSD type 'ns2:APOptionsService': */
@@ -8229,7 +8229,7 @@ class SOAP_CMAC ns2__APOptionsService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:468 */
+/* CyberSourceTransaction_nvp_1.129.h:467 */
 #ifndef SOAP_TYPE_ns2__APRefundService
 #define SOAP_TYPE_ns2__APRefundService (215)
 /* complex XSD type 'ns2:APRefundService': */
@@ -8289,7 +8289,7 @@ class SOAP_CMAC ns2__APRefundService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:471 */
+/* CyberSourceTransaction_nvp_1.129.h:470 */
 #ifndef SOAP_TYPE_ns2__APSaleService
 #define SOAP_TYPE_ns2__APSaleService (216)
 /* complex XSD type 'ns2:APSaleService': */
@@ -8349,7 +8349,7 @@ class SOAP_CMAC ns2__APSaleService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:474 */
+/* CyberSourceTransaction_nvp_1.129.h:473 */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsService
 #define SOAP_TYPE_ns2__APCheckOutDetailsService (217)
 /* complex XSD type 'ns2:APCheckOutDetailsService': */
@@ -8388,7 +8388,7 @@ class SOAP_CMAC ns2__APCheckOutDetailsService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:477 */
+/* CyberSourceTransaction_nvp_1.129.h:476 */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsService
 #define SOAP_TYPE_ns2__APTransactionDetailsService (218)
 /* complex XSD type 'ns2:APTransactionDetailsService': */
@@ -8430,7 +8430,7 @@ class SOAP_CMAC ns2__APTransactionDetailsService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:480 */
+/* CyberSourceTransaction_nvp_1.129.h:479 */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseService
 #define SOAP_TYPE_ns2__APConfirmPurchaseService (219)
 /* complex XSD type 'ns2:APConfirmPurchaseService': */
@@ -8469,7 +8469,7 @@ class SOAP_CMAC ns2__APConfirmPurchaseService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:483 */
+/* CyberSourceTransaction_nvp_1.129.h:482 */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsService
 #define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (220)
 /* complex XSD type 'ns2:PayPalGetTxnDetailsService': */
@@ -8511,7 +8511,7 @@ class SOAP_CMAC ns2__PayPalGetTxnDetailsService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:486 */
+/* CyberSourceTransaction_nvp_1.129.h:485 */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchService
 #define SOAP_TYPE_ns2__PayPalTransactionSearchService (221)
 /* complex XSD type 'ns2:PayPalTransactionSearchService': */
@@ -8592,7 +8592,7 @@ class SOAP_CMAC ns2__PayPalTransactionSearchService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:489 */
+/* CyberSourceTransaction_nvp_1.129.h:488 */
 #ifndef SOAP_TYPE_ns2__Recipient
 #define SOAP_TYPE_ns2__Recipient (222)
 /* complex XSD type 'ns2:Recipient': */
@@ -8650,7 +8650,7 @@ class SOAP_CMAC ns2__Recipient {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:492 */
+/* CyberSourceTransaction_nvp_1.129.h:491 */
 #ifndef SOAP_TYPE_ns2__Sender
 #define SOAP_TYPE_ns2__Sender (223)
 /* complex XSD type 'ns2:Sender': */
@@ -8714,7 +8714,7 @@ class SOAP_CMAC ns2__Sender {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:495 */
+/* CyberSourceTransaction_nvp_1.129.h:494 */
 #ifndef SOAP_TYPE_ns2__RequestMessage
 #define SOAP_TYPE_ns2__RequestMessage (224)
 /* complex XSD type 'ns2:RequestMessage': */
@@ -9291,7 +9291,7 @@ class SOAP_CMAC ns2__RequestMessage {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:498 */
+/* CyberSourceTransaction_nvp_1.129.h:497 */
 #ifndef SOAP_TYPE_ns2__VC
 #define SOAP_TYPE_ns2__VC (225)
 /* complex XSD type 'ns2:VC': */
@@ -9331,7 +9331,7 @@ class SOAP_CMAC ns2__VC {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:501 */
+/* CyberSourceTransaction_nvp_1.129.h:500 */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataService
 #define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (226)
 /* complex XSD type 'ns2:DecryptVisaCheckoutDataService': */
@@ -9370,7 +9370,7 @@ class SOAP_CMAC ns2__DecryptVisaCheckoutDataService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:504 */
+/* CyberSourceTransaction_nvp_1.129.h:503 */
 #ifndef SOAP_TYPE_ns2__DCC
 #define SOAP_TYPE_ns2__DCC (227)
 /* complex XSD type 'ns2:DCC': */
@@ -9413,7 +9413,7 @@ class SOAP_CMAC ns2__DCC {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:507 */
+/* CyberSourceTransaction_nvp_1.129.h:506 */
 #ifndef SOAP_TYPE_ns2__Promotion
 #define SOAP_TYPE_ns2__Promotion (228)
 /* complex XSD type 'ns2:Promotion': */
@@ -9468,7 +9468,7 @@ class SOAP_CMAC ns2__Promotion {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:510 */
+/* CyberSourceTransaction_nvp_1.129.h:509 */
 #ifndef SOAP_TYPE_ns2__PromotionGroup
 #define SOAP_TYPE_ns2__PromotionGroup (229)
 /* complex XSD type 'ns2:PromotionGroup': */
@@ -9514,7 +9514,7 @@ class SOAP_CMAC ns2__PromotionGroup {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:513 */
+/* CyberSourceTransaction_nvp_1.129.h:512 */
 #ifndef SOAP_TYPE_ns2__PromotionGroupReply
 #define SOAP_TYPE_ns2__PromotionGroupReply (230)
 /* complex XSD type 'ns2:PromotionGroupReply': */
@@ -9557,7 +9557,7 @@ class SOAP_CMAC ns2__PromotionGroupReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:516 */
+/* CyberSourceTransaction_nvp_1.129.h:515 */
 #ifndef SOAP_TYPE_ns2__CCAuthReply
 #define SOAP_TYPE_ns2__CCAuthReply (231)
 /* complex XSD type 'ns2:CCAuthReply': */
@@ -9821,7 +9821,7 @@ class SOAP_CMAC ns2__CCAuthReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:519 */
+/* CyberSourceTransaction_nvp_1.129.h:518 */
 #ifndef SOAP_TYPE_ns2__OCTReply
 #define SOAP_TYPE_ns2__OCTReply (232)
 /* complex XSD type 'ns2:OCTReply': */
@@ -9878,7 +9878,7 @@ class SOAP_CMAC ns2__OCTReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:522 */
+/* CyberSourceTransaction_nvp_1.129.h:521 */
 #ifndef SOAP_TYPE_ns2__VerificationReply
 #define SOAP_TYPE_ns2__VerificationReply (233)
 /* complex XSD type 'ns2:VerificationReply': */
@@ -9929,7 +9929,7 @@ class SOAP_CMAC ns2__VerificationReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:525 */
+/* CyberSourceTransaction_nvp_1.129.h:524 */
 #ifndef SOAP_TYPE_ns2__CCSaleReply
 #define SOAP_TYPE_ns2__CCSaleReply (234)
 /* complex XSD type 'ns2:CCSaleReply': */
@@ -10022,7 +10022,7 @@ class SOAP_CMAC ns2__CCSaleReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:528 */
+/* CyberSourceTransaction_nvp_1.129.h:527 */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditReply
 #define SOAP_TYPE_ns2__CCSaleCreditReply (235)
 /* complex XSD type 'ns2:CCSaleCreditReply': */
@@ -10079,7 +10079,7 @@ class SOAP_CMAC ns2__CCSaleCreditReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:531 */
+/* CyberSourceTransaction_nvp_1.129.h:530 */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalReply
 #define SOAP_TYPE_ns2__CCSaleReversalReply (236)
 /* complex XSD type 'ns2:CCSaleReversalReply': */
@@ -10133,7 +10133,7 @@ class SOAP_CMAC ns2__CCSaleReversalReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:534 */
+/* CyberSourceTransaction_nvp_1.129.h:533 */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthReply
 #define SOAP_TYPE_ns2__CCIncrementalAuthReply (237)
 /* complex XSD type 'ns2:CCIncrementalAuthReply': */
@@ -10193,7 +10193,7 @@ class SOAP_CMAC ns2__CCIncrementalAuthReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:537 */
+/* CyberSourceTransaction_nvp_1.129.h:536 */
 #ifndef SOAP_TYPE_ns2__CCCaptureReply
 #define SOAP_TYPE_ns2__CCCaptureReply (238)
 /* complex XSD type 'ns2:CCCaptureReply': */
@@ -10262,7 +10262,7 @@ class SOAP_CMAC ns2__CCCaptureReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:540 */
+/* CyberSourceTransaction_nvp_1.129.h:539 */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateReply
 #define SOAP_TYPE_ns2__ServiceFeeCalculateReply (239)
 /* complex XSD type 'ns2:ServiceFeeCalculateReply': */
@@ -10307,7 +10307,7 @@ class SOAP_CMAC ns2__ServiceFeeCalculateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:543 */
+/* CyberSourceTransaction_nvp_1.129.h:542 */
 #ifndef SOAP_TYPE_ns2__CCCreditReply
 #define SOAP_TYPE_ns2__CCCreditReply (240)
 /* complex XSD type 'ns2:CCCreditReply': */
@@ -10370,7 +10370,7 @@ class SOAP_CMAC ns2__CCCreditReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:546 */
+/* CyberSourceTransaction_nvp_1.129.h:545 */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseReply
 #define SOAP_TYPE_ns2__PinDebitPurchaseReply (241)
 /* complex XSD type 'ns2:PinDebitPurchaseReply': */
@@ -10451,7 +10451,7 @@ class SOAP_CMAC ns2__PinDebitPurchaseReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:549 */
+/* CyberSourceTransaction_nvp_1.129.h:548 */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditReply
 #define SOAP_TYPE_ns2__PinDebitCreditReply (242)
 /* complex XSD type 'ns2:PinDebitCreditReply': */
@@ -10511,7 +10511,7 @@ class SOAP_CMAC ns2__PinDebitCreditReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:552 */
+/* CyberSourceTransaction_nvp_1.129.h:551 */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalReply
 #define SOAP_TYPE_ns2__PinDebitReversalReply (243)
 /* complex XSD type 'ns2:PinDebitReversalReply': */
@@ -10562,7 +10562,7 @@ class SOAP_CMAC ns2__PinDebitReversalReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:555 */
+/* CyberSourceTransaction_nvp_1.129.h:554 */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalReply
 #define SOAP_TYPE_ns2__CCAuthReversalReply (244)
 /* complex XSD type 'ns2:CCAuthReversalReply': */
@@ -10628,7 +10628,7 @@ class SOAP_CMAC ns2__CCAuthReversalReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:558 */
+/* CyberSourceTransaction_nvp_1.129.h:557 */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalReply
 #define SOAP_TYPE_ns2__CCAutoAuthReversalReply (245)
 /* complex XSD type 'ns2:CCAutoAuthReversalReply': */
@@ -10673,7 +10673,7 @@ class SOAP_CMAC ns2__CCAutoAuthReversalReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:561 */
+/* CyberSourceTransaction_nvp_1.129.h:560 */
 #ifndef SOAP_TYPE_ns2__ECDebitReply
 #define SOAP_TYPE_ns2__ECDebitReply (246)
 /* complex XSD type 'ns2:ECDebitReply': */
@@ -10754,7 +10754,7 @@ class SOAP_CMAC ns2__ECDebitReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:564 */
+/* CyberSourceTransaction_nvp_1.129.h:563 */
 #ifndef SOAP_TYPE_ns2__ECCreditReply
 #define SOAP_TYPE_ns2__ECCreditReply (247)
 /* complex XSD type 'ns2:ECCreditReply': */
@@ -10826,7 +10826,7 @@ class SOAP_CMAC ns2__ECCreditReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:567 */
+/* CyberSourceTransaction_nvp_1.129.h:566 */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateReply
 #define SOAP_TYPE_ns2__ECAuthenticateReply (248)
 /* complex XSD type 'ns2:ECAuthenticateReply': */
@@ -10880,7 +10880,7 @@ class SOAP_CMAC ns2__ECAuthenticateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:570 */
+/* CyberSourceTransaction_nvp_1.129.h:569 */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollReply
 #define SOAP_TYPE_ns2__PayerAuthEnrollReply (249)
 /* complex XSD type 'ns2:PayerAuthEnrollReply': */
@@ -10949,7 +10949,7 @@ class SOAP_CMAC ns2__PayerAuthEnrollReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:573 */
+/* CyberSourceTransaction_nvp_1.129.h:572 */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateReply
 #define SOAP_TYPE_ns2__PayerAuthValidateReply (250)
 /* complex XSD type 'ns2:PayerAuthValidateReply': */
@@ -11021,7 +11021,7 @@ class SOAP_CMAC ns2__PayerAuthValidateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:576 */
+/* CyberSourceTransaction_nvp_1.129.h:575 */
 #ifndef SOAP_TYPE_ns2__TaxReplyItem
 #define SOAP_TYPE_ns2__TaxReplyItem (251)
 /* complex XSD type 'ns2:TaxReplyItem': */
@@ -11074,7 +11074,7 @@ class SOAP_CMAC ns2__TaxReplyItem {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:579 */
+/* CyberSourceTransaction_nvp_1.129.h:578 */
 #ifndef SOAP_TYPE_ns2__TaxReply
 #define SOAP_TYPE_ns2__TaxReply (252)
 /* complex XSD type 'ns2:TaxReply': */
@@ -11151,7 +11151,7 @@ class SOAP_CMAC ns2__TaxReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:582 */
+/* CyberSourceTransaction_nvp_1.129.h:581 */
 #ifndef SOAP_TYPE_ns2__DeviceFingerprint
 #define SOAP_TYPE_ns2__DeviceFingerprint (253)
 /* complex XSD type 'ns2:DeviceFingerprint': */
@@ -11284,7 +11284,7 @@ class SOAP_CMAC ns2__DeviceFingerprint {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:585 */
+/* CyberSourceTransaction_nvp_1.129.h:584 */
 #ifndef SOAP_TYPE_ns2__AFSReply
 #define SOAP_TYPE_ns2__AFSReply (254)
 /* complex XSD type 'ns2:AFSReply': */
@@ -11392,7 +11392,7 @@ class SOAP_CMAC ns2__AFSReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:588 */
+/* CyberSourceTransaction_nvp_1.129.h:587 */
 #ifndef SOAP_TYPE_ns2__DAVReply
 #define SOAP_TYPE_ns2__DAVReply (255)
 /* complex XSD type 'ns2:DAVReply': */
@@ -11530,7 +11530,7 @@ class SOAP_CMAC ns2__DAVReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:591 */
+/* CyberSourceTransaction_nvp_1.129.h:590 */
 #ifndef SOAP_TYPE_ns2__DeniedPartiesMatch
 #define SOAP_TYPE_ns2__DeniedPartiesMatch (256)
 /* complex XSD type 'ns2:DeniedPartiesMatch': */
@@ -11576,7 +11576,7 @@ class SOAP_CMAC ns2__DeniedPartiesMatch {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:594 */
+/* CyberSourceTransaction_nvp_1.129.h:593 */
 #ifndef SOAP_TYPE_ns2__ExportReply
 #define SOAP_TYPE_ns2__ExportReply (257)
 /* complex XSD type 'ns2:ExportReply': */
@@ -11621,7 +11621,7 @@ class SOAP_CMAC ns2__ExportReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:597 */
+/* CyberSourceTransaction_nvp_1.129.h:596 */
 #ifndef SOAP_TYPE_ns2__FXQuote
 #define SOAP_TYPE_ns2__FXQuote (258)
 /* complex XSD type 'ns2:FXQuote': */
@@ -11679,7 +11679,7 @@ class SOAP_CMAC ns2__FXQuote {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:600 */
+/* CyberSourceTransaction_nvp_1.129.h:599 */
 #ifndef SOAP_TYPE_ns2__FXRatesReply
 #define SOAP_TYPE_ns2__FXRatesReply (259)
 /* complex XSD type 'ns2:FXRatesReply': */
@@ -11720,7 +11720,7 @@ class SOAP_CMAC ns2__FXRatesReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:603 */
+/* CyberSourceTransaction_nvp_1.129.h:602 */
 #ifndef SOAP_TYPE_ns2__BankTransferReply
 #define SOAP_TYPE_ns2__BankTransferReply (260)
 /* complex XSD type 'ns2:BankTransferReply': */
@@ -11804,7 +11804,7 @@ class SOAP_CMAC ns2__BankTransferReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:606 */
+/* CyberSourceTransaction_nvp_1.129.h:605 */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeReply
 #define SOAP_TYPE_ns2__BankTransferRealTimeReply (261)
 /* complex XSD type 'ns2:BankTransferRealTimeReply': */
@@ -11861,7 +11861,7 @@ class SOAP_CMAC ns2__BankTransferRealTimeReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:609 */
+/* CyberSourceTransaction_nvp_1.129.h:608 */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateReply
 #define SOAP_TYPE_ns2__DirectDebitMandateReply (262)
 /* complex XSD type 'ns2:DirectDebitMandateReply': */
@@ -11915,7 +11915,7 @@ class SOAP_CMAC ns2__DirectDebitMandateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:612 */
+/* CyberSourceTransaction_nvp_1.129.h:611 */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundReply
 #define SOAP_TYPE_ns2__BankTransferRefundReply (263)
 /* complex XSD type 'ns2:BankTransferRefundReply': */
@@ -11969,7 +11969,7 @@ class SOAP_CMAC ns2__BankTransferRefundReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:615 */
+/* CyberSourceTransaction_nvp_1.129.h:614 */
 #ifndef SOAP_TYPE_ns2__DirectDebitReply
 #define SOAP_TYPE_ns2__DirectDebitReply (264)
 /* complex XSD type 'ns2:DirectDebitReply': */
@@ -12032,7 +12032,7 @@ class SOAP_CMAC ns2__DirectDebitReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:618 */
+/* CyberSourceTransaction_nvp_1.129.h:617 */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateReply
 #define SOAP_TYPE_ns2__DirectDebitValidateReply (265)
 /* complex XSD type 'ns2:DirectDebitValidateReply': */
@@ -12089,7 +12089,7 @@ class SOAP_CMAC ns2__DirectDebitValidateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:621 */
+/* CyberSourceTransaction_nvp_1.129.h:620 */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundReply
 #define SOAP_TYPE_ns2__DirectDebitRefundReply (266)
 /* complex XSD type 'ns2:DirectDebitRefundReply': */
@@ -12146,7 +12146,7 @@ class SOAP_CMAC ns2__DirectDebitRefundReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:624 */
+/* CyberSourceTransaction_nvp_1.129.h:623 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateReply
 #define SOAP_TYPE_ns2__PaySubscriptionCreateReply (267)
 /* complex XSD type 'ns2:PaySubscriptionCreateReply': */
@@ -12187,7 +12187,7 @@ class SOAP_CMAC ns2__PaySubscriptionCreateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:627 */
+/* CyberSourceTransaction_nvp_1.129.h:626 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateReply
 #define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (268)
 /* complex XSD type 'ns2:PaySubscriptionUpdateReply': */
@@ -12234,7 +12234,7 @@ class SOAP_CMAC ns2__PaySubscriptionUpdateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:630 */
+/* CyberSourceTransaction_nvp_1.129.h:629 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply
 #define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (269)
 /* complex XSD type 'ns2:PaySubscriptionEventUpdateReply': */
@@ -12276,7 +12276,7 @@ class SOAP_CMAC ns2__PaySubscriptionEventUpdateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:633 */
+/* CyberSourceTransaction_nvp_1.129.h:632 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveReply
 #define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (270)
 /* complex XSD type 'ns2:PaySubscriptionRetrieveReply': */
@@ -12506,7 +12506,7 @@ class SOAP_CMAC ns2__PaySubscriptionRetrieveReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:636 */
+/* CyberSourceTransaction_nvp_1.129.h:635 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteReply
 #define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (271)
 /* complex XSD type 'ns2:PaySubscriptionDeleteReply': */
@@ -12547,7 +12547,7 @@ class SOAP_CMAC ns2__PaySubscriptionDeleteReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:639 */
+/* CyberSourceTransaction_nvp_1.129.h:638 */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentReply
 #define SOAP_TYPE_ns2__PayPalPaymentReply (272)
 /* complex XSD type 'ns2:PayPalPaymentReply': */
@@ -12598,7 +12598,7 @@ class SOAP_CMAC ns2__PayPalPaymentReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:642 */
+/* CyberSourceTransaction_nvp_1.129.h:641 */
 #ifndef SOAP_TYPE_ns2__PayPalCreditReply
 #define SOAP_TYPE_ns2__PayPalCreditReply (273)
 /* complex XSD type 'ns2:PayPalCreditReply': */
@@ -12649,7 +12649,7 @@ class SOAP_CMAC ns2__PayPalCreditReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:645 */
+/* CyberSourceTransaction_nvp_1.129.h:644 */
 #ifndef SOAP_TYPE_ns2__VoidReply
 #define SOAP_TYPE_ns2__VoidReply (274)
 /* complex XSD type 'ns2:VoidReply': */
@@ -12697,7 +12697,7 @@ class SOAP_CMAC ns2__VoidReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:648 */
+/* CyberSourceTransaction_nvp_1.129.h:647 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReply
 #define SOAP_TYPE_ns2__PinlessDebitReply (275)
 /* complex XSD type 'ns2:PinlessDebitReply': */
@@ -12757,7 +12757,7 @@ class SOAP_CMAC ns2__PinlessDebitReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:651 */
+/* CyberSourceTransaction_nvp_1.129.h:650 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateReply
 #define SOAP_TYPE_ns2__PinlessDebitValidateReply (276)
 /* complex XSD type 'ns2:PinlessDebitValidateReply': */
@@ -12802,7 +12802,7 @@ class SOAP_CMAC ns2__PinlessDebitValidateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:654 */
+/* CyberSourceTransaction_nvp_1.129.h:653 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalReply
 #define SOAP_TYPE_ns2__PinlessDebitReversalReply (277)
 /* complex XSD type 'ns2:PinlessDebitReversalReply': */
@@ -12853,7 +12853,7 @@ class SOAP_CMAC ns2__PinlessDebitReversalReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:657 */
+/* CyberSourceTransaction_nvp_1.129.h:656 */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateReply
 #define SOAP_TYPE_ns2__PayPalButtonCreateReply (278)
 /* complex XSD type 'ns2:PayPalButtonCreateReply': */
@@ -12907,7 +12907,7 @@ class SOAP_CMAC ns2__PayPalButtonCreateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:660 */
+/* CyberSourceTransaction_nvp_1.129.h:659 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply
 #define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (279)
 /* complex XSD type 'ns2:PayPalPreapprovedPaymentReply': */
@@ -13015,7 +13015,7 @@ class SOAP_CMAC ns2__PayPalPreapprovedPaymentReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:663 */
+/* CyberSourceTransaction_nvp_1.129.h:662 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply
 #define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (280)
 /* complex XSD type 'ns2:PayPalPreapprovedUpdateReply': */
@@ -13090,7 +13090,7 @@ class SOAP_CMAC ns2__PayPalPreapprovedUpdateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:666 */
+/* CyberSourceTransaction_nvp_1.129.h:665 */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetReply
 #define SOAP_TYPE_ns2__PayPalEcSetReply (281)
 /* complex XSD type 'ns2:PayPalEcSetReply': */
@@ -13144,7 +13144,7 @@ class SOAP_CMAC ns2__PayPalEcSetReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:669 */
+/* CyberSourceTransaction_nvp_1.129.h:668 */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsReply
 #define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (282)
 /* complex XSD type 'ns2:PayPalEcGetDetailsReply': */
@@ -13284,7 +13284,7 @@ class SOAP_CMAC ns2__PayPalEcGetDetailsReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:672 */
+/* CyberSourceTransaction_nvp_1.129.h:671 */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentReply
 #define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (283)
 /* complex XSD type 'ns2:PayPalEcDoPaymentReply': */
@@ -13377,7 +13377,7 @@ class SOAP_CMAC ns2__PayPalEcDoPaymentReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:675 */
+/* CyberSourceTransaction_nvp_1.129.h:674 */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureReply
 #define SOAP_TYPE_ns2__PayPalDoCaptureReply (284)
 /* complex XSD type 'ns2:PayPalDoCaptureReply': */
@@ -13467,7 +13467,7 @@ class SOAP_CMAC ns2__PayPalDoCaptureReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:678 */
+/* CyberSourceTransaction_nvp_1.129.h:677 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalReply
 #define SOAP_TYPE_ns2__PayPalAuthReversalReply (285)
 /* complex XSD type 'ns2:PayPalAuthReversalReply': */
@@ -13515,7 +13515,7 @@ class SOAP_CMAC ns2__PayPalAuthReversalReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:681 */
+/* CyberSourceTransaction_nvp_1.129.h:680 */
 #ifndef SOAP_TYPE_ns2__PayPalRefundReply
 #define SOAP_TYPE_ns2__PayPalRefundReply (286)
 /* complex XSD type 'ns2:PayPalRefundReply': */
@@ -13572,7 +13572,7 @@ class SOAP_CMAC ns2__PayPalRefundReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:684 */
+/* CyberSourceTransaction_nvp_1.129.h:683 */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupReply
 #define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (287)
 /* complex XSD type 'ns2:PayPalEcOrderSetupReply': */
@@ -13659,7 +13659,7 @@ class SOAP_CMAC ns2__PayPalEcOrderSetupReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:687 */
+/* CyberSourceTransaction_nvp_1.129.h:686 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationReply
 #define SOAP_TYPE_ns2__PayPalAuthorizationReply (288)
 /* complex XSD type 'ns2:PayPalAuthorizationReply': */
@@ -13722,7 +13722,7 @@ class SOAP_CMAC ns2__PayPalAuthorizationReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:690 */
+/* CyberSourceTransaction_nvp_1.129.h:689 */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementReply
 #define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (289)
 /* complex XSD type 'ns2:PayPalUpdateAgreementReply': */
@@ -13812,7 +13812,7 @@ class SOAP_CMAC ns2__PayPalUpdateAgreementReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:693 */
+/* CyberSourceTransaction_nvp_1.129.h:692 */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementReply
 #define SOAP_TYPE_ns2__PayPalCreateAgreementReply (290)
 /* complex XSD type 'ns2:PayPalCreateAgreementReply': */
@@ -13860,7 +13860,7 @@ class SOAP_CMAC ns2__PayPalCreateAgreementReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:696 */
+/* CyberSourceTransaction_nvp_1.129.h:695 */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionReply
 #define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (291)
 /* complex XSD type 'ns2:PayPalDoRefTransactionReply': */
@@ -13941,7 +13941,7 @@ class SOAP_CMAC ns2__PayPalDoRefTransactionReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:699 */
+/* CyberSourceTransaction_nvp_1.129.h:698 */
 #ifndef SOAP_TYPE_ns2__RiskUpdateReply
 #define SOAP_TYPE_ns2__RiskUpdateReply (292)
 /* complex XSD type 'ns2:RiskUpdateReply': */
@@ -13980,7 +13980,7 @@ class SOAP_CMAC ns2__RiskUpdateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:702 */
+/* CyberSourceTransaction_nvp_1.129.h:701 */
 #ifndef SOAP_TYPE_ns2__FraudUpdateReply
 #define SOAP_TYPE_ns2__FraudUpdateReply (293)
 /* complex XSD type 'ns2:FraudUpdateReply': */
@@ -14019,7 +14019,7 @@ class SOAP_CMAC ns2__FraudUpdateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:705 */
+/* CyberSourceTransaction_nvp_1.129.h:704 */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionReply
 #define SOAP_TYPE_ns2__CaseManagementActionReply (294)
 /* complex XSD type 'ns2:CaseManagementActionReply': */
@@ -14058,7 +14058,7 @@ class SOAP_CMAC ns2__CaseManagementActionReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:708 */
+/* CyberSourceTransaction_nvp_1.129.h:707 */
 #ifndef SOAP_TYPE_ns2__RuleResultItem
 #define SOAP_TYPE_ns2__RuleResultItem (295)
 /* complex XSD type 'ns2:RuleResultItem': */
@@ -14107,7 +14107,7 @@ class SOAP_CMAC ns2__RuleResultItem {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:711 */
+/* CyberSourceTransaction_nvp_1.129.h:710 */
 #ifndef SOAP_TYPE_ns2__RuleResultItems
 #define SOAP_TYPE_ns2__RuleResultItems (296)
 /* complex XSD type 'ns2:RuleResultItems': */
@@ -14146,7 +14146,7 @@ class SOAP_CMAC ns2__RuleResultItems {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:714 */
+/* CyberSourceTransaction_nvp_1.129.h:713 */
 #ifndef SOAP_TYPE_ns2__DecisionReply
 #define SOAP_TYPE_ns2__DecisionReply (297)
 /* complex XSD type 'ns2:DecisionReply': */
@@ -14195,7 +14195,7 @@ class SOAP_CMAC ns2__DecisionReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:717 */
+/* CyberSourceTransaction_nvp_1.129.h:716 */
 #ifndef SOAP_TYPE_ns2__AdditionalFields
 #define SOAP_TYPE_ns2__AdditionalFields (298)
 /* complex XSD type 'ns2:AdditionalFields': */
@@ -14234,7 +14234,7 @@ class SOAP_CMAC ns2__AdditionalFields {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:720 */
+/* CyberSourceTransaction_nvp_1.129.h:719 */
 #ifndef SOAP_TYPE_ns2__Field
 #define SOAP_TYPE_ns2__Field (299)
 /* complex XSD type 'ns2:Field': */
@@ -14277,7 +14277,7 @@ class SOAP_CMAC ns2__Field {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:723 */
+/* CyberSourceTransaction_nvp_1.129.h:722 */
 #ifndef SOAP_TYPE_ns2__DMEReply
 #define SOAP_TYPE_ns2__DMEReply (300)
 /* complex XSD type 'ns2:DMEReply': */
@@ -14329,7 +14329,7 @@ class SOAP_CMAC ns2__DMEReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:726 */
+/* CyberSourceTransaction_nvp_1.129.h:725 */
 #ifndef SOAP_TYPE_ns2__ProfileReply
 #define SOAP_TYPE_ns2__ProfileReply (301)
 /* complex XSD type 'ns2:ProfileReply': */
@@ -14381,7 +14381,7 @@ class SOAP_CMAC ns2__ProfileReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:729 */
+/* CyberSourceTransaction_nvp_1.129.h:728 */
 #ifndef SOAP_TYPE_ns2__CCDCCReply
 #define SOAP_TYPE_ns2__CCDCCReply (302)
 /* complex XSD type 'ns2:CCDCCReply': */
@@ -14432,7 +14432,7 @@ class SOAP_CMAC ns2__CCDCCReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:732 */
+/* CyberSourceTransaction_nvp_1.129.h:731 */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateReply
 #define SOAP_TYPE_ns2__CCDCCUpdateReply (303)
 /* complex XSD type 'ns2:CCDCCUpdateReply': */
@@ -14471,7 +14471,7 @@ class SOAP_CMAC ns2__CCDCCUpdateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:735 */
+/* CyberSourceTransaction_nvp_1.129.h:734 */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentReply
 #define SOAP_TYPE_ns2__ChinaPaymentReply (304)
 /* complex XSD type 'ns2:ChinaPaymentReply': */
@@ -14534,7 +14534,7 @@ class SOAP_CMAC ns2__ChinaPaymentReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:738 */
+/* CyberSourceTransaction_nvp_1.129.h:737 */
 #ifndef SOAP_TYPE_ns2__ChinaRefundReply
 #define SOAP_TYPE_ns2__ChinaRefundReply (305)
 /* complex XSD type 'ns2:ChinaRefundReply': */
@@ -14582,7 +14582,7 @@ class SOAP_CMAC ns2__ChinaRefundReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:741 */
+/* CyberSourceTransaction_nvp_1.129.h:740 */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentReply
 #define SOAP_TYPE_ns2__BoletoPaymentReply (306)
 /* complex XSD type 'ns2:BoletoPaymentReply': */
@@ -14651,7 +14651,7 @@ class SOAP_CMAC ns2__BoletoPaymentReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:744 */
+/* CyberSourceTransaction_nvp_1.129.h:743 */
 #ifndef SOAP_TYPE_ns2__APInitiateReply
 #define SOAP_TYPE_ns2__APInitiateReply (307)
 /* complex XSD type 'ns2:APInitiateReply': */
@@ -14714,7 +14714,7 @@ class SOAP_CMAC ns2__APInitiateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:747 */
+/* CyberSourceTransaction_nvp_1.129.h:746 */
 #ifndef SOAP_TYPE_ns2__APCheckStatusReply
 #define SOAP_TYPE_ns2__APCheckStatusReply (308)
 /* complex XSD type 'ns2:APCheckStatusReply': */
@@ -14764,7 +14764,7 @@ class SOAP_CMAC ns2__APCheckStatusReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:750 */
+/* CyberSourceTransaction_nvp_1.129.h:749 */
 #ifndef SOAP_TYPE_ns2__APReply
 #define SOAP_TYPE_ns2__APReply (309)
 /* complex XSD type 'ns2:APReply': */
@@ -14870,7 +14870,7 @@ class SOAP_CMAC ns2__APReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:753 */
+/* CyberSourceTransaction_nvp_1.129.h:752 */
 #ifndef SOAP_TYPE_ns2__APAuthReply
 #define SOAP_TYPE_ns2__APAuthReply (310)
 /* complex XSD type 'ns2:APAuthReply': */
@@ -14945,7 +14945,7 @@ class SOAP_CMAC ns2__APAuthReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:756 */
+/* CyberSourceTransaction_nvp_1.129.h:755 */
 #ifndef SOAP_TYPE_ns2__APAuthReversalReply
 #define SOAP_TYPE_ns2__APAuthReversalReply (311)
 /* complex XSD type 'ns2:APAuthReversalReply': */
@@ -15011,7 +15011,7 @@ class SOAP_CMAC ns2__APAuthReversalReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:759 */
+/* CyberSourceTransaction_nvp_1.129.h:758 */
 #ifndef SOAP_TYPE_ns2__APCaptureReply
 #define SOAP_TYPE_ns2__APCaptureReply (312)
 /* complex XSD type 'ns2:APCaptureReply': */
@@ -15077,7 +15077,7 @@ class SOAP_CMAC ns2__APCaptureReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:762 */
+/* CyberSourceTransaction_nvp_1.129.h:761 */
 #ifndef SOAP_TYPE_ns2__APOptionsReply
 #define SOAP_TYPE_ns2__APOptionsReply (313)
 /* complex XSD type 'ns2:APOptionsReply': */
@@ -15131,7 +15131,7 @@ class SOAP_CMAC ns2__APOptionsReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:765 */
+/* CyberSourceTransaction_nvp_1.129.h:764 */
 #ifndef SOAP_TYPE_ns2__APOptionsOption
 #define SOAP_TYPE_ns2__APOptionsOption (314)
 /* complex XSD type 'ns2:APOptionsOption': */
@@ -15177,7 +15177,7 @@ class SOAP_CMAC ns2__APOptionsOption {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:768 */
+/* CyberSourceTransaction_nvp_1.129.h:767 */
 #ifndef SOAP_TYPE_ns2__APRefundReply
 #define SOAP_TYPE_ns2__APRefundReply (315)
 /* complex XSD type 'ns2:APRefundReply': */
@@ -15249,7 +15249,7 @@ class SOAP_CMAC ns2__APRefundReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:771 */
+/* CyberSourceTransaction_nvp_1.129.h:770 */
 #ifndef SOAP_TYPE_ns2__APSaleReply
 #define SOAP_TYPE_ns2__APSaleReply (316)
 /* complex XSD type 'ns2:APSaleReply': */
@@ -15303,7 +15303,7 @@ class SOAP_CMAC ns2__APSaleReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:774 */
+/* CyberSourceTransaction_nvp_1.129.h:773 */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsReply
 #define SOAP_TYPE_ns2__APCheckOutDetailsReply (317)
 /* complex XSD type 'ns2:APCheckOutDetailsReply': */
@@ -15354,7 +15354,7 @@ class SOAP_CMAC ns2__APCheckOutDetailsReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:777 */
+/* CyberSourceTransaction_nvp_1.129.h:776 */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsReply
 #define SOAP_TYPE_ns2__APTransactionDetailsReply (318)
 /* complex XSD type 'ns2:APTransactionDetailsReply': */
@@ -15411,7 +15411,7 @@ class SOAP_CMAC ns2__APTransactionDetailsReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:780 */
+/* CyberSourceTransaction_nvp_1.129.h:779 */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseReply
 #define SOAP_TYPE_ns2__APConfirmPurchaseReply (319)
 /* complex XSD type 'ns2:APConfirmPurchaseReply': */
@@ -15465,7 +15465,7 @@ class SOAP_CMAC ns2__APConfirmPurchaseReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:783 */
+/* CyberSourceTransaction_nvp_1.129.h:782 */
 #ifndef SOAP_TYPE_ns2__ReplyMessage
 #define SOAP_TYPE_ns2__ReplyMessage (320)
 /* complex XSD type 'ns2:ReplyMessage': */
@@ -15842,7 +15842,7 @@ class SOAP_CMAC ns2__ReplyMessage {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:786 */
+/* CyberSourceTransaction_nvp_1.129.h:785 */
 #ifndef SOAP_TYPE_ns2__FaultDetails
 #define SOAP_TYPE_ns2__FaultDetails (321)
 /* complex XSD type 'ns2:FaultDetails': */
@@ -15881,7 +15881,7 @@ class SOAP_CMAC ns2__FaultDetails {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:789 */
+/* CyberSourceTransaction_nvp_1.129.h:788 */
 #ifndef SOAP_TYPE_ns2__AirlineData
 #define SOAP_TYPE_ns2__AirlineData (322)
 /* complex XSD type 'ns2:AirlineData': */
@@ -16052,7 +16052,7 @@ class SOAP_CMAC ns2__AirlineData {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:792 */
+/* CyberSourceTransaction_nvp_1.129.h:791 */
 #ifndef SOAP_TYPE_ns2__Leg
 #define SOAP_TYPE_ns2__Leg (323)
 /* complex XSD type 'ns2:Leg': */
@@ -16151,7 +16151,7 @@ class SOAP_CMAC ns2__Leg {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:795 */
+/* CyberSourceTransaction_nvp_1.129.h:794 */
 #ifndef SOAP_TYPE_ns2__AncillaryData
 #define SOAP_TYPE_ns2__AncillaryData (324)
 /* complex XSD type 'ns2:AncillaryData': */
@@ -16202,7 +16202,7 @@ class SOAP_CMAC ns2__AncillaryData {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:798 */
+/* CyberSourceTransaction_nvp_1.129.h:797 */
 #ifndef SOAP_TYPE_ns2__Service
 #define SOAP_TYPE_ns2__Service (325)
 /* complex XSD type 'ns2:Service': */
@@ -16247,7 +16247,7 @@ class SOAP_CMAC ns2__Service {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:801 */
+/* CyberSourceTransaction_nvp_1.129.h:800 */
 #ifndef SOAP_TYPE_ns2__LodgingData
 #define SOAP_TYPE_ns2__LodgingData (326)
 /* complex XSD type 'ns2:LodgingData': */
@@ -16434,7 +16434,7 @@ class SOAP_CMAC ns2__LodgingData {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:804 */
+/* CyberSourceTransaction_nvp_1.129.h:803 */
 #ifndef SOAP_TYPE_ns2__Pos
 #define SOAP_TYPE_ns2__Pos (327)
 /* complex XSD type 'ns2:Pos': */
@@ -16528,7 +16528,7 @@ class SOAP_CMAC ns2__Pos {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:807 */
+/* CyberSourceTransaction_nvp_1.129.h:806 */
 #ifndef SOAP_TYPE_ns2__EncryptedPayment
 #define SOAP_TYPE_ns2__EncryptedPayment (328)
 /* complex XSD type 'ns2:EncryptedPayment': */
@@ -16577,7 +16577,7 @@ class SOAP_CMAC ns2__EncryptedPayment {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:810 */
+/* CyberSourceTransaction_nvp_1.129.h:809 */
 #ifndef SOAP_TYPE_ns2__Installment
 #define SOAP_TYPE_ns2__Installment (329)
 /* complex XSD type 'ns2:Installment': */
@@ -16632,7 +16632,7 @@ class SOAP_CMAC ns2__Installment {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:816 */
+/* CyberSourceTransaction_nvp_1.129.h:815 */
 #ifndef SOAP_TYPE_ns2__MerchantDefinedData
 #define SOAP_TYPE_ns2__MerchantDefinedData (331)
 /* complex XSD type 'ns2:MerchantDefinedData': */
@@ -16731,7 +16731,7 @@ class SOAP_CMAC ns2__MerchantDefinedData {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:819 */
+/* CyberSourceTransaction_nvp_1.129.h:818 */
 #ifndef SOAP_TYPE_ns2__MerchantSecureData
 #define SOAP_TYPE_ns2__MerchantSecureData (332)
 /* complex XSD type 'ns2:MerchantSecureData': */
@@ -16780,7 +16780,7 @@ class SOAP_CMAC ns2__MerchantSecureData {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:822 */
+/* CyberSourceTransaction_nvp_1.129.h:821 */
 #ifndef SOAP_TYPE_ns2__ReplyReserved
 #define SOAP_TYPE_ns2__ReplyReserved (333)
 /* complex XSD type 'ns2:ReplyReserved': */
@@ -16818,7 +16818,7 @@ class SOAP_CMAC ns2__ReplyReserved {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:825 */
+/* CyberSourceTransaction_nvp_1.129.h:824 */
 #ifndef SOAP_TYPE_ns2__RequestReserved
 #define SOAP_TYPE_ns2__RequestReserved (334)
 /* complex XSD type 'ns2:RequestReserved': */
@@ -16859,7 +16859,7 @@ class SOAP_CMAC ns2__RequestReserved {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:828 */
+/* CyberSourceTransaction_nvp_1.129.h:827 */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsReply
 #define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (335)
 /* complex XSD type 'ns2:PayPalGetTxnDetailsReply': */
@@ -17020,7 +17020,7 @@ class SOAP_CMAC ns2__PayPalGetTxnDetailsReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:831 */
+/* CyberSourceTransaction_nvp_1.129.h:830 */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchReply
 #define SOAP_TYPE_ns2__PayPalTransactionSearchReply (336)
 /* complex XSD type 'ns2:PayPalTransactionSearchReply': */
@@ -17064,7 +17064,7 @@ class SOAP_CMAC ns2__PayPalTransactionSearchReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:834 */
+/* CyberSourceTransaction_nvp_1.129.h:833 */
 #ifndef SOAP_TYPE_ns2__PaypalTransaction
 #define SOAP_TYPE_ns2__PaypalTransaction (337)
 /* complex XSD type 'ns2:PaypalTransaction': */
@@ -17137,7 +17137,7 @@ class SOAP_CMAC ns2__PaypalTransaction {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:837 */
+/* CyberSourceTransaction_nvp_1.129.h:836 */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateService
 #define SOAP_TYPE_ns2__CCDCCUpdateService (338)
 /* complex XSD type 'ns2:CCDCCUpdateService': */
@@ -17191,7 +17191,7 @@ class SOAP_CMAC ns2__CCDCCUpdateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:840 */
+/* CyberSourceTransaction_nvp_1.129.h:839 */
 #ifndef SOAP_TYPE_ns2__ServiceFee
 #define SOAP_TYPE_ns2__ServiceFee (339)
 /* complex XSD type 'ns2:ServiceFee': */
@@ -17237,7 +17237,7 @@ class SOAP_CMAC ns2__ServiceFee {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:843 */
+/* CyberSourceTransaction_nvp_1.129.h:842 */
 #ifndef SOAP_TYPE_ns2__EmvRequest
 #define SOAP_TYPE_ns2__EmvRequest (340)
 /* complex XSD type 'ns2:EmvRequest': */
@@ -17289,7 +17289,7 @@ class SOAP_CMAC ns2__EmvRequest {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:846 */
+/* CyberSourceTransaction_nvp_1.129.h:845 */
 #ifndef SOAP_TYPE_ns2__EmvReply
 #define SOAP_TYPE_ns2__EmvReply (341)
 /* complex XSD type 'ns2:EmvReply': */
@@ -17338,7 +17338,7 @@ class SOAP_CMAC ns2__EmvReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:849 */
+/* CyberSourceTransaction_nvp_1.129.h:848 */
 #ifndef SOAP_TYPE_ns2__OriginalTransaction
 #define SOAP_TYPE_ns2__OriginalTransaction (342)
 /* complex XSD type 'ns2:OriginalTransaction': */
@@ -17381,7 +17381,7 @@ class SOAP_CMAC ns2__OriginalTransaction {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:852 */
+/* CyberSourceTransaction_nvp_1.129.h:851 */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateService
 #define SOAP_TYPE_ns2__HostedDataCreateService (343)
 /* complex XSD type 'ns2:HostedDataCreateService': */
@@ -17426,7 +17426,7 @@ class SOAP_CMAC ns2__HostedDataCreateService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:855 */
+/* CyberSourceTransaction_nvp_1.129.h:854 */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveService
 #define SOAP_TYPE_ns2__HostedDataRetrieveService (344)
 /* complex XSD type 'ns2:HostedDataRetrieveService': */
@@ -17471,7 +17471,7 @@ class SOAP_CMAC ns2__HostedDataRetrieveService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:858 */
+/* CyberSourceTransaction_nvp_1.129.h:857 */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateReply
 #define SOAP_TYPE_ns2__HostedDataCreateReply (345)
 /* complex XSD type 'ns2:HostedDataCreateReply': */
@@ -17519,7 +17519,7 @@ class SOAP_CMAC ns2__HostedDataCreateReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:861 */
+/* CyberSourceTransaction_nvp_1.129.h:860 */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveReply
 #define SOAP_TYPE_ns2__HostedDataRetrieveReply (346)
 /* complex XSD type 'ns2:HostedDataRetrieveReply': */
@@ -17624,7 +17624,7 @@ class SOAP_CMAC ns2__HostedDataRetrieveReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:864 */
+/* CyberSourceTransaction_nvp_1.129.h:863 */
 #ifndef SOAP_TYPE_ns2__AutoRentalData
 #define SOAP_TYPE_ns2__AutoRentalData (347)
 /* complex XSD type 'ns2:AutoRentalData': */
@@ -17745,7 +17745,7 @@ class SOAP_CMAC ns2__AutoRentalData {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:867 */
+/* CyberSourceTransaction_nvp_1.129.h:866 */
 #ifndef SOAP_TYPE_ns2__VCReply
 #define SOAP_TYPE_ns2__VCReply (348)
 /* complex XSD type 'ns2:VCReply': */
@@ -17905,7 +17905,7 @@ class SOAP_CMAC ns2__VCReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:870 */
+/* CyberSourceTransaction_nvp_1.129.h:869 */
 #ifndef SOAP_TYPE_ns2__VCCardArt
 #define SOAP_TYPE_ns2__VCCardArt (349)
 /* complex XSD type 'ns2:VCCardArt': */
@@ -17954,7 +17954,7 @@ class SOAP_CMAC ns2__VCCardArt {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:873 */
+/* CyberSourceTransaction_nvp_1.129.h:872 */
 #ifndef SOAP_TYPE_ns2__VCCustomData
 #define SOAP_TYPE_ns2__VCCustomData (350)
 /* complex XSD type 'ns2:VCCustomData': */
@@ -18000,7 +18000,7 @@ class SOAP_CMAC ns2__VCCustomData {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:876 */
+/* CyberSourceTransaction_nvp_1.129.h:875 */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply
 #define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (351)
 /* complex XSD type 'ns2:DecryptVisaCheckoutDataReply': */
@@ -18039,7 +18039,7 @@ class SOAP_CMAC ns2__DecryptVisaCheckoutDataReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:879 */
+/* CyberSourceTransaction_nvp_1.129.h:878 */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataReply
 #define SOAP_TYPE_ns2__EncryptPaymentDataReply (352)
 /* complex XSD type 'ns2:EncryptPaymentDataReply': */
@@ -18081,7 +18081,7 @@ class SOAP_CMAC ns2__EncryptPaymentDataReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:882 */
+/* CyberSourceTransaction_nvp_1.129.h:881 */
 #ifndef SOAP_TYPE_ns2__BinLookupService
 #define SOAP_TYPE_ns2__BinLookupService (353)
 /* complex XSD type 'ns2:BinLookupService': */
@@ -18120,7 +18120,7 @@ class SOAP_CMAC ns2__BinLookupService {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:885 */
+/* CyberSourceTransaction_nvp_1.129.h:884 */
 #ifndef SOAP_TYPE_ns2__BinLookupReply
 #define SOAP_TYPE_ns2__BinLookupReply (354)
 /* complex XSD type 'ns2:BinLookupReply': */
@@ -18207,7 +18207,7 @@ class SOAP_CMAC ns2__BinLookupReply {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:888 */
+/* CyberSourceTransaction_nvp_1.129.h:887 */
 #ifndef SOAP_TYPE_ns2__issuer
 #define SOAP_TYPE_ns2__issuer (355)
 /* complex XSD type 'ns2:issuer': */
@@ -18247,7 +18247,7 @@ class SOAP_CMAC ns2__issuer {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:813 */
+/* CyberSourceTransaction_nvp_1.129.h:812 */
 #ifndef SOAP_TYPE_ns2__MDDField
 #define SOAP_TYPE_ns2__MDDField (330)
 /* simple XSD type 'ns2:MDDField': */
@@ -18288,7 +18288,7 @@ class SOAP_CMAC ns2__MDDField {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:10712 */
+/* CyberSourceTransaction_nvp_1.129.h:10711 */
 #ifndef SOAP_TYPE___ns1__runTransactionResponse
 #define SOAP_TYPE___ns1__runTransactionResponse (626)
 /* Wrapper: */
@@ -18308,7 +18308,7 @@ struct __ns1__runTransactionResponse {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:10712 */
+/* CyberSourceTransaction_nvp_1.129.h:10711 */
 #ifndef SOAP_TYPE___ns1__runTransaction
 #define SOAP_TYPE___ns1__runTransaction (627)
 /* Wrapper: */
@@ -18328,7 +18328,7 @@ struct __ns1__runTransaction {
 };
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:10785 */
+/* CyberSourceTransaction_nvp_1.129.h:10784 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Code
 #define SOAP_TYPE_SOAP_ENV__Code (628)
@@ -18355,7 +18355,7 @@ struct SOAP_ENV__Code {
 #endif
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:10785 */
+/* CyberSourceTransaction_nvp_1.129.h:10784 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
 #define SOAP_TYPE_SOAP_ENV__Detail (630)
@@ -18383,7 +18383,7 @@ struct SOAP_ENV__Detail {
 #endif
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:10785 */
+/* CyberSourceTransaction_nvp_1.129.h:10784 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
 #define SOAP_TYPE_SOAP_ENV__Reason (633)
@@ -18406,7 +18406,7 @@ struct SOAP_ENV__Reason {
 #endif
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:10785 */
+/* CyberSourceTransaction_nvp_1.129.h:10784 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
 #define SOAP_TYPE_SOAP_ENV__Fault (634)
@@ -18460,13 +18460,13 @@ struct SOAP_ENV__Fault {
 \******************************************************************************/
 
 
-/* CyberSourceTransaction_nvp_1.129.h:102 */
+/* CyberSourceTransaction_nvp_1.129.h:101 */
 #ifndef SOAP_TYPE__QName
 #define SOAP_TYPE__QName (5)
 typedef char *_QName;
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:102 */
+/* CyberSourceTransaction_nvp_1.129.h:101 */
 #ifndef SOAP_TYPE__XML
 #define SOAP_TYPE__XML (6)
 typedef char *_XML;
@@ -18502,25 +18502,25 @@ typedef struct ds__KeyInfoType _ds__KeyInfo;
 typedef char *wsc__FaultCodeOpenEnumType;
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:142 */
+/* CyberSourceTransaction_nvp_1.129.h:141 */
 #ifndef SOAP_TYPE_xsd__integer
 #define SOAP_TYPE_xsd__integer (109)
 typedef std::string xsd__integer;
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:908 */
+/* CyberSourceTransaction_nvp_1.129.h:907 */
 #ifndef SOAP_TYPE_ns2__amount
 #define SOAP_TYPE_ns2__amount (356)
 typedef std::string ns2__amount;
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:912 */
+/* CyberSourceTransaction_nvp_1.129.h:911 */
 #ifndef SOAP_TYPE_ns2__boolean
 #define SOAP_TYPE_ns2__boolean (357)
 typedef std::string ns2__boolean;
 #endif
 
-/* CyberSourceTransaction_nvp_1.129.h:916 */
+/* CyberSourceTransaction_nvp_1.129.h:915 */
 #ifndef SOAP_TYPE_ns2__dateTime
 #define SOAP_TYPE_ns2__dateTime (358)
 typedef std::string ns2__dateTime;

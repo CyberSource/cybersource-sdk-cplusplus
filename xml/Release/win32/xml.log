@@ -1,5 +1,5 @@
-﻿Build started 8/19/2016 12:26:41 PM.
-     1>Project "C:\projects\git_cpp\cybersource-sdk-windows-cpp\xml\xml.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 9/1/2016 4:52:59 PM.
+     1>Project "C:\Users\ashchand\Documents\personal\cppsdk\cybersource-sdk-windows-cpp\xml\xml.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\XMLClient /I..\BaseClient /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Release\win32\XMLTest.pch" /Fo".\Release\win32\\" /Fd".\Release\win32\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
@@ -13,9 +13,9 @@
          .\Release\win32\xml.obj
          Generating code
          Finished generating code
-         xml.vcxproj -> C:\projects\git_cpp\cybersource-sdk-windows-cpp\xml\.\Release\win32\XMLTest.exe
-     1>Done Building Project "C:\projects\git_cpp\cybersource-sdk-windows-cpp\xml\xml.vcxproj" (Rebuild target(s)).
+         xml.vcxproj -> C:\Users\ashchand\Documents\personal\cppsdk\cybersource-sdk-windows-cpp\xml\.\Release\win32\XMLTest.exe
+     1>Done Building Project "C:\Users\ashchand\Documents\personal\cppsdk\cybersource-sdk-windows-cpp\xml\xml.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:06.05
+Time Elapsed 00:00:05.74

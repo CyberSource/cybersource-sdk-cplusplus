@@ -1,14 +1,19 @@
 // NVPTest.cpp : Defines the entry po int for the console application.
 //
 
-#include "stdafx.h"
+#ifdef WIN32
+  #include "stdafx.h"
+#else
+  #include "ctype.h"
+#endif
 #include "NVPCybersource.h"
 #include "util.h"
-#include "Windows.h"
+
 #pragma comment(lib, "NVPClient.lib")
 #pragma comment(lib, "BASECLIENT.lib")
 
-const char CYBS_INI_FILE[]   = "../cybs.ini";
+	const char CYBS_INI_FILE[]   = "../cybs.ini";
+
 
 void printContent(CybsMap *map);
 char *runAuth(CybsMap *cfgMap);
@@ -75,32 +80,32 @@ char *runAuth(CybsMap *cfgMap) {
 	CybsMap *responseMap = cybs_create_map();
 	
 	// cybs_add(requestMap, "merchantID", "visadctest_ashish");
-	cybs_add(requestMap, "merchantReferenceCode", "your_merchant_reference_code");
-	cybs_add(requestMap, "billTo_firstName", "John");
-	cybs_add(requestMap, "billTo_lastName", "Doe");
-	cybs_add(requestMap, "billTo_street1", "1295 Charleston Road");
-	cybs_add(requestMap, "billTo_city", "Mountain View");
-	cybs_add(requestMap, "billTo_state", "CA");
-	cybs_add(requestMap, "billTo_postalCode", "94043");
-	cybs_add(requestMap, "billTo_country", "US");
-	cybs_add(requestMap, "billTo_email", "nobody@cybersource.com");
-	cybs_add(requestMap, "billTo_ipAddress", "10.7.7.7");
-	cybs_add(requestMap, "billTo_phoneNumber", "650-965-6000");
-	cybs_add(requestMap, "shipTo_firstName", "Jane");
-	cybs_add(requestMap, "shipTo_lastName", "Jane");
+	cybs_add(requestMap, "merchantReferenceCode", (void *)"your_merchant_reference_code");
+	cybs_add(requestMap, "billTo_firstName", (void *)"John");
+	cybs_add(requestMap, "billTo_lastName", (void *)"Doe");
+	cybs_add(requestMap, "billTo_street1", (void *)"1295 Charleston Road");
+	cybs_add(requestMap, "billTo_city", (void *)"Mountain View");
+	cybs_add(requestMap, "billTo_state", (void *)"CA");
+	cybs_add(requestMap, "billTo_postalCode", (void *)"94043");
+	cybs_add(requestMap, "billTo_country", (void *)"US");
+	cybs_add(requestMap, "billTo_email", (void *)"nobody@cybersource.com");
+	cybs_add(requestMap, "billTo_ipAddress", (void *)"10.7.7.7");
+	cybs_add(requestMap, "billTo_phoneNumber", (void *)"650-965-6000");
+	cybs_add(requestMap, "shipTo_firstName", (void *)"Jane");
+	cybs_add(requestMap, "shipTo_lastName", (void *)"Jane");
 	//cybs_add(requestMap, "shipTo_firstName", "Doe");
-	cybs_add(requestMap, "shipTo_street1", "123 toile délavée noir");
+	cybs_add(requestMap, "shipTo_street1", (void *)"123 toile délavée noir");
 	//cybs_add(requestMap, "shipTo_city", "San Mateo");
-	cybs_add(requestMap, "shipTo_state", "CA");
-	cybs_add(requestMap, "shipTo_city", "CA");
-	cybs_add(requestMap, "shipTo_postalCode", "94401");
-	cybs_add(requestMap, "shipTo_country", "US");
-	cybs_add(requestMap, "card_accountNumber", "4111111111111111");
-	cybs_add(requestMap, "card_expirationMonth", "12");
-	cybs_add(requestMap, "card_expirationYear", "2020");
-	cybs_add(requestMap, "purchaseTotals_currency", "USD");
-	cybs_add(requestMap, "item_0_unitPrice", "12.34");
-	cybs_add(requestMap, "ccAuthService_run", "true");
+	cybs_add(requestMap, "shipTo_state", (void *)"CA");
+	cybs_add(requestMap, "shipTo_city", (void *)"CA");
+	cybs_add(requestMap, "shipTo_postalCode", (void *)"94401");
+	cybs_add(requestMap, "shipTo_country", (void *)"US");
+	cybs_add(requestMap, "card_accountNumber", (void *)"4111111111111111");
+	cybs_add(requestMap, "card_expirationMonth", (void *)"12");
+	cybs_add(requestMap, "card_expirationYear", (void *)"2020");
+	cybs_add(requestMap, "purchaseTotals_currency", (void *)"USD");
+	cybs_add(requestMap, "item_0_unitPrice", (void *)"12.34");
+	cybs_add(requestMap, "ccAuthService_run", (void *)"true");
 
 	printf( "CREDIT CARD AUTHORIZATION REQUEST: \n" );
 	printContent(requestMap);
@@ -151,19 +156,16 @@ char *runAuth(CybsMap *cfgMap) {
 
 void runCapture( CybsMap* cfgMap, char* authRequestID ) {
 	INVPTransactionProcessorProxy proxy = INVPTransactionProcessorProxy ();
-	//proxy.soap = soap_new();
-	//proxy.soap_own = true;
-	//proxy.INVPTransactionProcessorProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
 	soap_mode(proxy.soap, (soap_mode)SOAP_XML_CANONICAL);
 
 	CybsMap *requestMap = cybs_create_map();
 	CybsMap *responseMap = cybs_create_map();
 	
-	cybs_add( requestMap, "ccCaptureService_run", "true" );
-	cybs_add( requestMap, "merchantReferenceCode", "your_merchant_reference_code" );
+	cybs_add( requestMap, "ccCaptureService_run", (void *)"true" );
+	cybs_add( requestMap, "merchantReferenceCode", (void *)"your_merchant_reference_code" );
 	cybs_add( requestMap, "ccCaptureService_authRequestID", authRequestID );
-	cybs_add( requestMap, "purchaseTotals_currency", "USD" );
-	cybs_add( requestMap, "item_0_unitPrice", "12.34" );
+	cybs_add( requestMap, "purchaseTotals_currency", (void *)"USD" );
+	cybs_add( requestMap, "item_0_unitPrice", (void *)"12.34" );
 
 	printf( "FOLLOW-ON CAPTURE REQUEST: \n" );
 	printContent(requestMap);
@@ -190,7 +192,6 @@ void runCapture( CybsMap* cfgMap, char* authRequestID ) {
 			if (cybs_get(cfgMap, CYBS_SK_ERROR_INFO)) {
 				printf( "%s\n", cybs_get(cfgMap, CYBS_SK_ERROR_INFO));
 			}
-			//soap_print_fault(proxy.soap, stdout);
 			printf("faultstring = %s\n", proxy.soap_fault_string());
 	}
 
@@ -207,7 +208,6 @@ void runCapture( CybsMap* cfgMap, char* authRequestID ) {
 
 void handleFault(INVPTransactionProcessorProxy proxy)
 {
-	//soap_print_fault(proxy.soap, stdout );
 	printf("faultcode = %s\n", proxy.soap->fault->faultcode);
 	printf("faultstring = %s\n", proxy.soap_fault_string());
 	SOAP_ENV__Detail *detail  = proxy.soap->fault->detail;

@@ -12,16 +12,26 @@
 #include <openssl/pkcs12.h>
 #include <openssl/pem.h>
 #include <openssl/err.h>
-#include "..\NVPClient\log.h"
-//#include <libxml/xmlstring.h>
+#ifdef WIN32
+	#include "..\NVPClient\log.h"
+#else
+	#include "../NVPClient/log.h"
+#endif
+
+#include <libxml/xmlmemory.h>
 #include "plugin.h"
 
+#ifdef WIN32
 static HANDLE *lock_cs;
+#endif /* WIN32 */
+
 void cybs_openssl_init(void);
 void cybs_openssl_cleanup(void);
 void win32_locking_callback(int mode, int type, const char *file, int line);
 void gsoapCleanup(ITransactionProcessorProxy proxy);
 void opensslCleanup (EVP_PKEY *pkey1, X509 *cert1, STACK_OF(X509) *ca);
+void pthreads_locking_callback(int mode,int type,const char *file,int line);
+unsigned long pthreads_thread_id(void );
 
 #pragma comment(lib, "BASECLIENT.lib")
 
@@ -69,6 +79,7 @@ void opensslCleanup (EVP_PKEY *pkey1, X509 *cert1, STACK_OF(X509) *ca);
 	if (strlen( value ) > maxlen) \
 		RETURN_LENGTH_ERROR( name, maxlen );
 
+#ifdef WIN32
 void cybs_openssl_init(void)
 {
 	int i;
@@ -105,6 +116,83 @@ void win32_locking_callback(int mode, int type, const char *file, int line)
 		ReleaseMutex(lock_cs[type]);
 		}
 }
+#endif /* WIN32 */
+
+#ifdef PTHREADS
+
+static pthread_mutex_t *lock_cs;
+static long *lock_count;
+
+void cybs_openssl_init(void)
+	{
+	int i;
+
+	lock_cs= (pthread_mutex_t *) OPENSSL_malloc(CRYPTO_num_locks() * sizeof(pthread_mutex_t));
+	lock_count= (long *) OPENSSL_malloc(CRYPTO_num_locks() * sizeof(long));
+	for (i=0; i<CRYPTO_num_locks(); i++)
+		{
+		lock_count[i]=0;
+		pthread_mutex_init(&(lock_cs[i]),NULL);
+		}
+
+	CRYPTO_set_id_callback((unsigned long (*)())pthreads_thread_id);
+	/* CRYPTO_set_locking_callback((void (*)())pthreads_locking_callback); */
+        CRYPTO_set_locking_callback((void (*)(int,int,const char *,int))pthreads_locking_callback);
+	}
+
+void cybs_openssl_cleanup(void)
+	{
+	int i;
+
+	CRYPTO_set_locking_callback(NULL);
+	/* fprintf(stderr,"cleanup\n"); */
+	for (i=0; i<CRYPTO_num_locks(); i++)
+		{
+		pthread_mutex_destroy(&(lock_cs[i]));
+		/* fprintf(stderr,"%8ld:%s\n",lock_count[i],
+			CRYPTO_get_lock_name(i)); */
+		}
+	OPENSSL_free(lock_cs);
+	OPENSSL_free(lock_count);
+
+	/* fprintf(stderr,"done cleanup\n"); */
+	}
+
+void pthreads_locking_callback(int mode, int type, const char *file,
+	     int line)
+      {
+#ifdef undef
+	fprintf(stderr,"thread=%4d mode=%s lock=%s %s:%d\n",
+		CRYPTO_thread_id(),
+		(mode&CRYPTO_LOCK)?"l":"u",
+		(type&CRYPTO_READ)?"r":"w",file,line);
+#endif
+
+	if (mode & CRYPTO_LOCK)
+		{
+		pthread_mutex_lock(&(lock_cs[type]));
+		lock_count[type]++;
+		}
+	else
+		{
+		pthread_mutex_unlock(&(lock_cs[type]));
+		}
+	}
+
+unsigned long pthreads_thread_id(void)
+	{
+	unsigned long ret;
+
+	ret=(unsigned long)pthread_self();
+	return(ret);
+	}
+
+unsigned long cybs_get_thread_id(void)
+{
+	return( pthreads_thread_id() );
+}
+
+#endif /* PTHREADS */
 
 class CYBSCPP_BEGIN_END
 {
@@ -123,6 +211,7 @@ public:
 		ERR_free_strings();
 		EVP_cleanup();
 		CRYPTO_cleanup_all_ex_data();
+		xmlCleanupParser();
 		
 	}
 };
@@ -139,25 +228,13 @@ char cybs_flag_value( const char *szFlagString )
 
 int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EVP_PKEY **pkey1, X509 **cert1, STACK_OF(X509) **ca) 
 {
-	/*if (proxy)
-	proxy->destroy();*/
-
 	char *sslCertFile = cfg.sslCertFile;
-	//proxy->soap = soap_new();
-	//proxy->soap->mode = SOAP_XML_CANONICAL;
 
 	soap_ssl_init();
 	soap_register_plugin((*proxy)->soap, soap_wsse);
 
-	/****Read pkcs12*************/
-	/*PKCS12 *p12;
-	EVP_PKEY *pkey1;
-	X509 *cert1;*/
 	FILE *fp;
 
-	//STACK_OF(X509) *ca = NULL;
-	//OpenSSL_add_all_algorithms();
-	//ERR_load_crypto_strings();
 	if (!(fp = fopen(cfg.keyFile, "rb"))) {
 		return ( 1 );
 	}
@@ -194,9 +271,8 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 	char *token1, *token2;
 	if ( cfg.isEncryptionEnabled ) {
 		for (int i = 0; i < sk_X509_num(*ca); i++) {
-			//token1 = strchr(sk_X509_value(*ca, i)->name, '=');
-			//token2 = strchr(token1, '=');
 
+			#ifdef WIN32
 			for (token1 = strtok_s(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
 			{
 				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
@@ -204,6 +280,16 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 						return ( 4 );
 					}
 			}
+		#else
+
+			for (token1 = strtok_r(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
+			{
+				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
+					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
+						return ( 4 );
+					}
+			}
+		#endif
 		}
 	}
 
@@ -215,8 +301,6 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 	{
 		return ( 5 );
 	}
-	//proxy->soap_own = true;
-	//proxy->ITransactionProcessorProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
 
 	return ( 0 );
 }

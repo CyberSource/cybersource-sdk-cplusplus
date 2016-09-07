@@ -15,7 +15,6 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
 #include <list>
 #include <vector>
 #include <set>
-#define SOAP_NAMESPACE_OF_wsc	"http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
 #define SOAP_NAMESPACE_OF_ns2	"urn:schemas-cybersource-com:transaction-data-1.129"
 
 #ifndef soapStub_H
@@ -25,50 +24,6 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
 # error "GSOAP VERSION 20832 MISMATCH IN GENERATED CODE VERSUS LIBRARY CODE: PLEASE REINSTALL PACKAGE"
 #endif
 
-
-/******************************************************************************\
- *                                                                            *
- * Enumeration Types                                                          *
- *                                                                            *
-\******************************************************************************/
-
-
-/* wsu.h:66 */
-#ifndef SOAP_TYPE_wsu__tTimestampFault
-#define SOAP_TYPE_wsu__tTimestampFault (11)
-/* wsu:tTimestampFault */
-enum wsu__tTimestampFault {
-	wsu__MessageExpired = 0
-};
-#endif
-
-/* wsse.h:100 */
-#ifndef SOAP_TYPE_wsse__FaultcodeEnum
-#define SOAP_TYPE_wsse__FaultcodeEnum (14)
-/* wsse:FaultcodeEnum */
-enum wsse__FaultcodeEnum {
-	wsse__UnsupportedSecurityToken = 0,
-	wsse__UnsupportedAlgorithm = 1,
-	wsse__InvalidSecurity = 2,
-	wsse__InvalidSecurityToken = 3,
-	wsse__FailedAuthentication = 4,
-	wsse__FailedCheck = 5,
-	wsse__SecurityTokenUnavailable = 6
-};
-#endif
-
-/* wsc.h:62 */
-#ifndef SOAP_TYPE_wsc__FaultCodeType
-#define SOAP_TYPE_wsc__FaultCodeType (89)
-/* wsc:FaultCodeType */
-enum wsc__FaultCodeType {
-	wsc__BadContextToken = 0,
-	wsc__UnsupportedContextToken = 1,
-	wsc__UnknownDerivationSource = 2,
-	wsc__RenewNeeded = 3,
-	wsc__UnableToRenew = 4
-};
-#endif
 
 /******************************************************************************\
  *                                                                            *
@@ -83,50 +38,6 @@ enum wsc__FaultCodeType {
  *                                                                            *
 \******************************************************************************/
 
-struct _wsu__Timestamp;	/* wsu.h:76 */
-struct wsse__EncodedString;	/* wsse.h:57 */
-struct _wsse__UsernameToken;	/* wsse.h:128 */
-struct _wsse__BinarySecurityToken;	/* wsse.h:139 */
-struct _wsse__Reference;	/* wsse.h:149 */
-struct _wsse__Embedded;	/* wsse.h:157 */
-struct _wsse__KeyIdentifier;	/* wsse.h:166 */
-struct _wsse__SecurityTokenReference;	/* wsse.h:176 */
-struct ds__SignatureType;	/* ds.h:46 */
-struct _c14n__InclusiveNamespaces;	/* c14n.h:24 */
-struct ds__TransformType;	/* ds.h:73 */
-struct ds__KeyInfoType;	/* ds.h:48 */
-struct ds__SignedInfoType;	/* ds.h:46 */
-struct ds__CanonicalizationMethodType;	/* ds.h:59 */
-struct ds__SignatureMethodType;	/* ds.h:62 */
-struct ds__ReferenceType;	/* ds.h:65 */
-struct ds__TransformsType;	/* ds.h:68 */
-struct ds__DigestMethodType;	/* ds.h:79 */
-struct ds__KeyValueType;	/* ds.h:85 */
-struct ds__RetrievalMethodType;	/* ds.h:86 */
-struct ds__X509DataType;	/* wsse.h:179 */
-struct ds__X509IssuerSerialType;	/* ds.h:102 */
-struct ds__DSAKeyValueType;	/* ds.h:123 */
-struct ds__RSAKeyValueType;	/* ds.h:126 */
-struct xenc__EncryptionPropertyType;	/* xenc.h:84 */
-struct xenc__EncryptedType;	/* xenc.h:53 */
-struct xenc__EncryptionMethodType;	/* xenc.h:56 */
-struct xenc__CipherDataType;	/* xenc.h:59 */
-struct xenc__CipherReferenceType;	/* xenc.h:62 */
-struct xenc__TransformsType;	/* xenc.h:65 */
-struct xenc__AgreementMethodType;	/* xenc.h:74 */
-struct xenc__ReferenceType;	/* xenc.h:77 */
-struct xenc__EncryptionPropertiesType;	/* xenc.h:80 */
-struct __xenc__union_ReferenceList;	/* xenc.h:238 */
-struct _xenc__ReferenceList;	/* xenc.h:89 */
-struct xenc__EncryptedDataType;	/* xenc.h:68 */
-struct xenc__EncryptedKeyType;	/* xenc.h:71 */
-struct wsc__SecurityContextTokenType;	/* wsc.h:87 */
-union _wsc__union_DerivedKeyTokenType;	/* wsc.h:125 */
-struct __wsc__DerivedKeyTokenType_sequence;	/* wsc.h:116 */
-struct wsc__DerivedKeyTokenType;	/* wsc.h:109 */
-struct wsc__PropertiesType;	/* wsc.h:113 */
-struct _wsse__Security;	/* wsse.h:191 */
-struct _wsse__Password;	/* wsse.h:129 */
 class ns2__Item;	/* CyberSourceTransaction_nvp_1.129.h:153 */
 class ns2__CCAuthService;	/* CyberSourceTransaction_nvp_1.129.h:156 */
 class ns2__OCTService;	/* CyberSourceTransaction_nvp_1.129.h:159 */
@@ -376,1284 +287,9 @@ class ns2__MDDField;	/* CyberSourceTransaction_nvp_1.129.h:813 */
 struct __ns1__runTransactionResponse;	/* CyberSourceTransaction_nvp_1.129.h:10712 */
 struct __ns1__runTransaction;	/* CyberSourceTransaction_nvp_1.129.h:10712 */
 
-/* wsu.h:76 */
-#ifndef SOAP_TYPE__wsu__Timestamp
-#define SOAP_TYPE__wsu__Timestamp (12)
-/* complex XSD type 'wsu:Timestamp': */
-struct _wsu__Timestamp {
-      public:
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-        /** Optional element 'wsu:Created' of XSD type 'xsd:string' */
-        char *Created;
-        /** Optional element 'wsu:Expires' of XSD type 'xsd:string' */
-        char *Expires;
-      public:
-        /** Return unique type id SOAP_TYPE__wsu__Timestamp */
-        int soap_type() const { return SOAP_TYPE__wsu__Timestamp; }
-        /** Constructor with member initializations */
-        _wsu__Timestamp()
-        {
-          wsu__Id = (char *)0;
-          Created = (char *)0;
-          Expires = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsu__Timestamp(struct soap*, int) */
-        friend SOAP_FMAC1 _wsu__Timestamp * SOAP_FMAC2 soap_instantiate__wsu__Timestamp(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:57 */
-#ifndef SOAP_TYPE_wsse__EncodedString
-#define SOAP_TYPE_wsse__EncodedString (13)
-/* simple XSD type 'wsse:EncodedString': */
-struct wsse__EncodedString {
-      public:
-        /** Simple content of XSD type 'xsd:string' wrapped by this struct */
-        char *__item;
-        /** Optional attribute 'EncodingType' of XSD type 'xsd:string' */
-        char *EncodingType;
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-      public:
-        /** Return unique type id SOAP_TYPE_wsse__EncodedString */
-        int soap_type() const { return SOAP_TYPE_wsse__EncodedString; }
-        /** Constructor with member initializations */
-        wsse__EncodedString()
-        {
-          __item = (char *)0;
-          EncodingType = (char *)0;
-          wsu__Id = (char *)0;
-        }
-        /** Friend allocator used by soap_new_wsse__EncodedString(struct soap*, int) */
-        friend SOAP_FMAC1 wsse__EncodedString * SOAP_FMAC2 soap_instantiate_wsse__EncodedString(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:128 */
-#ifndef SOAP_TYPE__wsse__UsernameToken
-#define SOAP_TYPE__wsse__UsernameToken (15)
-/* complex XSD type 'wsse:UsernameToken': */
-struct _wsse__UsernameToken {
-      public:
-        /** Optional element 'wsse:Username' of XSD type 'xsd:string' */
-        char *Username;
-        /** Optional element 'wsse:Password' of XSD type 'wsse:Password' */
-        struct _wsse__Password *Password;
-        /** Optional element 'wsse:Nonce' of XSD type 'wsse:EncodedString' */
-        struct wsse__EncodedString *Nonce;
-        /** Optional element 'wsu:Created' of XSD type 'xsd:string' */
-        char *wsu__Created;
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-      public:
-        /** Return unique type id SOAP_TYPE__wsse__UsernameToken */
-        int soap_type() const { return SOAP_TYPE__wsse__UsernameToken; }
-        /** Constructor with member initializations */
-        _wsse__UsernameToken()
-        {
-          Username = (char *)0;
-          Password = (struct _wsse__Password *)0;
-          Nonce = (struct wsse__EncodedString *)0;
-          wsu__Created = (char *)0;
-          wsu__Id = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsse__UsernameToken(struct soap*, int) */
-        friend SOAP_FMAC1 _wsse__UsernameToken * SOAP_FMAC2 soap_instantiate__wsse__UsernameToken(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:139 */
-#ifndef SOAP_TYPE__wsse__BinarySecurityToken
-#define SOAP_TYPE__wsse__BinarySecurityToken (19)
-/* simple XSD type 'wsse:BinarySecurityToken': */
-struct _wsse__BinarySecurityToken {
-      public:
-        /** Simple content of XSD type 'xsd:string' wrapped by this struct */
-        char *__item;
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-        /** Optional attribute 'ValueType' of XSD type 'xsd:string' */
-        char *ValueType;
-        /** Optional attribute 'EncodingType' of XSD type 'xsd:string' */
-        char *EncodingType;
-      public:
-        /** Return unique type id SOAP_TYPE__wsse__BinarySecurityToken */
-        int soap_type() const { return SOAP_TYPE__wsse__BinarySecurityToken; }
-        /** Constructor with member initializations */
-        _wsse__BinarySecurityToken()
-        {
-          __item = (char *)0;
-          wsu__Id = (char *)0;
-          ValueType = (char *)0;
-          EncodingType = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsse__BinarySecurityToken(struct soap*, int) */
-        friend SOAP_FMAC1 _wsse__BinarySecurityToken * SOAP_FMAC2 soap_instantiate__wsse__BinarySecurityToken(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:149 */
-#ifndef SOAP_TYPE__wsse__Reference
-#define SOAP_TYPE__wsse__Reference (20)
-/* complex XSD type 'wsse:Reference': */
-struct _wsse__Reference {
-      public:
-        /** Optional attribute 'URI' of XSD type 'xsd:string' */
-        char *URI;
-        /** Optional attribute 'ValueType' of XSD type 'xsd:string' */
-        char *ValueType;
-      public:
-        /** Return unique type id SOAP_TYPE__wsse__Reference */
-        int soap_type() const { return SOAP_TYPE__wsse__Reference; }
-        /** Constructor with member initializations */
-        _wsse__Reference()
-        {
-          URI = (char *)0;
-          ValueType = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsse__Reference(struct soap*, int) */
-        friend SOAP_FMAC1 _wsse__Reference * SOAP_FMAC2 soap_instantiate__wsse__Reference(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:157 */
-#ifndef SOAP_TYPE__wsse__Embedded
-#define SOAP_TYPE__wsse__Embedded (21)
-/* complex XSD type 'wsse:Embedded': */
-struct _wsse__Embedded {
-      public:
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-        /** Optional attribute 'ValueType' of XSD type 'xsd:string' */
-        char *ValueType;
-      public:
-        /** Return unique type id SOAP_TYPE__wsse__Embedded */
-        int soap_type() const { return SOAP_TYPE__wsse__Embedded; }
-        /** Constructor with member initializations */
-        _wsse__Embedded()
-        {
-          wsu__Id = (char *)0;
-          ValueType = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsse__Embedded(struct soap*, int) */
-        friend SOAP_FMAC1 _wsse__Embedded * SOAP_FMAC2 soap_instantiate__wsse__Embedded(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:166 */
-#ifndef SOAP_TYPE__wsse__KeyIdentifier
-#define SOAP_TYPE__wsse__KeyIdentifier (22)
-/* simple XSD type 'wsse:KeyIdentifier': */
-struct _wsse__KeyIdentifier {
-      public:
-        /** Simple content of XSD type 'xsd:string' wrapped by this struct */
-        char *__item;
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-        /** Optional attribute 'ValueType' of XSD type 'xsd:string' */
-        char *ValueType;
-        /** Optional attribute 'EncodingType' of XSD type 'xsd:string' */
-        char *EncodingType;
-      public:
-        /** Return unique type id SOAP_TYPE__wsse__KeyIdentifier */
-        int soap_type() const { return SOAP_TYPE__wsse__KeyIdentifier; }
-        /** Constructor with member initializations */
-        _wsse__KeyIdentifier()
-        {
-          __item = (char *)0;
-          wsu__Id = (char *)0;
-          ValueType = (char *)0;
-          EncodingType = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsse__KeyIdentifier(struct soap*, int) */
-        friend SOAP_FMAC1 _wsse__KeyIdentifier * SOAP_FMAC2 soap_instantiate__wsse__KeyIdentifier(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:176 */
-#ifndef SOAP_TYPE__wsse__SecurityTokenReference
-#define SOAP_TYPE__wsse__SecurityTokenReference (23)
-/* complex XSD type 'wsse:SecurityTokenReference': */
-struct _wsse__SecurityTokenReference {
-      public:
-        /** Optional element 'wsse:Reference' of XSD type 'wsse:Reference' */
-        struct _wsse__Reference *Reference;
-        /** Optional element 'wsse:KeyIdentifier' of XSD type 'wsse:KeyIdentifier' */
-        struct _wsse__KeyIdentifier *KeyIdentifier;
-        /** Optional element 'wsse:Embedded' of XSD type 'wsse:Embedded' */
-        struct _wsse__Embedded *Embedded;
-        /** Optional element 'ds:X509Data' of XSD type 'ds:X509DataType' */
-        struct ds__X509DataType *ds__X509Data;
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-        /** Optional attribute 'wsc:Instance' of XSD type 'xsd:string' */
-        char *wsc__Instance;
-        /** Optional attribute 'Usage' of XSD type 'xsd:string' */
-        char *Usage;
-      public:
-        /** Return unique type id SOAP_TYPE__wsse__SecurityTokenReference */
-        int soap_type() const { return SOAP_TYPE__wsse__SecurityTokenReference; }
-        /** Constructor with member initializations */
-        _wsse__SecurityTokenReference()
-        {
-          Reference = (struct _wsse__Reference *)0;
-          KeyIdentifier = (struct _wsse__KeyIdentifier *)0;
-          Embedded = (struct _wsse__Embedded *)0;
-          ds__X509Data = (struct ds__X509DataType *)0;
-          wsu__Id = (char *)0;
-          wsc__Instance = (char *)0;
-          Usage = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsse__SecurityTokenReference(struct soap*, int) */
-        friend SOAP_FMAC1 _wsse__SecurityTokenReference * SOAP_FMAC2 soap_instantiate__wsse__SecurityTokenReference(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:46 */
-#ifndef SOAP_TYPE_ds__SignatureType
-#define SOAP_TYPE_ds__SignatureType (30)
-/* complex XSD type 'ds:SignatureType': */
-struct ds__SignatureType {
-      public:
-        /** Optional element 'ds:SignedInfo' of XSD type 'ds:SignedInfoType' */
-        struct ds__SignedInfoType *SignedInfo;
-        /** Optional element 'ds:SignatureValue' of XSD type 'ds:SignatureValue' */
-        char *SignatureValue;
-        /** Optional element 'ds:KeyInfo' of XSD type 'ds:KeyInfoType' */
-        struct ds__KeyInfoType *KeyInfo;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__SignatureType */
-        int soap_type() const { return SOAP_TYPE_ds__SignatureType; }
-        /** Constructor with member initializations */
-        ds__SignatureType()
-        {
-          SignedInfo = (struct ds__SignedInfoType *)0;
-          SignatureValue = (char *)0;
-          KeyInfo = (struct ds__KeyInfoType *)0;
-          Id = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__SignatureType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__SignatureType * SOAP_FMAC2 soap_instantiate_ds__SignatureType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* c14n.h:24 */
-#ifndef SOAP_TYPE__c14n__InclusiveNamespaces
-#define SOAP_TYPE__c14n__InclusiveNamespaces (40)
-/* complex XSD type 'c14n:InclusiveNamespaces': */
-struct _c14n__InclusiveNamespaces {
-      public:
-        /** Optional attribute 'PrefixList' of XSD type 'xsd:string' */
-        char *PrefixList;
-      public:
-        /** Return unique type id SOAP_TYPE__c14n__InclusiveNamespaces */
-        int soap_type() const { return SOAP_TYPE__c14n__InclusiveNamespaces; }
-        /** Constructor with member initializations */
-        _c14n__InclusiveNamespaces()
-        {
-          PrefixList = (char *)0;
-        }
-        /** Friend allocator used by soap_new__c14n__InclusiveNamespaces(struct soap*, int) */
-        friend SOAP_FMAC1 _c14n__InclusiveNamespaces * SOAP_FMAC2 soap_instantiate__c14n__InclusiveNamespaces(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:73 */
-#ifndef SOAP_TYPE_ds__TransformType
-#define SOAP_TYPE_ds__TransformType (41)
-/* complex XSD type 'ds:TransformType': */
-struct ds__TransformType {
-      public:
-        /** Optional element 'c14n:InclusiveNamespaces' of XSD type 'c14n:InclusiveNamespaces' */
-        struct _c14n__InclusiveNamespaces *c14n__InclusiveNamespaces;
-        char *__any;
-        /** Optional attribute 'Algorithm' of XSD type 'xsd:string' */
-        char *Algorithm;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__TransformType */
-        int soap_type() const { return SOAP_TYPE_ds__TransformType; }
-        /** Constructor with member initializations */
-        ds__TransformType()
-        {
-          c14n__InclusiveNamespaces = (struct _c14n__InclusiveNamespaces *)0;
-          __any = (char *)0;
-          Algorithm = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__TransformType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__TransformType * SOAP_FMAC2 soap_instantiate_ds__TransformType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:48 */
-#ifndef SOAP_TYPE_ds__KeyInfoType
-#define SOAP_TYPE_ds__KeyInfoType (33)
-/* complex XSD type 'ds:KeyInfoType': */
-struct ds__KeyInfoType {
-      public:
-        /** Optional element 'ds:KeyName' of XSD type 'xsd:string' */
-        char *KeyName;
-        /** Optional element 'ds:KeyValue' of XSD type 'ds:KeyValueType' */
-        struct ds__KeyValueType *KeyValue;
-        /** Optional element 'ds:RetrievalMethod' of XSD type 'ds:RetrievalMethodType' */
-        struct ds__RetrievalMethodType *RetrievalMethod;
-        /** Optional element 'ds:X509Data' of XSD type 'ds:X509DataType' */
-        struct ds__X509DataType *X509Data;
-        /** Optional element 'wsse:SecurityTokenReference' of XSD type 'wsse:SecurityTokenReference' */
-        struct _wsse__SecurityTokenReference *wsse__SecurityTokenReference;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__KeyInfoType */
-        int soap_type() const { return SOAP_TYPE_ds__KeyInfoType; }
-        /** Constructor with member initializations */
-        ds__KeyInfoType()
-        {
-          KeyName = (char *)0;
-          KeyValue = (struct ds__KeyValueType *)0;
-          RetrievalMethod = (struct ds__RetrievalMethodType *)0;
-          X509Data = (struct ds__X509DataType *)0;
-          wsse__SecurityTokenReference = (struct _wsse__SecurityTokenReference *)0;
-          Id = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__KeyInfoType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__KeyInfoType * SOAP_FMAC2 soap_instantiate_ds__KeyInfoType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:46 */
-#ifndef SOAP_TYPE_ds__SignedInfoType
-#define SOAP_TYPE_ds__SignedInfoType (31)
-/* complex XSD type 'ds:SignedInfoType': */
-struct ds__SignedInfoType {
-      public:
-        /** Required element 'ds:CanonicalizationMethod' of XSD type 'ds:CanonicalizationMethodType' */
-        struct ds__CanonicalizationMethodType *CanonicalizationMethod;
-        /** Required element 'ds:SignatureMethod' of XSD type 'ds:SignatureMethodType' */
-        struct ds__SignatureMethodType *SignatureMethod;
-        /** Sequence of elements 'ds:Reference' of XSD type 'ds:ReferenceType' stored in dynamic array Reference of length __sizeReference */
-        int __sizeReference;
-        struct ds__ReferenceType **Reference;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__SignedInfoType */
-        int soap_type() const { return SOAP_TYPE_ds__SignedInfoType; }
-        /** Constructor with member initializations */
-        ds__SignedInfoType()
-        {
-          CanonicalizationMethod = (struct ds__CanonicalizationMethodType *)0;
-          SignatureMethod = (struct ds__SignatureMethodType *)0;
-          __sizeReference = 0;
-          Reference = NULL;
-          Id = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__SignedInfoType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__SignedInfoType * SOAP_FMAC2 soap_instantiate_ds__SignedInfoType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:59 */
-#ifndef SOAP_TYPE_ds__CanonicalizationMethodType
-#define SOAP_TYPE_ds__CanonicalizationMethodType (36)
-/* complex XSD type 'ds:CanonicalizationMethodType': */
-struct ds__CanonicalizationMethodType {
-      public:
-        /** Required attribute 'Algorithm' of XSD type 'xsd:string' */
-        char *Algorithm;
-        /** Optional element 'c14n:InclusiveNamespaces' of XSD type 'c14n:InclusiveNamespaces' */
-        struct _c14n__InclusiveNamespaces *c14n__InclusiveNamespaces;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__CanonicalizationMethodType */
-        int soap_type() const { return SOAP_TYPE_ds__CanonicalizationMethodType; }
-        /** Constructor with member initializations */
-        ds__CanonicalizationMethodType()
-        {
-          Algorithm = (char *)0;
-          c14n__InclusiveNamespaces = (struct _c14n__InclusiveNamespaces *)0;
-        }
-        /** Friend allocator used by soap_new_ds__CanonicalizationMethodType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__CanonicalizationMethodType * SOAP_FMAC2 soap_instantiate_ds__CanonicalizationMethodType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:62 */
-#ifndef SOAP_TYPE_ds__SignatureMethodType
-#define SOAP_TYPE_ds__SignatureMethodType (37)
-/* complex XSD type 'ds:SignatureMethodType': */
-struct ds__SignatureMethodType {
-      public:
-        /** Optional element 'ds:HMACOutputLength' of XSD type 'xsd:int' */
-        int *HMACOutputLength;
-        /** Required attribute 'Algorithm' of XSD type 'xsd:string' */
-        char *Algorithm;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__SignatureMethodType */
-        int soap_type() const { return SOAP_TYPE_ds__SignatureMethodType; }
-        /** Constructor with member initializations */
-        ds__SignatureMethodType()
-        {
-          HMACOutputLength = (int *)0;
-          Algorithm = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__SignatureMethodType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__SignatureMethodType * SOAP_FMAC2 soap_instantiate_ds__SignatureMethodType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:65 */
-#ifndef SOAP_TYPE_ds__ReferenceType
-#define SOAP_TYPE_ds__ReferenceType (38)
-/* complex XSD type 'ds:ReferenceType': */
-struct ds__ReferenceType {
-      public:
-        /** Optional element 'ds:Transforms' of XSD type 'ds:TransformsType' */
-        struct ds__TransformsType *Transforms;
-        /** Required element 'ds:DigestMethod' of XSD type 'ds:DigestMethodType' */
-        struct ds__DigestMethodType *DigestMethod;
-        /** Required element 'ds:DigestValue' of XSD type 'xsd:string' */
-        char *DigestValue;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-        /** Optional attribute 'URI' of XSD type 'xsd:string' */
-        char *URI;
-        /** Optional attribute 'Type' of XSD type 'xsd:string' */
-        char *Type;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__ReferenceType */
-        int soap_type() const { return SOAP_TYPE_ds__ReferenceType; }
-        /** Constructor with member initializations */
-        ds__ReferenceType()
-        {
-          Transforms = (struct ds__TransformsType *)0;
-          DigestMethod = (struct ds__DigestMethodType *)0;
-          DigestValue = (char *)0;
-          Id = (char *)0;
-          URI = (char *)0;
-          Type = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__ReferenceType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__ReferenceType * SOAP_FMAC2 soap_instantiate_ds__ReferenceType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:68 */
-#ifndef SOAP_TYPE_ds__TransformsType
-#define SOAP_TYPE_ds__TransformsType (39)
-/* complex XSD type 'ds:TransformsType': */
-struct ds__TransformsType {
-      public:
-        /** Sequence of elements 'ds:Transform' of XSD type 'ds:TransformType' stored in dynamic array Transform of length __sizeTransform */
-        int __sizeTransform;
-        struct ds__TransformType *Transform;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__TransformsType */
-        int soap_type() const { return SOAP_TYPE_ds__TransformsType; }
-        /** Constructor with member initializations */
-        ds__TransformsType()
-        {
-          __sizeTransform = 0;
-          Transform = NULL;
-        }
-        /** Friend allocator used by soap_new_ds__TransformsType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__TransformsType * SOAP_FMAC2 soap_instantiate_ds__TransformsType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:79 */
-#ifndef SOAP_TYPE_ds__DigestMethodType
-#define SOAP_TYPE_ds__DigestMethodType (44)
-/* complex XSD type 'ds:DigestMethodType': */
-struct ds__DigestMethodType {
-      public:
-        /** Required attribute 'Algorithm' of XSD type 'xsd:string' */
-        char *Algorithm;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__DigestMethodType */
-        int soap_type() const { return SOAP_TYPE_ds__DigestMethodType; }
-        /** Constructor with member initializations */
-        ds__DigestMethodType()
-        {
-          Algorithm = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__DigestMethodType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__DigestMethodType * SOAP_FMAC2 soap_instantiate_ds__DigestMethodType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:85 */
-#ifndef SOAP_TYPE_ds__KeyValueType
-#define SOAP_TYPE_ds__KeyValueType (45)
-/* complex XSD type 'ds:KeyValueType': */
-struct ds__KeyValueType {
-      public:
-        /** Optional element 'ds:DSAKeyValue' of XSD type 'ds:DSAKeyValueType' */
-        struct ds__DSAKeyValueType *DSAKeyValue;
-        /** Optional element 'ds:RSAKeyValue' of XSD type 'ds:RSAKeyValueType' */
-        struct ds__RSAKeyValueType *RSAKeyValue;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__KeyValueType */
-        int soap_type() const { return SOAP_TYPE_ds__KeyValueType; }
-        /** Constructor with member initializations */
-        ds__KeyValueType()
-        {
-          DSAKeyValue = (struct ds__DSAKeyValueType *)0;
-          RSAKeyValue = (struct ds__RSAKeyValueType *)0;
-        }
-        /** Friend allocator used by soap_new_ds__KeyValueType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__KeyValueType * SOAP_FMAC2 soap_instantiate_ds__KeyValueType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:86 */
-#ifndef SOAP_TYPE_ds__RetrievalMethodType
-#define SOAP_TYPE_ds__RetrievalMethodType (47)
-/* complex XSD type 'ds:RetrievalMethodType': */
-struct ds__RetrievalMethodType {
-      public:
-        /** Optional element 'ds:Transforms' of XSD type 'ds:TransformsType' */
-        struct ds__TransformsType *Transforms;
-        /** Optional attribute 'URI' of XSD type 'xsd:string' */
-        char *URI;
-        /** Optional attribute 'Type' of XSD type 'xsd:string' */
-        char *Type;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__RetrievalMethodType */
-        int soap_type() const { return SOAP_TYPE_ds__RetrievalMethodType; }
-        /** Constructor with member initializations */
-        ds__RetrievalMethodType()
-        {
-          Transforms = (struct ds__TransformsType *)0;
-          URI = (char *)0;
-          Type = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__RetrievalMethodType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__RetrievalMethodType * SOAP_FMAC2 soap_instantiate_ds__RetrievalMethodType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:179 */
-#ifndef SOAP_TYPE_ds__X509DataType
-#define SOAP_TYPE_ds__X509DataType (27)
-/* complex XSD type 'ds:X509DataType': */
-struct ds__X509DataType {
-      public:
-        /** Optional element 'ds:X509IssuerSerial' of XSD type 'ds:X509IssuerSerialType' */
-        struct ds__X509IssuerSerialType *X509IssuerSerial;
-        /** Optional element 'ds:X509SKI' of XSD type 'xsd:string' */
-        char *X509SKI;
-        /** Optional element 'ds:X509SubjectName' of XSD type 'xsd:string' */
-        char *X509SubjectName;
-        /** Optional element 'ds:X509Certificate' of XSD type 'xsd:string' */
-        char *X509Certificate;
-        /** Optional element 'ds:X509CRL' of XSD type 'xsd:string' */
-        char *X509CRL;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__X509DataType */
-        int soap_type() const { return SOAP_TYPE_ds__X509DataType; }
-        /** Constructor with member initializations */
-        ds__X509DataType()
-        {
-          X509IssuerSerial = (struct ds__X509IssuerSerialType *)0;
-          X509SKI = (char *)0;
-          X509SubjectName = (char *)0;
-          X509Certificate = (char *)0;
-          X509CRL = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__X509DataType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__X509DataType * SOAP_FMAC2 soap_instantiate_ds__X509DataType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:102 */
-#ifndef SOAP_TYPE_ds__X509IssuerSerialType
-#define SOAP_TYPE_ds__X509IssuerSerialType (51)
-/* complex XSD type 'ds:X509IssuerSerialType': */
-struct ds__X509IssuerSerialType {
-      public:
-        /** Required element 'ds:X509IssuerName' of XSD type 'xsd:string' */
-        char *X509IssuerName;
-        /** Required element 'ds:X509SerialNumber' of XSD type 'xsd:string' */
-        char *X509SerialNumber;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__X509IssuerSerialType */
-        int soap_type() const { return SOAP_TYPE_ds__X509IssuerSerialType; }
-        /** Constructor with member initializations */
-        ds__X509IssuerSerialType()
-        {
-          X509IssuerName = (char *)0;
-          X509SerialNumber = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__X509IssuerSerialType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__X509IssuerSerialType * SOAP_FMAC2 soap_instantiate_ds__X509IssuerSerialType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:123 */
-#ifndef SOAP_TYPE_ds__DSAKeyValueType
-#define SOAP_TYPE_ds__DSAKeyValueType (52)
-/* complex XSD type 'ds:DSAKeyValueType': */
-struct ds__DSAKeyValueType {
-      public:
-        /** Optional element 'ds:G' of XSD type 'xsd:string' */
-        char *G;
-        /** Required element 'ds:Y' of XSD type 'xsd:string' */
-        char *Y;
-        /** Optional element 'ds:J' of XSD type 'xsd:string' */
-        char *J;
-        /** Required element 'ds:P' of XSD type 'xsd:string' */
-        char *P;
-        /** Required element 'ds:Q' of XSD type 'xsd:string' */
-        char *Q;
-        /** Required element 'ds:Seed' of XSD type 'xsd:string' */
-        char *Seed;
-        /** Required element 'ds:PgenCounter' of XSD type 'xsd:string' */
-        char *PgenCounter;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__DSAKeyValueType */
-        int soap_type() const { return SOAP_TYPE_ds__DSAKeyValueType; }
-        /** Constructor with member initializations */
-        ds__DSAKeyValueType()
-        {
-          G = (char *)0;
-          Y = (char *)0;
-          J = (char *)0;
-          P = (char *)0;
-          Q = (char *)0;
-          Seed = (char *)0;
-          PgenCounter = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__DSAKeyValueType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__DSAKeyValueType * SOAP_FMAC2 soap_instantiate_ds__DSAKeyValueType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* ds.h:126 */
-#ifndef SOAP_TYPE_ds__RSAKeyValueType
-#define SOAP_TYPE_ds__RSAKeyValueType (53)
-/* complex XSD type 'ds:RSAKeyValueType': */
-struct ds__RSAKeyValueType {
-      public:
-        /** Required element 'ds:Modulus' of XSD type 'xsd:string' */
-        char *Modulus;
-        /** Required element 'ds:Exponent' of XSD type 'xsd:string' */
-        char *Exponent;
-      public:
-        /** Return unique type id SOAP_TYPE_ds__RSAKeyValueType */
-        int soap_type() const { return SOAP_TYPE_ds__RSAKeyValueType; }
-        /** Constructor with member initializations */
-        ds__RSAKeyValueType()
-        {
-          Modulus = (char *)0;
-          Exponent = (char *)0;
-        }
-        /** Friend allocator used by soap_new_ds__RSAKeyValueType(struct soap*, int) */
-        friend SOAP_FMAC1 ds__RSAKeyValueType * SOAP_FMAC2 soap_instantiate_ds__RSAKeyValueType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:84 */
-#ifndef SOAP_TYPE_xenc__EncryptionPropertyType
-#define SOAP_TYPE_xenc__EncryptionPropertyType (75)
-/* complex XSD type 'xenc:EncryptionPropertyType': */
-struct xenc__EncryptionPropertyType {
-      public:
-        /** Optional attribute 'Target' of XSD type 'xsd:string' */
-        char *Target;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__EncryptionPropertyType */
-        int soap_type() const { return SOAP_TYPE_xenc__EncryptionPropertyType; }
-        /** Constructor with member initializations */
-        xenc__EncryptionPropertyType()
-        {
-          Target = (char *)0;
-          Id = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__EncryptionPropertyType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__EncryptionPropertyType * SOAP_FMAC2 soap_instantiate_xenc__EncryptionPropertyType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:53 */
-#ifndef SOAP_TYPE_xenc__EncryptedType
-#define SOAP_TYPE_xenc__EncryptedType (65)
-/* complex XSD type 'xenc:EncryptedType': */
-struct xenc__EncryptedType {
-      public:
-        /** Optional element 'xenc:EncryptionMethod' of XSD type 'xenc:EncryptionMethodType' */
-        struct xenc__EncryptionMethodType *EncryptionMethod;
-        /** Optional element 'ds:KeyInfo' of XSD type 'ds:KeyInfo' */
-        struct ds__KeyInfoType *ds__KeyInfo;
-        /** Required element 'xenc:CipherData' of XSD type 'xenc:CipherDataType' */
-        struct xenc__CipherDataType *CipherData;
-        /** Optional element 'xenc:EncryptionProperties' of XSD type 'xenc:EncryptionPropertiesType' */
-        struct xenc__EncryptionPropertiesType *EncryptionProperties;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-        /** Optional attribute 'Type' of XSD type 'xsd:string' */
-        char *Type;
-        /** Optional attribute 'MimeType' of XSD type 'xsd:string' */
-        char *MimeType;
-        /** Optional attribute 'Encoding' of XSD type 'xsd:string' */
-        char *Encoding;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__EncryptedType */
-        int soap_type() const { return SOAP_TYPE_xenc__EncryptedType; }
-        /** Constructor with member initializations */
-        xenc__EncryptedType()
-        {
-          EncryptionMethod = (struct xenc__EncryptionMethodType *)0;
-          ds__KeyInfo = (struct ds__KeyInfoType *)0;
-          CipherData = (struct xenc__CipherDataType *)0;
-          EncryptionProperties = (struct xenc__EncryptionPropertiesType *)0;
-          Id = (char *)0;
-          Type = (char *)0;
-          MimeType = (char *)0;
-          Encoding = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__EncryptedType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__EncryptedType * SOAP_FMAC2 soap_instantiate_xenc__EncryptedType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:56 */
-#ifndef SOAP_TYPE_xenc__EncryptionMethodType
-#define SOAP_TYPE_xenc__EncryptionMethodType (66)
-/* complex XSD type 'xenc:EncryptionMethodType': */
-struct xenc__EncryptionMethodType {
-      public:
-        /** Optional element 'xenc:KeySize' of XSD type 'xsd:int' */
-        int *KeySize;
-        /** Optional element 'xenc:OAEPparams' of XSD type 'xsd:string' */
-        char *OAEPparams;
-        /** Required attribute 'Algorithm' of XSD type 'xsd:string' */
-        char *Algorithm;
-        /** Optional element 'ds:DigestMethod' of XSD type 'ds:DigestMethodType' */
-        struct ds__DigestMethodType *ds__DigestMethod;
-        char *__mixed;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__EncryptionMethodType */
-        int soap_type() const { return SOAP_TYPE_xenc__EncryptionMethodType; }
-        /** Constructor with member initializations */
-        xenc__EncryptionMethodType()
-        {
-          KeySize = (int *)0;
-          OAEPparams = (char *)0;
-          Algorithm = (char *)0;
-          ds__DigestMethod = (struct ds__DigestMethodType *)0;
-          __mixed = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__EncryptionMethodType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__EncryptionMethodType * SOAP_FMAC2 soap_instantiate_xenc__EncryptionMethodType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:59 */
-#ifndef SOAP_TYPE_xenc__CipherDataType
-#define SOAP_TYPE_xenc__CipherDataType (67)
-/* complex XSD type 'xenc:CipherDataType': */
-struct xenc__CipherDataType {
-      public:
-        /** Optional element 'xenc:CipherValue' of XSD type 'xsd:string' */
-        char *CipherValue;
-        /** Optional element 'xenc:CipherReference' of XSD type 'xenc:CipherReferenceType' */
-        struct xenc__CipherReferenceType *CipherReference;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__CipherDataType */
-        int soap_type() const { return SOAP_TYPE_xenc__CipherDataType; }
-        /** Constructor with member initializations */
-        xenc__CipherDataType()
-        {
-          CipherValue = (char *)0;
-          CipherReference = (struct xenc__CipherReferenceType *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__CipherDataType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__CipherDataType * SOAP_FMAC2 soap_instantiate_xenc__CipherDataType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:62 */
-#ifndef SOAP_TYPE_xenc__CipherReferenceType
-#define SOAP_TYPE_xenc__CipherReferenceType (68)
-/* complex XSD type 'xenc:CipherReferenceType': */
-struct xenc__CipherReferenceType {
-      public:
-        /** Optional element 'xenc:Transforms' of XSD type 'xenc:TransformsType' */
-        struct xenc__TransformsType *Transforms;
-        /** Required attribute 'URI' of XSD type 'xsd:string' */
-        char *URI;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__CipherReferenceType */
-        int soap_type() const { return SOAP_TYPE_xenc__CipherReferenceType; }
-        /** Constructor with member initializations */
-        xenc__CipherReferenceType()
-        {
-          Transforms = (struct xenc__TransformsType *)0;
-          URI = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__CipherReferenceType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__CipherReferenceType * SOAP_FMAC2 soap_instantiate_xenc__CipherReferenceType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:65 */
-#ifndef SOAP_TYPE_xenc__TransformsType
-#define SOAP_TYPE_xenc__TransformsType (69)
-/* complex XSD type 'xenc:TransformsType': */
-struct xenc__TransformsType {
-      public:
-        /** Required element 'ds:Transform' of XSD type 'ds:Transform' */
-        struct ds__TransformType ds__Transform;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__TransformsType */
-        int soap_type() const { return SOAP_TYPE_xenc__TransformsType; }
-        /** Constructor with member initializations */
-        xenc__TransformsType()
-        {
-        }
-        /** Friend allocator used by soap_new_xenc__TransformsType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__TransformsType * SOAP_FMAC2 soap_instantiate_xenc__TransformsType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:74 */
-#ifndef SOAP_TYPE_xenc__AgreementMethodType
-#define SOAP_TYPE_xenc__AgreementMethodType (72)
-/* complex XSD type 'xenc:AgreementMethodType': */
-struct xenc__AgreementMethodType {
-      public:
-        /** Optional element 'xenc:KA-Nonce' of XSD type 'xsd:string' */
-        char *KA_Nonce;
-        /** Optional element 'xenc:OriginatorKeyInfo' of XSD type 'ds:KeyInfoType' */
-        struct ds__KeyInfoType *OriginatorKeyInfo;
-        /** Optional element 'xenc:RecipientKeyInfo' of XSD type 'ds:KeyInfoType' */
-        struct ds__KeyInfoType *RecipientKeyInfo;
-        /** Required attribute 'Algorithm' of XSD type 'xsd:string' */
-        char *Algorithm;
-        char *__mixed;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__AgreementMethodType */
-        int soap_type() const { return SOAP_TYPE_xenc__AgreementMethodType; }
-        /** Constructor with member initializations */
-        xenc__AgreementMethodType()
-        {
-          KA_Nonce = (char *)0;
-          OriginatorKeyInfo = (struct ds__KeyInfoType *)0;
-          RecipientKeyInfo = (struct ds__KeyInfoType *)0;
-          Algorithm = (char *)0;
-          __mixed = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__AgreementMethodType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__AgreementMethodType * SOAP_FMAC2 soap_instantiate_xenc__AgreementMethodType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:77 */
-#ifndef SOAP_TYPE_xenc__ReferenceType
-#define SOAP_TYPE_xenc__ReferenceType (73)
-/* complex XSD type 'xenc:ReferenceType': */
-struct xenc__ReferenceType {
-      public:
-        /** Required attribute 'URI' of XSD type 'xsd:string' */
-        char *URI;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__ReferenceType */
-        int soap_type() const { return SOAP_TYPE_xenc__ReferenceType; }
-        /** Constructor with member initializations */
-        xenc__ReferenceType()
-        {
-          URI = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__ReferenceType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__ReferenceType * SOAP_FMAC2 soap_instantiate_xenc__ReferenceType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:80 */
-#ifndef SOAP_TYPE_xenc__EncryptionPropertiesType
-#define SOAP_TYPE_xenc__EncryptionPropertiesType (74)
-/* complex XSD type 'xenc:EncryptionPropertiesType': */
-struct xenc__EncryptionPropertiesType {
-      public:
-        /** Sequence of at least 1 elements 'xenc:EncryptionProperty' of XSD type 'xenc:EncryptionPropertyType' stored in dynamic array EncryptionProperty of length __sizeEncryptionProperty */
-        int __sizeEncryptionProperty;
-        struct xenc__EncryptionPropertyType *EncryptionProperty;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__EncryptionPropertiesType */
-        int soap_type() const { return SOAP_TYPE_xenc__EncryptionPropertiesType; }
-        /** Constructor with member initializations */
-        xenc__EncryptionPropertiesType()
-        {
-          __sizeEncryptionProperty = 0;
-          EncryptionProperty = NULL;
-          Id = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__EncryptionPropertiesType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__EncryptionPropertiesType * SOAP_FMAC2 soap_instantiate_xenc__EncryptionPropertiesType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:238 */
-#ifndef SOAP_TYPE___xenc__union_ReferenceList
-#define SOAP_TYPE___xenc__union_ReferenceList (84)
-/* Wrapper: */
-struct __xenc__union_ReferenceList {
-      public:
-        /** Optional element 'xenc:DataReference' of XSD type 'xenc:ReferenceType' */
-        struct xenc__ReferenceType *DataReference;
-        /** Optional element 'xenc:KeyReference' of XSD type 'xenc:ReferenceType' */
-        struct xenc__ReferenceType *KeyReference;
-      public:
-        /** Return unique type id SOAP_TYPE___xenc__union_ReferenceList */
-        int soap_type() const { return SOAP_TYPE___xenc__union_ReferenceList; }
-        /** Constructor with member initializations */
-        __xenc__union_ReferenceList()
-        {
-          DataReference = (struct xenc__ReferenceType *)0;
-          KeyReference = (struct xenc__ReferenceType *)0;
-        }
-        /** Friend allocator used by soap_new___xenc__union_ReferenceList(struct soap*, int) */
-        friend SOAP_FMAC1 __xenc__union_ReferenceList * SOAP_FMAC2 soap_instantiate___xenc__union_ReferenceList(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:89 */
-#ifndef SOAP_TYPE__xenc__ReferenceList
-#define SOAP_TYPE__xenc__ReferenceList (76)
-/* complex XSD type 'xenc:ReferenceList': */
-struct _xenc__ReferenceList {
-      public:
-        /** Sequence of at least 1 elements '-union-ReferenceList' of XSD type '-xenc:union-ReferenceList' stored in dynamic array __union_ReferenceList of length __size_ReferenceList */
-        int __size_ReferenceList;
-        struct __xenc__union_ReferenceList *__union_ReferenceList;
-      public:
-        /** Return unique type id SOAP_TYPE__xenc__ReferenceList */
-        int soap_type() const { return SOAP_TYPE__xenc__ReferenceList; }
-        /** Constructor with member initializations */
-        _xenc__ReferenceList()
-        {
-          __size_ReferenceList = 0;
-          __union_ReferenceList = NULL;
-        }
-        /** Friend allocator used by soap_new__xenc__ReferenceList(struct soap*, int) */
-        friend SOAP_FMAC1 _xenc__ReferenceList * SOAP_FMAC2 soap_instantiate__xenc__ReferenceList(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:68 */
-#ifndef SOAP_TYPE_xenc__EncryptedDataType
-#define SOAP_TYPE_xenc__EncryptedDataType (70)
-/* complex XSD type 'xenc:EncryptedDataType': */
-struct xenc__EncryptedDataType {
-      public:
-        /** Optional element 'xenc:EncryptionMethod' of XSD type 'xenc:EncryptionMethodType' */
-        struct xenc__EncryptionMethodType *EncryptionMethod;
-        /** Optional element 'ds:KeyInfo' of XSD type 'ds:KeyInfo' */
-        struct ds__KeyInfoType *ds__KeyInfo;
-        /** Required element 'xenc:CipherData' of XSD type 'xenc:CipherDataType' */
-        struct xenc__CipherDataType *CipherData;
-        /** Optional element 'xenc:EncryptionProperties' of XSD type 'xenc:EncryptionPropertiesType' */
-        struct xenc__EncryptionPropertiesType *EncryptionProperties;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-        /** Optional attribute 'Type' of XSD type 'xsd:string' */
-        char *Type;
-        /** Optional attribute 'MimeType' of XSD type 'xsd:string' */
-        char *MimeType;
-        /** Optional attribute 'Encoding' of XSD type 'xsd:string' */
-        char *Encoding;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__EncryptedDataType */
-        int soap_type() const { return SOAP_TYPE_xenc__EncryptedDataType; }
-        /** Constructor with member initializations */
-        xenc__EncryptedDataType()
-        {
-          EncryptionMethod = (struct xenc__EncryptionMethodType *)0;
-          ds__KeyInfo = (struct ds__KeyInfoType *)0;
-          CipherData = (struct xenc__CipherDataType *)0;
-          EncryptionProperties = (struct xenc__EncryptionPropertiesType *)0;
-          Id = (char *)0;
-          Type = (char *)0;
-          MimeType = (char *)0;
-          Encoding = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__EncryptedDataType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__EncryptedDataType * SOAP_FMAC2 soap_instantiate_xenc__EncryptedDataType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* xenc.h:71 */
-#ifndef SOAP_TYPE_xenc__EncryptedKeyType
-#define SOAP_TYPE_xenc__EncryptedKeyType (71)
-/* complex XSD type 'xenc:EncryptedKeyType': */
-struct xenc__EncryptedKeyType {
-      public:
-        /** Optional element 'xenc:EncryptionMethod' of XSD type 'xenc:EncryptionMethodType' */
-        struct xenc__EncryptionMethodType *EncryptionMethod;
-        /** Optional element 'ds:KeyInfo' of XSD type 'ds:KeyInfo' */
-        struct ds__KeyInfoType *ds__KeyInfo;
-        /** Required element 'xenc:CipherData' of XSD type 'xenc:CipherDataType' */
-        struct xenc__CipherDataType *CipherData;
-        /** Optional element 'xenc:EncryptionProperties' of XSD type 'xenc:EncryptionPropertiesType' */
-        struct xenc__EncryptionPropertiesType *EncryptionProperties;
-        /** Optional attribute 'Id' of XSD type 'xsd:string' */
-        char *Id;
-        /** Optional attribute 'Type' of XSD type 'xsd:string' */
-        char *Type;
-        /** Optional attribute 'MimeType' of XSD type 'xsd:string' */
-        char *MimeType;
-        /** Optional attribute 'Encoding' of XSD type 'xsd:string' */
-        char *Encoding;
-        /** Optional element 'xenc:ReferenceList' of XSD type 'xenc:ReferenceList' */
-        struct _xenc__ReferenceList *ReferenceList;
-        /** Optional element 'xenc:CarriedKeyName' of XSD type 'xsd:string' */
-        char *CarriedKeyName;
-        /** Optional attribute 'Recipient' of XSD type 'xsd:string' */
-        char *Recipient;
-      public:
-        /** Return unique type id SOAP_TYPE_xenc__EncryptedKeyType */
-        int soap_type() const { return SOAP_TYPE_xenc__EncryptedKeyType; }
-        /** Constructor with member initializations */
-        xenc__EncryptedKeyType()
-        {
-          EncryptionMethod = (struct xenc__EncryptionMethodType *)0;
-          ds__KeyInfo = (struct ds__KeyInfoType *)0;
-          CipherData = (struct xenc__CipherDataType *)0;
-          EncryptionProperties = (struct xenc__EncryptionPropertiesType *)0;
-          Id = (char *)0;
-          Type = (char *)0;
-          MimeType = (char *)0;
-          Encoding = (char *)0;
-          ReferenceList = (struct _xenc__ReferenceList *)0;
-          CarriedKeyName = (char *)0;
-          Recipient = (char *)0;
-        }
-        /** Friend allocator used by soap_new_xenc__EncryptedKeyType(struct soap*, int) */
-        friend SOAP_FMAC1 xenc__EncryptedKeyType * SOAP_FMAC2 soap_instantiate_xenc__EncryptedKeyType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsc.h:87 */
-#ifndef SOAP_TYPE_wsc__SecurityContextTokenType
-#define SOAP_TYPE_wsc__SecurityContextTokenType (90)
-/* complex XSD type 'wsc:SecurityContextTokenType': */
-struct wsc__SecurityContextTokenType {
-      public:
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-        /** Optional element 'wsc:Identifier' of XSD type 'xsd:string' */
-        char *Identifier;
-        /** Optional element 'wsc:Instance' of XSD type 'xsd:string' */
-        char *Instance;
-      public:
-        /** Return unique type id SOAP_TYPE_wsc__SecurityContextTokenType */
-        int soap_type() const { return SOAP_TYPE_wsc__SecurityContextTokenType; }
-        /** Constructor with member initializations */
-        wsc__SecurityContextTokenType()
-        {
-          wsu__Id = (char *)0;
-          Identifier = (char *)0;
-          Instance = (char *)0;
-        }
-        /** Friend allocator used by soap_new_wsc__SecurityContextTokenType(struct soap*, int) */
-        friend SOAP_FMAC1 wsc__SecurityContextTokenType * SOAP_FMAC2 soap_instantiate_wsc__SecurityContextTokenType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsc.h:125 */
-#ifndef SOAP_TYPE__wsc__union_DerivedKeyTokenType
-#define SOAP_TYPE__wsc__union_DerivedKeyTokenType (96)
-/* union serializable only when used as a member of a struct or class with a union variant selector */
-union _wsc__union_DerivedKeyTokenType
-{
-        #define SOAP_UNION__wsc__union_DerivedKeyTokenType_Generation	(1)	/**< union variant selector value for member Generation */
-        ULONG64 Generation;
-        #define SOAP_UNION__wsc__union_DerivedKeyTokenType_Offset	(2)	/**< union variant selector value for member Offset */
-        ULONG64 Offset;
-};
-#endif
-
-/* wsc.h:116 */
-#ifndef SOAP_TYPE___wsc__DerivedKeyTokenType_sequence
-#define SOAP_TYPE___wsc__DerivedKeyTokenType_sequence (94)
-/* Wrapper: */
-struct __wsc__DerivedKeyTokenType_sequence {
-      public:
-        /** Union with union _wsc__union_DerivedKeyTokenType variant selector __union_DerivedKeyTokenType set to one of: SOAP_UNION__wsc__union_DerivedKeyTokenType_Generation SOAP_UNION__wsc__union_DerivedKeyTokenType_Offset */
-        int __union_DerivedKeyTokenType;
-        union _wsc__union_DerivedKeyTokenType union_DerivedKeyTokenType;
-        /** Optional element 'wsc:Length' of XSD type 'xsd:unsignedLong' */
-        ULONG64 *Length;
-      public:
-        /** Return unique type id SOAP_TYPE___wsc__DerivedKeyTokenType_sequence */
-        int soap_type() const { return SOAP_TYPE___wsc__DerivedKeyTokenType_sequence; }
-        /** Constructor with member initializations */
-        __wsc__DerivedKeyTokenType_sequence()
-        {
-          __union_DerivedKeyTokenType = -1;
-          Length = (ULONG64 *)0;
-        }
-        /** Friend allocator used by soap_new___wsc__DerivedKeyTokenType_sequence(struct soap*, int) */
-        friend SOAP_FMAC1 __wsc__DerivedKeyTokenType_sequence * SOAP_FMAC2 soap_instantiate___wsc__DerivedKeyTokenType_sequence(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsc.h:109 */
-#ifndef SOAP_TYPE_wsc__DerivedKeyTokenType
-#define SOAP_TYPE_wsc__DerivedKeyTokenType (91)
-/* complex XSD type 'wsc:DerivedKeyTokenType': */
-struct wsc__DerivedKeyTokenType {
-      public:
-        /** Optional element 'wsse:SecurityTokenReference' of XSD type 'wsse:SecurityTokenReference' */
-        struct _wsse__SecurityTokenReference *wsse__SecurityTokenReference;
-        /** Optional element 'wsc:Properties' of XSD type 'wsc:PropertiesType' */
-        struct wsc__PropertiesType *Properties;
-        struct __wsc__DerivedKeyTokenType_sequence *__DerivedKeyTokenType_sequence;
-        /** Optional element 'wsc:Label' of XSD type 'xsd:string' */
-        char *Label;
-        /** Optional element 'wsc:Nonce' of XSD type 'xsd:string' */
-        char *Nonce;
-        /** Optional attribute 'wsu:Id' of XSD type 'xsd:string' */
-        char *wsu__Id;
-        /** Optional attribute 'Algorithm' of XSD type 'xsd:string' */
-        char *Algorithm;
-      public:
-        /** Return unique type id SOAP_TYPE_wsc__DerivedKeyTokenType */
-        int soap_type() const { return SOAP_TYPE_wsc__DerivedKeyTokenType; }
-        /** Constructor with member initializations */
-        wsc__DerivedKeyTokenType()
-        {
-          wsse__SecurityTokenReference = (struct _wsse__SecurityTokenReference *)0;
-          Properties = (struct wsc__PropertiesType *)0;
-          __DerivedKeyTokenType_sequence = (struct __wsc__DerivedKeyTokenType_sequence *)0;
-          Label = (char *)0;
-          Nonce = (char *)0;
-          wsu__Id = (char *)0;
-          Algorithm = (char *)0;
-        }
-        /** Friend allocator used by soap_new_wsc__DerivedKeyTokenType(struct soap*, int) */
-        friend SOAP_FMAC1 wsc__DerivedKeyTokenType * SOAP_FMAC2 soap_instantiate_wsc__DerivedKeyTokenType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsc.h:113 */
-#ifndef SOAP_TYPE_wsc__PropertiesType
-#define SOAP_TYPE_wsc__PropertiesType (92)
-/* complex XSD type 'wsc:PropertiesType': */
-struct wsc__PropertiesType {
-      public:
-        /** Return unique type id SOAP_TYPE_wsc__PropertiesType */
-        int soap_type() const { return SOAP_TYPE_wsc__PropertiesType; }
-        /** Constructor with member initializations */
-        wsc__PropertiesType()
-        {
-        }
-        /** Friend allocator used by soap_new_wsc__PropertiesType(struct soap*, int) */
-        friend SOAP_FMAC1 wsc__PropertiesType * SOAP_FMAC2 soap_instantiate_wsc__PropertiesType(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:191 */
-#ifndef SOAP_TYPE__wsse__Security
-#define SOAP_TYPE__wsse__Security (99)
-/* complex XSD type 'wsse:Security': */
-struct _wsse__Security {
-      public:
-        /** Optional element 'wsu:Timestamp' of XSD type 'wsu:Timestamp' */
-        struct _wsu__Timestamp *wsu__Timestamp;
-        /** Optional element 'wsse:UsernameToken' of XSD type 'wsse:UsernameToken' */
-        struct _wsse__UsernameToken *UsernameToken;
-        /** Optional element 'wsse:BinarySecurityToken' of XSD type 'wsse:BinarySecurityToken' */
-        struct _wsse__BinarySecurityToken *BinarySecurityToken;
-        /** Optional element 'xenc:EncryptedKey' of XSD type 'xenc:EncryptedKeyType' */
-        struct xenc__EncryptedKeyType *xenc__EncryptedKey;
-        /** Optional element 'xenc:ReferenceList' of XSD type 'xenc:ReferenceList' */
-        struct _xenc__ReferenceList *xenc__ReferenceList;
-        /** Optional element 'wsc:SecurityContextToken' of XSD type 'wsc:SecurityContextTokenType' */
-        struct wsc__SecurityContextTokenType *wsc__SecurityContextToken;
-        /** Optional element 'ds:Signature' of XSD type 'ds:SignatureType' */
-        struct ds__SignatureType *ds__Signature;
-        /** Optional attribute 'SOAP-ENV:actor' of XSD type 'xsd:string' */
-        char *SOAP_ENV__actor;
-        /** Optional attribute 'SOAP-ENV:role' of XSD type 'xsd:string' */
-        char *SOAP_ENV__role;
-      public:
-        /** Return unique type id SOAP_TYPE__wsse__Security */
-        int soap_type() const { return SOAP_TYPE__wsse__Security; }
-        /** Constructor with member initializations */
-        _wsse__Security()
-        {
-          wsu__Timestamp = (struct _wsu__Timestamp *)0;
-          UsernameToken = (struct _wsse__UsernameToken *)0;
-          BinarySecurityToken = (struct _wsse__BinarySecurityToken *)0;
-          xenc__EncryptedKey = (struct xenc__EncryptedKeyType *)0;
-          xenc__ReferenceList = (struct _xenc__ReferenceList *)0;
-          wsc__SecurityContextToken = (struct wsc__SecurityContextTokenType *)0;
-          ds__Signature = (struct ds__SignatureType *)0;
-          SOAP_ENV__actor = (char *)0;
-          SOAP_ENV__role = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsse__Security(struct soap*, int) */
-        friend SOAP_FMAC1 _wsse__Security * SOAP_FMAC2 soap_instantiate__wsse__Security(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:129 */
-#ifndef SOAP_TYPE__wsse__Password
-#define SOAP_TYPE__wsse__Password (16)
-/* simple XSD type 'wsse:Password': */
-struct _wsse__Password {
-      public:
-        /** Simple content of XSD type 'xsd:string' wrapped by this struct */
-        char *__item;
-        /** Optional attribute 'Type' of XSD type 'xsd:string' */
-        char *Type;
-      public:
-        /** Return unique type id SOAP_TYPE__wsse__Password */
-        int soap_type() const { return SOAP_TYPE__wsse__Password; }
-        /** Constructor with member initializations */
-        _wsse__Password()
-        {
-          __item = (char *)0;
-          Type = (char *)0;
-        }
-        /** Friend allocator used by soap_new__wsse__Password(struct soap*, int) */
-        friend SOAP_FMAC1 _wsse__Password * SOAP_FMAC2 soap_instantiate__wsse__Password(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-
-/* wsse.h:221 */
-#ifndef WITH_NOGLOBAL
-#ifndef SOAP_TYPE_SOAP_ENV__Header
-#define SOAP_TYPE_SOAP_ENV__Header (106)
-/* SOAP_ENV__Header: */
-struct SOAP_ENV__Header {
-      public:
-        /** MustUnderstand */
-        struct _wsse__Security *wsse__Security;
-      public:
-        /** Return unique type id SOAP_TYPE_SOAP_ENV__Header */
-        int soap_type() const { return SOAP_TYPE_SOAP_ENV__Header; }
-        /** Constructor with member initializations */
-        SOAP_ENV__Header()
-        {
-          wsse__Security = (struct _wsse__Security *)0;
-        }
-        /** Friend allocator used by soap_new_SOAP_ENV__Header(struct soap*, int) */
-        friend SOAP_FMAC1 SOAP_ENV__Header * SOAP_FMAC2 soap_instantiate_SOAP_ENV__Header(struct soap*, int, const char*, const char*, size_t*);
-};
-#endif
-#endif
-
 /* CyberSourceTransaction_nvp_1.129.h:153 */
 #ifndef SOAP_TYPE_ns2__Item
-#define SOAP_TYPE_ns2__Item (110)
+#define SOAP_TYPE_ns2__Item (13)
 /* complex XSD type 'ns2:Item': */
 class SOAP_CMAC ns2__Item {
       public:
@@ -1954,7 +590,7 @@ class SOAP_CMAC ns2__Item {
 
 /* CyberSourceTransaction_nvp_1.129.h:156 */
 #ifndef SOAP_TYPE_ns2__CCAuthService
-#define SOAP_TYPE_ns2__CCAuthService (111)
+#define SOAP_TYPE_ns2__CCAuthService (14)
 /* complex XSD type 'ns2:CCAuthService': */
 class SOAP_CMAC ns2__CCAuthService {
       public:
@@ -2080,7 +716,7 @@ class SOAP_CMAC ns2__CCAuthService {
 
 /* CyberSourceTransaction_nvp_1.129.h:159 */
 #ifndef SOAP_TYPE_ns2__OCTService
-#define SOAP_TYPE_ns2__OCTService (112)
+#define SOAP_TYPE_ns2__OCTService (15)
 /* complex XSD type 'ns2:OCTService': */
 class SOAP_CMAC ns2__OCTService {
       public:
@@ -2128,7 +764,7 @@ class SOAP_CMAC ns2__OCTService {
 
 /* CyberSourceTransaction_nvp_1.129.h:162 */
 #ifndef SOAP_TYPE_ns2__VerificationService
-#define SOAP_TYPE_ns2__VerificationService (113)
+#define SOAP_TYPE_ns2__VerificationService (16)
 /* complex XSD type 'ns2:VerificationService': */
 class SOAP_CMAC ns2__VerificationService {
       public:
@@ -2170,7 +806,7 @@ class SOAP_CMAC ns2__VerificationService {
 
 /* CyberSourceTransaction_nvp_1.129.h:165 */
 #ifndef SOAP_TYPE_ns2__CCSaleService
-#define SOAP_TYPE_ns2__CCSaleService (114)
+#define SOAP_TYPE_ns2__CCSaleService (17)
 /* complex XSD type 'ns2:CCSaleService': */
 class SOAP_CMAC ns2__CCSaleService {
       public:
@@ -2230,7 +866,7 @@ class SOAP_CMAC ns2__CCSaleService {
 
 /* CyberSourceTransaction_nvp_1.129.h:168 */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditService
-#define SOAP_TYPE_ns2__CCSaleCreditService (115)
+#define SOAP_TYPE_ns2__CCSaleCreditService (18)
 /* complex XSD type 'ns2:CCSaleCreditService': */
 class SOAP_CMAC ns2__CCSaleCreditService {
       public:
@@ -2284,7 +920,7 @@ class SOAP_CMAC ns2__CCSaleCreditService {
 
 /* CyberSourceTransaction_nvp_1.129.h:171 */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalService
-#define SOAP_TYPE_ns2__CCSaleReversalService (116)
+#define SOAP_TYPE_ns2__CCSaleReversalService (19)
 /* complex XSD type 'ns2:CCSaleReversalService': */
 class SOAP_CMAC ns2__CCSaleReversalService {
       public:
@@ -2326,7 +962,7 @@ class SOAP_CMAC ns2__CCSaleReversalService {
 
 /* CyberSourceTransaction_nvp_1.129.h:174 */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthService
-#define SOAP_TYPE_ns2__CCIncrementalAuthService (117)
+#define SOAP_TYPE_ns2__CCIncrementalAuthService (20)
 /* complex XSD type 'ns2:CCIncrementalAuthService': */
 class SOAP_CMAC ns2__CCIncrementalAuthService {
       public:
@@ -2371,7 +1007,7 @@ class SOAP_CMAC ns2__CCIncrementalAuthService {
 
 /* CyberSourceTransaction_nvp_1.129.h:177 */
 #ifndef SOAP_TYPE_ns2__CCCaptureService
-#define SOAP_TYPE_ns2__CCCaptureService (118)
+#define SOAP_TYPE_ns2__CCCaptureService (21)
 /* complex XSD type 'ns2:CCCaptureService': */
 class SOAP_CMAC ns2__CCCaptureService {
       public:
@@ -2470,7 +1106,7 @@ class SOAP_CMAC ns2__CCCaptureService {
 
 /* CyberSourceTransaction_nvp_1.129.h:180 */
 #ifndef SOAP_TYPE_ns2__CCCreditService
-#define SOAP_TYPE_ns2__CCCreditService (119)
+#define SOAP_TYPE_ns2__CCCreditService (22)
 /* complex XSD type 'ns2:CCCreditService': */
 class SOAP_CMAC ns2__CCCreditService {
       public:
@@ -2566,7 +1202,7 @@ class SOAP_CMAC ns2__CCCreditService {
 
 /* CyberSourceTransaction_nvp_1.129.h:183 */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalService
-#define SOAP_TYPE_ns2__CCAuthReversalService (120)
+#define SOAP_TYPE_ns2__CCAuthReversalService (23)
 /* complex XSD type 'ns2:CCAuthReversalService': */
 class SOAP_CMAC ns2__CCAuthReversalService {
       public:
@@ -2614,7 +1250,7 @@ class SOAP_CMAC ns2__CCAuthReversalService {
 
 /* CyberSourceTransaction_nvp_1.129.h:186 */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalService
-#define SOAP_TYPE_ns2__CCAutoAuthReversalService (121)
+#define SOAP_TYPE_ns2__CCAutoAuthReversalService (24)
 /* complex XSD type 'ns2:CCAutoAuthReversalService': */
 class SOAP_CMAC ns2__CCAutoAuthReversalService {
       public:
@@ -2683,7 +1319,7 @@ class SOAP_CMAC ns2__CCAutoAuthReversalService {
 
 /* CyberSourceTransaction_nvp_1.129.h:189 */
 #ifndef SOAP_TYPE_ns2__CCDCCService
-#define SOAP_TYPE_ns2__CCDCCService (122)
+#define SOAP_TYPE_ns2__CCDCCService (25)
 /* complex XSD type 'ns2:CCDCCService': */
 class SOAP_CMAC ns2__CCDCCService {
       public:
@@ -2722,7 +1358,7 @@ class SOAP_CMAC ns2__CCDCCService {
 
 /* CyberSourceTransaction_nvp_1.129.h:192 */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateService
-#define SOAP_TYPE_ns2__ServiceFeeCalculateService (123)
+#define SOAP_TYPE_ns2__ServiceFeeCalculateService (26)
 /* complex XSD type 'ns2:ServiceFeeCalculateService': */
 class SOAP_CMAC ns2__ServiceFeeCalculateService {
       public:
@@ -2761,7 +1397,7 @@ class SOAP_CMAC ns2__ServiceFeeCalculateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:195 */
 #ifndef SOAP_TYPE_ns2__ECDebitService
-#define SOAP_TYPE_ns2__ECDebitService (124)
+#define SOAP_TYPE_ns2__ECDebitService (27)
 /* complex XSD type 'ns2:ECDebitService': */
 class SOAP_CMAC ns2__ECDebitService {
       public:
@@ -2827,7 +1463,7 @@ class SOAP_CMAC ns2__ECDebitService {
 
 /* CyberSourceTransaction_nvp_1.129.h:198 */
 #ifndef SOAP_TYPE_ns2__ECCreditService
-#define SOAP_TYPE_ns2__ECCreditService (125)
+#define SOAP_TYPE_ns2__ECCreditService (28)
 /* complex XSD type 'ns2:ECCreditService': */
 class SOAP_CMAC ns2__ECCreditService {
       public:
@@ -2890,7 +1526,7 @@ class SOAP_CMAC ns2__ECCreditService {
 
 /* CyberSourceTransaction_nvp_1.129.h:201 */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateService
-#define SOAP_TYPE_ns2__ECAuthenticateService (126)
+#define SOAP_TYPE_ns2__ECAuthenticateService (29)
 /* complex XSD type 'ns2:ECAuthenticateService': */
 class SOAP_CMAC ns2__ECAuthenticateService {
       public:
@@ -2932,7 +1568,7 @@ class SOAP_CMAC ns2__ECAuthenticateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:204 */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollService
-#define SOAP_TYPE_ns2__PayerAuthEnrollService (127)
+#define SOAP_TYPE_ns2__PayerAuthEnrollService (30)
 /* complex XSD type 'ns2:PayerAuthEnrollService': */
 class SOAP_CMAC ns2__PayerAuthEnrollService {
       public:
@@ -3016,7 +1652,7 @@ class SOAP_CMAC ns2__PayerAuthEnrollService {
 
 /* CyberSourceTransaction_nvp_1.129.h:207 */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateService
-#define SOAP_TYPE_ns2__PayerAuthValidateService (128)
+#define SOAP_TYPE_ns2__PayerAuthValidateService (31)
 /* complex XSD type 'ns2:PayerAuthValidateService': */
 class SOAP_CMAC ns2__PayerAuthValidateService {
       public:
@@ -3058,7 +1694,7 @@ class SOAP_CMAC ns2__PayerAuthValidateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:210 */
 #ifndef SOAP_TYPE_ns2__TaxService
-#define SOAP_TYPE_ns2__TaxService (129)
+#define SOAP_TYPE_ns2__TaxService (32)
 /* complex XSD type 'ns2:TaxService': */
 class SOAP_CMAC ns2__TaxService {
       public:
@@ -3175,7 +1811,7 @@ class SOAP_CMAC ns2__TaxService {
 
 /* CyberSourceTransaction_nvp_1.129.h:213 */
 #ifndef SOAP_TYPE_ns2__DMEService
-#define SOAP_TYPE_ns2__DMEService (130)
+#define SOAP_TYPE_ns2__DMEService (33)
 /* complex XSD type 'ns2:DMEService': */
 class SOAP_CMAC ns2__DMEService {
       public:
@@ -3220,7 +1856,7 @@ class SOAP_CMAC ns2__DMEService {
 
 /* CyberSourceTransaction_nvp_1.129.h:216 */
 #ifndef SOAP_TYPE_ns2__AFSService
-#define SOAP_TYPE_ns2__AFSService (131)
+#define SOAP_TYPE_ns2__AFSService (34)
 /* complex XSD type 'ns2:AFSService': */
 class SOAP_CMAC ns2__AFSService {
       public:
@@ -3271,7 +1907,7 @@ class SOAP_CMAC ns2__AFSService {
 
 /* CyberSourceTransaction_nvp_1.129.h:219 */
 #ifndef SOAP_TYPE_ns2__DAVService
-#define SOAP_TYPE_ns2__DAVService (132)
+#define SOAP_TYPE_ns2__DAVService (35)
 /* complex XSD type 'ns2:DAVService': */
 class SOAP_CMAC ns2__DAVService {
       public:
@@ -3310,7 +1946,7 @@ class SOAP_CMAC ns2__DAVService {
 
 /* CyberSourceTransaction_nvp_1.129.h:222 */
 #ifndef SOAP_TYPE_ns2__ExportService
-#define SOAP_TYPE_ns2__ExportService (133)
+#define SOAP_TYPE_ns2__ExportService (36)
 /* complex XSD type 'ns2:ExportService': */
 class SOAP_CMAC ns2__ExportService {
       public:
@@ -3361,7 +1997,7 @@ class SOAP_CMAC ns2__ExportService {
 
 /* CyberSourceTransaction_nvp_1.129.h:225 */
 #ifndef SOAP_TYPE_ns2__FXRatesService
-#define SOAP_TYPE_ns2__FXRatesService (134)
+#define SOAP_TYPE_ns2__FXRatesService (37)
 /* complex XSD type 'ns2:FXRatesService': */
 class SOAP_CMAC ns2__FXRatesService {
       public:
@@ -3400,7 +2036,7 @@ class SOAP_CMAC ns2__FXRatesService {
 
 /* CyberSourceTransaction_nvp_1.129.h:228 */
 #ifndef SOAP_TYPE_ns2__BankTransferService
-#define SOAP_TYPE_ns2__BankTransferService (135)
+#define SOAP_TYPE_ns2__BankTransferService (38)
 /* complex XSD type 'ns2:BankTransferService': */
 class SOAP_CMAC ns2__BankTransferService {
       public:
@@ -3439,7 +2075,7 @@ class SOAP_CMAC ns2__BankTransferService {
 
 /* CyberSourceTransaction_nvp_1.129.h:231 */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundService
-#define SOAP_TYPE_ns2__BankTransferRefundService (136)
+#define SOAP_TYPE_ns2__BankTransferRefundService (39)
 /* complex XSD type 'ns2:BankTransferRefundService': */
 class SOAP_CMAC ns2__BankTransferRefundService {
       public:
@@ -3496,7 +2132,7 @@ class SOAP_CMAC ns2__BankTransferRefundService {
 
 /* CyberSourceTransaction_nvp_1.129.h:234 */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeService
-#define SOAP_TYPE_ns2__BankTransferRealTimeService (137)
+#define SOAP_TYPE_ns2__BankTransferRealTimeService (40)
 /* complex XSD type 'ns2:BankTransferRealTimeService': */
 class SOAP_CMAC ns2__BankTransferRealTimeService {
       public:
@@ -3538,7 +2174,7 @@ class SOAP_CMAC ns2__BankTransferRealTimeService {
 
 /* CyberSourceTransaction_nvp_1.129.h:237 */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateService
-#define SOAP_TYPE_ns2__DirectDebitMandateService (138)
+#define SOAP_TYPE_ns2__DirectDebitMandateService (41)
 /* complex XSD type 'ns2:DirectDebitMandateService': */
 class SOAP_CMAC ns2__DirectDebitMandateService {
       public:
@@ -3583,7 +2219,7 @@ class SOAP_CMAC ns2__DirectDebitMandateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:240 */
 #ifndef SOAP_TYPE_ns2__DirectDebitService
-#define SOAP_TYPE_ns2__DirectDebitService (139)
+#define SOAP_TYPE_ns2__DirectDebitService (42)
 /* complex XSD type 'ns2:DirectDebitService': */
 class SOAP_CMAC ns2__DirectDebitService {
       public:
@@ -3655,7 +2291,7 @@ class SOAP_CMAC ns2__DirectDebitService {
 
 /* CyberSourceTransaction_nvp_1.129.h:243 */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundService
-#define SOAP_TYPE_ns2__DirectDebitRefundService (140)
+#define SOAP_TYPE_ns2__DirectDebitRefundService (43)
 /* complex XSD type 'ns2:DirectDebitRefundService': */
 class SOAP_CMAC ns2__DirectDebitRefundService {
       public:
@@ -3715,7 +2351,7 @@ class SOAP_CMAC ns2__DirectDebitRefundService {
 
 /* CyberSourceTransaction_nvp_1.129.h:246 */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateService
-#define SOAP_TYPE_ns2__DirectDebitValidateService (141)
+#define SOAP_TYPE_ns2__DirectDebitValidateService (44)
 /* complex XSD type 'ns2:DirectDebitValidateService': */
 class SOAP_CMAC ns2__DirectDebitValidateService {
       public:
@@ -3757,7 +2393,7 @@ class SOAP_CMAC ns2__DirectDebitValidateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:249 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateService
-#define SOAP_TYPE_ns2__PaySubscriptionCreateService (142)
+#define SOAP_TYPE_ns2__PaySubscriptionCreateService (45)
 /* complex XSD type 'ns2:PaySubscriptionCreateService': */
 class SOAP_CMAC ns2__PaySubscriptionCreateService {
       public:
@@ -3805,7 +2441,7 @@ class SOAP_CMAC ns2__PaySubscriptionCreateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:252 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateService
-#define SOAP_TYPE_ns2__PaySubscriptionUpdateService (143)
+#define SOAP_TYPE_ns2__PaySubscriptionUpdateService (46)
 /* complex XSD type 'ns2:PaySubscriptionUpdateService': */
 class SOAP_CMAC ns2__PaySubscriptionUpdateService {
       public:
@@ -3844,7 +2480,7 @@ class SOAP_CMAC ns2__PaySubscriptionUpdateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:255 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateService
-#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (144)
+#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (47)
 /* complex XSD type 'ns2:PaySubscriptionEventUpdateService': */
 class SOAP_CMAC ns2__PaySubscriptionEventUpdateService {
       public:
@@ -3886,7 +2522,7 @@ class SOAP_CMAC ns2__PaySubscriptionEventUpdateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:258 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveService
-#define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (145)
+#define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (48)
 /* complex XSD type 'ns2:PaySubscriptionRetrieveService': */
 class SOAP_CMAC ns2__PaySubscriptionRetrieveService {
       public:
@@ -3925,7 +2561,7 @@ class SOAP_CMAC ns2__PaySubscriptionRetrieveService {
 
 /* CyberSourceTransaction_nvp_1.129.h:261 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteService
-#define SOAP_TYPE_ns2__PaySubscriptionDeleteService (146)
+#define SOAP_TYPE_ns2__PaySubscriptionDeleteService (49)
 /* complex XSD type 'ns2:PaySubscriptionDeleteService': */
 class SOAP_CMAC ns2__PaySubscriptionDeleteService {
       public:
@@ -3964,7 +2600,7 @@ class SOAP_CMAC ns2__PaySubscriptionDeleteService {
 
 /* CyberSourceTransaction_nvp_1.129.h:264 */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentService
-#define SOAP_TYPE_ns2__PayPalPaymentService (147)
+#define SOAP_TYPE_ns2__PayPalPaymentService (50)
 /* complex XSD type 'ns2:PayPalPaymentService': */
 class SOAP_CMAC ns2__PayPalPaymentService {
       public:
@@ -4012,7 +2648,7 @@ class SOAP_CMAC ns2__PayPalPaymentService {
 
 /* CyberSourceTransaction_nvp_1.129.h:267 */
 #ifndef SOAP_TYPE_ns2__PayPalCreditService
-#define SOAP_TYPE_ns2__PayPalCreditService (148)
+#define SOAP_TYPE_ns2__PayPalCreditService (51)
 /* complex XSD type 'ns2:PayPalCreditService': */
 class SOAP_CMAC ns2__PayPalCreditService {
       public:
@@ -4060,7 +2696,7 @@ class SOAP_CMAC ns2__PayPalCreditService {
 
 /* CyberSourceTransaction_nvp_1.129.h:270 */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetService
-#define SOAP_TYPE_ns2__PayPalEcSetService (149)
+#define SOAP_TYPE_ns2__PayPalEcSetService (52)
 /* complex XSD type 'ns2:PayPalEcSetService': */
 class SOAP_CMAC ns2__PayPalEcSetService {
       public:
@@ -4174,7 +2810,7 @@ class SOAP_CMAC ns2__PayPalEcSetService {
 
 /* CyberSourceTransaction_nvp_1.129.h:273 */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsService
-#define SOAP_TYPE_ns2__PayPalEcGetDetailsService (150)
+#define SOAP_TYPE_ns2__PayPalEcGetDetailsService (53)
 /* complex XSD type 'ns2:PayPalEcGetDetailsService': */
 class SOAP_CMAC ns2__PayPalEcGetDetailsService {
       public:
@@ -4222,7 +2858,7 @@ class SOAP_CMAC ns2__PayPalEcGetDetailsService {
 
 /* CyberSourceTransaction_nvp_1.129.h:276 */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentService
-#define SOAP_TYPE_ns2__PayPalEcDoPaymentService (151)
+#define SOAP_TYPE_ns2__PayPalEcDoPaymentService (54)
 /* complex XSD type 'ns2:PayPalEcDoPaymentService': */
 class SOAP_CMAC ns2__PayPalEcDoPaymentService {
       public:
@@ -4285,7 +2921,7 @@ class SOAP_CMAC ns2__PayPalEcDoPaymentService {
 
 /* CyberSourceTransaction_nvp_1.129.h:279 */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureService
-#define SOAP_TYPE_ns2__PayPalDoCaptureService (152)
+#define SOAP_TYPE_ns2__PayPalDoCaptureService (55)
 /* complex XSD type 'ns2:PayPalDoCaptureService': */
 class SOAP_CMAC ns2__PayPalDoCaptureService {
       public:
@@ -4345,7 +2981,7 @@ class SOAP_CMAC ns2__PayPalDoCaptureService {
 
 /* CyberSourceTransaction_nvp_1.129.h:282 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalService
-#define SOAP_TYPE_ns2__PayPalAuthReversalService (153)
+#define SOAP_TYPE_ns2__PayPalAuthReversalService (56)
 /* complex XSD type 'ns2:PayPalAuthReversalService': */
 class SOAP_CMAC ns2__PayPalAuthReversalService {
       public:
@@ -4405,7 +3041,7 @@ class SOAP_CMAC ns2__PayPalAuthReversalService {
 
 /* CyberSourceTransaction_nvp_1.129.h:285 */
 #ifndef SOAP_TYPE_ns2__PayPalRefundService
-#define SOAP_TYPE_ns2__PayPalRefundService (154)
+#define SOAP_TYPE_ns2__PayPalRefundService (57)
 /* complex XSD type 'ns2:PayPalRefundService': */
 class SOAP_CMAC ns2__PayPalRefundService {
       public:
@@ -4456,7 +3092,7 @@ class SOAP_CMAC ns2__PayPalRefundService {
 
 /* CyberSourceTransaction_nvp_1.129.h:288 */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupService
-#define SOAP_TYPE_ns2__PayPalEcOrderSetupService (155)
+#define SOAP_TYPE_ns2__PayPalEcOrderSetupService (58)
 /* complex XSD type 'ns2:PayPalEcOrderSetupService': */
 class SOAP_CMAC ns2__PayPalEcOrderSetupService {
       public:
@@ -4519,7 +3155,7 @@ class SOAP_CMAC ns2__PayPalEcOrderSetupService {
 
 /* CyberSourceTransaction_nvp_1.129.h:291 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationService
-#define SOAP_TYPE_ns2__PayPalAuthorizationService (156)
+#define SOAP_TYPE_ns2__PayPalAuthorizationService (59)
 /* complex XSD type 'ns2:PayPalAuthorizationService': */
 class SOAP_CMAC ns2__PayPalAuthorizationService {
       public:
@@ -4576,7 +3212,7 @@ class SOAP_CMAC ns2__PayPalAuthorizationService {
 
 /* CyberSourceTransaction_nvp_1.129.h:294 */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementService
-#define SOAP_TYPE_ns2__PayPalUpdateAgreementService (157)
+#define SOAP_TYPE_ns2__PayPalUpdateAgreementService (60)
 /* complex XSD type 'ns2:PayPalUpdateAgreementService': */
 class SOAP_CMAC ns2__PayPalUpdateAgreementService {
       public:
@@ -4627,7 +3263,7 @@ class SOAP_CMAC ns2__PayPalUpdateAgreementService {
 
 /* CyberSourceTransaction_nvp_1.129.h:297 */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementService
-#define SOAP_TYPE_ns2__PayPalCreateAgreementService (158)
+#define SOAP_TYPE_ns2__PayPalCreateAgreementService (61)
 /* complex XSD type 'ns2:PayPalCreateAgreementService': */
 class SOAP_CMAC ns2__PayPalCreateAgreementService {
       public:
@@ -4675,7 +3311,7 @@ class SOAP_CMAC ns2__PayPalCreateAgreementService {
 
 /* CyberSourceTransaction_nvp_1.129.h:300 */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionService
-#define SOAP_TYPE_ns2__PayPalDoRefTransactionService (159)
+#define SOAP_TYPE_ns2__PayPalDoRefTransactionService (62)
 /* complex XSD type 'ns2:PayPalDoRefTransactionService': */
 class SOAP_CMAC ns2__PayPalDoRefTransactionService {
       public:
@@ -4741,7 +3377,7 @@ class SOAP_CMAC ns2__PayPalDoRefTransactionService {
 
 /* CyberSourceTransaction_nvp_1.129.h:303 */
 #ifndef SOAP_TYPE_ns2__VoidService
-#define SOAP_TYPE_ns2__VoidService (160)
+#define SOAP_TYPE_ns2__VoidService (63)
 /* complex XSD type 'ns2:VoidService': */
 class SOAP_CMAC ns2__VoidService {
       public:
@@ -4786,7 +3422,7 @@ class SOAP_CMAC ns2__VoidService {
 
 /* CyberSourceTransaction_nvp_1.129.h:306 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitService
-#define SOAP_TYPE_ns2__PinlessDebitService (161)
+#define SOAP_TYPE_ns2__PinlessDebitService (64)
 /* complex XSD type 'ns2:PinlessDebitService': */
 class SOAP_CMAC ns2__PinlessDebitService {
       public:
@@ -4831,7 +3467,7 @@ class SOAP_CMAC ns2__PinlessDebitService {
 
 /* CyberSourceTransaction_nvp_1.129.h:309 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateService
-#define SOAP_TYPE_ns2__PinlessDebitValidateService (162)
+#define SOAP_TYPE_ns2__PinlessDebitValidateService (65)
 /* complex XSD type 'ns2:PinlessDebitValidateService': */
 class SOAP_CMAC ns2__PinlessDebitValidateService {
       public:
@@ -4870,7 +3506,7 @@ class SOAP_CMAC ns2__PinlessDebitValidateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:312 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalService
-#define SOAP_TYPE_ns2__PinlessDebitReversalService (163)
+#define SOAP_TYPE_ns2__PinlessDebitReversalService (66)
 /* complex XSD type 'ns2:PinlessDebitReversalService': */
 class SOAP_CMAC ns2__PinlessDebitReversalService {
       public:
@@ -4918,7 +3554,7 @@ class SOAP_CMAC ns2__PinlessDebitReversalService {
 
 /* CyberSourceTransaction_nvp_1.129.h:315 */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseService
-#define SOAP_TYPE_ns2__PinDebitPurchaseService (164)
+#define SOAP_TYPE_ns2__PinDebitPurchaseService (67)
 /* complex XSD type 'ns2:PinDebitPurchaseService': */
 class SOAP_CMAC ns2__PinDebitPurchaseService {
       public:
@@ -4987,7 +3623,7 @@ class SOAP_CMAC ns2__PinDebitPurchaseService {
 
 /* CyberSourceTransaction_nvp_1.129.h:318 */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditService
-#define SOAP_TYPE_ns2__PinDebitCreditService (165)
+#define SOAP_TYPE_ns2__PinDebitCreditService (68)
 /* complex XSD type 'ns2:PinDebitCreditService': */
 class SOAP_CMAC ns2__PinDebitCreditService {
       public:
@@ -5047,7 +3683,7 @@ class SOAP_CMAC ns2__PinDebitCreditService {
 
 /* CyberSourceTransaction_nvp_1.129.h:321 */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalService
-#define SOAP_TYPE_ns2__PinDebitReversalService (166)
+#define SOAP_TYPE_ns2__PinDebitReversalService (69)
 /* complex XSD type 'ns2:PinDebitReversalService': */
 class SOAP_CMAC ns2__PinDebitReversalService {
       public:
@@ -5089,7 +3725,7 @@ class SOAP_CMAC ns2__PinDebitReversalService {
 
 /* CyberSourceTransaction_nvp_1.129.h:324 */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateService
-#define SOAP_TYPE_ns2__PayPalButtonCreateService (167)
+#define SOAP_TYPE_ns2__PayPalButtonCreateService (70)
 /* complex XSD type 'ns2:PayPalButtonCreateService': */
 class SOAP_CMAC ns2__PayPalButtonCreateService {
       public:
@@ -5134,7 +3770,7 @@ class SOAP_CMAC ns2__PayPalButtonCreateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:327 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentService
-#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (168)
+#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (71)
 /* complex XSD type 'ns2:PayPalPreapprovedPaymentService': */
 class SOAP_CMAC ns2__PayPalPreapprovedPaymentService {
       public:
@@ -5179,7 +3815,7 @@ class SOAP_CMAC ns2__PayPalPreapprovedPaymentService {
 
 /* CyberSourceTransaction_nvp_1.129.h:330 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateService
-#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (169)
+#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (72)
 /* complex XSD type 'ns2:PayPalPreapprovedUpdateService': */
 class SOAP_CMAC ns2__PayPalPreapprovedUpdateService {
       public:
@@ -5224,7 +3860,7 @@ class SOAP_CMAC ns2__PayPalPreapprovedUpdateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:333 */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentService
-#define SOAP_TYPE_ns2__ChinaPaymentService (170)
+#define SOAP_TYPE_ns2__ChinaPaymentService (73)
 /* complex XSD type 'ns2:ChinaPaymentService': */
 class SOAP_CMAC ns2__ChinaPaymentService {
       public:
@@ -5281,7 +3917,7 @@ class SOAP_CMAC ns2__ChinaPaymentService {
 
 /* CyberSourceTransaction_nvp_1.129.h:336 */
 #ifndef SOAP_TYPE_ns2__ChinaRefundService
-#define SOAP_TYPE_ns2__ChinaRefundService (171)
+#define SOAP_TYPE_ns2__ChinaRefundService (74)
 /* complex XSD type 'ns2:ChinaRefundService': */
 class SOAP_CMAC ns2__ChinaRefundService {
       public:
@@ -5329,7 +3965,7 @@ class SOAP_CMAC ns2__ChinaRefundService {
 
 /* CyberSourceTransaction_nvp_1.129.h:339 */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentService
-#define SOAP_TYPE_ns2__BoletoPaymentService (172)
+#define SOAP_TYPE_ns2__BoletoPaymentService (75)
 /* complex XSD type 'ns2:BoletoPaymentService': */
 class SOAP_CMAC ns2__BoletoPaymentService {
       public:
@@ -5377,7 +4013,7 @@ class SOAP_CMAC ns2__BoletoPaymentService {
 
 /* CyberSourceTransaction_nvp_1.129.h:342 */
 #ifndef SOAP_TYPE_ns2__PersonalId
-#define SOAP_TYPE_ns2__PersonalId (173)
+#define SOAP_TYPE_ns2__PersonalId (76)
 /* complex XSD type 'ns2:PersonalId': */
 class SOAP_CMAC ns2__PersonalId {
       public:
@@ -5429,7 +4065,7 @@ class SOAP_CMAC ns2__PersonalId {
 
 /* CyberSourceTransaction_nvp_1.129.h:345 */
 #ifndef SOAP_TYPE_ns2__Address
-#define SOAP_TYPE_ns2__Address (174)
+#define SOAP_TYPE_ns2__Address (77)
 /* complex XSD type 'ns2:Address': */
 class SOAP_CMAC ns2__Address {
       public:
@@ -5484,7 +4120,7 @@ class SOAP_CMAC ns2__Address {
 
 /* CyberSourceTransaction_nvp_1.129.h:348 */
 #ifndef SOAP_TYPE_ns2__APInitiateService
-#define SOAP_TYPE_ns2__APInitiateService (175)
+#define SOAP_TYPE_ns2__APInitiateService (78)
 /* complex XSD type 'ns2:APInitiateService': */
 class SOAP_CMAC ns2__APInitiateService {
       public:
@@ -5562,7 +4198,7 @@ class SOAP_CMAC ns2__APInitiateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:351 */
 #ifndef SOAP_TYPE_ns2__APCheckStatusService
-#define SOAP_TYPE_ns2__APCheckStatusService (176)
+#define SOAP_TYPE_ns2__APCheckStatusService (79)
 /* complex XSD type 'ns2:APCheckStatusService': */
 class SOAP_CMAC ns2__APCheckStatusService {
       public:
@@ -5610,7 +4246,7 @@ class SOAP_CMAC ns2__APCheckStatusService {
 
 /* CyberSourceTransaction_nvp_1.129.h:354 */
 #ifndef SOAP_TYPE_ns2__RiskUpdateService
-#define SOAP_TYPE_ns2__RiskUpdateService (177)
+#define SOAP_TYPE_ns2__RiskUpdateService (80)
 /* complex XSD type 'ns2:RiskUpdateService': */
 class SOAP_CMAC ns2__RiskUpdateService {
       public:
@@ -5679,7 +4315,7 @@ class SOAP_CMAC ns2__RiskUpdateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:357 */
 #ifndef SOAP_TYPE_ns2__FraudUpdateService
-#define SOAP_TYPE_ns2__FraudUpdateService (178)
+#define SOAP_TYPE_ns2__FraudUpdateService (81)
 /* complex XSD type 'ns2:FraudUpdateService': */
 class SOAP_CMAC ns2__FraudUpdateService {
       public:
@@ -5733,7 +4369,7 @@ class SOAP_CMAC ns2__FraudUpdateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:360 */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionService
-#define SOAP_TYPE_ns2__CaseManagementActionService (179)
+#define SOAP_TYPE_ns2__CaseManagementActionService (82)
 /* complex XSD type 'ns2:CaseManagementActionService': */
 class SOAP_CMAC ns2__CaseManagementActionService {
       public:
@@ -5781,7 +4417,7 @@ class SOAP_CMAC ns2__CaseManagementActionService {
 
 /* CyberSourceTransaction_nvp_1.129.h:363 */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataService
-#define SOAP_TYPE_ns2__EncryptPaymentDataService (180)
+#define SOAP_TYPE_ns2__EncryptPaymentDataService (83)
 /* complex XSD type 'ns2:EncryptPaymentDataService': */
 class SOAP_CMAC ns2__EncryptPaymentDataService {
       public:
@@ -5820,7 +4456,7 @@ class SOAP_CMAC ns2__EncryptPaymentDataService {
 
 /* CyberSourceTransaction_nvp_1.129.h:366 */
 #ifndef SOAP_TYPE_ns2__InvoiceHeader
-#define SOAP_TYPE_ns2__InvoiceHeader (181)
+#define SOAP_TYPE_ns2__InvoiceHeader (84)
 /* complex XSD type 'ns2:InvoiceHeader': */
 class SOAP_CMAC ns2__InvoiceHeader {
       public:
@@ -5983,7 +4619,7 @@ class SOAP_CMAC ns2__InvoiceHeader {
 
 /* CyberSourceTransaction_nvp_1.129.h:369 */
 #ifndef SOAP_TYPE_ns2__BusinessRules
-#define SOAP_TYPE_ns2__BusinessRules (182)
+#define SOAP_TYPE_ns2__BusinessRules (85)
 /* complex XSD type 'ns2:BusinessRules': */
 class SOAP_CMAC ns2__BusinessRules {
       public:
@@ -6041,7 +4677,7 @@ class SOAP_CMAC ns2__BusinessRules {
 
 /* CyberSourceTransaction_nvp_1.129.h:372 */
 #ifndef SOAP_TYPE_ns2__BillTo
-#define SOAP_TYPE_ns2__BillTo (183)
+#define SOAP_TYPE_ns2__BillTo (86)
 /* complex XSD type 'ns2:BillTo': */
 class SOAP_CMAC ns2__BillTo {
       public:
@@ -6195,7 +4831,7 @@ class SOAP_CMAC ns2__BillTo {
 
 /* CyberSourceTransaction_nvp_1.129.h:375 */
 #ifndef SOAP_TYPE_ns2__ShipTo
-#define SOAP_TYPE_ns2__ShipTo (184)
+#define SOAP_TYPE_ns2__ShipTo (87)
 /* complex XSD type 'ns2:ShipTo': */
 class SOAP_CMAC ns2__ShipTo {
       public:
@@ -6301,7 +4937,7 @@ class SOAP_CMAC ns2__ShipTo {
 
 /* CyberSourceTransaction_nvp_1.129.h:378 */
 #ifndef SOAP_TYPE_ns2__ShipFrom
-#define SOAP_TYPE_ns2__ShipFrom (185)
+#define SOAP_TYPE_ns2__ShipFrom (88)
 /* complex XSD type 'ns2:ShipFrom': */
 class SOAP_CMAC ns2__ShipFrom {
       public:
@@ -6389,7 +5025,7 @@ class SOAP_CMAC ns2__ShipFrom {
 
 /* CyberSourceTransaction_nvp_1.129.h:381 */
 #ifndef SOAP_TYPE_ns2__Card
-#define SOAP_TYPE_ns2__Card (186)
+#define SOAP_TYPE_ns2__Card (89)
 /* complex XSD type 'ns2:Card': */
 class SOAP_CMAC ns2__Card {
       public:
@@ -6474,7 +5110,7 @@ class SOAP_CMAC ns2__Card {
 
 /* CyberSourceTransaction_nvp_1.129.h:384 */
 #ifndef SOAP_TYPE_ns2__Check
-#define SOAP_TYPE_ns2__Check (187)
+#define SOAP_TYPE_ns2__Check (90)
 /* complex XSD type 'ns2:Check': */
 class SOAP_CMAC ns2__Check {
       public:
@@ -6547,7 +5183,7 @@ class SOAP_CMAC ns2__Check {
 
 /* CyberSourceTransaction_nvp_1.129.h:387 */
 #ifndef SOAP_TYPE_ns2__BML
-#define SOAP_TYPE_ns2__BML (188)
+#define SOAP_TYPE_ns2__BML (91)
 /* complex XSD type 'ns2:BML': */
 class SOAP_CMAC ns2__BML {
       public:
@@ -6842,7 +5478,7 @@ class SOAP_CMAC ns2__BML {
 
 /* CyberSourceTransaction_nvp_1.129.h:390 */
 #ifndef SOAP_TYPE_ns2__OtherTax
-#define SOAP_TYPE_ns2__OtherTax (189)
+#define SOAP_TYPE_ns2__OtherTax (92)
 /* complex XSD type 'ns2:OtherTax': */
 class SOAP_CMAC ns2__OtherTax {
       public:
@@ -6909,7 +5545,7 @@ class SOAP_CMAC ns2__OtherTax {
 
 /* CyberSourceTransaction_nvp_1.129.h:393 */
 #ifndef SOAP_TYPE_ns2__Aft
-#define SOAP_TYPE_ns2__Aft (190)
+#define SOAP_TYPE_ns2__Aft (93)
 /* complex XSD type 'ns2:Aft': */
 class SOAP_CMAC ns2__Aft {
       public:
@@ -6955,7 +5591,7 @@ class SOAP_CMAC ns2__Aft {
 
 /* CyberSourceTransaction_nvp_1.129.h:396 */
 #ifndef SOAP_TYPE_ns2__Wallet
-#define SOAP_TYPE_ns2__Wallet (191)
+#define SOAP_TYPE_ns2__Wallet (94)
 /* complex XSD type 'ns2:Wallet': */
 class SOAP_CMAC ns2__Wallet {
       public:
@@ -6995,7 +5631,7 @@ class SOAP_CMAC ns2__Wallet {
 
 /* CyberSourceTransaction_nvp_1.129.h:399 */
 #ifndef SOAP_TYPE_ns2__PurchaseTotals
-#define SOAP_TYPE_ns2__PurchaseTotals (192)
+#define SOAP_TYPE_ns2__PurchaseTotals (95)
 /* complex XSD type 'ns2:PurchaseTotals': */
 class SOAP_CMAC ns2__PurchaseTotals {
       public:
@@ -7113,7 +5749,7 @@ class SOAP_CMAC ns2__PurchaseTotals {
 
 /* CyberSourceTransaction_nvp_1.129.h:402 */
 #ifndef SOAP_TYPE_ns2__FundingTotals
-#define SOAP_TYPE_ns2__FundingTotals (193)
+#define SOAP_TYPE_ns2__FundingTotals (96)
 /* complex XSD type 'ns2:FundingTotals': */
 class SOAP_CMAC ns2__FundingTotals {
       public:
@@ -7156,7 +5792,7 @@ class SOAP_CMAC ns2__FundingTotals {
 
 /* CyberSourceTransaction_nvp_1.129.h:405 */
 #ifndef SOAP_TYPE_ns2__GECC
-#define SOAP_TYPE_ns2__GECC (194)
+#define SOAP_TYPE_ns2__GECC (97)
 /* complex XSD type 'ns2:GECC': */
 class SOAP_CMAC ns2__GECC {
       public:
@@ -7210,7 +5846,7 @@ class SOAP_CMAC ns2__GECC {
 
 /* CyberSourceTransaction_nvp_1.129.h:408 */
 #ifndef SOAP_TYPE_ns2__UCAF
-#define SOAP_TYPE_ns2__UCAF (195)
+#define SOAP_TYPE_ns2__UCAF (98)
 /* complex XSD type 'ns2:UCAF': */
 class SOAP_CMAC ns2__UCAF {
       public:
@@ -7253,7 +5889,7 @@ class SOAP_CMAC ns2__UCAF {
 
 /* CyberSourceTransaction_nvp_1.129.h:411 */
 #ifndef SOAP_TYPE_ns2__FundTransfer
-#define SOAP_TYPE_ns2__FundTransfer (196)
+#define SOAP_TYPE_ns2__FundTransfer (99)
 /* complex XSD type 'ns2:FundTransfer': */
 class SOAP_CMAC ns2__FundTransfer {
       public:
@@ -7302,7 +5938,7 @@ class SOAP_CMAC ns2__FundTransfer {
 
 /* CyberSourceTransaction_nvp_1.129.h:414 */
 #ifndef SOAP_TYPE_ns2__BankInfo
-#define SOAP_TYPE_ns2__BankInfo (197)
+#define SOAP_TYPE_ns2__BankInfo (100)
 /* complex XSD type 'ns2:BankInfo': */
 class SOAP_CMAC ns2__BankInfo {
       public:
@@ -7366,7 +6002,7 @@ class SOAP_CMAC ns2__BankInfo {
 
 /* CyberSourceTransaction_nvp_1.129.h:417 */
 #ifndef SOAP_TYPE_ns2__RecurringSubscriptionInfo
-#define SOAP_TYPE_ns2__RecurringSubscriptionInfo (198)
+#define SOAP_TYPE_ns2__RecurringSubscriptionInfo (101)
 /* complex XSD type 'ns2:RecurringSubscriptionInfo': */
 class SOAP_CMAC ns2__RecurringSubscriptionInfo {
       public:
@@ -7439,7 +6075,7 @@ class SOAP_CMAC ns2__RecurringSubscriptionInfo {
 
 /* CyberSourceTransaction_nvp_1.129.h:420 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEvent
-#define SOAP_TYPE_ns2__PaySubscriptionEvent (199)
+#define SOAP_TYPE_ns2__PaySubscriptionEvent (102)
 /* complex XSD type 'ns2:PaySubscriptionEvent': */
 class SOAP_CMAC ns2__PaySubscriptionEvent {
       public:
@@ -7485,7 +6121,7 @@ class SOAP_CMAC ns2__PaySubscriptionEvent {
 
 /* CyberSourceTransaction_nvp_1.129.h:423 */
 #ifndef SOAP_TYPE_ns2__Subscription
-#define SOAP_TYPE_ns2__Subscription (200)
+#define SOAP_TYPE_ns2__Subscription (103)
 /* complex XSD type 'ns2:Subscription': */
 class SOAP_CMAC ns2__Subscription {
       public:
@@ -7528,7 +6164,7 @@ class SOAP_CMAC ns2__Subscription {
 
 /* CyberSourceTransaction_nvp_1.129.h:426 */
 #ifndef SOAP_TYPE_ns2__PaymentNetworkToken
-#define SOAP_TYPE_ns2__PaymentNetworkToken (201)
+#define SOAP_TYPE_ns2__PaymentNetworkToken (104)
 /* complex XSD type 'ns2:PaymentNetworkToken': */
 class SOAP_CMAC ns2__PaymentNetworkToken {
       public:
@@ -7583,7 +6219,7 @@ class SOAP_CMAC ns2__PaymentNetworkToken {
 
 /* CyberSourceTransaction_nvp_1.129.h:429 */
 #ifndef SOAP_TYPE_ns2__DecisionManager
-#define SOAP_TYPE_ns2__DecisionManager (202)
+#define SOAP_TYPE_ns2__DecisionManager (105)
 /* complex XSD type 'ns2:DecisionManager': */
 class SOAP_CMAC ns2__DecisionManager {
       public:
@@ -7629,7 +6265,7 @@ class SOAP_CMAC ns2__DecisionManager {
 
 /* CyberSourceTransaction_nvp_1.129.h:432 */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelData
-#define SOAP_TYPE_ns2__DecisionManagerTravelData (203)
+#define SOAP_TYPE_ns2__DecisionManagerTravelData (106)
 /* complex XSD type 'ns2:DecisionManagerTravelData': */
 class SOAP_CMAC ns2__DecisionManagerTravelData {
       public:
@@ -7677,7 +6313,7 @@ class SOAP_CMAC ns2__DecisionManagerTravelData {
 
 /* CyberSourceTransaction_nvp_1.129.h:435 */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelLeg
-#define SOAP_TYPE_ns2__DecisionManagerTravelLeg (204)
+#define SOAP_TYPE_ns2__DecisionManagerTravelLeg (107)
 /* complex XSD type 'ns2:DecisionManagerTravelLeg': */
 class SOAP_CMAC ns2__DecisionManagerTravelLeg {
       public:
@@ -7723,7 +6359,7 @@ class SOAP_CMAC ns2__DecisionManagerTravelLeg {
 
 /* CyberSourceTransaction_nvp_1.129.h:438 */
 #ifndef SOAP_TYPE_ns2__Batch
-#define SOAP_TYPE_ns2__Batch (205)
+#define SOAP_TYPE_ns2__Batch (108)
 /* complex XSD type 'ns2:Batch': */
 class SOAP_CMAC ns2__Batch {
       public:
@@ -7766,7 +6402,7 @@ class SOAP_CMAC ns2__Batch {
 
 /* CyberSourceTransaction_nvp_1.129.h:441 */
 #ifndef SOAP_TYPE_ns2__PayPal
-#define SOAP_TYPE_ns2__PayPal (206)
+#define SOAP_TYPE_ns2__PayPal (109)
 /* complex XSD type 'ns2:PayPal': */
 class SOAP_CMAC ns2__PayPal {
       public:
@@ -7804,7 +6440,7 @@ class SOAP_CMAC ns2__PayPal {
 
 /* CyberSourceTransaction_nvp_1.129.h:444 */
 #ifndef SOAP_TYPE_ns2__JPO
-#define SOAP_TYPE_ns2__JPO (207)
+#define SOAP_TYPE_ns2__JPO (110)
 /* complex XSD type 'ns2:JPO': */
 class SOAP_CMAC ns2__JPO {
       public:
@@ -7862,7 +6498,7 @@ class SOAP_CMAC ns2__JPO {
 
 /* CyberSourceTransaction_nvp_1.129.h:447 */
 #ifndef SOAP_TYPE_ns2__Token
-#define SOAP_TYPE_ns2__Token (208)
+#define SOAP_TYPE_ns2__Token (111)
 /* complex XSD type 'ns2:Token': */
 class SOAP_CMAC ns2__Token {
       public:
@@ -7911,7 +6547,7 @@ class SOAP_CMAC ns2__Token {
 
 /* CyberSourceTransaction_nvp_1.129.h:450 */
 #ifndef SOAP_TYPE_ns2__AP
-#define SOAP_TYPE_ns2__AP (209)
+#define SOAP_TYPE_ns2__AP (112)
 /* complex XSD type 'ns2:AP': */
 class SOAP_CMAC ns2__AP {
       public:
@@ -7993,7 +6629,7 @@ class SOAP_CMAC ns2__AP {
 
 /* CyberSourceTransaction_nvp_1.129.h:453 */
 #ifndef SOAP_TYPE_ns2__APDevice
-#define SOAP_TYPE_ns2__APDevice (210)
+#define SOAP_TYPE_ns2__APDevice (113)
 /* complex XSD type 'ns2:APDevice': */
 class SOAP_CMAC ns2__APDevice {
       public:
@@ -8039,7 +6675,7 @@ class SOAP_CMAC ns2__APDevice {
 
 /* CyberSourceTransaction_nvp_1.129.h:456 */
 #ifndef SOAP_TYPE_ns2__APAuthService
-#define SOAP_TYPE_ns2__APAuthService (211)
+#define SOAP_TYPE_ns2__APAuthService (114)
 /* complex XSD type 'ns2:APAuthService': */
 class SOAP_CMAC ns2__APAuthService {
       public:
@@ -8096,7 +6732,7 @@ class SOAP_CMAC ns2__APAuthService {
 
 /* CyberSourceTransaction_nvp_1.129.h:459 */
 #ifndef SOAP_TYPE_ns2__APAuthReversalService
-#define SOAP_TYPE_ns2__APAuthReversalService (212)
+#define SOAP_TYPE_ns2__APAuthReversalService (115)
 /* complex XSD type 'ns2:APAuthReversalService': */
 class SOAP_CMAC ns2__APAuthReversalService {
       public:
@@ -8141,7 +6777,7 @@ class SOAP_CMAC ns2__APAuthReversalService {
 
 /* CyberSourceTransaction_nvp_1.129.h:462 */
 #ifndef SOAP_TYPE_ns2__APCaptureService
-#define SOAP_TYPE_ns2__APCaptureService (213)
+#define SOAP_TYPE_ns2__APCaptureService (116)
 /* complex XSD type 'ns2:APCaptureService': */
 class SOAP_CMAC ns2__APCaptureService {
       public:
@@ -8186,7 +6822,7 @@ class SOAP_CMAC ns2__APCaptureService {
 
 /* CyberSourceTransaction_nvp_1.129.h:465 */
 #ifndef SOAP_TYPE_ns2__APOptionsService
-#define SOAP_TYPE_ns2__APOptionsService (214)
+#define SOAP_TYPE_ns2__APOptionsService (117)
 /* complex XSD type 'ns2:APOptionsService': */
 class SOAP_CMAC ns2__APOptionsService {
       public:
@@ -8231,7 +6867,7 @@ class SOAP_CMAC ns2__APOptionsService {
 
 /* CyberSourceTransaction_nvp_1.129.h:468 */
 #ifndef SOAP_TYPE_ns2__APRefundService
-#define SOAP_TYPE_ns2__APRefundService (215)
+#define SOAP_TYPE_ns2__APRefundService (118)
 /* complex XSD type 'ns2:APRefundService': */
 class SOAP_CMAC ns2__APRefundService {
       public:
@@ -8291,7 +6927,7 @@ class SOAP_CMAC ns2__APRefundService {
 
 /* CyberSourceTransaction_nvp_1.129.h:471 */
 #ifndef SOAP_TYPE_ns2__APSaleService
-#define SOAP_TYPE_ns2__APSaleService (216)
+#define SOAP_TYPE_ns2__APSaleService (119)
 /* complex XSD type 'ns2:APSaleService': */
 class SOAP_CMAC ns2__APSaleService {
       public:
@@ -8351,7 +6987,7 @@ class SOAP_CMAC ns2__APSaleService {
 
 /* CyberSourceTransaction_nvp_1.129.h:474 */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsService
-#define SOAP_TYPE_ns2__APCheckOutDetailsService (217)
+#define SOAP_TYPE_ns2__APCheckOutDetailsService (120)
 /* complex XSD type 'ns2:APCheckOutDetailsService': */
 class SOAP_CMAC ns2__APCheckOutDetailsService {
       public:
@@ -8390,7 +7026,7 @@ class SOAP_CMAC ns2__APCheckOutDetailsService {
 
 /* CyberSourceTransaction_nvp_1.129.h:477 */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsService
-#define SOAP_TYPE_ns2__APTransactionDetailsService (218)
+#define SOAP_TYPE_ns2__APTransactionDetailsService (121)
 /* complex XSD type 'ns2:APTransactionDetailsService': */
 class SOAP_CMAC ns2__APTransactionDetailsService {
       public:
@@ -8432,7 +7068,7 @@ class SOAP_CMAC ns2__APTransactionDetailsService {
 
 /* CyberSourceTransaction_nvp_1.129.h:480 */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseService
-#define SOAP_TYPE_ns2__APConfirmPurchaseService (219)
+#define SOAP_TYPE_ns2__APConfirmPurchaseService (122)
 /* complex XSD type 'ns2:APConfirmPurchaseService': */
 class SOAP_CMAC ns2__APConfirmPurchaseService {
       public:
@@ -8471,7 +7107,7 @@ class SOAP_CMAC ns2__APConfirmPurchaseService {
 
 /* CyberSourceTransaction_nvp_1.129.h:483 */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsService
-#define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (220)
+#define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (123)
 /* complex XSD type 'ns2:PayPalGetTxnDetailsService': */
 class SOAP_CMAC ns2__PayPalGetTxnDetailsService {
       public:
@@ -8513,7 +7149,7 @@ class SOAP_CMAC ns2__PayPalGetTxnDetailsService {
 
 /* CyberSourceTransaction_nvp_1.129.h:486 */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchService
-#define SOAP_TYPE_ns2__PayPalTransactionSearchService (221)
+#define SOAP_TYPE_ns2__PayPalTransactionSearchService (124)
 /* complex XSD type 'ns2:PayPalTransactionSearchService': */
 class SOAP_CMAC ns2__PayPalTransactionSearchService {
       public:
@@ -8594,7 +7230,7 @@ class SOAP_CMAC ns2__PayPalTransactionSearchService {
 
 /* CyberSourceTransaction_nvp_1.129.h:489 */
 #ifndef SOAP_TYPE_ns2__Recipient
-#define SOAP_TYPE_ns2__Recipient (222)
+#define SOAP_TYPE_ns2__Recipient (125)
 /* complex XSD type 'ns2:Recipient': */
 class SOAP_CMAC ns2__Recipient {
       public:
@@ -8652,7 +7288,7 @@ class SOAP_CMAC ns2__Recipient {
 
 /* CyberSourceTransaction_nvp_1.129.h:492 */
 #ifndef SOAP_TYPE_ns2__Sender
-#define SOAP_TYPE_ns2__Sender (223)
+#define SOAP_TYPE_ns2__Sender (126)
 /* complex XSD type 'ns2:Sender': */
 class SOAP_CMAC ns2__Sender {
       public:
@@ -8716,7 +7352,7 @@ class SOAP_CMAC ns2__Sender {
 
 /* CyberSourceTransaction_nvp_1.129.h:495 */
 #ifndef SOAP_TYPE_ns2__RequestMessage
-#define SOAP_TYPE_ns2__RequestMessage (224)
+#define SOAP_TYPE_ns2__RequestMessage (127)
 /* complex XSD type 'ns2:RequestMessage': */
 class SOAP_CMAC ns2__RequestMessage {
       public:
@@ -9293,7 +7929,7 @@ class SOAP_CMAC ns2__RequestMessage {
 
 /* CyberSourceTransaction_nvp_1.129.h:498 */
 #ifndef SOAP_TYPE_ns2__VC
-#define SOAP_TYPE_ns2__VC (225)
+#define SOAP_TYPE_ns2__VC (128)
 /* complex XSD type 'ns2:VC': */
 class SOAP_CMAC ns2__VC {
       public:
@@ -9333,7 +7969,7 @@ class SOAP_CMAC ns2__VC {
 
 /* CyberSourceTransaction_nvp_1.129.h:501 */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataService
-#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (226)
+#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (129)
 /* complex XSD type 'ns2:DecryptVisaCheckoutDataService': */
 class SOAP_CMAC ns2__DecryptVisaCheckoutDataService {
       public:
@@ -9372,7 +8008,7 @@ class SOAP_CMAC ns2__DecryptVisaCheckoutDataService {
 
 /* CyberSourceTransaction_nvp_1.129.h:504 */
 #ifndef SOAP_TYPE_ns2__DCC
-#define SOAP_TYPE_ns2__DCC (227)
+#define SOAP_TYPE_ns2__DCC (130)
 /* complex XSD type 'ns2:DCC': */
 class SOAP_CMAC ns2__DCC {
       public:
@@ -9415,7 +8051,7 @@ class SOAP_CMAC ns2__DCC {
 
 /* CyberSourceTransaction_nvp_1.129.h:507 */
 #ifndef SOAP_TYPE_ns2__Promotion
-#define SOAP_TYPE_ns2__Promotion (228)
+#define SOAP_TYPE_ns2__Promotion (131)
 /* complex XSD type 'ns2:Promotion': */
 class SOAP_CMAC ns2__Promotion {
       public:
@@ -9470,7 +8106,7 @@ class SOAP_CMAC ns2__Promotion {
 
 /* CyberSourceTransaction_nvp_1.129.h:510 */
 #ifndef SOAP_TYPE_ns2__PromotionGroup
-#define SOAP_TYPE_ns2__PromotionGroup (229)
+#define SOAP_TYPE_ns2__PromotionGroup (132)
 /* complex XSD type 'ns2:PromotionGroup': */
 class SOAP_CMAC ns2__PromotionGroup {
       public:
@@ -9516,7 +8152,7 @@ class SOAP_CMAC ns2__PromotionGroup {
 
 /* CyberSourceTransaction_nvp_1.129.h:513 */
 #ifndef SOAP_TYPE_ns2__PromotionGroupReply
-#define SOAP_TYPE_ns2__PromotionGroupReply (230)
+#define SOAP_TYPE_ns2__PromotionGroupReply (133)
 /* complex XSD type 'ns2:PromotionGroupReply': */
 class SOAP_CMAC ns2__PromotionGroupReply {
       public:
@@ -9559,7 +8195,7 @@ class SOAP_CMAC ns2__PromotionGroupReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:516 */
 #ifndef SOAP_TYPE_ns2__CCAuthReply
-#define SOAP_TYPE_ns2__CCAuthReply (231)
+#define SOAP_TYPE_ns2__CCAuthReply (134)
 /* complex XSD type 'ns2:CCAuthReply': */
 class SOAP_CMAC ns2__CCAuthReply {
       public:
@@ -9823,7 +8459,7 @@ class SOAP_CMAC ns2__CCAuthReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:519 */
 #ifndef SOAP_TYPE_ns2__OCTReply
-#define SOAP_TYPE_ns2__OCTReply (232)
+#define SOAP_TYPE_ns2__OCTReply (135)
 /* complex XSD type 'ns2:OCTReply': */
 class SOAP_CMAC ns2__OCTReply {
       public:
@@ -9880,7 +8516,7 @@ class SOAP_CMAC ns2__OCTReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:522 */
 #ifndef SOAP_TYPE_ns2__VerificationReply
-#define SOAP_TYPE_ns2__VerificationReply (233)
+#define SOAP_TYPE_ns2__VerificationReply (136)
 /* complex XSD type 'ns2:VerificationReply': */
 class SOAP_CMAC ns2__VerificationReply {
       public:
@@ -9931,7 +8567,7 @@ class SOAP_CMAC ns2__VerificationReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:525 */
 #ifndef SOAP_TYPE_ns2__CCSaleReply
-#define SOAP_TYPE_ns2__CCSaleReply (234)
+#define SOAP_TYPE_ns2__CCSaleReply (137)
 /* complex XSD type 'ns2:CCSaleReply': */
 class SOAP_CMAC ns2__CCSaleReply {
       public:
@@ -10024,7 +8660,7 @@ class SOAP_CMAC ns2__CCSaleReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:528 */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditReply
-#define SOAP_TYPE_ns2__CCSaleCreditReply (235)
+#define SOAP_TYPE_ns2__CCSaleCreditReply (138)
 /* complex XSD type 'ns2:CCSaleCreditReply': */
 class SOAP_CMAC ns2__CCSaleCreditReply {
       public:
@@ -10081,7 +8717,7 @@ class SOAP_CMAC ns2__CCSaleCreditReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:531 */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalReply
-#define SOAP_TYPE_ns2__CCSaleReversalReply (236)
+#define SOAP_TYPE_ns2__CCSaleReversalReply (139)
 /* complex XSD type 'ns2:CCSaleReversalReply': */
 class SOAP_CMAC ns2__CCSaleReversalReply {
       public:
@@ -10135,7 +8771,7 @@ class SOAP_CMAC ns2__CCSaleReversalReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:534 */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthReply
-#define SOAP_TYPE_ns2__CCIncrementalAuthReply (237)
+#define SOAP_TYPE_ns2__CCIncrementalAuthReply (140)
 /* complex XSD type 'ns2:CCIncrementalAuthReply': */
 class SOAP_CMAC ns2__CCIncrementalAuthReply {
       public:
@@ -10195,7 +8831,7 @@ class SOAP_CMAC ns2__CCIncrementalAuthReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:537 */
 #ifndef SOAP_TYPE_ns2__CCCaptureReply
-#define SOAP_TYPE_ns2__CCCaptureReply (238)
+#define SOAP_TYPE_ns2__CCCaptureReply (141)
 /* complex XSD type 'ns2:CCCaptureReply': */
 class SOAP_CMAC ns2__CCCaptureReply {
       public:
@@ -10264,7 +8900,7 @@ class SOAP_CMAC ns2__CCCaptureReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:540 */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateReply
-#define SOAP_TYPE_ns2__ServiceFeeCalculateReply (239)
+#define SOAP_TYPE_ns2__ServiceFeeCalculateReply (142)
 /* complex XSD type 'ns2:ServiceFeeCalculateReply': */
 class SOAP_CMAC ns2__ServiceFeeCalculateReply {
       public:
@@ -10309,7 +8945,7 @@ class SOAP_CMAC ns2__ServiceFeeCalculateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:543 */
 #ifndef SOAP_TYPE_ns2__CCCreditReply
-#define SOAP_TYPE_ns2__CCCreditReply (240)
+#define SOAP_TYPE_ns2__CCCreditReply (143)
 /* complex XSD type 'ns2:CCCreditReply': */
 class SOAP_CMAC ns2__CCCreditReply {
       public:
@@ -10372,7 +9008,7 @@ class SOAP_CMAC ns2__CCCreditReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:546 */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseReply
-#define SOAP_TYPE_ns2__PinDebitPurchaseReply (241)
+#define SOAP_TYPE_ns2__PinDebitPurchaseReply (144)
 /* complex XSD type 'ns2:PinDebitPurchaseReply': */
 class SOAP_CMAC ns2__PinDebitPurchaseReply {
       public:
@@ -10453,7 +9089,7 @@ class SOAP_CMAC ns2__PinDebitPurchaseReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:549 */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditReply
-#define SOAP_TYPE_ns2__PinDebitCreditReply (242)
+#define SOAP_TYPE_ns2__PinDebitCreditReply (145)
 /* complex XSD type 'ns2:PinDebitCreditReply': */
 class SOAP_CMAC ns2__PinDebitCreditReply {
       public:
@@ -10513,7 +9149,7 @@ class SOAP_CMAC ns2__PinDebitCreditReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:552 */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalReply
-#define SOAP_TYPE_ns2__PinDebitReversalReply (243)
+#define SOAP_TYPE_ns2__PinDebitReversalReply (146)
 /* complex XSD type 'ns2:PinDebitReversalReply': */
 class SOAP_CMAC ns2__PinDebitReversalReply {
       public:
@@ -10564,7 +9200,7 @@ class SOAP_CMAC ns2__PinDebitReversalReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:555 */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalReply
-#define SOAP_TYPE_ns2__CCAuthReversalReply (244)
+#define SOAP_TYPE_ns2__CCAuthReversalReply (147)
 /* complex XSD type 'ns2:CCAuthReversalReply': */
 class SOAP_CMAC ns2__CCAuthReversalReply {
       public:
@@ -10630,7 +9266,7 @@ class SOAP_CMAC ns2__CCAuthReversalReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:558 */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalReply
-#define SOAP_TYPE_ns2__CCAutoAuthReversalReply (245)
+#define SOAP_TYPE_ns2__CCAutoAuthReversalReply (148)
 /* complex XSD type 'ns2:CCAutoAuthReversalReply': */
 class SOAP_CMAC ns2__CCAutoAuthReversalReply {
       public:
@@ -10675,7 +9311,7 @@ class SOAP_CMAC ns2__CCAutoAuthReversalReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:561 */
 #ifndef SOAP_TYPE_ns2__ECDebitReply
-#define SOAP_TYPE_ns2__ECDebitReply (246)
+#define SOAP_TYPE_ns2__ECDebitReply (149)
 /* complex XSD type 'ns2:ECDebitReply': */
 class SOAP_CMAC ns2__ECDebitReply {
       public:
@@ -10756,7 +9392,7 @@ class SOAP_CMAC ns2__ECDebitReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:564 */
 #ifndef SOAP_TYPE_ns2__ECCreditReply
-#define SOAP_TYPE_ns2__ECCreditReply (247)
+#define SOAP_TYPE_ns2__ECCreditReply (150)
 /* complex XSD type 'ns2:ECCreditReply': */
 class SOAP_CMAC ns2__ECCreditReply {
       public:
@@ -10828,7 +9464,7 @@ class SOAP_CMAC ns2__ECCreditReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:567 */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateReply
-#define SOAP_TYPE_ns2__ECAuthenticateReply (248)
+#define SOAP_TYPE_ns2__ECAuthenticateReply (151)
 /* complex XSD type 'ns2:ECAuthenticateReply': */
 class SOAP_CMAC ns2__ECAuthenticateReply {
       public:
@@ -10882,7 +9518,7 @@ class SOAP_CMAC ns2__ECAuthenticateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:570 */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollReply
-#define SOAP_TYPE_ns2__PayerAuthEnrollReply (249)
+#define SOAP_TYPE_ns2__PayerAuthEnrollReply (152)
 /* complex XSD type 'ns2:PayerAuthEnrollReply': */
 class SOAP_CMAC ns2__PayerAuthEnrollReply {
       public:
@@ -10951,7 +9587,7 @@ class SOAP_CMAC ns2__PayerAuthEnrollReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:573 */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateReply
-#define SOAP_TYPE_ns2__PayerAuthValidateReply (250)
+#define SOAP_TYPE_ns2__PayerAuthValidateReply (153)
 /* complex XSD type 'ns2:PayerAuthValidateReply': */
 class SOAP_CMAC ns2__PayerAuthValidateReply {
       public:
@@ -11023,7 +9659,7 @@ class SOAP_CMAC ns2__PayerAuthValidateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:576 */
 #ifndef SOAP_TYPE_ns2__TaxReplyItem
-#define SOAP_TYPE_ns2__TaxReplyItem (251)
+#define SOAP_TYPE_ns2__TaxReplyItem (154)
 /* complex XSD type 'ns2:TaxReplyItem': */
 class SOAP_CMAC ns2__TaxReplyItem {
       public:
@@ -11076,7 +9712,7 @@ class SOAP_CMAC ns2__TaxReplyItem {
 
 /* CyberSourceTransaction_nvp_1.129.h:579 */
 #ifndef SOAP_TYPE_ns2__TaxReply
-#define SOAP_TYPE_ns2__TaxReply (252)
+#define SOAP_TYPE_ns2__TaxReply (155)
 /* complex XSD type 'ns2:TaxReply': */
 class SOAP_CMAC ns2__TaxReply {
       public:
@@ -11153,7 +9789,7 @@ class SOAP_CMAC ns2__TaxReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:582 */
 #ifndef SOAP_TYPE_ns2__DeviceFingerprint
-#define SOAP_TYPE_ns2__DeviceFingerprint (253)
+#define SOAP_TYPE_ns2__DeviceFingerprint (156)
 /* complex XSD type 'ns2:DeviceFingerprint': */
 class SOAP_CMAC ns2__DeviceFingerprint {
       public:
@@ -11286,7 +9922,7 @@ class SOAP_CMAC ns2__DeviceFingerprint {
 
 /* CyberSourceTransaction_nvp_1.129.h:585 */
 #ifndef SOAP_TYPE_ns2__AFSReply
-#define SOAP_TYPE_ns2__AFSReply (254)
+#define SOAP_TYPE_ns2__AFSReply (157)
 /* complex XSD type 'ns2:AFSReply': */
 class SOAP_CMAC ns2__AFSReply {
       public:
@@ -11394,7 +10030,7 @@ class SOAP_CMAC ns2__AFSReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:588 */
 #ifndef SOAP_TYPE_ns2__DAVReply
-#define SOAP_TYPE_ns2__DAVReply (255)
+#define SOAP_TYPE_ns2__DAVReply (158)
 /* complex XSD type 'ns2:DAVReply': */
 class SOAP_CMAC ns2__DAVReply {
       public:
@@ -11532,7 +10168,7 @@ class SOAP_CMAC ns2__DAVReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:591 */
 #ifndef SOAP_TYPE_ns2__DeniedPartiesMatch
-#define SOAP_TYPE_ns2__DeniedPartiesMatch (256)
+#define SOAP_TYPE_ns2__DeniedPartiesMatch (159)
 /* complex XSD type 'ns2:DeniedPartiesMatch': */
 class SOAP_CMAC ns2__DeniedPartiesMatch {
       public:
@@ -11578,7 +10214,7 @@ class SOAP_CMAC ns2__DeniedPartiesMatch {
 
 /* CyberSourceTransaction_nvp_1.129.h:594 */
 #ifndef SOAP_TYPE_ns2__ExportReply
-#define SOAP_TYPE_ns2__ExportReply (257)
+#define SOAP_TYPE_ns2__ExportReply (160)
 /* complex XSD type 'ns2:ExportReply': */
 class SOAP_CMAC ns2__ExportReply {
       public:
@@ -11623,7 +10259,7 @@ class SOAP_CMAC ns2__ExportReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:597 */
 #ifndef SOAP_TYPE_ns2__FXQuote
-#define SOAP_TYPE_ns2__FXQuote (258)
+#define SOAP_TYPE_ns2__FXQuote (161)
 /* complex XSD type 'ns2:FXQuote': */
 class SOAP_CMAC ns2__FXQuote {
       public:
@@ -11681,7 +10317,7 @@ class SOAP_CMAC ns2__FXQuote {
 
 /* CyberSourceTransaction_nvp_1.129.h:600 */
 #ifndef SOAP_TYPE_ns2__FXRatesReply
-#define SOAP_TYPE_ns2__FXRatesReply (259)
+#define SOAP_TYPE_ns2__FXRatesReply (162)
 /* complex XSD type 'ns2:FXRatesReply': */
 class SOAP_CMAC ns2__FXRatesReply {
       public:
@@ -11722,7 +10358,7 @@ class SOAP_CMAC ns2__FXRatesReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:603 */
 #ifndef SOAP_TYPE_ns2__BankTransferReply
-#define SOAP_TYPE_ns2__BankTransferReply (260)
+#define SOAP_TYPE_ns2__BankTransferReply (163)
 /* complex XSD type 'ns2:BankTransferReply': */
 class SOAP_CMAC ns2__BankTransferReply {
       public:
@@ -11806,7 +10442,7 @@ class SOAP_CMAC ns2__BankTransferReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:606 */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeReply
-#define SOAP_TYPE_ns2__BankTransferRealTimeReply (261)
+#define SOAP_TYPE_ns2__BankTransferRealTimeReply (164)
 /* complex XSD type 'ns2:BankTransferRealTimeReply': */
 class SOAP_CMAC ns2__BankTransferRealTimeReply {
       public:
@@ -11863,7 +10499,7 @@ class SOAP_CMAC ns2__BankTransferRealTimeReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:609 */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateReply
-#define SOAP_TYPE_ns2__DirectDebitMandateReply (262)
+#define SOAP_TYPE_ns2__DirectDebitMandateReply (165)
 /* complex XSD type 'ns2:DirectDebitMandateReply': */
 class SOAP_CMAC ns2__DirectDebitMandateReply {
       public:
@@ -11917,7 +10553,7 @@ class SOAP_CMAC ns2__DirectDebitMandateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:612 */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundReply
-#define SOAP_TYPE_ns2__BankTransferRefundReply (263)
+#define SOAP_TYPE_ns2__BankTransferRefundReply (166)
 /* complex XSD type 'ns2:BankTransferRefundReply': */
 class SOAP_CMAC ns2__BankTransferRefundReply {
       public:
@@ -11971,7 +10607,7 @@ class SOAP_CMAC ns2__BankTransferRefundReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:615 */
 #ifndef SOAP_TYPE_ns2__DirectDebitReply
-#define SOAP_TYPE_ns2__DirectDebitReply (264)
+#define SOAP_TYPE_ns2__DirectDebitReply (167)
 /* complex XSD type 'ns2:DirectDebitReply': */
 class SOAP_CMAC ns2__DirectDebitReply {
       public:
@@ -12034,7 +10670,7 @@ class SOAP_CMAC ns2__DirectDebitReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:618 */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateReply
-#define SOAP_TYPE_ns2__DirectDebitValidateReply (265)
+#define SOAP_TYPE_ns2__DirectDebitValidateReply (168)
 /* complex XSD type 'ns2:DirectDebitValidateReply': */
 class SOAP_CMAC ns2__DirectDebitValidateReply {
       public:
@@ -12091,7 +10727,7 @@ class SOAP_CMAC ns2__DirectDebitValidateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:621 */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundReply
-#define SOAP_TYPE_ns2__DirectDebitRefundReply (266)
+#define SOAP_TYPE_ns2__DirectDebitRefundReply (169)
 /* complex XSD type 'ns2:DirectDebitRefundReply': */
 class SOAP_CMAC ns2__DirectDebitRefundReply {
       public:
@@ -12148,7 +10784,7 @@ class SOAP_CMAC ns2__DirectDebitRefundReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:624 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateReply
-#define SOAP_TYPE_ns2__PaySubscriptionCreateReply (267)
+#define SOAP_TYPE_ns2__PaySubscriptionCreateReply (170)
 /* complex XSD type 'ns2:PaySubscriptionCreateReply': */
 class SOAP_CMAC ns2__PaySubscriptionCreateReply {
       public:
@@ -12189,7 +10825,7 @@ class SOAP_CMAC ns2__PaySubscriptionCreateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:627 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateReply
-#define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (268)
+#define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (171)
 /* complex XSD type 'ns2:PaySubscriptionUpdateReply': */
 class SOAP_CMAC ns2__PaySubscriptionUpdateReply {
       public:
@@ -12236,7 +10872,7 @@ class SOAP_CMAC ns2__PaySubscriptionUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:630 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply
-#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (269)
+#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (172)
 /* complex XSD type 'ns2:PaySubscriptionEventUpdateReply': */
 class SOAP_CMAC ns2__PaySubscriptionEventUpdateReply {
       public:
@@ -12278,7 +10914,7 @@ class SOAP_CMAC ns2__PaySubscriptionEventUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:633 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveReply
-#define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (270)
+#define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (173)
 /* complex XSD type 'ns2:PaySubscriptionRetrieveReply': */
 class SOAP_CMAC ns2__PaySubscriptionRetrieveReply {
       public:
@@ -12508,7 +11144,7 @@ class SOAP_CMAC ns2__PaySubscriptionRetrieveReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:636 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteReply
-#define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (271)
+#define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (174)
 /* complex XSD type 'ns2:PaySubscriptionDeleteReply': */
 class SOAP_CMAC ns2__PaySubscriptionDeleteReply {
       public:
@@ -12549,7 +11185,7 @@ class SOAP_CMAC ns2__PaySubscriptionDeleteReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:639 */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentReply
-#define SOAP_TYPE_ns2__PayPalPaymentReply (272)
+#define SOAP_TYPE_ns2__PayPalPaymentReply (175)
 /* complex XSD type 'ns2:PayPalPaymentReply': */
 class SOAP_CMAC ns2__PayPalPaymentReply {
       public:
@@ -12600,7 +11236,7 @@ class SOAP_CMAC ns2__PayPalPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:642 */
 #ifndef SOAP_TYPE_ns2__PayPalCreditReply
-#define SOAP_TYPE_ns2__PayPalCreditReply (273)
+#define SOAP_TYPE_ns2__PayPalCreditReply (176)
 /* complex XSD type 'ns2:PayPalCreditReply': */
 class SOAP_CMAC ns2__PayPalCreditReply {
       public:
@@ -12651,7 +11287,7 @@ class SOAP_CMAC ns2__PayPalCreditReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:645 */
 #ifndef SOAP_TYPE_ns2__VoidReply
-#define SOAP_TYPE_ns2__VoidReply (274)
+#define SOAP_TYPE_ns2__VoidReply (177)
 /* complex XSD type 'ns2:VoidReply': */
 class SOAP_CMAC ns2__VoidReply {
       public:
@@ -12699,7 +11335,7 @@ class SOAP_CMAC ns2__VoidReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:648 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReply
-#define SOAP_TYPE_ns2__PinlessDebitReply (275)
+#define SOAP_TYPE_ns2__PinlessDebitReply (178)
 /* complex XSD type 'ns2:PinlessDebitReply': */
 class SOAP_CMAC ns2__PinlessDebitReply {
       public:
@@ -12759,7 +11395,7 @@ class SOAP_CMAC ns2__PinlessDebitReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:651 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateReply
-#define SOAP_TYPE_ns2__PinlessDebitValidateReply (276)
+#define SOAP_TYPE_ns2__PinlessDebitValidateReply (179)
 /* complex XSD type 'ns2:PinlessDebitValidateReply': */
 class SOAP_CMAC ns2__PinlessDebitValidateReply {
       public:
@@ -12804,7 +11440,7 @@ class SOAP_CMAC ns2__PinlessDebitValidateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:654 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalReply
-#define SOAP_TYPE_ns2__PinlessDebitReversalReply (277)
+#define SOAP_TYPE_ns2__PinlessDebitReversalReply (180)
 /* complex XSD type 'ns2:PinlessDebitReversalReply': */
 class SOAP_CMAC ns2__PinlessDebitReversalReply {
       public:
@@ -12855,7 +11491,7 @@ class SOAP_CMAC ns2__PinlessDebitReversalReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:657 */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateReply
-#define SOAP_TYPE_ns2__PayPalButtonCreateReply (278)
+#define SOAP_TYPE_ns2__PayPalButtonCreateReply (181)
 /* complex XSD type 'ns2:PayPalButtonCreateReply': */
 class SOAP_CMAC ns2__PayPalButtonCreateReply {
       public:
@@ -12909,7 +11545,7 @@ class SOAP_CMAC ns2__PayPalButtonCreateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:660 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply
-#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (279)
+#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (182)
 /* complex XSD type 'ns2:PayPalPreapprovedPaymentReply': */
 class SOAP_CMAC ns2__PayPalPreapprovedPaymentReply {
       public:
@@ -13017,7 +11653,7 @@ class SOAP_CMAC ns2__PayPalPreapprovedPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:663 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply
-#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (280)
+#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (183)
 /* complex XSD type 'ns2:PayPalPreapprovedUpdateReply': */
 class SOAP_CMAC ns2__PayPalPreapprovedUpdateReply {
       public:
@@ -13092,7 +11728,7 @@ class SOAP_CMAC ns2__PayPalPreapprovedUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:666 */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetReply
-#define SOAP_TYPE_ns2__PayPalEcSetReply (281)
+#define SOAP_TYPE_ns2__PayPalEcSetReply (184)
 /* complex XSD type 'ns2:PayPalEcSetReply': */
 class SOAP_CMAC ns2__PayPalEcSetReply {
       public:
@@ -13146,7 +11782,7 @@ class SOAP_CMAC ns2__PayPalEcSetReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:669 */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsReply
-#define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (282)
+#define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (185)
 /* complex XSD type 'ns2:PayPalEcGetDetailsReply': */
 class SOAP_CMAC ns2__PayPalEcGetDetailsReply {
       public:
@@ -13286,7 +11922,7 @@ class SOAP_CMAC ns2__PayPalEcGetDetailsReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:672 */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentReply
-#define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (283)
+#define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (186)
 /* complex XSD type 'ns2:PayPalEcDoPaymentReply': */
 class SOAP_CMAC ns2__PayPalEcDoPaymentReply {
       public:
@@ -13379,7 +12015,7 @@ class SOAP_CMAC ns2__PayPalEcDoPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:675 */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureReply
-#define SOAP_TYPE_ns2__PayPalDoCaptureReply (284)
+#define SOAP_TYPE_ns2__PayPalDoCaptureReply (187)
 /* complex XSD type 'ns2:PayPalDoCaptureReply': */
 class SOAP_CMAC ns2__PayPalDoCaptureReply {
       public:
@@ -13469,7 +12105,7 @@ class SOAP_CMAC ns2__PayPalDoCaptureReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:678 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalReply
-#define SOAP_TYPE_ns2__PayPalAuthReversalReply (285)
+#define SOAP_TYPE_ns2__PayPalAuthReversalReply (188)
 /* complex XSD type 'ns2:PayPalAuthReversalReply': */
 class SOAP_CMAC ns2__PayPalAuthReversalReply {
       public:
@@ -13517,7 +12153,7 @@ class SOAP_CMAC ns2__PayPalAuthReversalReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:681 */
 #ifndef SOAP_TYPE_ns2__PayPalRefundReply
-#define SOAP_TYPE_ns2__PayPalRefundReply (286)
+#define SOAP_TYPE_ns2__PayPalRefundReply (189)
 /* complex XSD type 'ns2:PayPalRefundReply': */
 class SOAP_CMAC ns2__PayPalRefundReply {
       public:
@@ -13574,7 +12210,7 @@ class SOAP_CMAC ns2__PayPalRefundReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:684 */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupReply
-#define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (287)
+#define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (190)
 /* complex XSD type 'ns2:PayPalEcOrderSetupReply': */
 class SOAP_CMAC ns2__PayPalEcOrderSetupReply {
       public:
@@ -13661,7 +12297,7 @@ class SOAP_CMAC ns2__PayPalEcOrderSetupReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:687 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationReply
-#define SOAP_TYPE_ns2__PayPalAuthorizationReply (288)
+#define SOAP_TYPE_ns2__PayPalAuthorizationReply (191)
 /* complex XSD type 'ns2:PayPalAuthorizationReply': */
 class SOAP_CMAC ns2__PayPalAuthorizationReply {
       public:
@@ -13724,7 +12360,7 @@ class SOAP_CMAC ns2__PayPalAuthorizationReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:690 */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementReply
-#define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (289)
+#define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (192)
 /* complex XSD type 'ns2:PayPalUpdateAgreementReply': */
 class SOAP_CMAC ns2__PayPalUpdateAgreementReply {
       public:
@@ -13814,7 +12450,7 @@ class SOAP_CMAC ns2__PayPalUpdateAgreementReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:693 */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementReply
-#define SOAP_TYPE_ns2__PayPalCreateAgreementReply (290)
+#define SOAP_TYPE_ns2__PayPalCreateAgreementReply (193)
 /* complex XSD type 'ns2:PayPalCreateAgreementReply': */
 class SOAP_CMAC ns2__PayPalCreateAgreementReply {
       public:
@@ -13862,7 +12498,7 @@ class SOAP_CMAC ns2__PayPalCreateAgreementReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:696 */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionReply
-#define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (291)
+#define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (194)
 /* complex XSD type 'ns2:PayPalDoRefTransactionReply': */
 class SOAP_CMAC ns2__PayPalDoRefTransactionReply {
       public:
@@ -13943,7 +12579,7 @@ class SOAP_CMAC ns2__PayPalDoRefTransactionReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:699 */
 #ifndef SOAP_TYPE_ns2__RiskUpdateReply
-#define SOAP_TYPE_ns2__RiskUpdateReply (292)
+#define SOAP_TYPE_ns2__RiskUpdateReply (195)
 /* complex XSD type 'ns2:RiskUpdateReply': */
 class SOAP_CMAC ns2__RiskUpdateReply {
       public:
@@ -13982,7 +12618,7 @@ class SOAP_CMAC ns2__RiskUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:702 */
 #ifndef SOAP_TYPE_ns2__FraudUpdateReply
-#define SOAP_TYPE_ns2__FraudUpdateReply (293)
+#define SOAP_TYPE_ns2__FraudUpdateReply (196)
 /* complex XSD type 'ns2:FraudUpdateReply': */
 class SOAP_CMAC ns2__FraudUpdateReply {
       public:
@@ -14021,7 +12657,7 @@ class SOAP_CMAC ns2__FraudUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:705 */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionReply
-#define SOAP_TYPE_ns2__CaseManagementActionReply (294)
+#define SOAP_TYPE_ns2__CaseManagementActionReply (197)
 /* complex XSD type 'ns2:CaseManagementActionReply': */
 class SOAP_CMAC ns2__CaseManagementActionReply {
       public:
@@ -14060,7 +12696,7 @@ class SOAP_CMAC ns2__CaseManagementActionReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:708 */
 #ifndef SOAP_TYPE_ns2__RuleResultItem
-#define SOAP_TYPE_ns2__RuleResultItem (295)
+#define SOAP_TYPE_ns2__RuleResultItem (198)
 /* complex XSD type 'ns2:RuleResultItem': */
 class SOAP_CMAC ns2__RuleResultItem {
       public:
@@ -14109,7 +12745,7 @@ class SOAP_CMAC ns2__RuleResultItem {
 
 /* CyberSourceTransaction_nvp_1.129.h:711 */
 #ifndef SOAP_TYPE_ns2__RuleResultItems
-#define SOAP_TYPE_ns2__RuleResultItems (296)
+#define SOAP_TYPE_ns2__RuleResultItems (199)
 /* complex XSD type 'ns2:RuleResultItems': */
 class SOAP_CMAC ns2__RuleResultItems {
       public:
@@ -14148,7 +12784,7 @@ class SOAP_CMAC ns2__RuleResultItems {
 
 /* CyberSourceTransaction_nvp_1.129.h:714 */
 #ifndef SOAP_TYPE_ns2__DecisionReply
-#define SOAP_TYPE_ns2__DecisionReply (297)
+#define SOAP_TYPE_ns2__DecisionReply (200)
 /* complex XSD type 'ns2:DecisionReply': */
 class SOAP_CMAC ns2__DecisionReply {
       public:
@@ -14197,7 +12833,7 @@ class SOAP_CMAC ns2__DecisionReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:717 */
 #ifndef SOAP_TYPE_ns2__AdditionalFields
-#define SOAP_TYPE_ns2__AdditionalFields (298)
+#define SOAP_TYPE_ns2__AdditionalFields (201)
 /* complex XSD type 'ns2:AdditionalFields': */
 class SOAP_CMAC ns2__AdditionalFields {
       public:
@@ -14236,7 +12872,7 @@ class SOAP_CMAC ns2__AdditionalFields {
 
 /* CyberSourceTransaction_nvp_1.129.h:720 */
 #ifndef SOAP_TYPE_ns2__Field
-#define SOAP_TYPE_ns2__Field (299)
+#define SOAP_TYPE_ns2__Field (202)
 /* complex XSD type 'ns2:Field': */
 class SOAP_CMAC ns2__Field {
       public:
@@ -14279,7 +12915,7 @@ class SOAP_CMAC ns2__Field {
 
 /* CyberSourceTransaction_nvp_1.129.h:723 */
 #ifndef SOAP_TYPE_ns2__DMEReply
-#define SOAP_TYPE_ns2__DMEReply (300)
+#define SOAP_TYPE_ns2__DMEReply (203)
 /* complex XSD type 'ns2:DMEReply': */
 class SOAP_CMAC ns2__DMEReply {
       public:
@@ -14331,7 +12967,7 @@ class SOAP_CMAC ns2__DMEReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:726 */
 #ifndef SOAP_TYPE_ns2__ProfileReply
-#define SOAP_TYPE_ns2__ProfileReply (301)
+#define SOAP_TYPE_ns2__ProfileReply (204)
 /* complex XSD type 'ns2:ProfileReply': */
 class SOAP_CMAC ns2__ProfileReply {
       public:
@@ -14383,7 +13019,7 @@ class SOAP_CMAC ns2__ProfileReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:729 */
 #ifndef SOAP_TYPE_ns2__CCDCCReply
-#define SOAP_TYPE_ns2__CCDCCReply (302)
+#define SOAP_TYPE_ns2__CCDCCReply (205)
 /* complex XSD type 'ns2:CCDCCReply': */
 class SOAP_CMAC ns2__CCDCCReply {
       public:
@@ -14434,7 +13070,7 @@ class SOAP_CMAC ns2__CCDCCReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:732 */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateReply
-#define SOAP_TYPE_ns2__CCDCCUpdateReply (303)
+#define SOAP_TYPE_ns2__CCDCCUpdateReply (206)
 /* complex XSD type 'ns2:CCDCCUpdateReply': */
 class SOAP_CMAC ns2__CCDCCUpdateReply {
       public:
@@ -14473,7 +13109,7 @@ class SOAP_CMAC ns2__CCDCCUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:735 */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentReply
-#define SOAP_TYPE_ns2__ChinaPaymentReply (304)
+#define SOAP_TYPE_ns2__ChinaPaymentReply (207)
 /* complex XSD type 'ns2:ChinaPaymentReply': */
 class SOAP_CMAC ns2__ChinaPaymentReply {
       public:
@@ -14536,7 +13172,7 @@ class SOAP_CMAC ns2__ChinaPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:738 */
 #ifndef SOAP_TYPE_ns2__ChinaRefundReply
-#define SOAP_TYPE_ns2__ChinaRefundReply (305)
+#define SOAP_TYPE_ns2__ChinaRefundReply (208)
 /* complex XSD type 'ns2:ChinaRefundReply': */
 class SOAP_CMAC ns2__ChinaRefundReply {
       public:
@@ -14584,7 +13220,7 @@ class SOAP_CMAC ns2__ChinaRefundReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:741 */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentReply
-#define SOAP_TYPE_ns2__BoletoPaymentReply (306)
+#define SOAP_TYPE_ns2__BoletoPaymentReply (209)
 /* complex XSD type 'ns2:BoletoPaymentReply': */
 class SOAP_CMAC ns2__BoletoPaymentReply {
       public:
@@ -14653,7 +13289,7 @@ class SOAP_CMAC ns2__BoletoPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:744 */
 #ifndef SOAP_TYPE_ns2__APInitiateReply
-#define SOAP_TYPE_ns2__APInitiateReply (307)
+#define SOAP_TYPE_ns2__APInitiateReply (210)
 /* complex XSD type 'ns2:APInitiateReply': */
 class SOAP_CMAC ns2__APInitiateReply {
       public:
@@ -14716,7 +13352,7 @@ class SOAP_CMAC ns2__APInitiateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:747 */
 #ifndef SOAP_TYPE_ns2__APCheckStatusReply
-#define SOAP_TYPE_ns2__APCheckStatusReply (308)
+#define SOAP_TYPE_ns2__APCheckStatusReply (211)
 /* complex XSD type 'ns2:APCheckStatusReply': */
 class SOAP_CMAC ns2__APCheckStatusReply {
       public:
@@ -14766,7 +13402,7 @@ class SOAP_CMAC ns2__APCheckStatusReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:750 */
 #ifndef SOAP_TYPE_ns2__APReply
-#define SOAP_TYPE_ns2__APReply (309)
+#define SOAP_TYPE_ns2__APReply (212)
 /* complex XSD type 'ns2:APReply': */
 class SOAP_CMAC ns2__APReply {
       public:
@@ -14872,7 +13508,7 @@ class SOAP_CMAC ns2__APReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:753 */
 #ifndef SOAP_TYPE_ns2__APAuthReply
-#define SOAP_TYPE_ns2__APAuthReply (310)
+#define SOAP_TYPE_ns2__APAuthReply (213)
 /* complex XSD type 'ns2:APAuthReply': */
 class SOAP_CMAC ns2__APAuthReply {
       public:
@@ -14947,7 +13583,7 @@ class SOAP_CMAC ns2__APAuthReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:756 */
 #ifndef SOAP_TYPE_ns2__APAuthReversalReply
-#define SOAP_TYPE_ns2__APAuthReversalReply (311)
+#define SOAP_TYPE_ns2__APAuthReversalReply (214)
 /* complex XSD type 'ns2:APAuthReversalReply': */
 class SOAP_CMAC ns2__APAuthReversalReply {
       public:
@@ -15013,7 +13649,7 @@ class SOAP_CMAC ns2__APAuthReversalReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:759 */
 #ifndef SOAP_TYPE_ns2__APCaptureReply
-#define SOAP_TYPE_ns2__APCaptureReply (312)
+#define SOAP_TYPE_ns2__APCaptureReply (215)
 /* complex XSD type 'ns2:APCaptureReply': */
 class SOAP_CMAC ns2__APCaptureReply {
       public:
@@ -15079,7 +13715,7 @@ class SOAP_CMAC ns2__APCaptureReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:762 */
 #ifndef SOAP_TYPE_ns2__APOptionsReply
-#define SOAP_TYPE_ns2__APOptionsReply (313)
+#define SOAP_TYPE_ns2__APOptionsReply (216)
 /* complex XSD type 'ns2:APOptionsReply': */
 class SOAP_CMAC ns2__APOptionsReply {
       public:
@@ -15133,7 +13769,7 @@ class SOAP_CMAC ns2__APOptionsReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:765 */
 #ifndef SOAP_TYPE_ns2__APOptionsOption
-#define SOAP_TYPE_ns2__APOptionsOption (314)
+#define SOAP_TYPE_ns2__APOptionsOption (217)
 /* complex XSD type 'ns2:APOptionsOption': */
 class SOAP_CMAC ns2__APOptionsOption {
       public:
@@ -15179,7 +13815,7 @@ class SOAP_CMAC ns2__APOptionsOption {
 
 /* CyberSourceTransaction_nvp_1.129.h:768 */
 #ifndef SOAP_TYPE_ns2__APRefundReply
-#define SOAP_TYPE_ns2__APRefundReply (315)
+#define SOAP_TYPE_ns2__APRefundReply (218)
 /* complex XSD type 'ns2:APRefundReply': */
 class SOAP_CMAC ns2__APRefundReply {
       public:
@@ -15251,7 +13887,7 @@ class SOAP_CMAC ns2__APRefundReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:771 */
 #ifndef SOAP_TYPE_ns2__APSaleReply
-#define SOAP_TYPE_ns2__APSaleReply (316)
+#define SOAP_TYPE_ns2__APSaleReply (219)
 /* complex XSD type 'ns2:APSaleReply': */
 class SOAP_CMAC ns2__APSaleReply {
       public:
@@ -15305,7 +13941,7 @@ class SOAP_CMAC ns2__APSaleReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:774 */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsReply
-#define SOAP_TYPE_ns2__APCheckOutDetailsReply (317)
+#define SOAP_TYPE_ns2__APCheckOutDetailsReply (220)
 /* complex XSD type 'ns2:APCheckOutDetailsReply': */
 class SOAP_CMAC ns2__APCheckOutDetailsReply {
       public:
@@ -15356,7 +13992,7 @@ class SOAP_CMAC ns2__APCheckOutDetailsReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:777 */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsReply
-#define SOAP_TYPE_ns2__APTransactionDetailsReply (318)
+#define SOAP_TYPE_ns2__APTransactionDetailsReply (221)
 /* complex XSD type 'ns2:APTransactionDetailsReply': */
 class SOAP_CMAC ns2__APTransactionDetailsReply {
       public:
@@ -15413,7 +14049,7 @@ class SOAP_CMAC ns2__APTransactionDetailsReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:780 */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseReply
-#define SOAP_TYPE_ns2__APConfirmPurchaseReply (319)
+#define SOAP_TYPE_ns2__APConfirmPurchaseReply (222)
 /* complex XSD type 'ns2:APConfirmPurchaseReply': */
 class SOAP_CMAC ns2__APConfirmPurchaseReply {
       public:
@@ -15467,7 +14103,7 @@ class SOAP_CMAC ns2__APConfirmPurchaseReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:783 */
 #ifndef SOAP_TYPE_ns2__ReplyMessage
-#define SOAP_TYPE_ns2__ReplyMessage (320)
+#define SOAP_TYPE_ns2__ReplyMessage (223)
 /* complex XSD type 'ns2:ReplyMessage': */
 class SOAP_CMAC ns2__ReplyMessage {
       public:
@@ -15844,7 +14480,7 @@ class SOAP_CMAC ns2__ReplyMessage {
 
 /* CyberSourceTransaction_nvp_1.129.h:786 */
 #ifndef SOAP_TYPE_ns2__FaultDetails
-#define SOAP_TYPE_ns2__FaultDetails (321)
+#define SOAP_TYPE_ns2__FaultDetails (224)
 /* complex XSD type 'ns2:FaultDetails': */
 class SOAP_CMAC ns2__FaultDetails {
       public:
@@ -15883,7 +14519,7 @@ class SOAP_CMAC ns2__FaultDetails {
 
 /* CyberSourceTransaction_nvp_1.129.h:789 */
 #ifndef SOAP_TYPE_ns2__AirlineData
-#define SOAP_TYPE_ns2__AirlineData (322)
+#define SOAP_TYPE_ns2__AirlineData (225)
 /* complex XSD type 'ns2:AirlineData': */
 class SOAP_CMAC ns2__AirlineData {
       public:
@@ -16054,7 +14690,7 @@ class SOAP_CMAC ns2__AirlineData {
 
 /* CyberSourceTransaction_nvp_1.129.h:792 */
 #ifndef SOAP_TYPE_ns2__Leg
-#define SOAP_TYPE_ns2__Leg (323)
+#define SOAP_TYPE_ns2__Leg (226)
 /* complex XSD type 'ns2:Leg': */
 class SOAP_CMAC ns2__Leg {
       public:
@@ -16153,7 +14789,7 @@ class SOAP_CMAC ns2__Leg {
 
 /* CyberSourceTransaction_nvp_1.129.h:795 */
 #ifndef SOAP_TYPE_ns2__AncillaryData
-#define SOAP_TYPE_ns2__AncillaryData (324)
+#define SOAP_TYPE_ns2__AncillaryData (227)
 /* complex XSD type 'ns2:AncillaryData': */
 class SOAP_CMAC ns2__AncillaryData {
       public:
@@ -16204,7 +14840,7 @@ class SOAP_CMAC ns2__AncillaryData {
 
 /* CyberSourceTransaction_nvp_1.129.h:798 */
 #ifndef SOAP_TYPE_ns2__Service
-#define SOAP_TYPE_ns2__Service (325)
+#define SOAP_TYPE_ns2__Service (228)
 /* complex XSD type 'ns2:Service': */
 class SOAP_CMAC ns2__Service {
       public:
@@ -16249,7 +14885,7 @@ class SOAP_CMAC ns2__Service {
 
 /* CyberSourceTransaction_nvp_1.129.h:801 */
 #ifndef SOAP_TYPE_ns2__LodgingData
-#define SOAP_TYPE_ns2__LodgingData (326)
+#define SOAP_TYPE_ns2__LodgingData (229)
 /* complex XSD type 'ns2:LodgingData': */
 class SOAP_CMAC ns2__LodgingData {
       public:
@@ -16436,7 +15072,7 @@ class SOAP_CMAC ns2__LodgingData {
 
 /* CyberSourceTransaction_nvp_1.129.h:804 */
 #ifndef SOAP_TYPE_ns2__Pos
-#define SOAP_TYPE_ns2__Pos (327)
+#define SOAP_TYPE_ns2__Pos (230)
 /* complex XSD type 'ns2:Pos': */
 class SOAP_CMAC ns2__Pos {
       public:
@@ -16530,7 +15166,7 @@ class SOAP_CMAC ns2__Pos {
 
 /* CyberSourceTransaction_nvp_1.129.h:807 */
 #ifndef SOAP_TYPE_ns2__EncryptedPayment
-#define SOAP_TYPE_ns2__EncryptedPayment (328)
+#define SOAP_TYPE_ns2__EncryptedPayment (231)
 /* complex XSD type 'ns2:EncryptedPayment': */
 class SOAP_CMAC ns2__EncryptedPayment {
       public:
@@ -16579,7 +15215,7 @@ class SOAP_CMAC ns2__EncryptedPayment {
 
 /* CyberSourceTransaction_nvp_1.129.h:810 */
 #ifndef SOAP_TYPE_ns2__Installment
-#define SOAP_TYPE_ns2__Installment (329)
+#define SOAP_TYPE_ns2__Installment (232)
 /* complex XSD type 'ns2:Installment': */
 class SOAP_CMAC ns2__Installment {
       public:
@@ -16634,7 +15270,7 @@ class SOAP_CMAC ns2__Installment {
 
 /* CyberSourceTransaction_nvp_1.129.h:816 */
 #ifndef SOAP_TYPE_ns2__MerchantDefinedData
-#define SOAP_TYPE_ns2__MerchantDefinedData (331)
+#define SOAP_TYPE_ns2__MerchantDefinedData (234)
 /* complex XSD type 'ns2:MerchantDefinedData': */
 class SOAP_CMAC ns2__MerchantDefinedData {
       public:
@@ -16733,7 +15369,7 @@ class SOAP_CMAC ns2__MerchantDefinedData {
 
 /* CyberSourceTransaction_nvp_1.129.h:819 */
 #ifndef SOAP_TYPE_ns2__MerchantSecureData
-#define SOAP_TYPE_ns2__MerchantSecureData (332)
+#define SOAP_TYPE_ns2__MerchantSecureData (235)
 /* complex XSD type 'ns2:MerchantSecureData': */
 class SOAP_CMAC ns2__MerchantSecureData {
       public:
@@ -16782,7 +15418,7 @@ class SOAP_CMAC ns2__MerchantSecureData {
 
 /* CyberSourceTransaction_nvp_1.129.h:822 */
 #ifndef SOAP_TYPE_ns2__ReplyReserved
-#define SOAP_TYPE_ns2__ReplyReserved (333)
+#define SOAP_TYPE_ns2__ReplyReserved (236)
 /* complex XSD type 'ns2:ReplyReserved': */
 class SOAP_CMAC ns2__ReplyReserved {
       public:
@@ -16820,7 +15456,7 @@ class SOAP_CMAC ns2__ReplyReserved {
 
 /* CyberSourceTransaction_nvp_1.129.h:825 */
 #ifndef SOAP_TYPE_ns2__RequestReserved
-#define SOAP_TYPE_ns2__RequestReserved (334)
+#define SOAP_TYPE_ns2__RequestReserved (237)
 /* complex XSD type 'ns2:RequestReserved': */
 class SOAP_CMAC ns2__RequestReserved {
       public:
@@ -16861,7 +15497,7 @@ class SOAP_CMAC ns2__RequestReserved {
 
 /* CyberSourceTransaction_nvp_1.129.h:828 */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsReply
-#define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (335)
+#define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (238)
 /* complex XSD type 'ns2:PayPalGetTxnDetailsReply': */
 class SOAP_CMAC ns2__PayPalGetTxnDetailsReply {
       public:
@@ -17022,7 +15658,7 @@ class SOAP_CMAC ns2__PayPalGetTxnDetailsReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:831 */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchReply
-#define SOAP_TYPE_ns2__PayPalTransactionSearchReply (336)
+#define SOAP_TYPE_ns2__PayPalTransactionSearchReply (239)
 /* complex XSD type 'ns2:PayPalTransactionSearchReply': */
 class SOAP_CMAC ns2__PayPalTransactionSearchReply {
       public:
@@ -17066,7 +15702,7 @@ class SOAP_CMAC ns2__PayPalTransactionSearchReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:834 */
 #ifndef SOAP_TYPE_ns2__PaypalTransaction
-#define SOAP_TYPE_ns2__PaypalTransaction (337)
+#define SOAP_TYPE_ns2__PaypalTransaction (240)
 /* complex XSD type 'ns2:PaypalTransaction': */
 class SOAP_CMAC ns2__PaypalTransaction {
       public:
@@ -17139,7 +15775,7 @@ class SOAP_CMAC ns2__PaypalTransaction {
 
 /* CyberSourceTransaction_nvp_1.129.h:837 */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateService
-#define SOAP_TYPE_ns2__CCDCCUpdateService (338)
+#define SOAP_TYPE_ns2__CCDCCUpdateService (241)
 /* complex XSD type 'ns2:CCDCCUpdateService': */
 class SOAP_CMAC ns2__CCDCCUpdateService {
       public:
@@ -17193,7 +15829,7 @@ class SOAP_CMAC ns2__CCDCCUpdateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:840 */
 #ifndef SOAP_TYPE_ns2__ServiceFee
-#define SOAP_TYPE_ns2__ServiceFee (339)
+#define SOAP_TYPE_ns2__ServiceFee (242)
 /* complex XSD type 'ns2:ServiceFee': */
 class SOAP_CMAC ns2__ServiceFee {
       public:
@@ -17239,7 +15875,7 @@ class SOAP_CMAC ns2__ServiceFee {
 
 /* CyberSourceTransaction_nvp_1.129.h:843 */
 #ifndef SOAP_TYPE_ns2__EmvRequest
-#define SOAP_TYPE_ns2__EmvRequest (340)
+#define SOAP_TYPE_ns2__EmvRequest (243)
 /* complex XSD type 'ns2:EmvRequest': */
 class SOAP_CMAC ns2__EmvRequest {
       public:
@@ -17291,7 +15927,7 @@ class SOAP_CMAC ns2__EmvRequest {
 
 /* CyberSourceTransaction_nvp_1.129.h:846 */
 #ifndef SOAP_TYPE_ns2__EmvReply
-#define SOAP_TYPE_ns2__EmvReply (341)
+#define SOAP_TYPE_ns2__EmvReply (244)
 /* complex XSD type 'ns2:EmvReply': */
 class SOAP_CMAC ns2__EmvReply {
       public:
@@ -17340,7 +15976,7 @@ class SOAP_CMAC ns2__EmvReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:849 */
 #ifndef SOAP_TYPE_ns2__OriginalTransaction
-#define SOAP_TYPE_ns2__OriginalTransaction (342)
+#define SOAP_TYPE_ns2__OriginalTransaction (245)
 /* complex XSD type 'ns2:OriginalTransaction': */
 class SOAP_CMAC ns2__OriginalTransaction {
       public:
@@ -17383,7 +16019,7 @@ class SOAP_CMAC ns2__OriginalTransaction {
 
 /* CyberSourceTransaction_nvp_1.129.h:852 */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateService
-#define SOAP_TYPE_ns2__HostedDataCreateService (343)
+#define SOAP_TYPE_ns2__HostedDataCreateService (246)
 /* complex XSD type 'ns2:HostedDataCreateService': */
 class SOAP_CMAC ns2__HostedDataCreateService {
       public:
@@ -17428,7 +16064,7 @@ class SOAP_CMAC ns2__HostedDataCreateService {
 
 /* CyberSourceTransaction_nvp_1.129.h:855 */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveService
-#define SOAP_TYPE_ns2__HostedDataRetrieveService (344)
+#define SOAP_TYPE_ns2__HostedDataRetrieveService (247)
 /* complex XSD type 'ns2:HostedDataRetrieveService': */
 class SOAP_CMAC ns2__HostedDataRetrieveService {
       public:
@@ -17473,7 +16109,7 @@ class SOAP_CMAC ns2__HostedDataRetrieveService {
 
 /* CyberSourceTransaction_nvp_1.129.h:858 */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateReply
-#define SOAP_TYPE_ns2__HostedDataCreateReply (345)
+#define SOAP_TYPE_ns2__HostedDataCreateReply (248)
 /* complex XSD type 'ns2:HostedDataCreateReply': */
 class SOAP_CMAC ns2__HostedDataCreateReply {
       public:
@@ -17521,7 +16157,7 @@ class SOAP_CMAC ns2__HostedDataCreateReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:861 */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveReply
-#define SOAP_TYPE_ns2__HostedDataRetrieveReply (346)
+#define SOAP_TYPE_ns2__HostedDataRetrieveReply (249)
 /* complex XSD type 'ns2:HostedDataRetrieveReply': */
 class SOAP_CMAC ns2__HostedDataRetrieveReply {
       public:
@@ -17626,7 +16262,7 @@ class SOAP_CMAC ns2__HostedDataRetrieveReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:864 */
 #ifndef SOAP_TYPE_ns2__AutoRentalData
-#define SOAP_TYPE_ns2__AutoRentalData (347)
+#define SOAP_TYPE_ns2__AutoRentalData (250)
 /* complex XSD type 'ns2:AutoRentalData': */
 class SOAP_CMAC ns2__AutoRentalData {
       public:
@@ -17747,7 +16383,7 @@ class SOAP_CMAC ns2__AutoRentalData {
 
 /* CyberSourceTransaction_nvp_1.129.h:867 */
 #ifndef SOAP_TYPE_ns2__VCReply
-#define SOAP_TYPE_ns2__VCReply (348)
+#define SOAP_TYPE_ns2__VCReply (251)
 /* complex XSD type 'ns2:VCReply': */
 class SOAP_CMAC ns2__VCReply {
       public:
@@ -17907,7 +16543,7 @@ class SOAP_CMAC ns2__VCReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:870 */
 #ifndef SOAP_TYPE_ns2__VCCardArt
-#define SOAP_TYPE_ns2__VCCardArt (349)
+#define SOAP_TYPE_ns2__VCCardArt (252)
 /* complex XSD type 'ns2:VCCardArt': */
 class SOAP_CMAC ns2__VCCardArt {
       public:
@@ -17956,7 +16592,7 @@ class SOAP_CMAC ns2__VCCardArt {
 
 /* CyberSourceTransaction_nvp_1.129.h:873 */
 #ifndef SOAP_TYPE_ns2__VCCustomData
-#define SOAP_TYPE_ns2__VCCustomData (350)
+#define SOAP_TYPE_ns2__VCCustomData (253)
 /* complex XSD type 'ns2:VCCustomData': */
 class SOAP_CMAC ns2__VCCustomData {
       public:
@@ -18002,7 +16638,7 @@ class SOAP_CMAC ns2__VCCustomData {
 
 /* CyberSourceTransaction_nvp_1.129.h:876 */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply
-#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (351)
+#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (254)
 /* complex XSD type 'ns2:DecryptVisaCheckoutDataReply': */
 class SOAP_CMAC ns2__DecryptVisaCheckoutDataReply {
       public:
@@ -18041,7 +16677,7 @@ class SOAP_CMAC ns2__DecryptVisaCheckoutDataReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:879 */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataReply
-#define SOAP_TYPE_ns2__EncryptPaymentDataReply (352)
+#define SOAP_TYPE_ns2__EncryptPaymentDataReply (255)
 /* complex XSD type 'ns2:EncryptPaymentDataReply': */
 class SOAP_CMAC ns2__EncryptPaymentDataReply {
       public:
@@ -18083,7 +16719,7 @@ class SOAP_CMAC ns2__EncryptPaymentDataReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:882 */
 #ifndef SOAP_TYPE_ns2__BinLookupService
-#define SOAP_TYPE_ns2__BinLookupService (353)
+#define SOAP_TYPE_ns2__BinLookupService (256)
 /* complex XSD type 'ns2:BinLookupService': */
 class SOAP_CMAC ns2__BinLookupService {
       public:
@@ -18122,7 +16758,7 @@ class SOAP_CMAC ns2__BinLookupService {
 
 /* CyberSourceTransaction_nvp_1.129.h:885 */
 #ifndef SOAP_TYPE_ns2__BinLookupReply
-#define SOAP_TYPE_ns2__BinLookupReply (354)
+#define SOAP_TYPE_ns2__BinLookupReply (257)
 /* complex XSD type 'ns2:BinLookupReply': */
 class SOAP_CMAC ns2__BinLookupReply {
       public:
@@ -18209,7 +16845,7 @@ class SOAP_CMAC ns2__BinLookupReply {
 
 /* CyberSourceTransaction_nvp_1.129.h:888 */
 #ifndef SOAP_TYPE_ns2__issuer
-#define SOAP_TYPE_ns2__issuer (355)
+#define SOAP_TYPE_ns2__issuer (258)
 /* complex XSD type 'ns2:issuer': */
 class SOAP_CMAC ns2__issuer {
       public:
@@ -18249,7 +16885,7 @@ class SOAP_CMAC ns2__issuer {
 
 /* CyberSourceTransaction_nvp_1.129.h:813 */
 #ifndef SOAP_TYPE_ns2__MDDField
-#define SOAP_TYPE_ns2__MDDField (330)
+#define SOAP_TYPE_ns2__MDDField (233)
 /* simple XSD type 'ns2:MDDField': */
 class SOAP_CMAC ns2__MDDField {
       public:
@@ -18290,7 +16926,7 @@ class SOAP_CMAC ns2__MDDField {
 
 /* CyberSourceTransaction_nvp_1.129.h:10712 */
 #ifndef SOAP_TYPE___ns1__runTransactionResponse
-#define SOAP_TYPE___ns1__runTransactionResponse (626)
+#define SOAP_TYPE___ns1__runTransactionResponse (529)
 /* Wrapper: */
 struct __ns1__runTransactionResponse {
       public:
@@ -18310,7 +16946,7 @@ struct __ns1__runTransactionResponse {
 
 /* CyberSourceTransaction_nvp_1.129.h:10712 */
 #ifndef SOAP_TYPE___ns1__runTransaction
-#define SOAP_TYPE___ns1__runTransaction (627)
+#define SOAP_TYPE___ns1__runTransaction (530)
 /* Wrapper: */
 struct __ns1__runTransaction {
       public:
@@ -18330,8 +16966,27 @@ struct __ns1__runTransaction {
 
 /* CyberSourceTransaction_nvp_1.129.h:10785 */
 #ifndef WITH_NOGLOBAL
+#ifndef SOAP_TYPE_SOAP_ENV__Header
+#define SOAP_TYPE_SOAP_ENV__Header (531)
+/* SOAP_ENV__Header: */
+struct SOAP_ENV__Header {
+      public:
+        /** Return unique type id SOAP_TYPE_SOAP_ENV__Header */
+        int soap_type() const { return SOAP_TYPE_SOAP_ENV__Header; }
+        /** Constructor with member initializations */
+        SOAP_ENV__Header()
+        {
+        }
+        /** Friend allocator used by soap_new_SOAP_ENV__Header(struct soap*, int) */
+        friend SOAP_FMAC1 SOAP_ENV__Header * SOAP_FMAC2 soap_instantiate_SOAP_ENV__Header(struct soap*, int, const char*, const char*, size_t*);
+};
+#endif
+#endif
+
+/* CyberSourceTransaction_nvp_1.129.h:10785 */
+#ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Code
-#define SOAP_TYPE_SOAP_ENV__Code (628)
+#define SOAP_TYPE_SOAP_ENV__Code (532)
 /* Type SOAP_ENV__Code is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* SOAP_ENV__Code: */
 struct SOAP_ENV__Code {
@@ -18358,7 +17013,7 @@ struct SOAP_ENV__Code {
 /* CyberSourceTransaction_nvp_1.129.h:10785 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
-#define SOAP_TYPE_SOAP_ENV__Detail (630)
+#define SOAP_TYPE_SOAP_ENV__Detail (534)
 /* SOAP_ENV__Detail: */
 struct SOAP_ENV__Detail {
       public:
@@ -18386,7 +17041,7 @@ struct SOAP_ENV__Detail {
 /* CyberSourceTransaction_nvp_1.129.h:10785 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
-#define SOAP_TYPE_SOAP_ENV__Reason (633)
+#define SOAP_TYPE_SOAP_ENV__Reason (537)
 /* SOAP_ENV__Reason: */
 struct SOAP_ENV__Reason {
       public:
@@ -18409,7 +17064,7 @@ struct SOAP_ENV__Reason {
 /* CyberSourceTransaction_nvp_1.129.h:10785 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
-#define SOAP_TYPE_SOAP_ENV__Fault (634)
+#define SOAP_TYPE_SOAP_ENV__Fault (538)
 /* SOAP_ENV__Fault: */
 struct SOAP_ENV__Fault {
       public:
@@ -18472,57 +17127,27 @@ typedef char *_QName;
 typedef char *_XML;
 #endif
 
-/* ds.h:44 */
-#ifndef SOAP_TYPE__ds__SignatureValue
-#define SOAP_TYPE__ds__SignatureValue (29)
-typedef char *_ds__SignatureValue;
-#endif
-
-/* ds.h:50 */
-#ifndef SOAP_TYPE__ds__Signature
-#define SOAP_TYPE__ds__Signature (35)
-typedef struct ds__SignatureType _ds__Signature;
-#endif
-
-/* ds.h:76 */
-#ifndef SOAP_TYPE__ds__Transform
-#define SOAP_TYPE__ds__Transform (43)
-typedef struct ds__TransformType _ds__Transform;
-#endif
-
-/* ds.h:90 */
-#ifndef SOAP_TYPE__ds__KeyInfo
-#define SOAP_TYPE__ds__KeyInfo (50)
-typedef struct ds__KeyInfoType _ds__KeyInfo;
-#endif
-
-/* wsc.h:57 */
-#ifndef SOAP_TYPE_wsc__FaultCodeOpenEnumType
-#define SOAP_TYPE_wsc__FaultCodeOpenEnumType (88)
-typedef char *wsc__FaultCodeOpenEnumType;
-#endif
-
 /* CyberSourceTransaction_nvp_1.129.h:142 */
 #ifndef SOAP_TYPE_xsd__integer
-#define SOAP_TYPE_xsd__integer (109)
+#define SOAP_TYPE_xsd__integer (12)
 typedef std::string xsd__integer;
 #endif
 
 /* CyberSourceTransaction_nvp_1.129.h:908 */
 #ifndef SOAP_TYPE_ns2__amount
-#define SOAP_TYPE_ns2__amount (356)
+#define SOAP_TYPE_ns2__amount (259)
 typedef std::string ns2__amount;
 #endif
 
 /* CyberSourceTransaction_nvp_1.129.h:912 */
 #ifndef SOAP_TYPE_ns2__boolean
-#define SOAP_TYPE_ns2__boolean (357)
+#define SOAP_TYPE_ns2__boolean (260)
 typedef std::string ns2__boolean;
 #endif
 
 /* CyberSourceTransaction_nvp_1.129.h:916 */
 #ifndef SOAP_TYPE_ns2__dateTime
-#define SOAP_TYPE_ns2__dateTime (358)
+#define SOAP_TYPE_ns2__dateTime (261)
 typedef std::string ns2__dateTime;
 #endif
 
@@ -18543,3004 +17168,2539 @@ typedef std::string ns2__dateTime;
 #define SOAP_TYPE_int (1)
 #endif
 
-/* ULONG64 has binding name 'ULONG64' for type 'xsd:unsignedLong' */
-#ifndef SOAP_TYPE_ULONG64
-#define SOAP_TYPE_ULONG64 (95)
-#endif
-
-/* enum wsc__FaultCodeType has binding name 'wsc__FaultCodeType' for type 'wsc:FaultCodeType' */
-#ifndef SOAP_TYPE_wsc__FaultCodeType
-#define SOAP_TYPE_wsc__FaultCodeType (89)
-#endif
-
-/* enum wsse__FaultcodeEnum has binding name 'wsse__FaultcodeEnum' for type 'wsse:FaultcodeEnum' */
-#ifndef SOAP_TYPE_wsse__FaultcodeEnum
-#define SOAP_TYPE_wsse__FaultcodeEnum (14)
-#endif
-
-/* enum wsu__tTimestampFault has binding name 'wsu__tTimestampFault' for type 'wsu:tTimestampFault' */
-#ifndef SOAP_TYPE_wsu__tTimestampFault
-#define SOAP_TYPE_wsu__tTimestampFault (11)
-#endif
-
 /* ns2__dateTime has binding name 'ns2__dateTime' for type 'ns2:dateTime' */
 #ifndef SOAP_TYPE_ns2__dateTime
-#define SOAP_TYPE_ns2__dateTime (358)
+#define SOAP_TYPE_ns2__dateTime (261)
 #endif
 
 /* ns2__boolean has binding name 'ns2__boolean' for type 'ns2:boolean' */
 #ifndef SOAP_TYPE_ns2__boolean
-#define SOAP_TYPE_ns2__boolean (357)
+#define SOAP_TYPE_ns2__boolean (260)
 #endif
 
 /* ns2__amount has binding name 'ns2__amount' for type 'ns2:amount' */
 #ifndef SOAP_TYPE_ns2__amount
-#define SOAP_TYPE_ns2__amount (356)
+#define SOAP_TYPE_ns2__amount (259)
 #endif
 
 /* ns2__issuer has binding name 'ns2__issuer' for type 'ns2:issuer' */
 #ifndef SOAP_TYPE_ns2__issuer
-#define SOAP_TYPE_ns2__issuer (355)
+#define SOAP_TYPE_ns2__issuer (258)
 #endif
 
 /* ns2__BinLookupReply has binding name 'ns2__BinLookupReply' for type 'ns2:BinLookupReply' */
 #ifndef SOAP_TYPE_ns2__BinLookupReply
-#define SOAP_TYPE_ns2__BinLookupReply (354)
+#define SOAP_TYPE_ns2__BinLookupReply (257)
 #endif
 
 /* ns2__BinLookupService has binding name 'ns2__BinLookupService' for type 'ns2:BinLookupService' */
 #ifndef SOAP_TYPE_ns2__BinLookupService
-#define SOAP_TYPE_ns2__BinLookupService (353)
+#define SOAP_TYPE_ns2__BinLookupService (256)
 #endif
 
 /* ns2__EncryptPaymentDataReply has binding name 'ns2__EncryptPaymentDataReply' for type 'ns2:EncryptPaymentDataReply' */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataReply
-#define SOAP_TYPE_ns2__EncryptPaymentDataReply (352)
+#define SOAP_TYPE_ns2__EncryptPaymentDataReply (255)
 #endif
 
 /* ns2__DecryptVisaCheckoutDataReply has binding name 'ns2__DecryptVisaCheckoutDataReply' for type 'ns2:DecryptVisaCheckoutDataReply' */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply
-#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (351)
+#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (254)
 #endif
 
 /* ns2__VCCustomData has binding name 'ns2__VCCustomData' for type 'ns2:VCCustomData' */
 #ifndef SOAP_TYPE_ns2__VCCustomData
-#define SOAP_TYPE_ns2__VCCustomData (350)
+#define SOAP_TYPE_ns2__VCCustomData (253)
 #endif
 
 /* ns2__VCCardArt has binding name 'ns2__VCCardArt' for type 'ns2:VCCardArt' */
 #ifndef SOAP_TYPE_ns2__VCCardArt
-#define SOAP_TYPE_ns2__VCCardArt (349)
+#define SOAP_TYPE_ns2__VCCardArt (252)
 #endif
 
 /* ns2__VCReply has binding name 'ns2__VCReply' for type 'ns2:VCReply' */
 #ifndef SOAP_TYPE_ns2__VCReply
-#define SOAP_TYPE_ns2__VCReply (348)
+#define SOAP_TYPE_ns2__VCReply (251)
 #endif
 
 /* ns2__AutoRentalData has binding name 'ns2__AutoRentalData' for type 'ns2:AutoRentalData' */
 #ifndef SOAP_TYPE_ns2__AutoRentalData
-#define SOAP_TYPE_ns2__AutoRentalData (347)
+#define SOAP_TYPE_ns2__AutoRentalData (250)
 #endif
 
 /* ns2__HostedDataRetrieveReply has binding name 'ns2__HostedDataRetrieveReply' for type 'ns2:HostedDataRetrieveReply' */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveReply
-#define SOAP_TYPE_ns2__HostedDataRetrieveReply (346)
+#define SOAP_TYPE_ns2__HostedDataRetrieveReply (249)
 #endif
 
 /* ns2__HostedDataCreateReply has binding name 'ns2__HostedDataCreateReply' for type 'ns2:HostedDataCreateReply' */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateReply
-#define SOAP_TYPE_ns2__HostedDataCreateReply (345)
+#define SOAP_TYPE_ns2__HostedDataCreateReply (248)
 #endif
 
 /* ns2__HostedDataRetrieveService has binding name 'ns2__HostedDataRetrieveService' for type 'ns2:HostedDataRetrieveService' */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveService
-#define SOAP_TYPE_ns2__HostedDataRetrieveService (344)
+#define SOAP_TYPE_ns2__HostedDataRetrieveService (247)
 #endif
 
 /* ns2__HostedDataCreateService has binding name 'ns2__HostedDataCreateService' for type 'ns2:HostedDataCreateService' */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateService
-#define SOAP_TYPE_ns2__HostedDataCreateService (343)
+#define SOAP_TYPE_ns2__HostedDataCreateService (246)
 #endif
 
 /* ns2__OriginalTransaction has binding name 'ns2__OriginalTransaction' for type 'ns2:OriginalTransaction' */
 #ifndef SOAP_TYPE_ns2__OriginalTransaction
-#define SOAP_TYPE_ns2__OriginalTransaction (342)
+#define SOAP_TYPE_ns2__OriginalTransaction (245)
 #endif
 
 /* ns2__EmvReply has binding name 'ns2__EmvReply' for type 'ns2:EmvReply' */
 #ifndef SOAP_TYPE_ns2__EmvReply
-#define SOAP_TYPE_ns2__EmvReply (341)
+#define SOAP_TYPE_ns2__EmvReply (244)
 #endif
 
 /* ns2__EmvRequest has binding name 'ns2__EmvRequest' for type 'ns2:EmvRequest' */
 #ifndef SOAP_TYPE_ns2__EmvRequest
-#define SOAP_TYPE_ns2__EmvRequest (340)
+#define SOAP_TYPE_ns2__EmvRequest (243)
 #endif
 
 /* ns2__ServiceFee has binding name 'ns2__ServiceFee' for type 'ns2:ServiceFee' */
 #ifndef SOAP_TYPE_ns2__ServiceFee
-#define SOAP_TYPE_ns2__ServiceFee (339)
+#define SOAP_TYPE_ns2__ServiceFee (242)
 #endif
 
 /* ns2__CCDCCUpdateService has binding name 'ns2__CCDCCUpdateService' for type 'ns2:CCDCCUpdateService' */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateService
-#define SOAP_TYPE_ns2__CCDCCUpdateService (338)
+#define SOAP_TYPE_ns2__CCDCCUpdateService (241)
 #endif
 
 /* ns2__PaypalTransaction has binding name 'ns2__PaypalTransaction' for type 'ns2:PaypalTransaction' */
 #ifndef SOAP_TYPE_ns2__PaypalTransaction
-#define SOAP_TYPE_ns2__PaypalTransaction (337)
+#define SOAP_TYPE_ns2__PaypalTransaction (240)
 #endif
 
 /* ns2__PayPalTransactionSearchReply has binding name 'ns2__PayPalTransactionSearchReply' for type 'ns2:PayPalTransactionSearchReply' */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchReply
-#define SOAP_TYPE_ns2__PayPalTransactionSearchReply (336)
+#define SOAP_TYPE_ns2__PayPalTransactionSearchReply (239)
 #endif
 
 /* ns2__PayPalGetTxnDetailsReply has binding name 'ns2__PayPalGetTxnDetailsReply' for type 'ns2:PayPalGetTxnDetailsReply' */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsReply
-#define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (335)
+#define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (238)
 #endif
 
 /* ns2__RequestReserved has binding name 'ns2__RequestReserved' for type 'ns2:RequestReserved' */
 #ifndef SOAP_TYPE_ns2__RequestReserved
-#define SOAP_TYPE_ns2__RequestReserved (334)
+#define SOAP_TYPE_ns2__RequestReserved (237)
 #endif
 
 /* ns2__ReplyReserved has binding name 'ns2__ReplyReserved' for type 'ns2:ReplyReserved' */
 #ifndef SOAP_TYPE_ns2__ReplyReserved
-#define SOAP_TYPE_ns2__ReplyReserved (333)
+#define SOAP_TYPE_ns2__ReplyReserved (236)
 #endif
 
 /* ns2__MerchantSecureData has binding name 'ns2__MerchantSecureData' for type 'ns2:MerchantSecureData' */
 #ifndef SOAP_TYPE_ns2__MerchantSecureData
-#define SOAP_TYPE_ns2__MerchantSecureData (332)
+#define SOAP_TYPE_ns2__MerchantSecureData (235)
 #endif
 
 /* ns2__MerchantDefinedData has binding name 'ns2__MerchantDefinedData' for type 'ns2:MerchantDefinedData' */
 #ifndef SOAP_TYPE_ns2__MerchantDefinedData
-#define SOAP_TYPE_ns2__MerchantDefinedData (331)
+#define SOAP_TYPE_ns2__MerchantDefinedData (234)
 #endif
 
 /* ns2__MDDField has binding name 'ns2__MDDField' for type 'ns2:MDDField' */
 #ifndef SOAP_TYPE_ns2__MDDField
-#define SOAP_TYPE_ns2__MDDField (330)
+#define SOAP_TYPE_ns2__MDDField (233)
 #endif
 
 /* ns2__Installment has binding name 'ns2__Installment' for type 'ns2:Installment' */
 #ifndef SOAP_TYPE_ns2__Installment
-#define SOAP_TYPE_ns2__Installment (329)
+#define SOAP_TYPE_ns2__Installment (232)
 #endif
 
 /* ns2__EncryptedPayment has binding name 'ns2__EncryptedPayment' for type 'ns2:EncryptedPayment' */
 #ifndef SOAP_TYPE_ns2__EncryptedPayment
-#define SOAP_TYPE_ns2__EncryptedPayment (328)
+#define SOAP_TYPE_ns2__EncryptedPayment (231)
 #endif
 
 /* ns2__Pos has binding name 'ns2__Pos' for type 'ns2:Pos' */
 #ifndef SOAP_TYPE_ns2__Pos
-#define SOAP_TYPE_ns2__Pos (327)
+#define SOAP_TYPE_ns2__Pos (230)
 #endif
 
 /* ns2__LodgingData has binding name 'ns2__LodgingData' for type 'ns2:LodgingData' */
 #ifndef SOAP_TYPE_ns2__LodgingData
-#define SOAP_TYPE_ns2__LodgingData (326)
+#define SOAP_TYPE_ns2__LodgingData (229)
 #endif
 
 /* ns2__Service has binding name 'ns2__Service' for type 'ns2:Service' */
 #ifndef SOAP_TYPE_ns2__Service
-#define SOAP_TYPE_ns2__Service (325)
+#define SOAP_TYPE_ns2__Service (228)
 #endif
 
 /* ns2__AncillaryData has binding name 'ns2__AncillaryData' for type 'ns2:AncillaryData' */
 #ifndef SOAP_TYPE_ns2__AncillaryData
-#define SOAP_TYPE_ns2__AncillaryData (324)
+#define SOAP_TYPE_ns2__AncillaryData (227)
 #endif
 
 /* ns2__Leg has binding name 'ns2__Leg' for type 'ns2:Leg' */
 #ifndef SOAP_TYPE_ns2__Leg
-#define SOAP_TYPE_ns2__Leg (323)
+#define SOAP_TYPE_ns2__Leg (226)
 #endif
 
 /* ns2__AirlineData has binding name 'ns2__AirlineData' for type 'ns2:AirlineData' */
 #ifndef SOAP_TYPE_ns2__AirlineData
-#define SOAP_TYPE_ns2__AirlineData (322)
+#define SOAP_TYPE_ns2__AirlineData (225)
 #endif
 
 /* ns2__FaultDetails has binding name 'ns2__FaultDetails' for type 'ns2:FaultDetails' */
 #ifndef SOAP_TYPE_ns2__FaultDetails
-#define SOAP_TYPE_ns2__FaultDetails (321)
+#define SOAP_TYPE_ns2__FaultDetails (224)
 #endif
 
 /* ns2__ReplyMessage has binding name 'ns2__ReplyMessage' for type 'ns2:ReplyMessage' */
 #ifndef SOAP_TYPE_ns2__ReplyMessage
-#define SOAP_TYPE_ns2__ReplyMessage (320)
+#define SOAP_TYPE_ns2__ReplyMessage (223)
 #endif
 
 /* ns2__APConfirmPurchaseReply has binding name 'ns2__APConfirmPurchaseReply' for type 'ns2:APConfirmPurchaseReply' */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseReply
-#define SOAP_TYPE_ns2__APConfirmPurchaseReply (319)
+#define SOAP_TYPE_ns2__APConfirmPurchaseReply (222)
 #endif
 
 /* ns2__APTransactionDetailsReply has binding name 'ns2__APTransactionDetailsReply' for type 'ns2:APTransactionDetailsReply' */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsReply
-#define SOAP_TYPE_ns2__APTransactionDetailsReply (318)
+#define SOAP_TYPE_ns2__APTransactionDetailsReply (221)
 #endif
 
 /* ns2__APCheckOutDetailsReply has binding name 'ns2__APCheckOutDetailsReply' for type 'ns2:APCheckOutDetailsReply' */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsReply
-#define SOAP_TYPE_ns2__APCheckOutDetailsReply (317)
+#define SOAP_TYPE_ns2__APCheckOutDetailsReply (220)
 #endif
 
 /* ns2__APSaleReply has binding name 'ns2__APSaleReply' for type 'ns2:APSaleReply' */
 #ifndef SOAP_TYPE_ns2__APSaleReply
-#define SOAP_TYPE_ns2__APSaleReply (316)
+#define SOAP_TYPE_ns2__APSaleReply (219)
 #endif
 
 /* ns2__APRefundReply has binding name 'ns2__APRefundReply' for type 'ns2:APRefundReply' */
 #ifndef SOAP_TYPE_ns2__APRefundReply
-#define SOAP_TYPE_ns2__APRefundReply (315)
+#define SOAP_TYPE_ns2__APRefundReply (218)
 #endif
 
 /* ns2__APOptionsOption has binding name 'ns2__APOptionsOption' for type 'ns2:APOptionsOption' */
 #ifndef SOAP_TYPE_ns2__APOptionsOption
-#define SOAP_TYPE_ns2__APOptionsOption (314)
+#define SOAP_TYPE_ns2__APOptionsOption (217)
 #endif
 
 /* ns2__APOptionsReply has binding name 'ns2__APOptionsReply' for type 'ns2:APOptionsReply' */
 #ifndef SOAP_TYPE_ns2__APOptionsReply
-#define SOAP_TYPE_ns2__APOptionsReply (313)
+#define SOAP_TYPE_ns2__APOptionsReply (216)
 #endif
 
 /* ns2__APCaptureReply has binding name 'ns2__APCaptureReply' for type 'ns2:APCaptureReply' */
 #ifndef SOAP_TYPE_ns2__APCaptureReply
-#define SOAP_TYPE_ns2__APCaptureReply (312)
+#define SOAP_TYPE_ns2__APCaptureReply (215)
 #endif
 
 /* ns2__APAuthReversalReply has binding name 'ns2__APAuthReversalReply' for type 'ns2:APAuthReversalReply' */
 #ifndef SOAP_TYPE_ns2__APAuthReversalReply
-#define SOAP_TYPE_ns2__APAuthReversalReply (311)
+#define SOAP_TYPE_ns2__APAuthReversalReply (214)
 #endif
 
 /* ns2__APAuthReply has binding name 'ns2__APAuthReply' for type 'ns2:APAuthReply' */
 #ifndef SOAP_TYPE_ns2__APAuthReply
-#define SOAP_TYPE_ns2__APAuthReply (310)
+#define SOAP_TYPE_ns2__APAuthReply (213)
 #endif
 
 /* ns2__APReply has binding name 'ns2__APReply' for type 'ns2:APReply' */
 #ifndef SOAP_TYPE_ns2__APReply
-#define SOAP_TYPE_ns2__APReply (309)
+#define SOAP_TYPE_ns2__APReply (212)
 #endif
 
 /* ns2__APCheckStatusReply has binding name 'ns2__APCheckStatusReply' for type 'ns2:APCheckStatusReply' */
 #ifndef SOAP_TYPE_ns2__APCheckStatusReply
-#define SOAP_TYPE_ns2__APCheckStatusReply (308)
+#define SOAP_TYPE_ns2__APCheckStatusReply (211)
 #endif
 
 /* ns2__APInitiateReply has binding name 'ns2__APInitiateReply' for type 'ns2:APInitiateReply' */
 #ifndef SOAP_TYPE_ns2__APInitiateReply
-#define SOAP_TYPE_ns2__APInitiateReply (307)
+#define SOAP_TYPE_ns2__APInitiateReply (210)
 #endif
 
 /* ns2__BoletoPaymentReply has binding name 'ns2__BoletoPaymentReply' for type 'ns2:BoletoPaymentReply' */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentReply
-#define SOAP_TYPE_ns2__BoletoPaymentReply (306)
+#define SOAP_TYPE_ns2__BoletoPaymentReply (209)
 #endif
 
 /* ns2__ChinaRefundReply has binding name 'ns2__ChinaRefundReply' for type 'ns2:ChinaRefundReply' */
 #ifndef SOAP_TYPE_ns2__ChinaRefundReply
-#define SOAP_TYPE_ns2__ChinaRefundReply (305)
+#define SOAP_TYPE_ns2__ChinaRefundReply (208)
 #endif
 
 /* ns2__ChinaPaymentReply has binding name 'ns2__ChinaPaymentReply' for type 'ns2:ChinaPaymentReply' */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentReply
-#define SOAP_TYPE_ns2__ChinaPaymentReply (304)
+#define SOAP_TYPE_ns2__ChinaPaymentReply (207)
 #endif
 
 /* ns2__CCDCCUpdateReply has binding name 'ns2__CCDCCUpdateReply' for type 'ns2:CCDCCUpdateReply' */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateReply
-#define SOAP_TYPE_ns2__CCDCCUpdateReply (303)
+#define SOAP_TYPE_ns2__CCDCCUpdateReply (206)
 #endif
 
 /* ns2__CCDCCReply has binding name 'ns2__CCDCCReply' for type 'ns2:CCDCCReply' */
 #ifndef SOAP_TYPE_ns2__CCDCCReply
-#define SOAP_TYPE_ns2__CCDCCReply (302)
+#define SOAP_TYPE_ns2__CCDCCReply (205)
 #endif
 
 /* ns2__ProfileReply has binding name 'ns2__ProfileReply' for type 'ns2:ProfileReply' */
 #ifndef SOAP_TYPE_ns2__ProfileReply
-#define SOAP_TYPE_ns2__ProfileReply (301)
+#define SOAP_TYPE_ns2__ProfileReply (204)
 #endif
 
 /* ns2__DMEReply has binding name 'ns2__DMEReply' for type 'ns2:DMEReply' */
 #ifndef SOAP_TYPE_ns2__DMEReply
-#define SOAP_TYPE_ns2__DMEReply (300)
+#define SOAP_TYPE_ns2__DMEReply (203)
 #endif
 
 /* ns2__Field has binding name 'ns2__Field' for type 'ns2:Field' */
 #ifndef SOAP_TYPE_ns2__Field
-#define SOAP_TYPE_ns2__Field (299)
+#define SOAP_TYPE_ns2__Field (202)
 #endif
 
 /* ns2__AdditionalFields has binding name 'ns2__AdditionalFields' for type 'ns2:AdditionalFields' */
 #ifndef SOAP_TYPE_ns2__AdditionalFields
-#define SOAP_TYPE_ns2__AdditionalFields (298)
+#define SOAP_TYPE_ns2__AdditionalFields (201)
 #endif
 
 /* ns2__DecisionReply has binding name 'ns2__DecisionReply' for type 'ns2:DecisionReply' */
 #ifndef SOAP_TYPE_ns2__DecisionReply
-#define SOAP_TYPE_ns2__DecisionReply (297)
+#define SOAP_TYPE_ns2__DecisionReply (200)
 #endif
 
 /* ns2__RuleResultItems has binding name 'ns2__RuleResultItems' for type 'ns2:RuleResultItems' */
 #ifndef SOAP_TYPE_ns2__RuleResultItems
-#define SOAP_TYPE_ns2__RuleResultItems (296)
+#define SOAP_TYPE_ns2__RuleResultItems (199)
 #endif
 
 /* ns2__RuleResultItem has binding name 'ns2__RuleResultItem' for type 'ns2:RuleResultItem' */
 #ifndef SOAP_TYPE_ns2__RuleResultItem
-#define SOAP_TYPE_ns2__RuleResultItem (295)
+#define SOAP_TYPE_ns2__RuleResultItem (198)
 #endif
 
 /* ns2__CaseManagementActionReply has binding name 'ns2__CaseManagementActionReply' for type 'ns2:CaseManagementActionReply' */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionReply
-#define SOAP_TYPE_ns2__CaseManagementActionReply (294)
+#define SOAP_TYPE_ns2__CaseManagementActionReply (197)
 #endif
 
 /* ns2__FraudUpdateReply has binding name 'ns2__FraudUpdateReply' for type 'ns2:FraudUpdateReply' */
 #ifndef SOAP_TYPE_ns2__FraudUpdateReply
-#define SOAP_TYPE_ns2__FraudUpdateReply (293)
+#define SOAP_TYPE_ns2__FraudUpdateReply (196)
 #endif
 
 /* ns2__RiskUpdateReply has binding name 'ns2__RiskUpdateReply' for type 'ns2:RiskUpdateReply' */
 #ifndef SOAP_TYPE_ns2__RiskUpdateReply
-#define SOAP_TYPE_ns2__RiskUpdateReply (292)
+#define SOAP_TYPE_ns2__RiskUpdateReply (195)
 #endif
 
 /* ns2__PayPalDoRefTransactionReply has binding name 'ns2__PayPalDoRefTransactionReply' for type 'ns2:PayPalDoRefTransactionReply' */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionReply
-#define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (291)
+#define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (194)
 #endif
 
 /* ns2__PayPalCreateAgreementReply has binding name 'ns2__PayPalCreateAgreementReply' for type 'ns2:PayPalCreateAgreementReply' */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementReply
-#define SOAP_TYPE_ns2__PayPalCreateAgreementReply (290)
+#define SOAP_TYPE_ns2__PayPalCreateAgreementReply (193)
 #endif
 
 /* ns2__PayPalUpdateAgreementReply has binding name 'ns2__PayPalUpdateAgreementReply' for type 'ns2:PayPalUpdateAgreementReply' */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementReply
-#define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (289)
+#define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (192)
 #endif
 
 /* ns2__PayPalAuthorizationReply has binding name 'ns2__PayPalAuthorizationReply' for type 'ns2:PayPalAuthorizationReply' */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationReply
-#define SOAP_TYPE_ns2__PayPalAuthorizationReply (288)
+#define SOAP_TYPE_ns2__PayPalAuthorizationReply (191)
 #endif
 
 /* ns2__PayPalEcOrderSetupReply has binding name 'ns2__PayPalEcOrderSetupReply' for type 'ns2:PayPalEcOrderSetupReply' */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupReply
-#define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (287)
+#define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (190)
 #endif
 
 /* ns2__PayPalRefundReply has binding name 'ns2__PayPalRefundReply' for type 'ns2:PayPalRefundReply' */
 #ifndef SOAP_TYPE_ns2__PayPalRefundReply
-#define SOAP_TYPE_ns2__PayPalRefundReply (286)
+#define SOAP_TYPE_ns2__PayPalRefundReply (189)
 #endif
 
 /* ns2__PayPalAuthReversalReply has binding name 'ns2__PayPalAuthReversalReply' for type 'ns2:PayPalAuthReversalReply' */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalReply
-#define SOAP_TYPE_ns2__PayPalAuthReversalReply (285)
+#define SOAP_TYPE_ns2__PayPalAuthReversalReply (188)
 #endif
 
 /* ns2__PayPalDoCaptureReply has binding name 'ns2__PayPalDoCaptureReply' for type 'ns2:PayPalDoCaptureReply' */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureReply
-#define SOAP_TYPE_ns2__PayPalDoCaptureReply (284)
+#define SOAP_TYPE_ns2__PayPalDoCaptureReply (187)
 #endif
 
 /* ns2__PayPalEcDoPaymentReply has binding name 'ns2__PayPalEcDoPaymentReply' for type 'ns2:PayPalEcDoPaymentReply' */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentReply
-#define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (283)
+#define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (186)
 #endif
 
 /* ns2__PayPalEcGetDetailsReply has binding name 'ns2__PayPalEcGetDetailsReply' for type 'ns2:PayPalEcGetDetailsReply' */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsReply
-#define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (282)
+#define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (185)
 #endif
 
 /* ns2__PayPalEcSetReply has binding name 'ns2__PayPalEcSetReply' for type 'ns2:PayPalEcSetReply' */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetReply
-#define SOAP_TYPE_ns2__PayPalEcSetReply (281)
+#define SOAP_TYPE_ns2__PayPalEcSetReply (184)
 #endif
 
 /* ns2__PayPalPreapprovedUpdateReply has binding name 'ns2__PayPalPreapprovedUpdateReply' for type 'ns2:PayPalPreapprovedUpdateReply' */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply
-#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (280)
+#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (183)
 #endif
 
 /* ns2__PayPalPreapprovedPaymentReply has binding name 'ns2__PayPalPreapprovedPaymentReply' for type 'ns2:PayPalPreapprovedPaymentReply' */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply
-#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (279)
+#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (182)
 #endif
 
 /* ns2__PayPalButtonCreateReply has binding name 'ns2__PayPalButtonCreateReply' for type 'ns2:PayPalButtonCreateReply' */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateReply
-#define SOAP_TYPE_ns2__PayPalButtonCreateReply (278)
+#define SOAP_TYPE_ns2__PayPalButtonCreateReply (181)
 #endif
 
 /* ns2__PinlessDebitReversalReply has binding name 'ns2__PinlessDebitReversalReply' for type 'ns2:PinlessDebitReversalReply' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalReply
-#define SOAP_TYPE_ns2__PinlessDebitReversalReply (277)
+#define SOAP_TYPE_ns2__PinlessDebitReversalReply (180)
 #endif
 
 /* ns2__PinlessDebitValidateReply has binding name 'ns2__PinlessDebitValidateReply' for type 'ns2:PinlessDebitValidateReply' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateReply
-#define SOAP_TYPE_ns2__PinlessDebitValidateReply (276)
+#define SOAP_TYPE_ns2__PinlessDebitValidateReply (179)
 #endif
 
 /* ns2__PinlessDebitReply has binding name 'ns2__PinlessDebitReply' for type 'ns2:PinlessDebitReply' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReply
-#define SOAP_TYPE_ns2__PinlessDebitReply (275)
+#define SOAP_TYPE_ns2__PinlessDebitReply (178)
 #endif
 
 /* ns2__VoidReply has binding name 'ns2__VoidReply' for type 'ns2:VoidReply' */
 #ifndef SOAP_TYPE_ns2__VoidReply
-#define SOAP_TYPE_ns2__VoidReply (274)
+#define SOAP_TYPE_ns2__VoidReply (177)
 #endif
 
 /* ns2__PayPalCreditReply has binding name 'ns2__PayPalCreditReply' for type 'ns2:PayPalCreditReply' */
 #ifndef SOAP_TYPE_ns2__PayPalCreditReply
-#define SOAP_TYPE_ns2__PayPalCreditReply (273)
+#define SOAP_TYPE_ns2__PayPalCreditReply (176)
 #endif
 
 /* ns2__PayPalPaymentReply has binding name 'ns2__PayPalPaymentReply' for type 'ns2:PayPalPaymentReply' */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentReply
-#define SOAP_TYPE_ns2__PayPalPaymentReply (272)
+#define SOAP_TYPE_ns2__PayPalPaymentReply (175)
 #endif
 
 /* ns2__PaySubscriptionDeleteReply has binding name 'ns2__PaySubscriptionDeleteReply' for type 'ns2:PaySubscriptionDeleteReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteReply
-#define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (271)
+#define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (174)
 #endif
 
 /* ns2__PaySubscriptionRetrieveReply has binding name 'ns2__PaySubscriptionRetrieveReply' for type 'ns2:PaySubscriptionRetrieveReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveReply
-#define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (270)
+#define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (173)
 #endif
 
 /* ns2__PaySubscriptionEventUpdateReply has binding name 'ns2__PaySubscriptionEventUpdateReply' for type 'ns2:PaySubscriptionEventUpdateReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply
-#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (269)
+#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (172)
 #endif
 
 /* ns2__PaySubscriptionUpdateReply has binding name 'ns2__PaySubscriptionUpdateReply' for type 'ns2:PaySubscriptionUpdateReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateReply
-#define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (268)
+#define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (171)
 #endif
 
 /* ns2__PaySubscriptionCreateReply has binding name 'ns2__PaySubscriptionCreateReply' for type 'ns2:PaySubscriptionCreateReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateReply
-#define SOAP_TYPE_ns2__PaySubscriptionCreateReply (267)
+#define SOAP_TYPE_ns2__PaySubscriptionCreateReply (170)
 #endif
 
 /* ns2__DirectDebitRefundReply has binding name 'ns2__DirectDebitRefundReply' for type 'ns2:DirectDebitRefundReply' */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundReply
-#define SOAP_TYPE_ns2__DirectDebitRefundReply (266)
+#define SOAP_TYPE_ns2__DirectDebitRefundReply (169)
 #endif
 
 /* ns2__DirectDebitValidateReply has binding name 'ns2__DirectDebitValidateReply' for type 'ns2:DirectDebitValidateReply' */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateReply
-#define SOAP_TYPE_ns2__DirectDebitValidateReply (265)
+#define SOAP_TYPE_ns2__DirectDebitValidateReply (168)
 #endif
 
 /* ns2__DirectDebitReply has binding name 'ns2__DirectDebitReply' for type 'ns2:DirectDebitReply' */
 #ifndef SOAP_TYPE_ns2__DirectDebitReply
-#define SOAP_TYPE_ns2__DirectDebitReply (264)
+#define SOAP_TYPE_ns2__DirectDebitReply (167)
 #endif
 
 /* ns2__BankTransferRefundReply has binding name 'ns2__BankTransferRefundReply' for type 'ns2:BankTransferRefundReply' */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundReply
-#define SOAP_TYPE_ns2__BankTransferRefundReply (263)
+#define SOAP_TYPE_ns2__BankTransferRefundReply (166)
 #endif
 
 /* ns2__DirectDebitMandateReply has binding name 'ns2__DirectDebitMandateReply' for type 'ns2:DirectDebitMandateReply' */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateReply
-#define SOAP_TYPE_ns2__DirectDebitMandateReply (262)
+#define SOAP_TYPE_ns2__DirectDebitMandateReply (165)
 #endif
 
 /* ns2__BankTransferRealTimeReply has binding name 'ns2__BankTransferRealTimeReply' for type 'ns2:BankTransferRealTimeReply' */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeReply
-#define SOAP_TYPE_ns2__BankTransferRealTimeReply (261)
+#define SOAP_TYPE_ns2__BankTransferRealTimeReply (164)
 #endif
 
 /* ns2__BankTransferReply has binding name 'ns2__BankTransferReply' for type 'ns2:BankTransferReply' */
 #ifndef SOAP_TYPE_ns2__BankTransferReply
-#define SOAP_TYPE_ns2__BankTransferReply (260)
+#define SOAP_TYPE_ns2__BankTransferReply (163)
 #endif
 
 /* ns2__FXRatesReply has binding name 'ns2__FXRatesReply' for type 'ns2:FXRatesReply' */
 #ifndef SOAP_TYPE_ns2__FXRatesReply
-#define SOAP_TYPE_ns2__FXRatesReply (259)
+#define SOAP_TYPE_ns2__FXRatesReply (162)
 #endif
 
 /* ns2__FXQuote has binding name 'ns2__FXQuote' for type 'ns2:FXQuote' */
 #ifndef SOAP_TYPE_ns2__FXQuote
-#define SOAP_TYPE_ns2__FXQuote (258)
+#define SOAP_TYPE_ns2__FXQuote (161)
 #endif
 
 /* ns2__ExportReply has binding name 'ns2__ExportReply' for type 'ns2:ExportReply' */
 #ifndef SOAP_TYPE_ns2__ExportReply
-#define SOAP_TYPE_ns2__ExportReply (257)
+#define SOAP_TYPE_ns2__ExportReply (160)
 #endif
 
 /* ns2__DeniedPartiesMatch has binding name 'ns2__DeniedPartiesMatch' for type 'ns2:DeniedPartiesMatch' */
 #ifndef SOAP_TYPE_ns2__DeniedPartiesMatch
-#define SOAP_TYPE_ns2__DeniedPartiesMatch (256)
+#define SOAP_TYPE_ns2__DeniedPartiesMatch (159)
 #endif
 
 /* ns2__DAVReply has binding name 'ns2__DAVReply' for type 'ns2:DAVReply' */
 #ifndef SOAP_TYPE_ns2__DAVReply
-#define SOAP_TYPE_ns2__DAVReply (255)
+#define SOAP_TYPE_ns2__DAVReply (158)
 #endif
 
 /* ns2__AFSReply has binding name 'ns2__AFSReply' for type 'ns2:AFSReply' */
 #ifndef SOAP_TYPE_ns2__AFSReply
-#define SOAP_TYPE_ns2__AFSReply (254)
+#define SOAP_TYPE_ns2__AFSReply (157)
 #endif
 
 /* ns2__DeviceFingerprint has binding name 'ns2__DeviceFingerprint' for type 'ns2:DeviceFingerprint' */
 #ifndef SOAP_TYPE_ns2__DeviceFingerprint
-#define SOAP_TYPE_ns2__DeviceFingerprint (253)
+#define SOAP_TYPE_ns2__DeviceFingerprint (156)
 #endif
 
 /* ns2__TaxReply has binding name 'ns2__TaxReply' for type 'ns2:TaxReply' */
 #ifndef SOAP_TYPE_ns2__TaxReply
-#define SOAP_TYPE_ns2__TaxReply (252)
+#define SOAP_TYPE_ns2__TaxReply (155)
 #endif
 
 /* ns2__TaxReplyItem has binding name 'ns2__TaxReplyItem' for type 'ns2:TaxReplyItem' */
 #ifndef SOAP_TYPE_ns2__TaxReplyItem
-#define SOAP_TYPE_ns2__TaxReplyItem (251)
+#define SOAP_TYPE_ns2__TaxReplyItem (154)
 #endif
 
 /* ns2__PayerAuthValidateReply has binding name 'ns2__PayerAuthValidateReply' for type 'ns2:PayerAuthValidateReply' */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateReply
-#define SOAP_TYPE_ns2__PayerAuthValidateReply (250)
+#define SOAP_TYPE_ns2__PayerAuthValidateReply (153)
 #endif
 
 /* ns2__PayerAuthEnrollReply has binding name 'ns2__PayerAuthEnrollReply' for type 'ns2:PayerAuthEnrollReply' */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollReply
-#define SOAP_TYPE_ns2__PayerAuthEnrollReply (249)
+#define SOAP_TYPE_ns2__PayerAuthEnrollReply (152)
 #endif
 
 /* ns2__ECAuthenticateReply has binding name 'ns2__ECAuthenticateReply' for type 'ns2:ECAuthenticateReply' */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateReply
-#define SOAP_TYPE_ns2__ECAuthenticateReply (248)
+#define SOAP_TYPE_ns2__ECAuthenticateReply (151)
 #endif
 
 /* ns2__ECCreditReply has binding name 'ns2__ECCreditReply' for type 'ns2:ECCreditReply' */
 #ifndef SOAP_TYPE_ns2__ECCreditReply
-#define SOAP_TYPE_ns2__ECCreditReply (247)
+#define SOAP_TYPE_ns2__ECCreditReply (150)
 #endif
 
 /* ns2__ECDebitReply has binding name 'ns2__ECDebitReply' for type 'ns2:ECDebitReply' */
 #ifndef SOAP_TYPE_ns2__ECDebitReply
-#define SOAP_TYPE_ns2__ECDebitReply (246)
+#define SOAP_TYPE_ns2__ECDebitReply (149)
 #endif
 
 /* ns2__CCAutoAuthReversalReply has binding name 'ns2__CCAutoAuthReversalReply' for type 'ns2:CCAutoAuthReversalReply' */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalReply
-#define SOAP_TYPE_ns2__CCAutoAuthReversalReply (245)
+#define SOAP_TYPE_ns2__CCAutoAuthReversalReply (148)
 #endif
 
 /* ns2__CCAuthReversalReply has binding name 'ns2__CCAuthReversalReply' for type 'ns2:CCAuthReversalReply' */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalReply
-#define SOAP_TYPE_ns2__CCAuthReversalReply (244)
+#define SOAP_TYPE_ns2__CCAuthReversalReply (147)
 #endif
 
 /* ns2__PinDebitReversalReply has binding name 'ns2__PinDebitReversalReply' for type 'ns2:PinDebitReversalReply' */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalReply
-#define SOAP_TYPE_ns2__PinDebitReversalReply (243)
+#define SOAP_TYPE_ns2__PinDebitReversalReply (146)
 #endif
 
 /* ns2__PinDebitCreditReply has binding name 'ns2__PinDebitCreditReply' for type 'ns2:PinDebitCreditReply' */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditReply
-#define SOAP_TYPE_ns2__PinDebitCreditReply (242)
+#define SOAP_TYPE_ns2__PinDebitCreditReply (145)
 #endif
 
 /* ns2__PinDebitPurchaseReply has binding name 'ns2__PinDebitPurchaseReply' for type 'ns2:PinDebitPurchaseReply' */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseReply
-#define SOAP_TYPE_ns2__PinDebitPurchaseReply (241)
+#define SOAP_TYPE_ns2__PinDebitPurchaseReply (144)
 #endif
 
 /* ns2__CCCreditReply has binding name 'ns2__CCCreditReply' for type 'ns2:CCCreditReply' */
 #ifndef SOAP_TYPE_ns2__CCCreditReply
-#define SOAP_TYPE_ns2__CCCreditReply (240)
+#define SOAP_TYPE_ns2__CCCreditReply (143)
 #endif
 
 /* ns2__ServiceFeeCalculateReply has binding name 'ns2__ServiceFeeCalculateReply' for type 'ns2:ServiceFeeCalculateReply' */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateReply
-#define SOAP_TYPE_ns2__ServiceFeeCalculateReply (239)
+#define SOAP_TYPE_ns2__ServiceFeeCalculateReply (142)
 #endif
 
 /* ns2__CCCaptureReply has binding name 'ns2__CCCaptureReply' for type 'ns2:CCCaptureReply' */
 #ifndef SOAP_TYPE_ns2__CCCaptureReply
-#define SOAP_TYPE_ns2__CCCaptureReply (238)
+#define SOAP_TYPE_ns2__CCCaptureReply (141)
 #endif
 
 /* ns2__CCIncrementalAuthReply has binding name 'ns2__CCIncrementalAuthReply' for type 'ns2:CCIncrementalAuthReply' */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthReply
-#define SOAP_TYPE_ns2__CCIncrementalAuthReply (237)
+#define SOAP_TYPE_ns2__CCIncrementalAuthReply (140)
 #endif
 
 /* ns2__CCSaleReversalReply has binding name 'ns2__CCSaleReversalReply' for type 'ns2:CCSaleReversalReply' */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalReply
-#define SOAP_TYPE_ns2__CCSaleReversalReply (236)
+#define SOAP_TYPE_ns2__CCSaleReversalReply (139)
 #endif
 
 /* ns2__CCSaleCreditReply has binding name 'ns2__CCSaleCreditReply' for type 'ns2:CCSaleCreditReply' */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditReply
-#define SOAP_TYPE_ns2__CCSaleCreditReply (235)
+#define SOAP_TYPE_ns2__CCSaleCreditReply (138)
 #endif
 
 /* ns2__CCSaleReply has binding name 'ns2__CCSaleReply' for type 'ns2:CCSaleReply' */
 #ifndef SOAP_TYPE_ns2__CCSaleReply
-#define SOAP_TYPE_ns2__CCSaleReply (234)
+#define SOAP_TYPE_ns2__CCSaleReply (137)
 #endif
 
 /* ns2__VerificationReply has binding name 'ns2__VerificationReply' for type 'ns2:VerificationReply' */
 #ifndef SOAP_TYPE_ns2__VerificationReply
-#define SOAP_TYPE_ns2__VerificationReply (233)
+#define SOAP_TYPE_ns2__VerificationReply (136)
 #endif
 
 /* ns2__OCTReply has binding name 'ns2__OCTReply' for type 'ns2:OCTReply' */
 #ifndef SOAP_TYPE_ns2__OCTReply
-#define SOAP_TYPE_ns2__OCTReply (232)
+#define SOAP_TYPE_ns2__OCTReply (135)
 #endif
 
 /* ns2__CCAuthReply has binding name 'ns2__CCAuthReply' for type 'ns2:CCAuthReply' */
 #ifndef SOAP_TYPE_ns2__CCAuthReply
-#define SOAP_TYPE_ns2__CCAuthReply (231)
+#define SOAP_TYPE_ns2__CCAuthReply (134)
 #endif
 
 /* ns2__PromotionGroupReply has binding name 'ns2__PromotionGroupReply' for type 'ns2:PromotionGroupReply' */
 #ifndef SOAP_TYPE_ns2__PromotionGroupReply
-#define SOAP_TYPE_ns2__PromotionGroupReply (230)
+#define SOAP_TYPE_ns2__PromotionGroupReply (133)
 #endif
 
 /* ns2__PromotionGroup has binding name 'ns2__PromotionGroup' for type 'ns2:PromotionGroup' */
 #ifndef SOAP_TYPE_ns2__PromotionGroup
-#define SOAP_TYPE_ns2__PromotionGroup (229)
+#define SOAP_TYPE_ns2__PromotionGroup (132)
 #endif
 
 /* ns2__Promotion has binding name 'ns2__Promotion' for type 'ns2:Promotion' */
 #ifndef SOAP_TYPE_ns2__Promotion
-#define SOAP_TYPE_ns2__Promotion (228)
+#define SOAP_TYPE_ns2__Promotion (131)
 #endif
 
 /* ns2__DCC has binding name 'ns2__DCC' for type 'ns2:DCC' */
 #ifndef SOAP_TYPE_ns2__DCC
-#define SOAP_TYPE_ns2__DCC (227)
+#define SOAP_TYPE_ns2__DCC (130)
 #endif
 
 /* ns2__DecryptVisaCheckoutDataService has binding name 'ns2__DecryptVisaCheckoutDataService' for type 'ns2:DecryptVisaCheckoutDataService' */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataService
-#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (226)
+#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (129)
 #endif
 
 /* ns2__VC has binding name 'ns2__VC' for type 'ns2:VC' */
 #ifndef SOAP_TYPE_ns2__VC
-#define SOAP_TYPE_ns2__VC (225)
+#define SOAP_TYPE_ns2__VC (128)
 #endif
 
 /* ns2__RequestMessage has binding name 'ns2__RequestMessage' for type 'ns2:RequestMessage' */
 #ifndef SOAP_TYPE_ns2__RequestMessage
-#define SOAP_TYPE_ns2__RequestMessage (224)
+#define SOAP_TYPE_ns2__RequestMessage (127)
 #endif
 
 /* ns2__Sender has binding name 'ns2__Sender' for type 'ns2:Sender' */
 #ifndef SOAP_TYPE_ns2__Sender
-#define SOAP_TYPE_ns2__Sender (223)
+#define SOAP_TYPE_ns2__Sender (126)
 #endif
 
 /* ns2__Recipient has binding name 'ns2__Recipient' for type 'ns2:Recipient' */
 #ifndef SOAP_TYPE_ns2__Recipient
-#define SOAP_TYPE_ns2__Recipient (222)
+#define SOAP_TYPE_ns2__Recipient (125)
 #endif
 
 /* ns2__PayPalTransactionSearchService has binding name 'ns2__PayPalTransactionSearchService' for type 'ns2:PayPalTransactionSearchService' */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchService
-#define SOAP_TYPE_ns2__PayPalTransactionSearchService (221)
+#define SOAP_TYPE_ns2__PayPalTransactionSearchService (124)
 #endif
 
 /* ns2__PayPalGetTxnDetailsService has binding name 'ns2__PayPalGetTxnDetailsService' for type 'ns2:PayPalGetTxnDetailsService' */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsService
-#define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (220)
+#define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (123)
 #endif
 
 /* ns2__APConfirmPurchaseService has binding name 'ns2__APConfirmPurchaseService' for type 'ns2:APConfirmPurchaseService' */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseService
-#define SOAP_TYPE_ns2__APConfirmPurchaseService (219)
+#define SOAP_TYPE_ns2__APConfirmPurchaseService (122)
 #endif
 
 /* ns2__APTransactionDetailsService has binding name 'ns2__APTransactionDetailsService' for type 'ns2:APTransactionDetailsService' */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsService
-#define SOAP_TYPE_ns2__APTransactionDetailsService (218)
+#define SOAP_TYPE_ns2__APTransactionDetailsService (121)
 #endif
 
 /* ns2__APCheckOutDetailsService has binding name 'ns2__APCheckOutDetailsService' for type 'ns2:APCheckOutDetailsService' */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsService
-#define SOAP_TYPE_ns2__APCheckOutDetailsService (217)
+#define SOAP_TYPE_ns2__APCheckOutDetailsService (120)
 #endif
 
 /* ns2__APSaleService has binding name 'ns2__APSaleService' for type 'ns2:APSaleService' */
 #ifndef SOAP_TYPE_ns2__APSaleService
-#define SOAP_TYPE_ns2__APSaleService (216)
+#define SOAP_TYPE_ns2__APSaleService (119)
 #endif
 
 /* ns2__APRefundService has binding name 'ns2__APRefundService' for type 'ns2:APRefundService' */
 #ifndef SOAP_TYPE_ns2__APRefundService
-#define SOAP_TYPE_ns2__APRefundService (215)
+#define SOAP_TYPE_ns2__APRefundService (118)
 #endif
 
 /* ns2__APOptionsService has binding name 'ns2__APOptionsService' for type 'ns2:APOptionsService' */
 #ifndef SOAP_TYPE_ns2__APOptionsService
-#define SOAP_TYPE_ns2__APOptionsService (214)
+#define SOAP_TYPE_ns2__APOptionsService (117)
 #endif
 
 /* ns2__APCaptureService has binding name 'ns2__APCaptureService' for type 'ns2:APCaptureService' */
 #ifndef SOAP_TYPE_ns2__APCaptureService
-#define SOAP_TYPE_ns2__APCaptureService (213)
+#define SOAP_TYPE_ns2__APCaptureService (116)
 #endif
 
 /* ns2__APAuthReversalService has binding name 'ns2__APAuthReversalService' for type 'ns2:APAuthReversalService' */
 #ifndef SOAP_TYPE_ns2__APAuthReversalService
-#define SOAP_TYPE_ns2__APAuthReversalService (212)
+#define SOAP_TYPE_ns2__APAuthReversalService (115)
 #endif
 
 /* ns2__APAuthService has binding name 'ns2__APAuthService' for type 'ns2:APAuthService' */
 #ifndef SOAP_TYPE_ns2__APAuthService
-#define SOAP_TYPE_ns2__APAuthService (211)
+#define SOAP_TYPE_ns2__APAuthService (114)
 #endif
 
 /* ns2__APDevice has binding name 'ns2__APDevice' for type 'ns2:APDevice' */
 #ifndef SOAP_TYPE_ns2__APDevice
-#define SOAP_TYPE_ns2__APDevice (210)
+#define SOAP_TYPE_ns2__APDevice (113)
 #endif
 
 /* ns2__AP has binding name 'ns2__AP' for type 'ns2:AP' */
 #ifndef SOAP_TYPE_ns2__AP
-#define SOAP_TYPE_ns2__AP (209)
+#define SOAP_TYPE_ns2__AP (112)
 #endif
 
 /* ns2__Token has binding name 'ns2__Token' for type 'ns2:Token' */
 #ifndef SOAP_TYPE_ns2__Token
-#define SOAP_TYPE_ns2__Token (208)
+#define SOAP_TYPE_ns2__Token (111)
 #endif
 
 /* ns2__JPO has binding name 'ns2__JPO' for type 'ns2:JPO' */
 #ifndef SOAP_TYPE_ns2__JPO
-#define SOAP_TYPE_ns2__JPO (207)
+#define SOAP_TYPE_ns2__JPO (110)
 #endif
 
 /* ns2__PayPal has binding name 'ns2__PayPal' for type 'ns2:PayPal' */
 #ifndef SOAP_TYPE_ns2__PayPal
-#define SOAP_TYPE_ns2__PayPal (206)
+#define SOAP_TYPE_ns2__PayPal (109)
 #endif
 
 /* ns2__Batch has binding name 'ns2__Batch' for type 'ns2:Batch' */
 #ifndef SOAP_TYPE_ns2__Batch
-#define SOAP_TYPE_ns2__Batch (205)
+#define SOAP_TYPE_ns2__Batch (108)
 #endif
 
 /* ns2__DecisionManagerTravelLeg has binding name 'ns2__DecisionManagerTravelLeg' for type 'ns2:DecisionManagerTravelLeg' */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelLeg
-#define SOAP_TYPE_ns2__DecisionManagerTravelLeg (204)
+#define SOAP_TYPE_ns2__DecisionManagerTravelLeg (107)
 #endif
 
 /* ns2__DecisionManagerTravelData has binding name 'ns2__DecisionManagerTravelData' for type 'ns2:DecisionManagerTravelData' */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelData
-#define SOAP_TYPE_ns2__DecisionManagerTravelData (203)
+#define SOAP_TYPE_ns2__DecisionManagerTravelData (106)
 #endif
 
 /* ns2__DecisionManager has binding name 'ns2__DecisionManager' for type 'ns2:DecisionManager' */
 #ifndef SOAP_TYPE_ns2__DecisionManager
-#define SOAP_TYPE_ns2__DecisionManager (202)
+#define SOAP_TYPE_ns2__DecisionManager (105)
 #endif
 
 /* ns2__PaymentNetworkToken has binding name 'ns2__PaymentNetworkToken' for type 'ns2:PaymentNetworkToken' */
 #ifndef SOAP_TYPE_ns2__PaymentNetworkToken
-#define SOAP_TYPE_ns2__PaymentNetworkToken (201)
+#define SOAP_TYPE_ns2__PaymentNetworkToken (104)
 #endif
 
 /* ns2__Subscription has binding name 'ns2__Subscription' for type 'ns2:Subscription' */
 #ifndef SOAP_TYPE_ns2__Subscription
-#define SOAP_TYPE_ns2__Subscription (200)
+#define SOAP_TYPE_ns2__Subscription (103)
 #endif
 
 /* ns2__PaySubscriptionEvent has binding name 'ns2__PaySubscriptionEvent' for type 'ns2:PaySubscriptionEvent' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEvent
-#define SOAP_TYPE_ns2__PaySubscriptionEvent (199)
+#define SOAP_TYPE_ns2__PaySubscriptionEvent (102)
 #endif
 
 /* ns2__RecurringSubscriptionInfo has binding name 'ns2__RecurringSubscriptionInfo' for type 'ns2:RecurringSubscriptionInfo' */
 #ifndef SOAP_TYPE_ns2__RecurringSubscriptionInfo
-#define SOAP_TYPE_ns2__RecurringSubscriptionInfo (198)
+#define SOAP_TYPE_ns2__RecurringSubscriptionInfo (101)
 #endif
 
 /* ns2__BankInfo has binding name 'ns2__BankInfo' for type 'ns2:BankInfo' */
 #ifndef SOAP_TYPE_ns2__BankInfo
-#define SOAP_TYPE_ns2__BankInfo (197)
+#define SOAP_TYPE_ns2__BankInfo (100)
 #endif
 
 /* ns2__FundTransfer has binding name 'ns2__FundTransfer' for type 'ns2:FundTransfer' */
 #ifndef SOAP_TYPE_ns2__FundTransfer
-#define SOAP_TYPE_ns2__FundTransfer (196)
+#define SOAP_TYPE_ns2__FundTransfer (99)
 #endif
 
 /* ns2__UCAF has binding name 'ns2__UCAF' for type 'ns2:UCAF' */
 #ifndef SOAP_TYPE_ns2__UCAF
-#define SOAP_TYPE_ns2__UCAF (195)
+#define SOAP_TYPE_ns2__UCAF (98)
 #endif
 
 /* ns2__GECC has binding name 'ns2__GECC' for type 'ns2:GECC' */
 #ifndef SOAP_TYPE_ns2__GECC
-#define SOAP_TYPE_ns2__GECC (194)
+#define SOAP_TYPE_ns2__GECC (97)
 #endif
 
 /* ns2__FundingTotals has binding name 'ns2__FundingTotals' for type 'ns2:FundingTotals' */
 #ifndef SOAP_TYPE_ns2__FundingTotals
-#define SOAP_TYPE_ns2__FundingTotals (193)
+#define SOAP_TYPE_ns2__FundingTotals (96)
 #endif
 
 /* ns2__PurchaseTotals has binding name 'ns2__PurchaseTotals' for type 'ns2:PurchaseTotals' */
 #ifndef SOAP_TYPE_ns2__PurchaseTotals
-#define SOAP_TYPE_ns2__PurchaseTotals (192)
+#define SOAP_TYPE_ns2__PurchaseTotals (95)
 #endif
 
 /* ns2__Wallet has binding name 'ns2__Wallet' for type 'ns2:Wallet' */
 #ifndef SOAP_TYPE_ns2__Wallet
-#define SOAP_TYPE_ns2__Wallet (191)
+#define SOAP_TYPE_ns2__Wallet (94)
 #endif
 
 /* ns2__Aft has binding name 'ns2__Aft' for type 'ns2:Aft' */
 #ifndef SOAP_TYPE_ns2__Aft
-#define SOAP_TYPE_ns2__Aft (190)
+#define SOAP_TYPE_ns2__Aft (93)
 #endif
 
 /* ns2__OtherTax has binding name 'ns2__OtherTax' for type 'ns2:OtherTax' */
 #ifndef SOAP_TYPE_ns2__OtherTax
-#define SOAP_TYPE_ns2__OtherTax (189)
+#define SOAP_TYPE_ns2__OtherTax (92)
 #endif
 
 /* ns2__BML has binding name 'ns2__BML' for type 'ns2:BML' */
 #ifndef SOAP_TYPE_ns2__BML
-#define SOAP_TYPE_ns2__BML (188)
+#define SOAP_TYPE_ns2__BML (91)
 #endif
 
 /* ns2__Check has binding name 'ns2__Check' for type 'ns2:Check' */
 #ifndef SOAP_TYPE_ns2__Check
-#define SOAP_TYPE_ns2__Check (187)
+#define SOAP_TYPE_ns2__Check (90)
 #endif
 
 /* ns2__Card has binding name 'ns2__Card' for type 'ns2:Card' */
 #ifndef SOAP_TYPE_ns2__Card
-#define SOAP_TYPE_ns2__Card (186)
+#define SOAP_TYPE_ns2__Card (89)
 #endif
 
 /* ns2__ShipFrom has binding name 'ns2__ShipFrom' for type 'ns2:ShipFrom' */
 #ifndef SOAP_TYPE_ns2__ShipFrom
-#define SOAP_TYPE_ns2__ShipFrom (185)
+#define SOAP_TYPE_ns2__ShipFrom (88)
 #endif
 
 /* ns2__ShipTo has binding name 'ns2__ShipTo' for type 'ns2:ShipTo' */
 #ifndef SOAP_TYPE_ns2__ShipTo
-#define SOAP_TYPE_ns2__ShipTo (184)
+#define SOAP_TYPE_ns2__ShipTo (87)
 #endif
 
 /* ns2__BillTo has binding name 'ns2__BillTo' for type 'ns2:BillTo' */
 #ifndef SOAP_TYPE_ns2__BillTo
-#define SOAP_TYPE_ns2__BillTo (183)
+#define SOAP_TYPE_ns2__BillTo (86)
 #endif
 
 /* ns2__BusinessRules has binding name 'ns2__BusinessRules' for type 'ns2:BusinessRules' */
 #ifndef SOAP_TYPE_ns2__BusinessRules
-#define SOAP_TYPE_ns2__BusinessRules (182)
+#define SOAP_TYPE_ns2__BusinessRules (85)
 #endif
 
 /* ns2__InvoiceHeader has binding name 'ns2__InvoiceHeader' for type 'ns2:InvoiceHeader' */
 #ifndef SOAP_TYPE_ns2__InvoiceHeader
-#define SOAP_TYPE_ns2__InvoiceHeader (181)
+#define SOAP_TYPE_ns2__InvoiceHeader (84)
 #endif
 
 /* ns2__EncryptPaymentDataService has binding name 'ns2__EncryptPaymentDataService' for type 'ns2:EncryptPaymentDataService' */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataService
-#define SOAP_TYPE_ns2__EncryptPaymentDataService (180)
+#define SOAP_TYPE_ns2__EncryptPaymentDataService (83)
 #endif
 
 /* ns2__CaseManagementActionService has binding name 'ns2__CaseManagementActionService' for type 'ns2:CaseManagementActionService' */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionService
-#define SOAP_TYPE_ns2__CaseManagementActionService (179)
+#define SOAP_TYPE_ns2__CaseManagementActionService (82)
 #endif
 
 /* ns2__FraudUpdateService has binding name 'ns2__FraudUpdateService' for type 'ns2:FraudUpdateService' */
 #ifndef SOAP_TYPE_ns2__FraudUpdateService
-#define SOAP_TYPE_ns2__FraudUpdateService (178)
+#define SOAP_TYPE_ns2__FraudUpdateService (81)
 #endif
 
 /* ns2__RiskUpdateService has binding name 'ns2__RiskUpdateService' for type 'ns2:RiskUpdateService' */
 #ifndef SOAP_TYPE_ns2__RiskUpdateService
-#define SOAP_TYPE_ns2__RiskUpdateService (177)
+#define SOAP_TYPE_ns2__RiskUpdateService (80)
 #endif
 
 /* ns2__APCheckStatusService has binding name 'ns2__APCheckStatusService' for type 'ns2:APCheckStatusService' */
 #ifndef SOAP_TYPE_ns2__APCheckStatusService
-#define SOAP_TYPE_ns2__APCheckStatusService (176)
+#define SOAP_TYPE_ns2__APCheckStatusService (79)
 #endif
 
 /* ns2__APInitiateService has binding name 'ns2__APInitiateService' for type 'ns2:APInitiateService' */
 #ifndef SOAP_TYPE_ns2__APInitiateService
-#define SOAP_TYPE_ns2__APInitiateService (175)
+#define SOAP_TYPE_ns2__APInitiateService (78)
 #endif
 
 /* ns2__Address has binding name 'ns2__Address' for type 'ns2:Address' */
 #ifndef SOAP_TYPE_ns2__Address
-#define SOAP_TYPE_ns2__Address (174)
+#define SOAP_TYPE_ns2__Address (77)
 #endif
 
 /* ns2__PersonalId has binding name 'ns2__PersonalId' for type 'ns2:PersonalId' */
 #ifndef SOAP_TYPE_ns2__PersonalId
-#define SOAP_TYPE_ns2__PersonalId (173)
+#define SOAP_TYPE_ns2__PersonalId (76)
 #endif
 
 /* ns2__BoletoPaymentService has binding name 'ns2__BoletoPaymentService' for type 'ns2:BoletoPaymentService' */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentService
-#define SOAP_TYPE_ns2__BoletoPaymentService (172)
+#define SOAP_TYPE_ns2__BoletoPaymentService (75)
 #endif
 
 /* ns2__ChinaRefundService has binding name 'ns2__ChinaRefundService' for type 'ns2:ChinaRefundService' */
 #ifndef SOAP_TYPE_ns2__ChinaRefundService
-#define SOAP_TYPE_ns2__ChinaRefundService (171)
+#define SOAP_TYPE_ns2__ChinaRefundService (74)
 #endif
 
 /* ns2__ChinaPaymentService has binding name 'ns2__ChinaPaymentService' for type 'ns2:ChinaPaymentService' */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentService
-#define SOAP_TYPE_ns2__ChinaPaymentService (170)
+#define SOAP_TYPE_ns2__ChinaPaymentService (73)
 #endif
 
 /* ns2__PayPalPreapprovedUpdateService has binding name 'ns2__PayPalPreapprovedUpdateService' for type 'ns2:PayPalPreapprovedUpdateService' */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateService
-#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (169)
+#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (72)
 #endif
 
 /* ns2__PayPalPreapprovedPaymentService has binding name 'ns2__PayPalPreapprovedPaymentService' for type 'ns2:PayPalPreapprovedPaymentService' */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentService
-#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (168)
+#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (71)
 #endif
 
 /* ns2__PayPalButtonCreateService has binding name 'ns2__PayPalButtonCreateService' for type 'ns2:PayPalButtonCreateService' */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateService
-#define SOAP_TYPE_ns2__PayPalButtonCreateService (167)
+#define SOAP_TYPE_ns2__PayPalButtonCreateService (70)
 #endif
 
 /* ns2__PinDebitReversalService has binding name 'ns2__PinDebitReversalService' for type 'ns2:PinDebitReversalService' */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalService
-#define SOAP_TYPE_ns2__PinDebitReversalService (166)
+#define SOAP_TYPE_ns2__PinDebitReversalService (69)
 #endif
 
 /* ns2__PinDebitCreditService has binding name 'ns2__PinDebitCreditService' for type 'ns2:PinDebitCreditService' */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditService
-#define SOAP_TYPE_ns2__PinDebitCreditService (165)
+#define SOAP_TYPE_ns2__PinDebitCreditService (68)
 #endif
 
 /* ns2__PinDebitPurchaseService has binding name 'ns2__PinDebitPurchaseService' for type 'ns2:PinDebitPurchaseService' */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseService
-#define SOAP_TYPE_ns2__PinDebitPurchaseService (164)
+#define SOAP_TYPE_ns2__PinDebitPurchaseService (67)
 #endif
 
 /* ns2__PinlessDebitReversalService has binding name 'ns2__PinlessDebitReversalService' for type 'ns2:PinlessDebitReversalService' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalService
-#define SOAP_TYPE_ns2__PinlessDebitReversalService (163)
+#define SOAP_TYPE_ns2__PinlessDebitReversalService (66)
 #endif
 
 /* ns2__PinlessDebitValidateService has binding name 'ns2__PinlessDebitValidateService' for type 'ns2:PinlessDebitValidateService' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateService
-#define SOAP_TYPE_ns2__PinlessDebitValidateService (162)
+#define SOAP_TYPE_ns2__PinlessDebitValidateService (65)
 #endif
 
 /* ns2__PinlessDebitService has binding name 'ns2__PinlessDebitService' for type 'ns2:PinlessDebitService' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitService
-#define SOAP_TYPE_ns2__PinlessDebitService (161)
+#define SOAP_TYPE_ns2__PinlessDebitService (64)
 #endif
 
 /* ns2__VoidService has binding name 'ns2__VoidService' for type 'ns2:VoidService' */
 #ifndef SOAP_TYPE_ns2__VoidService
-#define SOAP_TYPE_ns2__VoidService (160)
+#define SOAP_TYPE_ns2__VoidService (63)
 #endif
 
 /* ns2__PayPalDoRefTransactionService has binding name 'ns2__PayPalDoRefTransactionService' for type 'ns2:PayPalDoRefTransactionService' */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionService
-#define SOAP_TYPE_ns2__PayPalDoRefTransactionService (159)
+#define SOAP_TYPE_ns2__PayPalDoRefTransactionService (62)
 #endif
 
 /* ns2__PayPalCreateAgreementService has binding name 'ns2__PayPalCreateAgreementService' for type 'ns2:PayPalCreateAgreementService' */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementService
-#define SOAP_TYPE_ns2__PayPalCreateAgreementService (158)
+#define SOAP_TYPE_ns2__PayPalCreateAgreementService (61)
 #endif
 
 /* ns2__PayPalUpdateAgreementService has binding name 'ns2__PayPalUpdateAgreementService' for type 'ns2:PayPalUpdateAgreementService' */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementService
-#define SOAP_TYPE_ns2__PayPalUpdateAgreementService (157)
+#define SOAP_TYPE_ns2__PayPalUpdateAgreementService (60)
 #endif
 
 /* ns2__PayPalAuthorizationService has binding name 'ns2__PayPalAuthorizationService' for type 'ns2:PayPalAuthorizationService' */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationService
-#define SOAP_TYPE_ns2__PayPalAuthorizationService (156)
+#define SOAP_TYPE_ns2__PayPalAuthorizationService (59)
 #endif
 
 /* ns2__PayPalEcOrderSetupService has binding name 'ns2__PayPalEcOrderSetupService' for type 'ns2:PayPalEcOrderSetupService' */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupService
-#define SOAP_TYPE_ns2__PayPalEcOrderSetupService (155)
+#define SOAP_TYPE_ns2__PayPalEcOrderSetupService (58)
 #endif
 
 /* ns2__PayPalRefundService has binding name 'ns2__PayPalRefundService' for type 'ns2:PayPalRefundService' */
 #ifndef SOAP_TYPE_ns2__PayPalRefundService
-#define SOAP_TYPE_ns2__PayPalRefundService (154)
+#define SOAP_TYPE_ns2__PayPalRefundService (57)
 #endif
 
 /* ns2__PayPalAuthReversalService has binding name 'ns2__PayPalAuthReversalService' for type 'ns2:PayPalAuthReversalService' */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalService
-#define SOAP_TYPE_ns2__PayPalAuthReversalService (153)
+#define SOAP_TYPE_ns2__PayPalAuthReversalService (56)
 #endif
 
 /* ns2__PayPalDoCaptureService has binding name 'ns2__PayPalDoCaptureService' for type 'ns2:PayPalDoCaptureService' */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureService
-#define SOAP_TYPE_ns2__PayPalDoCaptureService (152)
+#define SOAP_TYPE_ns2__PayPalDoCaptureService (55)
 #endif
 
 /* ns2__PayPalEcDoPaymentService has binding name 'ns2__PayPalEcDoPaymentService' for type 'ns2:PayPalEcDoPaymentService' */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentService
-#define SOAP_TYPE_ns2__PayPalEcDoPaymentService (151)
+#define SOAP_TYPE_ns2__PayPalEcDoPaymentService (54)
 #endif
 
 /* ns2__PayPalEcGetDetailsService has binding name 'ns2__PayPalEcGetDetailsService' for type 'ns2:PayPalEcGetDetailsService' */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsService
-#define SOAP_TYPE_ns2__PayPalEcGetDetailsService (150)
+#define SOAP_TYPE_ns2__PayPalEcGetDetailsService (53)
 #endif
 
 /* ns2__PayPalEcSetService has binding name 'ns2__PayPalEcSetService' for type 'ns2:PayPalEcSetService' */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetService
-#define SOAP_TYPE_ns2__PayPalEcSetService (149)
+#define SOAP_TYPE_ns2__PayPalEcSetService (52)
 #endif
 
 /* ns2__PayPalCreditService has binding name 'ns2__PayPalCreditService' for type 'ns2:PayPalCreditService' */
 #ifndef SOAP_TYPE_ns2__PayPalCreditService
-#define SOAP_TYPE_ns2__PayPalCreditService (148)
+#define SOAP_TYPE_ns2__PayPalCreditService (51)
 #endif
 
 /* ns2__PayPalPaymentService has binding name 'ns2__PayPalPaymentService' for type 'ns2:PayPalPaymentService' */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentService
-#define SOAP_TYPE_ns2__PayPalPaymentService (147)
+#define SOAP_TYPE_ns2__PayPalPaymentService (50)
 #endif
 
 /* ns2__PaySubscriptionDeleteService has binding name 'ns2__PaySubscriptionDeleteService' for type 'ns2:PaySubscriptionDeleteService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteService
-#define SOAP_TYPE_ns2__PaySubscriptionDeleteService (146)
+#define SOAP_TYPE_ns2__PaySubscriptionDeleteService (49)
 #endif
 
 /* ns2__PaySubscriptionRetrieveService has binding name 'ns2__PaySubscriptionRetrieveService' for type 'ns2:PaySubscriptionRetrieveService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveService
-#define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (145)
+#define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (48)
 #endif
 
 /* ns2__PaySubscriptionEventUpdateService has binding name 'ns2__PaySubscriptionEventUpdateService' for type 'ns2:PaySubscriptionEventUpdateService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateService
-#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (144)
+#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (47)
 #endif
 
 /* ns2__PaySubscriptionUpdateService has binding name 'ns2__PaySubscriptionUpdateService' for type 'ns2:PaySubscriptionUpdateService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateService
-#define SOAP_TYPE_ns2__PaySubscriptionUpdateService (143)
+#define SOAP_TYPE_ns2__PaySubscriptionUpdateService (46)
 #endif
 
 /* ns2__PaySubscriptionCreateService has binding name 'ns2__PaySubscriptionCreateService' for type 'ns2:PaySubscriptionCreateService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateService
-#define SOAP_TYPE_ns2__PaySubscriptionCreateService (142)
+#define SOAP_TYPE_ns2__PaySubscriptionCreateService (45)
 #endif
 
 /* ns2__DirectDebitValidateService has binding name 'ns2__DirectDebitValidateService' for type 'ns2:DirectDebitValidateService' */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateService
-#define SOAP_TYPE_ns2__DirectDebitValidateService (141)
+#define SOAP_TYPE_ns2__DirectDebitValidateService (44)
 #endif
 
 /* ns2__DirectDebitRefundService has binding name 'ns2__DirectDebitRefundService' for type 'ns2:DirectDebitRefundService' */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundService
-#define SOAP_TYPE_ns2__DirectDebitRefundService (140)
+#define SOAP_TYPE_ns2__DirectDebitRefundService (43)
 #endif
 
 /* ns2__DirectDebitService has binding name 'ns2__DirectDebitService' for type 'ns2:DirectDebitService' */
 #ifndef SOAP_TYPE_ns2__DirectDebitService
-#define SOAP_TYPE_ns2__DirectDebitService (139)
+#define SOAP_TYPE_ns2__DirectDebitService (42)
 #endif
 
 /* ns2__DirectDebitMandateService has binding name 'ns2__DirectDebitMandateService' for type 'ns2:DirectDebitMandateService' */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateService
-#define SOAP_TYPE_ns2__DirectDebitMandateService (138)
+#define SOAP_TYPE_ns2__DirectDebitMandateService (41)
 #endif
 
 /* ns2__BankTransferRealTimeService has binding name 'ns2__BankTransferRealTimeService' for type 'ns2:BankTransferRealTimeService' */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeService
-#define SOAP_TYPE_ns2__BankTransferRealTimeService (137)
+#define SOAP_TYPE_ns2__BankTransferRealTimeService (40)
 #endif
 
 /* ns2__BankTransferRefundService has binding name 'ns2__BankTransferRefundService' for type 'ns2:BankTransferRefundService' */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundService
-#define SOAP_TYPE_ns2__BankTransferRefundService (136)
+#define SOAP_TYPE_ns2__BankTransferRefundService (39)
 #endif
 
 /* ns2__BankTransferService has binding name 'ns2__BankTransferService' for type 'ns2:BankTransferService' */
 #ifndef SOAP_TYPE_ns2__BankTransferService
-#define SOAP_TYPE_ns2__BankTransferService (135)
+#define SOAP_TYPE_ns2__BankTransferService (38)
 #endif
 
 /* ns2__FXRatesService has binding name 'ns2__FXRatesService' for type 'ns2:FXRatesService' */
 #ifndef SOAP_TYPE_ns2__FXRatesService
-#define SOAP_TYPE_ns2__FXRatesService (134)
+#define SOAP_TYPE_ns2__FXRatesService (37)
 #endif
 
 /* ns2__ExportService has binding name 'ns2__ExportService' for type 'ns2:ExportService' */
 #ifndef SOAP_TYPE_ns2__ExportService
-#define SOAP_TYPE_ns2__ExportService (133)
+#define SOAP_TYPE_ns2__ExportService (36)
 #endif
 
 /* ns2__DAVService has binding name 'ns2__DAVService' for type 'ns2:DAVService' */
 #ifndef SOAP_TYPE_ns2__DAVService
-#define SOAP_TYPE_ns2__DAVService (132)
+#define SOAP_TYPE_ns2__DAVService (35)
 #endif
 
 /* ns2__AFSService has binding name 'ns2__AFSService' for type 'ns2:AFSService' */
 #ifndef SOAP_TYPE_ns2__AFSService
-#define SOAP_TYPE_ns2__AFSService (131)
+#define SOAP_TYPE_ns2__AFSService (34)
 #endif
 
 /* ns2__DMEService has binding name 'ns2__DMEService' for type 'ns2:DMEService' */
 #ifndef SOAP_TYPE_ns2__DMEService
-#define SOAP_TYPE_ns2__DMEService (130)
+#define SOAP_TYPE_ns2__DMEService (33)
 #endif
 
 /* ns2__TaxService has binding name 'ns2__TaxService' for type 'ns2:TaxService' */
 #ifndef SOAP_TYPE_ns2__TaxService
-#define SOAP_TYPE_ns2__TaxService (129)
+#define SOAP_TYPE_ns2__TaxService (32)
 #endif
 
 /* ns2__PayerAuthValidateService has binding name 'ns2__PayerAuthValidateService' for type 'ns2:PayerAuthValidateService' */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateService
-#define SOAP_TYPE_ns2__PayerAuthValidateService (128)
+#define SOAP_TYPE_ns2__PayerAuthValidateService (31)
 #endif
 
 /* ns2__PayerAuthEnrollService has binding name 'ns2__PayerAuthEnrollService' for type 'ns2:PayerAuthEnrollService' */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollService
-#define SOAP_TYPE_ns2__PayerAuthEnrollService (127)
+#define SOAP_TYPE_ns2__PayerAuthEnrollService (30)
 #endif
 
 /* ns2__ECAuthenticateService has binding name 'ns2__ECAuthenticateService' for type 'ns2:ECAuthenticateService' */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateService
-#define SOAP_TYPE_ns2__ECAuthenticateService (126)
+#define SOAP_TYPE_ns2__ECAuthenticateService (29)
 #endif
 
 /* ns2__ECCreditService has binding name 'ns2__ECCreditService' for type 'ns2:ECCreditService' */
 #ifndef SOAP_TYPE_ns2__ECCreditService
-#define SOAP_TYPE_ns2__ECCreditService (125)
+#define SOAP_TYPE_ns2__ECCreditService (28)
 #endif
 
 /* ns2__ECDebitService has binding name 'ns2__ECDebitService' for type 'ns2:ECDebitService' */
 #ifndef SOAP_TYPE_ns2__ECDebitService
-#define SOAP_TYPE_ns2__ECDebitService (124)
+#define SOAP_TYPE_ns2__ECDebitService (27)
 #endif
 
 /* ns2__ServiceFeeCalculateService has binding name 'ns2__ServiceFeeCalculateService' for type 'ns2:ServiceFeeCalculateService' */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateService
-#define SOAP_TYPE_ns2__ServiceFeeCalculateService (123)
+#define SOAP_TYPE_ns2__ServiceFeeCalculateService (26)
 #endif
 
 /* ns2__CCDCCService has binding name 'ns2__CCDCCService' for type 'ns2:CCDCCService' */
 #ifndef SOAP_TYPE_ns2__CCDCCService
-#define SOAP_TYPE_ns2__CCDCCService (122)
+#define SOAP_TYPE_ns2__CCDCCService (25)
 #endif
 
 /* ns2__CCAutoAuthReversalService has binding name 'ns2__CCAutoAuthReversalService' for type 'ns2:CCAutoAuthReversalService' */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalService
-#define SOAP_TYPE_ns2__CCAutoAuthReversalService (121)
+#define SOAP_TYPE_ns2__CCAutoAuthReversalService (24)
 #endif
 
 /* ns2__CCAuthReversalService has binding name 'ns2__CCAuthReversalService' for type 'ns2:CCAuthReversalService' */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalService
-#define SOAP_TYPE_ns2__CCAuthReversalService (120)
+#define SOAP_TYPE_ns2__CCAuthReversalService (23)
 #endif
 
 /* ns2__CCCreditService has binding name 'ns2__CCCreditService' for type 'ns2:CCCreditService' */
 #ifndef SOAP_TYPE_ns2__CCCreditService
-#define SOAP_TYPE_ns2__CCCreditService (119)
+#define SOAP_TYPE_ns2__CCCreditService (22)
 #endif
 
 /* ns2__CCCaptureService has binding name 'ns2__CCCaptureService' for type 'ns2:CCCaptureService' */
 #ifndef SOAP_TYPE_ns2__CCCaptureService
-#define SOAP_TYPE_ns2__CCCaptureService (118)
+#define SOAP_TYPE_ns2__CCCaptureService (21)
 #endif
 
 /* ns2__CCIncrementalAuthService has binding name 'ns2__CCIncrementalAuthService' for type 'ns2:CCIncrementalAuthService' */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthService
-#define SOAP_TYPE_ns2__CCIncrementalAuthService (117)
+#define SOAP_TYPE_ns2__CCIncrementalAuthService (20)
 #endif
 
 /* ns2__CCSaleReversalService has binding name 'ns2__CCSaleReversalService' for type 'ns2:CCSaleReversalService' */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalService
-#define SOAP_TYPE_ns2__CCSaleReversalService (116)
+#define SOAP_TYPE_ns2__CCSaleReversalService (19)
 #endif
 
 /* ns2__CCSaleCreditService has binding name 'ns2__CCSaleCreditService' for type 'ns2:CCSaleCreditService' */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditService
-#define SOAP_TYPE_ns2__CCSaleCreditService (115)
+#define SOAP_TYPE_ns2__CCSaleCreditService (18)
 #endif
 
 /* ns2__CCSaleService has binding name 'ns2__CCSaleService' for type 'ns2:CCSaleService' */
 #ifndef SOAP_TYPE_ns2__CCSaleService
-#define SOAP_TYPE_ns2__CCSaleService (114)
+#define SOAP_TYPE_ns2__CCSaleService (17)
 #endif
 
 /* ns2__VerificationService has binding name 'ns2__VerificationService' for type 'ns2:VerificationService' */
 #ifndef SOAP_TYPE_ns2__VerificationService
-#define SOAP_TYPE_ns2__VerificationService (113)
+#define SOAP_TYPE_ns2__VerificationService (16)
 #endif
 
 /* ns2__OCTService has binding name 'ns2__OCTService' for type 'ns2:OCTService' */
 #ifndef SOAP_TYPE_ns2__OCTService
-#define SOAP_TYPE_ns2__OCTService (112)
+#define SOAP_TYPE_ns2__OCTService (15)
 #endif
 
 /* ns2__CCAuthService has binding name 'ns2__CCAuthService' for type 'ns2:CCAuthService' */
 #ifndef SOAP_TYPE_ns2__CCAuthService
-#define SOAP_TYPE_ns2__CCAuthService (111)
+#define SOAP_TYPE_ns2__CCAuthService (14)
 #endif
 
 /* ns2__Item has binding name 'ns2__Item' for type 'ns2:Item' */
 #ifndef SOAP_TYPE_ns2__Item
-#define SOAP_TYPE_ns2__Item (110)
+#define SOAP_TYPE_ns2__Item (13)
 #endif
 
 /* xsd__integer has binding name 'xsd__integer' for type 'xsd:integer' */
 #ifndef SOAP_TYPE_xsd__integer
-#define SOAP_TYPE_xsd__integer (109)
+#define SOAP_TYPE_xsd__integer (12)
 #endif
 
 /* std::string has binding name 'std__string' for type 'xsd:string' */
 #ifndef SOAP_TYPE_std__string
-#define SOAP_TYPE_std__string (108)
+#define SOAP_TYPE_std__string (11)
 #endif
 
 /* struct SOAP_ENV__Fault has binding name 'SOAP_ENV__Fault' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
-#define SOAP_TYPE_SOAP_ENV__Fault (634)
+#define SOAP_TYPE_SOAP_ENV__Fault (538)
 #endif
 
 /* struct SOAP_ENV__Reason has binding name 'SOAP_ENV__Reason' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
-#define SOAP_TYPE_SOAP_ENV__Reason (633)
+#define SOAP_TYPE_SOAP_ENV__Reason (537)
 #endif
 
 /* struct SOAP_ENV__Detail has binding name 'SOAP_ENV__Detail' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
-#define SOAP_TYPE_SOAP_ENV__Detail (630)
+#define SOAP_TYPE_SOAP_ENV__Detail (534)
 #endif
 
 /* struct SOAP_ENV__Code has binding name 'SOAP_ENV__Code' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Code
-#define SOAP_TYPE_SOAP_ENV__Code (628)
+#define SOAP_TYPE_SOAP_ENV__Code (532)
 #endif
 
 /* struct SOAP_ENV__Header has binding name 'SOAP_ENV__Header' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Header
-#define SOAP_TYPE_SOAP_ENV__Header (106)
-#endif
-
-/* struct _wsse__Security has binding name '_wsse__Security' for type '' */
-#ifndef SOAP_TYPE__wsse__Security
-#define SOAP_TYPE__wsse__Security (99)
-#endif
-
-/* struct wsc__PropertiesType has binding name 'wsc__PropertiesType' for type 'wsc:PropertiesType' */
-#ifndef SOAP_TYPE_wsc__PropertiesType
-#define SOAP_TYPE_wsc__PropertiesType (92)
-#endif
-
-/* struct wsc__DerivedKeyTokenType has binding name 'wsc__DerivedKeyTokenType' for type 'wsc:DerivedKeyTokenType' */
-#ifndef SOAP_TYPE_wsc__DerivedKeyTokenType
-#define SOAP_TYPE_wsc__DerivedKeyTokenType (91)
-#endif
-
-/* struct wsc__SecurityContextTokenType has binding name 'wsc__SecurityContextTokenType' for type 'wsc:SecurityContextTokenType' */
-#ifndef SOAP_TYPE_wsc__SecurityContextTokenType
-#define SOAP_TYPE_wsc__SecurityContextTokenType (90)
-#endif
-
-/* struct _xenc__ReferenceList has binding name '_xenc__ReferenceList' for type '' */
-#ifndef SOAP_TYPE__xenc__ReferenceList
-#define SOAP_TYPE__xenc__ReferenceList (76)
-#endif
-
-/* struct xenc__EncryptionPropertyType has binding name 'xenc__EncryptionPropertyType' for type 'xenc:EncryptionPropertyType' */
-#ifndef SOAP_TYPE_xenc__EncryptionPropertyType
-#define SOAP_TYPE_xenc__EncryptionPropertyType (75)
-#endif
-
-/* struct xenc__EncryptionPropertiesType has binding name 'xenc__EncryptionPropertiesType' for type 'xenc:EncryptionPropertiesType' */
-#ifndef SOAP_TYPE_xenc__EncryptionPropertiesType
-#define SOAP_TYPE_xenc__EncryptionPropertiesType (74)
-#endif
-
-/* struct xenc__ReferenceType has binding name 'xenc__ReferenceType' for type 'xenc:ReferenceType' */
-#ifndef SOAP_TYPE_xenc__ReferenceType
-#define SOAP_TYPE_xenc__ReferenceType (73)
-#endif
-
-/* struct xenc__AgreementMethodType has binding name 'xenc__AgreementMethodType' for type 'xenc:AgreementMethodType' */
-#ifndef SOAP_TYPE_xenc__AgreementMethodType
-#define SOAP_TYPE_xenc__AgreementMethodType (72)
-#endif
-
-/* struct xenc__EncryptedKeyType has binding name 'xenc__EncryptedKeyType' for type 'xenc:EncryptedKeyType' */
-#ifndef SOAP_TYPE_xenc__EncryptedKeyType
-#define SOAP_TYPE_xenc__EncryptedKeyType (71)
-#endif
-
-/* struct xenc__EncryptedDataType has binding name 'xenc__EncryptedDataType' for type 'xenc:EncryptedDataType' */
-#ifndef SOAP_TYPE_xenc__EncryptedDataType
-#define SOAP_TYPE_xenc__EncryptedDataType (70)
-#endif
-
-/* struct xenc__TransformsType has binding name 'xenc__TransformsType' for type 'xenc:TransformsType' */
-#ifndef SOAP_TYPE_xenc__TransformsType
-#define SOAP_TYPE_xenc__TransformsType (69)
-#endif
-
-/* struct xenc__CipherReferenceType has binding name 'xenc__CipherReferenceType' for type 'xenc:CipherReferenceType' */
-#ifndef SOAP_TYPE_xenc__CipherReferenceType
-#define SOAP_TYPE_xenc__CipherReferenceType (68)
-#endif
-
-/* struct xenc__CipherDataType has binding name 'xenc__CipherDataType' for type 'xenc:CipherDataType' */
-#ifndef SOAP_TYPE_xenc__CipherDataType
-#define SOAP_TYPE_xenc__CipherDataType (67)
-#endif
-
-/* struct xenc__EncryptionMethodType has binding name 'xenc__EncryptionMethodType' for type 'xenc:EncryptionMethodType' */
-#ifndef SOAP_TYPE_xenc__EncryptionMethodType
-#define SOAP_TYPE_xenc__EncryptionMethodType (66)
-#endif
-
-/* struct xenc__EncryptedType has binding name 'xenc__EncryptedType' for type 'xenc:EncryptedType' */
-#ifndef SOAP_TYPE_xenc__EncryptedType
-#define SOAP_TYPE_xenc__EncryptedType (65)
-#endif
-
-/* struct ds__RSAKeyValueType has binding name 'ds__RSAKeyValueType' for type 'ds:RSAKeyValueType' */
-#ifndef SOAP_TYPE_ds__RSAKeyValueType
-#define SOAP_TYPE_ds__RSAKeyValueType (53)
-#endif
-
-/* struct ds__DSAKeyValueType has binding name 'ds__DSAKeyValueType' for type 'ds:DSAKeyValueType' */
-#ifndef SOAP_TYPE_ds__DSAKeyValueType
-#define SOAP_TYPE_ds__DSAKeyValueType (52)
-#endif
-
-/* struct ds__X509IssuerSerialType has binding name 'ds__X509IssuerSerialType' for type 'ds:X509IssuerSerialType' */
-#ifndef SOAP_TYPE_ds__X509IssuerSerialType
-#define SOAP_TYPE_ds__X509IssuerSerialType (51)
-#endif
-
-/* _ds__KeyInfo has binding name '_ds__KeyInfo' for type '' */
-#ifndef SOAP_TYPE__ds__KeyInfo
-#define SOAP_TYPE__ds__KeyInfo (50)
-#endif
-
-/* struct ds__RetrievalMethodType has binding name 'ds__RetrievalMethodType' for type 'ds:RetrievalMethodType' */
-#ifndef SOAP_TYPE_ds__RetrievalMethodType
-#define SOAP_TYPE_ds__RetrievalMethodType (47)
-#endif
-
-/* struct ds__KeyValueType has binding name 'ds__KeyValueType' for type 'ds:KeyValueType' */
-#ifndef SOAP_TYPE_ds__KeyValueType
-#define SOAP_TYPE_ds__KeyValueType (45)
-#endif
-
-/* struct ds__DigestMethodType has binding name 'ds__DigestMethodType' for type 'ds:DigestMethodType' */
-#ifndef SOAP_TYPE_ds__DigestMethodType
-#define SOAP_TYPE_ds__DigestMethodType (44)
-#endif
-
-/* _ds__Transform has binding name '_ds__Transform' for type '' */
-#ifndef SOAP_TYPE__ds__Transform
-#define SOAP_TYPE__ds__Transform (43)
-#endif
-
-/* struct ds__TransformType has binding name 'ds__TransformType' for type 'ds:TransformType' */
-#ifndef SOAP_TYPE_ds__TransformType
-#define SOAP_TYPE_ds__TransformType (41)
-#endif
-
-/* struct _c14n__InclusiveNamespaces has binding name '_c14n__InclusiveNamespaces' for type '' */
-#ifndef SOAP_TYPE__c14n__InclusiveNamespaces
-#define SOAP_TYPE__c14n__InclusiveNamespaces (40)
-#endif
-
-/* struct ds__TransformsType has binding name 'ds__TransformsType' for type 'ds:TransformsType' */
-#ifndef SOAP_TYPE_ds__TransformsType
-#define SOAP_TYPE_ds__TransformsType (39)
-#endif
-
-/* struct ds__ReferenceType has binding name 'ds__ReferenceType' for type 'ds:ReferenceType' */
-#ifndef SOAP_TYPE_ds__ReferenceType
-#define SOAP_TYPE_ds__ReferenceType (38)
-#endif
-
-/* struct ds__SignatureMethodType has binding name 'ds__SignatureMethodType' for type 'ds:SignatureMethodType' */
-#ifndef SOAP_TYPE_ds__SignatureMethodType
-#define SOAP_TYPE_ds__SignatureMethodType (37)
-#endif
-
-/* struct ds__CanonicalizationMethodType has binding name 'ds__CanonicalizationMethodType' for type 'ds:CanonicalizationMethodType' */
-#ifndef SOAP_TYPE_ds__CanonicalizationMethodType
-#define SOAP_TYPE_ds__CanonicalizationMethodType (36)
-#endif
-
-/* _ds__Signature has binding name '_ds__Signature' for type '' */
-#ifndef SOAP_TYPE__ds__Signature
-#define SOAP_TYPE__ds__Signature (35)
-#endif
-
-/* struct ds__KeyInfoType has binding name 'ds__KeyInfoType' for type 'ds:KeyInfoType' */
-#ifndef SOAP_TYPE_ds__KeyInfoType
-#define SOAP_TYPE_ds__KeyInfoType (33)
-#endif
-
-/* struct ds__SignedInfoType has binding name 'ds__SignedInfoType' for type 'ds:SignedInfoType' */
-#ifndef SOAP_TYPE_ds__SignedInfoType
-#define SOAP_TYPE_ds__SignedInfoType (31)
-#endif
-
-/* struct ds__SignatureType has binding name 'ds__SignatureType' for type 'ds:SignatureType' */
-#ifndef SOAP_TYPE_ds__SignatureType
-#define SOAP_TYPE_ds__SignatureType (30)
-#endif
-
-/* struct ds__X509DataType has binding name 'ds__X509DataType' for type 'ds:X509DataType' */
-#ifndef SOAP_TYPE_ds__X509DataType
-#define SOAP_TYPE_ds__X509DataType (27)
-#endif
-
-/* struct _wsse__SecurityTokenReference has binding name '_wsse__SecurityTokenReference' for type '' */
-#ifndef SOAP_TYPE__wsse__SecurityTokenReference
-#define SOAP_TYPE__wsse__SecurityTokenReference (23)
-#endif
-
-/* struct _wsse__KeyIdentifier has binding name '_wsse__KeyIdentifier' for type '' */
-#ifndef SOAP_TYPE__wsse__KeyIdentifier
-#define SOAP_TYPE__wsse__KeyIdentifier (22)
-#endif
-
-/* struct _wsse__Embedded has binding name '_wsse__Embedded' for type '' */
-#ifndef SOAP_TYPE__wsse__Embedded
-#define SOAP_TYPE__wsse__Embedded (21)
-#endif
-
-/* struct _wsse__Reference has binding name '_wsse__Reference' for type '' */
-#ifndef SOAP_TYPE__wsse__Reference
-#define SOAP_TYPE__wsse__Reference (20)
-#endif
-
-/* struct _wsse__BinarySecurityToken has binding name '_wsse__BinarySecurityToken' for type '' */
-#ifndef SOAP_TYPE__wsse__BinarySecurityToken
-#define SOAP_TYPE__wsse__BinarySecurityToken (19)
-#endif
-
-/* struct _wsse__Password has binding name '_wsse__Password' for type '' */
-#ifndef SOAP_TYPE__wsse__Password
-#define SOAP_TYPE__wsse__Password (16)
-#endif
-
-/* struct _wsse__UsernameToken has binding name '_wsse__UsernameToken' for type '' */
-#ifndef SOAP_TYPE__wsse__UsernameToken
-#define SOAP_TYPE__wsse__UsernameToken (15)
-#endif
-
-/* struct wsse__EncodedString has binding name 'wsse__EncodedString' for type 'wsse:EncodedString' */
-#ifndef SOAP_TYPE_wsse__EncodedString
-#define SOAP_TYPE_wsse__EncodedString (13)
-#endif
-
-/* struct _wsu__Timestamp has binding name '_wsu__Timestamp' for type '' */
-#ifndef SOAP_TYPE__wsu__Timestamp
-#define SOAP_TYPE__wsu__Timestamp (12)
+#define SOAP_TYPE_SOAP_ENV__Header (531)
 #endif
 
 /* struct SOAP_ENV__Reason * has binding name 'PointerToSOAP_ENV__Reason' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Reason
-#define SOAP_TYPE_PointerToSOAP_ENV__Reason (636)
+#define SOAP_TYPE_PointerToSOAP_ENV__Reason (540)
 #endif
 
 /* struct SOAP_ENV__Detail * has binding name 'PointerToSOAP_ENV__Detail' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Detail
-#define SOAP_TYPE_PointerToSOAP_ENV__Detail (635)
+#define SOAP_TYPE_PointerToSOAP_ENV__Detail (539)
 #endif
 
 /* struct SOAP_ENV__Code * has binding name 'PointerToSOAP_ENV__Code' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Code
-#define SOAP_TYPE_PointerToSOAP_ENV__Code (629)
+#define SOAP_TYPE_PointerToSOAP_ENV__Code (533)
 #endif
 
 /* ns2__VCCustomData * has binding name 'PointerTons2__VCCustomData' for type 'ns2:VCCustomData' */
 #ifndef SOAP_TYPE_PointerTons2__VCCustomData
-#define SOAP_TYPE_PointerTons2__VCCustomData (623)
+#define SOAP_TYPE_PointerTons2__VCCustomData (526)
 #endif
 
 /* ns2__VCCardArt * has binding name 'PointerTons2__VCCardArt' for type 'ns2:VCCardArt' */
 #ifndef SOAP_TYPE_PointerTons2__VCCardArt
-#define SOAP_TYPE_PointerTons2__VCCardArt (622)
+#define SOAP_TYPE_PointerTons2__VCCardArt (525)
 #endif
 
 /* ns2__PaypalTransaction * has binding name 'PointerTons2__PaypalTransaction' for type 'ns2:PaypalTransaction' */
 #ifndef SOAP_TYPE_PointerTons2__PaypalTransaction
-#define SOAP_TYPE_PointerTons2__PaypalTransaction (620)
+#define SOAP_TYPE_PointerTons2__PaypalTransaction (523)
 #endif
 
 /* ns2__MDDField * has binding name 'PointerTons2__MDDField' for type 'ns2:MDDField' */
 #ifndef SOAP_TYPE_PointerTons2__MDDField
-#define SOAP_TYPE_PointerTons2__MDDField (618)
+#define SOAP_TYPE_PointerTons2__MDDField (521)
 #endif
 
 /* ns2__Service * has binding name 'PointerTons2__Service' for type 'ns2:Service' */
 #ifndef SOAP_TYPE_PointerTons2__Service
-#define SOAP_TYPE_PointerTons2__Service (616)
+#define SOAP_TYPE_PointerTons2__Service (519)
 #endif
 
 /* ns2__Leg * has binding name 'PointerTons2__Leg' for type 'ns2:Leg' */
 #ifndef SOAP_TYPE_PointerTons2__Leg
-#define SOAP_TYPE_PointerTons2__Leg (614)
+#define SOAP_TYPE_PointerTons2__Leg (517)
 #endif
 
 /* ns2__ReplyReserved * has binding name 'PointerTons2__ReplyReserved' for type 'ns2:ReplyReserved' */
 #ifndef SOAP_TYPE_PointerTons2__ReplyReserved
-#define SOAP_TYPE_PointerTons2__ReplyReserved (613)
+#define SOAP_TYPE_PointerTons2__ReplyReserved (516)
 #endif
 
 /* ns2__Token * has binding name 'PointerTons2__Token' for type 'ns2:Token' */
 #ifndef SOAP_TYPE_PointerTons2__Token
-#define SOAP_TYPE_PointerTons2__Token (612)
+#define SOAP_TYPE_PointerTons2__Token (515)
 #endif
 
 /* ns2__BinLookupReply * has binding name 'PointerTons2__BinLookupReply' for type 'ns2:BinLookupReply' */
 #ifndef SOAP_TYPE_PointerTons2__BinLookupReply
-#define SOAP_TYPE_PointerTons2__BinLookupReply (611)
+#define SOAP_TYPE_PointerTons2__BinLookupReply (514)
 #endif
 
 /* ns2__DecryptVisaCheckoutDataReply * has binding name 'PointerTons2__DecryptVisaCheckoutDataReply' for type 'ns2:DecryptVisaCheckoutDataReply' */
 #ifndef SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataReply
-#define SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataReply (610)
+#define SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataReply (513)
 #endif
 
 /* ns2__VCReply * has binding name 'PointerTons2__VCReply' for type 'ns2:VCReply' */
 #ifndef SOAP_TYPE_PointerTons2__VCReply
-#define SOAP_TYPE_PointerTons2__VCReply (609)
+#define SOAP_TYPE_PointerTons2__VCReply (512)
 #endif
 
 /* ns2__HostedDataRetrieveReply * has binding name 'PointerTons2__HostedDataRetrieveReply' for type 'ns2:HostedDataRetrieveReply' */
 #ifndef SOAP_TYPE_PointerTons2__HostedDataRetrieveReply
-#define SOAP_TYPE_PointerTons2__HostedDataRetrieveReply (608)
+#define SOAP_TYPE_PointerTons2__HostedDataRetrieveReply (511)
 #endif
 
 /* ns2__HostedDataCreateReply * has binding name 'PointerTons2__HostedDataCreateReply' for type 'ns2:HostedDataCreateReply' */
 #ifndef SOAP_TYPE_PointerTons2__HostedDataCreateReply
-#define SOAP_TYPE_PointerTons2__HostedDataCreateReply (607)
+#define SOAP_TYPE_PointerTons2__HostedDataCreateReply (510)
 #endif
 
 /* ns2__OriginalTransaction * has binding name 'PointerTons2__OriginalTransaction' for type 'ns2:OriginalTransaction' */
 #ifndef SOAP_TYPE_PointerTons2__OriginalTransaction
-#define SOAP_TYPE_PointerTons2__OriginalTransaction (606)
+#define SOAP_TYPE_PointerTons2__OriginalTransaction (509)
 #endif
 
 /* ns2__EmvReply * has binding name 'PointerTons2__EmvReply' for type 'ns2:EmvReply' */
 #ifndef SOAP_TYPE_PointerTons2__EmvReply
-#define SOAP_TYPE_PointerTons2__EmvReply (605)
+#define SOAP_TYPE_PointerTons2__EmvReply (508)
 #endif
 
 /* ns2__PayPalTransactionSearchReply * has binding name 'PointerTons2__PayPalTransactionSearchReply' for type 'ns2:PayPalTransactionSearchReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalTransactionSearchReply
-#define SOAP_TYPE_PointerTons2__PayPalTransactionSearchReply (604)
+#define SOAP_TYPE_PointerTons2__PayPalTransactionSearchReply (507)
 #endif
 
 /* ns2__PayPalGetTxnDetailsReply * has binding name 'PointerTons2__PayPalGetTxnDetailsReply' for type 'ns2:PayPalGetTxnDetailsReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsReply
-#define SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsReply (603)
+#define SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsReply (506)
 #endif
 
 /* ns2__PromotionGroupReply * has binding name 'PointerTons2__PromotionGroupReply' for type 'ns2:PromotionGroupReply' */
 #ifndef SOAP_TYPE_PointerTons2__PromotionGroupReply
-#define SOAP_TYPE_PointerTons2__PromotionGroupReply (601)
+#define SOAP_TYPE_PointerTons2__PromotionGroupReply (504)
 #endif
 
 /* ns2__Promotion * has binding name 'PointerTons2__Promotion' for type 'ns2:Promotion' */
 #ifndef SOAP_TYPE_PointerTons2__Promotion
-#define SOAP_TYPE_PointerTons2__Promotion (600)
+#define SOAP_TYPE_PointerTons2__Promotion (503)
 #endif
 
 /* ns2__APConfirmPurchaseReply * has binding name 'PointerTons2__APConfirmPurchaseReply' for type 'ns2:APConfirmPurchaseReply' */
 #ifndef SOAP_TYPE_PointerTons2__APConfirmPurchaseReply
-#define SOAP_TYPE_PointerTons2__APConfirmPurchaseReply (599)
+#define SOAP_TYPE_PointerTons2__APConfirmPurchaseReply (502)
 #endif
 
 /* ns2__APTransactionDetailsReply * has binding name 'PointerTons2__APTransactionDetailsReply' for type 'ns2:APTransactionDetailsReply' */
 #ifndef SOAP_TYPE_PointerTons2__APTransactionDetailsReply
-#define SOAP_TYPE_PointerTons2__APTransactionDetailsReply (598)
+#define SOAP_TYPE_PointerTons2__APTransactionDetailsReply (501)
 #endif
 
 /* ns2__APCheckOutDetailsReply * has binding name 'PointerTons2__APCheckOutDetailsReply' for type 'ns2:APCheckOutDetailsReply' */
 #ifndef SOAP_TYPE_PointerTons2__APCheckOutDetailsReply
-#define SOAP_TYPE_PointerTons2__APCheckOutDetailsReply (597)
+#define SOAP_TYPE_PointerTons2__APCheckOutDetailsReply (500)
 #endif
 
 /* ns2__APSaleReply * has binding name 'PointerTons2__APSaleReply' for type 'ns2:APSaleReply' */
 #ifndef SOAP_TYPE_PointerTons2__APSaleReply
-#define SOAP_TYPE_PointerTons2__APSaleReply (596)
+#define SOAP_TYPE_PointerTons2__APSaleReply (499)
 #endif
 
 /* ns2__APRefundReply * has binding name 'PointerTons2__APRefundReply' for type 'ns2:APRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__APRefundReply
-#define SOAP_TYPE_PointerTons2__APRefundReply (595)
+#define SOAP_TYPE_PointerTons2__APRefundReply (498)
 #endif
 
 /* ns2__APOptionsReply * has binding name 'PointerTons2__APOptionsReply' for type 'ns2:APOptionsReply' */
 #ifndef SOAP_TYPE_PointerTons2__APOptionsReply
-#define SOAP_TYPE_PointerTons2__APOptionsReply (594)
+#define SOAP_TYPE_PointerTons2__APOptionsReply (497)
 #endif
 
 /* ns2__APCaptureReply * has binding name 'PointerTons2__APCaptureReply' for type 'ns2:APCaptureReply' */
 #ifndef SOAP_TYPE_PointerTons2__APCaptureReply
-#define SOAP_TYPE_PointerTons2__APCaptureReply (593)
+#define SOAP_TYPE_PointerTons2__APCaptureReply (496)
 #endif
 
 /* ns2__APAuthReversalReply * has binding name 'PointerTons2__APAuthReversalReply' for type 'ns2:APAuthReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__APAuthReversalReply
-#define SOAP_TYPE_PointerTons2__APAuthReversalReply (592)
+#define SOAP_TYPE_PointerTons2__APAuthReversalReply (495)
 #endif
 
 /* ns2__APAuthReply * has binding name 'PointerTons2__APAuthReply' for type 'ns2:APAuthReply' */
 #ifndef SOAP_TYPE_PointerTons2__APAuthReply
-#define SOAP_TYPE_PointerTons2__APAuthReply (591)
+#define SOAP_TYPE_PointerTons2__APAuthReply (494)
 #endif
 
 /* ns2__APReply * has binding name 'PointerTons2__APReply' for type 'ns2:APReply' */
 #ifndef SOAP_TYPE_PointerTons2__APReply
-#define SOAP_TYPE_PointerTons2__APReply (590)
+#define SOAP_TYPE_PointerTons2__APReply (493)
 #endif
 
 /* ns2__APCheckStatusReply * has binding name 'PointerTons2__APCheckStatusReply' for type 'ns2:APCheckStatusReply' */
 #ifndef SOAP_TYPE_PointerTons2__APCheckStatusReply
-#define SOAP_TYPE_PointerTons2__APCheckStatusReply (589)
+#define SOAP_TYPE_PointerTons2__APCheckStatusReply (492)
 #endif
 
 /* ns2__APInitiateReply * has binding name 'PointerTons2__APInitiateReply' for type 'ns2:APInitiateReply' */
 #ifndef SOAP_TYPE_PointerTons2__APInitiateReply
-#define SOAP_TYPE_PointerTons2__APInitiateReply (588)
+#define SOAP_TYPE_PointerTons2__APInitiateReply (491)
 #endif
 
 /* ns2__PinDebitReversalReply * has binding name 'PointerTons2__PinDebitReversalReply' for type 'ns2:PinDebitReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitReversalReply
-#define SOAP_TYPE_PointerTons2__PinDebitReversalReply (587)
+#define SOAP_TYPE_PointerTons2__PinDebitReversalReply (490)
 #endif
 
 /* ns2__PinDebitCreditReply * has binding name 'PointerTons2__PinDebitCreditReply' for type 'ns2:PinDebitCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitCreditReply
-#define SOAP_TYPE_PointerTons2__PinDebitCreditReply (586)
+#define SOAP_TYPE_PointerTons2__PinDebitCreditReply (489)
 #endif
 
 /* ns2__PinDebitPurchaseReply * has binding name 'PointerTons2__PinDebitPurchaseReply' for type 'ns2:PinDebitPurchaseReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitPurchaseReply
-#define SOAP_TYPE_PointerTons2__PinDebitPurchaseReply (585)
+#define SOAP_TYPE_PointerTons2__PinDebitPurchaseReply (488)
 #endif
 
 /* ns2__BoletoPaymentReply * has binding name 'PointerTons2__BoletoPaymentReply' for type 'ns2:BoletoPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__BoletoPaymentReply
-#define SOAP_TYPE_PointerTons2__BoletoPaymentReply (584)
+#define SOAP_TYPE_PointerTons2__BoletoPaymentReply (487)
 #endif
 
 /* ns2__ChinaRefundReply * has binding name 'PointerTons2__ChinaRefundReply' for type 'ns2:ChinaRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__ChinaRefundReply
-#define SOAP_TYPE_PointerTons2__ChinaRefundReply (583)
+#define SOAP_TYPE_PointerTons2__ChinaRefundReply (486)
 #endif
 
 /* ns2__ChinaPaymentReply * has binding name 'PointerTons2__ChinaPaymentReply' for type 'ns2:ChinaPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__ChinaPaymentReply
-#define SOAP_TYPE_PointerTons2__ChinaPaymentReply (582)
+#define SOAP_TYPE_PointerTons2__ChinaPaymentReply (485)
 #endif
 
 /* ns2__PayPalDoRefTransactionReply * has binding name 'PointerTons2__PayPalDoRefTransactionReply' for type 'ns2:PayPalDoRefTransactionReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalDoRefTransactionReply
-#define SOAP_TYPE_PointerTons2__PayPalDoRefTransactionReply (581)
+#define SOAP_TYPE_PointerTons2__PayPalDoRefTransactionReply (484)
 #endif
 
 /* ns2__PayPalCreateAgreementReply * has binding name 'PointerTons2__PayPalCreateAgreementReply' for type 'ns2:PayPalCreateAgreementReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalCreateAgreementReply
-#define SOAP_TYPE_PointerTons2__PayPalCreateAgreementReply (580)
+#define SOAP_TYPE_PointerTons2__PayPalCreateAgreementReply (483)
 #endif
 
 /* ns2__PayPalUpdateAgreementReply * has binding name 'PointerTons2__PayPalUpdateAgreementReply' for type 'ns2:PayPalUpdateAgreementReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalUpdateAgreementReply
-#define SOAP_TYPE_PointerTons2__PayPalUpdateAgreementReply (579)
+#define SOAP_TYPE_PointerTons2__PayPalUpdateAgreementReply (482)
 #endif
 
 /* ns2__PayPalEcOrderSetupReply * has binding name 'PointerTons2__PayPalEcOrderSetupReply' for type 'ns2:PayPalEcOrderSetupReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcOrderSetupReply
-#define SOAP_TYPE_PointerTons2__PayPalEcOrderSetupReply (578)
+#define SOAP_TYPE_PointerTons2__PayPalEcOrderSetupReply (481)
 #endif
 
 /* ns2__PayPalAuthorizationReply * has binding name 'PointerTons2__PayPalAuthorizationReply' for type 'ns2:PayPalAuthorizationReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalAuthorizationReply
-#define SOAP_TYPE_PointerTons2__PayPalAuthorizationReply (577)
+#define SOAP_TYPE_PointerTons2__PayPalAuthorizationReply (480)
 #endif
 
 /* ns2__PayPalEcSetReply * has binding name 'PointerTons2__PayPalEcSetReply' for type 'ns2:PayPalEcSetReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcSetReply
-#define SOAP_TYPE_PointerTons2__PayPalEcSetReply (576)
+#define SOAP_TYPE_PointerTons2__PayPalEcSetReply (479)
 #endif
 
 /* ns2__PayPalEcGetDetailsReply * has binding name 'PointerTons2__PayPalEcGetDetailsReply' for type 'ns2:PayPalEcGetDetailsReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcGetDetailsReply
-#define SOAP_TYPE_PointerTons2__PayPalEcGetDetailsReply (575)
+#define SOAP_TYPE_PointerTons2__PayPalEcGetDetailsReply (478)
 #endif
 
 /* ns2__PayPalEcDoPaymentReply * has binding name 'PointerTons2__PayPalEcDoPaymentReply' for type 'ns2:PayPalEcDoPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcDoPaymentReply
-#define SOAP_TYPE_PointerTons2__PayPalEcDoPaymentReply (574)
+#define SOAP_TYPE_PointerTons2__PayPalEcDoPaymentReply (477)
 #endif
 
 /* ns2__PayPalDoCaptureReply * has binding name 'PointerTons2__PayPalDoCaptureReply' for type 'ns2:PayPalDoCaptureReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalDoCaptureReply
-#define SOAP_TYPE_PointerTons2__PayPalDoCaptureReply (573)
+#define SOAP_TYPE_PointerTons2__PayPalDoCaptureReply (476)
 #endif
 
 /* ns2__PayPalAuthReversalReply * has binding name 'PointerTons2__PayPalAuthReversalReply' for type 'ns2:PayPalAuthReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalAuthReversalReply
-#define SOAP_TYPE_PointerTons2__PayPalAuthReversalReply (572)
+#define SOAP_TYPE_PointerTons2__PayPalAuthReversalReply (475)
 #endif
 
 /* ns2__PayPalRefundReply * has binding name 'PointerTons2__PayPalRefundReply' for type 'ns2:PayPalRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalRefundReply
-#define SOAP_TYPE_PointerTons2__PayPalRefundReply (571)
+#define SOAP_TYPE_PointerTons2__PayPalRefundReply (474)
 #endif
 
 /* ns2__DecisionReply * has binding name 'PointerTons2__DecisionReply' for type 'ns2:DecisionReply' */
 #ifndef SOAP_TYPE_PointerTons2__DecisionReply
-#define SOAP_TYPE_PointerTons2__DecisionReply (570)
+#define SOAP_TYPE_PointerTons2__DecisionReply (473)
 #endif
 
 /* ns2__CaseManagementActionReply * has binding name 'PointerTons2__CaseManagementActionReply' for type 'ns2:CaseManagementActionReply' */
 #ifndef SOAP_TYPE_PointerTons2__CaseManagementActionReply
-#define SOAP_TYPE_PointerTons2__CaseManagementActionReply (569)
+#define SOAP_TYPE_PointerTons2__CaseManagementActionReply (472)
 #endif
 
 /* ns2__FraudUpdateReply * has binding name 'PointerTons2__FraudUpdateReply' for type 'ns2:FraudUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__FraudUpdateReply
-#define SOAP_TYPE_PointerTons2__FraudUpdateReply (568)
+#define SOAP_TYPE_PointerTons2__FraudUpdateReply (471)
 #endif
 
 /* ns2__RiskUpdateReply * has binding name 'PointerTons2__RiskUpdateReply' for type 'ns2:RiskUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__RiskUpdateReply
-#define SOAP_TYPE_PointerTons2__RiskUpdateReply (567)
+#define SOAP_TYPE_PointerTons2__RiskUpdateReply (470)
 #endif
 
 /* ns2__PayPalPreapprovedUpdateReply * has binding name 'PointerTons2__PayPalPreapprovedUpdateReply' for type 'ns2:PayPalPreapprovedUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateReply
-#define SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateReply (566)
+#define SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateReply (469)
 #endif
 
 /* ns2__PayPalPreapprovedPaymentReply * has binding name 'PointerTons2__PayPalPreapprovedPaymentReply' for type 'ns2:PayPalPreapprovedPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentReply
-#define SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentReply (565)
+#define SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentReply (468)
 #endif
 
 /* ns2__PayPalButtonCreateReply * has binding name 'PointerTons2__PayPalButtonCreateReply' for type 'ns2:PayPalButtonCreateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalButtonCreateReply
-#define SOAP_TYPE_PointerTons2__PayPalButtonCreateReply (564)
+#define SOAP_TYPE_PointerTons2__PayPalButtonCreateReply (467)
 #endif
 
 /* ns2__PinlessDebitReversalReply * has binding name 'PointerTons2__PinlessDebitReversalReply' for type 'ns2:PinlessDebitReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitReversalReply
-#define SOAP_TYPE_PointerTons2__PinlessDebitReversalReply (563)
+#define SOAP_TYPE_PointerTons2__PinlessDebitReversalReply (466)
 #endif
 
 /* ns2__PinlessDebitValidateReply * has binding name 'PointerTons2__PinlessDebitValidateReply' for type 'ns2:PinlessDebitValidateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitValidateReply
-#define SOAP_TYPE_PointerTons2__PinlessDebitValidateReply (562)
+#define SOAP_TYPE_PointerTons2__PinlessDebitValidateReply (465)
 #endif
 
 /* ns2__PinlessDebitReply * has binding name 'PointerTons2__PinlessDebitReply' for type 'ns2:PinlessDebitReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitReply
-#define SOAP_TYPE_PointerTons2__PinlessDebitReply (561)
+#define SOAP_TYPE_PointerTons2__PinlessDebitReply (464)
 #endif
 
 /* ns2__VoidReply * has binding name 'PointerTons2__VoidReply' for type 'ns2:VoidReply' */
 #ifndef SOAP_TYPE_PointerTons2__VoidReply
-#define SOAP_TYPE_PointerTons2__VoidReply (560)
+#define SOAP_TYPE_PointerTons2__VoidReply (463)
 #endif
 
 /* ns2__PayPalCreditReply * has binding name 'PointerTons2__PayPalCreditReply' for type 'ns2:PayPalCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalCreditReply
-#define SOAP_TYPE_PointerTons2__PayPalCreditReply (559)
+#define SOAP_TYPE_PointerTons2__PayPalCreditReply (462)
 #endif
 
 /* ns2__PayPalPaymentReply * has binding name 'PointerTons2__PayPalPaymentReply' for type 'ns2:PayPalPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPaymentReply
-#define SOAP_TYPE_PointerTons2__PayPalPaymentReply (558)
+#define SOAP_TYPE_PointerTons2__PayPalPaymentReply (461)
 #endif
 
 /* ns2__PaySubscriptionDeleteReply * has binding name 'PointerTons2__PaySubscriptionDeleteReply' for type 'ns2:PaySubscriptionDeleteReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionDeleteReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionDeleteReply (557)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionDeleteReply (460)
 #endif
 
 /* ns2__PaySubscriptionRetrieveReply * has binding name 'PointerTons2__PaySubscriptionRetrieveReply' for type 'ns2:PaySubscriptionRetrieveReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveReply (556)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveReply (459)
 #endif
 
 /* ns2__PaySubscriptionEventUpdateReply * has binding name 'PointerTons2__PaySubscriptionEventUpdateReply' for type 'ns2:PaySubscriptionEventUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateReply (555)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateReply (458)
 #endif
 
 /* ns2__PaySubscriptionUpdateReply * has binding name 'PointerTons2__PaySubscriptionUpdateReply' for type 'ns2:PaySubscriptionUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionUpdateReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionUpdateReply (554)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionUpdateReply (457)
 #endif
 
 /* ns2__PaySubscriptionCreateReply * has binding name 'PointerTons2__PaySubscriptionCreateReply' for type 'ns2:PaySubscriptionCreateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionCreateReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionCreateReply (553)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionCreateReply (456)
 #endif
 
 /* ns2__DirectDebitRefundReply * has binding name 'PointerTons2__DirectDebitRefundReply' for type 'ns2:DirectDebitRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitRefundReply
-#define SOAP_TYPE_PointerTons2__DirectDebitRefundReply (552)
+#define SOAP_TYPE_PointerTons2__DirectDebitRefundReply (455)
 #endif
 
 /* ns2__DirectDebitValidateReply * has binding name 'PointerTons2__DirectDebitValidateReply' for type 'ns2:DirectDebitValidateReply' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitValidateReply
-#define SOAP_TYPE_PointerTons2__DirectDebitValidateReply (551)
+#define SOAP_TYPE_PointerTons2__DirectDebitValidateReply (454)
 #endif
 
 /* ns2__DirectDebitReply * has binding name 'PointerTons2__DirectDebitReply' for type 'ns2:DirectDebitReply' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitReply
-#define SOAP_TYPE_PointerTons2__DirectDebitReply (550)
+#define SOAP_TYPE_PointerTons2__DirectDebitReply (453)
 #endif
 
 /* ns2__DirectDebitMandateReply * has binding name 'PointerTons2__DirectDebitMandateReply' for type 'ns2:DirectDebitMandateReply' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitMandateReply
-#define SOAP_TYPE_PointerTons2__DirectDebitMandateReply (549)
+#define SOAP_TYPE_PointerTons2__DirectDebitMandateReply (452)
 #endif
 
 /* ns2__BankTransferRealTimeReply * has binding name 'PointerTons2__BankTransferRealTimeReply' for type 'ns2:BankTransferRealTimeReply' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferRealTimeReply
-#define SOAP_TYPE_PointerTons2__BankTransferRealTimeReply (548)
+#define SOAP_TYPE_PointerTons2__BankTransferRealTimeReply (451)
 #endif
 
 /* ns2__BankTransferRefundReply * has binding name 'PointerTons2__BankTransferRefundReply' for type 'ns2:BankTransferRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferRefundReply
-#define SOAP_TYPE_PointerTons2__BankTransferRefundReply (547)
+#define SOAP_TYPE_PointerTons2__BankTransferRefundReply (450)
 #endif
 
 /* ns2__BankTransferReply * has binding name 'PointerTons2__BankTransferReply' for type 'ns2:BankTransferReply' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferReply
-#define SOAP_TYPE_PointerTons2__BankTransferReply (546)
+#define SOAP_TYPE_PointerTons2__BankTransferReply (449)
 #endif
 
 /* ns2__FXRatesReply * has binding name 'PointerTons2__FXRatesReply' for type 'ns2:FXRatesReply' */
 #ifndef SOAP_TYPE_PointerTons2__FXRatesReply
-#define SOAP_TYPE_PointerTons2__FXRatesReply (545)
+#define SOAP_TYPE_PointerTons2__FXRatesReply (448)
 #endif
 
 /* ns2__ExportReply * has binding name 'PointerTons2__ExportReply' for type 'ns2:ExportReply' */
 #ifndef SOAP_TYPE_PointerTons2__ExportReply
-#define SOAP_TYPE_PointerTons2__ExportReply (544)
+#define SOAP_TYPE_PointerTons2__ExportReply (447)
 #endif
 
 /* ns2__DAVReply * has binding name 'PointerTons2__DAVReply' for type 'ns2:DAVReply' */
 #ifndef SOAP_TYPE_PointerTons2__DAVReply
-#define SOAP_TYPE_PointerTons2__DAVReply (543)
+#define SOAP_TYPE_PointerTons2__DAVReply (446)
 #endif
 
 /* ns2__AFSReply * has binding name 'PointerTons2__AFSReply' for type 'ns2:AFSReply' */
 #ifndef SOAP_TYPE_PointerTons2__AFSReply
-#define SOAP_TYPE_PointerTons2__AFSReply (542)
+#define SOAP_TYPE_PointerTons2__AFSReply (445)
 #endif
 
 /* ns2__DMEReply * has binding name 'PointerTons2__DMEReply' for type 'ns2:DMEReply' */
 #ifndef SOAP_TYPE_PointerTons2__DMEReply
-#define SOAP_TYPE_PointerTons2__DMEReply (541)
+#define SOAP_TYPE_PointerTons2__DMEReply (444)
 #endif
 
 /* ns2__EncryptPaymentDataReply * has binding name 'PointerTons2__EncryptPaymentDataReply' for type 'ns2:EncryptPaymentDataReply' */
 #ifndef SOAP_TYPE_PointerTons2__EncryptPaymentDataReply
-#define SOAP_TYPE_PointerTons2__EncryptPaymentDataReply (540)
+#define SOAP_TYPE_PointerTons2__EncryptPaymentDataReply (443)
 #endif
 
 /* ns2__TaxReply * has binding name 'PointerTons2__TaxReply' for type 'ns2:TaxReply' */
 #ifndef SOAP_TYPE_PointerTons2__TaxReply
-#define SOAP_TYPE_PointerTons2__TaxReply (539)
+#define SOAP_TYPE_PointerTons2__TaxReply (442)
 #endif
 
 /* ns2__PayerAuthValidateReply * has binding name 'PointerTons2__PayerAuthValidateReply' for type 'ns2:PayerAuthValidateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthValidateReply
-#define SOAP_TYPE_PointerTons2__PayerAuthValidateReply (538)
+#define SOAP_TYPE_PointerTons2__PayerAuthValidateReply (441)
 #endif
 
 /* ns2__PayerAuthEnrollReply * has binding name 'PointerTons2__PayerAuthEnrollReply' for type 'ns2:PayerAuthEnrollReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthEnrollReply
-#define SOAP_TYPE_PointerTons2__PayerAuthEnrollReply (537)
+#define SOAP_TYPE_PointerTons2__PayerAuthEnrollReply (440)
 #endif
 
 /* ns2__ECAuthenticateReply * has binding name 'PointerTons2__ECAuthenticateReply' for type 'ns2:ECAuthenticateReply' */
 #ifndef SOAP_TYPE_PointerTons2__ECAuthenticateReply
-#define SOAP_TYPE_PointerTons2__ECAuthenticateReply (536)
+#define SOAP_TYPE_PointerTons2__ECAuthenticateReply (439)
 #endif
 
 /* ns2__ECCreditReply * has binding name 'PointerTons2__ECCreditReply' for type 'ns2:ECCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__ECCreditReply
-#define SOAP_TYPE_PointerTons2__ECCreditReply (535)
+#define SOAP_TYPE_PointerTons2__ECCreditReply (438)
 #endif
 
 /* ns2__ECDebitReply * has binding name 'PointerTons2__ECDebitReply' for type 'ns2:ECDebitReply' */
 #ifndef SOAP_TYPE_PointerTons2__ECDebitReply
-#define SOAP_TYPE_PointerTons2__ECDebitReply (534)
+#define SOAP_TYPE_PointerTons2__ECDebitReply (437)
 #endif
 
 /* ns2__CCDCCUpdateReply * has binding name 'PointerTons2__CCDCCUpdateReply' for type 'ns2:CCDCCUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCDCCUpdateReply
-#define SOAP_TYPE_PointerTons2__CCDCCUpdateReply (533)
+#define SOAP_TYPE_PointerTons2__CCDCCUpdateReply (436)
 #endif
 
 /* ns2__CCDCCReply * has binding name 'PointerTons2__CCDCCReply' for type 'ns2:CCDCCReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCDCCReply
-#define SOAP_TYPE_PointerTons2__CCDCCReply (532)
+#define SOAP_TYPE_PointerTons2__CCDCCReply (435)
 #endif
 
 /* ns2__CCAutoAuthReversalReply * has binding name 'PointerTons2__CCAutoAuthReversalReply' for type 'ns2:CCAutoAuthReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCAutoAuthReversalReply
-#define SOAP_TYPE_PointerTons2__CCAutoAuthReversalReply (531)
+#define SOAP_TYPE_PointerTons2__CCAutoAuthReversalReply (434)
 #endif
 
 /* ns2__CCAuthReversalReply * has binding name 'PointerTons2__CCAuthReversalReply' for type 'ns2:CCAuthReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCAuthReversalReply
-#define SOAP_TYPE_PointerTons2__CCAuthReversalReply (530)
+#define SOAP_TYPE_PointerTons2__CCAuthReversalReply (433)
 #endif
 
 /* ns2__CCCreditReply * has binding name 'PointerTons2__CCCreditReply' for type 'ns2:CCCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCCreditReply
-#define SOAP_TYPE_PointerTons2__CCCreditReply (529)
+#define SOAP_TYPE_PointerTons2__CCCreditReply (432)
 #endif
 
 /* ns2__CCCaptureReply * has binding name 'PointerTons2__CCCaptureReply' for type 'ns2:CCCaptureReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCCaptureReply
-#define SOAP_TYPE_PointerTons2__CCCaptureReply (528)
+#define SOAP_TYPE_PointerTons2__CCCaptureReply (431)
 #endif
 
 /* ns2__ServiceFeeCalculateReply * has binding name 'PointerTons2__ServiceFeeCalculateReply' for type 'ns2:ServiceFeeCalculateReply' */
 #ifndef SOAP_TYPE_PointerTons2__ServiceFeeCalculateReply
-#define SOAP_TYPE_PointerTons2__ServiceFeeCalculateReply (527)
+#define SOAP_TYPE_PointerTons2__ServiceFeeCalculateReply (430)
 #endif
 
 /* ns2__CCIncrementalAuthReply * has binding name 'PointerTons2__CCIncrementalAuthReply' for type 'ns2:CCIncrementalAuthReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCIncrementalAuthReply
-#define SOAP_TYPE_PointerTons2__CCIncrementalAuthReply (526)
+#define SOAP_TYPE_PointerTons2__CCIncrementalAuthReply (429)
 #endif
 
 /* ns2__CCSaleReversalReply * has binding name 'PointerTons2__CCSaleReversalReply' for type 'ns2:CCSaleReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleReversalReply
-#define SOAP_TYPE_PointerTons2__CCSaleReversalReply (525)
+#define SOAP_TYPE_PointerTons2__CCSaleReversalReply (428)
 #endif
 
 /* ns2__CCSaleCreditReply * has binding name 'PointerTons2__CCSaleCreditReply' for type 'ns2:CCSaleCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleCreditReply
-#define SOAP_TYPE_PointerTons2__CCSaleCreditReply (524)
+#define SOAP_TYPE_PointerTons2__CCSaleCreditReply (427)
 #endif
 
 /* ns2__CCSaleReply * has binding name 'PointerTons2__CCSaleReply' for type 'ns2:CCSaleReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleReply
-#define SOAP_TYPE_PointerTons2__CCSaleReply (523)
+#define SOAP_TYPE_PointerTons2__CCSaleReply (426)
 #endif
 
 /* ns2__VerificationReply * has binding name 'PointerTons2__VerificationReply' for type 'ns2:VerificationReply' */
 #ifndef SOAP_TYPE_PointerTons2__VerificationReply
-#define SOAP_TYPE_PointerTons2__VerificationReply (522)
+#define SOAP_TYPE_PointerTons2__VerificationReply (425)
 #endif
 
 /* ns2__OCTReply * has binding name 'PointerTons2__OCTReply' for type 'ns2:OCTReply' */
 #ifndef SOAP_TYPE_PointerTons2__OCTReply
-#define SOAP_TYPE_PointerTons2__OCTReply (521)
+#define SOAP_TYPE_PointerTons2__OCTReply (424)
 #endif
 
 /* ns2__CCAuthReply * has binding name 'PointerTons2__CCAuthReply' for type 'ns2:CCAuthReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCAuthReply
-#define SOAP_TYPE_PointerTons2__CCAuthReply (520)
+#define SOAP_TYPE_PointerTons2__CCAuthReply (423)
 #endif
 
 /* ns2__DeniedPartiesMatch * has binding name 'PointerTons2__DeniedPartiesMatch' for type 'ns2:DeniedPartiesMatch' */
 #ifndef SOAP_TYPE_PointerTons2__DeniedPartiesMatch
-#define SOAP_TYPE_PointerTons2__DeniedPartiesMatch (518)
+#define SOAP_TYPE_PointerTons2__DeniedPartiesMatch (421)
 #endif
 
 /* ns2__APOptionsOption * has binding name 'PointerTons2__APOptionsOption' for type 'ns2:APOptionsOption' */
 #ifndef SOAP_TYPE_PointerTons2__APOptionsOption
-#define SOAP_TYPE_PointerTons2__APOptionsOption (517)
+#define SOAP_TYPE_PointerTons2__APOptionsOption (420)
 #endif
 
 /* ns2__RuleResultItems * has binding name 'PointerTons2__RuleResultItems' for type 'ns2:RuleResultItems' */
 #ifndef SOAP_TYPE_PointerTons2__RuleResultItems
-#define SOAP_TYPE_PointerTons2__RuleResultItems (516)
+#define SOAP_TYPE_PointerTons2__RuleResultItems (419)
 #endif
 
 /* ns2__Field * has binding name 'PointerTons2__Field' for type 'ns2:Field' */
 #ifndef SOAP_TYPE_PointerTons2__Field
-#define SOAP_TYPE_PointerTons2__Field (514)
+#define SOAP_TYPE_PointerTons2__Field (417)
 #endif
 
 /* ns2__AdditionalFields * has binding name 'PointerTons2__AdditionalFields' for type 'ns2:AdditionalFields' */
 #ifndef SOAP_TYPE_PointerTons2__AdditionalFields
-#define SOAP_TYPE_PointerTons2__AdditionalFields (513)
+#define SOAP_TYPE_PointerTons2__AdditionalFields (416)
 #endif
 
 /* ns2__ProfileReply * has binding name 'PointerTons2__ProfileReply' for type 'ns2:ProfileReply' */
 #ifndef SOAP_TYPE_PointerTons2__ProfileReply
-#define SOAP_TYPE_PointerTons2__ProfileReply (512)
+#define SOAP_TYPE_PointerTons2__ProfileReply (415)
 #endif
 
 /* ns2__RuleResultItem * has binding name 'PointerTons2__RuleResultItem' for type 'ns2:RuleResultItem' */
 #ifndef SOAP_TYPE_PointerTons2__RuleResultItem
-#define SOAP_TYPE_PointerTons2__RuleResultItem (510)
+#define SOAP_TYPE_PointerTons2__RuleResultItem (413)
 #endif
 
 /* ns2__FXQuote * has binding name 'PointerTons2__FXQuote' for type 'ns2:FXQuote' */
 #ifndef SOAP_TYPE_PointerTons2__FXQuote
-#define SOAP_TYPE_PointerTons2__FXQuote (508)
+#define SOAP_TYPE_PointerTons2__FXQuote (411)
 #endif
 
 /* ns2__DeviceFingerprint * has binding name 'PointerTons2__DeviceFingerprint' for type 'ns2:DeviceFingerprint' */
 #ifndef SOAP_TYPE_PointerTons2__DeviceFingerprint
-#define SOAP_TYPE_PointerTons2__DeviceFingerprint (507)
+#define SOAP_TYPE_PointerTons2__DeviceFingerprint (410)
 #endif
 
 /* ns2__TaxReplyItem * has binding name 'PointerTons2__TaxReplyItem' for type 'ns2:TaxReplyItem' */
 #ifndef SOAP_TYPE_PointerTons2__TaxReplyItem
-#define SOAP_TYPE_PointerTons2__TaxReplyItem (505)
+#define SOAP_TYPE_PointerTons2__TaxReplyItem (408)
 #endif
 
 /* ns2__issuer * has binding name 'PointerTons2__issuer' for type 'ns2:issuer' */
 #ifndef SOAP_TYPE_PointerTons2__issuer
-#define SOAP_TYPE_PointerTons2__issuer (504)
+#define SOAP_TYPE_PointerTons2__issuer (407)
 #endif
 
 /* ns2__BinLookupService * has binding name 'PointerTons2__BinLookupService' for type 'ns2:BinLookupService' */
 #ifndef SOAP_TYPE_PointerTons2__BinLookupService
-#define SOAP_TYPE_PointerTons2__BinLookupService (503)
+#define SOAP_TYPE_PointerTons2__BinLookupService (406)
 #endif
 
 /* ns2__EncryptPaymentDataService * has binding name 'PointerTons2__EncryptPaymentDataService' for type 'ns2:EncryptPaymentDataService' */
 #ifndef SOAP_TYPE_PointerTons2__EncryptPaymentDataService
-#define SOAP_TYPE_PointerTons2__EncryptPaymentDataService (502)
+#define SOAP_TYPE_PointerTons2__EncryptPaymentDataService (405)
 #endif
 
 /* ns2__Aft * has binding name 'PointerTons2__Aft' for type 'ns2:Aft' */
 #ifndef SOAP_TYPE_PointerTons2__Aft
-#define SOAP_TYPE_PointerTons2__Aft (501)
+#define SOAP_TYPE_PointerTons2__Aft (404)
 #endif
 
 /* ns2__Wallet * has binding name 'PointerTons2__Wallet' for type 'ns2:Wallet' */
 #ifndef SOAP_TYPE_PointerTons2__Wallet
-#define SOAP_TYPE_PointerTons2__Wallet (500)
+#define SOAP_TYPE_PointerTons2__Wallet (403)
 #endif
 
 /* ns2__PromotionGroup * has binding name 'PointerTons2__PromotionGroup' for type 'ns2:PromotionGroup' */
 #ifndef SOAP_TYPE_PointerTons2__PromotionGroup
-#define SOAP_TYPE_PointerTons2__PromotionGroup (498)
+#define SOAP_TYPE_PointerTons2__PromotionGroup (401)
 #endif
 
 /* ns2__DecryptVisaCheckoutDataService * has binding name 'PointerTons2__DecryptVisaCheckoutDataService' for type 'ns2:DecryptVisaCheckoutDataService' */
 #ifndef SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataService
-#define SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataService (497)
+#define SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataService (400)
 #endif
 
 /* ns2__VC * has binding name 'PointerTons2__VC' for type 'ns2:VC' */
 #ifndef SOAP_TYPE_PointerTons2__VC
-#define SOAP_TYPE_PointerTons2__VC (496)
+#define SOAP_TYPE_PointerTons2__VC (399)
 #endif
 
 /* ns2__AutoRentalData * has binding name 'PointerTons2__AutoRentalData' for type 'ns2:AutoRentalData' */
 #ifndef SOAP_TYPE_PointerTons2__AutoRentalData
-#define SOAP_TYPE_PointerTons2__AutoRentalData (495)
+#define SOAP_TYPE_PointerTons2__AutoRentalData (398)
 #endif
 
 /* ns2__Sender * has binding name 'PointerTons2__Sender' for type 'ns2:Sender' */
 #ifndef SOAP_TYPE_PointerTons2__Sender
-#define SOAP_TYPE_PointerTons2__Sender (494)
+#define SOAP_TYPE_PointerTons2__Sender (397)
 #endif
 
 /* ns2__Recipient * has binding name 'PointerTons2__Recipient' for type 'ns2:Recipient' */
 #ifndef SOAP_TYPE_PointerTons2__Recipient
-#define SOAP_TYPE_PointerTons2__Recipient (493)
+#define SOAP_TYPE_PointerTons2__Recipient (396)
 #endif
 
 /* ns2__PaymentNetworkToken * has binding name 'PointerTons2__PaymentNetworkToken' for type 'ns2:PaymentNetworkToken' */
 #ifndef SOAP_TYPE_PointerTons2__PaymentNetworkToken
-#define SOAP_TYPE_PointerTons2__PaymentNetworkToken (492)
+#define SOAP_TYPE_PointerTons2__PaymentNetworkToken (395)
 #endif
 
 /* ns2__HostedDataRetrieveService * has binding name 'PointerTons2__HostedDataRetrieveService' for type 'ns2:HostedDataRetrieveService' */
 #ifndef SOAP_TYPE_PointerTons2__HostedDataRetrieveService
-#define SOAP_TYPE_PointerTons2__HostedDataRetrieveService (491)
+#define SOAP_TYPE_PointerTons2__HostedDataRetrieveService (394)
 #endif
 
 /* ns2__HostedDataCreateService * has binding name 'PointerTons2__HostedDataCreateService' for type 'ns2:HostedDataCreateService' */
 #ifndef SOAP_TYPE_PointerTons2__HostedDataCreateService
-#define SOAP_TYPE_PointerTons2__HostedDataCreateService (490)
+#define SOAP_TYPE_PointerTons2__HostedDataCreateService (393)
 #endif
 
 /* ns2__EmvRequest * has binding name 'PointerTons2__EmvRequest' for type 'ns2:EmvRequest' */
 #ifndef SOAP_TYPE_PointerTons2__EmvRequest
-#define SOAP_TYPE_PointerTons2__EmvRequest (489)
+#define SOAP_TYPE_PointerTons2__EmvRequest (392)
 #endif
 
 /* ns2__CCDCCUpdateService * has binding name 'PointerTons2__CCDCCUpdateService' for type 'ns2:CCDCCUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__CCDCCUpdateService
-#define SOAP_TYPE_PointerTons2__CCDCCUpdateService (488)
+#define SOAP_TYPE_PointerTons2__CCDCCUpdateService (391)
 #endif
 
 /* ns2__PayPalTransactionSearchService * has binding name 'PointerTons2__PayPalTransactionSearchService' for type 'ns2:PayPalTransactionSearchService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalTransactionSearchService
-#define SOAP_TYPE_PointerTons2__PayPalTransactionSearchService (487)
+#define SOAP_TYPE_PointerTons2__PayPalTransactionSearchService (390)
 #endif
 
 /* ns2__PayPalGetTxnDetailsService * has binding name 'PointerTons2__PayPalGetTxnDetailsService' for type 'ns2:PayPalGetTxnDetailsService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsService
-#define SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsService (486)
+#define SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsService (389)
 #endif
 
 /* ns2__APConfirmPurchaseService * has binding name 'PointerTons2__APConfirmPurchaseService' for type 'ns2:APConfirmPurchaseService' */
 #ifndef SOAP_TYPE_PointerTons2__APConfirmPurchaseService
-#define SOAP_TYPE_PointerTons2__APConfirmPurchaseService (485)
+#define SOAP_TYPE_PointerTons2__APConfirmPurchaseService (388)
 #endif
 
 /* ns2__APTransactionDetailsService * has binding name 'PointerTons2__APTransactionDetailsService' for type 'ns2:APTransactionDetailsService' */
 #ifndef SOAP_TYPE_PointerTons2__APTransactionDetailsService
-#define SOAP_TYPE_PointerTons2__APTransactionDetailsService (484)
+#define SOAP_TYPE_PointerTons2__APTransactionDetailsService (387)
 #endif
 
 /* ns2__APCheckOutDetailsService * has binding name 'PointerTons2__APCheckOutDetailsService' for type 'ns2:APCheckOutDetailsService' */
 #ifndef SOAP_TYPE_PointerTons2__APCheckOutDetailsService
-#define SOAP_TYPE_PointerTons2__APCheckOutDetailsService (483)
+#define SOAP_TYPE_PointerTons2__APCheckOutDetailsService (386)
 #endif
 
 /* ns2__APSaleService * has binding name 'PointerTons2__APSaleService' for type 'ns2:APSaleService' */
 #ifndef SOAP_TYPE_PointerTons2__APSaleService
-#define SOAP_TYPE_PointerTons2__APSaleService (482)
+#define SOAP_TYPE_PointerTons2__APSaleService (385)
 #endif
 
 /* ns2__APRefundService * has binding name 'PointerTons2__APRefundService' for type 'ns2:APRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__APRefundService
-#define SOAP_TYPE_PointerTons2__APRefundService (481)
+#define SOAP_TYPE_PointerTons2__APRefundService (384)
 #endif
 
 /* ns2__APOptionsService * has binding name 'PointerTons2__APOptionsService' for type 'ns2:APOptionsService' */
 #ifndef SOAP_TYPE_PointerTons2__APOptionsService
-#define SOAP_TYPE_PointerTons2__APOptionsService (480)
+#define SOAP_TYPE_PointerTons2__APOptionsService (383)
 #endif
 
 /* ns2__APCaptureService * has binding name 'PointerTons2__APCaptureService' for type 'ns2:APCaptureService' */
 #ifndef SOAP_TYPE_PointerTons2__APCaptureService
-#define SOAP_TYPE_PointerTons2__APCaptureService (479)
+#define SOAP_TYPE_PointerTons2__APCaptureService (382)
 #endif
 
 /* ns2__APAuthReversalService * has binding name 'PointerTons2__APAuthReversalService' for type 'ns2:APAuthReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__APAuthReversalService
-#define SOAP_TYPE_PointerTons2__APAuthReversalService (478)
+#define SOAP_TYPE_PointerTons2__APAuthReversalService (381)
 #endif
 
 /* ns2__APAuthService * has binding name 'PointerTons2__APAuthService' for type 'ns2:APAuthService' */
 #ifndef SOAP_TYPE_PointerTons2__APAuthService
-#define SOAP_TYPE_PointerTons2__APAuthService (477)
+#define SOAP_TYPE_PointerTons2__APAuthService (380)
 #endif
 
 /* ns2__AP * has binding name 'PointerTons2__AP' for type 'ns2:AP' */
 #ifndef SOAP_TYPE_PointerTons2__AP
-#define SOAP_TYPE_PointerTons2__AP (476)
+#define SOAP_TYPE_PointerTons2__AP (379)
 #endif
 
 /* ns2__PinDebitReversalService * has binding name 'PointerTons2__PinDebitReversalService' for type 'ns2:PinDebitReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitReversalService
-#define SOAP_TYPE_PointerTons2__PinDebitReversalService (475)
+#define SOAP_TYPE_PointerTons2__PinDebitReversalService (378)
 #endif
 
 /* ns2__PinDebitCreditService * has binding name 'PointerTons2__PinDebitCreditService' for type 'ns2:PinDebitCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitCreditService
-#define SOAP_TYPE_PointerTons2__PinDebitCreditService (474)
+#define SOAP_TYPE_PointerTons2__PinDebitCreditService (377)
 #endif
 
 /* ns2__PinDebitPurchaseService * has binding name 'PointerTons2__PinDebitPurchaseService' for type 'ns2:PinDebitPurchaseService' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitPurchaseService
-#define SOAP_TYPE_PointerTons2__PinDebitPurchaseService (473)
+#define SOAP_TYPE_PointerTons2__PinDebitPurchaseService (376)
 #endif
 
 /* ns2__APCheckStatusService * has binding name 'PointerTons2__APCheckStatusService' for type 'ns2:APCheckStatusService' */
 #ifndef SOAP_TYPE_PointerTons2__APCheckStatusService
-#define SOAP_TYPE_PointerTons2__APCheckStatusService (472)
+#define SOAP_TYPE_PointerTons2__APCheckStatusService (375)
 #endif
 
 /* ns2__APInitiateService * has binding name 'PointerTons2__APInitiateService' for type 'ns2:APInitiateService' */
 #ifndef SOAP_TYPE_PointerTons2__APInitiateService
-#define SOAP_TYPE_PointerTons2__APInitiateService (471)
+#define SOAP_TYPE_PointerTons2__APInitiateService (374)
 #endif
 
 /* ns2__BoletoPaymentService * has binding name 'PointerTons2__BoletoPaymentService' for type 'ns2:BoletoPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__BoletoPaymentService
-#define SOAP_TYPE_PointerTons2__BoletoPaymentService (470)
+#define SOAP_TYPE_PointerTons2__BoletoPaymentService (373)
 #endif
 
 /* ns2__ChinaRefundService * has binding name 'PointerTons2__ChinaRefundService' for type 'ns2:ChinaRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__ChinaRefundService
-#define SOAP_TYPE_PointerTons2__ChinaRefundService (469)
+#define SOAP_TYPE_PointerTons2__ChinaRefundService (372)
 #endif
 
 /* ns2__ChinaPaymentService * has binding name 'PointerTons2__ChinaPaymentService' for type 'ns2:ChinaPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__ChinaPaymentService
-#define SOAP_TYPE_PointerTons2__ChinaPaymentService (468)
+#define SOAP_TYPE_PointerTons2__ChinaPaymentService (371)
 #endif
 
 /* ns2__PayPalDoRefTransactionService * has binding name 'PointerTons2__PayPalDoRefTransactionService' for type 'ns2:PayPalDoRefTransactionService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalDoRefTransactionService
-#define SOAP_TYPE_PointerTons2__PayPalDoRefTransactionService (467)
+#define SOAP_TYPE_PointerTons2__PayPalDoRefTransactionService (370)
 #endif
 
 /* ns2__PayPalCreateAgreementService * has binding name 'PointerTons2__PayPalCreateAgreementService' for type 'ns2:PayPalCreateAgreementService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalCreateAgreementService
-#define SOAP_TYPE_PointerTons2__PayPalCreateAgreementService (466)
+#define SOAP_TYPE_PointerTons2__PayPalCreateAgreementService (369)
 #endif
 
 /* ns2__PayPalUpdateAgreementService * has binding name 'PointerTons2__PayPalUpdateAgreementService' for type 'ns2:PayPalUpdateAgreementService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalUpdateAgreementService
-#define SOAP_TYPE_PointerTons2__PayPalUpdateAgreementService (465)
+#define SOAP_TYPE_PointerTons2__PayPalUpdateAgreementService (368)
 #endif
 
 /* ns2__PayPalAuthorizationService * has binding name 'PointerTons2__PayPalAuthorizationService' for type 'ns2:PayPalAuthorizationService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalAuthorizationService
-#define SOAP_TYPE_PointerTons2__PayPalAuthorizationService (464)
+#define SOAP_TYPE_PointerTons2__PayPalAuthorizationService (367)
 #endif
 
 /* ns2__PayPalEcOrderSetupService * has binding name 'PointerTons2__PayPalEcOrderSetupService' for type 'ns2:PayPalEcOrderSetupService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcOrderSetupService
-#define SOAP_TYPE_PointerTons2__PayPalEcOrderSetupService (463)
+#define SOAP_TYPE_PointerTons2__PayPalEcOrderSetupService (366)
 #endif
 
 /* ns2__PayPalEcSetService * has binding name 'PointerTons2__PayPalEcSetService' for type 'ns2:PayPalEcSetService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcSetService
-#define SOAP_TYPE_PointerTons2__PayPalEcSetService (462)
+#define SOAP_TYPE_PointerTons2__PayPalEcSetService (365)
 #endif
 
 /* ns2__PayPalEcGetDetailsService * has binding name 'PointerTons2__PayPalEcGetDetailsService' for type 'ns2:PayPalEcGetDetailsService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcGetDetailsService
-#define SOAP_TYPE_PointerTons2__PayPalEcGetDetailsService (461)
+#define SOAP_TYPE_PointerTons2__PayPalEcGetDetailsService (364)
 #endif
 
 /* ns2__PayPalEcDoPaymentService * has binding name 'PointerTons2__PayPalEcDoPaymentService' for type 'ns2:PayPalEcDoPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcDoPaymentService
-#define SOAP_TYPE_PointerTons2__PayPalEcDoPaymentService (460)
+#define SOAP_TYPE_PointerTons2__PayPalEcDoPaymentService (363)
 #endif
 
 /* ns2__PayPalDoCaptureService * has binding name 'PointerTons2__PayPalDoCaptureService' for type 'ns2:PayPalDoCaptureService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalDoCaptureService
-#define SOAP_TYPE_PointerTons2__PayPalDoCaptureService (459)
+#define SOAP_TYPE_PointerTons2__PayPalDoCaptureService (362)
 #endif
 
 /* ns2__PayPalAuthReversalService * has binding name 'PointerTons2__PayPalAuthReversalService' for type 'ns2:PayPalAuthReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalAuthReversalService
-#define SOAP_TYPE_PointerTons2__PayPalAuthReversalService (458)
+#define SOAP_TYPE_PointerTons2__PayPalAuthReversalService (361)
 #endif
 
 /* ns2__PayPalRefundService * has binding name 'PointerTons2__PayPalRefundService' for type 'ns2:PayPalRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalRefundService
-#define SOAP_TYPE_PointerTons2__PayPalRefundService (457)
+#define SOAP_TYPE_PointerTons2__PayPalRefundService (360)
 #endif
 
 /* ns2__RequestReserved * has binding name 'PointerTons2__RequestReserved' for type 'ns2:RequestReserved' */
 #ifndef SOAP_TYPE_PointerTons2__RequestReserved
-#define SOAP_TYPE_PointerTons2__RequestReserved (455)
+#define SOAP_TYPE_PointerTons2__RequestReserved (358)
 #endif
 
 /* ns2__CaseManagementActionService * has binding name 'PointerTons2__CaseManagementActionService' for type 'ns2:CaseManagementActionService' */
 #ifndef SOAP_TYPE_PointerTons2__CaseManagementActionService
-#define SOAP_TYPE_PointerTons2__CaseManagementActionService (454)
+#define SOAP_TYPE_PointerTons2__CaseManagementActionService (357)
 #endif
 
 /* ns2__FraudUpdateService * has binding name 'PointerTons2__FraudUpdateService' for type 'ns2:FraudUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__FraudUpdateService
-#define SOAP_TYPE_PointerTons2__FraudUpdateService (453)
+#define SOAP_TYPE_PointerTons2__FraudUpdateService (356)
 #endif
 
 /* ns2__RiskUpdateService * has binding name 'PointerTons2__RiskUpdateService' for type 'ns2:RiskUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__RiskUpdateService
-#define SOAP_TYPE_PointerTons2__RiskUpdateService (452)
+#define SOAP_TYPE_PointerTons2__RiskUpdateService (355)
 #endif
 
 /* ns2__PayPalPreapprovedUpdateService * has binding name 'PointerTons2__PayPalPreapprovedUpdateService' for type 'ns2:PayPalPreapprovedUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateService
-#define SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateService (451)
+#define SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateService (354)
 #endif
 
 /* ns2__PayPalPreapprovedPaymentService * has binding name 'PointerTons2__PayPalPreapprovedPaymentService' for type 'ns2:PayPalPreapprovedPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentService
-#define SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentService (450)
+#define SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentService (353)
 #endif
 
 /* ns2__PayPalButtonCreateService * has binding name 'PointerTons2__PayPalButtonCreateService' for type 'ns2:PayPalButtonCreateService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalButtonCreateService
-#define SOAP_TYPE_PointerTons2__PayPalButtonCreateService (449)
+#define SOAP_TYPE_PointerTons2__PayPalButtonCreateService (352)
 #endif
 
 /* ns2__LodgingData * has binding name 'PointerTons2__LodgingData' for type 'ns2:LodgingData' */
 #ifndef SOAP_TYPE_PointerTons2__LodgingData
-#define SOAP_TYPE_PointerTons2__LodgingData (448)
+#define SOAP_TYPE_PointerTons2__LodgingData (351)
 #endif
 
 /* ns2__AncillaryData * has binding name 'PointerTons2__AncillaryData' for type 'ns2:AncillaryData' */
 #ifndef SOAP_TYPE_PointerTons2__AncillaryData
-#define SOAP_TYPE_PointerTons2__AncillaryData (447)
+#define SOAP_TYPE_PointerTons2__AncillaryData (350)
 #endif
 
 /* ns2__AirlineData * has binding name 'PointerTons2__AirlineData' for type 'ns2:AirlineData' */
 #ifndef SOAP_TYPE_PointerTons2__AirlineData
-#define SOAP_TYPE_PointerTons2__AirlineData (446)
+#define SOAP_TYPE_PointerTons2__AirlineData (349)
 #endif
 
 /* ns2__Batch * has binding name 'PointerTons2__Batch' for type 'ns2:Batch' */
 #ifndef SOAP_TYPE_PointerTons2__Batch
-#define SOAP_TYPE_PointerTons2__Batch (445)
+#define SOAP_TYPE_PointerTons2__Batch (348)
 #endif
 
 /* ns2__PinlessDebitReversalService * has binding name 'PointerTons2__PinlessDebitReversalService' for type 'ns2:PinlessDebitReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitReversalService
-#define SOAP_TYPE_PointerTons2__PinlessDebitReversalService (444)
+#define SOAP_TYPE_PointerTons2__PinlessDebitReversalService (347)
 #endif
 
 /* ns2__PinlessDebitValidateService * has binding name 'PointerTons2__PinlessDebitValidateService' for type 'ns2:PinlessDebitValidateService' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitValidateService
-#define SOAP_TYPE_PointerTons2__PinlessDebitValidateService (443)
+#define SOAP_TYPE_PointerTons2__PinlessDebitValidateService (346)
 #endif
 
 /* ns2__PinlessDebitService * has binding name 'PointerTons2__PinlessDebitService' for type 'ns2:PinlessDebitService' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitService
-#define SOAP_TYPE_PointerTons2__PinlessDebitService (442)
+#define SOAP_TYPE_PointerTons2__PinlessDebitService (345)
 #endif
 
 /* ns2__BusinessRules * has binding name 'PointerTons2__BusinessRules' for type 'ns2:BusinessRules' */
 #ifndef SOAP_TYPE_PointerTons2__BusinessRules
-#define SOAP_TYPE_PointerTons2__BusinessRules (441)
+#define SOAP_TYPE_PointerTons2__BusinessRules (344)
 #endif
 
 /* ns2__VoidService * has binding name 'PointerTons2__VoidService' for type 'ns2:VoidService' */
 #ifndef SOAP_TYPE_PointerTons2__VoidService
-#define SOAP_TYPE_PointerTons2__VoidService (440)
+#define SOAP_TYPE_PointerTons2__VoidService (343)
 #endif
 
 /* ns2__PayPalCreditService * has binding name 'PointerTons2__PayPalCreditService' for type 'ns2:PayPalCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalCreditService
-#define SOAP_TYPE_PointerTons2__PayPalCreditService (439)
+#define SOAP_TYPE_PointerTons2__PayPalCreditService (342)
 #endif
 
 /* ns2__PayPalPaymentService * has binding name 'PointerTons2__PayPalPaymentService' for type 'ns2:PayPalPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPaymentService
-#define SOAP_TYPE_PointerTons2__PayPalPaymentService (438)
+#define SOAP_TYPE_PointerTons2__PayPalPaymentService (341)
 #endif
 
 /* ns2__PaySubscriptionDeleteService * has binding name 'PointerTons2__PaySubscriptionDeleteService' for type 'ns2:PaySubscriptionDeleteService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionDeleteService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionDeleteService (437)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionDeleteService (340)
 #endif
 
 /* ns2__PaySubscriptionRetrieveService * has binding name 'PointerTons2__PaySubscriptionRetrieveService' for type 'ns2:PaySubscriptionRetrieveService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveService (436)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveService (339)
 #endif
 
 /* ns2__PaySubscriptionEventUpdateService * has binding name 'PointerTons2__PaySubscriptionEventUpdateService' for type 'ns2:PaySubscriptionEventUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateService (435)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateService (338)
 #endif
 
 /* ns2__PaySubscriptionUpdateService * has binding name 'PointerTons2__PaySubscriptionUpdateService' for type 'ns2:PaySubscriptionUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionUpdateService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionUpdateService (434)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionUpdateService (337)
 #endif
 
 /* ns2__PaySubscriptionCreateService * has binding name 'PointerTons2__PaySubscriptionCreateService' for type 'ns2:PaySubscriptionCreateService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionCreateService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionCreateService (433)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionCreateService (336)
 #endif
 
 /* ns2__DirectDebitValidateService * has binding name 'PointerTons2__DirectDebitValidateService' for type 'ns2:DirectDebitValidateService' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitValidateService
-#define SOAP_TYPE_PointerTons2__DirectDebitValidateService (432)
+#define SOAP_TYPE_PointerTons2__DirectDebitValidateService (335)
 #endif
 
 /* ns2__DirectDebitRefundService * has binding name 'PointerTons2__DirectDebitRefundService' for type 'ns2:DirectDebitRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitRefundService
-#define SOAP_TYPE_PointerTons2__DirectDebitRefundService (431)
+#define SOAP_TYPE_PointerTons2__DirectDebitRefundService (334)
 #endif
 
 /* ns2__DirectDebitService * has binding name 'PointerTons2__DirectDebitService' for type 'ns2:DirectDebitService' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitService
-#define SOAP_TYPE_PointerTons2__DirectDebitService (430)
+#define SOAP_TYPE_PointerTons2__DirectDebitService (333)
 #endif
 
 /* ns2__DirectDebitMandateService * has binding name 'PointerTons2__DirectDebitMandateService' for type 'ns2:DirectDebitMandateService' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitMandateService
-#define SOAP_TYPE_PointerTons2__DirectDebitMandateService (429)
+#define SOAP_TYPE_PointerTons2__DirectDebitMandateService (332)
 #endif
 
 /* ns2__BankTransferRealTimeService * has binding name 'PointerTons2__BankTransferRealTimeService' for type 'ns2:BankTransferRealTimeService' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferRealTimeService
-#define SOAP_TYPE_PointerTons2__BankTransferRealTimeService (428)
+#define SOAP_TYPE_PointerTons2__BankTransferRealTimeService (331)
 #endif
 
 /* ns2__BankTransferRefundService * has binding name 'PointerTons2__BankTransferRefundService' for type 'ns2:BankTransferRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferRefundService
-#define SOAP_TYPE_PointerTons2__BankTransferRefundService (427)
+#define SOAP_TYPE_PointerTons2__BankTransferRefundService (330)
 #endif
 
 /* ns2__BankTransferService * has binding name 'PointerTons2__BankTransferService' for type 'ns2:BankTransferService' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferService
-#define SOAP_TYPE_PointerTons2__BankTransferService (426)
+#define SOAP_TYPE_PointerTons2__BankTransferService (329)
 #endif
 
 /* ns2__FXRatesService * has binding name 'PointerTons2__FXRatesService' for type 'ns2:FXRatesService' */
 #ifndef SOAP_TYPE_PointerTons2__FXRatesService
-#define SOAP_TYPE_PointerTons2__FXRatesService (425)
+#define SOAP_TYPE_PointerTons2__FXRatesService (328)
 #endif
 
 /* ns2__ExportService * has binding name 'PointerTons2__ExportService' for type 'ns2:ExportService' */
 #ifndef SOAP_TYPE_PointerTons2__ExportService
-#define SOAP_TYPE_PointerTons2__ExportService (424)
+#define SOAP_TYPE_PointerTons2__ExportService (327)
 #endif
 
 /* ns2__DAVService * has binding name 'PointerTons2__DAVService' for type 'ns2:DAVService' */
 #ifndef SOAP_TYPE_PointerTons2__DAVService
-#define SOAP_TYPE_PointerTons2__DAVService (423)
+#define SOAP_TYPE_PointerTons2__DAVService (326)
 #endif
 
 /* ns2__AFSService * has binding name 'PointerTons2__AFSService' for type 'ns2:AFSService' */
 #ifndef SOAP_TYPE_PointerTons2__AFSService
-#define SOAP_TYPE_PointerTons2__AFSService (422)
+#define SOAP_TYPE_PointerTons2__AFSService (325)
 #endif
 
 /* ns2__DMEService * has binding name 'PointerTons2__DMEService' for type 'ns2:DMEService' */
 #ifndef SOAP_TYPE_PointerTons2__DMEService
-#define SOAP_TYPE_PointerTons2__DMEService (421)
+#define SOAP_TYPE_PointerTons2__DMEService (324)
 #endif
 
 /* ns2__TaxService * has binding name 'PointerTons2__TaxService' for type 'ns2:TaxService' */
 #ifndef SOAP_TYPE_PointerTons2__TaxService
-#define SOAP_TYPE_PointerTons2__TaxService (420)
+#define SOAP_TYPE_PointerTons2__TaxService (323)
 #endif
 
 /* ns2__PayerAuthValidateService * has binding name 'PointerTons2__PayerAuthValidateService' for type 'ns2:PayerAuthValidateService' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthValidateService
-#define SOAP_TYPE_PointerTons2__PayerAuthValidateService (419)
+#define SOAP_TYPE_PointerTons2__PayerAuthValidateService (322)
 #endif
 
 /* ns2__PayerAuthEnrollService * has binding name 'PointerTons2__PayerAuthEnrollService' for type 'ns2:PayerAuthEnrollService' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthEnrollService
-#define SOAP_TYPE_PointerTons2__PayerAuthEnrollService (418)
+#define SOAP_TYPE_PointerTons2__PayerAuthEnrollService (321)
 #endif
 
 /* ns2__ECAuthenticateService * has binding name 'PointerTons2__ECAuthenticateService' for type 'ns2:ECAuthenticateService' */
 #ifndef SOAP_TYPE_PointerTons2__ECAuthenticateService
-#define SOAP_TYPE_PointerTons2__ECAuthenticateService (417)
+#define SOAP_TYPE_PointerTons2__ECAuthenticateService (320)
 #endif
 
 /* ns2__ECCreditService * has binding name 'PointerTons2__ECCreditService' for type 'ns2:ECCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__ECCreditService
-#define SOAP_TYPE_PointerTons2__ECCreditService (416)
+#define SOAP_TYPE_PointerTons2__ECCreditService (319)
 #endif
 
 /* ns2__ECDebitService * has binding name 'PointerTons2__ECDebitService' for type 'ns2:ECDebitService' */
 #ifndef SOAP_TYPE_PointerTons2__ECDebitService
-#define SOAP_TYPE_PointerTons2__ECDebitService (415)
+#define SOAP_TYPE_PointerTons2__ECDebitService (318)
 #endif
 
 /* ns2__ServiceFeeCalculateService * has binding name 'PointerTons2__ServiceFeeCalculateService' for type 'ns2:ServiceFeeCalculateService' */
 #ifndef SOAP_TYPE_PointerTons2__ServiceFeeCalculateService
-#define SOAP_TYPE_PointerTons2__ServiceFeeCalculateService (414)
+#define SOAP_TYPE_PointerTons2__ServiceFeeCalculateService (317)
 #endif
 
 /* ns2__CCDCCService * has binding name 'PointerTons2__CCDCCService' for type 'ns2:CCDCCService' */
 #ifndef SOAP_TYPE_PointerTons2__CCDCCService
-#define SOAP_TYPE_PointerTons2__CCDCCService (413)
+#define SOAP_TYPE_PointerTons2__CCDCCService (316)
 #endif
 
 /* ns2__CCAutoAuthReversalService * has binding name 'PointerTons2__CCAutoAuthReversalService' for type 'ns2:CCAutoAuthReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__CCAutoAuthReversalService
-#define SOAP_TYPE_PointerTons2__CCAutoAuthReversalService (412)
+#define SOAP_TYPE_PointerTons2__CCAutoAuthReversalService (315)
 #endif
 
 /* ns2__CCAuthReversalService * has binding name 'PointerTons2__CCAuthReversalService' for type 'ns2:CCAuthReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__CCAuthReversalService
-#define SOAP_TYPE_PointerTons2__CCAuthReversalService (411)
+#define SOAP_TYPE_PointerTons2__CCAuthReversalService (314)
 #endif
 
 /* ns2__CCCreditService * has binding name 'PointerTons2__CCCreditService' for type 'ns2:CCCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__CCCreditService
-#define SOAP_TYPE_PointerTons2__CCCreditService (410)
+#define SOAP_TYPE_PointerTons2__CCCreditService (313)
 #endif
 
 /* ns2__CCCaptureService * has binding name 'PointerTons2__CCCaptureService' for type 'ns2:CCCaptureService' */
 #ifndef SOAP_TYPE_PointerTons2__CCCaptureService
-#define SOAP_TYPE_PointerTons2__CCCaptureService (409)
+#define SOAP_TYPE_PointerTons2__CCCaptureService (312)
 #endif
 
 /* ns2__CCIncrementalAuthService * has binding name 'PointerTons2__CCIncrementalAuthService' for type 'ns2:CCIncrementalAuthService' */
 #ifndef SOAP_TYPE_PointerTons2__CCIncrementalAuthService
-#define SOAP_TYPE_PointerTons2__CCIncrementalAuthService (408)
+#define SOAP_TYPE_PointerTons2__CCIncrementalAuthService (311)
 #endif
 
 /* ns2__CCSaleReversalService * has binding name 'PointerTons2__CCSaleReversalService' for type 'ns2:CCSaleReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleReversalService
-#define SOAP_TYPE_PointerTons2__CCSaleReversalService (407)
+#define SOAP_TYPE_PointerTons2__CCSaleReversalService (310)
 #endif
 
 /* ns2__CCSaleCreditService * has binding name 'PointerTons2__CCSaleCreditService' for type 'ns2:CCSaleCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleCreditService
-#define SOAP_TYPE_PointerTons2__CCSaleCreditService (406)
+#define SOAP_TYPE_PointerTons2__CCSaleCreditService (309)
 #endif
 
 /* ns2__CCSaleService * has binding name 'PointerTons2__CCSaleService' for type 'ns2:CCSaleService' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleService
-#define SOAP_TYPE_PointerTons2__CCSaleService (405)
+#define SOAP_TYPE_PointerTons2__CCSaleService (308)
 #endif
 
 /* ns2__VerificationService * has binding name 'PointerTons2__VerificationService' for type 'ns2:VerificationService' */
 #ifndef SOAP_TYPE_PointerTons2__VerificationService
-#define SOAP_TYPE_PointerTons2__VerificationService (404)
+#define SOAP_TYPE_PointerTons2__VerificationService (307)
 #endif
 
 /* ns2__OCTService * has binding name 'PointerTons2__OCTService' for type 'ns2:OCTService' */
 #ifndef SOAP_TYPE_PointerTons2__OCTService
-#define SOAP_TYPE_PointerTons2__OCTService (403)
+#define SOAP_TYPE_PointerTons2__OCTService (306)
 #endif
 
 /* ns2__CCAuthService * has binding name 'PointerTons2__CCAuthService' for type 'ns2:CCAuthService' */
 #ifndef SOAP_TYPE_PointerTons2__CCAuthService
-#define SOAP_TYPE_PointerTons2__CCAuthService (402)
+#define SOAP_TYPE_PointerTons2__CCAuthService (305)
 #endif
 
 /* ns2__ServiceFee * has binding name 'PointerTons2__ServiceFee' for type 'ns2:ServiceFee' */
 #ifndef SOAP_TYPE_PointerTons2__ServiceFee
-#define SOAP_TYPE_PointerTons2__ServiceFee (401)
+#define SOAP_TYPE_PointerTons2__ServiceFee (304)
 #endif
 
 /* ns2__JPO * has binding name 'PointerTons2__JPO' for type 'ns2:JPO' */
 #ifndef SOAP_TYPE_PointerTons2__JPO
-#define SOAP_TYPE_PointerTons2__JPO (400)
+#define SOAP_TYPE_PointerTons2__JPO (303)
 #endif
 
 /* ns2__MerchantSecureData * has binding name 'PointerTons2__MerchantSecureData' for type 'ns2:MerchantSecureData' */
 #ifndef SOAP_TYPE_PointerTons2__MerchantSecureData
-#define SOAP_TYPE_PointerTons2__MerchantSecureData (399)
+#define SOAP_TYPE_PointerTons2__MerchantSecureData (302)
 #endif
 
 /* ns2__MerchantDefinedData * has binding name 'PointerTons2__MerchantDefinedData' for type 'ns2:MerchantDefinedData' */
 #ifndef SOAP_TYPE_PointerTons2__MerchantDefinedData
-#define SOAP_TYPE_PointerTons2__MerchantDefinedData (398)
+#define SOAP_TYPE_PointerTons2__MerchantDefinedData (301)
 #endif
 
 /* ns2__PayPal * has binding name 'PointerTons2__PayPal' for type 'ns2:PayPal' */
 #ifndef SOAP_TYPE_PointerTons2__PayPal
-#define SOAP_TYPE_PointerTons2__PayPal (397)
+#define SOAP_TYPE_PointerTons2__PayPal (300)
 #endif
 
 /* ns2__OtherTax * has binding name 'PointerTons2__OtherTax' for type 'ns2:OtherTax' */
 #ifndef SOAP_TYPE_PointerTons2__OtherTax
-#define SOAP_TYPE_PointerTons2__OtherTax (396)
+#define SOAP_TYPE_PointerTons2__OtherTax (299)
 #endif
 
 /* ns2__DecisionManager * has binding name 'PointerTons2__DecisionManager' for type 'ns2:DecisionManager' */
 #ifndef SOAP_TYPE_PointerTons2__DecisionManager
-#define SOAP_TYPE_PointerTons2__DecisionManager (395)
+#define SOAP_TYPE_PointerTons2__DecisionManager (298)
 #endif
 
 /* ns2__RecurringSubscriptionInfo * has binding name 'PointerTons2__RecurringSubscriptionInfo' for type 'ns2:RecurringSubscriptionInfo' */
 #ifndef SOAP_TYPE_PointerTons2__RecurringSubscriptionInfo
-#define SOAP_TYPE_PointerTons2__RecurringSubscriptionInfo (394)
+#define SOAP_TYPE_PointerTons2__RecurringSubscriptionInfo (297)
 #endif
 
 /* ns2__Subscription * has binding name 'PointerTons2__Subscription' for type 'ns2:Subscription' */
 #ifndef SOAP_TYPE_PointerTons2__Subscription
-#define SOAP_TYPE_PointerTons2__Subscription (393)
+#define SOAP_TYPE_PointerTons2__Subscription (296)
 #endif
 
 /* ns2__BankInfo * has binding name 'PointerTons2__BankInfo' for type 'ns2:BankInfo' */
 #ifndef SOAP_TYPE_PointerTons2__BankInfo
-#define SOAP_TYPE_PointerTons2__BankInfo (392)
+#define SOAP_TYPE_PointerTons2__BankInfo (295)
 #endif
 
 /* ns2__FundTransfer * has binding name 'PointerTons2__FundTransfer' for type 'ns2:FundTransfer' */
 #ifndef SOAP_TYPE_PointerTons2__FundTransfer
-#define SOAP_TYPE_PointerTons2__FundTransfer (391)
+#define SOAP_TYPE_PointerTons2__FundTransfer (294)
 #endif
 
 /* ns2__UCAF * has binding name 'PointerTons2__UCAF' for type 'ns2:UCAF' */
 #ifndef SOAP_TYPE_PointerTons2__UCAF
-#define SOAP_TYPE_PointerTons2__UCAF (390)
+#define SOAP_TYPE_PointerTons2__UCAF (293)
 #endif
 
 /* ns2__GECC * has binding name 'PointerTons2__GECC' for type 'ns2:GECC' */
 #ifndef SOAP_TYPE_PointerTons2__GECC
-#define SOAP_TYPE_PointerTons2__GECC (389)
+#define SOAP_TYPE_PointerTons2__GECC (292)
 #endif
 
 /* ns2__BML * has binding name 'PointerTons2__BML' for type 'ns2:BML' */
 #ifndef SOAP_TYPE_PointerTons2__BML
-#define SOAP_TYPE_PointerTons2__BML (388)
+#define SOAP_TYPE_PointerTons2__BML (291)
 #endif
 
 /* ns2__Check * has binding name 'PointerTons2__Check' for type 'ns2:Check' */
 #ifndef SOAP_TYPE_PointerTons2__Check
-#define SOAP_TYPE_PointerTons2__Check (387)
+#define SOAP_TYPE_PointerTons2__Check (290)
 #endif
 
 /* ns2__Card * has binding name 'PointerTons2__Card' for type 'ns2:Card' */
 #ifndef SOAP_TYPE_PointerTons2__Card
-#define SOAP_TYPE_PointerTons2__Card (386)
+#define SOAP_TYPE_PointerTons2__Card (289)
 #endif
 
 /* ns2__Installment * has binding name 'PointerTons2__Installment' for type 'ns2:Installment' */
 #ifndef SOAP_TYPE_PointerTons2__Installment
-#define SOAP_TYPE_PointerTons2__Installment (385)
+#define SOAP_TYPE_PointerTons2__Installment (288)
 #endif
 
 /* ns2__EncryptedPayment * has binding name 'PointerTons2__EncryptedPayment' for type 'ns2:EncryptedPayment' */
 #ifndef SOAP_TYPE_PointerTons2__EncryptedPayment
-#define SOAP_TYPE_PointerTons2__EncryptedPayment (384)
+#define SOAP_TYPE_PointerTons2__EncryptedPayment (287)
 #endif
 
 /* ns2__Pos * has binding name 'PointerTons2__Pos' for type 'ns2:Pos' */
 #ifndef SOAP_TYPE_PointerTons2__Pos
-#define SOAP_TYPE_PointerTons2__Pos (383)
+#define SOAP_TYPE_PointerTons2__Pos (286)
 #endif
 
 /* ns2__DCC * has binding name 'PointerTons2__DCC' for type 'ns2:DCC' */
 #ifndef SOAP_TYPE_PointerTons2__DCC
-#define SOAP_TYPE_PointerTons2__DCC (382)
+#define SOAP_TYPE_PointerTons2__DCC (285)
 #endif
 
 /* ns2__FundingTotals * has binding name 'PointerTons2__FundingTotals' for type 'ns2:FundingTotals' */
 #ifndef SOAP_TYPE_PointerTons2__FundingTotals
-#define SOAP_TYPE_PointerTons2__FundingTotals (381)
+#define SOAP_TYPE_PointerTons2__FundingTotals (284)
 #endif
 
 /* ns2__PurchaseTotals * has binding name 'PointerTons2__PurchaseTotals' for type 'ns2:PurchaseTotals' */
 #ifndef SOAP_TYPE_PointerTons2__PurchaseTotals
-#define SOAP_TYPE_PointerTons2__PurchaseTotals (380)
+#define SOAP_TYPE_PointerTons2__PurchaseTotals (283)
 #endif
 
 /* ns2__Item * has binding name 'PointerTons2__Item' for type 'ns2:Item' */
 #ifndef SOAP_TYPE_PointerTons2__Item
-#define SOAP_TYPE_PointerTons2__Item (378)
+#define SOAP_TYPE_PointerTons2__Item (281)
 #endif
 
 /* ns2__ShipFrom * has binding name 'PointerTons2__ShipFrom' for type 'ns2:ShipFrom' */
 #ifndef SOAP_TYPE_PointerTons2__ShipFrom
-#define SOAP_TYPE_PointerTons2__ShipFrom (377)
+#define SOAP_TYPE_PointerTons2__ShipFrom (280)
 #endif
 
 /* ns2__PersonalId * has binding name 'PointerTons2__PersonalId' for type 'ns2:PersonalId' */
 #ifndef SOAP_TYPE_PointerTons2__PersonalId
-#define SOAP_TYPE_PointerTons2__PersonalId (376)
+#define SOAP_TYPE_PointerTons2__PersonalId (279)
 #endif
 
 /* ns2__ShipTo * has binding name 'PointerTons2__ShipTo' for type 'ns2:ShipTo' */
 #ifndef SOAP_TYPE_PointerTons2__ShipTo
-#define SOAP_TYPE_PointerTons2__ShipTo (375)
+#define SOAP_TYPE_PointerTons2__ShipTo (278)
 #endif
 
 /* ns2__BillTo * has binding name 'PointerTons2__BillTo' for type 'ns2:BillTo' */
 #ifndef SOAP_TYPE_PointerTons2__BillTo
-#define SOAP_TYPE_PointerTons2__BillTo (374)
+#define SOAP_TYPE_PointerTons2__BillTo (277)
 #endif
 
 /* ns2__InvoiceHeader * has binding name 'PointerTons2__InvoiceHeader' for type 'ns2:InvoiceHeader' */
 #ifndef SOAP_TYPE_PointerTons2__InvoiceHeader
-#define SOAP_TYPE_PointerTons2__InvoiceHeader (373)
+#define SOAP_TYPE_PointerTons2__InvoiceHeader (276)
 #endif
 
 /* ns2__APDevice * has binding name 'PointerTons2__APDevice' for type 'ns2:APDevice' */
 #ifndef SOAP_TYPE_PointerTons2__APDevice
-#define SOAP_TYPE_PointerTons2__APDevice (372)
+#define SOAP_TYPE_PointerTons2__APDevice (275)
 #endif
 
 /* ns2__DecisionManagerTravelLeg * has binding name 'PointerTons2__DecisionManagerTravelLeg' for type 'ns2:DecisionManagerTravelLeg' */
 #ifndef SOAP_TYPE_PointerTons2__DecisionManagerTravelLeg
-#define SOAP_TYPE_PointerTons2__DecisionManagerTravelLeg (369)
+#define SOAP_TYPE_PointerTons2__DecisionManagerTravelLeg (272)
 #endif
 
 /* ns2__DecisionManagerTravelData * has binding name 'PointerTons2__DecisionManagerTravelData' for type 'ns2:DecisionManagerTravelData' */
 #ifndef SOAP_TYPE_PointerTons2__DecisionManagerTravelData
-#define SOAP_TYPE_PointerTons2__DecisionManagerTravelData (368)
+#define SOAP_TYPE_PointerTons2__DecisionManagerTravelData (271)
 #endif
 
 /* ns2__PaySubscriptionEvent * has binding name 'PointerTons2__PaySubscriptionEvent' for type 'ns2:PaySubscriptionEvent' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionEvent
-#define SOAP_TYPE_PointerTons2__PaySubscriptionEvent (367)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionEvent (270)
 #endif
 
 /* ns2__Address * has binding name 'PointerTons2__Address' for type 'ns2:Address' */
 #ifndef SOAP_TYPE_PointerTons2__Address
-#define SOAP_TYPE_PointerTons2__Address (365)
+#define SOAP_TYPE_PointerTons2__Address (268)
 #endif
 
 /* std::string * has binding name 'PointerTons2__dateTime' for type 'ns2:dateTime' */
 #ifndef SOAP_TYPE_PointerTons2__dateTime
-#define SOAP_TYPE_PointerTons2__dateTime (364)
+#define SOAP_TYPE_PointerTons2__dateTime (267)
 #endif
 
 /* std::string * has binding name 'PointerToxsd__integer' for type 'xsd:integer' */
 #ifndef SOAP_TYPE_PointerToxsd__integer
-#define SOAP_TYPE_PointerToxsd__integer (362)
+#define SOAP_TYPE_PointerToxsd__integer (265)
 #endif
 
 /* std::string * has binding name 'PointerTons2__boolean' for type 'ns2:boolean' */
 #ifndef SOAP_TYPE_PointerTons2__boolean
-#define SOAP_TYPE_PointerTons2__boolean (361)
+#define SOAP_TYPE_PointerTons2__boolean (264)
 #endif
 
 /* std::string * has binding name 'PointerTostd__string' for type 'xsd:string' */
 #ifndef SOAP_TYPE_PointerTostd__string
-#define SOAP_TYPE_PointerTostd__string (360)
+#define SOAP_TYPE_PointerTostd__string (263)
 #endif
 
 /* std::string * has binding name 'PointerTons2__amount' for type 'ns2:amount' */
 #ifndef SOAP_TYPE_PointerTons2__amount
-#define SOAP_TYPE_PointerTons2__amount (359)
-#endif
-
-/* struct _wsse__Security * has binding name 'PointerTo_wsse__Security' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsse__Security
-#define SOAP_TYPE_PointerTo_wsse__Security (107)
-#endif
-
-/* struct ds__SignatureType * has binding name 'PointerTods__SignatureType' for type 'ds:SignatureType' */
-#ifndef SOAP_TYPE_PointerTods__SignatureType
-#define SOAP_TYPE_PointerTods__SignatureType (105)
-#endif
-
-/* struct wsc__SecurityContextTokenType * has binding name 'PointerTowsc__SecurityContextTokenType' for type 'wsc:SecurityContextTokenType' */
-#ifndef SOAP_TYPE_PointerTowsc__SecurityContextTokenType
-#define SOAP_TYPE_PointerTowsc__SecurityContextTokenType (104)
-#endif
-
-/* struct xenc__EncryptedKeyType * has binding name 'PointerToxenc__EncryptedKeyType' for type 'xenc:EncryptedKeyType' */
-#ifndef SOAP_TYPE_PointerToxenc__EncryptedKeyType
-#define SOAP_TYPE_PointerToxenc__EncryptedKeyType (103)
-#endif
-
-/* struct _wsse__BinarySecurityToken * has binding name 'PointerTo_wsse__BinarySecurityToken' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsse__BinarySecurityToken
-#define SOAP_TYPE_PointerTo_wsse__BinarySecurityToken (102)
-#endif
-
-/* struct _wsse__UsernameToken * has binding name 'PointerTo_wsse__UsernameToken' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsse__UsernameToken
-#define SOAP_TYPE_PointerTo_wsse__UsernameToken (101)
-#endif
-
-/* struct _wsu__Timestamp * has binding name 'PointerTo_wsu__Timestamp' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsu__Timestamp
-#define SOAP_TYPE_PointerTo_wsu__Timestamp (100)
-#endif
-
-/* struct __wsc__DerivedKeyTokenType_sequence * has binding name 'PointerTo__wsc__DerivedKeyTokenType_sequence' for type '-wsc:DerivedKeyTokenType-sequence' */
-#ifndef SOAP_TYPE_PointerTo__wsc__DerivedKeyTokenType_sequence
-#define SOAP_TYPE_PointerTo__wsc__DerivedKeyTokenType_sequence (98)
-#endif
-
-/* ULONG64 * has binding name 'PointerToULONG64' for type 'xsd:unsignedLong' */
-#ifndef SOAP_TYPE_PointerToULONG64
-#define SOAP_TYPE_PointerToULONG64 (97)
-#endif
-
-/* struct wsc__PropertiesType * has binding name 'PointerTowsc__PropertiesType' for type 'wsc:PropertiesType' */
-#ifndef SOAP_TYPE_PointerTowsc__PropertiesType
-#define SOAP_TYPE_PointerTowsc__PropertiesType (93)
-#endif
-
-/* wsc__FaultCodeOpenEnumType has binding name 'wsc__FaultCodeOpenEnumType' for type 'wsc:FaultCodeOpenEnumType' */
-#ifndef SOAP_TYPE_wsc__FaultCodeOpenEnumType
-#define SOAP_TYPE_wsc__FaultCodeOpenEnumType (88)
-#endif
-
-/* struct _xenc__ReferenceList * has binding name 'PointerTo_xenc__ReferenceList' for type '' */
-#ifndef SOAP_TYPE_PointerTo_xenc__ReferenceList
-#define SOAP_TYPE_PointerTo_xenc__ReferenceList (87)
-#endif
-
-/* struct __xenc__union_ReferenceList * has binding name 'PointerTo__xenc__union_ReferenceList' for type '-xenc:union-ReferenceList' */
-#ifndef SOAP_TYPE_PointerTo__xenc__union_ReferenceList
-#define SOAP_TYPE_PointerTo__xenc__union_ReferenceList (86)
-#endif
-
-/* struct xenc__ReferenceType * has binding name 'PointerToxenc__ReferenceType' for type 'xenc:ReferenceType' */
-#ifndef SOAP_TYPE_PointerToxenc__ReferenceType
-#define SOAP_TYPE_PointerToxenc__ReferenceType (85)
-#endif
-
-/* struct xenc__EncryptionPropertyType * has binding name 'PointerToxenc__EncryptionPropertyType' for type 'xenc:EncryptionPropertyType' */
-#ifndef SOAP_TYPE_PointerToxenc__EncryptionPropertyType
-#define SOAP_TYPE_PointerToxenc__EncryptionPropertyType (83)
-#endif
-
-/* struct xenc__TransformsType * has binding name 'PointerToxenc__TransformsType' for type 'xenc:TransformsType' */
-#ifndef SOAP_TYPE_PointerToxenc__TransformsType
-#define SOAP_TYPE_PointerToxenc__TransformsType (82)
-#endif
-
-/* struct xenc__CipherReferenceType * has binding name 'PointerToxenc__CipherReferenceType' for type 'xenc:CipherReferenceType' */
-#ifndef SOAP_TYPE_PointerToxenc__CipherReferenceType
-#define SOAP_TYPE_PointerToxenc__CipherReferenceType (81)
-#endif
-
-/* struct xenc__EncryptionPropertiesType * has binding name 'PointerToxenc__EncryptionPropertiesType' for type 'xenc:EncryptionPropertiesType' */
-#ifndef SOAP_TYPE_PointerToxenc__EncryptionPropertiesType
-#define SOAP_TYPE_PointerToxenc__EncryptionPropertiesType (80)
-#endif
-
-/* struct xenc__CipherDataType * has binding name 'PointerToxenc__CipherDataType' for type 'xenc:CipherDataType' */
-#ifndef SOAP_TYPE_PointerToxenc__CipherDataType
-#define SOAP_TYPE_PointerToxenc__CipherDataType (79)
-#endif
-
-/* struct ds__KeyInfoType * has binding name 'PointerTo_ds__KeyInfo' for type '' */
-#ifndef SOAP_TYPE_PointerTo_ds__KeyInfo
-#define SOAP_TYPE_PointerTo_ds__KeyInfo (78)
-#endif
-
-/* struct xenc__EncryptionMethodType * has binding name 'PointerToxenc__EncryptionMethodType' for type 'xenc:EncryptionMethodType' */
-#ifndef SOAP_TYPE_PointerToxenc__EncryptionMethodType
-#define SOAP_TYPE_PointerToxenc__EncryptionMethodType (77)
-#endif
-
-/* struct ds__X509IssuerSerialType * has binding name 'PointerTods__X509IssuerSerialType' for type 'ds:X509IssuerSerialType' */
-#ifndef SOAP_TYPE_PointerTods__X509IssuerSerialType
-#define SOAP_TYPE_PointerTods__X509IssuerSerialType (64)
-#endif
-
-/* struct ds__RSAKeyValueType * has binding name 'PointerTods__RSAKeyValueType' for type 'ds:RSAKeyValueType' */
-#ifndef SOAP_TYPE_PointerTods__RSAKeyValueType
-#define SOAP_TYPE_PointerTods__RSAKeyValueType (63)
-#endif
-
-/* struct ds__DSAKeyValueType * has binding name 'PointerTods__DSAKeyValueType' for type 'ds:DSAKeyValueType' */
-#ifndef SOAP_TYPE_PointerTods__DSAKeyValueType
-#define SOAP_TYPE_PointerTods__DSAKeyValueType (62)
-#endif
-
-/* struct ds__TransformType * has binding name 'PointerTods__TransformType' for type 'ds:TransformType' */
-#ifndef SOAP_TYPE_PointerTods__TransformType
-#define SOAP_TYPE_PointerTods__TransformType (61)
-#endif
-
-/* struct ds__DigestMethodType * has binding name 'PointerTods__DigestMethodType' for type 'ds:DigestMethodType' */
-#ifndef SOAP_TYPE_PointerTods__DigestMethodType
-#define SOAP_TYPE_PointerTods__DigestMethodType (60)
-#endif
-
-/* struct ds__TransformsType * has binding name 'PointerTods__TransformsType' for type 'ds:TransformsType' */
-#ifndef SOAP_TYPE_PointerTods__TransformsType
-#define SOAP_TYPE_PointerTods__TransformsType (59)
-#endif
-
-/* int * has binding name 'PointerToint' for type 'xsd:int' */
-#ifndef SOAP_TYPE_PointerToint
-#define SOAP_TYPE_PointerToint (58)
-#endif
-
-/* struct ds__ReferenceType ** has binding name 'PointerToPointerTods__ReferenceType' for type 'ds:ReferenceType' */
-#ifndef SOAP_TYPE_PointerToPointerTods__ReferenceType
-#define SOAP_TYPE_PointerToPointerTods__ReferenceType (57)
-#endif
-
-/* struct ds__ReferenceType * has binding name 'PointerTods__ReferenceType' for type 'ds:ReferenceType' */
-#ifndef SOAP_TYPE_PointerTods__ReferenceType
-#define SOAP_TYPE_PointerTods__ReferenceType (56)
-#endif
-
-/* struct ds__SignatureMethodType * has binding name 'PointerTods__SignatureMethodType' for type 'ds:SignatureMethodType' */
-#ifndef SOAP_TYPE_PointerTods__SignatureMethodType
-#define SOAP_TYPE_PointerTods__SignatureMethodType (55)
-#endif
-
-/* struct ds__CanonicalizationMethodType * has binding name 'PointerTods__CanonicalizationMethodType' for type 'ds:CanonicalizationMethodType' */
-#ifndef SOAP_TYPE_PointerTods__CanonicalizationMethodType
-#define SOAP_TYPE_PointerTods__CanonicalizationMethodType (54)
-#endif
-
-/* struct _wsse__SecurityTokenReference * has binding name 'PointerTo_wsse__SecurityTokenReference' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsse__SecurityTokenReference
-#define SOAP_TYPE_PointerTo_wsse__SecurityTokenReference (49)
-#endif
-
-/* struct ds__RetrievalMethodType * has binding name 'PointerTods__RetrievalMethodType' for type 'ds:RetrievalMethodType' */
-#ifndef SOAP_TYPE_PointerTods__RetrievalMethodType
-#define SOAP_TYPE_PointerTods__RetrievalMethodType (48)
-#endif
-
-/* struct ds__KeyValueType * has binding name 'PointerTods__KeyValueType' for type 'ds:KeyValueType' */
-#ifndef SOAP_TYPE_PointerTods__KeyValueType
-#define SOAP_TYPE_PointerTods__KeyValueType (46)
-#endif
-
-/* struct _c14n__InclusiveNamespaces * has binding name 'PointerTo_c14n__InclusiveNamespaces' for type '' */
-#ifndef SOAP_TYPE_PointerTo_c14n__InclusiveNamespaces
-#define SOAP_TYPE_PointerTo_c14n__InclusiveNamespaces (42)
-#endif
-
-/* struct ds__KeyInfoType * has binding name 'PointerTods__KeyInfoType' for type 'ds:KeyInfoType' */
-#ifndef SOAP_TYPE_PointerTods__KeyInfoType
-#define SOAP_TYPE_PointerTods__KeyInfoType (34)
-#endif
-
-/* struct ds__SignedInfoType * has binding name 'PointerTods__SignedInfoType' for type 'ds:SignedInfoType' */
-#ifndef SOAP_TYPE_PointerTods__SignedInfoType
-#define SOAP_TYPE_PointerTods__SignedInfoType (32)
-#endif
-
-/* _ds__SignatureValue has binding name '_ds__SignatureValue' for type '' */
-#ifndef SOAP_TYPE__ds__SignatureValue
-#define SOAP_TYPE__ds__SignatureValue (29)
-#endif
-
-/* struct ds__X509DataType * has binding name 'PointerTods__X509DataType' for type 'ds:X509DataType' */
-#ifndef SOAP_TYPE_PointerTods__X509DataType
-#define SOAP_TYPE_PointerTods__X509DataType (28)
-#endif
-
-/* struct _wsse__Embedded * has binding name 'PointerTo_wsse__Embedded' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsse__Embedded
-#define SOAP_TYPE_PointerTo_wsse__Embedded (26)
-#endif
-
-/* struct _wsse__KeyIdentifier * has binding name 'PointerTo_wsse__KeyIdentifier' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsse__KeyIdentifier
-#define SOAP_TYPE_PointerTo_wsse__KeyIdentifier (25)
-#endif
-
-/* struct _wsse__Reference * has binding name 'PointerTo_wsse__Reference' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsse__Reference
-#define SOAP_TYPE_PointerTo_wsse__Reference (24)
-#endif
-
-/* struct wsse__EncodedString * has binding name 'PointerTowsse__EncodedString' for type 'wsse:EncodedString' */
-#ifndef SOAP_TYPE_PointerTowsse__EncodedString
-#define SOAP_TYPE_PointerTowsse__EncodedString (18)
-#endif
-
-/* struct _wsse__Password * has binding name 'PointerTo_wsse__Password' for type '' */
-#ifndef SOAP_TYPE_PointerTo_wsse__Password
-#define SOAP_TYPE_PointerTo_wsse__Password (17)
+#define SOAP_TYPE_PointerTons2__amount (262)
 #endif
 
 /* _XML has binding name '_XML' for type '' */
@@ -21560,82 +19720,82 @@ typedef std::string ns2__dateTime;
 
 /* std::vector<ns2__PaypalTransaction *>  has binding name 'std__vectorTemplateOfPointerTons2__PaypalTransaction' for type 'ns2:PaypalTransaction' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__PaypalTransaction
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__PaypalTransaction (621)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__PaypalTransaction (524)
 #endif
 
 /* std::vector<ns2__MDDField *>  has binding name 'std__vectorTemplateOfPointerTons2__MDDField' for type 'ns2:MDDField' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__MDDField
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__MDDField (619)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__MDDField (522)
 #endif
 
 /* std::vector<ns2__Service *>  has binding name 'std__vectorTemplateOfPointerTons2__Service' for type 'ns2:Service' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__Service
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__Service (617)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__Service (520)
 #endif
 
 /* std::vector<ns2__Leg *>  has binding name 'std__vectorTemplateOfPointerTons2__Leg' for type 'ns2:Leg' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__Leg
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__Leg (615)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__Leg (518)
 #endif
 
 /* std::vector<ns2__PromotionGroupReply *>  has binding name 'std__vectorTemplateOfPointerTons2__PromotionGroupReply' for type 'ns2:PromotionGroupReply' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__PromotionGroupReply
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__PromotionGroupReply (602)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__PromotionGroupReply (505)
 #endif
 
 /* std::vector<ns2__DeniedPartiesMatch *>  has binding name 'std__vectorTemplateOfPointerTons2__DeniedPartiesMatch' for type 'ns2:DeniedPartiesMatch' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__DeniedPartiesMatch
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__DeniedPartiesMatch (519)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__DeniedPartiesMatch (422)
 #endif
 
 /* std::vector<ns2__Field *>  has binding name 'std__vectorTemplateOfPointerTons2__Field' for type 'ns2:Field' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__Field
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__Field (515)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__Field (418)
 #endif
 
 /* std::vector<ns2__RuleResultItem *>  has binding name 'std__vectorTemplateOfPointerTons2__RuleResultItem' for type 'ns2:RuleResultItem' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__RuleResultItem
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__RuleResultItem (511)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__RuleResultItem (414)
 #endif
 
 /* std::vector<ns2__FXQuote *>  has binding name 'std__vectorTemplateOfPointerTons2__FXQuote' for type 'ns2:FXQuote' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__FXQuote
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__FXQuote (509)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__FXQuote (412)
 #endif
 
 /* std::vector<ns2__TaxReplyItem *>  has binding name 'std__vectorTemplateOfPointerTons2__TaxReplyItem' for type 'ns2:TaxReplyItem' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__TaxReplyItem
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__TaxReplyItem (506)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__TaxReplyItem (409)
 #endif
 
 /* std::vector<ns2__PromotionGroup *>  has binding name 'std__vectorTemplateOfPointerTons2__PromotionGroup' for type 'ns2:PromotionGroup' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__PromotionGroup
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__PromotionGroup (499)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__PromotionGroup (402)
 #endif
 
 /* std::vector<ns2__RequestReserved *>  has binding name 'std__vectorTemplateOfPointerTons2__RequestReserved' for type 'ns2:RequestReserved' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__RequestReserved
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__RequestReserved (456)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__RequestReserved (359)
 #endif
 
 /* std::vector<ns2__Item *>  has binding name 'std__vectorTemplateOfPointerTons2__Item' for type 'ns2:Item' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__Item
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__Item (379)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__Item (282)
 #endif
 
 /* std::vector<char *>  has binding name 'std__vectorTemplateOf_XML' for type '' */
 #ifndef SOAP_TYPE_std__vectorTemplateOf_XML
-#define SOAP_TYPE_std__vectorTemplateOf_XML (371)
+#define SOAP_TYPE_std__vectorTemplateOf_XML (274)
 #endif
 
 /* std::vector<ns2__DecisionManagerTravelLeg *>  has binding name 'std__vectorTemplateOfPointerTons2__DecisionManagerTravelLeg' for type 'ns2:DecisionManagerTravelLeg' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfPointerTons2__DecisionManagerTravelLeg
-#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__DecisionManagerTravelLeg (370)
+#define SOAP_TYPE_std__vectorTemplateOfPointerTons2__DecisionManagerTravelLeg (273)
 #endif
 
 /* std::vector<std::string>  has binding name 'std__vectorTemplateOfstd__string' for type 'xsd:string' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfstd__string
-#define SOAP_TYPE_std__vectorTemplateOfstd__string (366)
+#define SOAP_TYPE_std__vectorTemplateOfstd__string (269)
 #endif
 
 /******************************************************************************\

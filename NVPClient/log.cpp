@@ -9,7 +9,12 @@
 #endif
 
 #include "log.h"
-#include "..\lib\gsoap-2.8\gsoap\plugin\threads.h"
+#ifdef WIN32
+	#include "..\lib\gsoap-2.8\gsoap\plugin\threads.h"
+#else
+	#include "../lib/gsoap-2.8/gsoap/plugin/threads.h"
+#endif
+
 
 extern SafeFields gSafeFields;
 
@@ -41,7 +46,12 @@ static const char NEWLINE[] = "\n";
 #define NULL_STRING	(char *) 0
 void *gCybsLogMutex;
 
-static MUTEX_TYPE mutexLock = NULL;
+#ifdef WIN32
+static MUTEX_TYPE mutexLock;
+#else
+static MUTEX_TYPE mutexLock = PTHREAD_MUTEX_INITIALIZER;
+#endif
+
 /****************************************************************************/
 /* PROTOTYPES OF INTERNAL FUNCTIONS                                         */
 /****************************************************************************/
@@ -63,7 +73,6 @@ CybsLogError cybs_prepare_log(config cfg)
 
 	FILE *pFile;
 	long nSize;
-
 	pFile = fopen( cfg.logFilePath, "a+" );
 	if (!pFile)
 	{
@@ -75,10 +84,8 @@ CybsLogError cybs_prepare_log(config cfg)
 		fclose( pFile );
 		return( CYBS_LE_FSEEK );
 	}
-
 	nSize = ftell( pFile );
 	fclose( pFile );
-
 	/* if size has exceeded the maximum, archive it */
 	if (nSize > cfg.nLogMaxSizeInMB * MB)
 	{
@@ -97,13 +104,13 @@ CybsLogError cybs_prepare_log(config cfg)
 		nSize = 0;
 	}
 
-	
+	MUTEX_UNLOCK(mutexLock);
 	if (nSize == 0)
 	{
 		cybs_log(cfg, 
 			 CYBS_LT_FILESTART, FILESTART_ENTRY );
 	}
-	MUTEX_UNLOCK(mutexLock);
+	
 	return( CYBS_LE_OK );
 }
 

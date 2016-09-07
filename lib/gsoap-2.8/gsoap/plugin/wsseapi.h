@@ -51,7 +51,12 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #ifndef WSSEAPI_H
 #define WSSEAPI_H
 
-#include "..\..\..\..\NVPClient\soapH.h"	/* replace with soapcpp2-generated *H.h file */
+#ifdef WIN32
+	#include "..\..\..\..\NVPClient\soapH.h"	/* replace with soapcpp2-generated *H.h file */
+#else
+	#include "../../../../NVPClient/soapH.h"
+#endif
+
 #include "smdevp.h"
 #include "mecevp.h"
 
