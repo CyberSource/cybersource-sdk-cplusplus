@@ -1,7 +1,7 @@
-# cybersource-sdk-c--windows
+# cybersource-sdk-cplusplus
 
-[[Build Status](https://travis-ci.org/CyberSource/cybersource-sdk-cplusplus.png?branch=future)]
-(https://travis-ci.org/CyberSource/cybersource-sdk-cplusplus)
+[[Build Status](https://travis-ci.com/ashchand/cybersource-sdk-cplusplus-windows.png?branch=future)]
+(https://travis-ci.com/ashchand/cybersource-sdk-cplusplus-windows)
 
 CyberSource C++ SDK for windows
 ##Requirements
