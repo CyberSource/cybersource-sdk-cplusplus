@@ -2,4 +2,4 @@ language:
     c++
 
 script:
-   - mkinstall.bat
+   - make build64
