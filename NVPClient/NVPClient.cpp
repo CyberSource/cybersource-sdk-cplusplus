@@ -582,6 +582,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, Cyb
 	responseMsg = proxy->soap->msgbuf;
 	
 	if (status == SOAP_OK) {
+		if (cfg.isLogEnabled)
 		cybs_log( cfg, CYBS_LT_SUCCESS, responseMsg );
 
 		if (cfg.isLogEnabled)

@@ -581,6 +581,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	char *responseMsg = proxy->soap->msgbuf;
 
 	if (status == SOAP_OK) {
+		if (cfg.isLogEnabled)
 		cybs_log( cfg, CYBS_LT_SUCCESS, responseMsg );
 
 		/* converting ns2__replyMessage to xml */
@@ -595,8 +596,10 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	} else {
 		const char *faultString = proxy->soap_fault_string();
 
-		if (faultString)
-		cybs_log( cfg, CYBS_LT_ERROR, faultString );
+		if (faultString) {
+			if (cfg.isLogEnabled)
+				cybs_log( cfg, CYBS_LT_ERROR, faultString );
+		}
 	}
 
 	return status;
