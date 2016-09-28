@@ -3,4 +3,4 @@ language:
 
 script:
    - make build64
-   - make dist
+   - make build32
