@@ -1,0 +1,6 @@
+language:
+    c++
+
+script:
+   - make build64
+   - make build32
