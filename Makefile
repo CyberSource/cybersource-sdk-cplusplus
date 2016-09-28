@@ -6,11 +6,13 @@ DIST           = $(DIST_BASE)/$(PROD_NAME)-$(API_VERSION)
 
 build32:
 	$(MAKE) -C BaseClient
+	$(MAKE) -C BaseClient static
 	$(MAKE) -C NVPClient 32
 	$(MAKE) -C XMLClient 32
 
 build64:
 	$(MAKE) -C BaseClient
+	$(MAKE) -C BaseClient static
 	$(MAKE) -C NVPClient 64
 	$(MAKE) -C XMLClient 64
 
