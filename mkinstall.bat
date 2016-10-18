@@ -18,7 +18,6 @@ if "%platform%"=="win64" (
 
 set DIST_DIR=%DIST_DIR_PREFIX%\simapi-c-%CLIENT_LIBRARY_VERSION_VALUE%
 set LATEST_DIR=%BUILD_DIR%\simapi-c-latest
-set subdir
 
 if "%platform%"=="win32" (
 	set subdir="win32"
@@ -124,7 +123,7 @@ if "%platform%"=="win64" (
 echo Creating the new simapi-c-win64-%CLIENT_LIBRARY_VERSION_VALUE%.zip...
 jar Mcf simapi-c-win64-%CLIENT_LIBRARY_VERSION_VALUE%.zip simapi-c-win64-%CLIENT_LIBRARY_VERSION_VALUE%
 )
-echo Listing %DIST_DIR_PREFIX%.zip...
-dir %DIST_DIR_PREFIX%.zip 
+echo Listing simapi-c-win32-%CLIENT_LIBRARY_VERSION_VALUE%...
+dir simapi-c-win32-%CLIENT_LIBRARY_VERSION_VALUE% 
 
 cd ..
