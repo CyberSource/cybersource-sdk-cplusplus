@@ -76,10 +76,16 @@ char *runAuth(CybsMap *cfgMap) {
 	//proxy.soap_own = true;
 	//proxy.INVPTransactionProcessorProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
 	soap_mode(proxy.soap, (soap_mode)SOAP_XML_CANONICAL);
+	
+	soap_set_omode(proxy.soap, SOAP_C_UTFSTRING);
+	soap_set_imode(proxy.soap, SOAP_C_UTFSTRING);
+
+	soap_set_omode(proxy.soap, SOAP_C_MBSTRING);
+	soap_set_imode(proxy.soap, SOAP_C_MBSTRING);
+	
 	CybsMap *requestMap = cybs_create_map();
 	CybsMap *responseMap = cybs_create_map();
 	
-	// cybs_add(requestMap, "merchantID", "visadctest_ashish");
 	cybs_add(requestMap, "merchantReferenceCode", (void *)"your_merchant_reference_code");
 	cybs_add(requestMap, "billTo_firstName", (void *)"John");
 	cybs_add(requestMap, "billTo_lastName", (void *)"Doe");

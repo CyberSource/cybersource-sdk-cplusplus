@@ -10,7 +10,7 @@ then
 
 	if [ -f "CyberSourceTransaction_NVP_$targetAPIVersion.wsdl" ]
         then
-     		break           
+     		echo "Ready to generate stub"           
         else
                 echo "Error: wsdl file CyberSourceTransaction_NVP_$targetAPIVersion.wsdl is not present."
 		exit
@@ -63,7 +63,7 @@ then
 	
 	if [ -f "CyberSourceTransaction_$targetAPIVersion.wsdl" ]
         then
-                break
+                echo "Ready to generate stub"
         else
                 echo "Error: wsdl file CyberSourceTransaction_$targetAPIVersion.wsdl is not present."
                 exit

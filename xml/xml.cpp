@@ -80,12 +80,24 @@ void handleError( int status, ns2__RequestMessage request, CybsMap *store )
 }
 
 char *run () {
-	const char *decision, *requestID;
 	char *ret = NULL;
 	soap *ctx = soap_new();
+	soap_set_omode(ctx, SOAP_C_UTFSTRING);
+	soap_set_imode(ctx, SOAP_C_UTFSTRING);
+	
+	soap_set_omode(ctx, SOAP_C_MBSTRING);
+	soap_set_imode(ctx, SOAP_C_MBSTRING);
+	
 	ns2__ReplyMessage *reply = new ns2__ReplyMessage();
 	ITransactionProcessorProxy proxy = ITransactionProcessorProxy ();
 	soap_mode(proxy.soap, (soap_mode)SOAP_XML_CANONICAL);
+	
+	soap_set_omode(proxy.soap, SOAP_C_UTFSTRING);
+	soap_set_imode(proxy.soap, SOAP_C_UTFSTRING);
+
+	soap_set_omode(proxy.soap, SOAP_C_MBSTRING);
+	soap_set_imode(proxy.soap, SOAP_C_MBSTRING);
+	
 	ns2__RequestMessage req = authTransaction(ctx);
 	CybsMap *configMap = cybs_create_map();
 
@@ -190,7 +202,6 @@ void printResponse(ITransactionProcessorProxy proxy, ns2__ReplyMessage *reply)
 
 int main (void)
 {
-	char *requestID;
 	run();
 
 	return 0;
