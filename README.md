@@ -6,7 +6,7 @@
 CyberSource C++ SDK for windows
 ##Requirements
 ###Windows
-1. Visual Studio 2012 or later
+1. Visual Studio 2012
 2. gsoap 2.8
 
 ###Linux
@@ -35,6 +35,8 @@ Refer to our Developer's Guide for details http://apps.cybersource.com/library/d
 2. Extract and go to the cybersource-sdk-cpp directory.
 3. Run "make clean" to clean up the old build/binaries.
 4. Run "make build32" or "make build64" to build 32 or 64 bit respectively.
+5. Navigate to xml sample folder and run compile.sh
+6. Navigate to NVPTest sample folder and run compile.sh
 5. Run "make dist" to generate tar.
 6. Binaries will be generated in /builds/simapi-c-linux-6.0.0.tar.gz.
 
