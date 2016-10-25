@@ -3,6 +3,7 @@
 #include <string.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
+#include <map>
 
 #ifndef WIN32
 #include <time.h>
@@ -59,6 +60,7 @@ static MUTEX_TYPE mutexLock = PTHREAD_MUTEX_INITIALIZER;
 void get_formatted_time( const char *szFormat, char *szDest );
 char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType);
 static char *mask( const char *szField, const char *szValue );
+static std::wstring mask( const std::wstring szField, const std::wstring szValue );
 void read_doc( xmlNode *a_node, char *parentName, char *grandParent, SafeFields::MessageType eType);
 char *cybs_strdup( const char * szStringToDup );
 
@@ -147,6 +149,52 @@ void cybs_log(
 	}
 }
 
+void cybs_log(
+	config cfg, const char *szType, const wchar_t *szText )
+{
+	MUTEX_LOCK(mutexLock);
+
+	wchar_t *szTextToLog = szText ? const_cast< wchar_t* >(szText) : const_cast< wchar_t* >(L"(null)");
+
+	FILE *pFile = fopen( cfg.logFilePath, "a" );
+	if (pFile)
+	{
+		char szFormattedTime[FORMATTED_TIME_LENGTH + 1];
+
+		if (!strcmp( szType, CYBS_LT_TRANSTART ))
+		{
+			fprintf( pFile, "%s%s%s", NEWLINE, TRANSTART_MARKER, NEWLINE );
+		}
+
+		get_formatted_time( ENTRY_TIMESTAMP, szFormattedTime );
+		wchar_t *wszFormattedTime = new wchar_t[FORMATTED_TIME_LENGTH + 1];
+		mbstowcs (wszFormattedTime, szFormattedTime, FORMATTED_TIME_LENGTH + 1);
+
+		wchar_t *type = new wchar_t[10];
+		mbstowcs (type, szType, 10);
+
+		fwprintf(
+			pFile, wszFormattedTime);
+		
+		fwprintf(
+			pFile, L" " );
+
+		fwprintf(
+			pFile, type, L"\n");
+
+		fwprintf(
+			pFile, szTextToLog, L"\r\n" );
+
+		// TODO: see how long the thread id's usually are on Linux and adjust the length in the fprint format accordingly.
+		
+		fclose( pFile );
+		
+		delete[] wszFormattedTime;
+		delete[] type;
+		MUTEX_UNLOCK(mutexLock);
+	}
+}
+
 /* Function to log text in name value form */
 void cybs_log_map(config config , CybsMap *cfg, const char *szType) {
 	const char *szDelim;
@@ -213,6 +261,36 @@ void cybs_get_string(
 				strcat( szBuffer, (char *)pair.value );
 			}
 		}
+}
+
+void cybs_log_NVP(config config, std::map <std::wstring, std::wstring> map, const char *szType) {
+	std::wstring buffer;
+	bool isRequest = strcmp( szType, CYBS_LT_REQUEST ) == 0;
+	bool isReply = strcmp( szType, CYBS_LT_REPLY ) == 0;
+	bool isConfig = strcmp( szType, CYBS_LT_CONFIG ) == 0;
+	SafeFields::MessageType eType = isRequest ? SafeFields::Request : SafeFields::Reply;
+
+	std::wstring szBuffer;
+	
+	typedef std::map <std::wstring, std::wstring>::const_iterator it_type;
+	for(it_type iterator = map.begin(); iterator != map.end(); iterator++) {
+		char *key = new char[iterator->first.length() + 1];
+		memset( key, 0, iterator->first.length() + 1);
+		wcstombs(key, iterator->first.c_str(), (iterator->first.length() + 1));
+		szBuffer.append (iterator->first);
+		szBuffer.append (L"=");
+		if (!gSafeFields.IsSafe (eType, key)) {
+			std::wstring szMasked = mask(iterator->first, iterator->second );
+			szBuffer.append (szMasked);
+			szBuffer.append (L"\n");
+		} else {
+			szBuffer.append (iterator->second);
+			szBuffer.append (L"\n");
+		}
+		delete[] key;
+	}
+	szBuffer.append (L"\n");
+	cybs_log (config, szType, szBuffer.c_str());
 
 }
 
@@ -240,7 +318,6 @@ void cybs_log_xml(config config, const char *szType, char *xmlString) {
 	xmlChar *xmlbuff;
 	int buffersize;
 	xmlDocDumpFormatMemory(doc, &xmlbuff, &buffersize, 1);
-	//printf("%s", (char *) xmlbuff);
 	cybs_log(config, szType, (const char *)xmlbuff);
 	xmlFree(xmlbuff);
     xmlFreeDoc(doc);
@@ -309,6 +386,36 @@ void cybs_mask_in_place( const char *szField, char *szValue )
 	}
 }
 
+static const wchar_t W_MASK_CHAR = L'x';
+static const wchar_t W_TRACK_DATA[] = L"trackData";
+void cybs_mask_in_place( const std::wstring szField, std::wstring &szValue )
+{
+	size_t nLen = !szValue.empty() ? szValue.length() : 0;
+	
+	//size_t nLen = szValue != NULL ? strlen( szValue ) : 0;
+	if (nLen == 0) return;
+
+	if (wcscmp (szField.c_str(), W_TRACK_DATA) == 0 ||
+	    (nLen >= 1 && nLen <= 9)) {
+		// mask everything
+		for (size_t i = 0; i < nLen; ++i) {
+			szValue[i] = W_MASK_CHAR;
+		}
+	} else if (nLen >= 10 && nLen <= 15) {
+		// mask everything but the first and last two
+		size_t upperLimit = nLen - 2;
+		for (size_t i = 2; i < upperLimit; ++i) {
+			szValue[i] = W_MASK_CHAR;
+		}
+	} else if (nLen >= 16) {
+		// mask everything but the first and last four
+		size_t upperLimit = nLen - 4;
+		for (size_t i = 4; i < upperLimit; ++i) {
+			szValue[i] = W_MASK_CHAR;
+		}
+	}
+}
+
 char *cybs_strdup( const char * szStringToDup )
 {
 	char *szDup
@@ -327,6 +434,16 @@ static char *mask( const char *szField, const char *szValue )
 {
 	char *szMasked = cybs_strdup( szValue );
 	if (!szMasked) {
+		return( 0 );
+	}
+	cybs_mask_in_place( szField, szMasked );
+	return( szMasked );
+}
+
+static std::wstring mask( const std::wstring szField, const std::wstring szValue )
+{
+	std::wstring szMasked (szValue);// = _wcsdup( szValue );
+	if (szMasked.empty()) {
 		return( 0 );
 	}
 	cybs_mask_in_place( szField, szMasked );

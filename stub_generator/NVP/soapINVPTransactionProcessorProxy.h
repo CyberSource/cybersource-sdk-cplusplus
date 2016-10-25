@@ -51,6 +51,8 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         virtual void reset();
         /// Disables and removes SOAP Header from message by setting soap->header = NULL
         virtual void soap_noheader();
+        /// Add SOAP Header to message
+        virtual void soap_header(struct _wsse__Security *wsse__Security);
         /// Get SOAP Header structure (i.e. soap->header, which is NULL when absent)
         virtual ::SOAP_ENV__Header *soap_header();
         /// Get SOAP Fault structure (i.e. soap->fault, which is NULL when absent)
@@ -74,8 +76,8 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         virtual char *soap_sprint_fault(char *buf, size_t len);
     #endif
         /// Web service operation 'runTransaction' (returns SOAP_OK or error code)
-        virtual int runTransaction(std::string ns2__nvpRequest, std::string &ns2__nvpReply)
+        virtual int runTransaction(wchar_t *ns2__nvpRequest, wchar_t *&ns2__nvpReply)
         { return this->runTransaction(NULL, NULL, ns2__nvpRequest, ns2__nvpReply); }
-        virtual int runTransaction(const char *soap_endpoint, const char *soap_action, std::string ns2__nvpRequest, std::string &ns2__nvpReply);
+        virtual int runTransaction(const char *soap_endpoint, const char *soap_action, wchar_t *ns2__nvpRequest, wchar_t *&ns2__nvpReply);
     };
 #endif

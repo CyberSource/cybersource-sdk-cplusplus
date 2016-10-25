@@ -1,9 +1,8 @@
 #include "safefields.h"
 #include "util.h"
-//#define _DEBUG 
-//#define _CRTDBG_MAP_ALLOC
-//#include <stdlib.h>
-//#include <crtdbg.h>
+#include <iostream>
+#include <map>
+
 
 const char CYBS_LT_FILESTART[]  = "FILESTART ";
 const char CYBS_LT_TRANSTART[]  = "TRANSTART ";
@@ -26,4 +25,5 @@ CybsLogError cybs_prepare_log(config cfg);
 void cybs_log_map(config config, CybsMap *cfg, const char *szType );
 void cybs_get_string(CybsMap *cfg, char szBuffer[], const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType, int length );
 void cybs_log_xml(config cfg, const char *szType, char *xmlString);
+void cybs_log_NVP(config config, std::map <std::wstring, std::wstring> map, const char *szType);
 const char *cybs_get_log_error( CybsLogError error );

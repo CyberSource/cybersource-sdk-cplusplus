@@ -101,117 +101,133 @@ inline int soap_read_int(struct soap *soap, int *p)
 }
 #endif
 
-#ifndef SOAP_TYPE_ns2__dateTime_DEFINED
-#define SOAP_TYPE_ns2__dateTime_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns2__dateTime(struct soap*, std::string *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns2__dateTime(struct soap*, const std::string *);
+#ifndef SOAP_TYPE_ULONG64_DEFINED
+#define SOAP_TYPE_ULONG64_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ULONG64(struct soap*, ULONG64 *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ULONG64(struct soap*, const char*, int, const ULONG64 *, const char*);
+SOAP_FMAC3 ULONG64 * SOAP_FMAC4 soap_in_ULONG64(struct soap*, const char*, ULONG64 *, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ULONG64(struct soap*, const ULONG64 *, const char*, const char*);
 
-#define soap_ns2__dateTime2s(soap, a) ((a).c_str())
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns2__dateTime(struct soap*, const char*, int, const std::string*, const char*);
-
-#define soap_s2ns2__dateTime(soap, s, a) soap_s2stdchar((soap), (s), (a), 0, -1, NULL)
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_in_ns2__dateTime(struct soap*, const char*, std::string*, const char*);
-
-#define soap_instantiate_ns2__dateTime soap_instantiate_std__string
-
-
-#define soap_new_ns2__dateTime soap_new_std__string
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns2__dateTime(struct soap*, const std::string *, const char*, const char*);
-
-inline int soap_write_ns2__dateTime(struct soap *soap, std::string const *p)
+inline int soap_write_ULONG64(struct soap *soap, ULONG64 const *p)
 {
 	soap_free_temp(soap);
 	if (p)
-	{	if (soap_begin_send(soap) || soap_put_ns2__dateTime(soap, p, "ns2:dateTime", "") || soap_end_send(soap))
+	{	if (soap_begin_send(soap) || soap_put_ULONG64(soap, p, "unsignedLong", "") || soap_end_send(soap))
 			return soap->error;
 	}
 	return SOAP_OK;
 }
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_get_ns2__dateTime(struct soap*, std::string *, const char*, const char*);
+SOAP_FMAC3 ULONG64 * SOAP_FMAC4 soap_get_ULONG64(struct soap*, ULONG64 *, const char*, const char*);
 
-inline int soap_read_ns2__dateTime(struct soap *soap, std::string *p)
+inline int soap_read_ULONG64(struct soap *soap, ULONG64 *p)
 {
 	if (p)
-	{	if (soap_begin_recv(soap) || soap_get_ns2__dateTime(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+	{	if (soap_begin_recv(soap) || soap_get_ULONG64(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
 			return soap->error;
 	}
 	return SOAP_OK;
 }
 #endif
 
-#ifndef SOAP_TYPE_ns2__boolean_DEFINED
-#define SOAP_TYPE_ns2__boolean_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns2__boolean(struct soap*, std::string *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns2__boolean(struct soap*, const std::string *);
+#ifndef SOAP_TYPE_wsc__FaultCodeType_DEFINED
+#define SOAP_TYPE_wsc__FaultCodeType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_wsc__FaultCodeType(struct soap*, enum wsc__FaultCodeType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wsc__FaultCodeType(struct soap*, const char*, int, const enum wsc__FaultCodeType *, const char*);
+SOAP_FMAC3S const char* SOAP_FMAC4S soap_wsc__FaultCodeType2s(struct soap*, enum wsc__FaultCodeType);
+SOAP_FMAC3 enum wsc__FaultCodeType * SOAP_FMAC4 soap_in_wsc__FaultCodeType(struct soap*, const char*, enum wsc__FaultCodeType *, const char*);
+SOAP_FMAC3S int SOAP_FMAC4S soap_s2wsc__FaultCodeType(struct soap*, const char*, enum wsc__FaultCodeType *);
 
-#define soap_ns2__boolean2s(soap, a) ((a).c_str())
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns2__boolean(struct soap*, const char*, int, const std::string*, const char*);
+inline enum wsc__FaultCodeType * soap_new_wsc__FaultCodeType(struct soap *soap, int n = -1)
+{
+	return static_cast<enum wsc__FaultCodeType *>(soap_malloc(soap, (n < 0 ? 1 : n) * sizeof(enum wsc__FaultCodeType)));
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wsc__FaultCodeType(struct soap*, const enum wsc__FaultCodeType *, const char*, const char*);
 
-#define soap_s2ns2__boolean(soap, s, a) soap_s2stdchar((soap), (s), (a), 0, -1, NULL)
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_in_ns2__boolean(struct soap*, const char*, std::string*, const char*);
-
-#define soap_instantiate_ns2__boolean soap_instantiate_std__string
-
-
-#define soap_new_ns2__boolean soap_new_std__string
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns2__boolean(struct soap*, const std::string *, const char*, const char*);
-
-inline int soap_write_ns2__boolean(struct soap *soap, std::string const *p)
+inline int soap_write_wsc__FaultCodeType(struct soap *soap, enum wsc__FaultCodeType const *p)
 {
 	soap_free_temp(soap);
 	if (p)
-	{	if (soap_begin_send(soap) || soap_put_ns2__boolean(soap, p, "ns2:boolean", "") || soap_end_send(soap))
+	{	if (soap_begin_send(soap) || soap_put_wsc__FaultCodeType(soap, p, "wsc:FaultCodeType", "") || soap_end_send(soap))
 			return soap->error;
 	}
 	return SOAP_OK;
 }
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_get_ns2__boolean(struct soap*, std::string *, const char*, const char*);
+SOAP_FMAC3 enum wsc__FaultCodeType * SOAP_FMAC4 soap_get_wsc__FaultCodeType(struct soap*, enum wsc__FaultCodeType *, const char*, const char*);
 
-inline int soap_read_ns2__boolean(struct soap *soap, std::string *p)
+inline int soap_read_wsc__FaultCodeType(struct soap *soap, enum wsc__FaultCodeType *p)
 {
 	if (p)
-	{	if (soap_begin_recv(soap) || soap_get_ns2__boolean(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+	{	if (soap_begin_recv(soap) || soap_get_wsc__FaultCodeType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
 			return soap->error;
 	}
 	return SOAP_OK;
 }
 #endif
 
-#ifndef SOAP_TYPE_ns2__amount_DEFINED
-#define SOAP_TYPE_ns2__amount_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_ns2__amount(struct soap*, std::string *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns2__amount(struct soap*, const std::string *);
+#ifndef SOAP_TYPE_wsse__FaultcodeEnum_DEFINED
+#define SOAP_TYPE_wsse__FaultcodeEnum_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_wsse__FaultcodeEnum(struct soap*, enum wsse__FaultcodeEnum *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wsse__FaultcodeEnum(struct soap*, const char*, int, const enum wsse__FaultcodeEnum *, const char*);
+SOAP_FMAC3S const char* SOAP_FMAC4S soap_wsse__FaultcodeEnum2s(struct soap*, enum wsse__FaultcodeEnum);
+SOAP_FMAC3 enum wsse__FaultcodeEnum * SOAP_FMAC4 soap_in_wsse__FaultcodeEnum(struct soap*, const char*, enum wsse__FaultcodeEnum *, const char*);
+SOAP_FMAC3S int SOAP_FMAC4S soap_s2wsse__FaultcodeEnum(struct soap*, const char*, enum wsse__FaultcodeEnum *);
 
-#define soap_ns2__amount2s(soap, a) ((a).c_str())
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns2__amount(struct soap*, const char*, int, const std::string*, const char*);
+inline enum wsse__FaultcodeEnum * soap_new_wsse__FaultcodeEnum(struct soap *soap, int n = -1)
+{
+	return static_cast<enum wsse__FaultcodeEnum *>(soap_malloc(soap, (n < 0 ? 1 : n) * sizeof(enum wsse__FaultcodeEnum)));
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wsse__FaultcodeEnum(struct soap*, const enum wsse__FaultcodeEnum *, const char*, const char*);
 
-#define soap_s2ns2__amount(soap, s, a) soap_s2stdchar((soap), (s), (a), 0, -1, NULL)
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_in_ns2__amount(struct soap*, const char*, std::string*, const char*);
-
-#define soap_instantiate_ns2__amount soap_instantiate_std__string
-
-
-#define soap_new_ns2__amount soap_new_std__string
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns2__amount(struct soap*, const std::string *, const char*, const char*);
-
-inline int soap_write_ns2__amount(struct soap *soap, std::string const *p)
+inline int soap_write_wsse__FaultcodeEnum(struct soap *soap, enum wsse__FaultcodeEnum const *p)
 {
 	soap_free_temp(soap);
 	if (p)
-	{	if (soap_begin_send(soap) || soap_put_ns2__amount(soap, p, "ns2:amount", "") || soap_end_send(soap))
+	{	if (soap_begin_send(soap) || soap_put_wsse__FaultcodeEnum(soap, p, "wsse:FaultcodeEnum", "") || soap_end_send(soap))
 			return soap->error;
 	}
 	return SOAP_OK;
 }
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_get_ns2__amount(struct soap*, std::string *, const char*, const char*);
+SOAP_FMAC3 enum wsse__FaultcodeEnum * SOAP_FMAC4 soap_get_wsse__FaultcodeEnum(struct soap*, enum wsse__FaultcodeEnum *, const char*, const char*);
 
-inline int soap_read_ns2__amount(struct soap *soap, std::string *p)
+inline int soap_read_wsse__FaultcodeEnum(struct soap *soap, enum wsse__FaultcodeEnum *p)
 {
 	if (p)
-	{	if (soap_begin_recv(soap) || soap_get_ns2__amount(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+	{	if (soap_begin_recv(soap) || soap_get_wsse__FaultcodeEnum(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_wsu__tTimestampFault_DEFINED
+#define SOAP_TYPE_wsu__tTimestampFault_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_wsu__tTimestampFault(struct soap*, enum wsu__tTimestampFault *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wsu__tTimestampFault(struct soap*, const char*, int, const enum wsu__tTimestampFault *, const char*);
+SOAP_FMAC3S const char* SOAP_FMAC4S soap_wsu__tTimestampFault2s(struct soap*, enum wsu__tTimestampFault);
+SOAP_FMAC3 enum wsu__tTimestampFault * SOAP_FMAC4 soap_in_wsu__tTimestampFault(struct soap*, const char*, enum wsu__tTimestampFault *, const char*);
+SOAP_FMAC3S int SOAP_FMAC4S soap_s2wsu__tTimestampFault(struct soap*, const char*, enum wsu__tTimestampFault *);
+
+inline enum wsu__tTimestampFault * soap_new_wsu__tTimestampFault(struct soap *soap, int n = -1)
+{
+	return static_cast<enum wsu__tTimestampFault *>(soap_malloc(soap, (n < 0 ? 1 : n) * sizeof(enum wsu__tTimestampFault)));
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wsu__tTimestampFault(struct soap*, const enum wsu__tTimestampFault *, const char*, const char*);
+
+inline int soap_write_wsu__tTimestampFault(struct soap *soap, enum wsu__tTimestampFault const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || soap_put_wsu__tTimestampFault(soap, p, "wsu:tTimestampFault", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 enum wsu__tTimestampFault * SOAP_FMAC4 soap_get_wsu__tTimestampFault(struct soap*, enum wsu__tTimestampFault *, const char*, const char*);
+
+inline int soap_read_wsu__tTimestampFault(struct soap *soap, enum wsu__tTimestampFault *p)
+{
+	if (p)
+	{	if (soap_begin_recv(soap) || soap_get_wsu__tTimestampFault(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
 			return soap->error;
 	}
 	return SOAP_OK;
@@ -241,7 +257,7 @@ inline ns2__issuer * soap_new_req_ns2__issuer(
 
 inline ns2__issuer * soap_new_set_ns2__issuer(
 	struct soap *soap,
-	std::string *additionalData)
+	wchar_t *additionalData)
 {
 	ns2__issuer *_p = soap_new_ns2__issuer(soap);
 	if (_p)
@@ -286,7 +302,7 @@ inline ns2__BinLookupReply * soap_new_ns2__BinLookupReply(struct soap *soap, int
 
 inline ns2__BinLookupReply * soap_new_req_ns2__BinLookupReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__BinLookupReply *_p = soap_new_ns2__BinLookupReply(soap);
 	if (_p)
@@ -298,23 +314,23 @@ inline ns2__BinLookupReply * soap_new_req_ns2__BinLookupReply(
 
 inline ns2__BinLookupReply * soap_new_set_ns2__BinLookupReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *cardType,
-	std::string *cardGroup,
-	std::string *issuerName,
-	std::string *issuerCountry,
-	std::string *issuedCurrency,
-	std::string *level2Eligibility,
-	std::string *level3Eligibility,
-	std::string *cardCategory,
-	std::string *crossBorderIndicator,
-	std::string *issuerPhoneNumber,
-	std::string *billingCurrency,
-	std::string *billingCurrencyMinorDigits,
-	std::string *fastFundsIndicator,
-	std::string *octBlockIndicator,
-	std::string *onlineGamblingBlockIndicator,
-	std::string *requestDateTime)
+	wchar_t *reasonCode,
+	wchar_t *cardType,
+	wchar_t *cardGroup,
+	wchar_t *issuerName,
+	wchar_t *issuerCountry,
+	wchar_t *issuedCurrency,
+	wchar_t *level2Eligibility,
+	wchar_t *level3Eligibility,
+	wchar_t *cardCategory,
+	wchar_t *crossBorderIndicator,
+	wchar_t *issuerPhoneNumber,
+	wchar_t *billingCurrency,
+	wchar_t *billingCurrencyMinorDigits,
+	wchar_t *fastFundsIndicator,
+	wchar_t *octBlockIndicator,
+	wchar_t *onlineGamblingBlockIndicator,
+	wchar_t **requestDateTime)
 {
 	ns2__BinLookupReply *_p = soap_new_ns2__BinLookupReply(soap);
 	if (_p)
@@ -375,7 +391,7 @@ inline ns2__BinLookupService * soap_new_ns2__BinLookupService(struct soap *soap,
 
 inline ns2__BinLookupService * soap_new_req_ns2__BinLookupService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__BinLookupService *_p = soap_new_ns2__BinLookupService(soap);
 	if (_p)
@@ -387,7 +403,7 @@ inline ns2__BinLookupService * soap_new_req_ns2__BinLookupService(
 
 inline ns2__BinLookupService * soap_new_set_ns2__BinLookupService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__BinLookupService *_p = soap_new_ns2__BinLookupService(soap);
 	if (_p)
@@ -432,7 +448,7 @@ inline ns2__EncryptPaymentDataReply * soap_new_ns2__EncryptPaymentDataReply(stru
 
 inline ns2__EncryptPaymentDataReply * soap_new_req_ns2__EncryptPaymentDataReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__EncryptPaymentDataReply *_p = soap_new_ns2__EncryptPaymentDataReply(soap);
 	if (_p)
@@ -444,8 +460,8 @@ inline ns2__EncryptPaymentDataReply * soap_new_req_ns2__EncryptPaymentDataReply(
 
 inline ns2__EncryptPaymentDataReply * soap_new_set_ns2__EncryptPaymentDataReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime)
 {
 	ns2__EncryptPaymentDataReply *_p = soap_new_ns2__EncryptPaymentDataReply(soap);
 	if (_p)
@@ -491,7 +507,7 @@ inline ns2__DecryptVisaCheckoutDataReply * soap_new_ns2__DecryptVisaCheckoutData
 
 inline ns2__DecryptVisaCheckoutDataReply * soap_new_req_ns2__DecryptVisaCheckoutDataReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__DecryptVisaCheckoutDataReply *_p = soap_new_ns2__DecryptVisaCheckoutDataReply(soap);
 	if (_p)
@@ -503,7 +519,7 @@ inline ns2__DecryptVisaCheckoutDataReply * soap_new_req_ns2__DecryptVisaCheckout
 
 inline ns2__DecryptVisaCheckoutDataReply * soap_new_set_ns2__DecryptVisaCheckoutDataReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__DecryptVisaCheckoutDataReply *_p = soap_new_ns2__DecryptVisaCheckoutDataReply(soap);
 	if (_p)
@@ -558,9 +574,9 @@ inline ns2__VCCustomData * soap_new_req_ns2__VCCustomData(
 
 inline ns2__VCCustomData * soap_new_set_ns2__VCCustomData(
 	struct soap *soap,
-	std::string *name,
-	std::string *value,
-	std::string *id)
+	wchar_t *name,
+	wchar_t *value,
+	wchar_t **id)
 {
 	ns2__VCCustomData *_p = soap_new_ns2__VCCustomData(soap);
 	if (_p)
@@ -617,10 +633,10 @@ inline ns2__VCCardArt * soap_new_req_ns2__VCCardArt(
 
 inline ns2__VCCardArt * soap_new_set_ns2__VCCardArt(
 	struct soap *soap,
-	std::string *fileName,
-	std::string *height,
-	std::string *width,
-	std::string *id)
+	wchar_t *fileName,
+	wchar_t *height,
+	wchar_t *width,
+	wchar_t **id)
 {
 	ns2__VCCardArt *_p = soap_new_ns2__VCCardArt(soap);
 	if (_p)
@@ -678,46 +694,46 @@ inline ns2__VCReply * soap_new_req_ns2__VCReply(
 
 inline ns2__VCReply * soap_new_set_ns2__VCReply(
 	struct soap *soap,
-	std::string *creationTimeStamp,
-	std::string *alternateShippingAddressCountryCode,
-	std::string *alternateShippingAddressPostalCode,
-	std::string *vcAccountLoginName,
-	std::string *vcAccountFirstName,
-	std::string *vcAccountLastName,
-	std::string *vcAccountEncryptedID,
-	std::string *vcAccountEmail,
-	std::string *vcAccountMobilePhoneNumber,
-	std::string *merchantReferenceID,
-	std::string *subtotalAmount,
-	std::string *shippingHandlingAmount,
-	std::string *taxAmount,
-	std::string *discountAmount,
-	std::string *giftWrapAmount,
-	std::string *uncategorizedAmount,
-	std::string *totalPurchaseAmount,
-	std::string *walletReferenceID,
-	std::string *promotionCode,
-	std::string *paymentInstrumentID,
-	std::string *cardVerificationStatus,
-	std::string *issuerID,
-	std::string *paymentInstrumentNickName,
-	std::string *nameOnCard,
-	std::string *cardType,
-	std::string *cardGroup,
+	wchar_t *creationTimeStamp,
+	wchar_t *alternateShippingAddressCountryCode,
+	wchar_t *alternateShippingAddressPostalCode,
+	wchar_t *vcAccountLoginName,
+	wchar_t *vcAccountFirstName,
+	wchar_t *vcAccountLastName,
+	wchar_t *vcAccountEncryptedID,
+	wchar_t *vcAccountEmail,
+	wchar_t *vcAccountMobilePhoneNumber,
+	wchar_t *merchantReferenceID,
+	wchar_t *subtotalAmount,
+	wchar_t *shippingHandlingAmount,
+	wchar_t *taxAmount,
+	wchar_t *discountAmount,
+	wchar_t *giftWrapAmount,
+	wchar_t *uncategorizedAmount,
+	wchar_t *totalPurchaseAmount,
+	wchar_t *walletReferenceID,
+	wchar_t *promotionCode,
+	wchar_t *paymentInstrumentID,
+	wchar_t *cardVerificationStatus,
+	wchar_t *issuerID,
+	wchar_t *paymentInstrumentNickName,
+	wchar_t *nameOnCard,
+	wchar_t *cardType,
+	wchar_t *cardGroup,
 	ns2__VCCardArt *cardArt,
-	std::string *riskAdvice,
-	std::string *riskScore,
-	std::string *riskAdditionalData,
-	std::string *avsCodeRaw,
-	std::string *cvnCodeRaw,
-	std::string *eciRaw,
-	std::string *eci,
-	std::string *cavv,
-	std::string *veresEnrolled,
-	std::string *veresTimeStamp,
-	std::string *paresStatus,
-	std::string *paresTimeStamp,
-	std::string *xid,
+	wchar_t *riskAdvice,
+	wchar_t *riskScore,
+	wchar_t *riskAdditionalData,
+	wchar_t *avsCodeRaw,
+	wchar_t *cvnCodeRaw,
+	wchar_t *eciRaw,
+	wchar_t *eci,
+	wchar_t *cavv,
+	wchar_t *veresEnrolled,
+	wchar_t *veresTimeStamp,
+	wchar_t *paresStatus,
+	wchar_t *paresTimeStamp,
+	wchar_t *xid,
 	ns2__VCCustomData *customData)
 {
 	ns2__VCReply *_p = soap_new_ns2__VCReply(soap);
@@ -813,34 +829,34 @@ inline ns2__AutoRentalData * soap_new_req_ns2__AutoRentalData(
 
 inline ns2__AutoRentalData * soap_new_set_ns2__AutoRentalData(
 	struct soap *soap,
-	std::string *adjustmentCost,
-	std::string *adjustmentCode,
-	std::string *agreementNumber,
-	std::string *classCode,
-	std::string *customerServicePhoneNumber,
-	std::string *dailyRate,
-	std::string *mileageCost,
-	std::string *gasCost,
-	std::string *insuranceCost,
-	std::string *lateReturnCost,
-	std::string *maximumFreeMiles,
-	std::string *milesTraveled,
-	std::string *oneWayCost,
-	std::string *parkingViolationCost,
-	std::string *pickUpCity,
-	std::string *pickUpCountry,
-	std::string *pickUpDate,
-	std::string *pickUpState,
-	std::string *pickUpTime,
-	std::string *ratePerMile,
-	std::string *renterName,
-	std::string *returnCity,
-	std::string *returnCountry,
-	std::string *returnDate,
-	std::string *returnLocationID,
-	std::string *returnState,
-	std::string *returnTime,
-	std::string *specialProgramCode)
+	wchar_t **adjustmentCost,
+	wchar_t *adjustmentCode,
+	wchar_t *agreementNumber,
+	wchar_t *classCode,
+	wchar_t *customerServicePhoneNumber,
+	wchar_t **dailyRate,
+	wchar_t **mileageCost,
+	wchar_t **gasCost,
+	wchar_t **insuranceCost,
+	wchar_t **lateReturnCost,
+	wchar_t **maximumFreeMiles,
+	wchar_t **milesTraveled,
+	wchar_t **oneWayCost,
+	wchar_t **parkingViolationCost,
+	wchar_t *pickUpCity,
+	wchar_t *pickUpCountry,
+	wchar_t *pickUpDate,
+	wchar_t *pickUpState,
+	wchar_t **pickUpTime,
+	wchar_t **ratePerMile,
+	wchar_t *renterName,
+	wchar_t *returnCity,
+	wchar_t *returnCountry,
+	wchar_t *returnDate,
+	wchar_t *returnLocationID,
+	wchar_t *returnState,
+	wchar_t **returnTime,
+	wchar_t *specialProgramCode)
 {
 	ns2__AutoRentalData *_p = soap_new_ns2__AutoRentalData(soap);
 	if (_p)
@@ -912,7 +928,7 @@ inline ns2__HostedDataRetrieveReply * soap_new_ns2__HostedDataRetrieveReply(stru
 
 inline ns2__HostedDataRetrieveReply * soap_new_req_ns2__HostedDataRetrieveReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__HostedDataRetrieveReply *_p = soap_new_ns2__HostedDataRetrieveReply(soap);
 	if (_p)
@@ -924,29 +940,29 @@ inline ns2__HostedDataRetrieveReply * soap_new_req_ns2__HostedDataRetrieveReply(
 
 inline ns2__HostedDataRetrieveReply * soap_new_set_ns2__HostedDataRetrieveReply(
 	struct soap *soap,
-	std::string *responseMessage,
-	const std::string& reasonCode,
-	std::string *aggregatorMerchantIdentifier,
-	std::string *customerFirstName,
-	std::string *customerLastName,
-	std::string *customerID,
-	std::string *paymentMethod,
-	std::string *billToStreet1,
-	std::string *billToStreet2,
-	std::string *billToEmail,
-	std::string *billToState,
-	std::string *billToFirstName,
-	std::string *billToLastName,
-	std::string *billToCity,
-	std::string *billToCountry,
-	std::string *billToPostalCode,
-	std::string *cardAccountNumber,
-	std::string *cardType,
-	std::string *cardExpirationMonth,
-	std::string *cardExpirationYear,
-	std::string *cardIssueNumber,
-	std::string *cardStartMonth,
-	std::string *cardStartYear)
+	wchar_t *responseMessage,
+	wchar_t *reasonCode,
+	wchar_t *aggregatorMerchantIdentifier,
+	wchar_t *customerFirstName,
+	wchar_t *customerLastName,
+	wchar_t *customerID,
+	wchar_t *paymentMethod,
+	wchar_t *billToStreet1,
+	wchar_t *billToStreet2,
+	wchar_t *billToEmail,
+	wchar_t *billToState,
+	wchar_t *billToFirstName,
+	wchar_t *billToLastName,
+	wchar_t *billToCity,
+	wchar_t *billToCountry,
+	wchar_t *billToPostalCode,
+	wchar_t *cardAccountNumber,
+	wchar_t *cardType,
+	wchar_t *cardExpirationMonth,
+	wchar_t *cardExpirationYear,
+	wchar_t *cardIssueNumber,
+	wchar_t *cardStartMonth,
+	wchar_t *cardStartYear)
 {
 	ns2__HostedDataRetrieveReply *_p = soap_new_ns2__HostedDataRetrieveReply(soap);
 	if (_p)
@@ -1013,7 +1029,7 @@ inline ns2__HostedDataCreateReply * soap_new_ns2__HostedDataCreateReply(struct s
 
 inline ns2__HostedDataCreateReply * soap_new_req_ns2__HostedDataCreateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__HostedDataCreateReply *_p = soap_new_ns2__HostedDataCreateReply(soap);
 	if (_p)
@@ -1025,10 +1041,10 @@ inline ns2__HostedDataCreateReply * soap_new_req_ns2__HostedDataCreateReply(
 
 inline ns2__HostedDataCreateReply * soap_new_set_ns2__HostedDataCreateReply(
 	struct soap *soap,
-	std::string *responseMessage,
-	const std::string& reasonCode,
-	std::string *cardAccountNumberToken,
-	std::string *customerID)
+	wchar_t *responseMessage,
+	wchar_t *reasonCode,
+	wchar_t *cardAccountNumberToken,
+	wchar_t *customerID)
 {
 	ns2__HostedDataCreateReply *_p = soap_new_ns2__HostedDataCreateReply(soap);
 	if (_p)
@@ -1076,7 +1092,7 @@ inline ns2__HostedDataRetrieveService * soap_new_ns2__HostedDataRetrieveService(
 
 inline ns2__HostedDataRetrieveService * soap_new_req_ns2__HostedDataRetrieveService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__HostedDataRetrieveService *_p = soap_new_ns2__HostedDataRetrieveService(soap);
 	if (_p)
@@ -1088,9 +1104,9 @@ inline ns2__HostedDataRetrieveService * soap_new_req_ns2__HostedDataRetrieveServ
 
 inline ns2__HostedDataRetrieveService * soap_new_set_ns2__HostedDataRetrieveService(
 	struct soap *soap,
-	std::string *profileID,
-	std::string *tokenValue,
-	const std::string& run)
+	wchar_t *profileID,
+	wchar_t *tokenValue,
+	wchar_t *run)
 {
 	ns2__HostedDataRetrieveService *_p = soap_new_ns2__HostedDataRetrieveService(soap);
 	if (_p)
@@ -1137,7 +1153,7 @@ inline ns2__HostedDataCreateService * soap_new_ns2__HostedDataCreateService(stru
 
 inline ns2__HostedDataCreateService * soap_new_req_ns2__HostedDataCreateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__HostedDataCreateService *_p = soap_new_ns2__HostedDataCreateService(soap);
 	if (_p)
@@ -1149,9 +1165,9 @@ inline ns2__HostedDataCreateService * soap_new_req_ns2__HostedDataCreateService(
 
 inline ns2__HostedDataCreateService * soap_new_set_ns2__HostedDataCreateService(
 	struct soap *soap,
-	std::string *profileID,
-	std::string *paymentMethod,
-	const std::string& run)
+	wchar_t *profileID,
+	wchar_t *paymentMethod,
+	wchar_t *run)
 {
 	ns2__HostedDataCreateService *_p = soap_new_ns2__HostedDataCreateService(soap);
 	if (_p)
@@ -1208,8 +1224,8 @@ inline ns2__OriginalTransaction * soap_new_req_ns2__OriginalTransaction(
 
 inline ns2__OriginalTransaction * soap_new_set_ns2__OriginalTransaction(
 	struct soap *soap,
-	std::string *amount,
-	std::string *reasonCode)
+	wchar_t **amount,
+	wchar_t *reasonCode)
 {
 	ns2__OriginalTransaction *_p = soap_new_ns2__OriginalTransaction(soap);
 	if (_p)
@@ -1265,10 +1281,10 @@ inline ns2__EmvReply * soap_new_req_ns2__EmvReply(
 
 inline ns2__EmvReply * soap_new_set_ns2__EmvReply(
 	struct soap *soap,
-	std::string *combinedTags,
-	std::string *decryptedRequestTags,
-	std::string *chipValidationResults,
-	std::string *chipValidationType)
+	wchar_t *combinedTags,
+	wchar_t *decryptedRequestTags,
+	wchar_t *chipValidationResults,
+	wchar_t *chipValidationType)
 {
 	ns2__EmvReply *_p = soap_new_ns2__EmvReply(soap);
 	if (_p)
@@ -1326,11 +1342,11 @@ inline ns2__EmvRequest * soap_new_req_ns2__EmvRequest(
 
 inline ns2__EmvRequest * soap_new_set_ns2__EmvRequest(
 	struct soap *soap,
-	std::string *combinedTags,
-	std::string *cardSequenceNumber,
-	std::string *aidAndDFname,
-	std::string *fallback,
-	std::string *fallbackCondition)
+	wchar_t *combinedTags,
+	wchar_t *cardSequenceNumber,
+	wchar_t *aidAndDFname,
+	wchar_t *fallback,
+	wchar_t *fallbackCondition)
 {
 	ns2__EmvRequest *_p = soap_new_ns2__EmvRequest(soap);
 	if (_p)
@@ -1389,9 +1405,9 @@ inline ns2__ServiceFee * soap_new_req_ns2__ServiceFee(
 
 inline ns2__ServiceFee * soap_new_set_ns2__ServiceFee(
 	struct soap *soap,
-	std::string *merchantDescriptor,
-	std::string *merchantDescriptorContact,
-	std::string *merchantDescriptorState)
+	wchar_t *merchantDescriptor,
+	wchar_t *merchantDescriptorContact,
+	wchar_t *merchantDescriptorState)
 {
 	ns2__ServiceFee *_p = soap_new_ns2__ServiceFee(soap);
 	if (_p)
@@ -1438,7 +1454,7 @@ inline ns2__CCDCCUpdateService * soap_new_ns2__CCDCCUpdateService(struct soap *s
 
 inline ns2__CCDCCUpdateService * soap_new_req_ns2__CCDCCUpdateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCDCCUpdateService *_p = soap_new_ns2__CCDCCUpdateService(soap);
 	if (_p)
@@ -1450,12 +1466,12 @@ inline ns2__CCDCCUpdateService * soap_new_req_ns2__CCDCCUpdateService(
 
 inline ns2__CCDCCUpdateService * soap_new_set_ns2__CCDCCUpdateService(
 	struct soap *soap,
-	std::string *reason,
-	std::string *action,
-	std::string *dccRequestID,
-	std::string *captureRequestID,
-	std::string *creditRequestID,
-	const std::string& run)
+	wchar_t *reason,
+	wchar_t *action,
+	wchar_t *dccRequestID,
+	wchar_t *captureRequestID,
+	wchar_t *creditRequestID,
+	wchar_t *run)
 {
 	ns2__CCDCCUpdateService *_p = soap_new_ns2__CCDCCUpdateService(soap);
 	if (_p)
@@ -1515,18 +1531,18 @@ inline ns2__PaypalTransaction * soap_new_req_ns2__PaypalTransaction(
 
 inline ns2__PaypalTransaction * soap_new_set_ns2__PaypalTransaction(
 	struct soap *soap,
-	std::string *transactionTime,
-	std::string *transactionTimeZone,
-	std::string *transactionType,
-	std::string *paypalPayerOrPayeeEmail,
-	std::string *customerDisplayName,
-	std::string *transactionID,
-	std::string *paypalPaymentStatus,
-	std::string *grandTotalAmount,
-	std::string *currency,
-	std::string *paypalFeeAmount,
-	std::string *paypalNetAmount,
-	std::string *id)
+	wchar_t **transactionTime,
+	wchar_t *transactionTimeZone,
+	wchar_t *transactionType,
+	wchar_t *paypalPayerOrPayeeEmail,
+	wchar_t *customerDisplayName,
+	wchar_t *transactionID,
+	wchar_t *paypalPaymentStatus,
+	wchar_t *grandTotalAmount,
+	wchar_t *currency,
+	wchar_t *paypalFeeAmount,
+	wchar_t *paypalNetAmount,
+	wchar_t **id)
 {
 	ns2__PaypalTransaction *_p = soap_new_ns2__PaypalTransaction(soap);
 	if (_p)
@@ -1582,7 +1598,7 @@ inline ns2__PayPalTransactionSearchReply * soap_new_ns2__PayPalTransactionSearch
 
 inline ns2__PayPalTransactionSearchReply * soap_new_req_ns2__PayPalTransactionSearchReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalTransactionSearchReply *_p = soap_new_ns2__PayPalTransactionSearchReply(soap);
 	if (_p)
@@ -1594,9 +1610,9 @@ inline ns2__PayPalTransactionSearchReply * soap_new_req_ns2__PayPalTransactionSe
 
 inline ns2__PayPalTransactionSearchReply * soap_new_set_ns2__PayPalTransactionSearchReply(
 	struct soap *soap,
-	const std::string& reasonCode,
+	wchar_t *reasonCode,
 	const std::vector<ns2__PaypalTransaction *> & transaction,
-	std::string *errorCode)
+	wchar_t *errorCode)
 {
 	ns2__PayPalTransactionSearchReply *_p = soap_new_ns2__PayPalTransactionSearchReply(soap);
 	if (_p)
@@ -1643,7 +1659,7 @@ inline ns2__PayPalGetTxnDetailsReply * soap_new_ns2__PayPalGetTxnDetailsReply(st
 
 inline ns2__PayPalGetTxnDetailsReply * soap_new_req_ns2__PayPalGetTxnDetailsReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalGetTxnDetailsReply *_p = soap_new_ns2__PayPalGetTxnDetailsReply(soap);
 	if (_p)
@@ -1655,48 +1671,48 @@ inline ns2__PayPalGetTxnDetailsReply * soap_new_req_ns2__PayPalGetTxnDetailsRepl
 
 inline ns2__PayPalGetTxnDetailsReply * soap_new_set_ns2__PayPalGetTxnDetailsReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *payer,
-	std::string *payerId,
-	std::string *payerStatus,
-	std::string *payerCountry,
-	std::string *payerBusiness,
-	std::string *payerSalutation,
-	std::string *payerFirstname,
-	std::string *payerMiddlename,
-	std::string *payerLastname,
-	std::string *payerSuffix,
-	std::string *addressID,
-	std::string *addressStatus,
-	std::string *shipToName,
-	std::string *shipToAddress1,
-	std::string *shipToAddress2,
-	std::string *shipToCity,
-	std::string *shipToState,
-	std::string *shipToCountry,
-	std::string *shipToZip,
-	std::string *payerPhone,
-	std::string *transactionId,
-	std::string *parentTransactionId,
-	std::string *paypalReceiptId,
-	std::string *paypalTransactiontype,
-	std::string *paypalPaymentType,
-	std::string *paypalOrderTime,
-	std::string *paypalPaymentGrossAmount,
-	std::string *paypalFeeAmount,
-	std::string *currency,
-	std::string *paypalSettleAmount,
-	std::string *paypalTaxAmount,
-	std::string *paypalExchangeRate,
-	std::string *paypalPaymentStatus,
-	std::string *paypalPendingReason,
-	std::string *paypalReasonCode,
-	std::string *protectionEligibility,
-	std::string *protectionEligibilityType,
-	std::string *paypalNote,
-	std::string *invoiceNumber,
+	wchar_t *reasonCode,
+	wchar_t *payer,
+	wchar_t *payerId,
+	wchar_t *payerStatus,
+	wchar_t *payerCountry,
+	wchar_t *payerBusiness,
+	wchar_t *payerSalutation,
+	wchar_t *payerFirstname,
+	wchar_t *payerMiddlename,
+	wchar_t *payerLastname,
+	wchar_t *payerSuffix,
+	wchar_t *addressID,
+	wchar_t *addressStatus,
+	wchar_t *shipToName,
+	wchar_t *shipToAddress1,
+	wchar_t *shipToAddress2,
+	wchar_t *shipToCity,
+	wchar_t *shipToState,
+	wchar_t *shipToCountry,
+	wchar_t *shipToZip,
+	wchar_t *payerPhone,
+	wchar_t *transactionId,
+	wchar_t *parentTransactionId,
+	wchar_t *paypalReceiptId,
+	wchar_t *paypalTransactiontype,
+	wchar_t *paypalPaymentType,
+	wchar_t *paypalOrderTime,
+	wchar_t *paypalPaymentGrossAmount,
+	wchar_t *paypalFeeAmount,
+	wchar_t *currency,
+	wchar_t *paypalSettleAmount,
+	wchar_t *paypalTaxAmount,
+	wchar_t *paypalExchangeRate,
+	wchar_t *paypalPaymentStatus,
+	wchar_t *paypalPendingReason,
+	wchar_t *paypalReasonCode,
+	wchar_t *protectionEligibility,
+	wchar_t *protectionEligibilityType,
+	wchar_t *paypalNote,
+	wchar_t *invoiceNumber,
 	const std::vector<ns2__Item *> & item,
-	std::string *errorCode)
+	wchar_t *errorCode)
 {
 	ns2__PayPalGetTxnDetailsReply *_p = soap_new_ns2__PayPalGetTxnDetailsReply(soap);
 	if (_p)
@@ -1782,8 +1798,8 @@ inline ns2__RequestReserved * soap_new_ns2__RequestReserved(struct soap *soap, i
 
 inline ns2__RequestReserved * soap_new_req_ns2__RequestReserved(
 	struct soap *soap,
-	const std::string& name,
-	const std::string& value)
+	wchar_t *name,
+	wchar_t *value)
 {
 	ns2__RequestReserved *_p = soap_new_ns2__RequestReserved(soap);
 	if (_p)
@@ -1796,8 +1812,8 @@ inline ns2__RequestReserved * soap_new_req_ns2__RequestReserved(
 
 inline ns2__RequestReserved * soap_new_set_ns2__RequestReserved(
 	struct soap *soap,
-	const std::string& name,
-	const std::string& value)
+	wchar_t *name,
+	wchar_t *value)
 {
 	ns2__RequestReserved *_p = soap_new_ns2__RequestReserved(soap);
 	if (_p)
@@ -1908,10 +1924,10 @@ inline ns2__MerchantSecureData * soap_new_req_ns2__MerchantSecureData(
 
 inline ns2__MerchantSecureData * soap_new_set_ns2__MerchantSecureData(
 	struct soap *soap,
-	std::string *field1,
-	std::string *field2,
-	std::string *field3,
-	std::string *field4)
+	wchar_t *field1,
+	wchar_t *field2,
+	wchar_t *field3,
+	wchar_t *field4)
 {
 	ns2__MerchantSecureData *_p = soap_new_ns2__MerchantSecureData(soap);
 	if (_p)
@@ -1969,26 +1985,26 @@ inline ns2__MerchantDefinedData * soap_new_req_ns2__MerchantDefinedData(
 
 inline ns2__MerchantDefinedData * soap_new_set_ns2__MerchantDefinedData(
 	struct soap *soap,
-	std::string *field1,
-	std::string *field2,
-	std::string *field3,
-	std::string *field4,
-	std::string *field5,
-	std::string *field6,
-	std::string *field7,
-	std::string *field8,
-	std::string *field9,
-	std::string *field10,
-	std::string *field11,
-	std::string *field12,
-	std::string *field13,
-	std::string *field14,
-	std::string *field15,
-	std::string *field16,
-	std::string *field17,
-	std::string *field18,
-	std::string *field19,
-	std::string *field20,
+	wchar_t *field1,
+	wchar_t *field2,
+	wchar_t *field3,
+	wchar_t *field4,
+	wchar_t *field5,
+	wchar_t *field6,
+	wchar_t *field7,
+	wchar_t *field8,
+	wchar_t *field9,
+	wchar_t *field10,
+	wchar_t *field11,
+	wchar_t *field12,
+	wchar_t *field13,
+	wchar_t *field14,
+	wchar_t *field15,
+	wchar_t *field16,
+	wchar_t *field17,
+	wchar_t *field18,
+	wchar_t *field19,
+	wchar_t *field20,
 	const std::vector<ns2__MDDField *> & mddField)
 {
 	ns2__MerchantDefinedData *_p = soap_new_ns2__MerchantDefinedData(soap);
@@ -2054,13 +2070,11 @@ inline ns2__MDDField * soap_new_ns2__MDDField(struct soap *soap, int n = -1)
 
 inline ns2__MDDField * soap_new_req_ns2__MDDField(
 	struct soap *soap,
-	const std::string& __item,
-	const std::string& id)
+	wchar_t *id)
 {
 	ns2__MDDField *_p = soap_new_ns2__MDDField(soap);
 	if (_p)
 	{	_p->soap_default(soap);
-		_p->ns2__MDDField::__item = __item;
 		_p->ns2__MDDField::id = id;
 	}
 	return _p;
@@ -2068,8 +2082,8 @@ inline ns2__MDDField * soap_new_req_ns2__MDDField(
 
 inline ns2__MDDField * soap_new_set_ns2__MDDField(
 	struct soap *soap,
-	const std::string& __item,
-	const std::string& id)
+	wchar_t *__item,
+	wchar_t *id)
 {
 	ns2__MDDField *_p = soap_new_ns2__MDDField(soap);
 	if (_p)
@@ -2125,12 +2139,12 @@ inline ns2__Installment * soap_new_req_ns2__Installment(
 
 inline ns2__Installment * soap_new_set_ns2__Installment(
 	struct soap *soap,
-	std::string *sequence,
-	std::string *totalCount,
-	std::string *totalAmount,
-	std::string *frequency,
-	std::string *amount,
-	std::string *planType)
+	wchar_t *sequence,
+	wchar_t *totalCount,
+	wchar_t *totalAmount,
+	wchar_t *frequency,
+	wchar_t *amount,
+	wchar_t *planType)
 {
 	ns2__Installment *_p = soap_new_ns2__Installment(soap);
 	if (_p)
@@ -2190,10 +2204,10 @@ inline ns2__EncryptedPayment * soap_new_req_ns2__EncryptedPayment(
 
 inline ns2__EncryptedPayment * soap_new_set_ns2__EncryptedPayment(
 	struct soap *soap,
-	std::string *descriptor,
-	std::string *data,
-	std::string *encoding,
-	std::string *wrappedKey)
+	wchar_t *descriptor,
+	wchar_t *data,
+	wchar_t *encoding,
+	wchar_t *wrappedKey)
 {
 	ns2__EncryptedPayment *_p = soap_new_ns2__EncryptedPayment(soap);
 	if (_p)
@@ -2251,25 +2265,25 @@ inline ns2__Pos * soap_new_req_ns2__Pos(
 
 inline ns2__Pos * soap_new_set_ns2__Pos(
 	struct soap *soap,
-	std::string *entryMode,
-	std::string *cardPresent,
-	std::string *terminalCapability,
-	std::string *trackData,
-	std::string *terminalID,
-	std::string *terminalType,
-	std::string *terminalLocation,
-	std::string *transactionSecurity,
-	std::string *catLevel,
-	std::string *conditionCode,
-	std::string *environment,
-	std::string *paymentData,
-	std::string *deviceReaderData,
-	std::string *encryptionAlgorithm,
-	std::string *encodingMethod,
-	std::string *deviceID,
-	std::string *serviceCode,
-	std::string *terminalIDAlternate,
-	std::string *terminalCompliance)
+	wchar_t *entryMode,
+	wchar_t *cardPresent,
+	wchar_t *terminalCapability,
+	wchar_t *trackData,
+	wchar_t *terminalID,
+	wchar_t *terminalType,
+	wchar_t *terminalLocation,
+	wchar_t *transactionSecurity,
+	wchar_t *catLevel,
+	wchar_t *conditionCode,
+	wchar_t *environment,
+	wchar_t *paymentData,
+	wchar_t *deviceReaderData,
+	wchar_t *encryptionAlgorithm,
+	wchar_t *encodingMethod,
+	wchar_t *deviceID,
+	wchar_t *serviceCode,
+	wchar_t *terminalIDAlternate,
+	wchar_t **terminalCompliance)
 {
 	ns2__Pos *_p = soap_new_ns2__Pos(soap);
 	if (_p)
@@ -2342,56 +2356,56 @@ inline ns2__LodgingData * soap_new_req_ns2__LodgingData(
 
 inline ns2__LodgingData * soap_new_set_ns2__LodgingData(
 	struct soap *soap,
-	std::string *checkInDate,
-	std::string *checkOutDate,
-	std::string *dailyRoomRate1,
-	std::string *dailyRoomRate2,
-	std::string *dailyRoomRate3,
-	std::string *roomNights1,
-	std::string *roomNights2,
-	std::string *roomNights3,
-	std::string *guestSmokingPreference,
-	std::string *numberOfRoomsBooked,
-	std::string *numberOfGuests,
-	std::string *roomBedType,
-	std::string *roomTaxElements,
-	std::string *roomRateType,
-	std::string *guestName,
-	std::string *customerServicePhoneNumber,
-	std::string *corporateClientCode,
-	std::string *promotionalCode,
-	std::string *additionalCoupon,
-	std::string *roomLocation,
-	std::string *specialProgramCode,
-	std::string *tax,
-	std::string *prepaidCost,
-	std::string *foodAndBeverageCost,
-	std::string *roomTax,
-	std::string *adjustmentAmount,
-	std::string *phoneCost,
-	std::string *restaurantCost,
-	std::string *roomServiceCost,
-	std::string *miniBarCost,
-	std::string *laundryCost,
-	std::string *miscellaneousCost,
-	std::string *giftShopCost,
-	std::string *movieCost,
-	std::string *healthClubCost,
-	std::string *valetParkingCost,
-	std::string *cashDisbursementCost,
-	std::string *nonRoomCost,
-	std::string *businessCenterCost,
-	std::string *loungeBarCost,
-	std::string *transportationCost,
-	std::string *gratuityCost,
-	std::string *conferenceRoomCost,
-	std::string *audioVisualCost,
-	std::string *banquetCost,
-	std::string *internetAccessCost,
-	std::string *earlyCheckOutCost,
-	std::string *nonRoomTax,
-	std::string *travelAgencyCode,
-	std::string *travelAgencyName)
+	wchar_t *checkInDate,
+	wchar_t *checkOutDate,
+	wchar_t **dailyRoomRate1,
+	wchar_t **dailyRoomRate2,
+	wchar_t **dailyRoomRate3,
+	wchar_t **roomNights1,
+	wchar_t **roomNights2,
+	wchar_t **roomNights3,
+	wchar_t *guestSmokingPreference,
+	wchar_t **numberOfRoomsBooked,
+	wchar_t **numberOfGuests,
+	wchar_t *roomBedType,
+	wchar_t *roomTaxElements,
+	wchar_t *roomRateType,
+	wchar_t *guestName,
+	wchar_t *customerServicePhoneNumber,
+	wchar_t *corporateClientCode,
+	wchar_t *promotionalCode,
+	wchar_t *additionalCoupon,
+	wchar_t *roomLocation,
+	wchar_t *specialProgramCode,
+	wchar_t **tax,
+	wchar_t **prepaidCost,
+	wchar_t **foodAndBeverageCost,
+	wchar_t **roomTax,
+	wchar_t **adjustmentAmount,
+	wchar_t **phoneCost,
+	wchar_t **restaurantCost,
+	wchar_t **roomServiceCost,
+	wchar_t **miniBarCost,
+	wchar_t **laundryCost,
+	wchar_t **miscellaneousCost,
+	wchar_t **giftShopCost,
+	wchar_t **movieCost,
+	wchar_t **healthClubCost,
+	wchar_t **valetParkingCost,
+	wchar_t **cashDisbursementCost,
+	wchar_t **nonRoomCost,
+	wchar_t **businessCenterCost,
+	wchar_t **loungeBarCost,
+	wchar_t **transportationCost,
+	wchar_t **gratuityCost,
+	wchar_t **conferenceRoomCost,
+	wchar_t **audioVisualCost,
+	wchar_t **banquetCost,
+	wchar_t **internetAccessCost,
+	wchar_t **earlyCheckOutCost,
+	wchar_t **nonRoomTax,
+	wchar_t *travelAgencyCode,
+	wchar_t *travelAgencyName)
 {
 	ns2__LodgingData *_p = soap_new_ns2__LodgingData(soap);
 	if (_p)
@@ -2485,7 +2499,7 @@ inline ns2__Service * soap_new_ns2__Service(struct soap *soap, int n = -1)
 
 inline ns2__Service * soap_new_req_ns2__Service(
 	struct soap *soap,
-	const std::string& id)
+	wchar_t *id)
 {
 	ns2__Service *_p = soap_new_ns2__Service(soap);
 	if (_p)
@@ -2497,9 +2511,9 @@ inline ns2__Service * soap_new_req_ns2__Service(
 
 inline ns2__Service * soap_new_set_ns2__Service(
 	struct soap *soap,
-	std::string *categoryCode,
-	std::string *subcategoryCode,
-	const std::string& id)
+	wchar_t *categoryCode,
+	wchar_t *subcategoryCode,
+	wchar_t *id)
 {
 	ns2__Service *_p = soap_new_ns2__Service(soap);
 	if (_p)
@@ -2556,10 +2570,10 @@ inline ns2__AncillaryData * soap_new_req_ns2__AncillaryData(
 
 inline ns2__AncillaryData * soap_new_set_ns2__AncillaryData(
 	struct soap *soap,
-	std::string *ticketNumber,
-	std::string *passengerName,
-	std::string *connectedTicketNumber,
-	std::string *creditReasonIndicator,
+	wchar_t *ticketNumber,
+	wchar_t *passengerName,
+	wchar_t *connectedTicketNumber,
+	wchar_t *creditReasonIndicator,
 	const std::vector<ns2__Service *> & service)
 {
 	ns2__AncillaryData *_p = soap_new_ns2__AncillaryData(soap);
@@ -2609,7 +2623,7 @@ inline ns2__Leg * soap_new_ns2__Leg(struct soap *soap, int n = -1)
 
 inline ns2__Leg * soap_new_req_ns2__Leg(
 	struct soap *soap,
-	const std::string& id)
+	wchar_t *id)
 {
 	ns2__Leg *_p = soap_new_ns2__Leg(soap);
 	if (_p)
@@ -2621,27 +2635,27 @@ inline ns2__Leg * soap_new_req_ns2__Leg(
 
 inline ns2__Leg * soap_new_set_ns2__Leg(
 	struct soap *soap,
-	std::string *carrierCode,
-	std::string *flightNumber,
-	std::string *originatingAirportCode,
-	std::string *class_,
-	std::string *stopoverCode,
-	std::string *departureDate,
-	std::string *destination,
-	std::string *fareBasis,
-	std::string *departTax,
-	std::string *conjunctionTicket,
-	std::string *exchangeTicket,
-	std::string *couponNumber,
-	std::string *departureTime,
-	std::string *departureTimeSegment,
-	std::string *arrivalTime,
-	std::string *arrivalTimeSegment,
-	std::string *endorsementsRestrictions,
-	std::string *fare,
-	std::string *fee,
-	std::string *tax,
-	const std::string& id)
+	wchar_t *carrierCode,
+	wchar_t *flightNumber,
+	wchar_t *originatingAirportCode,
+	wchar_t *class_,
+	wchar_t *stopoverCode,
+	wchar_t *departureDate,
+	wchar_t *destination,
+	wchar_t *fareBasis,
+	wchar_t *departTax,
+	wchar_t *conjunctionTicket,
+	wchar_t *exchangeTicket,
+	wchar_t *couponNumber,
+	wchar_t *departureTime,
+	wchar_t *departureTimeSegment,
+	wchar_t *arrivalTime,
+	wchar_t *arrivalTimeSegment,
+	wchar_t *endorsementsRestrictions,
+	wchar_t *fare,
+	wchar_t *fee,
+	wchar_t *tax,
+	wchar_t *id)
 {
 	ns2__Leg *_p = soap_new_ns2__Leg(soap);
 	if (_p)
@@ -2716,51 +2730,51 @@ inline ns2__AirlineData * soap_new_req_ns2__AirlineData(
 
 inline ns2__AirlineData * soap_new_set_ns2__AirlineData(
 	struct soap *soap,
-	std::string *agentCode,
-	std::string *agentName,
-	std::string *ticketIssuerCity,
-	std::string *ticketIssuerState,
-	std::string *ticketIssuerPostalCode,
-	std::string *ticketIssuerCountry,
-	std::string *ticketIssuerAddress,
-	std::string *ticketIssuerCode,
-	std::string *ticketIssuerName,
-	std::string *ticketNumber,
-	std::string *checkDigit,
-	std::string *restrictedTicketIndicator,
-	std::string *transactionType,
-	std::string *extendedPaymentCode,
-	std::string *carrierName,
-	std::string *passengerName,
-	std::string *customerCode,
-	std::string *documentType,
-	std::string *documentNumber,
-	std::string *documentNumberOfParts,
-	std::string *invoiceNumber,
-	std::string *invoiceDate,
-	std::string *chargeDetails,
-	std::string *bookingReference,
-	std::string *totalFee,
-	std::string *clearingSequence,
-	std::string *clearingCount,
-	std::string *totalClearingAmount,
+	wchar_t *agentCode,
+	wchar_t *agentName,
+	wchar_t *ticketIssuerCity,
+	wchar_t *ticketIssuerState,
+	wchar_t *ticketIssuerPostalCode,
+	wchar_t *ticketIssuerCountry,
+	wchar_t *ticketIssuerAddress,
+	wchar_t *ticketIssuerCode,
+	wchar_t *ticketIssuerName,
+	wchar_t *ticketNumber,
+	wchar_t **checkDigit,
+	wchar_t **restrictedTicketIndicator,
+	wchar_t *transactionType,
+	wchar_t *extendedPaymentCode,
+	wchar_t *carrierName,
+	wchar_t *passengerName,
+	wchar_t *customerCode,
+	wchar_t *documentType,
+	wchar_t *documentNumber,
+	wchar_t *documentNumberOfParts,
+	wchar_t *invoiceNumber,
+	wchar_t *invoiceDate,
+	wchar_t *chargeDetails,
+	wchar_t *bookingReference,
+	wchar_t **totalFee,
+	wchar_t *clearingSequence,
+	wchar_t **clearingCount,
+	wchar_t **totalClearingAmount,
 	const std::vector<ns2__Leg *> & leg,
-	std::string *numberOfPassengers,
-	std::string *reservationSystem,
-	std::string *processIdentifier,
-	std::string *iataNumericCode,
-	std::string *ticketIssueDate,
-	std::string *electronicTicket,
-	std::string *originalTicketNumber,
-	std::string *purchaseType,
-	std::string *creditReasonIndicator,
-	std::string *ticketUpdateIndicator,
-	std::string *planNumber,
-	std::string *arrivalDate,
-	std::string *ticketRestrictionText,
-	std::string *exchangeTicketAmount,
-	std::string *exchangeTicketFee,
-	std::string *journeyType)
+	wchar_t *numberOfPassengers,
+	wchar_t *reservationSystem,
+	wchar_t *processIdentifier,
+	wchar_t *iataNumericCode,
+	wchar_t *ticketIssueDate,
+	wchar_t *electronicTicket,
+	wchar_t *originalTicketNumber,
+	wchar_t *purchaseType,
+	wchar_t *creditReasonIndicator,
+	wchar_t *ticketUpdateIndicator,
+	wchar_t *planNumber,
+	wchar_t *arrivalDate,
+	wchar_t *ticketRestrictionText,
+	wchar_t **exchangeTicketAmount,
+	wchar_t **exchangeTicketFee,
+	wchar_t *journeyType)
 {
 	ns2__AirlineData *_p = soap_new_ns2__AirlineData(soap);
 	if (_p)
@@ -2849,7 +2863,7 @@ inline ns2__FaultDetails * soap_new_ns2__FaultDetails(struct soap *soap, int n =
 
 inline ns2__FaultDetails * soap_new_req_ns2__FaultDetails(
 	struct soap *soap,
-	const std::string& requestID)
+	wchar_t *requestID)
 {
 	ns2__FaultDetails *_p = soap_new_ns2__FaultDetails(soap);
 	if (_p)
@@ -2861,7 +2875,7 @@ inline ns2__FaultDetails * soap_new_req_ns2__FaultDetails(
 
 inline ns2__FaultDetails * soap_new_set_ns2__FaultDetails(
 	struct soap *soap,
-	const std::string& requestID)
+	wchar_t *requestID)
 {
 	ns2__FaultDetails *_p = soap_new_ns2__FaultDetails(soap);
 	if (_p)
@@ -2906,10 +2920,10 @@ inline ns2__ReplyMessage * soap_new_ns2__ReplyMessage(struct soap *soap, int n =
 
 inline ns2__ReplyMessage * soap_new_req_ns2__ReplyMessage(
 	struct soap *soap,
-	const std::string& requestID,
-	const std::string& decision,
-	const std::string& reasonCode,
-	const std::string& requestToken)
+	wchar_t *requestID,
+	wchar_t *decision,
+	wchar_t *reasonCode,
+	wchar_t *requestToken)
 {
 	ns2__ReplyMessage *_p = soap_new_ns2__ReplyMessage(soap);
 	if (_p)
@@ -2924,13 +2938,13 @@ inline ns2__ReplyMessage * soap_new_req_ns2__ReplyMessage(
 
 inline ns2__ReplyMessage * soap_new_set_ns2__ReplyMessage(
 	struct soap *soap,
-	std::string *merchantReferenceCode,
-	const std::string& requestID,
-	const std::string& decision,
-	const std::string& reasonCode,
-	const std::vector<std::string> & missingField,
-	const std::vector<std::string> & invalidField,
-	const std::string& requestToken,
+	wchar_t *merchantReferenceCode,
+	wchar_t *requestID,
+	wchar_t *decision,
+	wchar_t *reasonCode,
+	const std::vector<wchar_t *> & missingField,
+	const std::vector<wchar_t *> & invalidField,
+	wchar_t *requestToken,
 	ns2__PurchaseTotals *purchaseTotals,
 	const std::vector<ns2__DeniedPartiesMatch *> & deniedPartiesMatch,
 	ns2__CCAuthReply *ccAuthReply,
@@ -3004,9 +3018,9 @@ inline ns2__ReplyMessage * soap_new_set_ns2__ReplyMessage(
 	ns2__PinDebitReversalReply *pinDebitReversalReply,
 	ns2__APInitiateReply *apInitiateReply,
 	ns2__APCheckStatusReply *apCheckStatusReply,
-	std::string *receiptNumber,
-	std::string *additionalData,
-	std::string *solutionProviderTransactionID,
+	wchar_t *receiptNumber,
+	wchar_t *additionalData,
+	wchar_t *solutionProviderTransactionID,
 	ns2__APReply *apReply,
 	ns2__ShipTo *shipTo,
 	ns2__BillTo *billTo,
@@ -3027,15 +3041,15 @@ inline ns2__ReplyMessage * soap_new_set_ns2__ReplyMessage(
 	ns2__OriginalTransaction *originalTransaction,
 	ns2__HostedDataCreateReply *hostedDataCreateReply,
 	ns2__HostedDataRetrieveReply *hostedDataRetrieveReply,
-	std::string *salesSlipNumber,
-	std::string *additionalProcessorResponse,
+	wchar_t *salesSlipNumber,
+	wchar_t *additionalProcessorResponse,
 	ns2__JPO *jpo,
 	ns2__Card *card,
 	ns2__PaymentNetworkToken *paymentNetworkToken,
 	ns2__VCReply *vcReply,
 	ns2__DecryptVisaCheckoutDataReply *decryptVisaCheckoutDataReply,
 	ns2__BinLookupReply *binLookupReply,
-	std::string *issuerMessage,
+	wchar_t *issuerMessage,
 	ns2__Token *token,
 	ns2__issuer *issuer,
 	ns2__Recipient *recipient,
@@ -3199,7 +3213,7 @@ inline ns2__APConfirmPurchaseReply * soap_new_ns2__APConfirmPurchaseReply(struct
 
 inline ns2__APConfirmPurchaseReply * soap_new_req_ns2__APConfirmPurchaseReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APConfirmPurchaseReply *_p = soap_new_ns2__APConfirmPurchaseReply(soap);
 	if (_p)
@@ -3211,12 +3225,12 @@ inline ns2__APConfirmPurchaseReply * soap_new_req_ns2__APConfirmPurchaseReply(
 
 inline ns2__APConfirmPurchaseReply * soap_new_set_ns2__APConfirmPurchaseReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *status,
-	std::string *processorResponse,
-	std::string *amount,
-	std::string *dateTime,
-	std::string *providerResponse)
+	wchar_t *reasonCode,
+	wchar_t *status,
+	wchar_t *processorResponse,
+	wchar_t **amount,
+	wchar_t **dateTime,
+	wchar_t *providerResponse)
 {
 	ns2__APConfirmPurchaseReply *_p = soap_new_ns2__APConfirmPurchaseReply(soap);
 	if (_p)
@@ -3266,7 +3280,7 @@ inline ns2__APTransactionDetailsReply * soap_new_ns2__APTransactionDetailsReply(
 
 inline ns2__APTransactionDetailsReply * soap_new_req_ns2__APTransactionDetailsReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APTransactionDetailsReply *_p = soap_new_ns2__APTransactionDetailsReply(soap);
 	if (_p)
@@ -3278,13 +3292,13 @@ inline ns2__APTransactionDetailsReply * soap_new_req_ns2__APTransactionDetailsRe
 
 inline ns2__APTransactionDetailsReply * soap_new_set_ns2__APTransactionDetailsReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *transactionID,
-	std::string *status,
-	std::string *processorResponse,
-	std::string *dateTime,
-	std::string *reconciliationID,
-	std::string *providerResponse)
+	wchar_t *reasonCode,
+	wchar_t *transactionID,
+	wchar_t *status,
+	wchar_t *processorResponse,
+	wchar_t **dateTime,
+	wchar_t *reconciliationID,
+	wchar_t *providerResponse)
 {
 	ns2__APTransactionDetailsReply *_p = soap_new_ns2__APTransactionDetailsReply(soap);
 	if (_p)
@@ -3335,7 +3349,7 @@ inline ns2__APCheckOutDetailsReply * soap_new_ns2__APCheckOutDetailsReply(struct
 
 inline ns2__APCheckOutDetailsReply * soap_new_req_ns2__APCheckOutDetailsReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APCheckOutDetailsReply *_p = soap_new_ns2__APCheckOutDetailsReply(soap);
 	if (_p)
@@ -3347,11 +3361,11 @@ inline ns2__APCheckOutDetailsReply * soap_new_req_ns2__APCheckOutDetailsReply(
 
 inline ns2__APCheckOutDetailsReply * soap_new_set_ns2__APCheckOutDetailsReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *status,
-	std::string *processorResponse,
-	std::string *dateTime,
-	std::string *providerResponse)
+	wchar_t *reasonCode,
+	wchar_t *status,
+	wchar_t *processorResponse,
+	wchar_t **dateTime,
+	wchar_t *providerResponse)
 {
 	ns2__APCheckOutDetailsReply *_p = soap_new_ns2__APCheckOutDetailsReply(soap);
 	if (_p)
@@ -3400,7 +3414,7 @@ inline ns2__APSaleReply * soap_new_ns2__APSaleReply(struct soap *soap, int n = -
 
 inline ns2__APSaleReply * soap_new_req_ns2__APSaleReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APSaleReply *_p = soap_new_ns2__APSaleReply(soap);
 	if (_p)
@@ -3412,12 +3426,12 @@ inline ns2__APSaleReply * soap_new_req_ns2__APSaleReply(
 
 inline ns2__APSaleReply * soap_new_set_ns2__APSaleReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *paymentStatus,
-	std::string *responseCode,
-	std::string *merchantURL,
-	std::string *processorTransactionID,
-	std::string *reconciliationID)
+	wchar_t *reasonCode,
+	wchar_t *paymentStatus,
+	wchar_t *responseCode,
+	wchar_t *merchantURL,
+	wchar_t *processorTransactionID,
+	wchar_t *reconciliationID)
 {
 	ns2__APSaleReply *_p = soap_new_ns2__APSaleReply(soap);
 	if (_p)
@@ -3467,7 +3481,7 @@ inline ns2__APRefundReply * soap_new_ns2__APRefundReply(struct soap *soap, int n
 
 inline ns2__APRefundReply * soap_new_req_ns2__APRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APRefundReply *_p = soap_new_ns2__APRefundReply(soap);
 	if (_p)
@@ -3479,18 +3493,18 @@ inline ns2__APRefundReply * soap_new_req_ns2__APRefundReply(
 
 inline ns2__APRefundReply * soap_new_set_ns2__APRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *transactionID,
-	std::string *status,
-	std::string *processorResponse,
-	std::string *amount,
-	std::string *dateTime,
-	std::string *reconciliationID,
-	std::string *returnRef,
-	std::string *providerResponse,
-	std::string *processorTransactionID,
-	std::string *paymentStatus,
-	std::string *responseCode)
+	wchar_t *reasonCode,
+	wchar_t *transactionID,
+	wchar_t *status,
+	wchar_t *processorResponse,
+	wchar_t **amount,
+	wchar_t **dateTime,
+	wchar_t *reconciliationID,
+	wchar_t *returnRef,
+	wchar_t *providerResponse,
+	wchar_t *processorTransactionID,
+	wchar_t *paymentStatus,
+	wchar_t *responseCode)
 {
 	ns2__APRefundReply *_p = soap_new_ns2__APRefundReply(soap);
 	if (_p)
@@ -3556,9 +3570,9 @@ inline ns2__APOptionsOption * soap_new_req_ns2__APOptionsOption(
 
 inline ns2__APOptionsOption * soap_new_set_ns2__APOptionsOption(
 	struct soap *soap,
-	std::string *id,
-	std::string *name,
-	std::string *data)
+	wchar_t *id,
+	wchar_t *name,
+	wchar_t **data)
 {
 	ns2__APOptionsOption *_p = soap_new_ns2__APOptionsOption(soap);
 	if (_p)
@@ -3605,7 +3619,7 @@ inline ns2__APOptionsReply * soap_new_ns2__APOptionsReply(struct soap *soap, int
 
 inline ns2__APOptionsReply * soap_new_req_ns2__APOptionsReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APOptionsReply *_p = soap_new_ns2__APOptionsReply(soap);
 	if (_p)
@@ -3617,11 +3631,11 @@ inline ns2__APOptionsReply * soap_new_req_ns2__APOptionsReply(
 
 inline ns2__APOptionsReply * soap_new_set_ns2__APOptionsReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *responseCode,
-	std::string *offset,
-	std::string *count,
-	std::string *totalCount,
+	wchar_t *reasonCode,
+	wchar_t *responseCode,
+	wchar_t *offset,
+	wchar_t *count,
+	wchar_t *totalCount,
 	ns2__APOptionsOption *option)
 {
 	ns2__APOptionsReply *_p = soap_new_ns2__APOptionsReply(soap);
@@ -3672,7 +3686,7 @@ inline ns2__APCaptureReply * soap_new_ns2__APCaptureReply(struct soap *soap, int
 
 inline ns2__APCaptureReply * soap_new_req_ns2__APCaptureReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APCaptureReply *_p = soap_new_ns2__APCaptureReply(soap);
 	if (_p)
@@ -3684,16 +3698,16 @@ inline ns2__APCaptureReply * soap_new_req_ns2__APCaptureReply(
 
 inline ns2__APCaptureReply * soap_new_set_ns2__APCaptureReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *transactionID,
-	std::string *status,
-	std::string *processorResponse,
-	std::string *amount,
-	std::string *dateTime,
-	std::string *reconciliationID,
-	std::string *providerResponse,
-	std::string *paymentStatus,
-	std::string *responseCode)
+	wchar_t *reasonCode,
+	wchar_t *transactionID,
+	wchar_t *status,
+	wchar_t *processorResponse,
+	wchar_t **amount,
+	wchar_t **dateTime,
+	wchar_t *reconciliationID,
+	wchar_t *providerResponse,
+	wchar_t *paymentStatus,
+	wchar_t *responseCode)
 {
 	ns2__APCaptureReply *_p = soap_new_ns2__APCaptureReply(soap);
 	if (_p)
@@ -3747,7 +3761,7 @@ inline ns2__APAuthReversalReply * soap_new_ns2__APAuthReversalReply(struct soap 
 
 inline ns2__APAuthReversalReply * soap_new_req_ns2__APAuthReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APAuthReversalReply *_p = soap_new_ns2__APAuthReversalReply(soap);
 	if (_p)
@@ -3759,16 +3773,16 @@ inline ns2__APAuthReversalReply * soap_new_req_ns2__APAuthReversalReply(
 
 inline ns2__APAuthReversalReply * soap_new_set_ns2__APAuthReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *transactionID,
-	std::string *status,
-	std::string *processorResponse,
-	std::string *amount,
-	std::string *dateTime,
-	std::string *providerResponse,
-	std::string *paymentStatus,
-	std::string *responseCode,
-	std::string *reconciliationID)
+	wchar_t *reasonCode,
+	wchar_t *transactionID,
+	wchar_t *status,
+	wchar_t *processorResponse,
+	wchar_t **amount,
+	wchar_t **dateTime,
+	wchar_t *providerResponse,
+	wchar_t *paymentStatus,
+	wchar_t *responseCode,
+	wchar_t *reconciliationID)
 {
 	ns2__APAuthReversalReply *_p = soap_new_ns2__APAuthReversalReply(soap);
 	if (_p)
@@ -3822,7 +3836,7 @@ inline ns2__APAuthReply * soap_new_ns2__APAuthReply(struct soap *soap, int n = -
 
 inline ns2__APAuthReply * soap_new_req_ns2__APAuthReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APAuthReply *_p = soap_new_ns2__APAuthReply(soap);
 	if (_p)
@@ -3834,19 +3848,19 @@ inline ns2__APAuthReply * soap_new_req_ns2__APAuthReply(
 
 inline ns2__APAuthReply * soap_new_set_ns2__APAuthReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *transactionID,
-	std::string *status,
-	std::string *processorResponse,
-	std::string *amount,
-	std::string *dateTime,
-	std::string *providerResponse,
-	std::string *paymentStatus,
-	std::string *responseCode,
-	std::string *authorizationCode,
-	std::string *merchantURL,
-	std::string *reconciliationID,
-	std::string *processorTransactionID)
+	wchar_t *reasonCode,
+	wchar_t *transactionID,
+	wchar_t *status,
+	wchar_t *processorResponse,
+	wchar_t **amount,
+	wchar_t **dateTime,
+	wchar_t *providerResponse,
+	wchar_t *paymentStatus,
+	wchar_t *responseCode,
+	wchar_t *authorizationCode,
+	wchar_t *merchantURL,
+	wchar_t *reconciliationID,
+	wchar_t *processorTransactionID)
 {
 	ns2__APAuthReply *_p = soap_new_ns2__APAuthReply(soap);
 	if (_p)
@@ -3913,29 +3927,29 @@ inline ns2__APReply * soap_new_req_ns2__APReply(
 
 inline ns2__APReply * soap_new_set_ns2__APReply(
 	struct soap *soap,
-	std::string *orderID,
-	std::string *cardGroup,
-	std::string *cardType,
-	std::string *cardNumberSuffix,
-	std::string *cardExpirationMonth,
-	std::string *cardExpirationYear,
-	std::string *avsCodeRaw,
-	std::string *purchaseID,
-	std::string *productID,
-	std::string *productDescription,
-	std::string *shippingAmount,
-	std::string *handlingAmount,
-	std::string *shippingHandlingAmount,
-	std::string *additionalAmount,
-	std::string *taxAmount,
-	std::string *subtotalAmount,
-	std::string *totalPurchaseAmount,
-	std::string *giftWrapAmount,
-	std::string *discountAmount,
-	std::string *cardNumberPrefix,
-	std::string *riskIndicator,
-	std::string *merchantUUID,
-	std::string *merchantSiteID)
+	wchar_t *orderID,
+	wchar_t *cardGroup,
+	wchar_t *cardType,
+	wchar_t *cardNumberSuffix,
+	wchar_t *cardExpirationMonth,
+	wchar_t *cardExpirationYear,
+	wchar_t *avsCodeRaw,
+	wchar_t *purchaseID,
+	wchar_t *productID,
+	wchar_t *productDescription,
+	wchar_t *shippingAmount,
+	wchar_t *handlingAmount,
+	wchar_t *shippingHandlingAmount,
+	wchar_t *additionalAmount,
+	wchar_t *taxAmount,
+	wchar_t *subtotalAmount,
+	wchar_t *totalPurchaseAmount,
+	wchar_t *giftWrapAmount,
+	wchar_t *discountAmount,
+	wchar_t *cardNumberPrefix,
+	wchar_t *riskIndicator,
+	wchar_t *merchantUUID,
+	wchar_t *merchantSiteID)
 {
 	ns2__APReply *_p = soap_new_ns2__APReply(soap);
 	if (_p)
@@ -4002,8 +4016,8 @@ inline ns2__APCheckStatusReply * soap_new_ns2__APCheckStatusReply(struct soap *s
 
 inline ns2__APCheckStatusReply * soap_new_req_ns2__APCheckStatusReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& reconciliationID)
+	wchar_t *reasonCode,
+	wchar_t *reconciliationID)
 {
 	ns2__APCheckStatusReply *_p = soap_new_ns2__APCheckStatusReply(soap);
 	if (_p)
@@ -4016,11 +4030,11 @@ inline ns2__APCheckStatusReply * soap_new_req_ns2__APCheckStatusReply(
 
 inline ns2__APCheckStatusReply * soap_new_set_ns2__APCheckStatusReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& reconciliationID,
-	std::string *paymentStatus,
-	std::string *processorTradeNo,
-	std::string *processorTransactionID)
+	wchar_t *reasonCode,
+	wchar_t *reconciliationID,
+	wchar_t *paymentStatus,
+	wchar_t *processorTradeNo,
+	wchar_t *processorTransactionID)
 {
 	ns2__APCheckStatusReply *_p = soap_new_ns2__APCheckStatusReply(soap);
 	if (_p)
@@ -4069,7 +4083,7 @@ inline ns2__APInitiateReply * soap_new_ns2__APInitiateReply(struct soap *soap, i
 
 inline ns2__APInitiateReply * soap_new_req_ns2__APInitiateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__APInitiateReply *_p = soap_new_ns2__APInitiateReply(soap);
 	if (_p)
@@ -4081,15 +4095,15 @@ inline ns2__APInitiateReply * soap_new_req_ns2__APInitiateReply(
 
 inline ns2__APInitiateReply * soap_new_set_ns2__APInitiateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *merchantURL,
-	std::string *reconciliationID,
-	std::string *amount,
-	std::string *dateTime,
-	std::string *signature,
-	std::string *publicKey,
-	std::string *paymentStatus,
-	std::string *responseCode)
+	wchar_t *reasonCode,
+	wchar_t *merchantURL,
+	wchar_t *reconciliationID,
+	wchar_t **amount,
+	wchar_t **dateTime,
+	wchar_t *signature,
+	wchar_t *publicKey,
+	wchar_t *paymentStatus,
+	wchar_t *responseCode)
 {
 	ns2__APInitiateReply *_p = soap_new_ns2__APInitiateReply(soap);
 	if (_p)
@@ -4142,7 +4156,7 @@ inline ns2__BoletoPaymentReply * soap_new_ns2__BoletoPaymentReply(struct soap *s
 
 inline ns2__BoletoPaymentReply * soap_new_req_ns2__BoletoPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__BoletoPaymentReply *_p = soap_new_ns2__BoletoPaymentReply(soap);
 	if (_p)
@@ -4154,17 +4168,17 @@ inline ns2__BoletoPaymentReply * soap_new_req_ns2__BoletoPaymentReply(
 
 inline ns2__BoletoPaymentReply * soap_new_set_ns2__BoletoPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *amount,
-	std::string *reconciliationID,
-	std::string *boletoNumber,
-	std::string *expirationDate,
-	std::string *url,
-	std::string *avsCode,
-	std::string *avsCodeRaw,
-	std::string *barCodeNumber,
-	std::string *assignor)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t **amount,
+	wchar_t *reconciliationID,
+	wchar_t *boletoNumber,
+	wchar_t *expirationDate,
+	wchar_t *url,
+	wchar_t *avsCode,
+	wchar_t *avsCodeRaw,
+	wchar_t *barCodeNumber,
+	wchar_t *assignor)
 {
 	ns2__BoletoPaymentReply *_p = soap_new_ns2__BoletoPaymentReply(soap);
 	if (_p)
@@ -4219,7 +4233,7 @@ inline ns2__ChinaRefundReply * soap_new_ns2__ChinaRefundReply(struct soap *soap,
 
 inline ns2__ChinaRefundReply * soap_new_req_ns2__ChinaRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__ChinaRefundReply *_p = soap_new_ns2__ChinaRefundReply(soap);
 	if (_p)
@@ -4231,10 +4245,10 @@ inline ns2__ChinaRefundReply * soap_new_req_ns2__ChinaRefundReply(
 
 inline ns2__ChinaRefundReply * soap_new_set_ns2__ChinaRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *amount,
-	std::string *currency)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t **amount,
+	wchar_t *currency)
 {
 	ns2__ChinaRefundReply *_p = soap_new_ns2__ChinaRefundReply(soap);
 	if (_p)
@@ -4282,7 +4296,7 @@ inline ns2__ChinaPaymentReply * soap_new_ns2__ChinaPaymentReply(struct soap *soa
 
 inline ns2__ChinaPaymentReply * soap_new_req_ns2__ChinaPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__ChinaPaymentReply *_p = soap_new_ns2__ChinaPaymentReply(soap);
 	if (_p)
@@ -4294,15 +4308,15 @@ inline ns2__ChinaPaymentReply * soap_new_req_ns2__ChinaPaymentReply(
 
 inline ns2__ChinaPaymentReply * soap_new_set_ns2__ChinaPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *amount,
-	std::string *currency,
-	std::string *reconciliationID,
-	std::string *formData,
-	std::string *verifyFailure,
-	std::string *verifyInProcess,
-	std::string *verifySuccess)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t **amount,
+	wchar_t *currency,
+	wchar_t *reconciliationID,
+	wchar_t *formData,
+	wchar_t *verifyFailure,
+	wchar_t *verifyInProcess,
+	wchar_t *verifySuccess)
 {
 	ns2__ChinaPaymentReply *_p = soap_new_ns2__ChinaPaymentReply(soap);
 	if (_p)
@@ -4355,7 +4369,7 @@ inline ns2__CCDCCUpdateReply * soap_new_ns2__CCDCCUpdateReply(struct soap *soap,
 
 inline ns2__CCDCCUpdateReply * soap_new_req_ns2__CCDCCUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCDCCUpdateReply *_p = soap_new_ns2__CCDCCUpdateReply(soap);
 	if (_p)
@@ -4367,7 +4381,7 @@ inline ns2__CCDCCUpdateReply * soap_new_req_ns2__CCDCCUpdateReply(
 
 inline ns2__CCDCCUpdateReply * soap_new_set_ns2__CCDCCUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCDCCUpdateReply *_p = soap_new_ns2__CCDCCUpdateReply(soap);
 	if (_p)
@@ -4412,7 +4426,7 @@ inline ns2__CCDCCReply * soap_new_ns2__CCDCCReply(struct soap *soap, int n = -1)
 
 inline ns2__CCDCCReply * soap_new_req_ns2__CCDCCReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCDCCReply *_p = soap_new_ns2__CCDCCReply(soap);
 	if (_p)
@@ -4424,11 +4438,11 @@ inline ns2__CCDCCReply * soap_new_req_ns2__CCDCCReply(
 
 inline ns2__CCDCCReply * soap_new_set_ns2__CCDCCReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *dccSupported,
-	std::string *validHours,
-	std::string *marginRatePercentage,
-	std::string *reconciliationID)
+	wchar_t *reasonCode,
+	wchar_t **dccSupported,
+	wchar_t *validHours,
+	wchar_t *marginRatePercentage,
+	wchar_t *reconciliationID)
 {
 	ns2__CCDCCReply *_p = soap_new_ns2__CCDCCReply(soap);
 	if (_p)
@@ -4487,10 +4501,10 @@ inline ns2__ProfileReply * soap_new_req_ns2__ProfileReply(
 
 inline ns2__ProfileReply * soap_new_set_ns2__ProfileReply(
 	struct soap *soap,
-	std::string *selectedBy,
-	std::string *name,
-	std::string *destinationQueue,
-	std::string *profileScore,
+	wchar_t *selectedBy,
+	wchar_t *name,
+	wchar_t *destinationQueue,
+	wchar_t *profileScore,
 	ns2__RuleResultItems *rulesTriggered)
 {
 	ns2__ProfileReply *_p = soap_new_ns2__ProfileReply(soap);
@@ -4550,10 +4564,10 @@ inline ns2__DMEReply * soap_new_req_ns2__DMEReply(
 
 inline ns2__DMEReply * soap_new_set_ns2__DMEReply(
 	struct soap *soap,
-	std::string *eventType,
-	std::string *eventInfo,
-	std::string *eventHotlistInfo,
-	std::string *eventPolicy,
+	wchar_t *eventType,
+	wchar_t *eventInfo,
+	wchar_t *eventHotlistInfo,
+	wchar_t *eventPolicy,
 	ns2__AdditionalFields *additionalFields)
 {
 	ns2__DMEReply *_p = soap_new_ns2__DMEReply(soap);
@@ -4603,9 +4617,9 @@ inline ns2__Field * soap_new_ns2__Field(struct soap *soap, int n = -1)
 
 inline ns2__Field * soap_new_req_ns2__Field(
 	struct soap *soap,
-	const std::string& provider,
-	const std::string& name,
-	const std::string& value)
+	wchar_t *provider,
+	wchar_t *name,
+	wchar_t *value)
 {
 	ns2__Field *_p = soap_new_ns2__Field(soap);
 	if (_p)
@@ -4619,9 +4633,9 @@ inline ns2__Field * soap_new_req_ns2__Field(
 
 inline ns2__Field * soap_new_set_ns2__Field(
 	struct soap *soap,
-	const std::string& provider,
-	const std::string& name,
-	const std::string& value)
+	wchar_t *provider,
+	wchar_t *name,
+	wchar_t *value)
 {
 	ns2__Field *_p = soap_new_ns2__Field(soap);
 	if (_p)
@@ -4733,9 +4747,9 @@ inline ns2__DecisionReply * soap_new_req_ns2__DecisionReply(
 
 inline ns2__DecisionReply * soap_new_set_ns2__DecisionReply(
 	struct soap *soap,
-	std::string *casePriority,
+	wchar_t **casePriority,
 	ns2__ProfileReply *activeProfileReply,
-	std::string *velocityInfoCode,
+	wchar_t *velocityInfoCode,
 	ns2__AdditionalFields *additionalFields)
 {
 	ns2__DecisionReply *_p = soap_new_ns2__DecisionReply(soap);
@@ -4849,10 +4863,10 @@ inline ns2__RuleResultItem * soap_new_req_ns2__RuleResultItem(
 
 inline ns2__RuleResultItem * soap_new_set_ns2__RuleResultItem(
 	struct soap *soap,
-	std::string *name,
-	std::string *decision,
-	std::string *evaluation,
-	std::string *ruleID)
+	wchar_t *name,
+	wchar_t *decision,
+	wchar_t *evaluation,
+	wchar_t **ruleID)
 {
 	ns2__RuleResultItem *_p = soap_new_ns2__RuleResultItem(soap);
 	if (_p)
@@ -4900,7 +4914,7 @@ inline ns2__CaseManagementActionReply * soap_new_ns2__CaseManagementActionReply(
 
 inline ns2__CaseManagementActionReply * soap_new_req_ns2__CaseManagementActionReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CaseManagementActionReply *_p = soap_new_ns2__CaseManagementActionReply(soap);
 	if (_p)
@@ -4912,7 +4926,7 @@ inline ns2__CaseManagementActionReply * soap_new_req_ns2__CaseManagementActionRe
 
 inline ns2__CaseManagementActionReply * soap_new_set_ns2__CaseManagementActionReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CaseManagementActionReply *_p = soap_new_ns2__CaseManagementActionReply(soap);
 	if (_p)
@@ -4957,7 +4971,7 @@ inline ns2__FraudUpdateReply * soap_new_ns2__FraudUpdateReply(struct soap *soap,
 
 inline ns2__FraudUpdateReply * soap_new_req_ns2__FraudUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__FraudUpdateReply *_p = soap_new_ns2__FraudUpdateReply(soap);
 	if (_p)
@@ -4969,7 +4983,7 @@ inline ns2__FraudUpdateReply * soap_new_req_ns2__FraudUpdateReply(
 
 inline ns2__FraudUpdateReply * soap_new_set_ns2__FraudUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__FraudUpdateReply *_p = soap_new_ns2__FraudUpdateReply(soap);
 	if (_p)
@@ -5014,7 +5028,7 @@ inline ns2__RiskUpdateReply * soap_new_ns2__RiskUpdateReply(struct soap *soap, i
 
 inline ns2__RiskUpdateReply * soap_new_req_ns2__RiskUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__RiskUpdateReply *_p = soap_new_ns2__RiskUpdateReply(soap);
 	if (_p)
@@ -5026,7 +5040,7 @@ inline ns2__RiskUpdateReply * soap_new_req_ns2__RiskUpdateReply(
 
 inline ns2__RiskUpdateReply * soap_new_set_ns2__RiskUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__RiskUpdateReply *_p = soap_new_ns2__RiskUpdateReply(soap);
 	if (_p)
@@ -5071,7 +5085,7 @@ inline ns2__PayPalDoRefTransactionReply * soap_new_ns2__PayPalDoRefTransactionRe
 
 inline ns2__PayPalDoRefTransactionReply * soap_new_req_ns2__PayPalDoRefTransactionReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalDoRefTransactionReply *_p = soap_new_ns2__PayPalDoRefTransactionReply(soap);
 	if (_p)
@@ -5083,21 +5097,21 @@ inline ns2__PayPalDoRefTransactionReply * soap_new_req_ns2__PayPalDoRefTransacti
 
 inline ns2__PayPalDoRefTransactionReply * soap_new_set_ns2__PayPalDoRefTransactionReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *paypalBillingAgreementId,
-	std::string *transactionId,
-	std::string *paypalTransactionType,
-	std::string *paypalPaymentType,
-	std::string *paypalOrderTime,
-	std::string *paypalAmount,
-	std::string *currency,
-	std::string *paypalTaxAmount,
-	std::string *paypalExchangeRate,
-	std::string *paypalPaymentStatus,
-	std::string *paypalPendingReason,
-	std::string *paypalReasonCode,
-	std::string *errorCode,
-	std::string *correlationID)
+	wchar_t *reasonCode,
+	wchar_t *paypalBillingAgreementId,
+	wchar_t *transactionId,
+	wchar_t *paypalTransactionType,
+	wchar_t *paypalPaymentType,
+	wchar_t *paypalOrderTime,
+	wchar_t *paypalAmount,
+	wchar_t *currency,
+	wchar_t *paypalTaxAmount,
+	wchar_t *paypalExchangeRate,
+	wchar_t *paypalPaymentStatus,
+	wchar_t *paypalPendingReason,
+	wchar_t *paypalReasonCode,
+	wchar_t *errorCode,
+	wchar_t *correlationID)
 {
 	ns2__PayPalDoRefTransactionReply *_p = soap_new_ns2__PayPalDoRefTransactionReply(soap);
 	if (_p)
@@ -5156,7 +5170,7 @@ inline ns2__PayPalCreateAgreementReply * soap_new_ns2__PayPalCreateAgreementRepl
 
 inline ns2__PayPalCreateAgreementReply * soap_new_req_ns2__PayPalCreateAgreementReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalCreateAgreementReply *_p = soap_new_ns2__PayPalCreateAgreementReply(soap);
 	if (_p)
@@ -5168,10 +5182,10 @@ inline ns2__PayPalCreateAgreementReply * soap_new_req_ns2__PayPalCreateAgreement
 
 inline ns2__PayPalCreateAgreementReply * soap_new_set_ns2__PayPalCreateAgreementReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *paypalBillingAgreementId,
-	std::string *errorCode,
-	std::string *correlationID)
+	wchar_t *reasonCode,
+	wchar_t *paypalBillingAgreementId,
+	wchar_t *errorCode,
+	wchar_t *correlationID)
 {
 	ns2__PayPalCreateAgreementReply *_p = soap_new_ns2__PayPalCreateAgreementReply(soap);
 	if (_p)
@@ -5219,7 +5233,7 @@ inline ns2__PayPalUpdateAgreementReply * soap_new_ns2__PayPalUpdateAgreementRepl
 
 inline ns2__PayPalUpdateAgreementReply * soap_new_req_ns2__PayPalUpdateAgreementReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalUpdateAgreementReply *_p = soap_new_ns2__PayPalUpdateAgreementReply(soap);
 	if (_p)
@@ -5231,24 +5245,24 @@ inline ns2__PayPalUpdateAgreementReply * soap_new_req_ns2__PayPalUpdateAgreement
 
 inline ns2__PayPalUpdateAgreementReply * soap_new_set_ns2__PayPalUpdateAgreementReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *paypalBillingAgreementId,
-	std::string *paypalBillingAgreementDesc,
-	std::string *paypalBillingAgreementCustom,
-	std::string *paypalBillingAgreementStatus,
-	std::string *payer,
-	std::string *payerId,
-	std::string *payerStatus,
-	std::string *payerCountry,
-	std::string *payerBusiness,
-	std::string *payerSalutation,
-	std::string *payerFirstname,
-	std::string *payerMiddlename,
-	std::string *payerLastname,
-	std::string *payerSuffix,
-	std::string *addressStatus,
-	std::string *errorCode,
-	std::string *correlationID)
+	wchar_t *reasonCode,
+	wchar_t *paypalBillingAgreementId,
+	wchar_t *paypalBillingAgreementDesc,
+	wchar_t *paypalBillingAgreementCustom,
+	wchar_t *paypalBillingAgreementStatus,
+	wchar_t *payer,
+	wchar_t *payerId,
+	wchar_t *payerStatus,
+	wchar_t *payerCountry,
+	wchar_t *payerBusiness,
+	wchar_t *payerSalutation,
+	wchar_t *payerFirstname,
+	wchar_t *payerMiddlename,
+	wchar_t *payerLastname,
+	wchar_t *payerSuffix,
+	wchar_t *addressStatus,
+	wchar_t *errorCode,
+	wchar_t *correlationID)
 {
 	ns2__PayPalUpdateAgreementReply *_p = soap_new_ns2__PayPalUpdateAgreementReply(soap);
 	if (_p)
@@ -5310,7 +5324,7 @@ inline ns2__PayPalAuthorizationReply * soap_new_ns2__PayPalAuthorizationReply(st
 
 inline ns2__PayPalAuthorizationReply * soap_new_req_ns2__PayPalAuthorizationReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalAuthorizationReply *_p = soap_new_ns2__PayPalAuthorizationReply(soap);
 	if (_p)
@@ -5322,15 +5336,15 @@ inline ns2__PayPalAuthorizationReply * soap_new_req_ns2__PayPalAuthorizationRepl
 
 inline ns2__PayPalAuthorizationReply * soap_new_set_ns2__PayPalAuthorizationReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *transactionId,
-	std::string *paypalAmount,
-	std::string *amount,
-	std::string *currency,
-	std::string *correlationID,
-	std::string *errorCode,
-	std::string *protectionEligibility,
-	std::string *protectionEligibilityType)
+	wchar_t *reasonCode,
+	wchar_t *transactionId,
+	wchar_t *paypalAmount,
+	wchar_t *amount,
+	wchar_t *currency,
+	wchar_t *correlationID,
+	wchar_t *errorCode,
+	wchar_t *protectionEligibility,
+	wchar_t *protectionEligibilityType)
 {
 	ns2__PayPalAuthorizationReply *_p = soap_new_ns2__PayPalAuthorizationReply(soap);
 	if (_p)
@@ -5383,7 +5397,7 @@ inline ns2__PayPalEcOrderSetupReply * soap_new_ns2__PayPalEcOrderSetupReply(stru
 
 inline ns2__PayPalEcOrderSetupReply * soap_new_req_ns2__PayPalEcOrderSetupReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalEcOrderSetupReply *_p = soap_new_ns2__PayPalEcOrderSetupReply(soap);
 	if (_p)
@@ -5395,23 +5409,23 @@ inline ns2__PayPalEcOrderSetupReply * soap_new_req_ns2__PayPalEcOrderSetupReply(
 
 inline ns2__PayPalEcOrderSetupReply * soap_new_set_ns2__PayPalEcOrderSetupReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *paypalToken,
-	std::string *transactionId,
-	std::string *paypalTransactiontype,
-	std::string *paymentType,
-	std::string *paypalOrderTime,
-	std::string *paypalAmount,
-	std::string *paypalFeeAmount,
-	std::string *paypalTaxAmount,
-	std::string *paypalExchangeRate,
-	std::string *paypalPaymentStatus,
-	std::string *paypalPendingReason,
-	std::string *paypalReasonCode,
-	std::string *amount,
-	std::string *currency,
-	std::string *correlationID,
-	std::string *errorCode)
+	wchar_t *reasonCode,
+	wchar_t *paypalToken,
+	wchar_t *transactionId,
+	wchar_t *paypalTransactiontype,
+	wchar_t *paymentType,
+	wchar_t *paypalOrderTime,
+	wchar_t *paypalAmount,
+	wchar_t *paypalFeeAmount,
+	wchar_t *paypalTaxAmount,
+	wchar_t *paypalExchangeRate,
+	wchar_t *paypalPaymentStatus,
+	wchar_t *paypalPendingReason,
+	wchar_t *paypalReasonCode,
+	wchar_t *amount,
+	wchar_t *currency,
+	wchar_t *correlationID,
+	wchar_t *errorCode)
 {
 	ns2__PayPalEcOrderSetupReply *_p = soap_new_ns2__PayPalEcOrderSetupReply(soap);
 	if (_p)
@@ -5472,7 +5486,7 @@ inline ns2__PayPalRefundReply * soap_new_ns2__PayPalRefundReply(struct soap *soa
 
 inline ns2__PayPalRefundReply * soap_new_req_ns2__PayPalRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalRefundReply *_p = soap_new_ns2__PayPalRefundReply(soap);
 	if (_p)
@@ -5484,13 +5498,13 @@ inline ns2__PayPalRefundReply * soap_new_req_ns2__PayPalRefundReply(
 
 inline ns2__PayPalRefundReply * soap_new_set_ns2__PayPalRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *transactionId,
-	std::string *paypalNetRefundAmount,
-	std::string *paypalFeeRefundAmount,
-	std::string *paypalGrossRefundAmount,
-	std::string *correlationID,
-	std::string *errorCode)
+	wchar_t *reasonCode,
+	wchar_t *transactionId,
+	wchar_t *paypalNetRefundAmount,
+	wchar_t *paypalFeeRefundAmount,
+	wchar_t *paypalGrossRefundAmount,
+	wchar_t *correlationID,
+	wchar_t *errorCode)
 {
 	ns2__PayPalRefundReply *_p = soap_new_ns2__PayPalRefundReply(soap);
 	if (_p)
@@ -5541,7 +5555,7 @@ inline ns2__PayPalAuthReversalReply * soap_new_ns2__PayPalAuthReversalReply(stru
 
 inline ns2__PayPalAuthReversalReply * soap_new_req_ns2__PayPalAuthReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalAuthReversalReply *_p = soap_new_ns2__PayPalAuthReversalReply(soap);
 	if (_p)
@@ -5553,10 +5567,10 @@ inline ns2__PayPalAuthReversalReply * soap_new_req_ns2__PayPalAuthReversalReply(
 
 inline ns2__PayPalAuthReversalReply * soap_new_set_ns2__PayPalAuthReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *authorizationId,
-	std::string *correlationID,
-	std::string *errorCode)
+	wchar_t *reasonCode,
+	wchar_t *authorizationId,
+	wchar_t *correlationID,
+	wchar_t *errorCode)
 {
 	ns2__PayPalAuthReversalReply *_p = soap_new_ns2__PayPalAuthReversalReply(soap);
 	if (_p)
@@ -5604,7 +5618,7 @@ inline ns2__PayPalDoCaptureReply * soap_new_ns2__PayPalDoCaptureReply(struct soa
 
 inline ns2__PayPalDoCaptureReply * soap_new_req_ns2__PayPalDoCaptureReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalDoCaptureReply *_p = soap_new_ns2__PayPalDoCaptureReply(soap);
 	if (_p)
@@ -5616,24 +5630,24 @@ inline ns2__PayPalDoCaptureReply * soap_new_req_ns2__PayPalDoCaptureReply(
 
 inline ns2__PayPalDoCaptureReply * soap_new_set_ns2__PayPalDoCaptureReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *authorizationId,
-	std::string *transactionId,
-	std::string *parentTransactionId,
-	std::string *paypalReceiptId,
-	std::string *paypalTransactiontype,
-	std::string *paypalPaymentType,
-	std::string *paypalOrderTime,
-	std::string *paypalPaymentGrossAmount,
-	std::string *paypalFeeAmount,
-	std::string *paypalTaxAmount,
-	std::string *paypalExchangeRate,
-	std::string *paypalPaymentStatus,
-	std::string *amount,
-	std::string *currency,
-	std::string *correlationID,
-	std::string *errorCode,
-	std::string *paypalPendingReason)
+	wchar_t *reasonCode,
+	wchar_t *authorizationId,
+	wchar_t *transactionId,
+	wchar_t *parentTransactionId,
+	wchar_t *paypalReceiptId,
+	wchar_t *paypalTransactiontype,
+	wchar_t *paypalPaymentType,
+	wchar_t *paypalOrderTime,
+	wchar_t *paypalPaymentGrossAmount,
+	wchar_t *paypalFeeAmount,
+	wchar_t *paypalTaxAmount,
+	wchar_t *paypalExchangeRate,
+	wchar_t *paypalPaymentStatus,
+	wchar_t *amount,
+	wchar_t *currency,
+	wchar_t *correlationID,
+	wchar_t *errorCode,
+	wchar_t *paypalPendingReason)
 {
 	ns2__PayPalDoCaptureReply *_p = soap_new_ns2__PayPalDoCaptureReply(soap);
 	if (_p)
@@ -5695,7 +5709,7 @@ inline ns2__PayPalEcDoPaymentReply * soap_new_ns2__PayPalEcDoPaymentReply(struct
 
 inline ns2__PayPalEcDoPaymentReply * soap_new_req_ns2__PayPalEcDoPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalEcDoPaymentReply *_p = soap_new_ns2__PayPalEcDoPaymentReply(soap);
 	if (_p)
@@ -5707,25 +5721,25 @@ inline ns2__PayPalEcDoPaymentReply * soap_new_req_ns2__PayPalEcDoPaymentReply(
 
 inline ns2__PayPalEcDoPaymentReply * soap_new_set_ns2__PayPalEcDoPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *paypalToken,
-	std::string *transactionId,
-	std::string *paypalTransactiontype,
-	std::string *paymentType,
-	std::string *paypalOrderTime,
-	std::string *paypalAmount,
-	std::string *paypalFeeAmount,
-	std::string *paypalTaxAmount,
-	std::string *paypalExchangeRate,
-	std::string *paypalPaymentStatus,
-	std::string *paypalPendingReason,
-	std::string *orderId,
-	std::string *paypalReasonCode,
-	std::string *amount,
-	std::string *currency,
-	std::string *correlationID,
-	std::string *errorCode,
-	std::string *paypalBillingAgreementId)
+	wchar_t *reasonCode,
+	wchar_t *paypalToken,
+	wchar_t *transactionId,
+	wchar_t *paypalTransactiontype,
+	wchar_t *paymentType,
+	wchar_t *paypalOrderTime,
+	wchar_t *paypalAmount,
+	wchar_t *paypalFeeAmount,
+	wchar_t *paypalTaxAmount,
+	wchar_t *paypalExchangeRate,
+	wchar_t *paypalPaymentStatus,
+	wchar_t *paypalPendingReason,
+	wchar_t *orderId,
+	wchar_t *paypalReasonCode,
+	wchar_t *amount,
+	wchar_t *currency,
+	wchar_t *correlationID,
+	wchar_t *errorCode,
+	wchar_t *paypalBillingAgreementId)
 {
 	ns2__PayPalEcDoPaymentReply *_p = soap_new_ns2__PayPalEcDoPaymentReply(soap);
 	if (_p)
@@ -5788,7 +5802,7 @@ inline ns2__PayPalEcGetDetailsReply * soap_new_ns2__PayPalEcGetDetailsReply(stru
 
 inline ns2__PayPalEcGetDetailsReply * soap_new_req_ns2__PayPalEcGetDetailsReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalEcGetDetailsReply *_p = soap_new_ns2__PayPalEcGetDetailsReply(soap);
 	if (_p)
@@ -5800,40 +5814,40 @@ inline ns2__PayPalEcGetDetailsReply * soap_new_req_ns2__PayPalEcGetDetailsReply(
 
 inline ns2__PayPalEcGetDetailsReply * soap_new_set_ns2__PayPalEcGetDetailsReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *paypalToken,
-	std::string *payer,
-	std::string *payerId,
-	std::string *payerStatus,
-	std::string *payerSalutation,
-	std::string *payerFirstname,
-	std::string *payerMiddlename,
-	std::string *payerLastname,
-	std::string *payerSuffix,
-	std::string *payerCountry,
-	std::string *payerBusiness,
-	std::string *shipToName,
-	std::string *shipToAddress1,
-	std::string *shipToAddress2,
-	std::string *shipToCity,
-	std::string *shipToState,
-	std::string *shipToCountry,
-	std::string *shipToZip,
-	std::string *addressStatus,
-	std::string *payerPhone,
-	std::string *avsCode,
-	std::string *street1,
-	std::string *street2,
-	std::string *city,
-	std::string *state,
-	std::string *postalCode,
-	std::string *countryCode,
-	std::string *countryName,
-	std::string *addressID,
-	std::string *errorCode,
-	std::string *correlationID,
-	std::string *paypalBillingAgreementAcceptedStatus,
-	std::string *paypalTaxAmount,
+	wchar_t *reasonCode,
+	wchar_t *paypalToken,
+	wchar_t *payer,
+	wchar_t *payerId,
+	wchar_t *payerStatus,
+	wchar_t *payerSalutation,
+	wchar_t *payerFirstname,
+	wchar_t *payerMiddlename,
+	wchar_t *payerLastname,
+	wchar_t *payerSuffix,
+	wchar_t *payerCountry,
+	wchar_t *payerBusiness,
+	wchar_t *shipToName,
+	wchar_t *shipToAddress1,
+	wchar_t *shipToAddress2,
+	wchar_t *shipToCity,
+	wchar_t *shipToState,
+	wchar_t *shipToCountry,
+	wchar_t *shipToZip,
+	wchar_t *addressStatus,
+	wchar_t *payerPhone,
+	wchar_t *avsCode,
+	wchar_t *street1,
+	wchar_t *street2,
+	wchar_t *city,
+	wchar_t *state,
+	wchar_t *postalCode,
+	wchar_t *countryCode,
+	wchar_t *countryName,
+	wchar_t *addressID,
+	wchar_t *errorCode,
+	wchar_t *correlationID,
+	wchar_t *paypalBillingAgreementAcceptedStatus,
+	wchar_t *paypalTaxAmount,
 	const std::vector<ns2__Item *> & item)
 {
 	ns2__PayPalEcGetDetailsReply *_p = soap_new_ns2__PayPalEcGetDetailsReply(soap);
@@ -5913,7 +5927,7 @@ inline ns2__PayPalEcSetReply * soap_new_ns2__PayPalEcSetReply(struct soap *soap,
 
 inline ns2__PayPalEcSetReply * soap_new_req_ns2__PayPalEcSetReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalEcSetReply *_p = soap_new_ns2__PayPalEcSetReply(soap);
 	if (_p)
@@ -5925,12 +5939,12 @@ inline ns2__PayPalEcSetReply * soap_new_req_ns2__PayPalEcSetReply(
 
 inline ns2__PayPalEcSetReply * soap_new_set_ns2__PayPalEcSetReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *paypalToken,
-	std::string *amount,
-	std::string *currency,
-	std::string *correlationID,
-	std::string *errorCode)
+	wchar_t *reasonCode,
+	wchar_t *paypalToken,
+	wchar_t *amount,
+	wchar_t *currency,
+	wchar_t *correlationID,
+	wchar_t *errorCode)
 {
 	ns2__PayPalEcSetReply *_p = soap_new_ns2__PayPalEcSetReply(soap);
 	if (_p)
@@ -5980,7 +5994,7 @@ inline ns2__PayPalPreapprovedUpdateReply * soap_new_ns2__PayPalPreapprovedUpdate
 
 inline ns2__PayPalPreapprovedUpdateReply * soap_new_req_ns2__PayPalPreapprovedUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalPreapprovedUpdateReply *_p = soap_new_ns2__PayPalPreapprovedUpdateReply(soap);
 	if (_p)
@@ -5992,19 +6006,19 @@ inline ns2__PayPalPreapprovedUpdateReply * soap_new_req_ns2__PayPalPreapprovedUp
 
 inline ns2__PayPalPreapprovedUpdateReply * soap_new_set_ns2__PayPalPreapprovedUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *payerStatus,
-	std::string *payerName,
-	std::string *payerCountry,
-	std::string *mpStatus,
-	std::string *payer,
-	std::string *payerID,
-	std::string *payerBusiness,
-	std::string *desc,
-	std::string *mpMax,
-	std::string *paymentSourceID)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *payerStatus,
+	wchar_t *payerName,
+	wchar_t *payerCountry,
+	wchar_t *mpStatus,
+	wchar_t *payer,
+	wchar_t *payerID,
+	wchar_t *payerBusiness,
+	wchar_t *desc,
+	wchar_t *mpMax,
+	wchar_t *paymentSourceID)
 {
 	ns2__PayPalPreapprovedUpdateReply *_p = soap_new_ns2__PayPalPreapprovedUpdateReply(soap);
 	if (_p)
@@ -6061,7 +6075,7 @@ inline ns2__PayPalPreapprovedPaymentReply * soap_new_ns2__PayPalPreapprovedPayme
 
 inline ns2__PayPalPreapprovedPaymentReply * soap_new_req_ns2__PayPalPreapprovedPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalPreapprovedPaymentReply *_p = soap_new_ns2__PayPalPreapprovedPaymentReply(soap);
 	if (_p)
@@ -6073,30 +6087,30 @@ inline ns2__PayPalPreapprovedPaymentReply * soap_new_req_ns2__PayPalPreapprovedP
 
 inline ns2__PayPalPreapprovedPaymentReply * soap_new_set_ns2__PayPalPreapprovedPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *payerStatus,
-	std::string *payerName,
-	std::string *transactionType,
-	std::string *feeAmount,
-	std::string *payerCountry,
-	std::string *pendingReason,
-	std::string *paymentStatus,
-	std::string *mpStatus,
-	std::string *payer,
-	std::string *payerID,
-	std::string *payerBusiness,
-	std::string *transactionID,
-	std::string *desc,
-	std::string *mpMax,
-	std::string *paymentType,
-	std::string *paymentDate,
-	std::string *paymentGrossAmount,
-	std::string *settleAmount,
-	std::string *taxAmount,
-	std::string *exchangeRate,
-	std::string *paymentSourceID)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *payerStatus,
+	wchar_t *payerName,
+	wchar_t *transactionType,
+	wchar_t *feeAmount,
+	wchar_t *payerCountry,
+	wchar_t *pendingReason,
+	wchar_t *paymentStatus,
+	wchar_t *mpStatus,
+	wchar_t *payer,
+	wchar_t *payerID,
+	wchar_t *payerBusiness,
+	wchar_t *transactionID,
+	wchar_t *desc,
+	wchar_t *mpMax,
+	wchar_t *paymentType,
+	wchar_t *paymentDate,
+	wchar_t *paymentGrossAmount,
+	wchar_t *settleAmount,
+	wchar_t *taxAmount,
+	wchar_t *exchangeRate,
+	wchar_t *paymentSourceID)
 {
 	ns2__PayPalPreapprovedPaymentReply *_p = soap_new_ns2__PayPalPreapprovedPaymentReply(soap);
 	if (_p)
@@ -6164,7 +6178,7 @@ inline ns2__PayPalButtonCreateReply * soap_new_ns2__PayPalButtonCreateReply(stru
 
 inline ns2__PayPalButtonCreateReply * soap_new_req_ns2__PayPalButtonCreateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalButtonCreateReply *_p = soap_new_ns2__PayPalButtonCreateReply(soap);
 	if (_p)
@@ -6176,12 +6190,12 @@ inline ns2__PayPalButtonCreateReply * soap_new_req_ns2__PayPalButtonCreateReply(
 
 inline ns2__PayPalButtonCreateReply * soap_new_set_ns2__PayPalButtonCreateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *encryptedFormData,
-	std::string *unencryptedFormData,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *buttonType)
+	wchar_t *reasonCode,
+	wchar_t *encryptedFormData,
+	wchar_t *unencryptedFormData,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *buttonType)
 {
 	ns2__PayPalButtonCreateReply *_p = soap_new_ns2__PayPalButtonCreateReply(soap);
 	if (_p)
@@ -6231,7 +6245,7 @@ inline ns2__PinlessDebitReversalReply * soap_new_ns2__PinlessDebitReversalReply(
 
 inline ns2__PinlessDebitReversalReply * soap_new_req_ns2__PinlessDebitReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PinlessDebitReversalReply *_p = soap_new_ns2__PinlessDebitReversalReply(soap);
 	if (_p)
@@ -6243,11 +6257,11 @@ inline ns2__PinlessDebitReversalReply * soap_new_req_ns2__PinlessDebitReversalRe
 
 inline ns2__PinlessDebitReversalReply * soap_new_set_ns2__PinlessDebitReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *requestDateTime,
-	std::string *processorResponse,
-	std::string *reconciliationID)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t **requestDateTime,
+	wchar_t *processorResponse,
+	wchar_t *reconciliationID)
 {
 	ns2__PinlessDebitReversalReply *_p = soap_new_ns2__PinlessDebitReversalReply(soap);
 	if (_p)
@@ -6296,7 +6310,7 @@ inline ns2__PinlessDebitValidateReply * soap_new_ns2__PinlessDebitValidateReply(
 
 inline ns2__PinlessDebitValidateReply * soap_new_req_ns2__PinlessDebitValidateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PinlessDebitValidateReply *_p = soap_new_ns2__PinlessDebitValidateReply(soap);
 	if (_p)
@@ -6308,9 +6322,9 @@ inline ns2__PinlessDebitValidateReply * soap_new_req_ns2__PinlessDebitValidateRe
 
 inline ns2__PinlessDebitValidateReply * soap_new_set_ns2__PinlessDebitValidateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *status,
-	std::string *requestDateTime)
+	wchar_t *reasonCode,
+	wchar_t *status,
+	wchar_t **requestDateTime)
 {
 	ns2__PinlessDebitValidateReply *_p = soap_new_ns2__PinlessDebitValidateReply(soap);
 	if (_p)
@@ -6357,7 +6371,7 @@ inline ns2__PinlessDebitReply * soap_new_ns2__PinlessDebitReply(struct soap *soa
 
 inline ns2__PinlessDebitReply * soap_new_req_ns2__PinlessDebitReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PinlessDebitReply *_p = soap_new_ns2__PinlessDebitReply(soap);
 	if (_p)
@@ -6369,14 +6383,14 @@ inline ns2__PinlessDebitReply * soap_new_req_ns2__PinlessDebitReply(
 
 inline ns2__PinlessDebitReply * soap_new_set_ns2__PinlessDebitReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *authorizationCode,
-	std::string *requestDateTime,
-	std::string *processorResponse,
-	std::string *receiptNumber,
-	std::string *reconciliationID,
-	std::string *ownerMerchantID)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t *authorizationCode,
+	wchar_t **requestDateTime,
+	wchar_t *processorResponse,
+	wchar_t *receiptNumber,
+	wchar_t *reconciliationID,
+	wchar_t *ownerMerchantID)
 {
 	ns2__PinlessDebitReply *_p = soap_new_ns2__PinlessDebitReply(soap);
 	if (_p)
@@ -6428,7 +6442,7 @@ inline ns2__VoidReply * soap_new_ns2__VoidReply(struct soap *soap, int n = -1)
 
 inline ns2__VoidReply * soap_new_req_ns2__VoidReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__VoidReply *_p = soap_new_ns2__VoidReply(soap);
 	if (_p)
@@ -6440,10 +6454,10 @@ inline ns2__VoidReply * soap_new_req_ns2__VoidReply(
 
 inline ns2__VoidReply * soap_new_set_ns2__VoidReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *amount,
-	std::string *currency)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t **amount,
+	wchar_t *currency)
 {
 	ns2__VoidReply *_p = soap_new_ns2__VoidReply(soap);
 	if (_p)
@@ -6491,7 +6505,7 @@ inline ns2__PayPalCreditReply * soap_new_ns2__PayPalCreditReply(struct soap *soa
 
 inline ns2__PayPalCreditReply * soap_new_req_ns2__PayPalCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalCreditReply *_p = soap_new_ns2__PayPalCreditReply(soap);
 	if (_p)
@@ -6503,11 +6517,11 @@ inline ns2__PayPalCreditReply * soap_new_req_ns2__PayPalCreditReply(
 
 inline ns2__PayPalCreditReply * soap_new_set_ns2__PayPalCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *processorResponse)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse)
 {
 	ns2__PayPalCreditReply *_p = soap_new_ns2__PayPalCreditReply(soap);
 	if (_p)
@@ -6556,7 +6570,7 @@ inline ns2__PayPalPaymentReply * soap_new_ns2__PayPalPaymentReply(struct soap *s
 
 inline ns2__PayPalPaymentReply * soap_new_req_ns2__PayPalPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayPalPaymentReply *_p = soap_new_ns2__PayPalPaymentReply(soap);
 	if (_p)
@@ -6568,11 +6582,11 @@ inline ns2__PayPalPaymentReply * soap_new_req_ns2__PayPalPaymentReply(
 
 inline ns2__PayPalPaymentReply * soap_new_set_ns2__PayPalPaymentReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *secureData,
-	std::string *amount,
-	std::string *requestDateTime,
-	std::string *reconciliationID)
+	wchar_t *reasonCode,
+	wchar_t *secureData,
+	wchar_t **amount,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID)
 {
 	ns2__PayPalPaymentReply *_p = soap_new_ns2__PayPalPaymentReply(soap);
 	if (_p)
@@ -6621,8 +6635,8 @@ inline ns2__PaySubscriptionDeleteReply * soap_new_ns2__PaySubscriptionDeleteRepl
 
 inline ns2__PaySubscriptionDeleteReply * soap_new_req_ns2__PaySubscriptionDeleteReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& subscriptionID)
+	wchar_t *reasonCode,
+	wchar_t *subscriptionID)
 {
 	ns2__PaySubscriptionDeleteReply *_p = soap_new_ns2__PaySubscriptionDeleteReply(soap);
 	if (_p)
@@ -6635,8 +6649,8 @@ inline ns2__PaySubscriptionDeleteReply * soap_new_req_ns2__PaySubscriptionDelete
 
 inline ns2__PaySubscriptionDeleteReply * soap_new_set_ns2__PaySubscriptionDeleteReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& subscriptionID)
+	wchar_t *reasonCode,
+	wchar_t *subscriptionID)
 {
 	ns2__PaySubscriptionDeleteReply *_p = soap_new_ns2__PaySubscriptionDeleteReply(soap);
 	if (_p)
@@ -6682,8 +6696,8 @@ inline ns2__PaySubscriptionRetrieveReply * soap_new_ns2__PaySubscriptionRetrieve
 
 inline ns2__PaySubscriptionRetrieveReply * soap_new_req_ns2__PaySubscriptionRetrieveReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& subscriptionIDNew)
+	wchar_t *reasonCode,
+	wchar_t *subscriptionIDNew)
 {
 	ns2__PaySubscriptionRetrieveReply *_p = soap_new_ns2__PaySubscriptionRetrieveReply(soap);
 	if (_p)
@@ -6696,71 +6710,71 @@ inline ns2__PaySubscriptionRetrieveReply * soap_new_req_ns2__PaySubscriptionRetr
 
 inline ns2__PaySubscriptionRetrieveReply * soap_new_set_ns2__PaySubscriptionRetrieveReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *approvalRequired,
-	std::string *automaticRenew,
-	std::string *cardAccountNumber,
-	std::string *cardExpirationMonth,
-	std::string *cardExpirationYear,
-	std::string *cardIssueNumber,
-	std::string *cardStartMonth,
-	std::string *cardStartYear,
-	std::string *cardType,
-	std::string *checkAccountNumber,
-	std::string *checkAccountType,
-	std::string *checkBankTransitNumber,
-	std::string *checkSecCode,
-	std::string *checkAuthenticateID,
-	std::string *city,
-	std::string *comments,
-	std::string *companyName,
-	std::string *country,
-	std::string *currency,
-	std::string *customerAccountID,
-	std::string *email,
-	std::string *endDate,
-	std::string *firstName,
-	std::string *frequency,
-	std::string *lastName,
-	std::string *merchantReferenceCode,
-	std::string *paymentMethod,
-	std::string *paymentsRemaining,
-	std::string *phoneNumber,
-	std::string *postalCode,
-	std::string *recurringAmount,
-	std::string *setupAmount,
-	std::string *startDate,
-	std::string *state,
-	std::string *status,
-	std::string *street1,
-	std::string *street2,
-	std::string *subscriptionID,
-	const std::string& subscriptionIDNew,
-	std::string *title,
-	std::string *totalPayments,
-	std::string *shipToFirstName,
-	std::string *shipToLastName,
-	std::string *shipToStreet1,
-	std::string *shipToStreet2,
-	std::string *shipToCity,
-	std::string *shipToState,
-	std::string *shipToPostalCode,
-	std::string *shipToCompany,
-	std::string *shipToCountry,
-	std::string *billPayment,
-	std::string *merchantDefinedDataField1,
-	std::string *merchantDefinedDataField2,
-	std::string *merchantDefinedDataField3,
-	std::string *merchantDefinedDataField4,
-	std::string *merchantSecureDataField1,
-	std::string *merchantSecureDataField2,
-	std::string *merchantSecureDataField3,
-	std::string *merchantSecureDataField4,
-	std::string *ownerMerchantID,
-	std::string *companyTaxID,
-	std::string *driversLicenseNumber,
-	std::string *driversLicenseState,
-	std::string *dateOfBirth)
+	wchar_t *reasonCode,
+	wchar_t *approvalRequired,
+	wchar_t *automaticRenew,
+	wchar_t *cardAccountNumber,
+	wchar_t *cardExpirationMonth,
+	wchar_t *cardExpirationYear,
+	wchar_t *cardIssueNumber,
+	wchar_t *cardStartMonth,
+	wchar_t *cardStartYear,
+	wchar_t *cardType,
+	wchar_t *checkAccountNumber,
+	wchar_t *checkAccountType,
+	wchar_t *checkBankTransitNumber,
+	wchar_t *checkSecCode,
+	wchar_t *checkAuthenticateID,
+	wchar_t *city,
+	wchar_t *comments,
+	wchar_t *companyName,
+	wchar_t *country,
+	wchar_t *currency,
+	wchar_t *customerAccountID,
+	wchar_t *email,
+	wchar_t *endDate,
+	wchar_t *firstName,
+	wchar_t *frequency,
+	wchar_t *lastName,
+	wchar_t *merchantReferenceCode,
+	wchar_t *paymentMethod,
+	wchar_t *paymentsRemaining,
+	wchar_t *phoneNumber,
+	wchar_t *postalCode,
+	wchar_t *recurringAmount,
+	wchar_t *setupAmount,
+	wchar_t *startDate,
+	wchar_t *state,
+	wchar_t *status,
+	wchar_t *street1,
+	wchar_t *street2,
+	wchar_t *subscriptionID,
+	wchar_t *subscriptionIDNew,
+	wchar_t *title,
+	wchar_t *totalPayments,
+	wchar_t *shipToFirstName,
+	wchar_t *shipToLastName,
+	wchar_t *shipToStreet1,
+	wchar_t *shipToStreet2,
+	wchar_t *shipToCity,
+	wchar_t *shipToState,
+	wchar_t *shipToPostalCode,
+	wchar_t *shipToCompany,
+	wchar_t *shipToCountry,
+	wchar_t *billPayment,
+	wchar_t *merchantDefinedDataField1,
+	wchar_t *merchantDefinedDataField2,
+	wchar_t *merchantDefinedDataField3,
+	wchar_t *merchantDefinedDataField4,
+	wchar_t *merchantSecureDataField1,
+	wchar_t *merchantSecureDataField2,
+	wchar_t *merchantSecureDataField3,
+	wchar_t *merchantSecureDataField4,
+	wchar_t *ownerMerchantID,
+	wchar_t *companyTaxID,
+	wchar_t *driversLicenseNumber,
+	wchar_t *driversLicenseState,
+	wchar_t *dateOfBirth)
 {
 	ns2__PaySubscriptionRetrieveReply *_p = soap_new_ns2__PaySubscriptionRetrieveReply(soap);
 	if (_p)
@@ -6869,7 +6883,7 @@ inline ns2__PaySubscriptionEventUpdateReply * soap_new_ns2__PaySubscriptionEvent
 
 inline ns2__PaySubscriptionEventUpdateReply * soap_new_req_ns2__PaySubscriptionEventUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PaySubscriptionEventUpdateReply *_p = soap_new_ns2__PaySubscriptionEventUpdateReply(soap);
 	if (_p)
@@ -6881,8 +6895,8 @@ inline ns2__PaySubscriptionEventUpdateReply * soap_new_req_ns2__PaySubscriptionE
 
 inline ns2__PaySubscriptionEventUpdateReply * soap_new_set_ns2__PaySubscriptionEventUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *ownerMerchantID)
+	wchar_t *reasonCode,
+	wchar_t *ownerMerchantID)
 {
 	ns2__PaySubscriptionEventUpdateReply *_p = soap_new_ns2__PaySubscriptionEventUpdateReply(soap);
 	if (_p)
@@ -6928,8 +6942,8 @@ inline ns2__PaySubscriptionUpdateReply * soap_new_ns2__PaySubscriptionUpdateRepl
 
 inline ns2__PaySubscriptionUpdateReply * soap_new_req_ns2__PaySubscriptionUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& subscriptionID)
+	wchar_t *reasonCode,
+	wchar_t *subscriptionID)
 {
 	ns2__PaySubscriptionUpdateReply *_p = soap_new_ns2__PaySubscriptionUpdateReply(soap);
 	if (_p)
@@ -6942,10 +6956,10 @@ inline ns2__PaySubscriptionUpdateReply * soap_new_req_ns2__PaySubscriptionUpdate
 
 inline ns2__PaySubscriptionUpdateReply * soap_new_set_ns2__PaySubscriptionUpdateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& subscriptionID,
-	std::string *subscriptionIDNew,
-	std::string *ownerMerchantID)
+	wchar_t *reasonCode,
+	wchar_t *subscriptionID,
+	wchar_t *subscriptionIDNew,
+	wchar_t *ownerMerchantID)
 {
 	ns2__PaySubscriptionUpdateReply *_p = soap_new_ns2__PaySubscriptionUpdateReply(soap);
 	if (_p)
@@ -6993,8 +7007,8 @@ inline ns2__PaySubscriptionCreateReply * soap_new_ns2__PaySubscriptionCreateRepl
 
 inline ns2__PaySubscriptionCreateReply * soap_new_req_ns2__PaySubscriptionCreateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& subscriptionID)
+	wchar_t *reasonCode,
+	wchar_t *subscriptionID)
 {
 	ns2__PaySubscriptionCreateReply *_p = soap_new_ns2__PaySubscriptionCreateReply(soap);
 	if (_p)
@@ -7007,8 +7021,8 @@ inline ns2__PaySubscriptionCreateReply * soap_new_req_ns2__PaySubscriptionCreate
 
 inline ns2__PaySubscriptionCreateReply * soap_new_set_ns2__PaySubscriptionCreateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	const std::string& subscriptionID)
+	wchar_t *reasonCode,
+	wchar_t *subscriptionID)
 {
 	ns2__PaySubscriptionCreateReply *_p = soap_new_ns2__PaySubscriptionCreateReply(soap);
 	if (_p)
@@ -7054,7 +7068,7 @@ inline ns2__DirectDebitRefundReply * soap_new_ns2__DirectDebitRefundReply(struct
 
 inline ns2__DirectDebitRefundReply * soap_new_req_ns2__DirectDebitRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__DirectDebitRefundReply *_p = soap_new_ns2__DirectDebitRefundReply(soap);
 	if (_p)
@@ -7066,13 +7080,13 @@ inline ns2__DirectDebitRefundReply * soap_new_req_ns2__DirectDebitRefundReply(
 
 inline ns2__DirectDebitRefundReply * soap_new_set_ns2__DirectDebitRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *processorResponse,
-	std::string *processorTransactionID,
-	std::string *iban)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse,
+	wchar_t *processorTransactionID,
+	wchar_t *iban)
 {
 	ns2__DirectDebitRefundReply *_p = soap_new_ns2__DirectDebitRefundReply(soap);
 	if (_p)
@@ -7123,7 +7137,7 @@ inline ns2__DirectDebitValidateReply * soap_new_ns2__DirectDebitValidateReply(st
 
 inline ns2__DirectDebitValidateReply * soap_new_req_ns2__DirectDebitValidateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__DirectDebitValidateReply *_p = soap_new_ns2__DirectDebitValidateReply(soap);
 	if (_p)
@@ -7135,13 +7149,13 @@ inline ns2__DirectDebitValidateReply * soap_new_req_ns2__DirectDebitValidateRepl
 
 inline ns2__DirectDebitValidateReply * soap_new_set_ns2__DirectDebitValidateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *processorResponse,
-	std::string *iban,
-	std::string *bankSwiftCode)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse,
+	wchar_t *iban,
+	wchar_t *bankSwiftCode)
 {
 	ns2__DirectDebitValidateReply *_p = soap_new_ns2__DirectDebitValidateReply(soap);
 	if (_p)
@@ -7192,7 +7206,7 @@ inline ns2__DirectDebitReply * soap_new_ns2__DirectDebitReply(struct soap *soap,
 
 inline ns2__DirectDebitReply * soap_new_req_ns2__DirectDebitReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__DirectDebitReply *_p = soap_new_ns2__DirectDebitReply(soap);
 	if (_p)
@@ -7204,15 +7218,15 @@ inline ns2__DirectDebitReply * soap_new_req_ns2__DirectDebitReply(
 
 inline ns2__DirectDebitReply * soap_new_set_ns2__DirectDebitReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *processorResponse,
-	std::string *processorTransactionID,
-	std::string *mandateAuthenticationDate,
-	std::string *mandateID,
-	std::string *iban)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse,
+	wchar_t *processorTransactionID,
+	wchar_t *mandateAuthenticationDate,
+	wchar_t *mandateID,
+	wchar_t *iban)
 {
 	ns2__DirectDebitReply *_p = soap_new_ns2__DirectDebitReply(soap);
 	if (_p)
@@ -7265,7 +7279,7 @@ inline ns2__BankTransferRefundReply * soap_new_ns2__BankTransferRefundReply(stru
 
 inline ns2__BankTransferRefundReply * soap_new_req_ns2__BankTransferRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__BankTransferRefundReply *_p = soap_new_ns2__BankTransferRefundReply(soap);
 	if (_p)
@@ -7277,12 +7291,12 @@ inline ns2__BankTransferRefundReply * soap_new_req_ns2__BankTransferRefundReply(
 
 inline ns2__BankTransferRefundReply * soap_new_set_ns2__BankTransferRefundReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *processorResponse,
-	std::string *iban)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse,
+	wchar_t *iban)
 {
 	ns2__BankTransferRefundReply *_p = soap_new_ns2__BankTransferRefundReply(soap);
 	if (_p)
@@ -7332,7 +7346,7 @@ inline ns2__DirectDebitMandateReply * soap_new_ns2__DirectDebitMandateReply(stru
 
 inline ns2__DirectDebitMandateReply * soap_new_req_ns2__DirectDebitMandateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__DirectDebitMandateReply *_p = soap_new_ns2__DirectDebitMandateReply(soap);
 	if (_p)
@@ -7344,12 +7358,12 @@ inline ns2__DirectDebitMandateReply * soap_new_req_ns2__DirectDebitMandateReply(
 
 inline ns2__DirectDebitMandateReply * soap_new_set_ns2__DirectDebitMandateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *mandateID,
-	std::string *mandateMaturationDate,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *processorResponse)
+	wchar_t *reasonCode,
+	wchar_t *mandateID,
+	wchar_t *mandateMaturationDate,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse)
 {
 	ns2__DirectDebitMandateReply *_p = soap_new_ns2__DirectDebitMandateReply(soap);
 	if (_p)
@@ -7399,7 +7413,7 @@ inline ns2__BankTransferRealTimeReply * soap_new_ns2__BankTransferRealTimeReply(
 
 inline ns2__BankTransferRealTimeReply * soap_new_req_ns2__BankTransferRealTimeReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__BankTransferRealTimeReply *_p = soap_new_ns2__BankTransferRealTimeReply(soap);
 	if (_p)
@@ -7411,13 +7425,13 @@ inline ns2__BankTransferRealTimeReply * soap_new_req_ns2__BankTransferRealTimeRe
 
 inline ns2__BankTransferRealTimeReply * soap_new_set_ns2__BankTransferRealTimeReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *formMethod,
-	std::string *formAction,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *paymentReference,
-	std::string *amount)
+	wchar_t *reasonCode,
+	wchar_t *formMethod,
+	wchar_t *formAction,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *paymentReference,
+	wchar_t **amount)
 {
 	ns2__BankTransferRealTimeReply *_p = soap_new_ns2__BankTransferRealTimeReply(soap);
 	if (_p)
@@ -7468,7 +7482,7 @@ inline ns2__BankTransferReply * soap_new_ns2__BankTransferReply(struct soap *soa
 
 inline ns2__BankTransferReply * soap_new_req_ns2__BankTransferReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__BankTransferReply *_p = soap_new_ns2__BankTransferReply(soap);
 	if (_p)
@@ -7480,22 +7494,22 @@ inline ns2__BankTransferReply * soap_new_req_ns2__BankTransferReply(
 
 inline ns2__BankTransferReply * soap_new_set_ns2__BankTransferReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *accountHolder,
-	std::string *accountNumber,
-	std::string *amount,
-	std::string *bankName,
-	std::string *bankCity,
-	std::string *bankCountry,
-	std::string *paymentReference,
-	std::string *processorResponse,
-	std::string *bankSwiftCode,
-	std::string *bankSpecialID,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *iban,
-	std::string *bankCode,
-	std::string *branchCode)
+	wchar_t *reasonCode,
+	wchar_t *accountHolder,
+	wchar_t *accountNumber,
+	wchar_t **amount,
+	wchar_t *bankName,
+	wchar_t *bankCity,
+	wchar_t *bankCountry,
+	wchar_t *paymentReference,
+	wchar_t *processorResponse,
+	wchar_t *bankSwiftCode,
+	wchar_t *bankSpecialID,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *iban,
+	wchar_t *bankCode,
+	wchar_t *branchCode)
 {
 	ns2__BankTransferReply *_p = soap_new_ns2__BankTransferReply(soap);
 	if (_p)
@@ -7555,7 +7569,7 @@ inline ns2__FXRatesReply * soap_new_ns2__FXRatesReply(struct soap *soap, int n =
 
 inline ns2__FXRatesReply * soap_new_req_ns2__FXRatesReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__FXRatesReply *_p = soap_new_ns2__FXRatesReply(soap);
 	if (_p)
@@ -7567,7 +7581,7 @@ inline ns2__FXRatesReply * soap_new_req_ns2__FXRatesReply(
 
 inline ns2__FXRatesReply * soap_new_set_ns2__FXRatesReply(
 	struct soap *soap,
-	const std::string& reasonCode,
+	wchar_t *reasonCode,
 	const std::vector<ns2__FXQuote *> & quote)
 {
 	ns2__FXRatesReply *_p = soap_new_ns2__FXRatesReply(soap);
@@ -7624,13 +7638,13 @@ inline ns2__FXQuote * soap_new_req_ns2__FXQuote(
 
 inline ns2__FXQuote * soap_new_set_ns2__FXQuote(
 	struct soap *soap,
-	std::string *id,
-	std::string *rate,
-	std::string *type,
-	std::string *expirationDateTime,
-	std::string *currency,
-	std::string *fundingCurrency,
-	std::string *receivedDateTime)
+	wchar_t *id,
+	wchar_t *rate,
+	wchar_t *type,
+	wchar_t **expirationDateTime,
+	wchar_t *currency,
+	wchar_t *fundingCurrency,
+	wchar_t **receivedDateTime)
 {
 	ns2__FXQuote *_p = soap_new_ns2__FXQuote(soap);
 	if (_p)
@@ -7681,7 +7695,7 @@ inline ns2__ExportReply * soap_new_ns2__ExportReply(struct soap *soap, int n = -
 
 inline ns2__ExportReply * soap_new_req_ns2__ExportReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__ExportReply *_p = soap_new_ns2__ExportReply(soap);
 	if (_p)
@@ -7693,9 +7707,9 @@ inline ns2__ExportReply * soap_new_req_ns2__ExportReply(
 
 inline ns2__ExportReply * soap_new_set_ns2__ExportReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *ipCountryConfidence,
-	std::string *infoCode)
+	wchar_t *reasonCode,
+	wchar_t **ipCountryConfidence,
+	wchar_t *infoCode)
 {
 	ns2__ExportReply *_p = soap_new_ns2__ExportReply(soap);
 	if (_p)
@@ -7752,10 +7766,10 @@ inline ns2__DeniedPartiesMatch * soap_new_req_ns2__DeniedPartiesMatch(
 
 inline ns2__DeniedPartiesMatch * soap_new_set_ns2__DeniedPartiesMatch(
 	struct soap *soap,
-	std::string *list,
-	const std::vector<std::string> & name,
-	const std::vector<std::string> & address,
-	const std::vector<std::string> & program)
+	wchar_t *list,
+	const std::vector<wchar_t *> & name,
+	const std::vector<wchar_t *> & address,
+	const std::vector<wchar_t *> & program)
 {
 	ns2__DeniedPartiesMatch *_p = soap_new_ns2__DeniedPartiesMatch(soap);
 	if (_p)
@@ -7803,7 +7817,7 @@ inline ns2__DAVReply * soap_new_ns2__DAVReply(struct soap *soap, int n = -1)
 
 inline ns2__DAVReply * soap_new_req_ns2__DAVReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__DAVReply *_p = soap_new_ns2__DAVReply(soap);
 	if (_p)
@@ -7815,40 +7829,40 @@ inline ns2__DAVReply * soap_new_req_ns2__DAVReply(
 
 inline ns2__DAVReply * soap_new_set_ns2__DAVReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *addressType,
-	std::string *apartmentInfo,
-	std::string *barCode,
-	std::string *barCodeCheckDigit,
-	std::string *careOf,
-	std::string *cityInfo,
-	std::string *countryInfo,
-	std::string *directionalInfo,
-	std::string *lvrInfo,
-	std::string *matchScore,
-	std::string *standardizedAddress1,
-	std::string *standardizedAddress2,
-	std::string *standardizedAddress3,
-	std::string *standardizedAddress4,
-	std::string *standardizedAddressNoApt,
-	std::string *standardizedCity,
-	std::string *standardizedCounty,
-	std::string *standardizedCSP,
-	std::string *standardizedState,
-	std::string *standardizedPostalCode,
-	std::string *standardizedCountry,
-	std::string *standardizedISOCountry,
-	std::string *stateInfo,
-	std::string *streetInfo,
-	std::string *suffixInfo,
-	std::string *postalCodeInfo,
-	std::string *overallInfo,
-	std::string *usInfo,
-	std::string *caInfo,
-	std::string *intlInfo,
-	std::string *usErrorInfo,
-	std::string *caErrorInfo,
-	std::string *intlErrorInfo)
+	wchar_t *reasonCode,
+	wchar_t *addressType,
+	wchar_t *apartmentInfo,
+	wchar_t *barCode,
+	wchar_t *barCodeCheckDigit,
+	wchar_t *careOf,
+	wchar_t *cityInfo,
+	wchar_t *countryInfo,
+	wchar_t *directionalInfo,
+	wchar_t *lvrInfo,
+	wchar_t **matchScore,
+	wchar_t *standardizedAddress1,
+	wchar_t *standardizedAddress2,
+	wchar_t *standardizedAddress3,
+	wchar_t *standardizedAddress4,
+	wchar_t *standardizedAddressNoApt,
+	wchar_t *standardizedCity,
+	wchar_t *standardizedCounty,
+	wchar_t *standardizedCSP,
+	wchar_t *standardizedState,
+	wchar_t *standardizedPostalCode,
+	wchar_t *standardizedCountry,
+	wchar_t *standardizedISOCountry,
+	wchar_t *stateInfo,
+	wchar_t *streetInfo,
+	wchar_t *suffixInfo,
+	wchar_t *postalCodeInfo,
+	wchar_t *overallInfo,
+	wchar_t *usInfo,
+	wchar_t *caInfo,
+	wchar_t *intlInfo,
+	wchar_t *usErrorInfo,
+	wchar_t *caErrorInfo,
+	wchar_t *intlErrorInfo)
 {
 	ns2__DAVReply *_p = soap_new_ns2__DAVReply(soap);
 	if (_p)
@@ -7926,7 +7940,7 @@ inline ns2__AFSReply * soap_new_ns2__AFSReply(struct soap *soap, int n = -1)
 
 inline ns2__AFSReply * soap_new_req_ns2__AFSReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__AFSReply *_p = soap_new_ns2__AFSReply(soap);
 	if (_p)
@@ -7938,29 +7952,29 @@ inline ns2__AFSReply * soap_new_req_ns2__AFSReply(
 
 inline ns2__AFSReply * soap_new_set_ns2__AFSReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *afsResult,
-	std::string *hostSeverity,
-	std::string *consumerLocalTime,
-	std::string *afsFactorCode,
-	std::string *addressInfoCode,
-	std::string *hotlistInfoCode,
-	std::string *internetInfoCode,
-	std::string *phoneInfoCode,
-	std::string *suspiciousInfoCode,
-	std::string *velocityInfoCode,
-	std::string *identityInfoCode,
-	std::string *ipCountry,
-	std::string *ipState,
-	std::string *ipCity,
-	std::string *ipRoutingMethod,
-	std::string *ipAnonymizerStatus,
-	std::string *scoreModelUsed,
-	std::string *cardBin,
-	std::string *binCountry,
-	std::string *cardAccountType,
-	std::string *cardScheme,
-	std::string *cardIssuer,
+	wchar_t *reasonCode,
+	wchar_t **afsResult,
+	wchar_t **hostSeverity,
+	wchar_t *consumerLocalTime,
+	wchar_t *afsFactorCode,
+	wchar_t *addressInfoCode,
+	wchar_t *hotlistInfoCode,
+	wchar_t *internetInfoCode,
+	wchar_t *phoneInfoCode,
+	wchar_t *suspiciousInfoCode,
+	wchar_t *velocityInfoCode,
+	wchar_t *identityInfoCode,
+	wchar_t *ipCountry,
+	wchar_t *ipState,
+	wchar_t *ipCity,
+	wchar_t *ipRoutingMethod,
+	wchar_t *ipAnonymizerStatus,
+	wchar_t *scoreModelUsed,
+	wchar_t *cardBin,
+	wchar_t *binCountry,
+	wchar_t *cardAccountType,
+	wchar_t *cardScheme,
+	wchar_t *cardIssuer,
 	ns2__DeviceFingerprint *deviceFingerprint)
 {
 	ns2__AFSReply *_p = soap_new_ns2__AFSReply(soap);
@@ -8039,38 +8053,38 @@ inline ns2__DeviceFingerprint * soap_new_req_ns2__DeviceFingerprint(
 
 inline ns2__DeviceFingerprint * soap_new_set_ns2__DeviceFingerprint(
 	struct soap *soap,
-	std::string *cookiesEnabled,
-	std::string *flashEnabled,
-	std::string *hash,
-	std::string *imagesEnabled,
-	std::string *javascriptEnabled,
-	std::string *proxyIPAddress,
-	std::string *proxyIPAddressActivities,
-	std::string *proxyIPAddressAttributes,
-	std::string *proxyServerType,
-	std::string *trueIPAddress,
-	std::string *trueIPAddressActivities,
-	std::string *trueIPAddressAttributes,
-	std::string *trueIPAddressCity,
-	std::string *trueIPAddressCountry,
-	std::string *smartID,
-	std::string *smartIDConfidenceLevel,
-	std::string *screenResolution,
-	std::string *browserLanguage,
-	std::string *agentType,
-	std::string *dateTime,
-	std::string *profileDuration,
-	std::string *profiledURL,
-	std::string *timeOnPage,
-	std::string *deviceMatch,
-	std::string *firstEncounter,
-	std::string *flashOS,
-	std::string *flashVersion,
-	std::string *deviceLatitude,
-	std::string *deviceLongitude,
-	std::string *gpsAccuracy,
-	std::string *jbRoot,
-	std::string *jbRootReason)
+	wchar_t **cookiesEnabled,
+	wchar_t **flashEnabled,
+	wchar_t *hash,
+	wchar_t **imagesEnabled,
+	wchar_t **javascriptEnabled,
+	wchar_t *proxyIPAddress,
+	wchar_t *proxyIPAddressActivities,
+	wchar_t *proxyIPAddressAttributes,
+	wchar_t *proxyServerType,
+	wchar_t *trueIPAddress,
+	wchar_t *trueIPAddressActivities,
+	wchar_t *trueIPAddressAttributes,
+	wchar_t *trueIPAddressCity,
+	wchar_t *trueIPAddressCountry,
+	wchar_t *smartID,
+	wchar_t *smartIDConfidenceLevel,
+	wchar_t *screenResolution,
+	wchar_t *browserLanguage,
+	wchar_t *agentType,
+	wchar_t **dateTime,
+	wchar_t **profileDuration,
+	wchar_t *profiledURL,
+	wchar_t **timeOnPage,
+	wchar_t *deviceMatch,
+	wchar_t *firstEncounter,
+	wchar_t *flashOS,
+	wchar_t *flashVersion,
+	wchar_t *deviceLatitude,
+	wchar_t *deviceLongitude,
+	wchar_t *gpsAccuracy,
+	wchar_t **jbRoot,
+	wchar_t *jbRootReason)
 {
 	ns2__DeviceFingerprint *_p = soap_new_ns2__DeviceFingerprint(soap);
 	if (_p)
@@ -8146,7 +8160,7 @@ inline ns2__TaxReply * soap_new_ns2__TaxReply(struct soap *soap, int n = -1)
 
 inline ns2__TaxReply * soap_new_req_ns2__TaxReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__TaxReply *_p = soap_new_ns2__TaxReply(soap);
 	if (_p)
@@ -8158,19 +8172,19 @@ inline ns2__TaxReply * soap_new_req_ns2__TaxReply(
 
 inline ns2__TaxReply * soap_new_set_ns2__TaxReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *currency,
-	std::string *grandTotalAmount,
-	std::string *totalCityTaxAmount,
-	std::string *city,
-	std::string *totalCountyTaxAmount,
-	std::string *county,
-	std::string *totalDistrictTaxAmount,
-	std::string *totalStateTaxAmount,
-	std::string *state,
-	std::string *totalTaxAmount,
-	std::string *postalCode,
-	std::string *geocode,
+	wchar_t *reasonCode,
+	wchar_t *currency,
+	wchar_t **grandTotalAmount,
+	wchar_t **totalCityTaxAmount,
+	wchar_t *city,
+	wchar_t **totalCountyTaxAmount,
+	wchar_t *county,
+	wchar_t **totalDistrictTaxAmount,
+	wchar_t **totalStateTaxAmount,
+	wchar_t *state,
+	wchar_t **totalTaxAmount,
+	wchar_t *postalCode,
+	wchar_t *geocode,
 	const std::vector<ns2__TaxReplyItem *> & item)
 {
 	ns2__TaxReply *_p = soap_new_ns2__TaxReply(soap);
@@ -8229,8 +8243,8 @@ inline ns2__TaxReplyItem * soap_new_ns2__TaxReplyItem(struct soap *soap, int n =
 
 inline ns2__TaxReplyItem * soap_new_req_ns2__TaxReplyItem(
 	struct soap *soap,
-	const std::string& totalTaxAmount,
-	const std::string& id)
+	wchar_t *totalTaxAmount,
+	wchar_t *id)
 {
 	ns2__TaxReplyItem *_p = soap_new_ns2__TaxReplyItem(soap);
 	if (_p)
@@ -8243,12 +8257,12 @@ inline ns2__TaxReplyItem * soap_new_req_ns2__TaxReplyItem(
 
 inline ns2__TaxReplyItem * soap_new_set_ns2__TaxReplyItem(
 	struct soap *soap,
-	std::string *cityTaxAmount,
-	std::string *countyTaxAmount,
-	std::string *districtTaxAmount,
-	std::string *stateTaxAmount,
-	const std::string& totalTaxAmount,
-	const std::string& id)
+	wchar_t **cityTaxAmount,
+	wchar_t **countyTaxAmount,
+	wchar_t **districtTaxAmount,
+	wchar_t **stateTaxAmount,
+	wchar_t *totalTaxAmount,
+	wchar_t *id)
 {
 	ns2__TaxReplyItem *_p = soap_new_ns2__TaxReplyItem(soap);
 	if (_p)
@@ -8298,7 +8312,7 @@ inline ns2__PayerAuthValidateReply * soap_new_ns2__PayerAuthValidateReply(struct
 
 inline ns2__PayerAuthValidateReply * soap_new_req_ns2__PayerAuthValidateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayerAuthValidateReply *_p = soap_new_ns2__PayerAuthValidateReply(soap);
 	if (_p)
@@ -8310,18 +8324,18 @@ inline ns2__PayerAuthValidateReply * soap_new_req_ns2__PayerAuthValidateReply(
 
 inline ns2__PayerAuthValidateReply * soap_new_set_ns2__PayerAuthValidateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *authenticationResult,
-	std::string *authenticationStatusMessage,
-	std::string *cavv,
-	std::string *cavvAlgorithm,
-	std::string *commerceIndicator,
-	std::string *eci,
-	std::string *eciRaw,
-	std::string *xid,
-	std::string *ucafAuthenticationData,
-	std::string *ucafCollectionIndicator,
-	std::string *paresStatus)
+	wchar_t *reasonCode,
+	wchar_t *authenticationResult,
+	wchar_t *authenticationStatusMessage,
+	wchar_t *cavv,
+	wchar_t *cavvAlgorithm,
+	wchar_t *commerceIndicator,
+	wchar_t *eci,
+	wchar_t *eciRaw,
+	wchar_t *xid,
+	wchar_t *ucafAuthenticationData,
+	wchar_t *ucafCollectionIndicator,
+	wchar_t *paresStatus)
 {
 	ns2__PayerAuthValidateReply *_p = soap_new_ns2__PayerAuthValidateReply(soap);
 	if (_p)
@@ -8377,7 +8391,7 @@ inline ns2__PayerAuthEnrollReply * soap_new_ns2__PayerAuthEnrollReply(struct soa
 
 inline ns2__PayerAuthEnrollReply * soap_new_req_ns2__PayerAuthEnrollReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PayerAuthEnrollReply *_p = soap_new_ns2__PayerAuthEnrollReply(soap);
 	if (_p)
@@ -8389,17 +8403,17 @@ inline ns2__PayerAuthEnrollReply * soap_new_req_ns2__PayerAuthEnrollReply(
 
 inline ns2__PayerAuthEnrollReply * soap_new_set_ns2__PayerAuthEnrollReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *acsURL,
-	std::string *commerceIndicator,
-	std::string *eci,
-	std::string *paReq,
-	std::string *proxyPAN,
-	std::string *xid,
-	std::string *proofXML,
-	std::string *ucafCollectionIndicator,
-	std::string *veresEnrolled,
-	std::string *authenticationPath)
+	wchar_t *reasonCode,
+	wchar_t *acsURL,
+	wchar_t *commerceIndicator,
+	wchar_t *eci,
+	wchar_t *paReq,
+	wchar_t *proxyPAN,
+	wchar_t *xid,
+	wchar_t *proofXML,
+	wchar_t *ucafCollectionIndicator,
+	wchar_t *veresEnrolled,
+	wchar_t *authenticationPath)
 {
 	ns2__PayerAuthEnrollReply *_p = soap_new_ns2__PayerAuthEnrollReply(soap);
 	if (_p)
@@ -8454,7 +8468,7 @@ inline ns2__ECAuthenticateReply * soap_new_ns2__ECAuthenticateReply(struct soap 
 
 inline ns2__ECAuthenticateReply * soap_new_req_ns2__ECAuthenticateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__ECAuthenticateReply *_p = soap_new_ns2__ECAuthenticateReply(soap);
 	if (_p)
@@ -8466,12 +8480,12 @@ inline ns2__ECAuthenticateReply * soap_new_req_ns2__ECAuthenticateReply(
 
 inline ns2__ECAuthenticateReply * soap_new_set_ns2__ECAuthenticateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *processorResponse,
-	std::string *reconciliationID,
-	std::string *checkpointSummary,
-	std::string *fraudShieldIndicators)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t *processorResponse,
+	wchar_t *reconciliationID,
+	wchar_t *checkpointSummary,
+	wchar_t *fraudShieldIndicators)
 {
 	ns2__ECAuthenticateReply *_p = soap_new_ns2__ECAuthenticateReply(soap);
 	if (_p)
@@ -8521,7 +8535,7 @@ inline ns2__ECCreditReply * soap_new_ns2__ECCreditReply(struct soap *soap, int n
 
 inline ns2__ECCreditReply * soap_new_req_ns2__ECCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__ECCreditReply *_p = soap_new_ns2__ECCreditReply(soap);
 	if (_p)
@@ -8533,18 +8547,18 @@ inline ns2__ECCreditReply * soap_new_req_ns2__ECCreditReply(
 
 inline ns2__ECCreditReply * soap_new_set_ns2__ECCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *settlementMethod,
-	std::string *requestDateTime,
-	std::string *amount,
-	std::string *processorTransactionID,
-	std::string *reconciliationID,
-	std::string *processorResponse,
-	std::string *verificationCode,
-	std::string *verificationCodeRaw,
-	std::string *correctedAccountNumber,
-	std::string *correctedRoutingNumber,
-	std::string *ownerMerchantID)
+	wchar_t *reasonCode,
+	wchar_t *settlementMethod,
+	wchar_t **requestDateTime,
+	wchar_t **amount,
+	wchar_t *processorTransactionID,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse,
+	wchar_t *verificationCode,
+	wchar_t *verificationCodeRaw,
+	wchar_t *correctedAccountNumber,
+	wchar_t *correctedRoutingNumber,
+	wchar_t *ownerMerchantID)
 {
 	ns2__ECCreditReply *_p = soap_new_ns2__ECCreditReply(soap);
 	if (_p)
@@ -8600,7 +8614,7 @@ inline ns2__ECDebitReply * soap_new_ns2__ECDebitReply(struct soap *soap, int n =
 
 inline ns2__ECDebitReply * soap_new_req_ns2__ECDebitReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__ECDebitReply *_p = soap_new_ns2__ECDebitReply(soap);
 	if (_p)
@@ -8612,21 +8626,21 @@ inline ns2__ECDebitReply * soap_new_req_ns2__ECDebitReply(
 
 inline ns2__ECDebitReply * soap_new_set_ns2__ECDebitReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *settlementMethod,
-	std::string *requestDateTime,
-	std::string *amount,
-	std::string *verificationLevel,
-	std::string *processorTransactionID,
-	std::string *reconciliationID,
-	std::string *processorResponse,
-	std::string *avsCode,
-	std::string *avsCodeRaw,
-	std::string *verificationCode,
-	std::string *verificationCodeRaw,
-	std::string *correctedAccountNumber,
-	std::string *correctedRoutingNumber,
-	std::string *ownerMerchantID)
+	wchar_t *reasonCode,
+	wchar_t *settlementMethod,
+	wchar_t **requestDateTime,
+	wchar_t **amount,
+	wchar_t **verificationLevel,
+	wchar_t *processorTransactionID,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse,
+	wchar_t *avsCode,
+	wchar_t *avsCodeRaw,
+	wchar_t *verificationCode,
+	wchar_t *verificationCodeRaw,
+	wchar_t *correctedAccountNumber,
+	wchar_t *correctedRoutingNumber,
+	wchar_t *ownerMerchantID)
 {
 	ns2__ECDebitReply *_p = soap_new_ns2__ECDebitReply(soap);
 	if (_p)
@@ -8685,7 +8699,7 @@ inline ns2__CCAutoAuthReversalReply * soap_new_ns2__CCAutoAuthReversalReply(stru
 
 inline ns2__CCAutoAuthReversalReply * soap_new_req_ns2__CCAutoAuthReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCAutoAuthReversalReply *_p = soap_new_ns2__CCAutoAuthReversalReply(soap);
 	if (_p)
@@ -8697,9 +8711,9 @@ inline ns2__CCAutoAuthReversalReply * soap_new_req_ns2__CCAutoAuthReversalReply(
 
 inline ns2__CCAutoAuthReversalReply * soap_new_set_ns2__CCAutoAuthReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *processorResponse,
-	std::string *result)
+	wchar_t *reasonCode,
+	wchar_t *processorResponse,
+	wchar_t *result)
 {
 	ns2__CCAutoAuthReversalReply *_p = soap_new_ns2__CCAutoAuthReversalReply(soap);
 	if (_p)
@@ -8746,7 +8760,7 @@ inline ns2__CCAuthReversalReply * soap_new_ns2__CCAuthReversalReply(struct soap 
 
 inline ns2__CCAuthReversalReply * soap_new_req_ns2__CCAuthReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCAuthReversalReply *_p = soap_new_ns2__CCAuthReversalReply(soap);
 	if (_p)
@@ -8758,16 +8772,16 @@ inline ns2__CCAuthReversalReply * soap_new_req_ns2__CCAuthReversalReply(
 
 inline ns2__CCAuthReversalReply * soap_new_set_ns2__CCAuthReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *authorizationCode,
-	std::string *processorResponse,
-	std::string *requestDateTime,
-	std::string *forwardCode,
-	std::string *reconciliationID,
-	std::string *processorTransactionID,
-	std::string *paymentCardService,
-	std::string *paymentCardServiceResult)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t *authorizationCode,
+	wchar_t *processorResponse,
+	wchar_t **requestDateTime,
+	wchar_t *forwardCode,
+	wchar_t *reconciliationID,
+	wchar_t *processorTransactionID,
+	wchar_t *paymentCardService,
+	wchar_t *paymentCardServiceResult)
 {
 	ns2__CCAuthReversalReply *_p = soap_new_ns2__CCAuthReversalReply(soap);
 	if (_p)
@@ -8821,7 +8835,7 @@ inline ns2__PinDebitReversalReply * soap_new_ns2__PinDebitReversalReply(struct s
 
 inline ns2__PinDebitReversalReply * soap_new_req_ns2__PinDebitReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PinDebitReversalReply *_p = soap_new_ns2__PinDebitReversalReply(soap);
 	if (_p)
@@ -8833,11 +8847,11 @@ inline ns2__PinDebitReversalReply * soap_new_req_ns2__PinDebitReversalReply(
 
 inline ns2__PinDebitReversalReply * soap_new_set_ns2__PinDebitReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *processorResponse,
-	std::string *reconciliationID,
-	std::string *amount,
-	std::string *dateTime)
+	wchar_t *reasonCode,
+	wchar_t *processorResponse,
+	wchar_t *reconciliationID,
+	wchar_t **amount,
+	wchar_t **dateTime)
 {
 	ns2__PinDebitReversalReply *_p = soap_new_ns2__PinDebitReversalReply(soap);
 	if (_p)
@@ -8886,7 +8900,7 @@ inline ns2__PinDebitCreditReply * soap_new_ns2__PinDebitCreditReply(struct soap 
 
 inline ns2__PinDebitCreditReply * soap_new_req_ns2__PinDebitCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PinDebitCreditReply *_p = soap_new_ns2__PinDebitCreditReply(soap);
 	if (_p)
@@ -8898,14 +8912,14 @@ inline ns2__PinDebitCreditReply * soap_new_req_ns2__PinDebitCreditReply(
 
 inline ns2__PinDebitCreditReply * soap_new_set_ns2__PinDebitCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *processorResponse,
-	std::string *authorizationCode,
-	std::string *reconciliationID,
-	std::string *networkCode,
-	std::string *transactionID,
-	std::string *amount,
-	std::string *dateTime)
+	wchar_t *reasonCode,
+	wchar_t *processorResponse,
+	wchar_t *authorizationCode,
+	wchar_t *reconciliationID,
+	wchar_t *networkCode,
+	wchar_t *transactionID,
+	wchar_t **amount,
+	wchar_t **dateTime)
 {
 	ns2__PinDebitCreditReply *_p = soap_new_ns2__PinDebitCreditReply(soap);
 	if (_p)
@@ -8957,7 +8971,7 @@ inline ns2__PinDebitPurchaseReply * soap_new_ns2__PinDebitPurchaseReply(struct s
 
 inline ns2__PinDebitPurchaseReply * soap_new_req_ns2__PinDebitPurchaseReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__PinDebitPurchaseReply *_p = soap_new_ns2__PinDebitPurchaseReply(soap);
 	if (_p)
@@ -8969,21 +8983,21 @@ inline ns2__PinDebitPurchaseReply * soap_new_req_ns2__PinDebitPurchaseReply(
 
 inline ns2__PinDebitPurchaseReply * soap_new_set_ns2__PinDebitPurchaseReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *processorResponse,
-	std::string *authorizationCode,
-	std::string *reconciliationID,
-	std::string *networkCode,
-	std::string *transactionID,
-	std::string *requestAmount,
-	std::string *requestCurrency,
-	std::string *amount,
-	std::string *dateTime,
-	std::string *accountType,
-	std::string *amountType,
-	std::string *accountBalance,
-	std::string *accountBalanceCurrency,
-	std::string *accountBalanceSign)
+	wchar_t *reasonCode,
+	wchar_t *processorResponse,
+	wchar_t *authorizationCode,
+	wchar_t *reconciliationID,
+	wchar_t *networkCode,
+	wchar_t *transactionID,
+	wchar_t **requestAmount,
+	wchar_t *requestCurrency,
+	wchar_t **amount,
+	wchar_t **dateTime,
+	wchar_t *accountType,
+	wchar_t *amountType,
+	wchar_t *accountBalance,
+	wchar_t *accountBalanceCurrency,
+	wchar_t *accountBalanceSign)
 {
 	ns2__PinDebitPurchaseReply *_p = soap_new_ns2__PinDebitPurchaseReply(soap);
 	if (_p)
@@ -9042,7 +9056,7 @@ inline ns2__CCCreditReply * soap_new_ns2__CCCreditReply(struct soap *soap, int n
 
 inline ns2__CCCreditReply * soap_new_req_ns2__CCCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCCreditReply *_p = soap_new_ns2__CCCreditReply(soap);
 	if (_p)
@@ -9054,15 +9068,15 @@ inline ns2__CCCreditReply * soap_new_req_ns2__CCCreditReply(
 
 inline ns2__CCCreditReply * soap_new_set_ns2__CCCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *amount,
-	std::string *reconciliationID,
-	std::string *purchasingLevel3Enabled,
-	std::string *enhancedDataEnabled,
-	std::string *authorizationXID,
-	std::string *forwardCode,
-	std::string *ownerMerchantID)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t **amount,
+	wchar_t *reconciliationID,
+	wchar_t *purchasingLevel3Enabled,
+	wchar_t *enhancedDataEnabled,
+	wchar_t *authorizationXID,
+	wchar_t *forwardCode,
+	wchar_t *ownerMerchantID)
 {
 	ns2__CCCreditReply *_p = soap_new_ns2__CCCreditReply(soap);
 	if (_p)
@@ -9115,7 +9129,7 @@ inline ns2__ServiceFeeCalculateReply * soap_new_ns2__ServiceFeeCalculateReply(st
 
 inline ns2__ServiceFeeCalculateReply * soap_new_req_ns2__ServiceFeeCalculateReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__ServiceFeeCalculateReply *_p = soap_new_ns2__ServiceFeeCalculateReply(soap);
 	if (_p)
@@ -9127,9 +9141,9 @@ inline ns2__ServiceFeeCalculateReply * soap_new_req_ns2__ServiceFeeCalculateRepl
 
 inline ns2__ServiceFeeCalculateReply * soap_new_set_ns2__ServiceFeeCalculateReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *requestDateTime)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t **requestDateTime)
 {
 	ns2__ServiceFeeCalculateReply *_p = soap_new_ns2__ServiceFeeCalculateReply(soap);
 	if (_p)
@@ -9176,7 +9190,7 @@ inline ns2__CCCaptureReply * soap_new_ns2__CCCaptureReply(struct soap *soap, int
 
 inline ns2__CCCaptureReply * soap_new_req_ns2__CCCaptureReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCCaptureReply *_p = soap_new_ns2__CCCaptureReply(soap);
 	if (_p)
@@ -9188,17 +9202,17 @@ inline ns2__CCCaptureReply * soap_new_req_ns2__CCCaptureReply(
 
 inline ns2__CCCaptureReply * soap_new_set_ns2__CCCaptureReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *amount,
-	std::string *reconciliationID,
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t **amount,
+	wchar_t *reconciliationID,
 	ns2__FundingTotals *fundingTotals,
-	std::string *fxQuoteID,
-	std::string *fxQuoteRate,
-	std::string *fxQuoteType,
-	std::string *fxQuoteExpirationDateTime,
-	std::string *purchasingLevel3Enabled,
-	std::string *enhancedDataEnabled)
+	wchar_t *fxQuoteID,
+	wchar_t **fxQuoteRate,
+	wchar_t *fxQuoteType,
+	wchar_t **fxQuoteExpirationDateTime,
+	wchar_t *purchasingLevel3Enabled,
+	wchar_t *enhancedDataEnabled)
 {
 	ns2__CCCaptureReply *_p = soap_new_ns2__CCCaptureReply(soap);
 	if (_p)
@@ -9253,7 +9267,7 @@ inline ns2__CCIncrementalAuthReply * soap_new_ns2__CCIncrementalAuthReply(struct
 
 inline ns2__CCIncrementalAuthReply * soap_new_req_ns2__CCIncrementalAuthReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCIncrementalAuthReply *_p = soap_new_ns2__CCIncrementalAuthReply(soap);
 	if (_p)
@@ -9265,14 +9279,14 @@ inline ns2__CCIncrementalAuthReply * soap_new_req_ns2__CCIncrementalAuthReply(
 
 inline ns2__CCIncrementalAuthReply * soap_new_set_ns2__CCIncrementalAuthReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *authorizationCode,
-	std::string *processorResponse,
-	std::string *authorizedDateTime,
-	std::string *reconciliationID,
-	std::string *paymentNetworkTransactionID,
-	std::string *cardCategory)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t *authorizationCode,
+	wchar_t *processorResponse,
+	wchar_t **authorizedDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *paymentNetworkTransactionID,
+	wchar_t *cardCategory)
 {
 	ns2__CCIncrementalAuthReply *_p = soap_new_ns2__CCIncrementalAuthReply(soap);
 	if (_p)
@@ -9324,7 +9338,7 @@ inline ns2__CCSaleReversalReply * soap_new_ns2__CCSaleReversalReply(struct soap 
 
 inline ns2__CCSaleReversalReply * soap_new_req_ns2__CCSaleReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCSaleReversalReply *_p = soap_new_ns2__CCSaleReversalReply(soap);
 	if (_p)
@@ -9336,12 +9350,12 @@ inline ns2__CCSaleReversalReply * soap_new_req_ns2__CCSaleReversalReply(
 
 inline ns2__CCSaleReversalReply * soap_new_set_ns2__CCSaleReversalReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *authorizationCode,
-	std::string *processorResponse,
-	std::string *reconciliationID,
-	std::string *requestDateTime)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t *authorizationCode,
+	wchar_t *processorResponse,
+	wchar_t *reconciliationID,
+	wchar_t **requestDateTime)
 {
 	ns2__CCSaleReversalReply *_p = soap_new_ns2__CCSaleReversalReply(soap);
 	if (_p)
@@ -9391,7 +9405,7 @@ inline ns2__CCSaleCreditReply * soap_new_ns2__CCSaleCreditReply(struct soap *soa
 
 inline ns2__CCSaleCreditReply * soap_new_req_ns2__CCSaleCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCSaleCreditReply *_p = soap_new_ns2__CCSaleCreditReply(soap);
 	if (_p)
@@ -9403,13 +9417,13 @@ inline ns2__CCSaleCreditReply * soap_new_req_ns2__CCSaleCreditReply(
 
 inline ns2__CCSaleCreditReply * soap_new_set_ns2__CCSaleCreditReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *authorizationCode,
-	std::string *processorResponse,
-	std::string *authorizedDateTime,
-	std::string *reconciliationID,
-	std::string *paymentNetworkTransactionID)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t *authorizationCode,
+	wchar_t *processorResponse,
+	wchar_t **authorizedDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *paymentNetworkTransactionID)
 {
 	ns2__CCSaleCreditReply *_p = soap_new_ns2__CCSaleCreditReply(soap);
 	if (_p)
@@ -9460,7 +9474,7 @@ inline ns2__CCSaleReply * soap_new_ns2__CCSaleReply(struct soap *soap, int n = -
 
 inline ns2__CCSaleReply * soap_new_req_ns2__CCSaleReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCSaleReply *_p = soap_new_ns2__CCSaleReply(soap);
 	if (_p)
@@ -9472,25 +9486,25 @@ inline ns2__CCSaleReply * soap_new_req_ns2__CCSaleReply(
 
 inline ns2__CCSaleReply * soap_new_set_ns2__CCSaleReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *authorizationCode,
-	std::string *processorResponse,
-	std::string *avsCode,
-	std::string *avsCodeRaw,
-	std::string *cvCode,
-	std::string *cvCodeRaw,
-	std::string *cavvResponseCode,
-	std::string *cavvResponseCodeRaw,
-	std::string *cardGroup,
-	std::string *paymentNetworkTransactionID,
-	std::string *cardCategory,
-	std::string *accountBalance,
-	std::string *authorizedDateTime,
-	std::string *requestAmount,
-	std::string *reconciliationID,
-	std::string *accountBalanceCurrency,
-	std::string *accountBalanceSign)
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t *authorizationCode,
+	wchar_t *processorResponse,
+	wchar_t *avsCode,
+	wchar_t *avsCodeRaw,
+	wchar_t *cvCode,
+	wchar_t *cvCodeRaw,
+	wchar_t *cavvResponseCode,
+	wchar_t *cavvResponseCodeRaw,
+	wchar_t *cardGroup,
+	wchar_t *paymentNetworkTransactionID,
+	wchar_t *cardCategory,
+	wchar_t **accountBalance,
+	wchar_t **authorizedDateTime,
+	wchar_t **requestAmount,
+	wchar_t *reconciliationID,
+	wchar_t *accountBalanceCurrency,
+	wchar_t *accountBalanceSign)
 {
 	ns2__CCSaleReply *_p = soap_new_ns2__CCSaleReply(soap);
 	if (_p)
@@ -9553,7 +9567,7 @@ inline ns2__VerificationReply * soap_new_ns2__VerificationReply(struct soap *soa
 
 inline ns2__VerificationReply * soap_new_req_ns2__VerificationReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__VerificationReply *_p = soap_new_ns2__VerificationReply(soap);
 	if (_p)
@@ -9565,11 +9579,11 @@ inline ns2__VerificationReply * soap_new_req_ns2__VerificationReply(
 
 inline ns2__VerificationReply * soap_new_set_ns2__VerificationReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *processorTransactionID,
-	std::string *processorResponse,
-	std::string *verifiedDateTime,
-	std::string *reconciliationID)
+	wchar_t *reasonCode,
+	wchar_t *processorTransactionID,
+	wchar_t *processorResponse,
+	wchar_t *verifiedDateTime,
+	wchar_t *reconciliationID)
 {
 	ns2__VerificationReply *_p = soap_new_ns2__VerificationReply(soap);
 	if (_p)
@@ -9618,7 +9632,7 @@ inline ns2__OCTReply * soap_new_ns2__OCTReply(struct soap *soap, int n = -1)
 
 inline ns2__OCTReply * soap_new_req_ns2__OCTReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__OCTReply *_p = soap_new_ns2__OCTReply(soap);
 	if (_p)
@@ -9630,13 +9644,13 @@ inline ns2__OCTReply * soap_new_req_ns2__OCTReply(
 
 inline ns2__OCTReply * soap_new_set_ns2__OCTReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *requestDateTime,
-	std::string *reconciliationID,
-	std::string *processorResponse,
-	std::string *approvalCode,
-	std::string *amount,
-	std::string *paymentNetworkTransactionID)
+	wchar_t *reasonCode,
+	wchar_t **requestDateTime,
+	wchar_t *reconciliationID,
+	wchar_t *processorResponse,
+	wchar_t *approvalCode,
+	wchar_t **amount,
+	wchar_t *paymentNetworkTransactionID)
 {
 	ns2__OCTReply *_p = soap_new_ns2__OCTReply(soap);
 	if (_p)
@@ -9687,7 +9701,7 @@ inline ns2__CCAuthReply * soap_new_ns2__CCAuthReply(struct soap *soap, int n = -
 
 inline ns2__CCAuthReply * soap_new_req_ns2__CCAuthReply(
 	struct soap *soap,
-	const std::string& reasonCode)
+	wchar_t *reasonCode)
 {
 	ns2__CCAuthReply *_p = soap_new_ns2__CCAuthReply(soap);
 	if (_p)
@@ -9699,82 +9713,82 @@ inline ns2__CCAuthReply * soap_new_req_ns2__CCAuthReply(
 
 inline ns2__CCAuthReply * soap_new_set_ns2__CCAuthReply(
 	struct soap *soap,
-	const std::string& reasonCode,
-	std::string *amount,
-	std::string *authorizationCode,
-	std::string *avsCode,
-	std::string *avsCodeRaw,
-	std::string *cvCode,
-	std::string *cvCodeRaw,
-	std::string *personalIDCode,
-	std::string *authorizedDateTime,
-	std::string *processorResponse,
-	std::string *bmlAccountNumber,
-	std::string *authFactorCode,
-	std::string *reconciliationID,
+	wchar_t *reasonCode,
+	wchar_t **amount,
+	wchar_t *authorizationCode,
+	wchar_t *avsCode,
+	wchar_t *avsCodeRaw,
+	wchar_t *cvCode,
+	wchar_t *cvCodeRaw,
+	wchar_t *personalIDCode,
+	wchar_t **authorizedDateTime,
+	wchar_t *processorResponse,
+	wchar_t *bmlAccountNumber,
+	wchar_t *authFactorCode,
+	wchar_t *reconciliationID,
 	ns2__FundingTotals *fundingTotals,
-	std::string *fxQuoteID,
-	std::string *fxQuoteRate,
-	std::string *fxQuoteType,
-	std::string *fxQuoteExpirationDateTime,
-	std::string *authRecord,
-	std::string *merchantAdviceCode,
-	std::string *merchantAdviceCodeRaw,
-	std::string *cavvResponseCode,
-	std::string *cavvResponseCodeRaw,
-	std::string *authenticationXID,
-	std::string *authorizationXID,
-	std::string *processorCardType,
-	std::string *accountBalance,
-	std::string *forwardCode,
-	std::string *enhancedDataEnabled,
-	std::string *referralResponseNumber,
-	std::string *subResponseCode,
-	std::string *approvedAmount,
-	std::string *creditLine,
-	std::string *approvedTerms,
-	std::string *paymentNetworkTransactionID,
-	std::string *cardCategory,
-	std::string *ownerMerchantID,
-	std::string *requestAmount,
-	std::string *requestCurrency,
-	std::string *accountBalanceCurrency,
-	std::string *accountBalanceSign,
-	std::string *amountType,
-	std::string *accountType,
-	std::string *affluenceIndicator,
-	std::string *evEmail,
-	std::string *evPhoneNumber,
-	std::string *evPostalCode,
-	std::string *evName,
-	std::string *evStreet,
-	std::string *evEmailRaw,
-	std::string *evPhoneNumberRaw,
-	std::string *evPostalCodeRaw,
-	std::string *evNameRaw,
-	std::string *evStreetRaw,
-	std::string *cardGroup,
-	std::string *posData,
-	std::string *transactionID,
-	std::string *cardIssuerCountry,
-	std::string *cardRegulated,
-	std::string *cardCommercial,
-	std::string *cardPrepaid,
-	std::string *cardPayroll,
-	std::string *cardHealthcare,
-	std::string *cardSignatureDebit,
-	std::string *cardPINlessDebit,
-	std::string *cardLevel3Eligible,
-	std::string *processorTransactionID,
-	std::string *providerReasonCode,
-	std::string *providerReasonDescription,
-	std::string *providerPassThroughData,
-	std::string *providerCVNResponseCode,
-	std::string *providerAVSResponseCode,
-	std::string *providerAcquirerBankCode,
-	std::string *paymentCardService,
-	std::string *paymentCardServiceResult,
-	std::string *transactionQualification)
+	wchar_t *fxQuoteID,
+	wchar_t **fxQuoteRate,
+	wchar_t *fxQuoteType,
+	wchar_t **fxQuoteExpirationDateTime,
+	wchar_t *authRecord,
+	wchar_t *merchantAdviceCode,
+	wchar_t *merchantAdviceCodeRaw,
+	wchar_t *cavvResponseCode,
+	wchar_t *cavvResponseCodeRaw,
+	wchar_t *authenticationXID,
+	wchar_t *authorizationXID,
+	wchar_t *processorCardType,
+	wchar_t **accountBalance,
+	wchar_t *forwardCode,
+	wchar_t *enhancedDataEnabled,
+	wchar_t *referralResponseNumber,
+	wchar_t *subResponseCode,
+	wchar_t *approvedAmount,
+	wchar_t *creditLine,
+	wchar_t *approvedTerms,
+	wchar_t *paymentNetworkTransactionID,
+	wchar_t *cardCategory,
+	wchar_t *ownerMerchantID,
+	wchar_t **requestAmount,
+	wchar_t *requestCurrency,
+	wchar_t *accountBalanceCurrency,
+	wchar_t *accountBalanceSign,
+	wchar_t *amountType,
+	wchar_t *accountType,
+	wchar_t *affluenceIndicator,
+	wchar_t *evEmail,
+	wchar_t *evPhoneNumber,
+	wchar_t *evPostalCode,
+	wchar_t *evName,
+	wchar_t *evStreet,
+	wchar_t *evEmailRaw,
+	wchar_t *evPhoneNumberRaw,
+	wchar_t *evPostalCodeRaw,
+	wchar_t *evNameRaw,
+	wchar_t *evStreetRaw,
+	wchar_t *cardGroup,
+	wchar_t *posData,
+	wchar_t *transactionID,
+	wchar_t *cardIssuerCountry,
+	wchar_t *cardRegulated,
+	wchar_t *cardCommercial,
+	wchar_t *cardPrepaid,
+	wchar_t *cardPayroll,
+	wchar_t *cardHealthcare,
+	wchar_t *cardSignatureDebit,
+	wchar_t *cardPINlessDebit,
+	wchar_t *cardLevel3Eligible,
+	wchar_t *processorTransactionID,
+	wchar_t *providerReasonCode,
+	wchar_t *providerReasonDescription,
+	wchar_t *providerPassThroughData,
+	wchar_t *providerCVNResponseCode,
+	wchar_t *providerAVSResponseCode,
+	wchar_t *providerAcquirerBankCode,
+	wchar_t *paymentCardService,
+	wchar_t *paymentCardServiceResult,
+	wchar_t *transactionQualification)
 {
 	ns2__CCAuthReply *_p = soap_new_ns2__CCAuthReply(soap);
 	if (_p)
@@ -9904,8 +9918,8 @@ inline ns2__PromotionGroupReply * soap_new_req_ns2__PromotionGroupReply(
 
 inline ns2__PromotionGroupReply * soap_new_set_ns2__PromotionGroupReply(
 	struct soap *soap,
-	std::string *discountApplied,
-	std::string *id)
+	wchar_t **discountApplied,
+	wchar_t **id)
 {
 	ns2__PromotionGroupReply *_p = soap_new_ns2__PromotionGroupReply(soap);
 	if (_p)
@@ -9961,9 +9975,9 @@ inline ns2__PromotionGroup * soap_new_req_ns2__PromotionGroup(
 
 inline ns2__PromotionGroup * soap_new_set_ns2__PromotionGroup(
 	struct soap *soap,
-	std::string *subtotalAmount,
-	std::string *taxRate,
-	std::string *id)
+	wchar_t **subtotalAmount,
+	wchar_t **taxRate,
+	wchar_t **id)
 {
 	ns2__PromotionGroup *_p = soap_new_ns2__PromotionGroup(soap);
 	if (_p)
@@ -10020,12 +10034,12 @@ inline ns2__Promotion * soap_new_req_ns2__Promotion(
 
 inline ns2__Promotion * soap_new_set_ns2__Promotion(
 	struct soap *soap,
-	std::string *discountedAmount,
-	std::string *type,
-	std::string *code,
-	std::string *receiptData,
-	std::string *discountApplied,
-	std::string *description)
+	wchar_t **discountedAmount,
+	wchar_t *type,
+	wchar_t *code,
+	wchar_t *receiptData,
+	wchar_t **discountApplied,
+	wchar_t *description)
 {
 	ns2__Promotion *_p = soap_new_ns2__Promotion(soap);
 	if (_p)
@@ -10085,8 +10099,8 @@ inline ns2__DCC * soap_new_req_ns2__DCC(
 
 inline ns2__DCC * soap_new_set_ns2__DCC(
 	struct soap *soap,
-	std::string *dccIndicator,
-	std::string *referenceNumber)
+	wchar_t **dccIndicator,
+	wchar_t *referenceNumber)
 {
 	ns2__DCC *_p = soap_new_ns2__DCC(soap);
 	if (_p)
@@ -10132,7 +10146,7 @@ inline ns2__DecryptVisaCheckoutDataService * soap_new_ns2__DecryptVisaCheckoutDa
 
 inline ns2__DecryptVisaCheckoutDataService * soap_new_req_ns2__DecryptVisaCheckoutDataService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DecryptVisaCheckoutDataService *_p = soap_new_ns2__DecryptVisaCheckoutDataService(soap);
 	if (_p)
@@ -10144,7 +10158,7 @@ inline ns2__DecryptVisaCheckoutDataService * soap_new_req_ns2__DecryptVisaChecko
 
 inline ns2__DecryptVisaCheckoutDataService * soap_new_set_ns2__DecryptVisaCheckoutDataService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DecryptVisaCheckoutDataService *_p = soap_new_ns2__DecryptVisaCheckoutDataService(soap);
 	if (_p)
@@ -10199,7 +10213,7 @@ inline ns2__VC * soap_new_req_ns2__VC(
 
 inline ns2__VC * soap_new_set_ns2__VC(
 	struct soap *soap,
-	std::string *orderID)
+	wchar_t *orderID)
 {
 	ns2__VC *_p = soap_new_ns2__VC(soap);
 	if (_p)
@@ -10254,24 +10268,24 @@ inline ns2__RequestMessage * soap_new_req_ns2__RequestMessage(
 
 inline ns2__RequestMessage * soap_new_set_ns2__RequestMessage(
 	struct soap *soap,
-	std::string *merchantID,
-	std::string *merchantReferenceCode,
-	std::string *debtIndicator,
-	std::string *clientLibrary,
-	std::string *clientLibraryVersion,
-	std::string *clientEnvironment,
-	std::string *clientSecurityLibraryVersion,
-	std::string *clientApplication,
-	std::string *clientApplicationVersion,
-	std::string *clientApplicationUser,
-	std::string *routingCode,
-	std::string *comments,
-	std::string *returnURL,
+	wchar_t *merchantID,
+	wchar_t *merchantReferenceCode,
+	wchar_t **debtIndicator,
+	wchar_t *clientLibrary,
+	wchar_t *clientLibraryVersion,
+	wchar_t *clientEnvironment,
+	wchar_t *clientSecurityLibraryVersion,
+	wchar_t *clientApplication,
+	wchar_t *clientApplicationVersion,
+	wchar_t *clientApplicationUser,
+	wchar_t *routingCode,
+	wchar_t *comments,
+	wchar_t *returnURL,
 	ns2__InvoiceHeader *invoiceHeader,
-	std::string *aggregatorMerchantIdentifier,
-	std::string *customerID,
-	std::string *customerFirstName,
-	std::string *customerLastName,
+	wchar_t *aggregatorMerchantIdentifier,
+	wchar_t *customerID,
+	wchar_t *customerFirstName,
+	wchar_t *customerLastName,
 	ns2__BillTo *billTo,
 	ns2__ShipTo *shipTo,
 	ns2__PersonalId *personalId,
@@ -10298,8 +10312,8 @@ inline ns2__RequestMessage * soap_new_set_ns2__RequestMessage(
 	ns2__MerchantDefinedData *merchantDefinedData,
 	ns2__MerchantSecureData *merchantSecureData,
 	ns2__JPO *jpo,
-	std::string *orderRequestToken,
-	std::string *linkToRequest,
+	wchar_t *orderRequestToken,
+	wchar_t *linkToRequest,
 	ns2__ServiceFee *serviceFee,
 	ns2__CCAuthService *ccAuthService,
 	ns2__OCTService *octService,
@@ -10355,9 +10369,9 @@ inline ns2__RequestMessage * soap_new_set_ns2__RequestMessage(
 	ns2__FraudUpdateService *fraudUpdateService,
 	ns2__CaseManagementActionService *caseManagementActionService,
 	const std::vector<ns2__RequestReserved *> & reserved,
-	std::string *deviceFingerprintID,
-	std::string *deviceFingerprintRaw,
-	std::string *deviceFingerprintHash,
+	wchar_t *deviceFingerprintID,
+	wchar_t **deviceFingerprintRaw,
+	wchar_t *deviceFingerprintHash,
 	ns2__PayPalRefundService *payPalRefundService,
 	ns2__PayPalAuthReversalService *payPalAuthReversalService,
 	ns2__PayPalDoCaptureService *payPalDoCaptureService,
@@ -10372,20 +10386,20 @@ inline ns2__RequestMessage * soap_new_set_ns2__RequestMessage(
 	ns2__ChinaPaymentService *chinaPaymentService,
 	ns2__ChinaRefundService *chinaRefundService,
 	ns2__BoletoPaymentService *boletoPaymentService,
-	std::string *apPaymentType,
+	wchar_t *apPaymentType,
 	ns2__APInitiateService *apInitiateService,
 	ns2__APCheckStatusService *apCheckStatusService,
-	std::string *ignoreCardExpiration,
-	std::string *reportGroup,
-	std::string *processorID,
-	std::string *thirdPartyCertificationNumber,
-	std::string *transactionLocalDateTime,
-	std::string *solutionProviderTransactionID,
-	std::string *surchargeAmount,
-	std::string *surchargeSign,
-	std::string *pinDataEncryptedPIN,
-	std::string *pinDataKeySerialNumber,
-	std::string *cashbackAmount,
+	wchar_t **ignoreCardExpiration,
+	wchar_t *reportGroup,
+	wchar_t *processorID,
+	wchar_t *thirdPartyCertificationNumber,
+	wchar_t **transactionLocalDateTime,
+	wchar_t *solutionProviderTransactionID,
+	wchar_t **surchargeAmount,
+	wchar_t *surchargeSign,
+	wchar_t *pinDataEncryptedPIN,
+	wchar_t *pinDataKeySerialNumber,
+	wchar_t **cashbackAmount,
 	ns2__PinDebitPurchaseService *pinDebitPurchaseService,
 	ns2__PinDebitCreditService *pinDebitCreditService,
 	ns2__PinDebitReversalService *pinDebitReversalService,
@@ -10403,38 +10417,38 @@ inline ns2__RequestMessage * soap_new_set_ns2__RequestMessage(
 	ns2__PayPalTransactionSearchService *payPalTransactionSearchService,
 	ns2__CCDCCUpdateService *ccDCCUpdateService,
 	ns2__EmvRequest *emvRequest,
-	std::string *merchantTransactionIdentifier,
+	wchar_t *merchantTransactionIdentifier,
 	ns2__HostedDataCreateService *hostedDataCreateService,
 	ns2__HostedDataRetrieveService *hostedDataRetrieveService,
-	std::string *merchantCategoryCode,
-	std::string *salesSlipNumber,
-	std::string *merchandiseCode,
-	std::string *merchandiseDescription,
-	std::string *paymentInitiationChannel,
-	std::string *extendedCreditTotalCount,
-	std::string *authIndicator,
+	wchar_t *merchantCategoryCode,
+	wchar_t *salesSlipNumber,
+	wchar_t *merchandiseCode,
+	wchar_t *merchandiseDescription,
+	wchar_t *paymentInitiationChannel,
+	wchar_t *extendedCreditTotalCount,
+	wchar_t *authIndicator,
 	ns2__PaymentNetworkToken *paymentNetworkToken,
 	ns2__Recipient *recipient,
 	ns2__Sender *sender,
 	ns2__AutoRentalData *autoRentalData,
-	std::string *paymentSolution,
+	wchar_t *paymentSolution,
 	ns2__VC *vc,
 	ns2__DecryptVisaCheckoutDataService *decryptVisaCheckoutDataService,
-	std::string *taxManagementIndicator,
+	wchar_t *taxManagementIndicator,
 	const std::vector<ns2__PromotionGroup *> & promotionGroup,
 	ns2__Wallet *wallet,
 	ns2__Aft *aft,
-	std::string *balanceInquiry,
-	std::string *prenoteTransaction,
+	wchar_t **balanceInquiry,
+	wchar_t **prenoteTransaction,
 	ns2__EncryptPaymentDataService *encryptPaymentDataService,
-	std::string *nationalNetDomesticData,
-	std::string *subsequentAuth,
+	wchar_t *nationalNetDomesticData,
+	wchar_t *subsequentAuth,
 	ns2__BinLookupService *binLookupService,
-	std::string *verificationCode,
-	std::string *mobileNumber,
+	wchar_t *verificationCode,
+	wchar_t *mobileNumber,
 	ns2__issuer *issuer,
-	std::string *partnerSolutionID,
-	std::string *developerID)
+	wchar_t *partnerSolutionID,
+	wchar_t *developerID)
 {
 	ns2__RequestMessage *_p = soap_new_ns2__RequestMessage(soap);
 	if (_p)
@@ -10669,15 +10683,15 @@ inline ns2__Sender * soap_new_req_ns2__Sender(
 
 inline ns2__Sender * soap_new_set_ns2__Sender(
 	struct soap *soap,
-	std::string *referenceNumber,
-	std::string *sourceOfFunds,
-	std::string *name,
-	std::string *address,
-	std::string *city,
-	std::string *state,
-	std::string *postalCode,
-	std::string *country,
-	std::string *accountNumber)
+	wchar_t *referenceNumber,
+	wchar_t *sourceOfFunds,
+	wchar_t *name,
+	wchar_t *address,
+	wchar_t *city,
+	wchar_t *state,
+	wchar_t *postalCode,
+	wchar_t *country,
+	wchar_t *accountNumber)
 {
 	ns2__Sender *_p = soap_new_ns2__Sender(soap);
 	if (_p)
@@ -10740,13 +10754,13 @@ inline ns2__Recipient * soap_new_req_ns2__Recipient(
 
 inline ns2__Recipient * soap_new_set_ns2__Recipient(
 	struct soap *soap,
-	std::string *dateOfBirth,
-	std::string *postalCode,
-	std::string *accountID,
-	std::string *lastName,
-	std::string *name,
-	std::string *billingAmount,
-	std::string *billingCurrency)
+	wchar_t *dateOfBirth,
+	wchar_t *postalCode,
+	wchar_t *accountID,
+	wchar_t *lastName,
+	wchar_t *name,
+	wchar_t **billingAmount,
+	wchar_t *billingCurrency)
 {
 	ns2__Recipient *_p = soap_new_ns2__Recipient(soap);
 	if (_p)
@@ -10797,7 +10811,7 @@ inline ns2__PayPalTransactionSearchService * soap_new_ns2__PayPalTransactionSear
 
 inline ns2__PayPalTransactionSearchService * soap_new_req_ns2__PayPalTransactionSearchService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalTransactionSearchService *_p = soap_new_ns2__PayPalTransactionSearchService(soap);
 	if (_p)
@@ -10809,21 +10823,21 @@ inline ns2__PayPalTransactionSearchService * soap_new_req_ns2__PayPalTransaction
 
 inline ns2__PayPalTransactionSearchService * soap_new_set_ns2__PayPalTransactionSearchService(
 	struct soap *soap,
-	std::string *startDate,
-	std::string *endDate,
-	std::string *paypalCustomerEmail,
-	std::string *paypalReceiptId,
-	std::string *transactionID,
-	std::string *invoiceNumber,
-	std::string *grandTotalAmount,
-	std::string *currency,
-	std::string *paymentStatus,
-	std::string *payerSalutation,
-	std::string *payerFirstname,
-	std::string *payerMiddlename,
-	std::string *payerLastname,
-	std::string *payerSuffix,
-	const std::string& run)
+	wchar_t *startDate,
+	wchar_t *endDate,
+	wchar_t *paypalCustomerEmail,
+	wchar_t *paypalReceiptId,
+	wchar_t *transactionID,
+	wchar_t *invoiceNumber,
+	wchar_t **grandTotalAmount,
+	wchar_t *currency,
+	wchar_t *paymentStatus,
+	wchar_t *payerSalutation,
+	wchar_t *payerFirstname,
+	wchar_t *payerMiddlename,
+	wchar_t *payerLastname,
+	wchar_t *payerSuffix,
+	wchar_t *run)
 {
 	ns2__PayPalTransactionSearchService *_p = soap_new_ns2__PayPalTransactionSearchService(soap);
 	if (_p)
@@ -10882,7 +10896,7 @@ inline ns2__PayPalGetTxnDetailsService * soap_new_ns2__PayPalGetTxnDetailsServic
 
 inline ns2__PayPalGetTxnDetailsService * soap_new_req_ns2__PayPalGetTxnDetailsService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalGetTxnDetailsService *_p = soap_new_ns2__PayPalGetTxnDetailsService(soap);
 	if (_p)
@@ -10894,8 +10908,8 @@ inline ns2__PayPalGetTxnDetailsService * soap_new_req_ns2__PayPalGetTxnDetailsSe
 
 inline ns2__PayPalGetTxnDetailsService * soap_new_set_ns2__PayPalGetTxnDetailsService(
 	struct soap *soap,
-	std::string *transactionID,
-	const std::string& run)
+	wchar_t *transactionID,
+	wchar_t *run)
 {
 	ns2__PayPalGetTxnDetailsService *_p = soap_new_ns2__PayPalGetTxnDetailsService(soap);
 	if (_p)
@@ -10941,7 +10955,7 @@ inline ns2__APConfirmPurchaseService * soap_new_ns2__APConfirmPurchaseService(st
 
 inline ns2__APConfirmPurchaseService * soap_new_req_ns2__APConfirmPurchaseService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APConfirmPurchaseService *_p = soap_new_ns2__APConfirmPurchaseService(soap);
 	if (_p)
@@ -10953,7 +10967,7 @@ inline ns2__APConfirmPurchaseService * soap_new_req_ns2__APConfirmPurchaseServic
 
 inline ns2__APConfirmPurchaseService * soap_new_set_ns2__APConfirmPurchaseService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APConfirmPurchaseService *_p = soap_new_ns2__APConfirmPurchaseService(soap);
 	if (_p)
@@ -10998,7 +11012,7 @@ inline ns2__APTransactionDetailsService * soap_new_ns2__APTransactionDetailsServ
 
 inline ns2__APTransactionDetailsService * soap_new_req_ns2__APTransactionDetailsService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APTransactionDetailsService *_p = soap_new_ns2__APTransactionDetailsService(soap);
 	if (_p)
@@ -11010,8 +11024,8 @@ inline ns2__APTransactionDetailsService * soap_new_req_ns2__APTransactionDetails
 
 inline ns2__APTransactionDetailsService * soap_new_set_ns2__APTransactionDetailsService(
 	struct soap *soap,
-	std::string *transactionDetailsRequestID,
-	const std::string& run)
+	wchar_t *transactionDetailsRequestID,
+	wchar_t *run)
 {
 	ns2__APTransactionDetailsService *_p = soap_new_ns2__APTransactionDetailsService(soap);
 	if (_p)
@@ -11057,7 +11071,7 @@ inline ns2__APCheckOutDetailsService * soap_new_ns2__APCheckOutDetailsService(st
 
 inline ns2__APCheckOutDetailsService * soap_new_req_ns2__APCheckOutDetailsService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APCheckOutDetailsService *_p = soap_new_ns2__APCheckOutDetailsService(soap);
 	if (_p)
@@ -11069,7 +11083,7 @@ inline ns2__APCheckOutDetailsService * soap_new_req_ns2__APCheckOutDetailsServic
 
 inline ns2__APCheckOutDetailsService * soap_new_set_ns2__APCheckOutDetailsService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APCheckOutDetailsService *_p = soap_new_ns2__APCheckOutDetailsService(soap);
 	if (_p)
@@ -11114,7 +11128,7 @@ inline ns2__APSaleService * soap_new_ns2__APSaleService(struct soap *soap, int n
 
 inline ns2__APSaleService * soap_new_req_ns2__APSaleService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APSaleService *_p = soap_new_ns2__APSaleService(soap);
 	if (_p)
@@ -11126,14 +11140,14 @@ inline ns2__APSaleService * soap_new_req_ns2__APSaleService(
 
 inline ns2__APSaleService * soap_new_set_ns2__APSaleService(
 	struct soap *soap,
-	std::string *cancelURL,
-	std::string *successURL,
-	std::string *failureURL,
-	std::string *reconciliationID,
-	std::string *overridePaymentMethod,
-	std::string *paymentOptionID,
-	std::string *transactionTimeout,
-	const std::string& run)
+	wchar_t *cancelURL,
+	wchar_t *successURL,
+	wchar_t *failureURL,
+	wchar_t *reconciliationID,
+	wchar_t *overridePaymentMethod,
+	wchar_t *paymentOptionID,
+	wchar_t *transactionTimeout,
+	wchar_t *run)
 {
 	ns2__APSaleService *_p = soap_new_ns2__APSaleService(soap);
 	if (_p)
@@ -11185,7 +11199,7 @@ inline ns2__APRefundService * soap_new_ns2__APRefundService(struct soap *soap, i
 
 inline ns2__APRefundService * soap_new_req_ns2__APRefundService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APRefundService *_p = soap_new_ns2__APRefundService(soap);
 	if (_p)
@@ -11197,14 +11211,14 @@ inline ns2__APRefundService * soap_new_req_ns2__APRefundService(
 
 inline ns2__APRefundService * soap_new_set_ns2__APRefundService(
 	struct soap *soap,
-	std::string *captureRequestID,
-	std::string *refundRequestID,
-	std::string *reason,
-	std::string *note,
-	std::string *apInitiateRequestID,
-	std::string *returnRef,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *captureRequestID,
+	wchar_t *refundRequestID,
+	wchar_t *reason,
+	wchar_t *note,
+	wchar_t *apInitiateRequestID,
+	wchar_t *returnRef,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__APRefundService *_p = soap_new_ns2__APRefundService(soap);
 	if (_p)
@@ -11256,7 +11270,7 @@ inline ns2__APOptionsService * soap_new_ns2__APOptionsService(struct soap *soap,
 
 inline ns2__APOptionsService * soap_new_req_ns2__APOptionsService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APOptionsService *_p = soap_new_ns2__APOptionsService(soap);
 	if (_p)
@@ -11268,9 +11282,9 @@ inline ns2__APOptionsService * soap_new_req_ns2__APOptionsService(
 
 inline ns2__APOptionsService * soap_new_set_ns2__APOptionsService(
 	struct soap *soap,
-	std::string *limit,
-	std::string *offset,
-	const std::string& run)
+	wchar_t *limit,
+	wchar_t *offset,
+	wchar_t *run)
 {
 	ns2__APOptionsService *_p = soap_new_ns2__APOptionsService(soap);
 	if (_p)
@@ -11317,7 +11331,7 @@ inline ns2__APCaptureService * soap_new_ns2__APCaptureService(struct soap *soap,
 
 inline ns2__APCaptureService * soap_new_req_ns2__APCaptureService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APCaptureService *_p = soap_new_ns2__APCaptureService(soap);
 	if (_p)
@@ -11329,9 +11343,9 @@ inline ns2__APCaptureService * soap_new_req_ns2__APCaptureService(
 
 inline ns2__APCaptureService * soap_new_set_ns2__APCaptureService(
 	struct soap *soap,
-	std::string *authRequestID,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *authRequestID,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__APCaptureService *_p = soap_new_ns2__APCaptureService(soap);
 	if (_p)
@@ -11378,7 +11392,7 @@ inline ns2__APAuthReversalService * soap_new_ns2__APAuthReversalService(struct s
 
 inline ns2__APAuthReversalService * soap_new_req_ns2__APAuthReversalService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APAuthReversalService *_p = soap_new_ns2__APAuthReversalService(soap);
 	if (_p)
@@ -11390,9 +11404,9 @@ inline ns2__APAuthReversalService * soap_new_req_ns2__APAuthReversalService(
 
 inline ns2__APAuthReversalService * soap_new_set_ns2__APAuthReversalService(
 	struct soap *soap,
-	std::string *authRequestID,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *authRequestID,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__APAuthReversalService *_p = soap_new_ns2__APAuthReversalService(soap);
 	if (_p)
@@ -11439,7 +11453,7 @@ inline ns2__APAuthService * soap_new_ns2__APAuthService(struct soap *soap, int n
 
 inline ns2__APAuthService * soap_new_req_ns2__APAuthService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APAuthService *_p = soap_new_ns2__APAuthService(soap);
 	if (_p)
@@ -11451,13 +11465,13 @@ inline ns2__APAuthService * soap_new_req_ns2__APAuthService(
 
 inline ns2__APAuthService * soap_new_set_ns2__APAuthService(
 	struct soap *soap,
-	std::string *cancelURL,
-	std::string *successURL,
-	std::string *failureURL,
-	std::string *overridePaymentMethod,
-	std::string *reconciliationID,
-	std::string *preapprovalToken,
-	const std::string& run)
+	wchar_t *cancelURL,
+	wchar_t *successURL,
+	wchar_t *failureURL,
+	wchar_t *overridePaymentMethod,
+	wchar_t *reconciliationID,
+	wchar_t *preapprovalToken,
+	wchar_t *run)
 {
 	ns2__APAuthService *_p = soap_new_ns2__APAuthService(soap);
 	if (_p)
@@ -11518,9 +11532,9 @@ inline ns2__APDevice * soap_new_req_ns2__APDevice(
 
 inline ns2__APDevice * soap_new_set_ns2__APDevice(
 	struct soap *soap,
-	std::string *id,
-	std::string *type,
-	std::string *userAgent)
+	wchar_t *id,
+	wchar_t *type,
+	wchar_t *userAgent)
 {
 	ns2__APDevice *_p = soap_new_ns2__APDevice(soap);
 	if (_p)
@@ -11577,20 +11591,20 @@ inline ns2__AP * soap_new_req_ns2__AP(
 
 inline ns2__AP * soap_new_set_ns2__AP(
 	struct soap *soap,
-	std::string *orderID,
-	std::string *customerRepresentativeID,
-	std::string *productDescription,
-	std::string *settlementCurrency,
-	std::string *subtotalAmount,
-	std::string *shippingAmount,
-	std::string *handlingAmount,
-	std::string *shippingHandlingAmount,
-	std::string *additionalAmount,
-	std::string *taxAmount,
-	std::string *giftWrapAmount,
-	std::string *discountAmount,
-	std::string *purchaseID,
-	std::string *productID,
+	wchar_t *orderID,
+	wchar_t *customerRepresentativeID,
+	wchar_t *productDescription,
+	wchar_t *settlementCurrency,
+	wchar_t *subtotalAmount,
+	wchar_t *shippingAmount,
+	wchar_t *handlingAmount,
+	wchar_t *shippingHandlingAmount,
+	wchar_t *additionalAmount,
+	wchar_t *taxAmount,
+	wchar_t *giftWrapAmount,
+	wchar_t *discountAmount,
+	wchar_t *purchaseID,
+	wchar_t *productID,
 	ns2__APDevice *device)
 {
 	ns2__AP *_p = soap_new_ns2__AP(soap);
@@ -11660,10 +11674,10 @@ inline ns2__Token * soap_new_req_ns2__Token(
 
 inline ns2__Token * soap_new_set_ns2__Token(
 	struct soap *soap,
-	std::string *prefix,
-	std::string *suffix,
-	std::string *expirationMonth,
-	std::string *expirationYear)
+	wchar_t *prefix,
+	wchar_t *suffix,
+	wchar_t *expirationMonth,
+	wchar_t *expirationYear)
 {
 	ns2__Token *_p = soap_new_ns2__Token(soap);
 	if (_p)
@@ -11721,13 +11735,13 @@ inline ns2__JPO * soap_new_req_ns2__JPO(
 
 inline ns2__JPO * soap_new_set_ns2__JPO(
 	struct soap *soap,
-	std::string *paymentMethod,
-	std::string *bonusAmount,
-	std::string *bonuses,
-	std::string *installments,
-	std::string *firstBillingMonth,
-	std::string *jccaTerminalID,
-	std::string *issuerMessage)
+	wchar_t **paymentMethod,
+	wchar_t **bonusAmount,
+	wchar_t **bonuses,
+	wchar_t **installments,
+	wchar_t **firstBillingMonth,
+	wchar_t **jccaTerminalID,
+	wchar_t **issuerMessage)
 {
 	ns2__JPO *_p = soap_new_ns2__JPO(soap);
 	if (_p)
@@ -11843,8 +11857,8 @@ inline ns2__Batch * soap_new_req_ns2__Batch(
 
 inline ns2__Batch * soap_new_set_ns2__Batch(
 	struct soap *soap,
-	std::string *batchID,
-	std::string *recordID)
+	wchar_t *batchID,
+	wchar_t *recordID)
 {
 	ns2__Batch *_p = soap_new_ns2__Batch(soap);
 	if (_p)
@@ -11900,9 +11914,9 @@ inline ns2__DecisionManagerTravelLeg * soap_new_req_ns2__DecisionManagerTravelLe
 
 inline ns2__DecisionManagerTravelLeg * soap_new_set_ns2__DecisionManagerTravelLeg(
 	struct soap *soap,
-	std::string *origin,
-	std::string *destination,
-	std::string *id)
+	wchar_t *origin,
+	wchar_t *destination,
+	wchar_t **id)
 {
 	ns2__DecisionManagerTravelLeg *_p = soap_new_ns2__DecisionManagerTravelLeg(soap);
 	if (_p)
@@ -11960,9 +11974,9 @@ inline ns2__DecisionManagerTravelData * soap_new_req_ns2__DecisionManagerTravelD
 inline ns2__DecisionManagerTravelData * soap_new_set_ns2__DecisionManagerTravelData(
 	struct soap *soap,
 	const std::vector<ns2__DecisionManagerTravelLeg *> & leg,
-	std::string *departureDateTime,
-	std::string *completeRoute,
-	std::string *journeyType)
+	wchar_t **departureDateTime,
+	wchar_t *completeRoute,
+	wchar_t *journeyType)
 {
 	ns2__DecisionManagerTravelData *_p = soap_new_ns2__DecisionManagerTravelData(soap);
 	if (_p)
@@ -12020,8 +12034,8 @@ inline ns2__DecisionManager * soap_new_req_ns2__DecisionManager(
 
 inline ns2__DecisionManager * soap_new_set_ns2__DecisionManager(
 	struct soap *soap,
-	std::string *enabled,
-	std::string *profile,
+	wchar_t **enabled,
+	wchar_t *profile,
 	ns2__DecisionManagerTravelData *travelData)
 {
 	ns2__DecisionManager *_p = soap_new_ns2__DecisionManager(soap);
@@ -12079,12 +12093,12 @@ inline ns2__PaymentNetworkToken * soap_new_req_ns2__PaymentNetworkToken(
 
 inline ns2__PaymentNetworkToken * soap_new_set_ns2__PaymentNetworkToken(
 	struct soap *soap,
-	std::string *requestorID,
-	std::string *transactionType,
-	std::string *assuranceLevel,
-	std::string *accountStatus,
-	std::string *originalCardCategory,
-	std::string *deviceTechType)
+	wchar_t *requestorID,
+	wchar_t *transactionType,
+	wchar_t *assuranceLevel,
+	wchar_t *accountStatus,
+	wchar_t *originalCardCategory,
+	wchar_t *deviceTechType)
 {
 	ns2__PaymentNetworkToken *_p = soap_new_ns2__PaymentNetworkToken(soap);
 	if (_p)
@@ -12144,8 +12158,8 @@ inline ns2__Subscription * soap_new_req_ns2__Subscription(
 
 inline ns2__Subscription * soap_new_set_ns2__Subscription(
 	struct soap *soap,
-	std::string *title,
-	std::string *paymentMethod)
+	wchar_t *title,
+	wchar_t *paymentMethod)
 {
 	ns2__Subscription *_p = soap_new_ns2__Subscription(soap);
 	if (_p)
@@ -12201,9 +12215,9 @@ inline ns2__PaySubscriptionEvent * soap_new_req_ns2__PaySubscriptionEvent(
 
 inline ns2__PaySubscriptionEvent * soap_new_set_ns2__PaySubscriptionEvent(
 	struct soap *soap,
-	std::string *amount,
-	std::string *approvedBy,
-	std::string *number)
+	wchar_t **amount,
+	wchar_t *approvedBy,
+	wchar_t **number)
 {
 	ns2__PaySubscriptionEvent *_p = soap_new_ns2__PaySubscriptionEvent(soap);
 	if (_p)
@@ -12260,18 +12274,18 @@ inline ns2__RecurringSubscriptionInfo * soap_new_req_ns2__RecurringSubscriptionI
 
 inline ns2__RecurringSubscriptionInfo * soap_new_set_ns2__RecurringSubscriptionInfo(
 	struct soap *soap,
-	std::string *subscriptionID,
-	std::string *status,
-	std::string *amount,
-	std::string *numberOfPayments,
-	std::string *numberOfPaymentsToAdd,
-	std::string *automaticRenew,
-	std::string *frequency,
-	std::string *startDate,
-	std::string *endDate,
-	std::string *approvalRequired,
+	wchar_t *subscriptionID,
+	wchar_t *status,
+	wchar_t **amount,
+	wchar_t **numberOfPayments,
+	wchar_t **numberOfPaymentsToAdd,
+	wchar_t **automaticRenew,
+	wchar_t *frequency,
+	wchar_t *startDate,
+	wchar_t *endDate,
+	wchar_t **approvalRequired,
 	ns2__PaySubscriptionEvent *event,
-	std::string *billPayment)
+	wchar_t **billPayment)
 {
 	ns2__RecurringSubscriptionInfo *_p = soap_new_ns2__RecurringSubscriptionInfo(soap);
 	if (_p)
@@ -12337,15 +12351,15 @@ inline ns2__BankInfo * soap_new_req_ns2__BankInfo(
 
 inline ns2__BankInfo * soap_new_set_ns2__BankInfo(
 	struct soap *soap,
-	std::string *bankCode,
-	std::string *name,
-	std::string *address,
-	std::string *city,
-	std::string *country,
-	std::string *branchCode,
-	std::string *swiftCode,
-	std::string *sortCode,
-	std::string *issuerID)
+	wchar_t *bankCode,
+	wchar_t *name,
+	wchar_t *address,
+	wchar_t *city,
+	wchar_t *country,
+	wchar_t *branchCode,
+	wchar_t *swiftCode,
+	wchar_t *sortCode,
+	wchar_t *issuerID)
 {
 	ns2__BankInfo *_p = soap_new_ns2__BankInfo(soap);
 	if (_p)
@@ -12408,10 +12422,10 @@ inline ns2__FundTransfer * soap_new_req_ns2__FundTransfer(
 
 inline ns2__FundTransfer * soap_new_set_ns2__FundTransfer(
 	struct soap *soap,
-	std::string *accountNumber,
-	std::string *accountName,
-	std::string *bankCheckDigit,
-	std::string *iban)
+	wchar_t *accountNumber,
+	wchar_t *accountName,
+	wchar_t *bankCheckDigit,
+	wchar_t *iban)
 {
 	ns2__FundTransfer *_p = soap_new_ns2__FundTransfer(soap);
 	if (_p)
@@ -12469,8 +12483,8 @@ inline ns2__UCAF * soap_new_req_ns2__UCAF(
 
 inline ns2__UCAF * soap_new_set_ns2__UCAF(
 	struct soap *soap,
-	std::string *authenticationData,
-	std::string *collectionIndicator)
+	wchar_t *authenticationData,
+	wchar_t *collectionIndicator)
 {
 	ns2__UCAF *_p = soap_new_ns2__UCAF(soap);
 	if (_p)
@@ -12526,12 +12540,12 @@ inline ns2__GECC * soap_new_req_ns2__GECC(
 
 inline ns2__GECC * soap_new_set_ns2__GECC(
 	struct soap *soap,
-	std::string *saleType,
-	std::string *planNumber,
-	std::string *sequenceNumber,
-	std::string *promotionEndDate,
-	std::string *promotionPlan,
-	const std::vector<std::string> & line)
+	wchar_t *saleType,
+	wchar_t *planNumber,
+	wchar_t *sequenceNumber,
+	wchar_t *promotionEndDate,
+	wchar_t *promotionPlan,
+	const std::vector<wchar_t *> & line)
 {
 	ns2__GECC *_p = soap_new_ns2__GECC(soap);
 	if (_p)
@@ -12591,8 +12605,8 @@ inline ns2__FundingTotals * soap_new_req_ns2__FundingTotals(
 
 inline ns2__FundingTotals * soap_new_set_ns2__FundingTotals(
 	struct soap *soap,
-	std::string *currency,
-	std::string *grandTotalAmount)
+	wchar_t *currency,
+	wchar_t **grandTotalAmount)
 {
 	ns2__FundingTotals *_p = soap_new_ns2__FundingTotals(soap);
 	if (_p)
@@ -12648,33 +12662,33 @@ inline ns2__PurchaseTotals * soap_new_req_ns2__PurchaseTotals(
 
 inline ns2__PurchaseTotals * soap_new_set_ns2__PurchaseTotals(
 	struct soap *soap,
-	std::string *currency,
-	std::string *discountAmount,
-	std::string *discountAmountSign,
-	std::string *discountManagementIndicator,
-	std::string *taxAmount,
-	std::string *dutyAmount,
-	std::string *dutyAmountSign,
-	std::string *grandTotalAmount,
-	std::string *freightAmount,
-	std::string *freightAmountSign,
-	std::string *foreignAmount,
-	std::string *foreignCurrency,
-	std::string *originalAmount,
-	std::string *originalCurrency,
-	std::string *exchangeRate,
-	std::string *exchangeRateTimeStamp,
-	std::string *additionalAmountType0,
-	std::string *additionalAmount0,
-	std::string *additionalAmountType1,
-	std::string *additionalAmount1,
-	std::string *additionalAmountType2,
-	std::string *additionalAmount2,
-	std::string *additionalAmountType3,
-	std::string *additionalAmount3,
-	std::string *additionalAmountType4,
-	std::string *additionalAmount4,
-	std::string *serviceFeeAmount)
+	wchar_t *currency,
+	wchar_t **discountAmount,
+	wchar_t *discountAmountSign,
+	wchar_t *discountManagementIndicator,
+	wchar_t **taxAmount,
+	wchar_t **dutyAmount,
+	wchar_t *dutyAmountSign,
+	wchar_t **grandTotalAmount,
+	wchar_t **freightAmount,
+	wchar_t *freightAmountSign,
+	wchar_t **foreignAmount,
+	wchar_t *foreignCurrency,
+	wchar_t **originalAmount,
+	wchar_t *originalCurrency,
+	wchar_t **exchangeRate,
+	wchar_t *exchangeRateTimeStamp,
+	wchar_t *additionalAmountType0,
+	wchar_t *additionalAmount0,
+	wchar_t *additionalAmountType1,
+	wchar_t *additionalAmount1,
+	wchar_t *additionalAmountType2,
+	wchar_t *additionalAmount2,
+	wchar_t *additionalAmountType3,
+	wchar_t *additionalAmount3,
+	wchar_t *additionalAmountType4,
+	wchar_t *additionalAmount4,
+	wchar_t **serviceFeeAmount)
 {
 	ns2__PurchaseTotals *_p = soap_new_ns2__PurchaseTotals(soap);
 	if (_p)
@@ -12755,7 +12769,7 @@ inline ns2__Wallet * soap_new_req_ns2__Wallet(
 
 inline ns2__Wallet * soap_new_set_ns2__Wallet(
 	struct soap *soap,
-	std::string *type)
+	wchar_t *type)
 {
 	ns2__Wallet *_p = soap_new_ns2__Wallet(soap);
 	if (_p)
@@ -12810,9 +12824,9 @@ inline ns2__Aft * soap_new_req_ns2__Aft(
 
 inline ns2__Aft * soap_new_set_ns2__Aft(
 	struct soap *soap,
-	std::string *indicator,
-	std::string *serviceFee,
-	std::string *foreignExchangeFee)
+	wchar_t *indicator,
+	wchar_t *serviceFee,
+	wchar_t *foreignExchangeFee)
 {
 	ns2__Aft *_p = soap_new_ns2__Aft(soap);
 	if (_p)
@@ -12869,16 +12883,16 @@ inline ns2__OtherTax * soap_new_req_ns2__OtherTax(
 
 inline ns2__OtherTax * soap_new_set_ns2__OtherTax(
 	struct soap *soap,
-	std::string *vatTaxAmount,
-	std::string *vatTaxRate,
-	std::string *vatTaxAmountSign,
-	std::string *alternateTaxAmount,
-	std::string *alternateTaxIndicator,
-	std::string *alternateTaxID,
-	std::string *localTaxAmount,
-	std::string *localTaxIndicator,
-	std::string *nationalTaxAmount,
-	std::string *nationalTaxIndicator)
+	wchar_t **vatTaxAmount,
+	wchar_t **vatTaxRate,
+	wchar_t *vatTaxAmountSign,
+	wchar_t **alternateTaxAmount,
+	wchar_t *alternateTaxIndicator,
+	wchar_t *alternateTaxID,
+	wchar_t **localTaxAmount,
+	wchar_t **localTaxIndicator,
+	wchar_t **nationalTaxAmount,
+	wchar_t **nationalTaxIndicator)
 {
 	ns2__OtherTax *_p = soap_new_ns2__OtherTax(soap);
 	if (_p)
@@ -12942,92 +12956,92 @@ inline ns2__BML * soap_new_req_ns2__BML(
 
 inline ns2__BML * soap_new_set_ns2__BML(
 	struct soap *soap,
-	std::string *customerBillingAddressChange,
-	std::string *customerEmailChange,
-	std::string *customerHasCheckingAccount,
-	std::string *customerHasSavingsAccount,
-	std::string *customerPasswordChange,
-	std::string *customerPhoneChange,
-	std::string *customerRegistrationDate,
-	std::string *customerTypeFlag,
-	std::string *grossHouseholdIncome,
-	std::string *householdIncomeCurrency,
-	std::string *itemCategory,
-	std::string *merchantPromotionCode,
-	std::string *preapprovalNumber,
-	std::string *productDeliveryTypeIndicator,
-	std::string *residenceStatus,
-	std::string *tcVersion,
-	std::string *yearsAtCurrentResidence,
-	std::string *yearsWithCurrentEmployer,
-	std::string *employerStreet1,
-	std::string *employerStreet2,
-	std::string *employerCity,
-	std::string *employerCompanyName,
-	std::string *employerCountry,
-	std::string *employerPhoneNumber,
-	std::string *employerPhoneType,
-	std::string *employerState,
-	std::string *employerPostalCode,
-	std::string *shipToPhoneType,
-	std::string *billToPhoneType,
-	std::string *methodOfPayment,
-	std::string *productType,
-	std::string *customerAuthenticatedByMerchant,
-	std::string *backOfficeIndicator,
-	std::string *shipToEqualsBillToNameIndicator,
-	std::string *shipToEqualsBillToAddressIndicator,
-	std::string *alternateIPAddress,
-	std::string *businessLegalName,
-	std::string *dbaName,
-	std::string *businessAddress1,
-	std::string *businessAddress2,
-	std::string *businessCity,
-	std::string *businessState,
-	std::string *businessPostalCode,
-	std::string *businessCountry,
-	std::string *businessMainPhone,
-	std::string *userID,
-	std::string *pin,
-	std::string *adminLastName,
-	std::string *adminFirstName,
-	std::string *adminPhone,
-	std::string *adminFax,
-	std::string *adminEmailAddress,
-	std::string *adminTitle,
-	std::string *supervisorLastName,
-	std::string *supervisorFirstName,
-	std::string *supervisorEmailAddress,
-	std::string *businessDAndBNumber,
-	std::string *businessTaxID,
-	std::string *businessNAICSCode,
-	std::string *businessType,
-	std::string *businessYearsInBusiness,
-	std::string *businessNumberOfEmployees,
-	std::string *businessPONumber,
-	std::string *businessLoanType,
-	std::string *businessApplicationID,
-	std::string *businessProductCode,
-	std::string *pgLastName,
-	std::string *pgFirstName,
-	std::string *pgSSN,
-	std::string *pgDateOfBirth,
-	std::string *pgAnnualIncome,
-	std::string *pgIncomeCurrencyType,
-	std::string *pgResidenceStatus,
-	std::string *pgCheckingAccountIndicator,
-	std::string *pgSavingsAccountIndicator,
-	std::string *pgYearsAtEmployer,
-	std::string *pgYearsAtResidence,
-	std::string *pgHomeAddress1,
-	std::string *pgHomeAddress2,
-	std::string *pgHomeCity,
-	std::string *pgHomeState,
-	std::string *pgHomePostalCode,
-	std::string *pgHomeCountry,
-	std::string *pgEmailAddress,
-	std::string *pgHomePhone,
-	std::string *pgTitle)
+	wchar_t **customerBillingAddressChange,
+	wchar_t **customerEmailChange,
+	wchar_t **customerHasCheckingAccount,
+	wchar_t **customerHasSavingsAccount,
+	wchar_t **customerPasswordChange,
+	wchar_t **customerPhoneChange,
+	wchar_t *customerRegistrationDate,
+	wchar_t *customerTypeFlag,
+	wchar_t **grossHouseholdIncome,
+	wchar_t *householdIncomeCurrency,
+	wchar_t *itemCategory,
+	wchar_t *merchantPromotionCode,
+	wchar_t *preapprovalNumber,
+	wchar_t *productDeliveryTypeIndicator,
+	wchar_t *residenceStatus,
+	wchar_t *tcVersion,
+	wchar_t **yearsAtCurrentResidence,
+	wchar_t **yearsWithCurrentEmployer,
+	wchar_t *employerStreet1,
+	wchar_t *employerStreet2,
+	wchar_t *employerCity,
+	wchar_t *employerCompanyName,
+	wchar_t *employerCountry,
+	wchar_t *employerPhoneNumber,
+	wchar_t *employerPhoneType,
+	wchar_t *employerState,
+	wchar_t *employerPostalCode,
+	wchar_t *shipToPhoneType,
+	wchar_t *billToPhoneType,
+	wchar_t *methodOfPayment,
+	wchar_t *productType,
+	wchar_t *customerAuthenticatedByMerchant,
+	wchar_t *backOfficeIndicator,
+	wchar_t *shipToEqualsBillToNameIndicator,
+	wchar_t *shipToEqualsBillToAddressIndicator,
+	wchar_t *alternateIPAddress,
+	wchar_t *businessLegalName,
+	wchar_t *dbaName,
+	wchar_t *businessAddress1,
+	wchar_t *businessAddress2,
+	wchar_t *businessCity,
+	wchar_t *businessState,
+	wchar_t *businessPostalCode,
+	wchar_t *businessCountry,
+	wchar_t *businessMainPhone,
+	wchar_t *userID,
+	wchar_t *pin,
+	wchar_t *adminLastName,
+	wchar_t *adminFirstName,
+	wchar_t *adminPhone,
+	wchar_t *adminFax,
+	wchar_t *adminEmailAddress,
+	wchar_t *adminTitle,
+	wchar_t *supervisorLastName,
+	wchar_t *supervisorFirstName,
+	wchar_t *supervisorEmailAddress,
+	wchar_t *businessDAndBNumber,
+	wchar_t *businessTaxID,
+	wchar_t *businessNAICSCode,
+	wchar_t *businessType,
+	wchar_t *businessYearsInBusiness,
+	wchar_t *businessNumberOfEmployees,
+	wchar_t *businessPONumber,
+	wchar_t *businessLoanType,
+	wchar_t *businessApplicationID,
+	wchar_t *businessProductCode,
+	wchar_t *pgLastName,
+	wchar_t *pgFirstName,
+	wchar_t *pgSSN,
+	wchar_t *pgDateOfBirth,
+	wchar_t *pgAnnualIncome,
+	wchar_t *pgIncomeCurrencyType,
+	wchar_t *pgResidenceStatus,
+	wchar_t *pgCheckingAccountIndicator,
+	wchar_t *pgSavingsAccountIndicator,
+	wchar_t *pgYearsAtEmployer,
+	wchar_t *pgYearsAtResidence,
+	wchar_t *pgHomeAddress1,
+	wchar_t *pgHomeAddress2,
+	wchar_t *pgHomeCity,
+	wchar_t *pgHomeState,
+	wchar_t *pgHomePostalCode,
+	wchar_t *pgHomeCountry,
+	wchar_t *pgEmailAddress,
+	wchar_t *pgHomePhone,
+	wchar_t *pgTitle)
 {
 	ns2__BML *_p = soap_new_ns2__BML(soap);
 	if (_p)
@@ -13167,18 +13181,18 @@ inline ns2__Check * soap_new_req_ns2__Check(
 
 inline ns2__Check * soap_new_set_ns2__Check(
 	struct soap *soap,
-	std::string *fullName,
-	std::string *accountNumber,
-	std::string *accountType,
-	std::string *bankTransitNumber,
-	std::string *checkNumber,
-	std::string *secCode,
-	std::string *accountEncoderID,
-	std::string *authenticateID,
-	std::string *paymentInfo,
-	std::string *imageReferenceNumber,
-	std::string *terminalCity,
-	std::string *terminalState)
+	wchar_t *fullName,
+	wchar_t *accountNumber,
+	wchar_t *accountType,
+	wchar_t *bankTransitNumber,
+	wchar_t *checkNumber,
+	wchar_t *secCode,
+	wchar_t *accountEncoderID,
+	wchar_t *authenticateID,
+	wchar_t *paymentInfo,
+	wchar_t *imageReferenceNumber,
+	wchar_t *terminalCity,
+	wchar_t *terminalState)
 {
 	ns2__Check *_p = soap_new_ns2__Check(soap);
 	if (_p)
@@ -13244,22 +13258,22 @@ inline ns2__Card * soap_new_req_ns2__Card(
 
 inline ns2__Card * soap_new_set_ns2__Card(
 	struct soap *soap,
-	std::string *fullName,
-	std::string *accountNumber,
-	std::string *expirationMonth,
-	std::string *expirationYear,
-	std::string *cvIndicator,
-	std::string *cvNumber,
-	std::string *cardType,
-	std::string *issueNumber,
-	std::string *startMonth,
-	std::string *startYear,
-	std::string *pin,
-	std::string *accountEncoderID,
-	std::string *bin,
-	std::string *encryptedData,
-	std::string *suffix,
-	std::string *prefix)
+	wchar_t *fullName,
+	wchar_t *accountNumber,
+	wchar_t **expirationMonth,
+	wchar_t **expirationYear,
+	wchar_t *cvIndicator,
+	wchar_t *cvNumber,
+	wchar_t *cardType,
+	wchar_t *issueNumber,
+	wchar_t **startMonth,
+	wchar_t **startYear,
+	wchar_t *pin,
+	wchar_t *accountEncoderID,
+	wchar_t *bin,
+	wchar_t *encryptedData,
+	wchar_t *suffix,
+	wchar_t *prefix)
 {
 	ns2__Card *_p = soap_new_ns2__Card(soap);
 	if (_p)
@@ -13329,23 +13343,23 @@ inline ns2__ShipFrom * soap_new_req_ns2__ShipFrom(
 
 inline ns2__ShipFrom * soap_new_set_ns2__ShipFrom(
 	struct soap *soap,
-	std::string *title,
-	std::string *firstName,
-	std::string *middleName,
-	std::string *lastName,
-	std::string *suffix,
-	std::string *street1,
-	std::string *street2,
-	std::string *street3,
-	std::string *street4,
-	std::string *city,
-	std::string *county,
-	std::string *state,
-	std::string *postalCode,
-	std::string *country,
-	std::string *company,
-	std::string *phoneNumber,
-	std::string *email)
+	wchar_t *title,
+	wchar_t *firstName,
+	wchar_t *middleName,
+	wchar_t *lastName,
+	wchar_t *suffix,
+	wchar_t *street1,
+	wchar_t *street2,
+	wchar_t *street3,
+	wchar_t *street4,
+	wchar_t *city,
+	wchar_t *county,
+	wchar_t *state,
+	wchar_t *postalCode,
+	wchar_t *country,
+	wchar_t *company,
+	wchar_t *phoneNumber,
+	wchar_t *email)
 {
 	ns2__ShipFrom *_p = soap_new_ns2__ShipFrom(soap);
 	if (_p)
@@ -13416,29 +13430,29 @@ inline ns2__ShipTo * soap_new_req_ns2__ShipTo(
 
 inline ns2__ShipTo * soap_new_set_ns2__ShipTo(
 	struct soap *soap,
-	std::string *title,
-	std::string *firstName,
-	std::string *middleName,
-	std::string *lastName,
-	std::string *suffix,
-	std::string *street1,
-	std::string *street2,
-	std::string *street3,
-	std::string *street4,
-	std::string *city,
-	std::string *county,
-	std::string *state,
-	std::string *buildingNumber,
-	std::string *district,
-	std::string *postalCode,
-	std::string *country,
-	std::string *company,
-	std::string *phoneNumber,
-	std::string *email,
-	std::string *shippingMethod,
-	std::string *name,
-	std::string *id,
-	std::string *addressVerificationStatus)
+	wchar_t *title,
+	wchar_t *firstName,
+	wchar_t *middleName,
+	wchar_t *lastName,
+	wchar_t *suffix,
+	wchar_t *street1,
+	wchar_t *street2,
+	wchar_t *street3,
+	wchar_t *street4,
+	wchar_t *city,
+	wchar_t *county,
+	wchar_t *state,
+	wchar_t *buildingNumber,
+	wchar_t *district,
+	wchar_t *postalCode,
+	wchar_t *country,
+	wchar_t *company,
+	wchar_t *phoneNumber,
+	wchar_t *email,
+	wchar_t *shippingMethod,
+	wchar_t *name,
+	wchar_t *id,
+	wchar_t *addressVerificationStatus)
 {
 	ns2__ShipTo *_p = soap_new_ns2__ShipTo(soap);
 	if (_p)
@@ -13515,45 +13529,45 @@ inline ns2__BillTo * soap_new_req_ns2__BillTo(
 
 inline ns2__BillTo * soap_new_set_ns2__BillTo(
 	struct soap *soap,
-	std::string *title,
-	std::string *firstName,
-	std::string *middleName,
-	std::string *lastName,
-	std::string *suffix,
-	std::string *buildingNumber,
-	std::string *street1,
-	std::string *street2,
-	std::string *street3,
-	std::string *street4,
-	std::string *city,
-	std::string *district,
-	std::string *county,
-	std::string *state,
-	std::string *postalCode,
-	std::string *country,
-	std::string *company,
-	std::string *companyTaxID,
-	std::string *phoneNumber,
-	std::string *email,
-	std::string *ipAddress,
-	std::string *customerUserName,
-	std::string *customerPassword,
-	std::string *ipNetworkAddress,
-	std::string *hostname,
-	std::string *domainName,
-	std::string *dateOfBirth,
-	std::string *driversLicenseNumber,
-	std::string *driversLicenseState,
-	std::string *ssn,
-	std::string *customerID,
-	std::string *httpBrowserType,
-	std::string *httpBrowserEmail,
-	std::string *httpBrowserCookiesAccepted,
-	std::string *nif,
-	std::string *personalID,
-	std::string *language,
-	std::string *name,
-	std::string *gender)
+	wchar_t *title,
+	wchar_t *firstName,
+	wchar_t *middleName,
+	wchar_t *lastName,
+	wchar_t *suffix,
+	wchar_t *buildingNumber,
+	wchar_t *street1,
+	wchar_t *street2,
+	wchar_t *street3,
+	wchar_t *street4,
+	wchar_t *city,
+	wchar_t *district,
+	wchar_t *county,
+	wchar_t *state,
+	wchar_t *postalCode,
+	wchar_t *country,
+	wchar_t *company,
+	wchar_t *companyTaxID,
+	wchar_t *phoneNumber,
+	wchar_t *email,
+	wchar_t *ipAddress,
+	wchar_t *customerUserName,
+	wchar_t *customerPassword,
+	wchar_t *ipNetworkAddress,
+	wchar_t *hostname,
+	wchar_t *domainName,
+	wchar_t *dateOfBirth,
+	wchar_t *driversLicenseNumber,
+	wchar_t *driversLicenseState,
+	wchar_t *ssn,
+	wchar_t *customerID,
+	wchar_t *httpBrowserType,
+	wchar_t *httpBrowserEmail,
+	wchar_t **httpBrowserCookiesAccepted,
+	wchar_t *nif,
+	wchar_t *personalID,
+	wchar_t *language,
+	wchar_t *name,
+	wchar_t *gender)
 {
 	ns2__BillTo *_p = soap_new_ns2__BillTo(soap);
 	if (_p)
@@ -13646,13 +13660,13 @@ inline ns2__BusinessRules * soap_new_req_ns2__BusinessRules(
 
 inline ns2__BusinessRules * soap_new_set_ns2__BusinessRules(
 	struct soap *soap,
-	std::string *ignoreAVSResult,
-	std::string *ignoreCVResult,
-	std::string *ignoreDAVResult,
-	std::string *ignoreExportResult,
-	std::string *ignoreValidateResult,
-	std::string *declineAVSFlags,
-	std::string *scoreThreshold)
+	wchar_t **ignoreAVSResult,
+	wchar_t **ignoreCVResult,
+	wchar_t **ignoreDAVResult,
+	wchar_t **ignoreExportResult,
+	wchar_t **ignoreValidateResult,
+	wchar_t *declineAVSFlags,
+	wchar_t **scoreThreshold)
 {
 	ns2__BusinessRules *_p = soap_new_ns2__BusinessRules(soap);
 	if (_p)
@@ -13713,48 +13727,48 @@ inline ns2__InvoiceHeader * soap_new_req_ns2__InvoiceHeader(
 
 inline ns2__InvoiceHeader * soap_new_set_ns2__InvoiceHeader(
 	struct soap *soap,
-	std::string *merchantDescriptor,
-	std::string *merchantDescriptorContact,
-	std::string *merchantDescriptorAlternate,
-	std::string *merchantDescriptorStreet,
-	std::string *merchantDescriptorCity,
-	std::string *merchantDescriptorState,
-	std::string *merchantDescriptorPostalCode,
-	std::string *merchantDescriptorCountry,
-	std::string *isGift,
-	std::string *returnsAccepted,
-	std::string *tenderType,
-	std::string *merchantVATRegistrationNumber,
-	std::string *purchaserOrderDate,
-	std::string *purchaserVATRegistrationNumber,
-	std::string *vatInvoiceReferenceNumber,
-	std::string *summaryCommodityCode,
-	std::string *supplierOrderReference,
-	std::string *userPO,
-	std::string *costCenter,
-	std::string *purchaserCode,
-	std::string *taxable,
-	std::string *amexDataTAA1,
-	std::string *amexDataTAA2,
-	std::string *amexDataTAA3,
-	std::string *amexDataTAA4,
-	std::string *invoiceDate,
-	std::string *totalTaxTypeCode,
-	std::string *cardAcceptorRefNumber,
-	std::string *authorizedContactName,
-	std::string *businessApplicationID,
-	std::string *salesOrganizationID,
-	std::string *submerchantID,
-	std::string *submerchantName,
-	std::string *submerchantStreet,
-	std::string *submerchantCity,
-	std::string *submerchantPostalCode,
-	std::string *submerchantState,
-	std::string *submerchantCountry,
-	std::string *submerchantEmail,
-	std::string *submerchantTelephoneNumber,
-	std::string *submerchantRegion,
-	std::string *submerchantMerchantID)
+	wchar_t *merchantDescriptor,
+	wchar_t *merchantDescriptorContact,
+	wchar_t *merchantDescriptorAlternate,
+	wchar_t *merchantDescriptorStreet,
+	wchar_t *merchantDescriptorCity,
+	wchar_t *merchantDescriptorState,
+	wchar_t *merchantDescriptorPostalCode,
+	wchar_t *merchantDescriptorCountry,
+	wchar_t **isGift,
+	wchar_t **returnsAccepted,
+	wchar_t *tenderType,
+	wchar_t *merchantVATRegistrationNumber,
+	wchar_t *purchaserOrderDate,
+	wchar_t *purchaserVATRegistrationNumber,
+	wchar_t *vatInvoiceReferenceNumber,
+	wchar_t *summaryCommodityCode,
+	wchar_t *supplierOrderReference,
+	wchar_t *userPO,
+	wchar_t *costCenter,
+	wchar_t *purchaserCode,
+	wchar_t **taxable,
+	wchar_t *amexDataTAA1,
+	wchar_t *amexDataTAA2,
+	wchar_t *amexDataTAA3,
+	wchar_t *amexDataTAA4,
+	wchar_t *invoiceDate,
+	wchar_t *totalTaxTypeCode,
+	wchar_t *cardAcceptorRefNumber,
+	wchar_t *authorizedContactName,
+	wchar_t *businessApplicationID,
+	wchar_t **salesOrganizationID,
+	wchar_t *submerchantID,
+	wchar_t *submerchantName,
+	wchar_t *submerchantStreet,
+	wchar_t *submerchantCity,
+	wchar_t *submerchantPostalCode,
+	wchar_t *submerchantState,
+	wchar_t *submerchantCountry,
+	wchar_t *submerchantEmail,
+	wchar_t *submerchantTelephoneNumber,
+	wchar_t *submerchantRegion,
+	wchar_t *submerchantMerchantID)
 {
 	ns2__InvoiceHeader *_p = soap_new_ns2__InvoiceHeader(soap);
 	if (_p)
@@ -13840,7 +13854,7 @@ inline ns2__EncryptPaymentDataService * soap_new_ns2__EncryptPaymentDataService(
 
 inline ns2__EncryptPaymentDataService * soap_new_req_ns2__EncryptPaymentDataService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__EncryptPaymentDataService *_p = soap_new_ns2__EncryptPaymentDataService(soap);
 	if (_p)
@@ -13852,7 +13866,7 @@ inline ns2__EncryptPaymentDataService * soap_new_req_ns2__EncryptPaymentDataServ
 
 inline ns2__EncryptPaymentDataService * soap_new_set_ns2__EncryptPaymentDataService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__EncryptPaymentDataService *_p = soap_new_ns2__EncryptPaymentDataService(soap);
 	if (_p)
@@ -13897,7 +13911,7 @@ inline ns2__CaseManagementActionService * soap_new_ns2__CaseManagementActionServ
 
 inline ns2__CaseManagementActionService * soap_new_req_ns2__CaseManagementActionService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CaseManagementActionService *_p = soap_new_ns2__CaseManagementActionService(soap);
 	if (_p)
@@ -13909,10 +13923,10 @@ inline ns2__CaseManagementActionService * soap_new_req_ns2__CaseManagementAction
 
 inline ns2__CaseManagementActionService * soap_new_set_ns2__CaseManagementActionService(
 	struct soap *soap,
-	std::string *actionCode,
-	std::string *requestID,
-	std::string *comments,
-	const std::string& run)
+	wchar_t *actionCode,
+	wchar_t *requestID,
+	wchar_t *comments,
+	wchar_t *run)
 {
 	ns2__CaseManagementActionService *_p = soap_new_ns2__CaseManagementActionService(soap);
 	if (_p)
@@ -13960,7 +13974,7 @@ inline ns2__FraudUpdateService * soap_new_ns2__FraudUpdateService(struct soap *s
 
 inline ns2__FraudUpdateService * soap_new_req_ns2__FraudUpdateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__FraudUpdateService *_p = soap_new_ns2__FraudUpdateService(soap);
 	if (_p)
@@ -13972,12 +13986,12 @@ inline ns2__FraudUpdateService * soap_new_req_ns2__FraudUpdateService(
 
 inline ns2__FraudUpdateService * soap_new_set_ns2__FraudUpdateService(
 	struct soap *soap,
-	std::string *actionCode,
-	std::string *markedData,
-	std::string *markingReason,
-	std::string *markingNotes,
-	std::string *markingRequestID,
-	const std::string& run)
+	wchar_t *actionCode,
+	wchar_t *markedData,
+	wchar_t *markingReason,
+	wchar_t *markingNotes,
+	wchar_t *markingRequestID,
+	wchar_t *run)
 {
 	ns2__FraudUpdateService *_p = soap_new_ns2__FraudUpdateService(soap);
 	if (_p)
@@ -14027,7 +14041,7 @@ inline ns2__RiskUpdateService * soap_new_ns2__RiskUpdateService(struct soap *soa
 
 inline ns2__RiskUpdateService * soap_new_req_ns2__RiskUpdateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__RiskUpdateService *_p = soap_new_ns2__RiskUpdateService(soap);
 	if (_p)
@@ -14039,17 +14053,17 @@ inline ns2__RiskUpdateService * soap_new_req_ns2__RiskUpdateService(
 
 inline ns2__RiskUpdateService * soap_new_set_ns2__RiskUpdateService(
 	struct soap *soap,
-	std::string *actionCode,
-	std::string *recordID,
-	std::string *recordName,
+	wchar_t *actionCode,
+	wchar_t *recordID,
+	wchar_t *recordName,
 	ns2__Address *negativeAddress,
-	std::string *markingReason,
-	std::string *markingNotes,
-	std::string *markingRequestID,
-	std::string *deviceFingerprintSmartID,
-	std::string *deviceFingerprintTrueIPAddress,
-	std::string *deviceFingerprintProxyIPAddress,
-	const std::string& run)
+	wchar_t *markingReason,
+	wchar_t *markingNotes,
+	wchar_t *markingRequestID,
+	wchar_t *deviceFingerprintSmartID,
+	wchar_t *deviceFingerprintTrueIPAddress,
+	wchar_t *deviceFingerprintProxyIPAddress,
+	wchar_t *run)
 {
 	ns2__RiskUpdateService *_p = soap_new_ns2__RiskUpdateService(soap);
 	if (_p)
@@ -14104,7 +14118,7 @@ inline ns2__APCheckStatusService * soap_new_ns2__APCheckStatusService(struct soa
 
 inline ns2__APCheckStatusService * soap_new_req_ns2__APCheckStatusService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APCheckStatusService *_p = soap_new_ns2__APCheckStatusService(soap);
 	if (_p)
@@ -14116,10 +14130,10 @@ inline ns2__APCheckStatusService * soap_new_req_ns2__APCheckStatusService(
 
 inline ns2__APCheckStatusService * soap_new_set_ns2__APCheckStatusService(
 	struct soap *soap,
-	std::string *apInitiateRequestID,
-	std::string *reconciliationID,
-	std::string *checkStatusRequestID,
-	const std::string& run)
+	wchar_t *apInitiateRequestID,
+	wchar_t *reconciliationID,
+	wchar_t *checkStatusRequestID,
+	wchar_t *run)
 {
 	ns2__APCheckStatusService *_p = soap_new_ns2__APCheckStatusService(soap);
 	if (_p)
@@ -14167,7 +14181,7 @@ inline ns2__APInitiateService * soap_new_ns2__APInitiateService(struct soap *soa
 
 inline ns2__APInitiateService * soap_new_req_ns2__APInitiateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__APInitiateService *_p = soap_new_ns2__APInitiateService(soap);
 	if (_p)
@@ -14179,20 +14193,20 @@ inline ns2__APInitiateService * soap_new_req_ns2__APInitiateService(
 
 inline ns2__APInitiateService * soap_new_set_ns2__APInitiateService(
 	struct soap *soap,
-	std::string *returnURL,
-	std::string *productName,
-	std::string *productDescription,
-	std::string *reconciliationID,
-	std::string *bankID,
-	std::string *countryCode,
-	std::string *escrowAgreement,
-	std::string *languageInterface,
-	std::string *intent,
-	std::string *successURL,
-	std::string *cancelURL,
-	std::string *failureURL,
-	std::string *overridePaymentMethod,
-	const std::string& run)
+	wchar_t *returnURL,
+	wchar_t *productName,
+	wchar_t *productDescription,
+	wchar_t *reconciliationID,
+	wchar_t *bankID,
+	wchar_t *countryCode,
+	wchar_t *escrowAgreement,
+	wchar_t *languageInterface,
+	wchar_t *intent,
+	wchar_t *successURL,
+	wchar_t *cancelURL,
+	wchar_t *failureURL,
+	wchar_t *overridePaymentMethod,
+	wchar_t *run)
 {
 	ns2__APInitiateService *_p = soap_new_ns2__APInitiateService(soap);
 	if (_p)
@@ -14260,12 +14274,12 @@ inline ns2__Address * soap_new_req_ns2__Address(
 
 inline ns2__Address * soap_new_set_ns2__Address(
 	struct soap *soap,
-	std::string *street1,
-	std::string *street2,
-	std::string *city,
-	std::string *state,
-	std::string *postalCode,
-	std::string *country)
+	wchar_t *street1,
+	wchar_t *street2,
+	wchar_t *city,
+	wchar_t *state,
+	wchar_t *postalCode,
+	wchar_t *country)
 {
 	ns2__Address *_p = soap_new_ns2__Address(soap);
 	if (_p)
@@ -14325,11 +14339,11 @@ inline ns2__PersonalId * soap_new_req_ns2__PersonalId(
 
 inline ns2__PersonalId * soap_new_set_ns2__PersonalId(
 	struct soap *soap,
-	std::string *number,
-	std::string *type,
-	std::string *name,
-	std::string *country,
-	std::string *address)
+	wchar_t *number,
+	wchar_t *type,
+	wchar_t *name,
+	wchar_t *country,
+	wchar_t *address)
 {
 	ns2__PersonalId *_p = soap_new_ns2__PersonalId(soap);
 	if (_p)
@@ -14378,7 +14392,7 @@ inline ns2__BoletoPaymentService * soap_new_ns2__BoletoPaymentService(struct soa
 
 inline ns2__BoletoPaymentService * soap_new_req_ns2__BoletoPaymentService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__BoletoPaymentService *_p = soap_new_ns2__BoletoPaymentService(soap);
 	if (_p)
@@ -14390,10 +14404,10 @@ inline ns2__BoletoPaymentService * soap_new_req_ns2__BoletoPaymentService(
 
 inline ns2__BoletoPaymentService * soap_new_set_ns2__BoletoPaymentService(
 	struct soap *soap,
-	std::string *instruction,
-	std::string *expirationDate,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *instruction,
+	wchar_t *expirationDate,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__BoletoPaymentService *_p = soap_new_ns2__BoletoPaymentService(soap);
 	if (_p)
@@ -14441,7 +14455,7 @@ inline ns2__ChinaRefundService * soap_new_ns2__ChinaRefundService(struct soap *s
 
 inline ns2__ChinaRefundService * soap_new_req_ns2__ChinaRefundService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__ChinaRefundService *_p = soap_new_ns2__ChinaRefundService(soap);
 	if (_p)
@@ -14453,10 +14467,10 @@ inline ns2__ChinaRefundService * soap_new_req_ns2__ChinaRefundService(
 
 inline ns2__ChinaRefundService * soap_new_set_ns2__ChinaRefundService(
 	struct soap *soap,
-	std::string *chinaPaymentRequestID,
-	std::string *chinaPaymentRequestToken,
-	std::string *refundReason,
-	const std::string& run)
+	wchar_t *chinaPaymentRequestID,
+	wchar_t *chinaPaymentRequestToken,
+	wchar_t *refundReason,
+	wchar_t *run)
 {
 	ns2__ChinaRefundService *_p = soap_new_ns2__ChinaRefundService(soap);
 	if (_p)
@@ -14504,7 +14518,7 @@ inline ns2__ChinaPaymentService * soap_new_ns2__ChinaPaymentService(struct soap 
 
 inline ns2__ChinaPaymentService * soap_new_req_ns2__ChinaPaymentService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__ChinaPaymentService *_p = soap_new_ns2__ChinaPaymentService(soap);
 	if (_p)
@@ -14516,13 +14530,13 @@ inline ns2__ChinaPaymentService * soap_new_req_ns2__ChinaPaymentService(
 
 inline ns2__ChinaPaymentService * soap_new_set_ns2__ChinaPaymentService(
 	struct soap *soap,
-	std::string *paymentMode,
-	std::string *returnURL,
-	std::string *pickUpAddress,
-	std::string *pickUpPhoneNumber,
-	std::string *pickUpPostalCode,
-	std::string *pickUpName,
-	const std::string& run)
+	wchar_t *paymentMode,
+	wchar_t *returnURL,
+	wchar_t *pickUpAddress,
+	wchar_t *pickUpPhoneNumber,
+	wchar_t *pickUpPostalCode,
+	wchar_t *pickUpName,
+	wchar_t *run)
 {
 	ns2__ChinaPaymentService *_p = soap_new_ns2__ChinaPaymentService(soap);
 	if (_p)
@@ -14573,7 +14587,7 @@ inline ns2__PayPalPreapprovedUpdateService * soap_new_ns2__PayPalPreapprovedUpda
 
 inline ns2__PayPalPreapprovedUpdateService * soap_new_req_ns2__PayPalPreapprovedUpdateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalPreapprovedUpdateService *_p = soap_new_ns2__PayPalPreapprovedUpdateService(soap);
 	if (_p)
@@ -14585,9 +14599,9 @@ inline ns2__PayPalPreapprovedUpdateService * soap_new_req_ns2__PayPalPreapproved
 
 inline ns2__PayPalPreapprovedUpdateService * soap_new_set_ns2__PayPalPreapprovedUpdateService(
 	struct soap *soap,
-	std::string *mpID,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *mpID,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__PayPalPreapprovedUpdateService *_p = soap_new_ns2__PayPalPreapprovedUpdateService(soap);
 	if (_p)
@@ -14634,7 +14648,7 @@ inline ns2__PayPalPreapprovedPaymentService * soap_new_ns2__PayPalPreapprovedPay
 
 inline ns2__PayPalPreapprovedPaymentService * soap_new_req_ns2__PayPalPreapprovedPaymentService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalPreapprovedPaymentService *_p = soap_new_ns2__PayPalPreapprovedPaymentService(soap);
 	if (_p)
@@ -14646,9 +14660,9 @@ inline ns2__PayPalPreapprovedPaymentService * soap_new_req_ns2__PayPalPreapprove
 
 inline ns2__PayPalPreapprovedPaymentService * soap_new_set_ns2__PayPalPreapprovedPaymentService(
 	struct soap *soap,
-	std::string *mpID,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *mpID,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__PayPalPreapprovedPaymentService *_p = soap_new_ns2__PayPalPreapprovedPaymentService(soap);
 	if (_p)
@@ -14695,7 +14709,7 @@ inline ns2__PayPalButtonCreateService * soap_new_ns2__PayPalButtonCreateService(
 
 inline ns2__PayPalButtonCreateService * soap_new_req_ns2__PayPalButtonCreateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalButtonCreateService *_p = soap_new_ns2__PayPalButtonCreateService(soap);
 	if (_p)
@@ -14707,9 +14721,9 @@ inline ns2__PayPalButtonCreateService * soap_new_req_ns2__PayPalButtonCreateServ
 
 inline ns2__PayPalButtonCreateService * soap_new_set_ns2__PayPalButtonCreateService(
 	struct soap *soap,
-	std::string *buttonType,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *buttonType,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__PayPalButtonCreateService *_p = soap_new_ns2__PayPalButtonCreateService(soap);
 	if (_p)
@@ -14756,7 +14770,7 @@ inline ns2__PinDebitReversalService * soap_new_ns2__PinDebitReversalService(stru
 
 inline ns2__PinDebitReversalService * soap_new_req_ns2__PinDebitReversalService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PinDebitReversalService *_p = soap_new_ns2__PinDebitReversalService(soap);
 	if (_p)
@@ -14768,8 +14782,8 @@ inline ns2__PinDebitReversalService * soap_new_req_ns2__PinDebitReversalService(
 
 inline ns2__PinDebitReversalService * soap_new_set_ns2__PinDebitReversalService(
 	struct soap *soap,
-	std::string *pinDebitRequestID,
-	const std::string& run)
+	wchar_t *pinDebitRequestID,
+	wchar_t *run)
 {
 	ns2__PinDebitReversalService *_p = soap_new_ns2__PinDebitReversalService(soap);
 	if (_p)
@@ -14815,7 +14829,7 @@ inline ns2__PinDebitCreditService * soap_new_ns2__PinDebitCreditService(struct s
 
 inline ns2__PinDebitCreditService * soap_new_req_ns2__PinDebitCreditService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PinDebitCreditService *_p = soap_new_ns2__PinDebitCreditService(soap);
 	if (_p)
@@ -14827,14 +14841,14 @@ inline ns2__PinDebitCreditService * soap_new_req_ns2__PinDebitCreditService(
 
 inline ns2__PinDebitCreditService * soap_new_set_ns2__PinDebitCreditService(
 	struct soap *soap,
-	std::string *networkOrder,
-	std::string *commerceIndicator,
-	std::string *reconciliationID,
-	std::string *overridePaymentMethod,
-	std::string *paymentType,
-	std::string *ebtCategory,
-	std::string *transactionType,
-	const std::string& run)
+	wchar_t *networkOrder,
+	wchar_t *commerceIndicator,
+	wchar_t *reconciliationID,
+	wchar_t *overridePaymentMethod,
+	wchar_t *paymentType,
+	wchar_t *ebtCategory,
+	wchar_t *transactionType,
+	wchar_t *run)
 {
 	ns2__PinDebitCreditService *_p = soap_new_ns2__PinDebitCreditService(soap);
 	if (_p)
@@ -14886,7 +14900,7 @@ inline ns2__PinDebitPurchaseService * soap_new_ns2__PinDebitPurchaseService(stru
 
 inline ns2__PinDebitPurchaseService * soap_new_req_ns2__PinDebitPurchaseService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PinDebitPurchaseService *_p = soap_new_ns2__PinDebitPurchaseService(soap);
 	if (_p)
@@ -14898,17 +14912,17 @@ inline ns2__PinDebitPurchaseService * soap_new_req_ns2__PinDebitPurchaseService(
 
 inline ns2__PinDebitPurchaseService * soap_new_set_ns2__PinDebitPurchaseService(
 	struct soap *soap,
-	std::string *networkOrder,
-	std::string *commerceIndicator,
-	std::string *reconciliationID,
-	std::string *partialAuthIndicator,
-	std::string *overridePaymentMethod,
-	std::string *paymentType,
-	std::string *ebtCategory,
-	std::string *transactionType,
-	std::string *ebtVoucherSerialNumber,
-	std::string *authorizationCode,
-	const std::string& run)
+	wchar_t *networkOrder,
+	wchar_t *commerceIndicator,
+	wchar_t *reconciliationID,
+	wchar_t **partialAuthIndicator,
+	wchar_t *overridePaymentMethod,
+	wchar_t *paymentType,
+	wchar_t *ebtCategory,
+	wchar_t *transactionType,
+	wchar_t *ebtVoucherSerialNumber,
+	wchar_t *authorizationCode,
+	wchar_t *run)
 {
 	ns2__PinDebitPurchaseService *_p = soap_new_ns2__PinDebitPurchaseService(soap);
 	if (_p)
@@ -14963,7 +14977,7 @@ inline ns2__PinlessDebitReversalService * soap_new_ns2__PinlessDebitReversalServ
 
 inline ns2__PinlessDebitReversalService * soap_new_req_ns2__PinlessDebitReversalService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PinlessDebitReversalService *_p = soap_new_ns2__PinlessDebitReversalService(soap);
 	if (_p)
@@ -14975,10 +14989,10 @@ inline ns2__PinlessDebitReversalService * soap_new_req_ns2__PinlessDebitReversal
 
 inline ns2__PinlessDebitReversalService * soap_new_set_ns2__PinlessDebitReversalService(
 	struct soap *soap,
-	std::string *pinlessDebitRequestID,
-	std::string *pinlessDebitRequestToken,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *pinlessDebitRequestID,
+	wchar_t *pinlessDebitRequestToken,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__PinlessDebitReversalService *_p = soap_new_ns2__PinlessDebitReversalService(soap);
 	if (_p)
@@ -15026,7 +15040,7 @@ inline ns2__PinlessDebitValidateService * soap_new_ns2__PinlessDebitValidateServ
 
 inline ns2__PinlessDebitValidateService * soap_new_req_ns2__PinlessDebitValidateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PinlessDebitValidateService *_p = soap_new_ns2__PinlessDebitValidateService(soap);
 	if (_p)
@@ -15038,7 +15052,7 @@ inline ns2__PinlessDebitValidateService * soap_new_req_ns2__PinlessDebitValidate
 
 inline ns2__PinlessDebitValidateService * soap_new_set_ns2__PinlessDebitValidateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PinlessDebitValidateService *_p = soap_new_ns2__PinlessDebitValidateService(soap);
 	if (_p)
@@ -15083,7 +15097,7 @@ inline ns2__PinlessDebitService * soap_new_ns2__PinlessDebitService(struct soap 
 
 inline ns2__PinlessDebitService * soap_new_req_ns2__PinlessDebitService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PinlessDebitService *_p = soap_new_ns2__PinlessDebitService(soap);
 	if (_p)
@@ -15095,9 +15109,9 @@ inline ns2__PinlessDebitService * soap_new_req_ns2__PinlessDebitService(
 
 inline ns2__PinlessDebitService * soap_new_set_ns2__PinlessDebitService(
 	struct soap *soap,
-	std::string *reconciliationID,
-	std::string *commerceIndicator,
-	const std::string& run)
+	wchar_t *reconciliationID,
+	wchar_t *commerceIndicator,
+	wchar_t *run)
 {
 	ns2__PinlessDebitService *_p = soap_new_ns2__PinlessDebitService(soap);
 	if (_p)
@@ -15144,7 +15158,7 @@ inline ns2__VoidService * soap_new_ns2__VoidService(struct soap *soap, int n = -
 
 inline ns2__VoidService * soap_new_req_ns2__VoidService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__VoidService *_p = soap_new_ns2__VoidService(soap);
 	if (_p)
@@ -15156,9 +15170,9 @@ inline ns2__VoidService * soap_new_req_ns2__VoidService(
 
 inline ns2__VoidService * soap_new_set_ns2__VoidService(
 	struct soap *soap,
-	std::string *voidRequestID,
-	std::string *voidRequestToken,
-	const std::string& run)
+	wchar_t *voidRequestID,
+	wchar_t *voidRequestToken,
+	wchar_t *run)
 {
 	ns2__VoidService *_p = soap_new_ns2__VoidService(soap);
 	if (_p)
@@ -15205,7 +15219,7 @@ inline ns2__PayPalDoRefTransactionService * soap_new_ns2__PayPalDoRefTransaction
 
 inline ns2__PayPalDoRefTransactionService * soap_new_req_ns2__PayPalDoRefTransactionService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalDoRefTransactionService *_p = soap_new_ns2__PayPalDoRefTransactionService(soap);
 	if (_p)
@@ -15217,16 +15231,16 @@ inline ns2__PayPalDoRefTransactionService * soap_new_req_ns2__PayPalDoRefTransac
 
 inline ns2__PayPalDoRefTransactionService * soap_new_set_ns2__PayPalDoRefTransactionService(
 	struct soap *soap,
-	std::string *paypalBillingAgreementId,
-	std::string *paypalPaymentType,
-	std::string *paypalReqconfirmshipping,
-	std::string *paypalReturnFmfDetails,
-	std::string *paypalSoftDescriptor,
-	std::string *paypalShippingdiscount,
-	std::string *paypalDesc,
-	std::string *invoiceNumber,
-	std::string *paypalEcNotifyUrl,
-	const std::string& run)
+	wchar_t *paypalBillingAgreementId,
+	wchar_t *paypalPaymentType,
+	wchar_t *paypalReqconfirmshipping,
+	wchar_t *paypalReturnFmfDetails,
+	wchar_t *paypalSoftDescriptor,
+	wchar_t *paypalShippingdiscount,
+	wchar_t *paypalDesc,
+	wchar_t *invoiceNumber,
+	wchar_t *paypalEcNotifyUrl,
+	wchar_t *run)
 {
 	ns2__PayPalDoRefTransactionService *_p = soap_new_ns2__PayPalDoRefTransactionService(soap);
 	if (_p)
@@ -15280,7 +15294,7 @@ inline ns2__PayPalCreateAgreementService * soap_new_ns2__PayPalCreateAgreementSe
 
 inline ns2__PayPalCreateAgreementService * soap_new_req_ns2__PayPalCreateAgreementService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalCreateAgreementService *_p = soap_new_ns2__PayPalCreateAgreementService(soap);
 	if (_p)
@@ -15292,10 +15306,10 @@ inline ns2__PayPalCreateAgreementService * soap_new_req_ns2__PayPalCreateAgreeme
 
 inline ns2__PayPalCreateAgreementService * soap_new_set_ns2__PayPalCreateAgreementService(
 	struct soap *soap,
-	std::string *paypalToken,
-	std::string *paypalEcSetRequestID,
-	std::string *paypalEcSetRequestToken,
-	const std::string& run)
+	wchar_t *paypalToken,
+	wchar_t *paypalEcSetRequestID,
+	wchar_t *paypalEcSetRequestToken,
+	wchar_t *run)
 {
 	ns2__PayPalCreateAgreementService *_p = soap_new_ns2__PayPalCreateAgreementService(soap);
 	if (_p)
@@ -15343,7 +15357,7 @@ inline ns2__PayPalUpdateAgreementService * soap_new_ns2__PayPalUpdateAgreementSe
 
 inline ns2__PayPalUpdateAgreementService * soap_new_req_ns2__PayPalUpdateAgreementService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalUpdateAgreementService *_p = soap_new_ns2__PayPalUpdateAgreementService(soap);
 	if (_p)
@@ -15355,11 +15369,11 @@ inline ns2__PayPalUpdateAgreementService * soap_new_req_ns2__PayPalUpdateAgreeme
 
 inline ns2__PayPalUpdateAgreementService * soap_new_set_ns2__PayPalUpdateAgreementService(
 	struct soap *soap,
-	std::string *paypalBillingAgreementId,
-	std::string *paypalBillingAgreementStatus,
-	std::string *paypalBillingAgreementDesc,
-	std::string *paypalBillingAgreementCustom,
-	const std::string& run)
+	wchar_t *paypalBillingAgreementId,
+	wchar_t *paypalBillingAgreementStatus,
+	wchar_t *paypalBillingAgreementDesc,
+	wchar_t *paypalBillingAgreementCustom,
+	wchar_t *run)
 {
 	ns2__PayPalUpdateAgreementService *_p = soap_new_ns2__PayPalUpdateAgreementService(soap);
 	if (_p)
@@ -15408,7 +15422,7 @@ inline ns2__PayPalAuthorizationService * soap_new_ns2__PayPalAuthorizationServic
 
 inline ns2__PayPalAuthorizationService * soap_new_req_ns2__PayPalAuthorizationService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalAuthorizationService *_p = soap_new_ns2__PayPalAuthorizationService(soap);
 	if (_p)
@@ -15420,13 +15434,13 @@ inline ns2__PayPalAuthorizationService * soap_new_req_ns2__PayPalAuthorizationSe
 
 inline ns2__PayPalAuthorizationService * soap_new_set_ns2__PayPalAuthorizationService(
 	struct soap *soap,
-	std::string *paypalOrderId,
-	std::string *paypalEcOrderSetupRequestID,
-	std::string *paypalEcOrderSetupRequestToken,
-	std::string *paypalDoRefTransactionRequestID,
-	std::string *paypalDoRefTransactionRequestToken,
-	std::string *paypalCustomerEmail,
-	const std::string& run)
+	wchar_t *paypalOrderId,
+	wchar_t *paypalEcOrderSetupRequestID,
+	wchar_t *paypalEcOrderSetupRequestToken,
+	wchar_t *paypalDoRefTransactionRequestID,
+	wchar_t *paypalDoRefTransactionRequestToken,
+	wchar_t *paypalCustomerEmail,
+	wchar_t *run)
 {
 	ns2__PayPalAuthorizationService *_p = soap_new_ns2__PayPalAuthorizationService(soap);
 	if (_p)
@@ -15477,7 +15491,7 @@ inline ns2__PayPalEcOrderSetupService * soap_new_ns2__PayPalEcOrderSetupService(
 
 inline ns2__PayPalEcOrderSetupService * soap_new_req_ns2__PayPalEcOrderSetupService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalEcOrderSetupService *_p = soap_new_ns2__PayPalEcOrderSetupService(soap);
 	if (_p)
@@ -15489,15 +15503,15 @@ inline ns2__PayPalEcOrderSetupService * soap_new_req_ns2__PayPalEcOrderSetupServ
 
 inline ns2__PayPalEcOrderSetupService * soap_new_set_ns2__PayPalEcOrderSetupService(
 	struct soap *soap,
-	std::string *paypalToken,
-	std::string *paypalPayerId,
-	std::string *paypalCustomerEmail,
-	std::string *paypalDesc,
-	std::string *paypalEcSetRequestID,
-	std::string *paypalEcSetRequestToken,
-	std::string *promoCode0,
-	std::string *invoiceNumber,
-	const std::string& run)
+	wchar_t *paypalToken,
+	wchar_t *paypalPayerId,
+	wchar_t *paypalCustomerEmail,
+	wchar_t *paypalDesc,
+	wchar_t *paypalEcSetRequestID,
+	wchar_t *paypalEcSetRequestToken,
+	wchar_t *promoCode0,
+	wchar_t *invoiceNumber,
+	wchar_t *run)
 {
 	ns2__PayPalEcOrderSetupService *_p = soap_new_ns2__PayPalEcOrderSetupService(soap);
 	if (_p)
@@ -15550,7 +15564,7 @@ inline ns2__PayPalRefundService * soap_new_ns2__PayPalRefundService(struct soap 
 
 inline ns2__PayPalRefundService * soap_new_req_ns2__PayPalRefundService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalRefundService *_p = soap_new_ns2__PayPalRefundService(soap);
 	if (_p)
@@ -15562,11 +15576,11 @@ inline ns2__PayPalRefundService * soap_new_req_ns2__PayPalRefundService(
 
 inline ns2__PayPalRefundService * soap_new_set_ns2__PayPalRefundService(
 	struct soap *soap,
-	std::string *paypalDoCaptureRequestID,
-	std::string *paypalDoCaptureRequestToken,
-	std::string *paypalCaptureId,
-	std::string *paypalNote,
-	const std::string& run)
+	wchar_t *paypalDoCaptureRequestID,
+	wchar_t *paypalDoCaptureRequestToken,
+	wchar_t *paypalCaptureId,
+	wchar_t *paypalNote,
+	wchar_t *run)
 {
 	ns2__PayPalRefundService *_p = soap_new_ns2__PayPalRefundService(soap);
 	if (_p)
@@ -15615,7 +15629,7 @@ inline ns2__PayPalAuthReversalService * soap_new_ns2__PayPalAuthReversalService(
 
 inline ns2__PayPalAuthReversalService * soap_new_req_ns2__PayPalAuthReversalService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalAuthReversalService *_p = soap_new_ns2__PayPalAuthReversalService(soap);
 	if (_p)
@@ -15627,14 +15641,14 @@ inline ns2__PayPalAuthReversalService * soap_new_req_ns2__PayPalAuthReversalServ
 
 inline ns2__PayPalAuthReversalService * soap_new_set_ns2__PayPalAuthReversalService(
 	struct soap *soap,
-	std::string *paypalAuthorizationId,
-	std::string *paypalEcDoPaymentRequestID,
-	std::string *paypalEcDoPaymentRequestToken,
-	std::string *paypalAuthorizationRequestID,
-	std::string *paypalAuthorizationRequestToken,
-	std::string *paypalEcOrderSetupRequestID,
-	std::string *paypalEcOrderSetupRequestToken,
-	const std::string& run)
+	wchar_t *paypalAuthorizationId,
+	wchar_t *paypalEcDoPaymentRequestID,
+	wchar_t *paypalEcDoPaymentRequestToken,
+	wchar_t *paypalAuthorizationRequestID,
+	wchar_t *paypalAuthorizationRequestToken,
+	wchar_t *paypalEcOrderSetupRequestID,
+	wchar_t *paypalEcOrderSetupRequestToken,
+	wchar_t *run)
 {
 	ns2__PayPalAuthReversalService *_p = soap_new_ns2__PayPalAuthReversalService(soap);
 	if (_p)
@@ -15686,7 +15700,7 @@ inline ns2__PayPalDoCaptureService * soap_new_ns2__PayPalDoCaptureService(struct
 
 inline ns2__PayPalDoCaptureService * soap_new_req_ns2__PayPalDoCaptureService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalDoCaptureService *_p = soap_new_ns2__PayPalDoCaptureService(soap);
 	if (_p)
@@ -15698,14 +15712,14 @@ inline ns2__PayPalDoCaptureService * soap_new_req_ns2__PayPalDoCaptureService(
 
 inline ns2__PayPalDoCaptureService * soap_new_set_ns2__PayPalDoCaptureService(
 	struct soap *soap,
-	std::string *paypalAuthorizationId,
-	std::string *completeType,
-	std::string *paypalEcDoPaymentRequestID,
-	std::string *paypalEcDoPaymentRequestToken,
-	std::string *paypalAuthorizationRequestID,
-	std::string *paypalAuthorizationRequestToken,
-	std::string *invoiceNumber,
-	const std::string& run)
+	wchar_t *paypalAuthorizationId,
+	wchar_t *completeType,
+	wchar_t *paypalEcDoPaymentRequestID,
+	wchar_t *paypalEcDoPaymentRequestToken,
+	wchar_t *paypalAuthorizationRequestID,
+	wchar_t *paypalAuthorizationRequestToken,
+	wchar_t *invoiceNumber,
+	wchar_t *run)
 {
 	ns2__PayPalDoCaptureService *_p = soap_new_ns2__PayPalDoCaptureService(soap);
 	if (_p)
@@ -15757,7 +15771,7 @@ inline ns2__PayPalEcDoPaymentService * soap_new_ns2__PayPalEcDoPaymentService(st
 
 inline ns2__PayPalEcDoPaymentService * soap_new_req_ns2__PayPalEcDoPaymentService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalEcDoPaymentService *_p = soap_new_ns2__PayPalEcDoPaymentService(soap);
 	if (_p)
@@ -15769,15 +15783,15 @@ inline ns2__PayPalEcDoPaymentService * soap_new_req_ns2__PayPalEcDoPaymentServic
 
 inline ns2__PayPalEcDoPaymentService * soap_new_set_ns2__PayPalEcDoPaymentService(
 	struct soap *soap,
-	std::string *paypalToken,
-	std::string *paypalPayerId,
-	std::string *paypalCustomerEmail,
-	std::string *paypalDesc,
-	std::string *paypalEcSetRequestID,
-	std::string *paypalEcSetRequestToken,
-	std::string *promoCode0,
-	std::string *invoiceNumber,
-	const std::string& run)
+	wchar_t *paypalToken,
+	wchar_t *paypalPayerId,
+	wchar_t *paypalCustomerEmail,
+	wchar_t *paypalDesc,
+	wchar_t *paypalEcSetRequestID,
+	wchar_t *paypalEcSetRequestToken,
+	wchar_t *promoCode0,
+	wchar_t *invoiceNumber,
+	wchar_t *run)
 {
 	ns2__PayPalEcDoPaymentService *_p = soap_new_ns2__PayPalEcDoPaymentService(soap);
 	if (_p)
@@ -15830,7 +15844,7 @@ inline ns2__PayPalEcGetDetailsService * soap_new_ns2__PayPalEcGetDetailsService(
 
 inline ns2__PayPalEcGetDetailsService * soap_new_req_ns2__PayPalEcGetDetailsService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalEcGetDetailsService *_p = soap_new_ns2__PayPalEcGetDetailsService(soap);
 	if (_p)
@@ -15842,10 +15856,10 @@ inline ns2__PayPalEcGetDetailsService * soap_new_req_ns2__PayPalEcGetDetailsServ
 
 inline ns2__PayPalEcGetDetailsService * soap_new_set_ns2__PayPalEcGetDetailsService(
 	struct soap *soap,
-	std::string *paypalToken,
-	std::string *paypalEcSetRequestID,
-	std::string *paypalEcSetRequestToken,
-	const std::string& run)
+	wchar_t *paypalToken,
+	wchar_t *paypalEcSetRequestID,
+	wchar_t *paypalEcSetRequestToken,
+	wchar_t *run)
 {
 	ns2__PayPalEcGetDetailsService *_p = soap_new_ns2__PayPalEcGetDetailsService(soap);
 	if (_p)
@@ -15893,7 +15907,7 @@ inline ns2__PayPalEcSetService * soap_new_ns2__PayPalEcSetService(struct soap *s
 
 inline ns2__PayPalEcSetService * soap_new_req_ns2__PayPalEcSetService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalEcSetService *_p = soap_new_ns2__PayPalEcSetService(soap);
 	if (_p)
@@ -15905,32 +15919,32 @@ inline ns2__PayPalEcSetService * soap_new_req_ns2__PayPalEcSetService(
 
 inline ns2__PayPalEcSetService * soap_new_set_ns2__PayPalEcSetService(
 	struct soap *soap,
-	std::string *paypalReturn,
-	std::string *paypalCancelReturn,
-	std::string *paypalMaxamt,
-	std::string *paypalCustomerEmail,
-	std::string *paypalDesc,
-	std::string *paypalReqconfirmshipping,
-	std::string *paypalNoshipping,
-	std::string *paypalAddressOverride,
-	std::string *paypalToken,
-	std::string *paypalLc,
-	std::string *paypalPagestyle,
-	std::string *paypalHdrimg,
-	std::string *paypalHdrbordercolor,
-	std::string *paypalHdrbackcolor,
-	std::string *paypalPayflowcolor,
-	std::string *paypalEcSetRequestID,
-	std::string *paypalEcSetRequestToken,
-	std::string *promoCode0,
-	std::string *requestBillingAddress,
-	std::string *invoiceNumber,
-	std::string *paypalBillingType,
-	std::string *paypalBillingAgreementDesc,
-	std::string *paypalPaymentType,
-	std::string *paypalBillingAgreementCustom,
-	std::string *paypalLogoimg,
-	const std::string& run)
+	wchar_t *paypalReturn,
+	wchar_t *paypalCancelReturn,
+	wchar_t *paypalMaxamt,
+	wchar_t *paypalCustomerEmail,
+	wchar_t *paypalDesc,
+	wchar_t *paypalReqconfirmshipping,
+	wchar_t *paypalNoshipping,
+	wchar_t *paypalAddressOverride,
+	wchar_t *paypalToken,
+	wchar_t *paypalLc,
+	wchar_t *paypalPagestyle,
+	wchar_t *paypalHdrimg,
+	wchar_t *paypalHdrbordercolor,
+	wchar_t *paypalHdrbackcolor,
+	wchar_t *paypalPayflowcolor,
+	wchar_t *paypalEcSetRequestID,
+	wchar_t *paypalEcSetRequestToken,
+	wchar_t *promoCode0,
+	wchar_t *requestBillingAddress,
+	wchar_t *invoiceNumber,
+	wchar_t *paypalBillingType,
+	wchar_t *paypalBillingAgreementDesc,
+	wchar_t *paypalPaymentType,
+	wchar_t *paypalBillingAgreementCustom,
+	wchar_t *paypalLogoimg,
+	wchar_t *run)
 {
 	ns2__PayPalEcSetService *_p = soap_new_ns2__PayPalEcSetService(soap);
 	if (_p)
@@ -16000,7 +16014,7 @@ inline ns2__PayPalCreditService * soap_new_ns2__PayPalCreditService(struct soap 
 
 inline ns2__PayPalCreditService * soap_new_req_ns2__PayPalCreditService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalCreditService *_p = soap_new_ns2__PayPalCreditService(soap);
 	if (_p)
@@ -16012,10 +16026,10 @@ inline ns2__PayPalCreditService * soap_new_req_ns2__PayPalCreditService(
 
 inline ns2__PayPalCreditService * soap_new_set_ns2__PayPalCreditService(
 	struct soap *soap,
-	std::string *payPalPaymentRequestID,
-	std::string *reconciliationID,
-	std::string *payPalPaymentRequestToken,
-	const std::string& run)
+	wchar_t *payPalPaymentRequestID,
+	wchar_t *reconciliationID,
+	wchar_t *payPalPaymentRequestToken,
+	wchar_t *run)
 {
 	ns2__PayPalCreditService *_p = soap_new_ns2__PayPalCreditService(soap);
 	if (_p)
@@ -16063,7 +16077,7 @@ inline ns2__PayPalPaymentService * soap_new_ns2__PayPalPaymentService(struct soa
 
 inline ns2__PayPalPaymentService * soap_new_req_ns2__PayPalPaymentService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayPalPaymentService *_p = soap_new_ns2__PayPalPaymentService(soap);
 	if (_p)
@@ -16075,10 +16089,10 @@ inline ns2__PayPalPaymentService * soap_new_req_ns2__PayPalPaymentService(
 
 inline ns2__PayPalPaymentService * soap_new_set_ns2__PayPalPaymentService(
 	struct soap *soap,
-	std::string *cancelURL,
-	std::string *successURL,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *cancelURL,
+	wchar_t *successURL,
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__PayPalPaymentService *_p = soap_new_ns2__PayPalPaymentService(soap);
 	if (_p)
@@ -16126,7 +16140,7 @@ inline ns2__PaySubscriptionDeleteService * soap_new_ns2__PaySubscriptionDeleteSe
 
 inline ns2__PaySubscriptionDeleteService * soap_new_req_ns2__PaySubscriptionDeleteService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PaySubscriptionDeleteService *_p = soap_new_ns2__PaySubscriptionDeleteService(soap);
 	if (_p)
@@ -16138,7 +16152,7 @@ inline ns2__PaySubscriptionDeleteService * soap_new_req_ns2__PaySubscriptionDele
 
 inline ns2__PaySubscriptionDeleteService * soap_new_set_ns2__PaySubscriptionDeleteService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PaySubscriptionDeleteService *_p = soap_new_ns2__PaySubscriptionDeleteService(soap);
 	if (_p)
@@ -16183,7 +16197,7 @@ inline ns2__PaySubscriptionRetrieveService * soap_new_ns2__PaySubscriptionRetrie
 
 inline ns2__PaySubscriptionRetrieveService * soap_new_req_ns2__PaySubscriptionRetrieveService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PaySubscriptionRetrieveService *_p = soap_new_ns2__PaySubscriptionRetrieveService(soap);
 	if (_p)
@@ -16195,7 +16209,7 @@ inline ns2__PaySubscriptionRetrieveService * soap_new_req_ns2__PaySubscriptionRe
 
 inline ns2__PaySubscriptionRetrieveService * soap_new_set_ns2__PaySubscriptionRetrieveService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PaySubscriptionRetrieveService *_p = soap_new_ns2__PaySubscriptionRetrieveService(soap);
 	if (_p)
@@ -16240,7 +16254,7 @@ inline ns2__PaySubscriptionEventUpdateService * soap_new_ns2__PaySubscriptionEve
 
 inline ns2__PaySubscriptionEventUpdateService * soap_new_req_ns2__PaySubscriptionEventUpdateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PaySubscriptionEventUpdateService *_p = soap_new_ns2__PaySubscriptionEventUpdateService(soap);
 	if (_p)
@@ -16252,8 +16266,8 @@ inline ns2__PaySubscriptionEventUpdateService * soap_new_req_ns2__PaySubscriptio
 
 inline ns2__PaySubscriptionEventUpdateService * soap_new_set_ns2__PaySubscriptionEventUpdateService(
 	struct soap *soap,
-	std::string *action,
-	const std::string& run)
+	wchar_t *action,
+	wchar_t *run)
 {
 	ns2__PaySubscriptionEventUpdateService *_p = soap_new_ns2__PaySubscriptionEventUpdateService(soap);
 	if (_p)
@@ -16299,7 +16313,7 @@ inline ns2__PaySubscriptionUpdateService * soap_new_ns2__PaySubscriptionUpdateSe
 
 inline ns2__PaySubscriptionUpdateService * soap_new_req_ns2__PaySubscriptionUpdateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PaySubscriptionUpdateService *_p = soap_new_ns2__PaySubscriptionUpdateService(soap);
 	if (_p)
@@ -16311,7 +16325,7 @@ inline ns2__PaySubscriptionUpdateService * soap_new_req_ns2__PaySubscriptionUpda
 
 inline ns2__PaySubscriptionUpdateService * soap_new_set_ns2__PaySubscriptionUpdateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PaySubscriptionUpdateService *_p = soap_new_ns2__PaySubscriptionUpdateService(soap);
 	if (_p)
@@ -16356,7 +16370,7 @@ inline ns2__PaySubscriptionCreateService * soap_new_ns2__PaySubscriptionCreateSe
 
 inline ns2__PaySubscriptionCreateService * soap_new_req_ns2__PaySubscriptionCreateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PaySubscriptionCreateService *_p = soap_new_ns2__PaySubscriptionCreateService(soap);
 	if (_p)
@@ -16368,10 +16382,10 @@ inline ns2__PaySubscriptionCreateService * soap_new_req_ns2__PaySubscriptionCrea
 
 inline ns2__PaySubscriptionCreateService * soap_new_set_ns2__PaySubscriptionCreateService(
 	struct soap *soap,
-	std::string *paymentRequestID,
-	std::string *paymentRequestToken,
-	std::string *disableAutoAuth,
-	const std::string& run)
+	wchar_t *paymentRequestID,
+	wchar_t *paymentRequestToken,
+	wchar_t **disableAutoAuth,
+	wchar_t *run)
 {
 	ns2__PaySubscriptionCreateService *_p = soap_new_ns2__PaySubscriptionCreateService(soap);
 	if (_p)
@@ -16419,7 +16433,7 @@ inline ns2__DirectDebitValidateService * soap_new_ns2__DirectDebitValidateServic
 
 inline ns2__DirectDebitValidateService * soap_new_req_ns2__DirectDebitValidateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DirectDebitValidateService *_p = soap_new_ns2__DirectDebitValidateService(soap);
 	if (_p)
@@ -16431,8 +16445,8 @@ inline ns2__DirectDebitValidateService * soap_new_req_ns2__DirectDebitValidateSe
 
 inline ns2__DirectDebitValidateService * soap_new_set_ns2__DirectDebitValidateService(
 	struct soap *soap,
-	std::string *directDebitValidateText,
-	const std::string& run)
+	wchar_t *directDebitValidateText,
+	wchar_t *run)
 {
 	ns2__DirectDebitValidateService *_p = soap_new_ns2__DirectDebitValidateService(soap);
 	if (_p)
@@ -16478,7 +16492,7 @@ inline ns2__DirectDebitRefundService * soap_new_ns2__DirectDebitRefundService(st
 
 inline ns2__DirectDebitRefundService * soap_new_req_ns2__DirectDebitRefundService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DirectDebitRefundService *_p = soap_new_ns2__DirectDebitRefundService(soap);
 	if (_p)
@@ -16490,14 +16504,14 @@ inline ns2__DirectDebitRefundService * soap_new_req_ns2__DirectDebitRefundServic
 
 inline ns2__DirectDebitRefundService * soap_new_set_ns2__DirectDebitRefundService(
 	struct soap *soap,
-	std::string *directDebitRequestID,
-	std::string *reconciliationID,
-	std::string *directDebitRequestToken,
-	std::string *directDebitType,
-	std::string *recurringType,
-	std::string *mandateID,
-	std::string *mandateAuthenticationDate,
-	const std::string& run)
+	wchar_t *directDebitRequestID,
+	wchar_t *reconciliationID,
+	wchar_t *directDebitRequestToken,
+	wchar_t *directDebitType,
+	wchar_t *recurringType,
+	wchar_t *mandateID,
+	wchar_t *mandateAuthenticationDate,
+	wchar_t *run)
 {
 	ns2__DirectDebitRefundService *_p = soap_new_ns2__DirectDebitRefundService(soap);
 	if (_p)
@@ -16549,7 +16563,7 @@ inline ns2__DirectDebitService * soap_new_ns2__DirectDebitService(struct soap *s
 
 inline ns2__DirectDebitService * soap_new_req_ns2__DirectDebitService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DirectDebitService *_p = soap_new_ns2__DirectDebitService(soap);
 	if (_p)
@@ -16561,18 +16575,18 @@ inline ns2__DirectDebitService * soap_new_req_ns2__DirectDebitService(
 
 inline ns2__DirectDebitService * soap_new_set_ns2__DirectDebitService(
 	struct soap *soap,
-	std::string *dateCollect,
-	std::string *directDebitText,
-	std::string *authorizationID,
-	std::string *transactionType,
-	std::string *directDebitType,
-	std::string *validateRequestID,
-	std::string *recurringType,
-	std::string *mandateID,
-	std::string *validateRequestToken,
-	std::string *reconciliationID,
-	std::string *mandateAuthenticationDate,
-	const std::string& run)
+	wchar_t *dateCollect,
+	wchar_t *directDebitText,
+	wchar_t *authorizationID,
+	wchar_t *transactionType,
+	wchar_t *directDebitType,
+	wchar_t *validateRequestID,
+	wchar_t *recurringType,
+	wchar_t *mandateID,
+	wchar_t *validateRequestToken,
+	wchar_t *reconciliationID,
+	wchar_t *mandateAuthenticationDate,
+	wchar_t *run)
 {
 	ns2__DirectDebitService *_p = soap_new_ns2__DirectDebitService(soap);
 	if (_p)
@@ -16628,7 +16642,7 @@ inline ns2__DirectDebitMandateService * soap_new_ns2__DirectDebitMandateService(
 
 inline ns2__DirectDebitMandateService * soap_new_req_ns2__DirectDebitMandateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DirectDebitMandateService *_p = soap_new_ns2__DirectDebitMandateService(soap);
 	if (_p)
@@ -16640,9 +16654,9 @@ inline ns2__DirectDebitMandateService * soap_new_req_ns2__DirectDebitMandateServ
 
 inline ns2__DirectDebitMandateService * soap_new_set_ns2__DirectDebitMandateService(
 	struct soap *soap,
-	std::string *mandateDescriptor,
-	std::string *firstDebitDate,
-	const std::string& run)
+	wchar_t *mandateDescriptor,
+	wchar_t *firstDebitDate,
+	wchar_t *run)
 {
 	ns2__DirectDebitMandateService *_p = soap_new_ns2__DirectDebitMandateService(soap);
 	if (_p)
@@ -16689,7 +16703,7 @@ inline ns2__BankTransferRealTimeService * soap_new_ns2__BankTransferRealTimeServ
 
 inline ns2__BankTransferRealTimeService * soap_new_req_ns2__BankTransferRealTimeService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__BankTransferRealTimeService *_p = soap_new_ns2__BankTransferRealTimeService(soap);
 	if (_p)
@@ -16701,8 +16715,8 @@ inline ns2__BankTransferRealTimeService * soap_new_req_ns2__BankTransferRealTime
 
 inline ns2__BankTransferRealTimeService * soap_new_set_ns2__BankTransferRealTimeService(
 	struct soap *soap,
-	std::string *bankTransferRealTimeType,
-	const std::string& run)
+	wchar_t *bankTransferRealTimeType,
+	wchar_t *run)
 {
 	ns2__BankTransferRealTimeService *_p = soap_new_ns2__BankTransferRealTimeService(soap);
 	if (_p)
@@ -16748,7 +16762,7 @@ inline ns2__BankTransferRefundService * soap_new_ns2__BankTransferRefundService(
 
 inline ns2__BankTransferRefundService * soap_new_req_ns2__BankTransferRefundService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__BankTransferRefundService *_p = soap_new_ns2__BankTransferRefundService(soap);
 	if (_p)
@@ -16760,13 +16774,13 @@ inline ns2__BankTransferRefundService * soap_new_req_ns2__BankTransferRefundServ
 
 inline ns2__BankTransferRefundService * soap_new_set_ns2__BankTransferRefundService(
 	struct soap *soap,
-	std::string *bankTransferRequestID,
-	std::string *bankTransferRealTimeRequestID,
-	std::string *reconciliationID,
-	std::string *bankTransferRealTimeReconciliationID,
-	std::string *bankTransferRequestToken,
-	std::string *bankTransferRealTimeRequestToken,
-	const std::string& run)
+	wchar_t *bankTransferRequestID,
+	wchar_t *bankTransferRealTimeRequestID,
+	wchar_t *reconciliationID,
+	wchar_t *bankTransferRealTimeReconciliationID,
+	wchar_t *bankTransferRequestToken,
+	wchar_t *bankTransferRealTimeRequestToken,
+	wchar_t *run)
 {
 	ns2__BankTransferRefundService *_p = soap_new_ns2__BankTransferRefundService(soap);
 	if (_p)
@@ -16817,7 +16831,7 @@ inline ns2__BankTransferService * soap_new_ns2__BankTransferService(struct soap 
 
 inline ns2__BankTransferService * soap_new_req_ns2__BankTransferService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__BankTransferService *_p = soap_new_ns2__BankTransferService(soap);
 	if (_p)
@@ -16829,7 +16843,7 @@ inline ns2__BankTransferService * soap_new_req_ns2__BankTransferService(
 
 inline ns2__BankTransferService * soap_new_set_ns2__BankTransferService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__BankTransferService *_p = soap_new_ns2__BankTransferService(soap);
 	if (_p)
@@ -16874,7 +16888,7 @@ inline ns2__FXRatesService * soap_new_ns2__FXRatesService(struct soap *soap, int
 
 inline ns2__FXRatesService * soap_new_req_ns2__FXRatesService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__FXRatesService *_p = soap_new_ns2__FXRatesService(soap);
 	if (_p)
@@ -16886,7 +16900,7 @@ inline ns2__FXRatesService * soap_new_req_ns2__FXRatesService(
 
 inline ns2__FXRatesService * soap_new_set_ns2__FXRatesService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__FXRatesService *_p = soap_new_ns2__FXRatesService(soap);
 	if (_p)
@@ -16931,7 +16945,7 @@ inline ns2__ExportService * soap_new_ns2__ExportService(struct soap *soap, int n
 
 inline ns2__ExportService * soap_new_req_ns2__ExportService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__ExportService *_p = soap_new_ns2__ExportService(soap);
 	if (_p)
@@ -16943,11 +16957,11 @@ inline ns2__ExportService * soap_new_req_ns2__ExportService(
 
 inline ns2__ExportService * soap_new_set_ns2__ExportService(
 	struct soap *soap,
-	std::string *addressOperator,
-	std::string *addressWeight,
-	std::string *companyWeight,
-	std::string *nameWeight,
-	const std::string& run)
+	wchar_t *addressOperator,
+	wchar_t *addressWeight,
+	wchar_t *companyWeight,
+	wchar_t *nameWeight,
+	wchar_t *run)
 {
 	ns2__ExportService *_p = soap_new_ns2__ExportService(soap);
 	if (_p)
@@ -16996,7 +17010,7 @@ inline ns2__DAVService * soap_new_ns2__DAVService(struct soap *soap, int n = -1)
 
 inline ns2__DAVService * soap_new_req_ns2__DAVService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DAVService *_p = soap_new_ns2__DAVService(soap);
 	if (_p)
@@ -17008,7 +17022,7 @@ inline ns2__DAVService * soap_new_req_ns2__DAVService(
 
 inline ns2__DAVService * soap_new_set_ns2__DAVService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DAVService *_p = soap_new_ns2__DAVService(soap);
 	if (_p)
@@ -17053,7 +17067,7 @@ inline ns2__AFSService * soap_new_ns2__AFSService(struct soap *soap, int n = -1)
 
 inline ns2__AFSService * soap_new_req_ns2__AFSService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__AFSService *_p = soap_new_ns2__AFSService(soap);
 	if (_p)
@@ -17065,11 +17079,11 @@ inline ns2__AFSService * soap_new_req_ns2__AFSService(
 
 inline ns2__AFSService * soap_new_set_ns2__AFSService(
 	struct soap *soap,
-	std::string *avsCode,
-	std::string *cvCode,
-	std::string *disableAVSScoring,
-	std::string *customRiskModel,
-	const std::string& run)
+	wchar_t *avsCode,
+	wchar_t *cvCode,
+	wchar_t **disableAVSScoring,
+	wchar_t *customRiskModel,
+	wchar_t *run)
 {
 	ns2__AFSService *_p = soap_new_ns2__AFSService(soap);
 	if (_p)
@@ -17118,7 +17132,7 @@ inline ns2__DMEService * soap_new_ns2__DMEService(struct soap *soap, int n = -1)
 
 inline ns2__DMEService * soap_new_req_ns2__DMEService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__DMEService *_p = soap_new_ns2__DMEService(soap);
 	if (_p)
@@ -17130,9 +17144,9 @@ inline ns2__DMEService * soap_new_req_ns2__DMEService(
 
 inline ns2__DMEService * soap_new_set_ns2__DMEService(
 	struct soap *soap,
-	std::string *eventType,
-	std::string *eventPolicy,
-	const std::string& run)
+	wchar_t *eventType,
+	wchar_t *eventPolicy,
+	wchar_t *run)
 {
 	ns2__DMEService *_p = soap_new_ns2__DMEService(soap);
 	if (_p)
@@ -17179,7 +17193,7 @@ inline ns2__TaxService * soap_new_ns2__TaxService(struct soap *soap, int n = -1)
 
 inline ns2__TaxService * soap_new_req_ns2__TaxService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__TaxService *_p = soap_new_ns2__TaxService(soap);
 	if (_p)
@@ -17191,33 +17205,33 @@ inline ns2__TaxService * soap_new_req_ns2__TaxService(
 
 inline ns2__TaxService * soap_new_set_ns2__TaxService(
 	struct soap *soap,
-	std::string *nexus,
-	std::string *noNexus,
-	std::string *orderAcceptanceCity,
-	std::string *orderAcceptanceCounty,
-	std::string *orderAcceptanceCountry,
-	std::string *orderAcceptanceState,
-	std::string *orderAcceptancePostalCode,
-	std::string *orderOriginCity,
-	std::string *orderOriginCounty,
-	std::string *orderOriginCountry,
-	std::string *orderOriginState,
-	std::string *orderOriginPostalCode,
-	std::string *sellerRegistration,
-	std::string *sellerRegistration0,
-	std::string *sellerRegistration1,
-	std::string *sellerRegistration2,
-	std::string *sellerRegistration3,
-	std::string *sellerRegistration4,
-	std::string *sellerRegistration5,
-	std::string *sellerRegistration6,
-	std::string *sellerRegistration7,
-	std::string *sellerRegistration8,
-	std::string *sellerRegistration9,
-	std::string *buyerRegistration,
-	std::string *middlemanRegistration,
-	std::string *pointOfTitleTransfer,
-	const std::string& run)
+	wchar_t *nexus,
+	wchar_t *noNexus,
+	wchar_t *orderAcceptanceCity,
+	wchar_t *orderAcceptanceCounty,
+	wchar_t *orderAcceptanceCountry,
+	wchar_t *orderAcceptanceState,
+	wchar_t *orderAcceptancePostalCode,
+	wchar_t *orderOriginCity,
+	wchar_t *orderOriginCounty,
+	wchar_t *orderOriginCountry,
+	wchar_t *orderOriginState,
+	wchar_t *orderOriginPostalCode,
+	wchar_t *sellerRegistration,
+	wchar_t *sellerRegistration0,
+	wchar_t *sellerRegistration1,
+	wchar_t *sellerRegistration2,
+	wchar_t *sellerRegistration3,
+	wchar_t *sellerRegistration4,
+	wchar_t *sellerRegistration5,
+	wchar_t *sellerRegistration6,
+	wchar_t *sellerRegistration7,
+	wchar_t *sellerRegistration8,
+	wchar_t *sellerRegistration9,
+	wchar_t *buyerRegistration,
+	wchar_t *middlemanRegistration,
+	wchar_t *pointOfTitleTransfer,
+	wchar_t *run)
 {
 	ns2__TaxService *_p = soap_new_ns2__TaxService(soap);
 	if (_p)
@@ -17288,7 +17302,7 @@ inline ns2__PayerAuthValidateService * soap_new_ns2__PayerAuthValidateService(st
 
 inline ns2__PayerAuthValidateService * soap_new_req_ns2__PayerAuthValidateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayerAuthValidateService *_p = soap_new_ns2__PayerAuthValidateService(soap);
 	if (_p)
@@ -17300,8 +17314,8 @@ inline ns2__PayerAuthValidateService * soap_new_req_ns2__PayerAuthValidateServic
 
 inline ns2__PayerAuthValidateService * soap_new_set_ns2__PayerAuthValidateService(
 	struct soap *soap,
-	std::string *signedPARes,
-	const std::string& run)
+	wchar_t *signedPARes,
+	wchar_t *run)
 {
 	ns2__PayerAuthValidateService *_p = soap_new_ns2__PayerAuthValidateService(soap);
 	if (_p)
@@ -17347,7 +17361,7 @@ inline ns2__PayerAuthEnrollService * soap_new_ns2__PayerAuthEnrollService(struct
 
 inline ns2__PayerAuthEnrollService * soap_new_req_ns2__PayerAuthEnrollService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__PayerAuthEnrollService *_p = soap_new_ns2__PayerAuthEnrollService(soap);
 	if (_p)
@@ -17359,22 +17373,22 @@ inline ns2__PayerAuthEnrollService * soap_new_req_ns2__PayerAuthEnrollService(
 
 inline ns2__PayerAuthEnrollService * soap_new_set_ns2__PayerAuthEnrollService(
 	struct soap *soap,
-	std::string *httpAccept,
-	std::string *httpUserAgent,
-	std::string *merchantName,
-	std::string *merchantURL,
-	std::string *purchaseDescription,
-	std::string *purchaseTime,
-	std::string *countryCode,
-	std::string *acquirerBin,
-	std::string *loginID,
-	std::string *password,
-	std::string *merchantID,
-	std::string *overridePaymentMethod,
-	std::string *mobilePhone,
-	std::string *MCC,
-	std::string *productCode,
-	const std::string& run)
+	wchar_t *httpAccept,
+	wchar_t *httpUserAgent,
+	wchar_t *merchantName,
+	wchar_t *merchantURL,
+	wchar_t *purchaseDescription,
+	wchar_t **purchaseTime,
+	wchar_t *countryCode,
+	wchar_t *acquirerBin,
+	wchar_t *loginID,
+	wchar_t *password,
+	wchar_t *merchantID,
+	wchar_t *overridePaymentMethod,
+	wchar_t *mobilePhone,
+	wchar_t *MCC,
+	wchar_t *productCode,
+	wchar_t *run)
 {
 	ns2__PayerAuthEnrollService *_p = soap_new_ns2__PayerAuthEnrollService(soap);
 	if (_p)
@@ -17434,7 +17448,7 @@ inline ns2__ECAuthenticateService * soap_new_ns2__ECAuthenticateService(struct s
 
 inline ns2__ECAuthenticateService * soap_new_req_ns2__ECAuthenticateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__ECAuthenticateService *_p = soap_new_ns2__ECAuthenticateService(soap);
 	if (_p)
@@ -17446,8 +17460,8 @@ inline ns2__ECAuthenticateService * soap_new_req_ns2__ECAuthenticateService(
 
 inline ns2__ECAuthenticateService * soap_new_set_ns2__ECAuthenticateService(
 	struct soap *soap,
-	std::string *referenceNumber,
-	const std::string& run)
+	wchar_t *referenceNumber,
+	wchar_t *run)
 {
 	ns2__ECAuthenticateService *_p = soap_new_ns2__ECAuthenticateService(soap);
 	if (_p)
@@ -17493,7 +17507,7 @@ inline ns2__ECCreditService * soap_new_ns2__ECCreditService(struct soap *soap, i
 
 inline ns2__ECCreditService * soap_new_req_ns2__ECCreditService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__ECCreditService *_p = soap_new_ns2__ECCreditService(soap);
 	if (_p)
@@ -17505,15 +17519,15 @@ inline ns2__ECCreditService * soap_new_req_ns2__ECCreditService(
 
 inline ns2__ECCreditService * soap_new_set_ns2__ECCreditService(
 	struct soap *soap,
-	std::string *referenceNumber,
-	std::string *settlementMethod,
-	std::string *transactionToken,
-	std::string *debitRequestID,
-	std::string *partialPaymentID,
-	std::string *commerceIndicator,
-	std::string *debitRequestToken,
-	std::string *effectiveDate,
-	const std::string& run)
+	wchar_t *referenceNumber,
+	wchar_t *settlementMethod,
+	wchar_t *transactionToken,
+	wchar_t *debitRequestID,
+	wchar_t *partialPaymentID,
+	wchar_t *commerceIndicator,
+	wchar_t *debitRequestToken,
+	wchar_t *effectiveDate,
+	wchar_t *run)
 {
 	ns2__ECCreditService *_p = soap_new_ns2__ECCreditService(soap);
 	if (_p)
@@ -17566,7 +17580,7 @@ inline ns2__ECDebitService * soap_new_ns2__ECDebitService(struct soap *soap, int
 
 inline ns2__ECDebitService * soap_new_req_ns2__ECDebitService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__ECDebitService *_p = soap_new_ns2__ECDebitService(soap);
 	if (_p)
@@ -17578,16 +17592,16 @@ inline ns2__ECDebitService * soap_new_req_ns2__ECDebitService(
 
 inline ns2__ECDebitService * soap_new_set_ns2__ECDebitService(
 	struct soap *soap,
-	std::string *paymentMode,
-	std::string *referenceNumber,
-	std::string *settlementMethod,
-	std::string *transactionToken,
-	std::string *verificationLevel,
-	std::string *partialPaymentID,
-	std::string *commerceIndicator,
-	std::string *debitRequestID,
-	std::string *effectiveDate,
-	const std::string& run)
+	wchar_t **paymentMode,
+	wchar_t *referenceNumber,
+	wchar_t *settlementMethod,
+	wchar_t *transactionToken,
+	wchar_t **verificationLevel,
+	wchar_t *partialPaymentID,
+	wchar_t *commerceIndicator,
+	wchar_t *debitRequestID,
+	wchar_t *effectiveDate,
+	wchar_t *run)
 {
 	ns2__ECDebitService *_p = soap_new_ns2__ECDebitService(soap);
 	if (_p)
@@ -17641,7 +17655,7 @@ inline ns2__ServiceFeeCalculateService * soap_new_ns2__ServiceFeeCalculateServic
 
 inline ns2__ServiceFeeCalculateService * soap_new_req_ns2__ServiceFeeCalculateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__ServiceFeeCalculateService *_p = soap_new_ns2__ServiceFeeCalculateService(soap);
 	if (_p)
@@ -17653,7 +17667,7 @@ inline ns2__ServiceFeeCalculateService * soap_new_req_ns2__ServiceFeeCalculateSe
 
 inline ns2__ServiceFeeCalculateService * soap_new_set_ns2__ServiceFeeCalculateService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__ServiceFeeCalculateService *_p = soap_new_ns2__ServiceFeeCalculateService(soap);
 	if (_p)
@@ -17698,7 +17712,7 @@ inline ns2__CCDCCService * soap_new_ns2__CCDCCService(struct soap *soap, int n =
 
 inline ns2__CCDCCService * soap_new_req_ns2__CCDCCService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCDCCService *_p = soap_new_ns2__CCDCCService(soap);
 	if (_p)
@@ -17710,7 +17724,7 @@ inline ns2__CCDCCService * soap_new_req_ns2__CCDCCService(
 
 inline ns2__CCDCCService * soap_new_set_ns2__CCDCCService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCDCCService *_p = soap_new_ns2__CCDCCService(soap);
 	if (_p)
@@ -17755,7 +17769,7 @@ inline ns2__CCAutoAuthReversalService * soap_new_ns2__CCAutoAuthReversalService(
 
 inline ns2__CCAutoAuthReversalService * soap_new_req_ns2__CCAutoAuthReversalService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCAutoAuthReversalService *_p = soap_new_ns2__CCAutoAuthReversalService(soap);
 	if (_p)
@@ -17767,17 +17781,17 @@ inline ns2__CCAutoAuthReversalService * soap_new_req_ns2__CCAutoAuthReversalServ
 
 inline ns2__CCAutoAuthReversalService * soap_new_set_ns2__CCAutoAuthReversalService(
 	struct soap *soap,
-	std::string *authPaymentServiceData,
-	std::string *reconciliationID,
-	std::string *authAmount,
-	std::string *commerceIndicator,
-	std::string *authRequestID,
-	std::string *billAmount,
-	std::string *authCode,
-	std::string *authType,
-	std::string *billPayment,
-	std::string *dateAdded,
-	const std::string& run)
+	wchar_t *authPaymentServiceData,
+	wchar_t *reconciliationID,
+	wchar_t *authAmount,
+	wchar_t *commerceIndicator,
+	wchar_t *authRequestID,
+	wchar_t *billAmount,
+	wchar_t *authCode,
+	wchar_t *authType,
+	wchar_t **billPayment,
+	wchar_t *dateAdded,
+	wchar_t *run)
 {
 	ns2__CCAutoAuthReversalService *_p = soap_new_ns2__CCAutoAuthReversalService(soap);
 	if (_p)
@@ -17832,7 +17846,7 @@ inline ns2__CCAuthReversalService * soap_new_ns2__CCAuthReversalService(struct s
 
 inline ns2__CCAuthReversalService * soap_new_req_ns2__CCAuthReversalService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCAuthReversalService *_p = soap_new_ns2__CCAuthReversalService(soap);
 	if (_p)
@@ -17844,10 +17858,10 @@ inline ns2__CCAuthReversalService * soap_new_req_ns2__CCAuthReversalService(
 
 inline ns2__CCAuthReversalService * soap_new_set_ns2__CCAuthReversalService(
 	struct soap *soap,
-	std::string *authRequestID,
-	std::string *authRequestToken,
-	std::string *reversalReason,
-	const std::string& run)
+	wchar_t *authRequestID,
+	wchar_t *authRequestToken,
+	wchar_t *reversalReason,
+	wchar_t *run)
 {
 	ns2__CCAuthReversalService *_p = soap_new_ns2__CCAuthReversalService(soap);
 	if (_p)
@@ -17895,7 +17909,7 @@ inline ns2__CCCreditService * soap_new_ns2__CCCreditService(struct soap *soap, i
 
 inline ns2__CCCreditService * soap_new_req_ns2__CCCreditService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCCreditService *_p = soap_new_ns2__CCCreditService(soap);
 	if (_p)
@@ -17907,26 +17921,26 @@ inline ns2__CCCreditService * soap_new_req_ns2__CCCreditService(
 
 inline ns2__CCCreditService * soap_new_set_ns2__CCCreditService(
 	struct soap *soap,
-	std::string *captureRequestID,
-	std::string *reconciliationID,
-	std::string *partialPaymentID,
-	std::string *purchasingLevel,
-	std::string *industryDatatype,
-	std::string *commerceIndicator,
-	std::string *billPayment,
-	std::string *authorizationXID,
-	std::string *occurrenceNumber,
-	std::string *authCode,
-	std::string *captureRequestToken,
-	std::string *merchantReceiptNumber,
-	std::string *checksumKey,
-	std::string *aggregatorID,
-	std::string *aggregatorName,
-	std::string *duration,
-	std::string *dpdeBillingMonth,
-	std::string *reconciliationIDAlternate,
-	std::string *refundReason,
-	const std::string& run)
+	wchar_t *captureRequestID,
+	wchar_t *reconciliationID,
+	wchar_t *partialPaymentID,
+	wchar_t *purchasingLevel,
+	wchar_t *industryDatatype,
+	wchar_t *commerceIndicator,
+	wchar_t **billPayment,
+	wchar_t *authorizationXID,
+	wchar_t *occurrenceNumber,
+	wchar_t *authCode,
+	wchar_t *captureRequestToken,
+	wchar_t *merchantReceiptNumber,
+	wchar_t *checksumKey,
+	wchar_t *aggregatorID,
+	wchar_t *aggregatorName,
+	wchar_t **duration,
+	wchar_t **dpdeBillingMonth,
+	wchar_t *reconciliationIDAlternate,
+	wchar_t *refundReason,
+	wchar_t *run)
 {
 	ns2__CCCreditService *_p = soap_new_ns2__CCCreditService(soap);
 	if (_p)
@@ -17990,7 +18004,7 @@ inline ns2__CCCaptureService * soap_new_ns2__CCCaptureService(struct soap *soap,
 
 inline ns2__CCCaptureService * soap_new_req_ns2__CCCaptureService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCCaptureService *_p = soap_new_ns2__CCCaptureService(soap);
 	if (_p)
@@ -18002,27 +18016,27 @@ inline ns2__CCCaptureService * soap_new_req_ns2__CCCaptureService(
 
 inline ns2__CCCaptureService * soap_new_set_ns2__CCCaptureService(
 	struct soap *soap,
-	std::string *authType,
-	std::string *verbalAuthCode,
-	std::string *authRequestID,
-	std::string *reconciliationID,
-	std::string *partialPaymentID,
-	std::string *purchasingLevel,
-	std::string *industryDatatype,
-	std::string *authRequestToken,
-	std::string *merchantReceiptNumber,
-	std::string *posData,
-	std::string *transactionID,
-	std::string *checksumKey,
-	std::string *gratuityAmount,
-	std::string *duration,
-	std::string *dpdeBillingMonth,
-	std::string *sequence,
-	std::string *totalCount,
-	std::string *reconciliationIDAlternate,
-	std::string *aggregatorID,
-	std::string *aggregatorName,
-	const std::string& run)
+	wchar_t *authType,
+	wchar_t *verbalAuthCode,
+	wchar_t *authRequestID,
+	wchar_t *reconciliationID,
+	wchar_t *partialPaymentID,
+	wchar_t *purchasingLevel,
+	wchar_t *industryDatatype,
+	wchar_t *authRequestToken,
+	wchar_t *merchantReceiptNumber,
+	wchar_t *posData,
+	wchar_t *transactionID,
+	wchar_t *checksumKey,
+	wchar_t *gratuityAmount,
+	wchar_t **duration,
+	wchar_t **dpdeBillingMonth,
+	wchar_t *sequence,
+	wchar_t *totalCount,
+	wchar_t *reconciliationIDAlternate,
+	wchar_t *aggregatorID,
+	wchar_t *aggregatorName,
+	wchar_t *run)
 {
 	ns2__CCCaptureService *_p = soap_new_ns2__CCCaptureService(soap);
 	if (_p)
@@ -18087,7 +18101,7 @@ inline ns2__CCIncrementalAuthService * soap_new_ns2__CCIncrementalAuthService(st
 
 inline ns2__CCIncrementalAuthService * soap_new_req_ns2__CCIncrementalAuthService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCIncrementalAuthService *_p = soap_new_ns2__CCIncrementalAuthService(soap);
 	if (_p)
@@ -18099,9 +18113,9 @@ inline ns2__CCIncrementalAuthService * soap_new_req_ns2__CCIncrementalAuthServic
 
 inline ns2__CCIncrementalAuthService * soap_new_set_ns2__CCIncrementalAuthService(
 	struct soap *soap,
-	std::string *authRequestID,
-	std::string *duration,
-	const std::string& run)
+	wchar_t *authRequestID,
+	wchar_t **duration,
+	wchar_t *run)
 {
 	ns2__CCIncrementalAuthService *_p = soap_new_ns2__CCIncrementalAuthService(soap);
 	if (_p)
@@ -18148,7 +18162,7 @@ inline ns2__CCSaleReversalService * soap_new_ns2__CCSaleReversalService(struct s
 
 inline ns2__CCSaleReversalService * soap_new_req_ns2__CCSaleReversalService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCSaleReversalService *_p = soap_new_ns2__CCSaleReversalService(soap);
 	if (_p)
@@ -18160,8 +18174,8 @@ inline ns2__CCSaleReversalService * soap_new_req_ns2__CCSaleReversalService(
 
 inline ns2__CCSaleReversalService * soap_new_set_ns2__CCSaleReversalService(
 	struct soap *soap,
-	std::string *saleRequestID,
-	const std::string& run)
+	wchar_t *saleRequestID,
+	wchar_t *run)
 {
 	ns2__CCSaleReversalService *_p = soap_new_ns2__CCSaleReversalService(soap);
 	if (_p)
@@ -18207,7 +18221,7 @@ inline ns2__CCSaleCreditService * soap_new_ns2__CCSaleCreditService(struct soap 
 
 inline ns2__CCSaleCreditService * soap_new_req_ns2__CCSaleCreditService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCSaleCreditService *_p = soap_new_ns2__CCSaleCreditService(soap);
 	if (_p)
@@ -18219,12 +18233,12 @@ inline ns2__CCSaleCreditService * soap_new_req_ns2__CCSaleCreditService(
 
 inline ns2__CCSaleCreditService * soap_new_set_ns2__CCSaleCreditService(
 	struct soap *soap,
-	std::string *overridePaymentMethod,
-	std::string *commerceIndicator,
-	std::string *reconciliationID,
-	std::string *refundReason,
-	std::string *saleRequestID,
-	const std::string& run)
+	wchar_t *overridePaymentMethod,
+	wchar_t *commerceIndicator,
+	wchar_t *reconciliationID,
+	wchar_t *refundReason,
+	wchar_t *saleRequestID,
+	wchar_t *run)
 {
 	ns2__CCSaleCreditService *_p = soap_new_ns2__CCSaleCreditService(soap);
 	if (_p)
@@ -18274,7 +18288,7 @@ inline ns2__CCSaleService * soap_new_ns2__CCSaleService(struct soap *soap, int n
 
 inline ns2__CCSaleService * soap_new_req_ns2__CCSaleService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCSaleService *_p = soap_new_ns2__CCSaleService(soap);
 	if (_p)
@@ -18286,14 +18300,14 @@ inline ns2__CCSaleService * soap_new_req_ns2__CCSaleService(
 
 inline ns2__CCSaleService * soap_new_set_ns2__CCSaleService(
 	struct soap *soap,
-	std::string *overridePaymentMethod,
-	std::string *commerceIndicator,
-	std::string *partialAuthIndicator,
-	std::string *cavv,
-	std::string *xid,
-	std::string *reconciliationID,
-	std::string *industryDatatype,
-	const std::string& run)
+	wchar_t *overridePaymentMethod,
+	wchar_t *commerceIndicator,
+	wchar_t **partialAuthIndicator,
+	wchar_t *cavv,
+	wchar_t *xid,
+	wchar_t *reconciliationID,
+	wchar_t *industryDatatype,
+	wchar_t *run)
 {
 	ns2__CCSaleService *_p = soap_new_ns2__CCSaleService(soap);
 	if (_p)
@@ -18345,7 +18359,7 @@ inline ns2__VerificationService * soap_new_ns2__VerificationService(struct soap 
 
 inline ns2__VerificationService * soap_new_req_ns2__VerificationService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__VerificationService *_p = soap_new_ns2__VerificationService(soap);
 	if (_p)
@@ -18357,8 +18371,8 @@ inline ns2__VerificationService * soap_new_req_ns2__VerificationService(
 
 inline ns2__VerificationService * soap_new_set_ns2__VerificationService(
 	struct soap *soap,
-	std::string *reconciliationID,
-	const std::string& run)
+	wchar_t *reconciliationID,
+	wchar_t *run)
 {
 	ns2__VerificationService *_p = soap_new_ns2__VerificationService(soap);
 	if (_p)
@@ -18404,7 +18418,7 @@ inline ns2__OCTService * soap_new_ns2__OCTService(struct soap *soap, int n = -1)
 
 inline ns2__OCTService * soap_new_req_ns2__OCTService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__OCTService *_p = soap_new_ns2__OCTService(soap);
 	if (_p)
@@ -18416,10 +18430,10 @@ inline ns2__OCTService * soap_new_req_ns2__OCTService(
 
 inline ns2__OCTService * soap_new_set_ns2__OCTService(
 	struct soap *soap,
-	std::string *commerceIndicator,
-	std::string *reconciliationID,
-	std::string *networkOrder,
-	const std::string& run)
+	wchar_t *commerceIndicator,
+	wchar_t *reconciliationID,
+	wchar_t *networkOrder,
+	wchar_t *run)
 {
 	ns2__OCTService *_p = soap_new_ns2__OCTService(soap);
 	if (_p)
@@ -18467,7 +18481,7 @@ inline ns2__CCAuthService * soap_new_ns2__CCAuthService(struct soap *soap, int n
 
 inline ns2__CCAuthService * soap_new_req_ns2__CCAuthService(
 	struct soap *soap,
-	const std::string& run)
+	wchar_t *run)
 {
 	ns2__CCAuthService *_p = soap_new_ns2__CCAuthService(soap);
 	if (_p)
@@ -18479,36 +18493,36 @@ inline ns2__CCAuthService * soap_new_req_ns2__CCAuthService(
 
 inline ns2__CCAuthService * soap_new_set_ns2__CCAuthService(
 	struct soap *soap,
-	std::string *cavv,
-	std::string *cavvAlgorithm,
-	std::string *commerceIndicator,
-	std::string *eciRaw,
-	std::string *xid,
-	std::string *reconciliationID,
-	std::string *avsLevel,
-	std::string *fxQuoteID,
-	std::string *returnAuthRecord,
-	std::string *authType,
-	std::string *verbalAuthCode,
-	std::string *billPayment,
-	std::string *authenticationXID,
-	std::string *authorizationXID,
-	std::string *industryDatatype,
-	std::string *traceNumber,
-	std::string *checksumKey,
-	std::string *aggregatorID,
-	std::string *aggregatorName,
-	std::string *splitTenderIndicator,
-	std::string *veresEnrolled,
-	std::string *paresStatus,
-	std::string *partialAuthIndicator,
-	std::string *captureDate,
-	std::string *firstRecurringPayment,
-	std::string *duration,
-	std::string *overridePaymentMethod,
-	std::string *mobileRemotePaymentType,
-	std::string *cardholderVerificationMethod,
-	const std::string& run)
+	wchar_t *cavv,
+	wchar_t *cavvAlgorithm,
+	wchar_t *commerceIndicator,
+	wchar_t *eciRaw,
+	wchar_t *xid,
+	wchar_t *reconciliationID,
+	wchar_t *avsLevel,
+	wchar_t *fxQuoteID,
+	wchar_t **returnAuthRecord,
+	wchar_t *authType,
+	wchar_t *verbalAuthCode,
+	wchar_t **billPayment,
+	wchar_t *authenticationXID,
+	wchar_t *authorizationXID,
+	wchar_t *industryDatatype,
+	wchar_t *traceNumber,
+	wchar_t *checksumKey,
+	wchar_t *aggregatorID,
+	wchar_t *aggregatorName,
+	wchar_t *splitTenderIndicator,
+	wchar_t *veresEnrolled,
+	wchar_t *paresStatus,
+	wchar_t **partialAuthIndicator,
+	wchar_t *captureDate,
+	wchar_t *firstRecurringPayment,
+	wchar_t **duration,
+	wchar_t *overridePaymentMethod,
+	wchar_t *mobileRemotePaymentType,
+	wchar_t *cardholderVerificationMethod,
+	wchar_t *run)
 {
 	ns2__CCAuthService *_p = soap_new_ns2__CCAuthService(soap);
 	if (_p)
@@ -18592,94 +18606,94 @@ inline ns2__Item * soap_new_req_ns2__Item(
 
 inline ns2__Item * soap_new_set_ns2__Item(
 	struct soap *soap,
-	std::string *unitPrice,
-	std::string *quantity,
-	std::string *productCode,
-	std::string *productName,
-	std::string *productSKU,
-	std::string *productRisk,
-	std::string *taxAmount,
-	std::string *cityOverrideAmount,
-	std::string *cityOverrideRate,
-	std::string *countyOverrideAmount,
-	std::string *countyOverrideRate,
-	std::string *districtOverrideAmount,
-	std::string *districtOverrideRate,
-	std::string *stateOverrideAmount,
-	std::string *stateOverrideRate,
-	std::string *countryOverrideAmount,
-	std::string *countryOverrideRate,
-	std::string *orderAcceptanceCity,
-	std::string *orderAcceptanceCounty,
-	std::string *orderAcceptanceCountry,
-	std::string *orderAcceptanceState,
-	std::string *orderAcceptancePostalCode,
-	std::string *orderOriginCity,
-	std::string *orderOriginCounty,
-	std::string *orderOriginCountry,
-	std::string *orderOriginState,
-	std::string *orderOriginPostalCode,
-	std::string *shipFromCity,
-	std::string *shipFromCounty,
-	std::string *shipFromCountry,
-	std::string *shipFromState,
-	std::string *shipFromPostalCode,
-	std::string *export_,
-	std::string *noExport,
-	std::string *nationalTax,
-	std::string *vatRate,
-	std::string *sellerRegistration,
-	std::string *sellerRegistration0,
-	std::string *sellerRegistration1,
-	std::string *sellerRegistration2,
-	std::string *sellerRegistration3,
-	std::string *sellerRegistration4,
-	std::string *sellerRegistration5,
-	std::string *sellerRegistration6,
-	std::string *sellerRegistration7,
-	std::string *sellerRegistration8,
-	std::string *sellerRegistration9,
-	std::string *buyerRegistration,
-	std::string *middlemanRegistration,
-	std::string *pointOfTitleTransfer,
-	std::string *giftCategory,
-	std::string *timeCategory,
-	std::string *hostHedge,
-	std::string *timeHedge,
-	std::string *velocityHedge,
-	std::string *nonsensicalHedge,
-	std::string *phoneHedge,
-	std::string *obscenitiesHedge,
-	std::string *unitOfMeasure,
-	std::string *taxRate,
-	std::string *totalAmount,
-	std::string *discountAmount,
-	std::string *discountRate,
-	std::string *commodityCode,
-	std::string *grossNetIndicator,
-	std::string *taxTypeApplied,
-	std::string *discountIndicator,
-	std::string *alternateTaxID,
-	std::string *alternateTaxAmount,
-	std::string *alternateTaxTypeApplied,
-	std::string *alternateTaxRate,
-	std::string *alternateTaxType,
-	std::string *localTax,
-	std::string *zeroCostToCustomerIndicator,
-	std::string *passengerFirstName,
-	std::string *passengerLastName,
-	std::string *passengerID,
-	std::string *passengerStatus,
-	std::string *passengerType,
-	std::string *passengerEmail,
-	std::string *passengerPhone,
-	std::string *invoiceNumber,
-	std::string *productDescription,
-	std::string *taxStatusIndicator,
-	std::string *discountManagementIndicator,
-	std::string *typeOfSupply,
-	std::string *sign,
-	std::string *id)
+	wchar_t **unitPrice,
+	wchar_t **quantity,
+	wchar_t *productCode,
+	wchar_t *productName,
+	wchar_t *productSKU,
+	wchar_t *productRisk,
+	wchar_t **taxAmount,
+	wchar_t **cityOverrideAmount,
+	wchar_t **cityOverrideRate,
+	wchar_t **countyOverrideAmount,
+	wchar_t **countyOverrideRate,
+	wchar_t **districtOverrideAmount,
+	wchar_t **districtOverrideRate,
+	wchar_t **stateOverrideAmount,
+	wchar_t **stateOverrideRate,
+	wchar_t **countryOverrideAmount,
+	wchar_t **countryOverrideRate,
+	wchar_t *orderAcceptanceCity,
+	wchar_t *orderAcceptanceCounty,
+	wchar_t *orderAcceptanceCountry,
+	wchar_t *orderAcceptanceState,
+	wchar_t *orderAcceptancePostalCode,
+	wchar_t *orderOriginCity,
+	wchar_t *orderOriginCounty,
+	wchar_t *orderOriginCountry,
+	wchar_t *orderOriginState,
+	wchar_t *orderOriginPostalCode,
+	wchar_t *shipFromCity,
+	wchar_t *shipFromCounty,
+	wchar_t *shipFromCountry,
+	wchar_t *shipFromState,
+	wchar_t *shipFromPostalCode,
+	wchar_t *export_,
+	wchar_t *noExport,
+	wchar_t **nationalTax,
+	wchar_t **vatRate,
+	wchar_t *sellerRegistration,
+	wchar_t *sellerRegistration0,
+	wchar_t *sellerRegistration1,
+	wchar_t *sellerRegistration2,
+	wchar_t *sellerRegistration3,
+	wchar_t *sellerRegistration4,
+	wchar_t *sellerRegistration5,
+	wchar_t *sellerRegistration6,
+	wchar_t *sellerRegistration7,
+	wchar_t *sellerRegistration8,
+	wchar_t *sellerRegistration9,
+	wchar_t *buyerRegistration,
+	wchar_t *middlemanRegistration,
+	wchar_t *pointOfTitleTransfer,
+	wchar_t **giftCategory,
+	wchar_t *timeCategory,
+	wchar_t *hostHedge,
+	wchar_t *timeHedge,
+	wchar_t *velocityHedge,
+	wchar_t *nonsensicalHedge,
+	wchar_t *phoneHedge,
+	wchar_t *obscenitiesHedge,
+	wchar_t *unitOfMeasure,
+	wchar_t **taxRate,
+	wchar_t **totalAmount,
+	wchar_t **discountAmount,
+	wchar_t **discountRate,
+	wchar_t *commodityCode,
+	wchar_t *grossNetIndicator,
+	wchar_t *taxTypeApplied,
+	wchar_t *discountIndicator,
+	wchar_t *alternateTaxID,
+	wchar_t **alternateTaxAmount,
+	wchar_t *alternateTaxTypeApplied,
+	wchar_t **alternateTaxRate,
+	wchar_t *alternateTaxType,
+	wchar_t **localTax,
+	wchar_t *zeroCostToCustomerIndicator,
+	wchar_t *passengerFirstName,
+	wchar_t *passengerLastName,
+	wchar_t *passengerID,
+	wchar_t *passengerStatus,
+	wchar_t *passengerType,
+	wchar_t *passengerEmail,
+	wchar_t *passengerPhone,
+	wchar_t *invoiceNumber,
+	wchar_t *productDescription,
+	wchar_t *taxStatusIndicator,
+	wchar_t *discountManagementIndicator,
+	wchar_t *typeOfSupply,
+	wchar_t *sign,
+	wchar_t **id)
 {
 	ns2__Item *_p = soap_new_ns2__Item(soap);
 	if (_p)
@@ -18792,104 +18806,6 @@ inline int soap_read_ns2__Item(struct soap *soap, ns2__Item *p)
 	if (p)
 	{	p->soap_default(soap);
 		if (soap_begin_recv(soap) || soap_get_ns2__Item(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
-			return soap->error;
-	}
-	return SOAP_OK;
-}
-#endif
-
-#ifndef SOAP_TYPE_xsd__integer_DEFINED
-#define SOAP_TYPE_xsd__integer_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_xsd__integer(struct soap*, std::string *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xsd__integer(struct soap*, const std::string *);
-
-#define soap_xsd__integer2s(soap, a) ((a).c_str())
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_xsd__integer(struct soap*, const char*, int, const std::string*, const char*);
-
-#define soap_s2xsd__integer(soap, s, a) soap_s2stdchar((soap), (s), (a), 0, -1, NULL)
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_in_xsd__integer(struct soap*, const char*, std::string*, const char*);
-
-#define soap_instantiate_xsd__integer soap_instantiate_std__string
-
-
-#define soap_new_xsd__integer soap_new_std__string
-
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_xsd__integer(struct soap*, const std::string *, const char*, const char*);
-
-inline int soap_write_xsd__integer(struct soap *soap, std::string const *p)
-{
-	soap_free_temp(soap);
-	if (p)
-	{	if (soap_begin_send(soap) || soap_put_xsd__integer(soap, p, "xsd:integer", "") || soap_end_send(soap))
-			return soap->error;
-	}
-	return SOAP_OK;
-}
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_get_xsd__integer(struct soap*, std::string *, const char*, const char*);
-
-inline int soap_read_xsd__integer(struct soap *soap, std::string *p)
-{
-	if (p)
-	{	if (soap_begin_recv(soap) || soap_get_xsd__integer(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
-			return soap->error;
-	}
-	return SOAP_OK;
-}
-#endif
-
-#ifndef SOAP_TYPE_std__string_DEFINED
-#define SOAP_TYPE_std__string_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__string(struct soap*, std::string *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__string(struct soap*, const std::string *);
-
-#define soap_std__string2s(soap, a) ((a).c_str())
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__string(struct soap*, const char*, int, const std::string*, const char*);
-
-#define soap_s2std__string(soap, s, a) soap_s2stdchar((soap), (s), (a), 0, -1, NULL)
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_in_std__string(struct soap*, const char*, std::string*, const char*);
-SOAP_FMAC1 std::string * SOAP_FMAC2 soap_instantiate_std__string(struct soap*, int, const char*, const char*, size_t*);
-
-inline std::string * soap_new_std__string(struct soap *soap, int n = -1)
-{
-	return soap_instantiate_std__string(soap, n, NULL, NULL, NULL);
-}
-
-inline std::string * soap_new_req_std__string(
-	struct soap *soap)
-{
-	std::string *_p = soap_new_std__string(soap);
-	if (_p)
-	{	soap_default_std__string(soap, _p);
-	}
-	return _p;
-}
-
-inline std::string * soap_new_set_std__string(
-	struct soap *soap)
-{
-	std::string *_p = soap_new_std__string(soap);
-	if (_p)
-	{	soap_default_std__string(soap, _p);
-	}
-	return _p;
-}
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_std__string(struct soap*, const std::string *, const char*, const char*);
-
-inline int soap_write_std__string(struct soap *soap, std::string const *p)
-{
-	soap_free_temp(soap);
-	if (p)
-	{	if (soap_begin_send(soap) || soap_put_std__string(soap, p, "string", "") || soap_end_send(soap))
-			return soap->error;
-	}
-	return SOAP_OK;
-}
-SOAP_FMAC3 std::string * SOAP_FMAC4 soap_get_std__string(struct soap*, std::string *, const char*, const char*);
-
-inline int soap_read_std__string(struct soap *soap, std::string *p)
-{
-	if (p)
-	{	if (soap_begin_recv(soap) || soap_get_std__string(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
 			return soap->error;
 	}
 	return SOAP_OK;
@@ -19170,66 +19086,6 @@ inline int soap_read_SOAP_ENV__Code(struct soap *soap, struct SOAP_ENV__Code *p)
 
 #endif
 
-#ifndef WITH_NOGLOBAL
-
-#ifndef SOAP_TYPE_SOAP_ENV__Header_DEFINED
-#define SOAP_TYPE_SOAP_ENV__Header_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_SOAP_ENV__Header(struct soap*, struct SOAP_ENV__Header *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_SOAP_ENV__Header(struct soap*, const struct SOAP_ENV__Header *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_SOAP_ENV__Header(struct soap*, const char*, int, const struct SOAP_ENV__Header *, const char*);
-SOAP_FMAC3 struct SOAP_ENV__Header * SOAP_FMAC4 soap_in_SOAP_ENV__Header(struct soap*, const char*, struct SOAP_ENV__Header *, const char*);
-SOAP_FMAC1 struct SOAP_ENV__Header * SOAP_FMAC2 soap_instantiate_SOAP_ENV__Header(struct soap*, int, const char*, const char*, size_t*);
-
-inline struct SOAP_ENV__Header * soap_new_SOAP_ENV__Header(struct soap *soap, int n = -1)
-{
-	return soap_instantiate_SOAP_ENV__Header(soap, n, NULL, NULL, NULL);
-}
-
-inline struct SOAP_ENV__Header * soap_new_req_SOAP_ENV__Header(
-	struct soap *soap)
-{
-	struct SOAP_ENV__Header *_p = soap_new_SOAP_ENV__Header(soap);
-	if (_p)
-	{	soap_default_SOAP_ENV__Header(soap, _p);
-	}
-	return _p;
-}
-
-inline struct SOAP_ENV__Header * soap_new_set_SOAP_ENV__Header(
-	struct soap *soap)
-{
-	struct SOAP_ENV__Header *_p = soap_new_SOAP_ENV__Header(soap);
-	if (_p)
-	{	soap_default_SOAP_ENV__Header(soap, _p);
-	}
-	return _p;
-}
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_SOAP_ENV__Header(struct soap*, const struct SOAP_ENV__Header *, const char*, const char*);
-
-inline int soap_write_SOAP_ENV__Header(struct soap *soap, struct SOAP_ENV__Header const *p)
-{
-	soap_free_temp(soap);
-	if (p)
-	{	if (soap_begin_send(soap) || (soap_serialize_SOAP_ENV__Header(soap, p), 0) || soap_put_SOAP_ENV__Header(soap, p, "SOAP-ENV:Header", "") || soap_end_send(soap))
-			return soap->error;
-	}
-	return SOAP_OK;
-}
-SOAP_FMAC3 struct SOAP_ENV__Header * SOAP_FMAC4 soap_get_SOAP_ENV__Header(struct soap*, struct SOAP_ENV__Header *, const char*, const char*);
-
-inline int soap_read_SOAP_ENV__Header(struct soap *soap, struct SOAP_ENV__Header *p)
-{
-	if (p)
-	{	soap_default_SOAP_ENV__Header(soap, p);
-		if (soap_begin_recv(soap) || soap_get_SOAP_ENV__Header(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
-			return soap->error;
-	}
-	return SOAP_OK;
-}
-#endif
-
-#endif
-
 #ifndef SOAP_TYPE___ns1__runTransaction_DEFINED
 #define SOAP_TYPE___ns1__runTransaction_DEFINED
 SOAP_FMAC3 void SOAP_FMAC4 soap_default___ns1__runTransaction(struct soap*, struct __ns1__runTransaction *);
@@ -19244,20 +19100,18 @@ inline struct __ns1__runTransaction * soap_new___ns1__runTransaction(struct soap
 }
 
 inline struct __ns1__runTransaction * soap_new_req___ns1__runTransaction(
-	struct soap *soap,
-	const std::string& ns2__nvpRequest)
+	struct soap *soap)
 {
 	struct __ns1__runTransaction *_p = soap_new___ns1__runTransaction(soap);
 	if (_p)
 	{	soap_default___ns1__runTransaction(soap, _p);
-		_p->ns2__nvpRequest = ns2__nvpRequest;
 	}
 	return _p;
 }
 
 inline struct __ns1__runTransaction * soap_new_set___ns1__runTransaction(
 	struct soap *soap,
-	const std::string& ns2__nvpRequest)
+	wchar_t *ns2__nvpRequest)
 {
 	struct __ns1__runTransaction *_p = soap_new___ns1__runTransaction(soap);
 	if (_p)
@@ -19305,7 +19159,7 @@ inline struct __ns1__runTransactionResponse * soap_new___ns1__runTransactionResp
 
 inline struct __ns1__runTransactionResponse * soap_new_req___ns1__runTransactionResponse(
 	struct soap *soap,
-	const std::string& ns2__nvpReply)
+	wchar_t *ns2__nvpReply)
 {
 	struct __ns1__runTransactionResponse *_p = soap_new___ns1__runTransactionResponse(soap);
 	if (_p)
@@ -19317,7 +19171,7 @@ inline struct __ns1__runTransactionResponse * soap_new_req___ns1__runTransaction
 
 inline struct __ns1__runTransactionResponse * soap_new_set___ns1__runTransactionResponse(
 	struct soap *soap,
-	const std::string& ns2__nvpReply)
+	wchar_t *ns2__nvpReply)
 {
 	struct __ns1__runTransactionResponse *_p = soap_new___ns1__runTransactionResponse(soap);
 	if (_p)
@@ -19348,6 +19202,3010 @@ inline int soap_read___ns1__runTransactionResponse(struct soap *soap, struct __n
 	}
 	return SOAP_OK;
 }
+#endif
+
+#ifndef WITH_NOGLOBAL
+
+#ifndef SOAP_TYPE_SOAP_ENV__Header_DEFINED
+#define SOAP_TYPE_SOAP_ENV__Header_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_SOAP_ENV__Header(struct soap*, struct SOAP_ENV__Header *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_SOAP_ENV__Header(struct soap*, const struct SOAP_ENV__Header *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_SOAP_ENV__Header(struct soap*, const char*, int, const struct SOAP_ENV__Header *, const char*);
+SOAP_FMAC3 struct SOAP_ENV__Header * SOAP_FMAC4 soap_in_SOAP_ENV__Header(struct soap*, const char*, struct SOAP_ENV__Header *, const char*);
+SOAP_FMAC1 struct SOAP_ENV__Header * SOAP_FMAC2 soap_instantiate_SOAP_ENV__Header(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct SOAP_ENV__Header * soap_new_SOAP_ENV__Header(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_SOAP_ENV__Header(soap, n, NULL, NULL, NULL);
+}
+
+inline struct SOAP_ENV__Header * soap_new_req_SOAP_ENV__Header(
+	struct soap *soap)
+{
+	struct SOAP_ENV__Header *_p = soap_new_SOAP_ENV__Header(soap);
+	if (_p)
+	{	soap_default_SOAP_ENV__Header(soap, _p);
+	}
+	return _p;
+}
+
+inline struct SOAP_ENV__Header * soap_new_set_SOAP_ENV__Header(
+	struct soap *soap,
+	struct _wsse__Security *wsse__Security)
+{
+	struct SOAP_ENV__Header *_p = soap_new_SOAP_ENV__Header(soap);
+	if (_p)
+	{	soap_default_SOAP_ENV__Header(soap, _p);
+		_p->wsse__Security = wsse__Security;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_SOAP_ENV__Header(struct soap*, const struct SOAP_ENV__Header *, const char*, const char*);
+
+inline int soap_write_SOAP_ENV__Header(struct soap *soap, struct SOAP_ENV__Header const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_SOAP_ENV__Header(soap, p), 0) || soap_put_SOAP_ENV__Header(soap, p, "SOAP-ENV:Header", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct SOAP_ENV__Header * SOAP_FMAC4 soap_get_SOAP_ENV__Header(struct soap*, struct SOAP_ENV__Header *, const char*, const char*);
+
+inline int soap_read_SOAP_ENV__Header(struct soap *soap, struct SOAP_ENV__Header *p)
+{
+	if (p)
+	{	soap_default_SOAP_ENV__Header(soap, p);
+		if (soap_begin_recv(soap) || soap_get_SOAP_ENV__Header(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#endif
+
+#ifndef SOAP_TYPE__wsse__Security_DEFINED
+#define SOAP_TYPE__wsse__Security_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsse__Security(struct soap*, struct _wsse__Security *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsse__Security(struct soap*, const struct _wsse__Security *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsse__Security(struct soap*, const char*, int, const struct _wsse__Security *, const char*);
+SOAP_FMAC3 struct _wsse__Security * SOAP_FMAC4 soap_in__wsse__Security(struct soap*, const char*, struct _wsse__Security *, const char*);
+SOAP_FMAC1 struct _wsse__Security * SOAP_FMAC2 soap_instantiate__wsse__Security(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsse__Security * soap_new__wsse__Security(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsse__Security(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsse__Security * soap_new_req__wsse__Security(
+	struct soap *soap)
+{
+	struct _wsse__Security *_p = soap_new__wsse__Security(soap);
+	if (_p)
+	{	soap_default__wsse__Security(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsse__Security * soap_new_set__wsse__Security(
+	struct soap *soap,
+	struct _wsu__Timestamp *wsu__Timestamp,
+	struct _wsse__UsernameToken *UsernameToken,
+	struct _wsse__BinarySecurityToken *BinarySecurityToken,
+	struct xenc__EncryptedKeyType *xenc__EncryptedKey,
+	struct _xenc__ReferenceList *xenc__ReferenceList,
+	struct wsc__SecurityContextTokenType *wsc__SecurityContextToken,
+	struct ds__SignatureType *ds__Signature,
+	char *SOAP_ENV__actor,
+	char *SOAP_ENV__role)
+{
+	struct _wsse__Security *_p = soap_new__wsse__Security(soap);
+	if (_p)
+	{	soap_default__wsse__Security(soap, _p);
+		_p->wsu__Timestamp = wsu__Timestamp;
+		_p->UsernameToken = UsernameToken;
+		_p->BinarySecurityToken = BinarySecurityToken;
+		_p->xenc__EncryptedKey = xenc__EncryptedKey;
+		_p->xenc__ReferenceList = xenc__ReferenceList;
+		_p->wsc__SecurityContextToken = wsc__SecurityContextToken;
+		_p->ds__Signature = ds__Signature;
+		_p->SOAP_ENV__actor = SOAP_ENV__actor;
+		_p->SOAP_ENV__role = SOAP_ENV__role;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsse__Security(struct soap*, const struct _wsse__Security *, const char*, const char*);
+
+inline int soap_write__wsse__Security(struct soap *soap, struct _wsse__Security const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsse__Security(soap, p), 0) || soap_put__wsse__Security(soap, p, "wsse:Security", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsse__Security * SOAP_FMAC4 soap_get__wsse__Security(struct soap*, struct _wsse__Security *, const char*, const char*);
+
+inline int soap_read__wsse__Security(struct soap *soap, struct _wsse__Security *p)
+{
+	if (p)
+	{	soap_default__wsse__Security(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsse__Security(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE___wsc__DerivedKeyTokenType_sequence_DEFINED
+#define SOAP_TYPE___wsc__DerivedKeyTokenType_sequence_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___wsc__DerivedKeyTokenType_sequence(struct soap*, struct __wsc__DerivedKeyTokenType_sequence *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___wsc__DerivedKeyTokenType_sequence(struct soap*, const struct __wsc__DerivedKeyTokenType_sequence *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___wsc__DerivedKeyTokenType_sequence(struct soap*, const char*, int, const struct __wsc__DerivedKeyTokenType_sequence *, const char*);
+SOAP_FMAC3 struct __wsc__DerivedKeyTokenType_sequence * SOAP_FMAC4 soap_in___wsc__DerivedKeyTokenType_sequence(struct soap*, const char*, struct __wsc__DerivedKeyTokenType_sequence *, const char*);
+SOAP_FMAC1 struct __wsc__DerivedKeyTokenType_sequence * SOAP_FMAC2 soap_instantiate___wsc__DerivedKeyTokenType_sequence(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __wsc__DerivedKeyTokenType_sequence * soap_new___wsc__DerivedKeyTokenType_sequence(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___wsc__DerivedKeyTokenType_sequence(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __wsc__DerivedKeyTokenType_sequence * soap_new_req___wsc__DerivedKeyTokenType_sequence(
+	struct soap *soap,
+	int __union_DerivedKeyTokenType,
+	const union _wsc__union_DerivedKeyTokenType& union_DerivedKeyTokenType)
+{
+	struct __wsc__DerivedKeyTokenType_sequence *_p = soap_new___wsc__DerivedKeyTokenType_sequence(soap);
+	if (_p)
+	{	soap_default___wsc__DerivedKeyTokenType_sequence(soap, _p);
+		_p->__union_DerivedKeyTokenType = __union_DerivedKeyTokenType;
+		_p->union_DerivedKeyTokenType = union_DerivedKeyTokenType;
+	}
+	return _p;
+}
+
+inline struct __wsc__DerivedKeyTokenType_sequence * soap_new_set___wsc__DerivedKeyTokenType_sequence(
+	struct soap *soap,
+	int __union_DerivedKeyTokenType,
+	const union _wsc__union_DerivedKeyTokenType& union_DerivedKeyTokenType,
+	ULONG64 *Length)
+{
+	struct __wsc__DerivedKeyTokenType_sequence *_p = soap_new___wsc__DerivedKeyTokenType_sequence(soap);
+	if (_p)
+	{	soap_default___wsc__DerivedKeyTokenType_sequence(soap, _p);
+		_p->__union_DerivedKeyTokenType = __union_DerivedKeyTokenType;
+		_p->union_DerivedKeyTokenType = union_DerivedKeyTokenType;
+		_p->Length = Length;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___wsc__DerivedKeyTokenType_sequence(struct soap*, const struct __wsc__DerivedKeyTokenType_sequence *, const char*, const char*);
+
+inline int soap_write___wsc__DerivedKeyTokenType_sequence(struct soap *soap, struct __wsc__DerivedKeyTokenType_sequence const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize___wsc__DerivedKeyTokenType_sequence(soap, p), 0) || soap_put___wsc__DerivedKeyTokenType_sequence(soap, p, "-wsc:DerivedKeyTokenType-sequence", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __wsc__DerivedKeyTokenType_sequence * SOAP_FMAC4 soap_get___wsc__DerivedKeyTokenType_sequence(struct soap*, struct __wsc__DerivedKeyTokenType_sequence *, const char*, const char*);
+
+inline int soap_read___wsc__DerivedKeyTokenType_sequence(struct soap *soap, struct __wsc__DerivedKeyTokenType_sequence *p)
+{
+	if (p)
+	{	soap_default___wsc__DerivedKeyTokenType_sequence(soap, p);
+		if (soap_begin_recv(soap) || soap_get___wsc__DerivedKeyTokenType_sequence(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_wsc__PropertiesType_DEFINED
+#define SOAP_TYPE_wsc__PropertiesType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_wsc__PropertiesType(struct soap*, struct wsc__PropertiesType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_wsc__PropertiesType(struct soap*, const struct wsc__PropertiesType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wsc__PropertiesType(struct soap*, const char*, int, const struct wsc__PropertiesType *, const char*);
+SOAP_FMAC3 struct wsc__PropertiesType * SOAP_FMAC4 soap_in_wsc__PropertiesType(struct soap*, const char*, struct wsc__PropertiesType *, const char*);
+SOAP_FMAC1 struct wsc__PropertiesType * SOAP_FMAC2 soap_instantiate_wsc__PropertiesType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct wsc__PropertiesType * soap_new_wsc__PropertiesType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_wsc__PropertiesType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct wsc__PropertiesType * soap_new_req_wsc__PropertiesType(
+	struct soap *soap)
+{
+	struct wsc__PropertiesType *_p = soap_new_wsc__PropertiesType(soap);
+	if (_p)
+	{	soap_default_wsc__PropertiesType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct wsc__PropertiesType * soap_new_set_wsc__PropertiesType(
+	struct soap *soap)
+{
+	struct wsc__PropertiesType *_p = soap_new_wsc__PropertiesType(soap);
+	if (_p)
+	{	soap_default_wsc__PropertiesType(soap, _p);
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wsc__PropertiesType(struct soap*, const struct wsc__PropertiesType *, const char*, const char*);
+
+inline int soap_write_wsc__PropertiesType(struct soap *soap, struct wsc__PropertiesType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_wsc__PropertiesType(soap, p), 0) || soap_put_wsc__PropertiesType(soap, p, "wsc:PropertiesType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct wsc__PropertiesType * SOAP_FMAC4 soap_get_wsc__PropertiesType(struct soap*, struct wsc__PropertiesType *, const char*, const char*);
+
+inline int soap_read_wsc__PropertiesType(struct soap *soap, struct wsc__PropertiesType *p)
+{
+	if (p)
+	{	soap_default_wsc__PropertiesType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_wsc__PropertiesType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_wsc__DerivedKeyTokenType_DEFINED
+#define SOAP_TYPE_wsc__DerivedKeyTokenType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_wsc__DerivedKeyTokenType(struct soap*, struct wsc__DerivedKeyTokenType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_wsc__DerivedKeyTokenType(struct soap*, const struct wsc__DerivedKeyTokenType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wsc__DerivedKeyTokenType(struct soap*, const char*, int, const struct wsc__DerivedKeyTokenType *, const char*);
+SOAP_FMAC3 struct wsc__DerivedKeyTokenType * SOAP_FMAC4 soap_in_wsc__DerivedKeyTokenType(struct soap*, const char*, struct wsc__DerivedKeyTokenType *, const char*);
+SOAP_FMAC1 struct wsc__DerivedKeyTokenType * SOAP_FMAC2 soap_instantiate_wsc__DerivedKeyTokenType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct wsc__DerivedKeyTokenType * soap_new_wsc__DerivedKeyTokenType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_wsc__DerivedKeyTokenType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct wsc__DerivedKeyTokenType * soap_new_req_wsc__DerivedKeyTokenType(
+	struct soap *soap)
+{
+	struct wsc__DerivedKeyTokenType *_p = soap_new_wsc__DerivedKeyTokenType(soap);
+	if (_p)
+	{	soap_default_wsc__DerivedKeyTokenType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct wsc__DerivedKeyTokenType * soap_new_set_wsc__DerivedKeyTokenType(
+	struct soap *soap,
+	struct _wsse__SecurityTokenReference *wsse__SecurityTokenReference,
+	struct wsc__PropertiesType *Properties,
+	struct __wsc__DerivedKeyTokenType_sequence *__DerivedKeyTokenType_sequence,
+	char *Label,
+	char *Nonce,
+	char *wsu__Id,
+	char *Algorithm)
+{
+	struct wsc__DerivedKeyTokenType *_p = soap_new_wsc__DerivedKeyTokenType(soap);
+	if (_p)
+	{	soap_default_wsc__DerivedKeyTokenType(soap, _p);
+		_p->wsse__SecurityTokenReference = wsse__SecurityTokenReference;
+		_p->Properties = Properties;
+		_p->__DerivedKeyTokenType_sequence = __DerivedKeyTokenType_sequence;
+		_p->Label = Label;
+		_p->Nonce = Nonce;
+		_p->wsu__Id = wsu__Id;
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wsc__DerivedKeyTokenType(struct soap*, const struct wsc__DerivedKeyTokenType *, const char*, const char*);
+
+inline int soap_write_wsc__DerivedKeyTokenType(struct soap *soap, struct wsc__DerivedKeyTokenType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_wsc__DerivedKeyTokenType(soap, p), 0) || soap_put_wsc__DerivedKeyTokenType(soap, p, "wsc:DerivedKeyTokenType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct wsc__DerivedKeyTokenType * SOAP_FMAC4 soap_get_wsc__DerivedKeyTokenType(struct soap*, struct wsc__DerivedKeyTokenType *, const char*, const char*);
+
+inline int soap_read_wsc__DerivedKeyTokenType(struct soap *soap, struct wsc__DerivedKeyTokenType *p)
+{
+	if (p)
+	{	soap_default_wsc__DerivedKeyTokenType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_wsc__DerivedKeyTokenType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_wsc__SecurityContextTokenType_DEFINED
+#define SOAP_TYPE_wsc__SecurityContextTokenType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_wsc__SecurityContextTokenType(struct soap*, struct wsc__SecurityContextTokenType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_wsc__SecurityContextTokenType(struct soap*, const struct wsc__SecurityContextTokenType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wsc__SecurityContextTokenType(struct soap*, const char*, int, const struct wsc__SecurityContextTokenType *, const char*);
+SOAP_FMAC3 struct wsc__SecurityContextTokenType * SOAP_FMAC4 soap_in_wsc__SecurityContextTokenType(struct soap*, const char*, struct wsc__SecurityContextTokenType *, const char*);
+SOAP_FMAC1 struct wsc__SecurityContextTokenType * SOAP_FMAC2 soap_instantiate_wsc__SecurityContextTokenType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct wsc__SecurityContextTokenType * soap_new_wsc__SecurityContextTokenType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_wsc__SecurityContextTokenType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct wsc__SecurityContextTokenType * soap_new_req_wsc__SecurityContextTokenType(
+	struct soap *soap)
+{
+	struct wsc__SecurityContextTokenType *_p = soap_new_wsc__SecurityContextTokenType(soap);
+	if (_p)
+	{	soap_default_wsc__SecurityContextTokenType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct wsc__SecurityContextTokenType * soap_new_set_wsc__SecurityContextTokenType(
+	struct soap *soap,
+	char *wsu__Id,
+	char *Identifier,
+	char *Instance)
+{
+	struct wsc__SecurityContextTokenType *_p = soap_new_wsc__SecurityContextTokenType(soap);
+	if (_p)
+	{	soap_default_wsc__SecurityContextTokenType(soap, _p);
+		_p->wsu__Id = wsu__Id;
+		_p->Identifier = Identifier;
+		_p->Instance = Instance;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wsc__SecurityContextTokenType(struct soap*, const struct wsc__SecurityContextTokenType *, const char*, const char*);
+
+inline int soap_write_wsc__SecurityContextTokenType(struct soap *soap, struct wsc__SecurityContextTokenType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_wsc__SecurityContextTokenType(soap, p), 0) || soap_put_wsc__SecurityContextTokenType(soap, p, "wsc:SecurityContextTokenType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct wsc__SecurityContextTokenType * SOAP_FMAC4 soap_get_wsc__SecurityContextTokenType(struct soap*, struct wsc__SecurityContextTokenType *, const char*, const char*);
+
+inline int soap_read_wsc__SecurityContextTokenType(struct soap *soap, struct wsc__SecurityContextTokenType *p)
+{
+	if (p)
+	{	soap_default_wsc__SecurityContextTokenType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_wsc__SecurityContextTokenType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE___xenc__union_ReferenceList_DEFINED
+#define SOAP_TYPE___xenc__union_ReferenceList_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default___xenc__union_ReferenceList(struct soap*, struct __xenc__union_ReferenceList *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize___xenc__union_ReferenceList(struct soap*, const struct __xenc__union_ReferenceList *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out___xenc__union_ReferenceList(struct soap*, const char*, int, const struct __xenc__union_ReferenceList *, const char*);
+SOAP_FMAC3 struct __xenc__union_ReferenceList * SOAP_FMAC4 soap_in___xenc__union_ReferenceList(struct soap*, const char*, struct __xenc__union_ReferenceList *, const char*);
+SOAP_FMAC1 struct __xenc__union_ReferenceList * SOAP_FMAC2 soap_instantiate___xenc__union_ReferenceList(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct __xenc__union_ReferenceList * soap_new___xenc__union_ReferenceList(struct soap *soap, int n = -1)
+{
+	return soap_instantiate___xenc__union_ReferenceList(soap, n, NULL, NULL, NULL);
+}
+
+inline struct __xenc__union_ReferenceList * soap_new_req___xenc__union_ReferenceList(
+	struct soap *soap)
+{
+	struct __xenc__union_ReferenceList *_p = soap_new___xenc__union_ReferenceList(soap);
+	if (_p)
+	{	soap_default___xenc__union_ReferenceList(soap, _p);
+	}
+	return _p;
+}
+
+inline struct __xenc__union_ReferenceList * soap_new_set___xenc__union_ReferenceList(
+	struct soap *soap,
+	struct xenc__ReferenceType *DataReference,
+	struct xenc__ReferenceType *KeyReference)
+{
+	struct __xenc__union_ReferenceList *_p = soap_new___xenc__union_ReferenceList(soap);
+	if (_p)
+	{	soap_default___xenc__union_ReferenceList(soap, _p);
+		_p->DataReference = DataReference;
+		_p->KeyReference = KeyReference;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put___xenc__union_ReferenceList(struct soap*, const struct __xenc__union_ReferenceList *, const char*, const char*);
+
+inline int soap_write___xenc__union_ReferenceList(struct soap *soap, struct __xenc__union_ReferenceList const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize___xenc__union_ReferenceList(soap, p), 0) || soap_put___xenc__union_ReferenceList(soap, p, "-xenc:union-ReferenceList", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct __xenc__union_ReferenceList * SOAP_FMAC4 soap_get___xenc__union_ReferenceList(struct soap*, struct __xenc__union_ReferenceList *, const char*, const char*);
+
+inline int soap_read___xenc__union_ReferenceList(struct soap *soap, struct __xenc__union_ReferenceList *p)
+{
+	if (p)
+	{	soap_default___xenc__union_ReferenceList(soap, p);
+		if (soap_begin_recv(soap) || soap_get___xenc__union_ReferenceList(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__xenc__ReferenceList_DEFINED
+#define SOAP_TYPE__xenc__ReferenceList_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__xenc__ReferenceList(struct soap*, struct _xenc__ReferenceList *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__xenc__ReferenceList(struct soap*, const struct _xenc__ReferenceList *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__xenc__ReferenceList(struct soap*, const char*, int, const struct _xenc__ReferenceList *, const char*);
+SOAP_FMAC3 struct _xenc__ReferenceList * SOAP_FMAC4 soap_in__xenc__ReferenceList(struct soap*, const char*, struct _xenc__ReferenceList *, const char*);
+SOAP_FMAC1 struct _xenc__ReferenceList * SOAP_FMAC2 soap_instantiate__xenc__ReferenceList(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _xenc__ReferenceList * soap_new__xenc__ReferenceList(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__xenc__ReferenceList(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _xenc__ReferenceList * soap_new_req__xenc__ReferenceList(
+	struct soap *soap,
+	int __size_ReferenceList,
+	struct __xenc__union_ReferenceList *__union_ReferenceList)
+{
+	struct _xenc__ReferenceList *_p = soap_new__xenc__ReferenceList(soap);
+	if (_p)
+	{	soap_default__xenc__ReferenceList(soap, _p);
+		_p->__size_ReferenceList = __size_ReferenceList;
+		_p->__union_ReferenceList = __union_ReferenceList;
+	}
+	return _p;
+}
+
+inline struct _xenc__ReferenceList * soap_new_set__xenc__ReferenceList(
+	struct soap *soap,
+	int __size_ReferenceList,
+	struct __xenc__union_ReferenceList *__union_ReferenceList)
+{
+	struct _xenc__ReferenceList *_p = soap_new__xenc__ReferenceList(soap);
+	if (_p)
+	{	soap_default__xenc__ReferenceList(soap, _p);
+		_p->__size_ReferenceList = __size_ReferenceList;
+		_p->__union_ReferenceList = __union_ReferenceList;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__xenc__ReferenceList(struct soap*, const struct _xenc__ReferenceList *, const char*, const char*);
+
+inline int soap_write__xenc__ReferenceList(struct soap *soap, struct _xenc__ReferenceList const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__xenc__ReferenceList(soap, p), 0) || soap_put__xenc__ReferenceList(soap, p, "xenc:ReferenceList", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _xenc__ReferenceList * SOAP_FMAC4 soap_get__xenc__ReferenceList(struct soap*, struct _xenc__ReferenceList *, const char*, const char*);
+
+inline int soap_read__xenc__ReferenceList(struct soap *soap, struct _xenc__ReferenceList *p)
+{
+	if (p)
+	{	soap_default__xenc__ReferenceList(soap, p);
+		if (soap_begin_recv(soap) || soap_get__xenc__ReferenceList(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__EncryptionPropertyType_DEFINED
+#define SOAP_TYPE_xenc__EncryptionPropertyType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__EncryptionPropertyType(struct soap*, struct xenc__EncryptionPropertyType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__EncryptionPropertyType(struct soap*, const struct xenc__EncryptionPropertyType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__EncryptionPropertyType(struct soap*, const char*, int, const struct xenc__EncryptionPropertyType *, const char*);
+SOAP_FMAC3 struct xenc__EncryptionPropertyType * SOAP_FMAC4 soap_in_xenc__EncryptionPropertyType(struct soap*, const char*, struct xenc__EncryptionPropertyType *, const char*);
+SOAP_FMAC1 struct xenc__EncryptionPropertyType * SOAP_FMAC2 soap_instantiate_xenc__EncryptionPropertyType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__EncryptionPropertyType * soap_new_xenc__EncryptionPropertyType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__EncryptionPropertyType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__EncryptionPropertyType * soap_new_req_xenc__EncryptionPropertyType(
+	struct soap *soap)
+{
+	struct xenc__EncryptionPropertyType *_p = soap_new_xenc__EncryptionPropertyType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptionPropertyType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct xenc__EncryptionPropertyType * soap_new_set_xenc__EncryptionPropertyType(
+	struct soap *soap,
+	char *Target,
+	char *Id)
+{
+	struct xenc__EncryptionPropertyType *_p = soap_new_xenc__EncryptionPropertyType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptionPropertyType(soap, _p);
+		_p->Target = Target;
+		_p->Id = Id;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__EncryptionPropertyType(struct soap*, const struct xenc__EncryptionPropertyType *, const char*, const char*);
+
+inline int soap_write_xenc__EncryptionPropertyType(struct soap *soap, struct xenc__EncryptionPropertyType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__EncryptionPropertyType(soap, p), 0) || soap_put_xenc__EncryptionPropertyType(soap, p, "xenc:EncryptionPropertyType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__EncryptionPropertyType * SOAP_FMAC4 soap_get_xenc__EncryptionPropertyType(struct soap*, struct xenc__EncryptionPropertyType *, const char*, const char*);
+
+inline int soap_read_xenc__EncryptionPropertyType(struct soap *soap, struct xenc__EncryptionPropertyType *p)
+{
+	if (p)
+	{	soap_default_xenc__EncryptionPropertyType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__EncryptionPropertyType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__EncryptionPropertiesType_DEFINED
+#define SOAP_TYPE_xenc__EncryptionPropertiesType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__EncryptionPropertiesType(struct soap*, struct xenc__EncryptionPropertiesType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__EncryptionPropertiesType(struct soap*, const struct xenc__EncryptionPropertiesType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__EncryptionPropertiesType(struct soap*, const char*, int, const struct xenc__EncryptionPropertiesType *, const char*);
+SOAP_FMAC3 struct xenc__EncryptionPropertiesType * SOAP_FMAC4 soap_in_xenc__EncryptionPropertiesType(struct soap*, const char*, struct xenc__EncryptionPropertiesType *, const char*);
+SOAP_FMAC1 struct xenc__EncryptionPropertiesType * SOAP_FMAC2 soap_instantiate_xenc__EncryptionPropertiesType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__EncryptionPropertiesType * soap_new_xenc__EncryptionPropertiesType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__EncryptionPropertiesType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__EncryptionPropertiesType * soap_new_req_xenc__EncryptionPropertiesType(
+	struct soap *soap,
+	int __sizeEncryptionProperty,
+	struct xenc__EncryptionPropertyType *EncryptionProperty)
+{
+	struct xenc__EncryptionPropertiesType *_p = soap_new_xenc__EncryptionPropertiesType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptionPropertiesType(soap, _p);
+		_p->__sizeEncryptionProperty = __sizeEncryptionProperty;
+		_p->EncryptionProperty = EncryptionProperty;
+	}
+	return _p;
+}
+
+inline struct xenc__EncryptionPropertiesType * soap_new_set_xenc__EncryptionPropertiesType(
+	struct soap *soap,
+	int __sizeEncryptionProperty,
+	struct xenc__EncryptionPropertyType *EncryptionProperty,
+	char *Id)
+{
+	struct xenc__EncryptionPropertiesType *_p = soap_new_xenc__EncryptionPropertiesType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptionPropertiesType(soap, _p);
+		_p->__sizeEncryptionProperty = __sizeEncryptionProperty;
+		_p->EncryptionProperty = EncryptionProperty;
+		_p->Id = Id;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__EncryptionPropertiesType(struct soap*, const struct xenc__EncryptionPropertiesType *, const char*, const char*);
+
+inline int soap_write_xenc__EncryptionPropertiesType(struct soap *soap, struct xenc__EncryptionPropertiesType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__EncryptionPropertiesType(soap, p), 0) || soap_put_xenc__EncryptionPropertiesType(soap, p, "xenc:EncryptionPropertiesType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__EncryptionPropertiesType * SOAP_FMAC4 soap_get_xenc__EncryptionPropertiesType(struct soap*, struct xenc__EncryptionPropertiesType *, const char*, const char*);
+
+inline int soap_read_xenc__EncryptionPropertiesType(struct soap *soap, struct xenc__EncryptionPropertiesType *p)
+{
+	if (p)
+	{	soap_default_xenc__EncryptionPropertiesType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__EncryptionPropertiesType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__ReferenceType_DEFINED
+#define SOAP_TYPE_xenc__ReferenceType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__ReferenceType(struct soap*, struct xenc__ReferenceType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__ReferenceType(struct soap*, const struct xenc__ReferenceType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__ReferenceType(struct soap*, const char*, int, const struct xenc__ReferenceType *, const char*);
+SOAP_FMAC3 struct xenc__ReferenceType * SOAP_FMAC4 soap_in_xenc__ReferenceType(struct soap*, const char*, struct xenc__ReferenceType *, const char*);
+SOAP_FMAC1 struct xenc__ReferenceType * SOAP_FMAC2 soap_instantiate_xenc__ReferenceType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__ReferenceType * soap_new_xenc__ReferenceType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__ReferenceType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__ReferenceType * soap_new_req_xenc__ReferenceType(
+	struct soap *soap,
+	char *URI)
+{
+	struct xenc__ReferenceType *_p = soap_new_xenc__ReferenceType(soap);
+	if (_p)
+	{	soap_default_xenc__ReferenceType(soap, _p);
+		_p->URI = URI;
+	}
+	return _p;
+}
+
+inline struct xenc__ReferenceType * soap_new_set_xenc__ReferenceType(
+	struct soap *soap,
+	char *URI)
+{
+	struct xenc__ReferenceType *_p = soap_new_xenc__ReferenceType(soap);
+	if (_p)
+	{	soap_default_xenc__ReferenceType(soap, _p);
+		_p->URI = URI;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__ReferenceType(struct soap*, const struct xenc__ReferenceType *, const char*, const char*);
+
+inline int soap_write_xenc__ReferenceType(struct soap *soap, struct xenc__ReferenceType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__ReferenceType(soap, p), 0) || soap_put_xenc__ReferenceType(soap, p, "xenc:ReferenceType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__ReferenceType * SOAP_FMAC4 soap_get_xenc__ReferenceType(struct soap*, struct xenc__ReferenceType *, const char*, const char*);
+
+inline int soap_read_xenc__ReferenceType(struct soap *soap, struct xenc__ReferenceType *p)
+{
+	if (p)
+	{	soap_default_xenc__ReferenceType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__ReferenceType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__AgreementMethodType_DEFINED
+#define SOAP_TYPE_xenc__AgreementMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__AgreementMethodType(struct soap*, struct xenc__AgreementMethodType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__AgreementMethodType(struct soap*, const struct xenc__AgreementMethodType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__AgreementMethodType(struct soap*, const char*, int, const struct xenc__AgreementMethodType *, const char*);
+SOAP_FMAC3 struct xenc__AgreementMethodType * SOAP_FMAC4 soap_in_xenc__AgreementMethodType(struct soap*, const char*, struct xenc__AgreementMethodType *, const char*);
+SOAP_FMAC1 struct xenc__AgreementMethodType * SOAP_FMAC2 soap_instantiate_xenc__AgreementMethodType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__AgreementMethodType * soap_new_xenc__AgreementMethodType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__AgreementMethodType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__AgreementMethodType * soap_new_req_xenc__AgreementMethodType(
+	struct soap *soap,
+	char *Algorithm)
+{
+	struct xenc__AgreementMethodType *_p = soap_new_xenc__AgreementMethodType(soap);
+	if (_p)
+	{	soap_default_xenc__AgreementMethodType(soap, _p);
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+
+inline struct xenc__AgreementMethodType * soap_new_set_xenc__AgreementMethodType(
+	struct soap *soap,
+	char *KA_Nonce,
+	struct ds__KeyInfoType *OriginatorKeyInfo,
+	struct ds__KeyInfoType *RecipientKeyInfo,
+	char *Algorithm,
+	char *__mixed)
+{
+	struct xenc__AgreementMethodType *_p = soap_new_xenc__AgreementMethodType(soap);
+	if (_p)
+	{	soap_default_xenc__AgreementMethodType(soap, _p);
+		_p->KA_Nonce = KA_Nonce;
+		_p->OriginatorKeyInfo = OriginatorKeyInfo;
+		_p->RecipientKeyInfo = RecipientKeyInfo;
+		_p->Algorithm = Algorithm;
+		_p->__mixed = __mixed;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__AgreementMethodType(struct soap*, const struct xenc__AgreementMethodType *, const char*, const char*);
+
+inline int soap_write_xenc__AgreementMethodType(struct soap *soap, struct xenc__AgreementMethodType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__AgreementMethodType(soap, p), 0) || soap_put_xenc__AgreementMethodType(soap, p, "xenc:AgreementMethodType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__AgreementMethodType * SOAP_FMAC4 soap_get_xenc__AgreementMethodType(struct soap*, struct xenc__AgreementMethodType *, const char*, const char*);
+
+inline int soap_read_xenc__AgreementMethodType(struct soap *soap, struct xenc__AgreementMethodType *p)
+{
+	if (p)
+	{	soap_default_xenc__AgreementMethodType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__AgreementMethodType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__EncryptedKeyType_DEFINED
+#define SOAP_TYPE_xenc__EncryptedKeyType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__EncryptedKeyType(struct soap*, struct xenc__EncryptedKeyType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__EncryptedKeyType(struct soap*, const struct xenc__EncryptedKeyType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__EncryptedKeyType(struct soap*, const char*, int, const struct xenc__EncryptedKeyType *, const char*);
+SOAP_FMAC3 struct xenc__EncryptedKeyType * SOAP_FMAC4 soap_in_xenc__EncryptedKeyType(struct soap*, const char*, struct xenc__EncryptedKeyType *, const char*);
+SOAP_FMAC1 struct xenc__EncryptedKeyType * SOAP_FMAC2 soap_instantiate_xenc__EncryptedKeyType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__EncryptedKeyType * soap_new_xenc__EncryptedKeyType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__EncryptedKeyType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__EncryptedKeyType * soap_new_req_xenc__EncryptedKeyType(
+	struct soap *soap,
+	struct xenc__CipherDataType *CipherData)
+{
+	struct xenc__EncryptedKeyType *_p = soap_new_xenc__EncryptedKeyType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptedKeyType(soap, _p);
+		_p->CipherData = CipherData;
+	}
+	return _p;
+}
+
+inline struct xenc__EncryptedKeyType * soap_new_set_xenc__EncryptedKeyType(
+	struct soap *soap,
+	struct xenc__EncryptionMethodType *EncryptionMethod,
+	struct ds__KeyInfoType *ds__KeyInfo,
+	struct xenc__CipherDataType *CipherData,
+	struct xenc__EncryptionPropertiesType *EncryptionProperties,
+	char *Id,
+	char *Type,
+	char *MimeType,
+	char *Encoding,
+	struct _xenc__ReferenceList *ReferenceList,
+	char *CarriedKeyName,
+	char *Recipient)
+{
+	struct xenc__EncryptedKeyType *_p = soap_new_xenc__EncryptedKeyType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptedKeyType(soap, _p);
+		_p->EncryptionMethod = EncryptionMethod;
+		_p->ds__KeyInfo = ds__KeyInfo;
+		_p->CipherData = CipherData;
+		_p->EncryptionProperties = EncryptionProperties;
+		_p->Id = Id;
+		_p->Type = Type;
+		_p->MimeType = MimeType;
+		_p->Encoding = Encoding;
+		_p->ReferenceList = ReferenceList;
+		_p->CarriedKeyName = CarriedKeyName;
+		_p->Recipient = Recipient;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__EncryptedKeyType(struct soap*, const struct xenc__EncryptedKeyType *, const char*, const char*);
+
+inline int soap_write_xenc__EncryptedKeyType(struct soap *soap, struct xenc__EncryptedKeyType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__EncryptedKeyType(soap, p), 0) || soap_put_xenc__EncryptedKeyType(soap, p, "xenc:EncryptedKeyType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__EncryptedKeyType * SOAP_FMAC4 soap_get_xenc__EncryptedKeyType(struct soap*, struct xenc__EncryptedKeyType *, const char*, const char*);
+
+inline int soap_read_xenc__EncryptedKeyType(struct soap *soap, struct xenc__EncryptedKeyType *p)
+{
+	if (p)
+	{	soap_default_xenc__EncryptedKeyType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__EncryptedKeyType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__EncryptedDataType_DEFINED
+#define SOAP_TYPE_xenc__EncryptedDataType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__EncryptedDataType(struct soap*, struct xenc__EncryptedDataType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__EncryptedDataType(struct soap*, const struct xenc__EncryptedDataType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__EncryptedDataType(struct soap*, const char*, int, const struct xenc__EncryptedDataType *, const char*);
+SOAP_FMAC3 struct xenc__EncryptedDataType * SOAP_FMAC4 soap_in_xenc__EncryptedDataType(struct soap*, const char*, struct xenc__EncryptedDataType *, const char*);
+SOAP_FMAC1 struct xenc__EncryptedDataType * SOAP_FMAC2 soap_instantiate_xenc__EncryptedDataType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__EncryptedDataType * soap_new_xenc__EncryptedDataType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__EncryptedDataType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__EncryptedDataType * soap_new_req_xenc__EncryptedDataType(
+	struct soap *soap,
+	struct xenc__CipherDataType *CipherData)
+{
+	struct xenc__EncryptedDataType *_p = soap_new_xenc__EncryptedDataType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptedDataType(soap, _p);
+		_p->CipherData = CipherData;
+	}
+	return _p;
+}
+
+inline struct xenc__EncryptedDataType * soap_new_set_xenc__EncryptedDataType(
+	struct soap *soap,
+	struct xenc__EncryptionMethodType *EncryptionMethod,
+	struct ds__KeyInfoType *ds__KeyInfo,
+	struct xenc__CipherDataType *CipherData,
+	struct xenc__EncryptionPropertiesType *EncryptionProperties,
+	char *Id,
+	char *Type,
+	char *MimeType,
+	char *Encoding)
+{
+	struct xenc__EncryptedDataType *_p = soap_new_xenc__EncryptedDataType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptedDataType(soap, _p);
+		_p->EncryptionMethod = EncryptionMethod;
+		_p->ds__KeyInfo = ds__KeyInfo;
+		_p->CipherData = CipherData;
+		_p->EncryptionProperties = EncryptionProperties;
+		_p->Id = Id;
+		_p->Type = Type;
+		_p->MimeType = MimeType;
+		_p->Encoding = Encoding;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__EncryptedDataType(struct soap*, const struct xenc__EncryptedDataType *, const char*, const char*);
+
+inline int soap_write_xenc__EncryptedDataType(struct soap *soap, struct xenc__EncryptedDataType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__EncryptedDataType(soap, p), 0) || soap_put_xenc__EncryptedDataType(soap, p, "xenc:EncryptedDataType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__EncryptedDataType * SOAP_FMAC4 soap_get_xenc__EncryptedDataType(struct soap*, struct xenc__EncryptedDataType *, const char*, const char*);
+
+inline int soap_read_xenc__EncryptedDataType(struct soap *soap, struct xenc__EncryptedDataType *p)
+{
+	if (p)
+	{	soap_default_xenc__EncryptedDataType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__EncryptedDataType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__TransformsType_DEFINED
+#define SOAP_TYPE_xenc__TransformsType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__TransformsType(struct soap*, struct xenc__TransformsType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__TransformsType(struct soap*, const struct xenc__TransformsType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__TransformsType(struct soap*, const char*, int, const struct xenc__TransformsType *, const char*);
+SOAP_FMAC3 struct xenc__TransformsType * SOAP_FMAC4 soap_in_xenc__TransformsType(struct soap*, const char*, struct xenc__TransformsType *, const char*);
+SOAP_FMAC1 struct xenc__TransformsType * SOAP_FMAC2 soap_instantiate_xenc__TransformsType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__TransformsType * soap_new_xenc__TransformsType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__TransformsType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__TransformsType * soap_new_req_xenc__TransformsType(
+	struct soap *soap,
+	const struct ds__TransformType& ds__Transform)
+{
+	struct xenc__TransformsType *_p = soap_new_xenc__TransformsType(soap);
+	if (_p)
+	{	soap_default_xenc__TransformsType(soap, _p);
+		_p->ds__Transform = ds__Transform;
+	}
+	return _p;
+}
+
+inline struct xenc__TransformsType * soap_new_set_xenc__TransformsType(
+	struct soap *soap,
+	const struct ds__TransformType& ds__Transform)
+{
+	struct xenc__TransformsType *_p = soap_new_xenc__TransformsType(soap);
+	if (_p)
+	{	soap_default_xenc__TransformsType(soap, _p);
+		_p->ds__Transform = ds__Transform;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__TransformsType(struct soap*, const struct xenc__TransformsType *, const char*, const char*);
+
+inline int soap_write_xenc__TransformsType(struct soap *soap, struct xenc__TransformsType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__TransformsType(soap, p), 0) || soap_put_xenc__TransformsType(soap, p, "xenc:TransformsType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__TransformsType * SOAP_FMAC4 soap_get_xenc__TransformsType(struct soap*, struct xenc__TransformsType *, const char*, const char*);
+
+inline int soap_read_xenc__TransformsType(struct soap *soap, struct xenc__TransformsType *p)
+{
+	if (p)
+	{	soap_default_xenc__TransformsType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__TransformsType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__CipherReferenceType_DEFINED
+#define SOAP_TYPE_xenc__CipherReferenceType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__CipherReferenceType(struct soap*, struct xenc__CipherReferenceType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__CipherReferenceType(struct soap*, const struct xenc__CipherReferenceType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__CipherReferenceType(struct soap*, const char*, int, const struct xenc__CipherReferenceType *, const char*);
+SOAP_FMAC3 struct xenc__CipherReferenceType * SOAP_FMAC4 soap_in_xenc__CipherReferenceType(struct soap*, const char*, struct xenc__CipherReferenceType *, const char*);
+SOAP_FMAC1 struct xenc__CipherReferenceType * SOAP_FMAC2 soap_instantiate_xenc__CipherReferenceType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__CipherReferenceType * soap_new_xenc__CipherReferenceType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__CipherReferenceType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__CipherReferenceType * soap_new_req_xenc__CipherReferenceType(
+	struct soap *soap,
+	char *URI)
+{
+	struct xenc__CipherReferenceType *_p = soap_new_xenc__CipherReferenceType(soap);
+	if (_p)
+	{	soap_default_xenc__CipherReferenceType(soap, _p);
+		_p->URI = URI;
+	}
+	return _p;
+}
+
+inline struct xenc__CipherReferenceType * soap_new_set_xenc__CipherReferenceType(
+	struct soap *soap,
+	struct xenc__TransformsType *Transforms,
+	char *URI)
+{
+	struct xenc__CipherReferenceType *_p = soap_new_xenc__CipherReferenceType(soap);
+	if (_p)
+	{	soap_default_xenc__CipherReferenceType(soap, _p);
+		_p->Transforms = Transforms;
+		_p->URI = URI;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__CipherReferenceType(struct soap*, const struct xenc__CipherReferenceType *, const char*, const char*);
+
+inline int soap_write_xenc__CipherReferenceType(struct soap *soap, struct xenc__CipherReferenceType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__CipherReferenceType(soap, p), 0) || soap_put_xenc__CipherReferenceType(soap, p, "xenc:CipherReferenceType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__CipherReferenceType * SOAP_FMAC4 soap_get_xenc__CipherReferenceType(struct soap*, struct xenc__CipherReferenceType *, const char*, const char*);
+
+inline int soap_read_xenc__CipherReferenceType(struct soap *soap, struct xenc__CipherReferenceType *p)
+{
+	if (p)
+	{	soap_default_xenc__CipherReferenceType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__CipherReferenceType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__CipherDataType_DEFINED
+#define SOAP_TYPE_xenc__CipherDataType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__CipherDataType(struct soap*, struct xenc__CipherDataType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__CipherDataType(struct soap*, const struct xenc__CipherDataType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__CipherDataType(struct soap*, const char*, int, const struct xenc__CipherDataType *, const char*);
+SOAP_FMAC3 struct xenc__CipherDataType * SOAP_FMAC4 soap_in_xenc__CipherDataType(struct soap*, const char*, struct xenc__CipherDataType *, const char*);
+SOAP_FMAC1 struct xenc__CipherDataType * SOAP_FMAC2 soap_instantiate_xenc__CipherDataType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__CipherDataType * soap_new_xenc__CipherDataType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__CipherDataType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__CipherDataType * soap_new_req_xenc__CipherDataType(
+	struct soap *soap)
+{
+	struct xenc__CipherDataType *_p = soap_new_xenc__CipherDataType(soap);
+	if (_p)
+	{	soap_default_xenc__CipherDataType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct xenc__CipherDataType * soap_new_set_xenc__CipherDataType(
+	struct soap *soap,
+	char *CipherValue,
+	struct xenc__CipherReferenceType *CipherReference)
+{
+	struct xenc__CipherDataType *_p = soap_new_xenc__CipherDataType(soap);
+	if (_p)
+	{	soap_default_xenc__CipherDataType(soap, _p);
+		_p->CipherValue = CipherValue;
+		_p->CipherReference = CipherReference;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__CipherDataType(struct soap*, const struct xenc__CipherDataType *, const char*, const char*);
+
+inline int soap_write_xenc__CipherDataType(struct soap *soap, struct xenc__CipherDataType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__CipherDataType(soap, p), 0) || soap_put_xenc__CipherDataType(soap, p, "xenc:CipherDataType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__CipherDataType * SOAP_FMAC4 soap_get_xenc__CipherDataType(struct soap*, struct xenc__CipherDataType *, const char*, const char*);
+
+inline int soap_read_xenc__CipherDataType(struct soap *soap, struct xenc__CipherDataType *p)
+{
+	if (p)
+	{	soap_default_xenc__CipherDataType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__CipherDataType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__EncryptionMethodType_DEFINED
+#define SOAP_TYPE_xenc__EncryptionMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__EncryptionMethodType(struct soap*, struct xenc__EncryptionMethodType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__EncryptionMethodType(struct soap*, const struct xenc__EncryptionMethodType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__EncryptionMethodType(struct soap*, const char*, int, const struct xenc__EncryptionMethodType *, const char*);
+SOAP_FMAC3 struct xenc__EncryptionMethodType * SOAP_FMAC4 soap_in_xenc__EncryptionMethodType(struct soap*, const char*, struct xenc__EncryptionMethodType *, const char*);
+SOAP_FMAC1 struct xenc__EncryptionMethodType * SOAP_FMAC2 soap_instantiate_xenc__EncryptionMethodType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__EncryptionMethodType * soap_new_xenc__EncryptionMethodType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__EncryptionMethodType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__EncryptionMethodType * soap_new_req_xenc__EncryptionMethodType(
+	struct soap *soap,
+	char *Algorithm)
+{
+	struct xenc__EncryptionMethodType *_p = soap_new_xenc__EncryptionMethodType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptionMethodType(soap, _p);
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+
+inline struct xenc__EncryptionMethodType * soap_new_set_xenc__EncryptionMethodType(
+	struct soap *soap,
+	int *KeySize,
+	char *OAEPparams,
+	char *Algorithm,
+	struct ds__DigestMethodType *ds__DigestMethod,
+	char *__mixed)
+{
+	struct xenc__EncryptionMethodType *_p = soap_new_xenc__EncryptionMethodType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptionMethodType(soap, _p);
+		_p->KeySize = KeySize;
+		_p->OAEPparams = OAEPparams;
+		_p->Algorithm = Algorithm;
+		_p->ds__DigestMethod = ds__DigestMethod;
+		_p->__mixed = __mixed;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__EncryptionMethodType(struct soap*, const struct xenc__EncryptionMethodType *, const char*, const char*);
+
+inline int soap_write_xenc__EncryptionMethodType(struct soap *soap, struct xenc__EncryptionMethodType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__EncryptionMethodType(soap, p), 0) || soap_put_xenc__EncryptionMethodType(soap, p, "xenc:EncryptionMethodType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__EncryptionMethodType * SOAP_FMAC4 soap_get_xenc__EncryptionMethodType(struct soap*, struct xenc__EncryptionMethodType *, const char*, const char*);
+
+inline int soap_read_xenc__EncryptionMethodType(struct soap *soap, struct xenc__EncryptionMethodType *p)
+{
+	if (p)
+	{	soap_default_xenc__EncryptionMethodType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__EncryptionMethodType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xenc__EncryptedType_DEFINED
+#define SOAP_TYPE_xenc__EncryptedType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_xenc__EncryptedType(struct soap*, struct xenc__EncryptedType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xenc__EncryptedType(struct soap*, const struct xenc__EncryptedType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xenc__EncryptedType(struct soap*, const char*, int, const struct xenc__EncryptedType *, const char*);
+SOAP_FMAC3 struct xenc__EncryptedType * SOAP_FMAC4 soap_in_xenc__EncryptedType(struct soap*, const char*, struct xenc__EncryptedType *, const char*);
+SOAP_FMAC1 struct xenc__EncryptedType * SOAP_FMAC2 soap_instantiate_xenc__EncryptedType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct xenc__EncryptedType * soap_new_xenc__EncryptedType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_xenc__EncryptedType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct xenc__EncryptedType * soap_new_req_xenc__EncryptedType(
+	struct soap *soap,
+	struct xenc__CipherDataType *CipherData)
+{
+	struct xenc__EncryptedType *_p = soap_new_xenc__EncryptedType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptedType(soap, _p);
+		_p->CipherData = CipherData;
+	}
+	return _p;
+}
+
+inline struct xenc__EncryptedType * soap_new_set_xenc__EncryptedType(
+	struct soap *soap,
+	struct xenc__EncryptionMethodType *EncryptionMethod,
+	struct ds__KeyInfoType *ds__KeyInfo,
+	struct xenc__CipherDataType *CipherData,
+	struct xenc__EncryptionPropertiesType *EncryptionProperties,
+	char *Id,
+	char *Type,
+	char *MimeType,
+	char *Encoding)
+{
+	struct xenc__EncryptedType *_p = soap_new_xenc__EncryptedType(soap);
+	if (_p)
+	{	soap_default_xenc__EncryptedType(soap, _p);
+		_p->EncryptionMethod = EncryptionMethod;
+		_p->ds__KeyInfo = ds__KeyInfo;
+		_p->CipherData = CipherData;
+		_p->EncryptionProperties = EncryptionProperties;
+		_p->Id = Id;
+		_p->Type = Type;
+		_p->MimeType = MimeType;
+		_p->Encoding = Encoding;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xenc__EncryptedType(struct soap*, const struct xenc__EncryptedType *, const char*, const char*);
+
+inline int soap_write_xenc__EncryptedType(struct soap *soap, struct xenc__EncryptedType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_xenc__EncryptedType(soap, p), 0) || soap_put_xenc__EncryptedType(soap, p, "xenc:EncryptedType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct xenc__EncryptedType * SOAP_FMAC4 soap_get_xenc__EncryptedType(struct soap*, struct xenc__EncryptedType *, const char*, const char*);
+
+inline int soap_read_xenc__EncryptedType(struct soap *soap, struct xenc__EncryptedType *p)
+{
+	if (p)
+	{	soap_default_xenc__EncryptedType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_xenc__EncryptedType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__RSAKeyValueType_DEFINED
+#define SOAP_TYPE_ds__RSAKeyValueType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__RSAKeyValueType(struct soap*, struct ds__RSAKeyValueType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__RSAKeyValueType(struct soap*, const struct ds__RSAKeyValueType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__RSAKeyValueType(struct soap*, const char*, int, const struct ds__RSAKeyValueType *, const char*);
+SOAP_FMAC3 struct ds__RSAKeyValueType * SOAP_FMAC4 soap_in_ds__RSAKeyValueType(struct soap*, const char*, struct ds__RSAKeyValueType *, const char*);
+SOAP_FMAC1 struct ds__RSAKeyValueType * SOAP_FMAC2 soap_instantiate_ds__RSAKeyValueType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__RSAKeyValueType * soap_new_ds__RSAKeyValueType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__RSAKeyValueType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__RSAKeyValueType * soap_new_req_ds__RSAKeyValueType(
+	struct soap *soap,
+	char *Modulus,
+	char *Exponent)
+{
+	struct ds__RSAKeyValueType *_p = soap_new_ds__RSAKeyValueType(soap);
+	if (_p)
+	{	soap_default_ds__RSAKeyValueType(soap, _p);
+		_p->Modulus = Modulus;
+		_p->Exponent = Exponent;
+	}
+	return _p;
+}
+
+inline struct ds__RSAKeyValueType * soap_new_set_ds__RSAKeyValueType(
+	struct soap *soap,
+	char *Modulus,
+	char *Exponent)
+{
+	struct ds__RSAKeyValueType *_p = soap_new_ds__RSAKeyValueType(soap);
+	if (_p)
+	{	soap_default_ds__RSAKeyValueType(soap, _p);
+		_p->Modulus = Modulus;
+		_p->Exponent = Exponent;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__RSAKeyValueType(struct soap*, const struct ds__RSAKeyValueType *, const char*, const char*);
+
+inline int soap_write_ds__RSAKeyValueType(struct soap *soap, struct ds__RSAKeyValueType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__RSAKeyValueType(soap, p), 0) || soap_put_ds__RSAKeyValueType(soap, p, "ds:RSAKeyValueType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__RSAKeyValueType * SOAP_FMAC4 soap_get_ds__RSAKeyValueType(struct soap*, struct ds__RSAKeyValueType *, const char*, const char*);
+
+inline int soap_read_ds__RSAKeyValueType(struct soap *soap, struct ds__RSAKeyValueType *p)
+{
+	if (p)
+	{	soap_default_ds__RSAKeyValueType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__RSAKeyValueType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__DSAKeyValueType_DEFINED
+#define SOAP_TYPE_ds__DSAKeyValueType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__DSAKeyValueType(struct soap*, struct ds__DSAKeyValueType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__DSAKeyValueType(struct soap*, const struct ds__DSAKeyValueType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__DSAKeyValueType(struct soap*, const char*, int, const struct ds__DSAKeyValueType *, const char*);
+SOAP_FMAC3 struct ds__DSAKeyValueType * SOAP_FMAC4 soap_in_ds__DSAKeyValueType(struct soap*, const char*, struct ds__DSAKeyValueType *, const char*);
+SOAP_FMAC1 struct ds__DSAKeyValueType * SOAP_FMAC2 soap_instantiate_ds__DSAKeyValueType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__DSAKeyValueType * soap_new_ds__DSAKeyValueType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__DSAKeyValueType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__DSAKeyValueType * soap_new_req_ds__DSAKeyValueType(
+	struct soap *soap,
+	char *Y,
+	char *P,
+	char *Q,
+	char *Seed,
+	char *PgenCounter)
+{
+	struct ds__DSAKeyValueType *_p = soap_new_ds__DSAKeyValueType(soap);
+	if (_p)
+	{	soap_default_ds__DSAKeyValueType(soap, _p);
+		_p->Y = Y;
+		_p->P = P;
+		_p->Q = Q;
+		_p->Seed = Seed;
+		_p->PgenCounter = PgenCounter;
+	}
+	return _p;
+}
+
+inline struct ds__DSAKeyValueType * soap_new_set_ds__DSAKeyValueType(
+	struct soap *soap,
+	char *G,
+	char *Y,
+	char *J,
+	char *P,
+	char *Q,
+	char *Seed,
+	char *PgenCounter)
+{
+	struct ds__DSAKeyValueType *_p = soap_new_ds__DSAKeyValueType(soap);
+	if (_p)
+	{	soap_default_ds__DSAKeyValueType(soap, _p);
+		_p->G = G;
+		_p->Y = Y;
+		_p->J = J;
+		_p->P = P;
+		_p->Q = Q;
+		_p->Seed = Seed;
+		_p->PgenCounter = PgenCounter;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__DSAKeyValueType(struct soap*, const struct ds__DSAKeyValueType *, const char*, const char*);
+
+inline int soap_write_ds__DSAKeyValueType(struct soap *soap, struct ds__DSAKeyValueType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__DSAKeyValueType(soap, p), 0) || soap_put_ds__DSAKeyValueType(soap, p, "ds:DSAKeyValueType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__DSAKeyValueType * SOAP_FMAC4 soap_get_ds__DSAKeyValueType(struct soap*, struct ds__DSAKeyValueType *, const char*, const char*);
+
+inline int soap_read_ds__DSAKeyValueType(struct soap *soap, struct ds__DSAKeyValueType *p)
+{
+	if (p)
+	{	soap_default_ds__DSAKeyValueType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__DSAKeyValueType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__X509IssuerSerialType_DEFINED
+#define SOAP_TYPE_ds__X509IssuerSerialType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__X509IssuerSerialType(struct soap*, struct ds__X509IssuerSerialType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__X509IssuerSerialType(struct soap*, const struct ds__X509IssuerSerialType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__X509IssuerSerialType(struct soap*, const char*, int, const struct ds__X509IssuerSerialType *, const char*);
+SOAP_FMAC3 struct ds__X509IssuerSerialType * SOAP_FMAC4 soap_in_ds__X509IssuerSerialType(struct soap*, const char*, struct ds__X509IssuerSerialType *, const char*);
+SOAP_FMAC1 struct ds__X509IssuerSerialType * SOAP_FMAC2 soap_instantiate_ds__X509IssuerSerialType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__X509IssuerSerialType * soap_new_ds__X509IssuerSerialType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__X509IssuerSerialType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__X509IssuerSerialType * soap_new_req_ds__X509IssuerSerialType(
+	struct soap *soap,
+	char *X509IssuerName,
+	char *X509SerialNumber)
+{
+	struct ds__X509IssuerSerialType *_p = soap_new_ds__X509IssuerSerialType(soap);
+	if (_p)
+	{	soap_default_ds__X509IssuerSerialType(soap, _p);
+		_p->X509IssuerName = X509IssuerName;
+		_p->X509SerialNumber = X509SerialNumber;
+	}
+	return _p;
+}
+
+inline struct ds__X509IssuerSerialType * soap_new_set_ds__X509IssuerSerialType(
+	struct soap *soap,
+	char *X509IssuerName,
+	char *X509SerialNumber)
+{
+	struct ds__X509IssuerSerialType *_p = soap_new_ds__X509IssuerSerialType(soap);
+	if (_p)
+	{	soap_default_ds__X509IssuerSerialType(soap, _p);
+		_p->X509IssuerName = X509IssuerName;
+		_p->X509SerialNumber = X509SerialNumber;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__X509IssuerSerialType(struct soap*, const struct ds__X509IssuerSerialType *, const char*, const char*);
+
+inline int soap_write_ds__X509IssuerSerialType(struct soap *soap, struct ds__X509IssuerSerialType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__X509IssuerSerialType(soap, p), 0) || soap_put_ds__X509IssuerSerialType(soap, p, "ds:X509IssuerSerialType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__X509IssuerSerialType * SOAP_FMAC4 soap_get_ds__X509IssuerSerialType(struct soap*, struct ds__X509IssuerSerialType *, const char*, const char*);
+
+inline int soap_read_ds__X509IssuerSerialType(struct soap *soap, struct ds__X509IssuerSerialType *p)
+{
+	if (p)
+	{	soap_default_ds__X509IssuerSerialType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__X509IssuerSerialType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+/* _ds__KeyInfo is a typedef synonym for ds__KeyInfoType */
+
+#ifndef SOAP_TYPE__ds__KeyInfo_DEFINED
+#define SOAP_TYPE__ds__KeyInfo_DEFINED
+
+#define soap_default__ds__KeyInfo(soap, a) soap_default_ds__KeyInfoType(soap, a)
+
+
+#define soap_serialize__ds__KeyInfo soap_serialize_ds__KeyInfoType
+
+
+#define soap__ds__KeyInfo2s soap_ds__KeyInfoType2s
+
+
+#define soap_out__ds__KeyInfo soap_out_ds__KeyInfoType
+
+
+#define soap_s2_ds__KeyInfo soap_s2ds__KeyInfoType
+
+
+#define soap_in__ds__KeyInfo soap_in_ds__KeyInfoType
+
+
+#define soap_instantiate__ds__KeyInfo soap_instantiate_ds__KeyInfoType
+
+
+#define soap_new__ds__KeyInfo soap_new_ds__KeyInfoType
+
+
+#define soap_new_req__ds__KeyInfo soap_new_req_ds__KeyInfoType
+
+
+#define soap_new_set__ds__KeyInfo soap_new_set_ds__KeyInfoType
+
+
+#define soap_put__ds__KeyInfo soap_put_ds__KeyInfoType
+
+
+#define soap_write__ds__KeyInfo soap_write_ds__KeyInfoType
+
+
+#define soap_get__ds__KeyInfo soap_get_ds__KeyInfoType
+
+
+#define soap_read__ds__KeyInfo soap_read_ds__KeyInfoType
+
+#endif
+
+#ifndef SOAP_TYPE_ds__RetrievalMethodType_DEFINED
+#define SOAP_TYPE_ds__RetrievalMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__RetrievalMethodType(struct soap*, struct ds__RetrievalMethodType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__RetrievalMethodType(struct soap*, const struct ds__RetrievalMethodType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__RetrievalMethodType(struct soap*, const char*, int, const struct ds__RetrievalMethodType *, const char*);
+SOAP_FMAC3 struct ds__RetrievalMethodType * SOAP_FMAC4 soap_in_ds__RetrievalMethodType(struct soap*, const char*, struct ds__RetrievalMethodType *, const char*);
+SOAP_FMAC1 struct ds__RetrievalMethodType * SOAP_FMAC2 soap_instantiate_ds__RetrievalMethodType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__RetrievalMethodType * soap_new_ds__RetrievalMethodType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__RetrievalMethodType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__RetrievalMethodType * soap_new_req_ds__RetrievalMethodType(
+	struct soap *soap)
+{
+	struct ds__RetrievalMethodType *_p = soap_new_ds__RetrievalMethodType(soap);
+	if (_p)
+	{	soap_default_ds__RetrievalMethodType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct ds__RetrievalMethodType * soap_new_set_ds__RetrievalMethodType(
+	struct soap *soap,
+	struct ds__TransformsType *Transforms,
+	char *URI,
+	char *Type)
+{
+	struct ds__RetrievalMethodType *_p = soap_new_ds__RetrievalMethodType(soap);
+	if (_p)
+	{	soap_default_ds__RetrievalMethodType(soap, _p);
+		_p->Transforms = Transforms;
+		_p->URI = URI;
+		_p->Type = Type;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__RetrievalMethodType(struct soap*, const struct ds__RetrievalMethodType *, const char*, const char*);
+
+inline int soap_write_ds__RetrievalMethodType(struct soap *soap, struct ds__RetrievalMethodType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__RetrievalMethodType(soap, p), 0) || soap_put_ds__RetrievalMethodType(soap, p, "ds:RetrievalMethodType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__RetrievalMethodType * SOAP_FMAC4 soap_get_ds__RetrievalMethodType(struct soap*, struct ds__RetrievalMethodType *, const char*, const char*);
+
+inline int soap_read_ds__RetrievalMethodType(struct soap *soap, struct ds__RetrievalMethodType *p)
+{
+	if (p)
+	{	soap_default_ds__RetrievalMethodType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__RetrievalMethodType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__KeyValueType_DEFINED
+#define SOAP_TYPE_ds__KeyValueType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__KeyValueType(struct soap*, struct ds__KeyValueType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__KeyValueType(struct soap*, const struct ds__KeyValueType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__KeyValueType(struct soap*, const char*, int, const struct ds__KeyValueType *, const char*);
+SOAP_FMAC3 struct ds__KeyValueType * SOAP_FMAC4 soap_in_ds__KeyValueType(struct soap*, const char*, struct ds__KeyValueType *, const char*);
+SOAP_FMAC1 struct ds__KeyValueType * SOAP_FMAC2 soap_instantiate_ds__KeyValueType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__KeyValueType * soap_new_ds__KeyValueType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__KeyValueType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__KeyValueType * soap_new_req_ds__KeyValueType(
+	struct soap *soap)
+{
+	struct ds__KeyValueType *_p = soap_new_ds__KeyValueType(soap);
+	if (_p)
+	{	soap_default_ds__KeyValueType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct ds__KeyValueType * soap_new_set_ds__KeyValueType(
+	struct soap *soap,
+	struct ds__DSAKeyValueType *DSAKeyValue,
+	struct ds__RSAKeyValueType *RSAKeyValue)
+{
+	struct ds__KeyValueType *_p = soap_new_ds__KeyValueType(soap);
+	if (_p)
+	{	soap_default_ds__KeyValueType(soap, _p);
+		_p->DSAKeyValue = DSAKeyValue;
+		_p->RSAKeyValue = RSAKeyValue;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__KeyValueType(struct soap*, const struct ds__KeyValueType *, const char*, const char*);
+
+inline int soap_write_ds__KeyValueType(struct soap *soap, struct ds__KeyValueType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__KeyValueType(soap, p), 0) || soap_put_ds__KeyValueType(soap, p, "ds:KeyValueType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__KeyValueType * SOAP_FMAC4 soap_get_ds__KeyValueType(struct soap*, struct ds__KeyValueType *, const char*, const char*);
+
+inline int soap_read_ds__KeyValueType(struct soap *soap, struct ds__KeyValueType *p)
+{
+	if (p)
+	{	soap_default_ds__KeyValueType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__KeyValueType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__DigestMethodType_DEFINED
+#define SOAP_TYPE_ds__DigestMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__DigestMethodType(struct soap*, struct ds__DigestMethodType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__DigestMethodType(struct soap*, const struct ds__DigestMethodType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__DigestMethodType(struct soap*, const char*, int, const struct ds__DigestMethodType *, const char*);
+SOAP_FMAC3 struct ds__DigestMethodType * SOAP_FMAC4 soap_in_ds__DigestMethodType(struct soap*, const char*, struct ds__DigestMethodType *, const char*);
+SOAP_FMAC1 struct ds__DigestMethodType * SOAP_FMAC2 soap_instantiate_ds__DigestMethodType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__DigestMethodType * soap_new_ds__DigestMethodType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__DigestMethodType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__DigestMethodType * soap_new_req_ds__DigestMethodType(
+	struct soap *soap,
+	char *Algorithm)
+{
+	struct ds__DigestMethodType *_p = soap_new_ds__DigestMethodType(soap);
+	if (_p)
+	{	soap_default_ds__DigestMethodType(soap, _p);
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+
+inline struct ds__DigestMethodType * soap_new_set_ds__DigestMethodType(
+	struct soap *soap,
+	char *Algorithm)
+{
+	struct ds__DigestMethodType *_p = soap_new_ds__DigestMethodType(soap);
+	if (_p)
+	{	soap_default_ds__DigestMethodType(soap, _p);
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__DigestMethodType(struct soap*, const struct ds__DigestMethodType *, const char*, const char*);
+
+inline int soap_write_ds__DigestMethodType(struct soap *soap, struct ds__DigestMethodType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__DigestMethodType(soap, p), 0) || soap_put_ds__DigestMethodType(soap, p, "ds:DigestMethodType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__DigestMethodType * SOAP_FMAC4 soap_get_ds__DigestMethodType(struct soap*, struct ds__DigestMethodType *, const char*, const char*);
+
+inline int soap_read_ds__DigestMethodType(struct soap *soap, struct ds__DigestMethodType *p)
+{
+	if (p)
+	{	soap_default_ds__DigestMethodType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__DigestMethodType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+/* _ds__Transform is a typedef synonym for ds__TransformType */
+
+#ifndef SOAP_TYPE__ds__Transform_DEFINED
+#define SOAP_TYPE__ds__Transform_DEFINED
+
+#define soap_default__ds__Transform(soap, a) soap_default_ds__TransformType(soap, a)
+
+
+#define soap_serialize__ds__Transform soap_serialize_ds__TransformType
+
+
+#define soap__ds__Transform2s soap_ds__TransformType2s
+
+
+#define soap_out__ds__Transform soap_out_ds__TransformType
+
+
+#define soap_s2_ds__Transform soap_s2ds__TransformType
+
+
+#define soap_in__ds__Transform soap_in_ds__TransformType
+
+
+#define soap_instantiate__ds__Transform soap_instantiate_ds__TransformType
+
+
+#define soap_new__ds__Transform soap_new_ds__TransformType
+
+
+#define soap_new_req__ds__Transform soap_new_req_ds__TransformType
+
+
+#define soap_new_set__ds__Transform soap_new_set_ds__TransformType
+
+
+#define soap_put__ds__Transform soap_put_ds__TransformType
+
+
+#define soap_write__ds__Transform soap_write_ds__TransformType
+
+
+#define soap_get__ds__Transform soap_get_ds__TransformType
+
+
+#define soap_read__ds__Transform soap_read_ds__TransformType
+
+#endif
+
+#ifndef SOAP_TYPE_ds__TransformType_DEFINED
+#define SOAP_TYPE_ds__TransformType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__TransformType(struct soap*, struct ds__TransformType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__TransformType(struct soap*, const struct ds__TransformType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__TransformType(struct soap*, const char*, int, const struct ds__TransformType *, const char*);
+SOAP_FMAC3 struct ds__TransformType * SOAP_FMAC4 soap_in_ds__TransformType(struct soap*, const char*, struct ds__TransformType *, const char*);
+SOAP_FMAC1 struct ds__TransformType * SOAP_FMAC2 soap_instantiate_ds__TransformType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__TransformType * soap_new_ds__TransformType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__TransformType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__TransformType * soap_new_req_ds__TransformType(
+	struct soap *soap)
+{
+	struct ds__TransformType *_p = soap_new_ds__TransformType(soap);
+	if (_p)
+	{	soap_default_ds__TransformType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct ds__TransformType * soap_new_set_ds__TransformType(
+	struct soap *soap,
+	struct _c14n__InclusiveNamespaces *c14n__InclusiveNamespaces,
+	char *__any,
+	char *Algorithm)
+{
+	struct ds__TransformType *_p = soap_new_ds__TransformType(soap);
+	if (_p)
+	{	soap_default_ds__TransformType(soap, _p);
+		_p->c14n__InclusiveNamespaces = c14n__InclusiveNamespaces;
+		_p->__any = __any;
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__TransformType(struct soap*, const struct ds__TransformType *, const char*, const char*);
+
+inline int soap_write_ds__TransformType(struct soap *soap, struct ds__TransformType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__TransformType(soap, p), 0) || soap_put_ds__TransformType(soap, p, "ds:TransformType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__TransformType * SOAP_FMAC4 soap_get_ds__TransformType(struct soap*, struct ds__TransformType *, const char*, const char*);
+
+inline int soap_read_ds__TransformType(struct soap *soap, struct ds__TransformType *p)
+{
+	if (p)
+	{	soap_default_ds__TransformType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__TransformType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__c14n__InclusiveNamespaces_DEFINED
+#define SOAP_TYPE__c14n__InclusiveNamespaces_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__c14n__InclusiveNamespaces(struct soap*, struct _c14n__InclusiveNamespaces *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__c14n__InclusiveNamespaces(struct soap*, const struct _c14n__InclusiveNamespaces *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__c14n__InclusiveNamespaces(struct soap*, const char*, int, const struct _c14n__InclusiveNamespaces *, const char*);
+SOAP_FMAC3 struct _c14n__InclusiveNamespaces * SOAP_FMAC4 soap_in__c14n__InclusiveNamespaces(struct soap*, const char*, struct _c14n__InclusiveNamespaces *, const char*);
+SOAP_FMAC1 struct _c14n__InclusiveNamespaces * SOAP_FMAC2 soap_instantiate__c14n__InclusiveNamespaces(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _c14n__InclusiveNamespaces * soap_new__c14n__InclusiveNamespaces(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__c14n__InclusiveNamespaces(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _c14n__InclusiveNamespaces * soap_new_req__c14n__InclusiveNamespaces(
+	struct soap *soap)
+{
+	struct _c14n__InclusiveNamespaces *_p = soap_new__c14n__InclusiveNamespaces(soap);
+	if (_p)
+	{	soap_default__c14n__InclusiveNamespaces(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _c14n__InclusiveNamespaces * soap_new_set__c14n__InclusiveNamespaces(
+	struct soap *soap,
+	char *PrefixList)
+{
+	struct _c14n__InclusiveNamespaces *_p = soap_new__c14n__InclusiveNamespaces(soap);
+	if (_p)
+	{	soap_default__c14n__InclusiveNamespaces(soap, _p);
+		_p->PrefixList = PrefixList;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__c14n__InclusiveNamespaces(struct soap*, const struct _c14n__InclusiveNamespaces *, const char*, const char*);
+
+inline int soap_write__c14n__InclusiveNamespaces(struct soap *soap, struct _c14n__InclusiveNamespaces const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__c14n__InclusiveNamespaces(soap, p), 0) || soap_put__c14n__InclusiveNamespaces(soap, p, "c14n:InclusiveNamespaces", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _c14n__InclusiveNamespaces * SOAP_FMAC4 soap_get__c14n__InclusiveNamespaces(struct soap*, struct _c14n__InclusiveNamespaces *, const char*, const char*);
+
+inline int soap_read__c14n__InclusiveNamespaces(struct soap *soap, struct _c14n__InclusiveNamespaces *p)
+{
+	if (p)
+	{	soap_default__c14n__InclusiveNamespaces(soap, p);
+		if (soap_begin_recv(soap) || soap_get__c14n__InclusiveNamespaces(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__TransformsType_DEFINED
+#define SOAP_TYPE_ds__TransformsType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__TransformsType(struct soap*, struct ds__TransformsType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__TransformsType(struct soap*, const struct ds__TransformsType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__TransformsType(struct soap*, const char*, int, const struct ds__TransformsType *, const char*);
+SOAP_FMAC3 struct ds__TransformsType * SOAP_FMAC4 soap_in_ds__TransformsType(struct soap*, const char*, struct ds__TransformsType *, const char*);
+SOAP_FMAC1 struct ds__TransformsType * SOAP_FMAC2 soap_instantiate_ds__TransformsType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__TransformsType * soap_new_ds__TransformsType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__TransformsType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__TransformsType * soap_new_req_ds__TransformsType(
+	struct soap *soap,
+	int __sizeTransform,
+	struct ds__TransformType *Transform)
+{
+	struct ds__TransformsType *_p = soap_new_ds__TransformsType(soap);
+	if (_p)
+	{	soap_default_ds__TransformsType(soap, _p);
+		_p->__sizeTransform = __sizeTransform;
+		_p->Transform = Transform;
+	}
+	return _p;
+}
+
+inline struct ds__TransformsType * soap_new_set_ds__TransformsType(
+	struct soap *soap,
+	int __sizeTransform,
+	struct ds__TransformType *Transform)
+{
+	struct ds__TransformsType *_p = soap_new_ds__TransformsType(soap);
+	if (_p)
+	{	soap_default_ds__TransformsType(soap, _p);
+		_p->__sizeTransform = __sizeTransform;
+		_p->Transform = Transform;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__TransformsType(struct soap*, const struct ds__TransformsType *, const char*, const char*);
+
+inline int soap_write_ds__TransformsType(struct soap *soap, struct ds__TransformsType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__TransformsType(soap, p), 0) || soap_put_ds__TransformsType(soap, p, "ds:TransformsType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__TransformsType * SOAP_FMAC4 soap_get_ds__TransformsType(struct soap*, struct ds__TransformsType *, const char*, const char*);
+
+inline int soap_read_ds__TransformsType(struct soap *soap, struct ds__TransformsType *p)
+{
+	if (p)
+	{	soap_default_ds__TransformsType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__TransformsType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__ReferenceType_DEFINED
+#define SOAP_TYPE_ds__ReferenceType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__ReferenceType(struct soap*, struct ds__ReferenceType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__ReferenceType(struct soap*, const struct ds__ReferenceType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__ReferenceType(struct soap*, const char*, int, const struct ds__ReferenceType *, const char*);
+SOAP_FMAC3 struct ds__ReferenceType * SOAP_FMAC4 soap_in_ds__ReferenceType(struct soap*, const char*, struct ds__ReferenceType *, const char*);
+SOAP_FMAC1 struct ds__ReferenceType * SOAP_FMAC2 soap_instantiate_ds__ReferenceType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__ReferenceType * soap_new_ds__ReferenceType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__ReferenceType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__ReferenceType * soap_new_req_ds__ReferenceType(
+	struct soap *soap,
+	struct ds__DigestMethodType *DigestMethod,
+	char *DigestValue)
+{
+	struct ds__ReferenceType *_p = soap_new_ds__ReferenceType(soap);
+	if (_p)
+	{	soap_default_ds__ReferenceType(soap, _p);
+		_p->DigestMethod = DigestMethod;
+		_p->DigestValue = DigestValue;
+	}
+	return _p;
+}
+
+inline struct ds__ReferenceType * soap_new_set_ds__ReferenceType(
+	struct soap *soap,
+	struct ds__TransformsType *Transforms,
+	struct ds__DigestMethodType *DigestMethod,
+	char *DigestValue,
+	char *Id,
+	char *URI,
+	char *Type)
+{
+	struct ds__ReferenceType *_p = soap_new_ds__ReferenceType(soap);
+	if (_p)
+	{	soap_default_ds__ReferenceType(soap, _p);
+		_p->Transforms = Transforms;
+		_p->DigestMethod = DigestMethod;
+		_p->DigestValue = DigestValue;
+		_p->Id = Id;
+		_p->URI = URI;
+		_p->Type = Type;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__ReferenceType(struct soap*, const struct ds__ReferenceType *, const char*, const char*);
+
+inline int soap_write_ds__ReferenceType(struct soap *soap, struct ds__ReferenceType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__ReferenceType(soap, p), 0) || soap_put_ds__ReferenceType(soap, p, "ds:ReferenceType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__ReferenceType * SOAP_FMAC4 soap_get_ds__ReferenceType(struct soap*, struct ds__ReferenceType *, const char*, const char*);
+
+inline int soap_read_ds__ReferenceType(struct soap *soap, struct ds__ReferenceType *p)
+{
+	if (p)
+	{	soap_default_ds__ReferenceType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__ReferenceType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__SignatureMethodType_DEFINED
+#define SOAP_TYPE_ds__SignatureMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__SignatureMethodType(struct soap*, struct ds__SignatureMethodType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__SignatureMethodType(struct soap*, const struct ds__SignatureMethodType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__SignatureMethodType(struct soap*, const char*, int, const struct ds__SignatureMethodType *, const char*);
+SOAP_FMAC3 struct ds__SignatureMethodType * SOAP_FMAC4 soap_in_ds__SignatureMethodType(struct soap*, const char*, struct ds__SignatureMethodType *, const char*);
+SOAP_FMAC1 struct ds__SignatureMethodType * SOAP_FMAC2 soap_instantiate_ds__SignatureMethodType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__SignatureMethodType * soap_new_ds__SignatureMethodType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__SignatureMethodType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__SignatureMethodType * soap_new_req_ds__SignatureMethodType(
+	struct soap *soap,
+	char *Algorithm)
+{
+	struct ds__SignatureMethodType *_p = soap_new_ds__SignatureMethodType(soap);
+	if (_p)
+	{	soap_default_ds__SignatureMethodType(soap, _p);
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+
+inline struct ds__SignatureMethodType * soap_new_set_ds__SignatureMethodType(
+	struct soap *soap,
+	int *HMACOutputLength,
+	char *Algorithm)
+{
+	struct ds__SignatureMethodType *_p = soap_new_ds__SignatureMethodType(soap);
+	if (_p)
+	{	soap_default_ds__SignatureMethodType(soap, _p);
+		_p->HMACOutputLength = HMACOutputLength;
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__SignatureMethodType(struct soap*, const struct ds__SignatureMethodType *, const char*, const char*);
+
+inline int soap_write_ds__SignatureMethodType(struct soap *soap, struct ds__SignatureMethodType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__SignatureMethodType(soap, p), 0) || soap_put_ds__SignatureMethodType(soap, p, "ds:SignatureMethodType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__SignatureMethodType * SOAP_FMAC4 soap_get_ds__SignatureMethodType(struct soap*, struct ds__SignatureMethodType *, const char*, const char*);
+
+inline int soap_read_ds__SignatureMethodType(struct soap *soap, struct ds__SignatureMethodType *p)
+{
+	if (p)
+	{	soap_default_ds__SignatureMethodType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__SignatureMethodType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__CanonicalizationMethodType_DEFINED
+#define SOAP_TYPE_ds__CanonicalizationMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__CanonicalizationMethodType(struct soap*, struct ds__CanonicalizationMethodType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__CanonicalizationMethodType(struct soap*, const struct ds__CanonicalizationMethodType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__CanonicalizationMethodType(struct soap*, const char*, int, const struct ds__CanonicalizationMethodType *, const char*);
+SOAP_FMAC3 struct ds__CanonicalizationMethodType * SOAP_FMAC4 soap_in_ds__CanonicalizationMethodType(struct soap*, const char*, struct ds__CanonicalizationMethodType *, const char*);
+SOAP_FMAC1 struct ds__CanonicalizationMethodType * SOAP_FMAC2 soap_instantiate_ds__CanonicalizationMethodType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__CanonicalizationMethodType * soap_new_ds__CanonicalizationMethodType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__CanonicalizationMethodType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__CanonicalizationMethodType * soap_new_req_ds__CanonicalizationMethodType(
+	struct soap *soap,
+	char *Algorithm)
+{
+	struct ds__CanonicalizationMethodType *_p = soap_new_ds__CanonicalizationMethodType(soap);
+	if (_p)
+	{	soap_default_ds__CanonicalizationMethodType(soap, _p);
+		_p->Algorithm = Algorithm;
+	}
+	return _p;
+}
+
+inline struct ds__CanonicalizationMethodType * soap_new_set_ds__CanonicalizationMethodType(
+	struct soap *soap,
+	char *Algorithm,
+	struct _c14n__InclusiveNamespaces *c14n__InclusiveNamespaces)
+{
+	struct ds__CanonicalizationMethodType *_p = soap_new_ds__CanonicalizationMethodType(soap);
+	if (_p)
+	{	soap_default_ds__CanonicalizationMethodType(soap, _p);
+		_p->Algorithm = Algorithm;
+		_p->c14n__InclusiveNamespaces = c14n__InclusiveNamespaces;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__CanonicalizationMethodType(struct soap*, const struct ds__CanonicalizationMethodType *, const char*, const char*);
+
+inline int soap_write_ds__CanonicalizationMethodType(struct soap *soap, struct ds__CanonicalizationMethodType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__CanonicalizationMethodType(soap, p), 0) || soap_put_ds__CanonicalizationMethodType(soap, p, "ds:CanonicalizationMethodType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__CanonicalizationMethodType * SOAP_FMAC4 soap_get_ds__CanonicalizationMethodType(struct soap*, struct ds__CanonicalizationMethodType *, const char*, const char*);
+
+inline int soap_read_ds__CanonicalizationMethodType(struct soap *soap, struct ds__CanonicalizationMethodType *p)
+{
+	if (p)
+	{	soap_default_ds__CanonicalizationMethodType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__CanonicalizationMethodType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+/* _ds__Signature is a typedef synonym for ds__SignatureType */
+
+#ifndef SOAP_TYPE__ds__Signature_DEFINED
+#define SOAP_TYPE__ds__Signature_DEFINED
+
+#define soap_default__ds__Signature(soap, a) soap_default_ds__SignatureType(soap, a)
+
+
+#define soap_serialize__ds__Signature soap_serialize_ds__SignatureType
+
+
+#define soap__ds__Signature2s soap_ds__SignatureType2s
+
+
+#define soap_out__ds__Signature soap_out_ds__SignatureType
+
+
+#define soap_s2_ds__Signature soap_s2ds__SignatureType
+
+
+#define soap_in__ds__Signature soap_in_ds__SignatureType
+
+
+#define soap_instantiate__ds__Signature soap_instantiate_ds__SignatureType
+
+
+#define soap_new__ds__Signature soap_new_ds__SignatureType
+
+
+#define soap_new_req__ds__Signature soap_new_req_ds__SignatureType
+
+
+#define soap_new_set__ds__Signature soap_new_set_ds__SignatureType
+
+
+#define soap_put__ds__Signature soap_put_ds__SignatureType
+
+
+#define soap_write__ds__Signature soap_write_ds__SignatureType
+
+
+#define soap_get__ds__Signature soap_get_ds__SignatureType
+
+
+#define soap_read__ds__Signature soap_read_ds__SignatureType
+
+#endif
+
+#ifndef SOAP_TYPE_ds__KeyInfoType_DEFINED
+#define SOAP_TYPE_ds__KeyInfoType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__KeyInfoType(struct soap*, struct ds__KeyInfoType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__KeyInfoType(struct soap*, const struct ds__KeyInfoType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__KeyInfoType(struct soap*, const char*, int, const struct ds__KeyInfoType *, const char*);
+SOAP_FMAC3 struct ds__KeyInfoType * SOAP_FMAC4 soap_in_ds__KeyInfoType(struct soap*, const char*, struct ds__KeyInfoType *, const char*);
+SOAP_FMAC1 struct ds__KeyInfoType * SOAP_FMAC2 soap_instantiate_ds__KeyInfoType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__KeyInfoType * soap_new_ds__KeyInfoType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__KeyInfoType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__KeyInfoType * soap_new_req_ds__KeyInfoType(
+	struct soap *soap)
+{
+	struct ds__KeyInfoType *_p = soap_new_ds__KeyInfoType(soap);
+	if (_p)
+	{	soap_default_ds__KeyInfoType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct ds__KeyInfoType * soap_new_set_ds__KeyInfoType(
+	struct soap *soap,
+	char *KeyName,
+	struct ds__KeyValueType *KeyValue,
+	struct ds__RetrievalMethodType *RetrievalMethod,
+	struct ds__X509DataType *X509Data,
+	struct _wsse__SecurityTokenReference *wsse__SecurityTokenReference,
+	char *Id)
+{
+	struct ds__KeyInfoType *_p = soap_new_ds__KeyInfoType(soap);
+	if (_p)
+	{	soap_default_ds__KeyInfoType(soap, _p);
+		_p->KeyName = KeyName;
+		_p->KeyValue = KeyValue;
+		_p->RetrievalMethod = RetrievalMethod;
+		_p->X509Data = X509Data;
+		_p->wsse__SecurityTokenReference = wsse__SecurityTokenReference;
+		_p->Id = Id;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__KeyInfoType(struct soap*, const struct ds__KeyInfoType *, const char*, const char*);
+
+inline int soap_write_ds__KeyInfoType(struct soap *soap, struct ds__KeyInfoType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__KeyInfoType(soap, p), 0) || soap_put_ds__KeyInfoType(soap, p, "ds:KeyInfoType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__KeyInfoType * SOAP_FMAC4 soap_get_ds__KeyInfoType(struct soap*, struct ds__KeyInfoType *, const char*, const char*);
+
+inline int soap_read_ds__KeyInfoType(struct soap *soap, struct ds__KeyInfoType *p)
+{
+	if (p)
+	{	soap_default_ds__KeyInfoType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__KeyInfoType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__SignedInfoType_DEFINED
+#define SOAP_TYPE_ds__SignedInfoType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__SignedInfoType(struct soap*, struct ds__SignedInfoType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__SignedInfoType(struct soap*, const struct ds__SignedInfoType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__SignedInfoType(struct soap*, const char*, int, const struct ds__SignedInfoType *, const char*);
+SOAP_FMAC3 struct ds__SignedInfoType * SOAP_FMAC4 soap_in_ds__SignedInfoType(struct soap*, const char*, struct ds__SignedInfoType *, const char*);
+SOAP_FMAC1 struct ds__SignedInfoType * SOAP_FMAC2 soap_instantiate_ds__SignedInfoType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__SignedInfoType * soap_new_ds__SignedInfoType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__SignedInfoType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__SignedInfoType * soap_new_req_ds__SignedInfoType(
+	struct soap *soap,
+	struct ds__CanonicalizationMethodType *CanonicalizationMethod,
+	struct ds__SignatureMethodType *SignatureMethod,
+	int __sizeReference,
+	struct ds__ReferenceType **Reference)
+{
+	struct ds__SignedInfoType *_p = soap_new_ds__SignedInfoType(soap);
+	if (_p)
+	{	soap_default_ds__SignedInfoType(soap, _p);
+		_p->CanonicalizationMethod = CanonicalizationMethod;
+		_p->SignatureMethod = SignatureMethod;
+		_p->__sizeReference = __sizeReference;
+		_p->Reference = Reference;
+	}
+	return _p;
+}
+
+inline struct ds__SignedInfoType * soap_new_set_ds__SignedInfoType(
+	struct soap *soap,
+	struct ds__CanonicalizationMethodType *CanonicalizationMethod,
+	struct ds__SignatureMethodType *SignatureMethod,
+	int __sizeReference,
+	struct ds__ReferenceType **Reference,
+	char *Id)
+{
+	struct ds__SignedInfoType *_p = soap_new_ds__SignedInfoType(soap);
+	if (_p)
+	{	soap_default_ds__SignedInfoType(soap, _p);
+		_p->CanonicalizationMethod = CanonicalizationMethod;
+		_p->SignatureMethod = SignatureMethod;
+		_p->__sizeReference = __sizeReference;
+		_p->Reference = Reference;
+		_p->Id = Id;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__SignedInfoType(struct soap*, const struct ds__SignedInfoType *, const char*, const char*);
+
+inline int soap_write_ds__SignedInfoType(struct soap *soap, struct ds__SignedInfoType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__SignedInfoType(soap, p), 0) || soap_put_ds__SignedInfoType(soap, p, "ds:SignedInfoType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__SignedInfoType * SOAP_FMAC4 soap_get_ds__SignedInfoType(struct soap*, struct ds__SignedInfoType *, const char*, const char*);
+
+inline int soap_read_ds__SignedInfoType(struct soap *soap, struct ds__SignedInfoType *p)
+{
+	if (p)
+	{	soap_default_ds__SignedInfoType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__SignedInfoType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__SignatureType_DEFINED
+#define SOAP_TYPE_ds__SignatureType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__SignatureType(struct soap*, struct ds__SignatureType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__SignatureType(struct soap*, const struct ds__SignatureType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__SignatureType(struct soap*, const char*, int, const struct ds__SignatureType *, const char*);
+SOAP_FMAC3 struct ds__SignatureType * SOAP_FMAC4 soap_in_ds__SignatureType(struct soap*, const char*, struct ds__SignatureType *, const char*);
+SOAP_FMAC1 struct ds__SignatureType * SOAP_FMAC2 soap_instantiate_ds__SignatureType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__SignatureType * soap_new_ds__SignatureType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__SignatureType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__SignatureType * soap_new_req_ds__SignatureType(
+	struct soap *soap)
+{
+	struct ds__SignatureType *_p = soap_new_ds__SignatureType(soap);
+	if (_p)
+	{	soap_default_ds__SignatureType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct ds__SignatureType * soap_new_set_ds__SignatureType(
+	struct soap *soap,
+	struct ds__SignedInfoType *SignedInfo,
+	char *SignatureValue,
+	struct ds__KeyInfoType *KeyInfo,
+	char *Id)
+{
+	struct ds__SignatureType *_p = soap_new_ds__SignatureType(soap);
+	if (_p)
+	{	soap_default_ds__SignatureType(soap, _p);
+		_p->SignedInfo = SignedInfo;
+		_p->SignatureValue = SignatureValue;
+		_p->KeyInfo = KeyInfo;
+		_p->Id = Id;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__SignatureType(struct soap*, const struct ds__SignatureType *, const char*, const char*);
+
+inline int soap_write_ds__SignatureType(struct soap *soap, struct ds__SignatureType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__SignatureType(soap, p), 0) || soap_put_ds__SignatureType(soap, p, "ds:SignatureType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__SignatureType * SOAP_FMAC4 soap_get_ds__SignatureType(struct soap*, struct ds__SignatureType *, const char*, const char*);
+
+inline int soap_read_ds__SignatureType(struct soap *soap, struct ds__SignatureType *p)
+{
+	if (p)
+	{	soap_default_ds__SignatureType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__SignatureType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ds__X509DataType_DEFINED
+#define SOAP_TYPE_ds__X509DataType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_ds__X509DataType(struct soap*, struct ds__X509DataType *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ds__X509DataType(struct soap*, const struct ds__X509DataType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ds__X509DataType(struct soap*, const char*, int, const struct ds__X509DataType *, const char*);
+SOAP_FMAC3 struct ds__X509DataType * SOAP_FMAC4 soap_in_ds__X509DataType(struct soap*, const char*, struct ds__X509DataType *, const char*);
+SOAP_FMAC1 struct ds__X509DataType * SOAP_FMAC2 soap_instantiate_ds__X509DataType(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct ds__X509DataType * soap_new_ds__X509DataType(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_ds__X509DataType(soap, n, NULL, NULL, NULL);
+}
+
+inline struct ds__X509DataType * soap_new_req_ds__X509DataType(
+	struct soap *soap)
+{
+	struct ds__X509DataType *_p = soap_new_ds__X509DataType(soap);
+	if (_p)
+	{	soap_default_ds__X509DataType(soap, _p);
+	}
+	return _p;
+}
+
+inline struct ds__X509DataType * soap_new_set_ds__X509DataType(
+	struct soap *soap,
+	struct ds__X509IssuerSerialType *X509IssuerSerial,
+	char *X509SKI,
+	char *X509SubjectName,
+	char *X509Certificate,
+	char *X509CRL)
+{
+	struct ds__X509DataType *_p = soap_new_ds__X509DataType(soap);
+	if (_p)
+	{	soap_default_ds__X509DataType(soap, _p);
+		_p->X509IssuerSerial = X509IssuerSerial;
+		_p->X509SKI = X509SKI;
+		_p->X509SubjectName = X509SubjectName;
+		_p->X509Certificate = X509Certificate;
+		_p->X509CRL = X509CRL;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ds__X509DataType(struct soap*, const struct ds__X509DataType *, const char*, const char*);
+
+inline int soap_write_ds__X509DataType(struct soap *soap, struct ds__X509DataType const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_ds__X509DataType(soap, p), 0) || soap_put_ds__X509DataType(soap, p, "ds:X509DataType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct ds__X509DataType * SOAP_FMAC4 soap_get_ds__X509DataType(struct soap*, struct ds__X509DataType *, const char*, const char*);
+
+inline int soap_read_ds__X509DataType(struct soap *soap, struct ds__X509DataType *p)
+{
+	if (p)
+	{	soap_default_ds__X509DataType(soap, p);
+		if (soap_begin_recv(soap) || soap_get_ds__X509DataType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsse__SecurityTokenReference_DEFINED
+#define SOAP_TYPE__wsse__SecurityTokenReference_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsse__SecurityTokenReference(struct soap*, struct _wsse__SecurityTokenReference *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsse__SecurityTokenReference(struct soap*, const struct _wsse__SecurityTokenReference *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsse__SecurityTokenReference(struct soap*, const char*, int, const struct _wsse__SecurityTokenReference *, const char*);
+SOAP_FMAC3 struct _wsse__SecurityTokenReference * SOAP_FMAC4 soap_in__wsse__SecurityTokenReference(struct soap*, const char*, struct _wsse__SecurityTokenReference *, const char*);
+SOAP_FMAC1 struct _wsse__SecurityTokenReference * SOAP_FMAC2 soap_instantiate__wsse__SecurityTokenReference(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsse__SecurityTokenReference * soap_new__wsse__SecurityTokenReference(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsse__SecurityTokenReference(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsse__SecurityTokenReference * soap_new_req__wsse__SecurityTokenReference(
+	struct soap *soap)
+{
+	struct _wsse__SecurityTokenReference *_p = soap_new__wsse__SecurityTokenReference(soap);
+	if (_p)
+	{	soap_default__wsse__SecurityTokenReference(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsse__SecurityTokenReference * soap_new_set__wsse__SecurityTokenReference(
+	struct soap *soap,
+	struct _wsse__Reference *Reference,
+	struct _wsse__KeyIdentifier *KeyIdentifier,
+	struct _wsse__Embedded *Embedded,
+	struct ds__X509DataType *ds__X509Data,
+	char *wsu__Id,
+	char *wsc__Instance,
+	char *Usage)
+{
+	struct _wsse__SecurityTokenReference *_p = soap_new__wsse__SecurityTokenReference(soap);
+	if (_p)
+	{	soap_default__wsse__SecurityTokenReference(soap, _p);
+		_p->Reference = Reference;
+		_p->KeyIdentifier = KeyIdentifier;
+		_p->Embedded = Embedded;
+		_p->ds__X509Data = ds__X509Data;
+		_p->wsu__Id = wsu__Id;
+		_p->wsc__Instance = wsc__Instance;
+		_p->Usage = Usage;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsse__SecurityTokenReference(struct soap*, const struct _wsse__SecurityTokenReference *, const char*, const char*);
+
+inline int soap_write__wsse__SecurityTokenReference(struct soap *soap, struct _wsse__SecurityTokenReference const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsse__SecurityTokenReference(soap, p), 0) || soap_put__wsse__SecurityTokenReference(soap, p, "wsse:SecurityTokenReference", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsse__SecurityTokenReference * SOAP_FMAC4 soap_get__wsse__SecurityTokenReference(struct soap*, struct _wsse__SecurityTokenReference *, const char*, const char*);
+
+inline int soap_read__wsse__SecurityTokenReference(struct soap *soap, struct _wsse__SecurityTokenReference *p)
+{
+	if (p)
+	{	soap_default__wsse__SecurityTokenReference(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsse__SecurityTokenReference(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsse__KeyIdentifier_DEFINED
+#define SOAP_TYPE__wsse__KeyIdentifier_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsse__KeyIdentifier(struct soap*, struct _wsse__KeyIdentifier *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsse__KeyIdentifier(struct soap*, const struct _wsse__KeyIdentifier *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsse__KeyIdentifier(struct soap*, const char*, int, const struct _wsse__KeyIdentifier *, const char*);
+SOAP_FMAC3 struct _wsse__KeyIdentifier * SOAP_FMAC4 soap_in__wsse__KeyIdentifier(struct soap*, const char*, struct _wsse__KeyIdentifier *, const char*);
+SOAP_FMAC1 struct _wsse__KeyIdentifier * SOAP_FMAC2 soap_instantiate__wsse__KeyIdentifier(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsse__KeyIdentifier * soap_new__wsse__KeyIdentifier(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsse__KeyIdentifier(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsse__KeyIdentifier * soap_new_req__wsse__KeyIdentifier(
+	struct soap *soap)
+{
+	struct _wsse__KeyIdentifier *_p = soap_new__wsse__KeyIdentifier(soap);
+	if (_p)
+	{	soap_default__wsse__KeyIdentifier(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsse__KeyIdentifier * soap_new_set__wsse__KeyIdentifier(
+	struct soap *soap,
+	char *__item,
+	char *wsu__Id,
+	char *ValueType,
+	char *EncodingType)
+{
+	struct _wsse__KeyIdentifier *_p = soap_new__wsse__KeyIdentifier(soap);
+	if (_p)
+	{	soap_default__wsse__KeyIdentifier(soap, _p);
+		_p->__item = __item;
+		_p->wsu__Id = wsu__Id;
+		_p->ValueType = ValueType;
+		_p->EncodingType = EncodingType;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsse__KeyIdentifier(struct soap*, const struct _wsse__KeyIdentifier *, const char*, const char*);
+
+inline int soap_write__wsse__KeyIdentifier(struct soap *soap, struct _wsse__KeyIdentifier const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsse__KeyIdentifier(soap, p), 0) || soap_put__wsse__KeyIdentifier(soap, p, "wsse:KeyIdentifier", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsse__KeyIdentifier * SOAP_FMAC4 soap_get__wsse__KeyIdentifier(struct soap*, struct _wsse__KeyIdentifier *, const char*, const char*);
+
+inline int soap_read__wsse__KeyIdentifier(struct soap *soap, struct _wsse__KeyIdentifier *p)
+{
+	if (p)
+	{	soap_default__wsse__KeyIdentifier(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsse__KeyIdentifier(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsse__Embedded_DEFINED
+#define SOAP_TYPE__wsse__Embedded_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsse__Embedded(struct soap*, struct _wsse__Embedded *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsse__Embedded(struct soap*, const struct _wsse__Embedded *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsse__Embedded(struct soap*, const char*, int, const struct _wsse__Embedded *, const char*);
+SOAP_FMAC3 struct _wsse__Embedded * SOAP_FMAC4 soap_in__wsse__Embedded(struct soap*, const char*, struct _wsse__Embedded *, const char*);
+SOAP_FMAC1 struct _wsse__Embedded * SOAP_FMAC2 soap_instantiate__wsse__Embedded(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsse__Embedded * soap_new__wsse__Embedded(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsse__Embedded(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsse__Embedded * soap_new_req__wsse__Embedded(
+	struct soap *soap)
+{
+	struct _wsse__Embedded *_p = soap_new__wsse__Embedded(soap);
+	if (_p)
+	{	soap_default__wsse__Embedded(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsse__Embedded * soap_new_set__wsse__Embedded(
+	struct soap *soap,
+	char *wsu__Id,
+	char *ValueType)
+{
+	struct _wsse__Embedded *_p = soap_new__wsse__Embedded(soap);
+	if (_p)
+	{	soap_default__wsse__Embedded(soap, _p);
+		_p->wsu__Id = wsu__Id;
+		_p->ValueType = ValueType;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsse__Embedded(struct soap*, const struct _wsse__Embedded *, const char*, const char*);
+
+inline int soap_write__wsse__Embedded(struct soap *soap, struct _wsse__Embedded const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsse__Embedded(soap, p), 0) || soap_put__wsse__Embedded(soap, p, "wsse:Embedded", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsse__Embedded * SOAP_FMAC4 soap_get__wsse__Embedded(struct soap*, struct _wsse__Embedded *, const char*, const char*);
+
+inline int soap_read__wsse__Embedded(struct soap *soap, struct _wsse__Embedded *p)
+{
+	if (p)
+	{	soap_default__wsse__Embedded(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsse__Embedded(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsse__Reference_DEFINED
+#define SOAP_TYPE__wsse__Reference_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsse__Reference(struct soap*, struct _wsse__Reference *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsse__Reference(struct soap*, const struct _wsse__Reference *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsse__Reference(struct soap*, const char*, int, const struct _wsse__Reference *, const char*);
+SOAP_FMAC3 struct _wsse__Reference * SOAP_FMAC4 soap_in__wsse__Reference(struct soap*, const char*, struct _wsse__Reference *, const char*);
+SOAP_FMAC1 struct _wsse__Reference * SOAP_FMAC2 soap_instantiate__wsse__Reference(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsse__Reference * soap_new__wsse__Reference(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsse__Reference(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsse__Reference * soap_new_req__wsse__Reference(
+	struct soap *soap)
+{
+	struct _wsse__Reference *_p = soap_new__wsse__Reference(soap);
+	if (_p)
+	{	soap_default__wsse__Reference(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsse__Reference * soap_new_set__wsse__Reference(
+	struct soap *soap,
+	char *URI,
+	char *ValueType)
+{
+	struct _wsse__Reference *_p = soap_new__wsse__Reference(soap);
+	if (_p)
+	{	soap_default__wsse__Reference(soap, _p);
+		_p->URI = URI;
+		_p->ValueType = ValueType;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsse__Reference(struct soap*, const struct _wsse__Reference *, const char*, const char*);
+
+inline int soap_write__wsse__Reference(struct soap *soap, struct _wsse__Reference const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsse__Reference(soap, p), 0) || soap_put__wsse__Reference(soap, p, "wsse:Reference", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsse__Reference * SOAP_FMAC4 soap_get__wsse__Reference(struct soap*, struct _wsse__Reference *, const char*, const char*);
+
+inline int soap_read__wsse__Reference(struct soap *soap, struct _wsse__Reference *p)
+{
+	if (p)
+	{	soap_default__wsse__Reference(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsse__Reference(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsse__BinarySecurityToken_DEFINED
+#define SOAP_TYPE__wsse__BinarySecurityToken_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsse__BinarySecurityToken(struct soap*, struct _wsse__BinarySecurityToken *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsse__BinarySecurityToken(struct soap*, const struct _wsse__BinarySecurityToken *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsse__BinarySecurityToken(struct soap*, const char*, int, const struct _wsse__BinarySecurityToken *, const char*);
+SOAP_FMAC3 struct _wsse__BinarySecurityToken * SOAP_FMAC4 soap_in__wsse__BinarySecurityToken(struct soap*, const char*, struct _wsse__BinarySecurityToken *, const char*);
+SOAP_FMAC1 struct _wsse__BinarySecurityToken * SOAP_FMAC2 soap_instantiate__wsse__BinarySecurityToken(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsse__BinarySecurityToken * soap_new__wsse__BinarySecurityToken(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsse__BinarySecurityToken(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsse__BinarySecurityToken * soap_new_req__wsse__BinarySecurityToken(
+	struct soap *soap)
+{
+	struct _wsse__BinarySecurityToken *_p = soap_new__wsse__BinarySecurityToken(soap);
+	if (_p)
+	{	soap_default__wsse__BinarySecurityToken(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsse__BinarySecurityToken * soap_new_set__wsse__BinarySecurityToken(
+	struct soap *soap,
+	char *__item,
+	char *wsu__Id,
+	char *ValueType,
+	char *EncodingType)
+{
+	struct _wsse__BinarySecurityToken *_p = soap_new__wsse__BinarySecurityToken(soap);
+	if (_p)
+	{	soap_default__wsse__BinarySecurityToken(soap, _p);
+		_p->__item = __item;
+		_p->wsu__Id = wsu__Id;
+		_p->ValueType = ValueType;
+		_p->EncodingType = EncodingType;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsse__BinarySecurityToken(struct soap*, const struct _wsse__BinarySecurityToken *, const char*, const char*);
+
+inline int soap_write__wsse__BinarySecurityToken(struct soap *soap, struct _wsse__BinarySecurityToken const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsse__BinarySecurityToken(soap, p), 0) || soap_put__wsse__BinarySecurityToken(soap, p, "wsse:BinarySecurityToken", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsse__BinarySecurityToken * SOAP_FMAC4 soap_get__wsse__BinarySecurityToken(struct soap*, struct _wsse__BinarySecurityToken *, const char*, const char*);
+
+inline int soap_read__wsse__BinarySecurityToken(struct soap *soap, struct _wsse__BinarySecurityToken *p)
+{
+	if (p)
+	{	soap_default__wsse__BinarySecurityToken(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsse__BinarySecurityToken(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsse__Password_DEFINED
+#define SOAP_TYPE__wsse__Password_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsse__Password(struct soap*, struct _wsse__Password *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsse__Password(struct soap*, const struct _wsse__Password *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsse__Password(struct soap*, const char*, int, const struct _wsse__Password *, const char*);
+SOAP_FMAC3 struct _wsse__Password * SOAP_FMAC4 soap_in__wsse__Password(struct soap*, const char*, struct _wsse__Password *, const char*);
+SOAP_FMAC1 struct _wsse__Password * SOAP_FMAC2 soap_instantiate__wsse__Password(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsse__Password * soap_new__wsse__Password(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsse__Password(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsse__Password * soap_new_req__wsse__Password(
+	struct soap *soap)
+{
+	struct _wsse__Password *_p = soap_new__wsse__Password(soap);
+	if (_p)
+	{	soap_default__wsse__Password(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsse__Password * soap_new_set__wsse__Password(
+	struct soap *soap,
+	char *__item,
+	char *Type)
+{
+	struct _wsse__Password *_p = soap_new__wsse__Password(soap);
+	if (_p)
+	{	soap_default__wsse__Password(soap, _p);
+		_p->__item = __item;
+		_p->Type = Type;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsse__Password(struct soap*, const struct _wsse__Password *, const char*, const char*);
+
+inline int soap_write__wsse__Password(struct soap *soap, struct _wsse__Password const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsse__Password(soap, p), 0) || soap_put__wsse__Password(soap, p, "wsse:Password", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsse__Password * SOAP_FMAC4 soap_get__wsse__Password(struct soap*, struct _wsse__Password *, const char*, const char*);
+
+inline int soap_read__wsse__Password(struct soap *soap, struct _wsse__Password *p)
+{
+	if (p)
+	{	soap_default__wsse__Password(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsse__Password(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsse__UsernameToken_DEFINED
+#define SOAP_TYPE__wsse__UsernameToken_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsse__UsernameToken(struct soap*, struct _wsse__UsernameToken *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsse__UsernameToken(struct soap*, const struct _wsse__UsernameToken *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsse__UsernameToken(struct soap*, const char*, int, const struct _wsse__UsernameToken *, const char*);
+SOAP_FMAC3 struct _wsse__UsernameToken * SOAP_FMAC4 soap_in__wsse__UsernameToken(struct soap*, const char*, struct _wsse__UsernameToken *, const char*);
+SOAP_FMAC1 struct _wsse__UsernameToken * SOAP_FMAC2 soap_instantiate__wsse__UsernameToken(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsse__UsernameToken * soap_new__wsse__UsernameToken(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsse__UsernameToken(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsse__UsernameToken * soap_new_req__wsse__UsernameToken(
+	struct soap *soap)
+{
+	struct _wsse__UsernameToken *_p = soap_new__wsse__UsernameToken(soap);
+	if (_p)
+	{	soap_default__wsse__UsernameToken(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsse__UsernameToken * soap_new_set__wsse__UsernameToken(
+	struct soap *soap,
+	char *Username,
+	struct _wsse__Password *Password,
+	struct wsse__EncodedString *Nonce,
+	char *wsu__Created,
+	char *wsu__Id)
+{
+	struct _wsse__UsernameToken *_p = soap_new__wsse__UsernameToken(soap);
+	if (_p)
+	{	soap_default__wsse__UsernameToken(soap, _p);
+		_p->Username = Username;
+		_p->Password = Password;
+		_p->Nonce = Nonce;
+		_p->wsu__Created = wsu__Created;
+		_p->wsu__Id = wsu__Id;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsse__UsernameToken(struct soap*, const struct _wsse__UsernameToken *, const char*, const char*);
+
+inline int soap_write__wsse__UsernameToken(struct soap *soap, struct _wsse__UsernameToken const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsse__UsernameToken(soap, p), 0) || soap_put__wsse__UsernameToken(soap, p, "wsse:UsernameToken", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsse__UsernameToken * SOAP_FMAC4 soap_get__wsse__UsernameToken(struct soap*, struct _wsse__UsernameToken *, const char*, const char*);
+
+inline int soap_read__wsse__UsernameToken(struct soap *soap, struct _wsse__UsernameToken *p)
+{
+	if (p)
+	{	soap_default__wsse__UsernameToken(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsse__UsernameToken(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_wsse__EncodedString_DEFINED
+#define SOAP_TYPE_wsse__EncodedString_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_wsse__EncodedString(struct soap*, struct wsse__EncodedString *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_wsse__EncodedString(struct soap*, const struct wsse__EncodedString *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wsse__EncodedString(struct soap*, const char*, int, const struct wsse__EncodedString *, const char*);
+SOAP_FMAC3 struct wsse__EncodedString * SOAP_FMAC4 soap_in_wsse__EncodedString(struct soap*, const char*, struct wsse__EncodedString *, const char*);
+SOAP_FMAC1 struct wsse__EncodedString * SOAP_FMAC2 soap_instantiate_wsse__EncodedString(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct wsse__EncodedString * soap_new_wsse__EncodedString(struct soap *soap, int n = -1)
+{
+	return soap_instantiate_wsse__EncodedString(soap, n, NULL, NULL, NULL);
+}
+
+inline struct wsse__EncodedString * soap_new_req_wsse__EncodedString(
+	struct soap *soap)
+{
+	struct wsse__EncodedString *_p = soap_new_wsse__EncodedString(soap);
+	if (_p)
+	{	soap_default_wsse__EncodedString(soap, _p);
+	}
+	return _p;
+}
+
+inline struct wsse__EncodedString * soap_new_set_wsse__EncodedString(
+	struct soap *soap,
+	char *__item,
+	char *EncodingType,
+	char *wsu__Id)
+{
+	struct wsse__EncodedString *_p = soap_new_wsse__EncodedString(soap);
+	if (_p)
+	{	soap_default_wsse__EncodedString(soap, _p);
+		_p->__item = __item;
+		_p->EncodingType = EncodingType;
+		_p->wsu__Id = wsu__Id;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wsse__EncodedString(struct soap*, const struct wsse__EncodedString *, const char*, const char*);
+
+inline int soap_write_wsse__EncodedString(struct soap *soap, struct wsse__EncodedString const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize_wsse__EncodedString(soap, p), 0) || soap_put_wsse__EncodedString(soap, p, "wsse:EncodedString", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct wsse__EncodedString * SOAP_FMAC4 soap_get_wsse__EncodedString(struct soap*, struct wsse__EncodedString *, const char*, const char*);
+
+inline int soap_read_wsse__EncodedString(struct soap *soap, struct wsse__EncodedString *p)
+{
+	if (p)
+	{	soap_default_wsse__EncodedString(soap, p);
+		if (soap_begin_recv(soap) || soap_get_wsse__EncodedString(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsu__Timestamp_DEFINED
+#define SOAP_TYPE__wsu__Timestamp_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default__wsu__Timestamp(struct soap*, struct _wsu__Timestamp *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsu__Timestamp(struct soap*, const struct _wsu__Timestamp *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsu__Timestamp(struct soap*, const char*, int, const struct _wsu__Timestamp *, const char*);
+SOAP_FMAC3 struct _wsu__Timestamp * SOAP_FMAC4 soap_in__wsu__Timestamp(struct soap*, const char*, struct _wsu__Timestamp *, const char*);
+SOAP_FMAC1 struct _wsu__Timestamp * SOAP_FMAC2 soap_instantiate__wsu__Timestamp(struct soap*, int, const char*, const char*, size_t*);
+
+inline struct _wsu__Timestamp * soap_new__wsu__Timestamp(struct soap *soap, int n = -1)
+{
+	return soap_instantiate__wsu__Timestamp(soap, n, NULL, NULL, NULL);
+}
+
+inline struct _wsu__Timestamp * soap_new_req__wsu__Timestamp(
+	struct soap *soap)
+{
+	struct _wsu__Timestamp *_p = soap_new__wsu__Timestamp(soap);
+	if (_p)
+	{	soap_default__wsu__Timestamp(soap, _p);
+	}
+	return _p;
+}
+
+inline struct _wsu__Timestamp * soap_new_set__wsu__Timestamp(
+	struct soap *soap,
+	char *wsu__Id,
+	char *Created,
+	char *Expires)
+{
+	struct _wsu__Timestamp *_p = soap_new__wsu__Timestamp(soap);
+	if (_p)
+	{	soap_default__wsu__Timestamp(soap, _p);
+		_p->wsu__Id = wsu__Id;
+		_p->Created = Created;
+		_p->Expires = Expires;
+	}
+	return _p;
+}
+SOAP_FMAC3 int SOAP_FMAC4 soap_put__wsu__Timestamp(struct soap*, const struct _wsu__Timestamp *, const char*, const char*);
+
+inline int soap_write__wsu__Timestamp(struct soap *soap, struct _wsu__Timestamp const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || (soap_serialize__wsu__Timestamp(soap, p), 0) || soap_put__wsu__Timestamp(soap, p, "wsu:Timestamp", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 struct _wsu__Timestamp * SOAP_FMAC4 soap_get__wsu__Timestamp(struct soap*, struct _wsu__Timestamp *, const char*, const char*);
+
+inline int soap_read__wsu__Timestamp(struct soap *soap, struct _wsu__Timestamp *p)
+{
+	if (p)
+	{	soap_default__wsu__Timestamp(soap, p);
+		if (soap_begin_recv(soap) || soap_get__wsu__Timestamp(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE__wsc__union_DerivedKeyTokenType_DEFINED
+#define SOAP_TYPE__wsc__union_DerivedKeyTokenType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize__wsc__union_DerivedKeyTokenType(struct soap*, int, const union _wsc__union_DerivedKeyTokenType *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out__wsc__union_DerivedKeyTokenType(struct soap*, int, const union _wsc__union_DerivedKeyTokenType *);
+SOAP_FMAC3 union _wsc__union_DerivedKeyTokenType * SOAP_FMAC4 soap_in__wsc__union_DerivedKeyTokenType(struct soap*, int*, union _wsc__union_DerivedKeyTokenType *);
 #endif
 
 #ifndef WITH_NOGLOBAL
@@ -21578,47 +24436,651 @@ SOAP_FMAC3 ns2__Address ** SOAP_FMAC4 soap_get_PointerTons2__Address(struct soap
 
 #ifndef SOAP_TYPE_PointerTons2__dateTime_DEFINED
 #define SOAP_TYPE_PointerTons2__dateTime_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons2__dateTime(struct soap*, std::string *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons2__dateTime(struct soap*, const char *, int, std::string *const*, const char *);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_in_PointerTons2__dateTime(struct soap*, const char*, std::string **, const char*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons2__dateTime(struct soap*, std::string *const*, const char*, const char*);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_get_PointerTons2__dateTime(struct soap*, std::string **, const char*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons2__dateTime(struct soap*, wchar_t **const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons2__dateTime(struct soap*, const char *, int, wchar_t **const*, const char *);
+SOAP_FMAC3 wchar_t *** SOAP_FMAC4 soap_in_PointerTons2__dateTime(struct soap*, const char*, wchar_t ***, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons2__dateTime(struct soap*, wchar_t **const*, const char*, const char*);
+SOAP_FMAC3 wchar_t *** SOAP_FMAC4 soap_get_PointerTons2__dateTime(struct soap*, wchar_t ***, const char*, const char*);
 #endif
 
 #ifndef SOAP_TYPE_PointerToxsd__integer_DEFINED
 #define SOAP_TYPE_PointerToxsd__integer_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxsd__integer(struct soap*, std::string *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxsd__integer(struct soap*, const char *, int, std::string *const*, const char *);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_in_PointerToxsd__integer(struct soap*, const char*, std::string **, const char*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxsd__integer(struct soap*, std::string *const*, const char*, const char*);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_get_PointerToxsd__integer(struct soap*, std::string **, const char*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxsd__integer(struct soap*, wchar_t **const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxsd__integer(struct soap*, const char *, int, wchar_t **const*, const char *);
+SOAP_FMAC3 wchar_t *** SOAP_FMAC4 soap_in_PointerToxsd__integer(struct soap*, const char*, wchar_t ***, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxsd__integer(struct soap*, wchar_t **const*, const char*, const char*);
+SOAP_FMAC3 wchar_t *** SOAP_FMAC4 soap_get_PointerToxsd__integer(struct soap*, wchar_t ***, const char*, const char*);
 #endif
 
 #ifndef SOAP_TYPE_PointerTons2__boolean_DEFINED
 #define SOAP_TYPE_PointerTons2__boolean_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons2__boolean(struct soap*, std::string *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons2__boolean(struct soap*, const char *, int, std::string *const*, const char *);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_in_PointerTons2__boolean(struct soap*, const char*, std::string **, const char*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons2__boolean(struct soap*, std::string *const*, const char*, const char*);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_get_PointerTons2__boolean(struct soap*, std::string **, const char*, const char*);
-#endif
-
-#ifndef SOAP_TYPE_PointerTostd__string_DEFINED
-#define SOAP_TYPE_PointerTostd__string_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTostd__string(struct soap*, std::string *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTostd__string(struct soap*, const char *, int, std::string *const*, const char *);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_in_PointerTostd__string(struct soap*, const char*, std::string **, const char*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTostd__string(struct soap*, std::string *const*, const char*, const char*);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_get_PointerTostd__string(struct soap*, std::string **, const char*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons2__boolean(struct soap*, wchar_t **const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons2__boolean(struct soap*, const char *, int, wchar_t **const*, const char *);
+SOAP_FMAC3 wchar_t *** SOAP_FMAC4 soap_in_PointerTons2__boolean(struct soap*, const char*, wchar_t ***, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons2__boolean(struct soap*, wchar_t **const*, const char*, const char*);
+SOAP_FMAC3 wchar_t *** SOAP_FMAC4 soap_get_PointerTons2__boolean(struct soap*, wchar_t ***, const char*, const char*);
 #endif
 
 #ifndef SOAP_TYPE_PointerTons2__amount_DEFINED
 #define SOAP_TYPE_PointerTons2__amount_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons2__amount(struct soap*, std::string *const*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons2__amount(struct soap*, const char *, int, std::string *const*, const char *);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_in_PointerTons2__amount(struct soap*, const char*, std::string **, const char*);
-SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons2__amount(struct soap*, std::string *const*, const char*, const char*);
-SOAP_FMAC3 std::string ** SOAP_FMAC4 soap_get_PointerTons2__amount(struct soap*, std::string **, const char*, const char*);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTons2__amount(struct soap*, wchar_t **const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTons2__amount(struct soap*, const char *, int, wchar_t **const*, const char *);
+SOAP_FMAC3 wchar_t *** SOAP_FMAC4 soap_in_PointerTons2__amount(struct soap*, const char*, wchar_t ***, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTons2__amount(struct soap*, wchar_t **const*, const char*, const char*);
+SOAP_FMAC3 wchar_t *** SOAP_FMAC4 soap_get_PointerTons2__amount(struct soap*, wchar_t ***, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_ns2__dateTime_DEFINED
+#define SOAP_TYPE_ns2__dateTime_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns2__dateTime(struct soap*, wchar_t *const*);
+
+#define soap_ns2__dateTime2s(soap, a) soap_wchar2s((soap), (a))
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns2__dateTime(struct soap*, const char*, int, wchar_t*const*, const char*);
+
+#define soap_s2ns2__dateTime(soap, s, a) soap_s2wchar((soap), (s), (wchar_t**)(a), 0, -1, NULL)
+SOAP_FMAC3 wchar_t * * SOAP_FMAC4 soap_in_ns2__dateTime(struct soap*, const char*, wchar_t **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns2__dateTime(struct soap*, wchar_t *const*, const char*, const char*);
+
+inline int soap_write_ns2__dateTime(struct soap *soap, wchar_t *const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || soap_put_ns2__dateTime(soap, p, "ns2:dateTime", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 wchar_t ** SOAP_FMAC4 soap_get_ns2__dateTime(struct soap*, wchar_t **, const char*, const char*);
+
+inline int soap_read_ns2__dateTime(struct soap *soap, wchar_t **p)
+{
+	if (p)
+	{	if (soap_begin_recv(soap) || soap_get_ns2__dateTime(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ns2__boolean_DEFINED
+#define SOAP_TYPE_ns2__boolean_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns2__boolean(struct soap*, wchar_t *const*);
+
+#define soap_ns2__boolean2s(soap, a) soap_wchar2s((soap), (a))
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns2__boolean(struct soap*, const char*, int, wchar_t*const*, const char*);
+
+#define soap_s2ns2__boolean(soap, s, a) soap_s2wchar((soap), (s), (wchar_t**)(a), 0, -1, NULL)
+SOAP_FMAC3 wchar_t * * SOAP_FMAC4 soap_in_ns2__boolean(struct soap*, const char*, wchar_t **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns2__boolean(struct soap*, wchar_t *const*, const char*, const char*);
+
+inline int soap_write_ns2__boolean(struct soap *soap, wchar_t *const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || soap_put_ns2__boolean(soap, p, "ns2:boolean", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 wchar_t ** SOAP_FMAC4 soap_get_ns2__boolean(struct soap*, wchar_t **, const char*, const char*);
+
+inline int soap_read_ns2__boolean(struct soap *soap, wchar_t **p)
+{
+	if (p)
+	{	if (soap_begin_recv(soap) || soap_get_ns2__boolean(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_ns2__amount_DEFINED
+#define SOAP_TYPE_ns2__amount_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_ns2__amount(struct soap*, wchar_t *const*);
+
+#define soap_ns2__amount2s(soap, a) soap_wchar2s((soap), (a))
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_ns2__amount(struct soap*, const char*, int, wchar_t*const*, const char*);
+
+#define soap_s2ns2__amount(soap, s, a) soap_s2wchar((soap), (s), (wchar_t**)(a), 0, -1, NULL)
+SOAP_FMAC3 wchar_t * * SOAP_FMAC4 soap_in_ns2__amount(struct soap*, const char*, wchar_t **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_ns2__amount(struct soap*, wchar_t *const*, const char*, const char*);
+
+inline int soap_write_ns2__amount(struct soap *soap, wchar_t *const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || soap_put_ns2__amount(soap, p, "ns2:amount", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 wchar_t ** SOAP_FMAC4 soap_get_ns2__amount(struct soap*, wchar_t **, const char*, const char*);
+
+inline int soap_read_ns2__amount(struct soap *soap, wchar_t **p)
+{
+	if (p)
+	{	if (soap_begin_recv(soap) || soap_get_ns2__amount(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_xsd__integer_DEFINED
+#define SOAP_TYPE_xsd__integer_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_xsd__integer(struct soap*, wchar_t *const*);
+
+#define soap_xsd__integer2s(soap, a) soap_wchar2s((soap), (a))
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_xsd__integer(struct soap*, const char*, int, wchar_t*const*, const char*);
+
+#define soap_s2xsd__integer(soap, s, a) soap_s2wchar((soap), (s), (wchar_t**)(a), 0, -1, NULL)
+SOAP_FMAC3 wchar_t * * SOAP_FMAC4 soap_in_xsd__integer(struct soap*, const char*, wchar_t **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_xsd__integer(struct soap*, wchar_t *const*, const char*, const char*);
+
+inline int soap_write_xsd__integer(struct soap *soap, wchar_t *const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || soap_put_xsd__integer(soap, p, "xsd:integer", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 wchar_t ** SOAP_FMAC4 soap_get_xsd__integer(struct soap*, wchar_t **, const char*, const char*);
+
+inline int soap_read_xsd__integer(struct soap *soap, wchar_t **p)
+{
+	if (p)
+	{	if (soap_begin_recv(soap) || soap_get_xsd__integer(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_wstring_DEFINED
+#define SOAP_TYPE_wstring_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_wstring(struct soap*, wchar_t *const*);
+
+#define soap_wstring2s(soap, a) soap_wchar2s((soap), (a))
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wstring(struct soap*, const char*, int, wchar_t*const*, const char*);
+
+#define soap_s2wstring(soap, s, a) soap_s2wchar((soap), (s), (wchar_t**)(a), 0, -1, NULL)
+SOAP_FMAC3 wchar_t * * SOAP_FMAC4 soap_in_wstring(struct soap*, const char*, wchar_t **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wstring(struct soap*, wchar_t *const*, const char*, const char*);
+
+inline int soap_write_wstring(struct soap *soap, wchar_t *const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || soap_put_wstring(soap, p, "string", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 wchar_t ** SOAP_FMAC4 soap_get_wstring(struct soap*, wchar_t **, const char*, const char*);
+
+inline int soap_read_wstring(struct soap *soap, wchar_t **p)
+{
+	if (p)
+	{	if (soap_begin_recv(soap) || soap_get_wstring(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsse__Security_DEFINED
+#define SOAP_TYPE_PointerTo_wsse__Security_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsse__Security(struct soap*, struct _wsse__Security *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsse__Security(struct soap*, const char *, int, struct _wsse__Security *const*, const char *);
+SOAP_FMAC3 struct _wsse__Security ** SOAP_FMAC4 soap_in_PointerTo_wsse__Security(struct soap*, const char*, struct _wsse__Security **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsse__Security(struct soap*, struct _wsse__Security *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsse__Security ** SOAP_FMAC4 soap_get_PointerTo_wsse__Security(struct soap*, struct _wsse__Security **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__SignatureType_DEFINED
+#define SOAP_TYPE_PointerTods__SignatureType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__SignatureType(struct soap*, struct ds__SignatureType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__SignatureType(struct soap*, const char *, int, struct ds__SignatureType *const*, const char *);
+SOAP_FMAC3 struct ds__SignatureType ** SOAP_FMAC4 soap_in_PointerTods__SignatureType(struct soap*, const char*, struct ds__SignatureType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__SignatureType(struct soap*, struct ds__SignatureType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__SignatureType ** SOAP_FMAC4 soap_get_PointerTods__SignatureType(struct soap*, struct ds__SignatureType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTowsc__SecurityContextTokenType_DEFINED
+#define SOAP_TYPE_PointerTowsc__SecurityContextTokenType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTowsc__SecurityContextTokenType(struct soap*, struct wsc__SecurityContextTokenType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTowsc__SecurityContextTokenType(struct soap*, const char *, int, struct wsc__SecurityContextTokenType *const*, const char *);
+SOAP_FMAC3 struct wsc__SecurityContextTokenType ** SOAP_FMAC4 soap_in_PointerTowsc__SecurityContextTokenType(struct soap*, const char*, struct wsc__SecurityContextTokenType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTowsc__SecurityContextTokenType(struct soap*, struct wsc__SecurityContextTokenType *const*, const char*, const char*);
+SOAP_FMAC3 struct wsc__SecurityContextTokenType ** SOAP_FMAC4 soap_get_PointerTowsc__SecurityContextTokenType(struct soap*, struct wsc__SecurityContextTokenType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToxenc__EncryptedKeyType_DEFINED
+#define SOAP_TYPE_PointerToxenc__EncryptedKeyType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxenc__EncryptedKeyType(struct soap*, struct xenc__EncryptedKeyType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxenc__EncryptedKeyType(struct soap*, const char *, int, struct xenc__EncryptedKeyType *const*, const char *);
+SOAP_FMAC3 struct xenc__EncryptedKeyType ** SOAP_FMAC4 soap_in_PointerToxenc__EncryptedKeyType(struct soap*, const char*, struct xenc__EncryptedKeyType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxenc__EncryptedKeyType(struct soap*, struct xenc__EncryptedKeyType *const*, const char*, const char*);
+SOAP_FMAC3 struct xenc__EncryptedKeyType ** SOAP_FMAC4 soap_get_PointerToxenc__EncryptedKeyType(struct soap*, struct xenc__EncryptedKeyType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsse__BinarySecurityToken_DEFINED
+#define SOAP_TYPE_PointerTo_wsse__BinarySecurityToken_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsse__BinarySecurityToken(struct soap*, struct _wsse__BinarySecurityToken *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsse__BinarySecurityToken(struct soap*, const char *, int, struct _wsse__BinarySecurityToken *const*, const char *);
+SOAP_FMAC3 struct _wsse__BinarySecurityToken ** SOAP_FMAC4 soap_in_PointerTo_wsse__BinarySecurityToken(struct soap*, const char*, struct _wsse__BinarySecurityToken **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsse__BinarySecurityToken(struct soap*, struct _wsse__BinarySecurityToken *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsse__BinarySecurityToken ** SOAP_FMAC4 soap_get_PointerTo_wsse__BinarySecurityToken(struct soap*, struct _wsse__BinarySecurityToken **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsse__UsernameToken_DEFINED
+#define SOAP_TYPE_PointerTo_wsse__UsernameToken_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsse__UsernameToken(struct soap*, struct _wsse__UsernameToken *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsse__UsernameToken(struct soap*, const char *, int, struct _wsse__UsernameToken *const*, const char *);
+SOAP_FMAC3 struct _wsse__UsernameToken ** SOAP_FMAC4 soap_in_PointerTo_wsse__UsernameToken(struct soap*, const char*, struct _wsse__UsernameToken **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsse__UsernameToken(struct soap*, struct _wsse__UsernameToken *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsse__UsernameToken ** SOAP_FMAC4 soap_get_PointerTo_wsse__UsernameToken(struct soap*, struct _wsse__UsernameToken **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsu__Timestamp_DEFINED
+#define SOAP_TYPE_PointerTo_wsu__Timestamp_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsu__Timestamp(struct soap*, struct _wsu__Timestamp *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsu__Timestamp(struct soap*, const char *, int, struct _wsu__Timestamp *const*, const char *);
+SOAP_FMAC3 struct _wsu__Timestamp ** SOAP_FMAC4 soap_in_PointerTo_wsu__Timestamp(struct soap*, const char*, struct _wsu__Timestamp **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsu__Timestamp(struct soap*, struct _wsu__Timestamp *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsu__Timestamp ** SOAP_FMAC4 soap_get_PointerTo_wsu__Timestamp(struct soap*, struct _wsu__Timestamp **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo__wsc__DerivedKeyTokenType_sequence_DEFINED
+#define SOAP_TYPE_PointerTo__wsc__DerivedKeyTokenType_sequence_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo__wsc__DerivedKeyTokenType_sequence(struct soap*, struct __wsc__DerivedKeyTokenType_sequence *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo__wsc__DerivedKeyTokenType_sequence(struct soap*, const char *, int, struct __wsc__DerivedKeyTokenType_sequence *const*, const char *);
+SOAP_FMAC3 struct __wsc__DerivedKeyTokenType_sequence ** SOAP_FMAC4 soap_in_PointerTo__wsc__DerivedKeyTokenType_sequence(struct soap*, const char*, struct __wsc__DerivedKeyTokenType_sequence **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo__wsc__DerivedKeyTokenType_sequence(struct soap*, struct __wsc__DerivedKeyTokenType_sequence *const*, const char*, const char*);
+SOAP_FMAC3 struct __wsc__DerivedKeyTokenType_sequence ** SOAP_FMAC4 soap_get_PointerTo__wsc__DerivedKeyTokenType_sequence(struct soap*, struct __wsc__DerivedKeyTokenType_sequence **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToULONG64_DEFINED
+#define SOAP_TYPE_PointerToULONG64_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToULONG64(struct soap*, ULONG64 *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToULONG64(struct soap*, const char *, int, ULONG64 *const*, const char *);
+SOAP_FMAC3 ULONG64 ** SOAP_FMAC4 soap_in_PointerToULONG64(struct soap*, const char*, ULONG64 **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToULONG64(struct soap*, ULONG64 *const*, const char*, const char*);
+SOAP_FMAC3 ULONG64 ** SOAP_FMAC4 soap_get_PointerToULONG64(struct soap*, ULONG64 **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTowsc__PropertiesType_DEFINED
+#define SOAP_TYPE_PointerTowsc__PropertiesType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTowsc__PropertiesType(struct soap*, struct wsc__PropertiesType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTowsc__PropertiesType(struct soap*, const char *, int, struct wsc__PropertiesType *const*, const char *);
+SOAP_FMAC3 struct wsc__PropertiesType ** SOAP_FMAC4 soap_in_PointerTowsc__PropertiesType(struct soap*, const char*, struct wsc__PropertiesType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTowsc__PropertiesType(struct soap*, struct wsc__PropertiesType *const*, const char*, const char*);
+SOAP_FMAC3 struct wsc__PropertiesType ** SOAP_FMAC4 soap_get_PointerTowsc__PropertiesType(struct soap*, struct wsc__PropertiesType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_wsc__FaultCodeOpenEnumType_DEFINED
+#define SOAP_TYPE_wsc__FaultCodeOpenEnumType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_wsc__FaultCodeOpenEnumType(struct soap*, char **);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_wsc__FaultCodeOpenEnumType(struct soap*, char *const*);
+
+#define soap_wsc__FaultCodeOpenEnumType2s(soap, a) (a)
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_wsc__FaultCodeOpenEnumType(struct soap*, const char*, int, char*const*, const char*);
+
+#define soap_s2wsc__FaultCodeOpenEnumType(soap, s, a) soap_s2char((soap), (s), (char**)(a), 0, -1, NULL)
+SOAP_FMAC3 char * * SOAP_FMAC4 soap_in_wsc__FaultCodeOpenEnumType(struct soap*, const char*, char **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_wsc__FaultCodeOpenEnumType(struct soap*, char *const*, const char*, const char*);
+
+inline int soap_write_wsc__FaultCodeOpenEnumType(struct soap *soap, char *const *p)
+{
+	soap_free_temp(soap);
+	if (p)
+	{	if (soap_begin_send(soap) || soap_put_wsc__FaultCodeOpenEnumType(soap, p, "wsc:FaultCodeOpenEnumType", "") || soap_end_send(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+SOAP_FMAC3 char ** SOAP_FMAC4 soap_get_wsc__FaultCodeOpenEnumType(struct soap*, char **, const char*, const char*);
+
+inline int soap_read_wsc__FaultCodeOpenEnumType(struct soap *soap, char **p)
+{
+	if (p)
+	{	if (soap_begin_recv(soap) || soap_get_wsc__FaultCodeOpenEnumType(soap, p, NULL, NULL) == NULL || soap_end_recv(soap))
+			return soap->error;
+	}
+	return SOAP_OK;
+}
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_xenc__ReferenceList_DEFINED
+#define SOAP_TYPE_PointerTo_xenc__ReferenceList_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_xenc__ReferenceList(struct soap*, struct _xenc__ReferenceList *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_xenc__ReferenceList(struct soap*, const char *, int, struct _xenc__ReferenceList *const*, const char *);
+SOAP_FMAC3 struct _xenc__ReferenceList ** SOAP_FMAC4 soap_in_PointerTo_xenc__ReferenceList(struct soap*, const char*, struct _xenc__ReferenceList **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_xenc__ReferenceList(struct soap*, struct _xenc__ReferenceList *const*, const char*, const char*);
+SOAP_FMAC3 struct _xenc__ReferenceList ** SOAP_FMAC4 soap_get_PointerTo_xenc__ReferenceList(struct soap*, struct _xenc__ReferenceList **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo__xenc__union_ReferenceList_DEFINED
+#define SOAP_TYPE_PointerTo__xenc__union_ReferenceList_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo__xenc__union_ReferenceList(struct soap*, struct __xenc__union_ReferenceList *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo__xenc__union_ReferenceList(struct soap*, const char *, int, struct __xenc__union_ReferenceList *const*, const char *);
+SOAP_FMAC3 struct __xenc__union_ReferenceList ** SOAP_FMAC4 soap_in_PointerTo__xenc__union_ReferenceList(struct soap*, const char*, struct __xenc__union_ReferenceList **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo__xenc__union_ReferenceList(struct soap*, struct __xenc__union_ReferenceList *const*, const char*, const char*);
+SOAP_FMAC3 struct __xenc__union_ReferenceList ** SOAP_FMAC4 soap_get_PointerTo__xenc__union_ReferenceList(struct soap*, struct __xenc__union_ReferenceList **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToxenc__ReferenceType_DEFINED
+#define SOAP_TYPE_PointerToxenc__ReferenceType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxenc__ReferenceType(struct soap*, struct xenc__ReferenceType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxenc__ReferenceType(struct soap*, const char *, int, struct xenc__ReferenceType *const*, const char *);
+SOAP_FMAC3 struct xenc__ReferenceType ** SOAP_FMAC4 soap_in_PointerToxenc__ReferenceType(struct soap*, const char*, struct xenc__ReferenceType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxenc__ReferenceType(struct soap*, struct xenc__ReferenceType *const*, const char*, const char*);
+SOAP_FMAC3 struct xenc__ReferenceType ** SOAP_FMAC4 soap_get_PointerToxenc__ReferenceType(struct soap*, struct xenc__ReferenceType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToxenc__EncryptionPropertyType_DEFINED
+#define SOAP_TYPE_PointerToxenc__EncryptionPropertyType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxenc__EncryptionPropertyType(struct soap*, struct xenc__EncryptionPropertyType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxenc__EncryptionPropertyType(struct soap*, const char *, int, struct xenc__EncryptionPropertyType *const*, const char *);
+SOAP_FMAC3 struct xenc__EncryptionPropertyType ** SOAP_FMAC4 soap_in_PointerToxenc__EncryptionPropertyType(struct soap*, const char*, struct xenc__EncryptionPropertyType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxenc__EncryptionPropertyType(struct soap*, struct xenc__EncryptionPropertyType *const*, const char*, const char*);
+SOAP_FMAC3 struct xenc__EncryptionPropertyType ** SOAP_FMAC4 soap_get_PointerToxenc__EncryptionPropertyType(struct soap*, struct xenc__EncryptionPropertyType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToxenc__TransformsType_DEFINED
+#define SOAP_TYPE_PointerToxenc__TransformsType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxenc__TransformsType(struct soap*, struct xenc__TransformsType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxenc__TransformsType(struct soap*, const char *, int, struct xenc__TransformsType *const*, const char *);
+SOAP_FMAC3 struct xenc__TransformsType ** SOAP_FMAC4 soap_in_PointerToxenc__TransformsType(struct soap*, const char*, struct xenc__TransformsType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxenc__TransformsType(struct soap*, struct xenc__TransformsType *const*, const char*, const char*);
+SOAP_FMAC3 struct xenc__TransformsType ** SOAP_FMAC4 soap_get_PointerToxenc__TransformsType(struct soap*, struct xenc__TransformsType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToxenc__CipherReferenceType_DEFINED
+#define SOAP_TYPE_PointerToxenc__CipherReferenceType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxenc__CipherReferenceType(struct soap*, struct xenc__CipherReferenceType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxenc__CipherReferenceType(struct soap*, const char *, int, struct xenc__CipherReferenceType *const*, const char *);
+SOAP_FMAC3 struct xenc__CipherReferenceType ** SOAP_FMAC4 soap_in_PointerToxenc__CipherReferenceType(struct soap*, const char*, struct xenc__CipherReferenceType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxenc__CipherReferenceType(struct soap*, struct xenc__CipherReferenceType *const*, const char*, const char*);
+SOAP_FMAC3 struct xenc__CipherReferenceType ** SOAP_FMAC4 soap_get_PointerToxenc__CipherReferenceType(struct soap*, struct xenc__CipherReferenceType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToxenc__EncryptionPropertiesType_DEFINED
+#define SOAP_TYPE_PointerToxenc__EncryptionPropertiesType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxenc__EncryptionPropertiesType(struct soap*, struct xenc__EncryptionPropertiesType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxenc__EncryptionPropertiesType(struct soap*, const char *, int, struct xenc__EncryptionPropertiesType *const*, const char *);
+SOAP_FMAC3 struct xenc__EncryptionPropertiesType ** SOAP_FMAC4 soap_in_PointerToxenc__EncryptionPropertiesType(struct soap*, const char*, struct xenc__EncryptionPropertiesType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxenc__EncryptionPropertiesType(struct soap*, struct xenc__EncryptionPropertiesType *const*, const char*, const char*);
+SOAP_FMAC3 struct xenc__EncryptionPropertiesType ** SOAP_FMAC4 soap_get_PointerToxenc__EncryptionPropertiesType(struct soap*, struct xenc__EncryptionPropertiesType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToxenc__CipherDataType_DEFINED
+#define SOAP_TYPE_PointerToxenc__CipherDataType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxenc__CipherDataType(struct soap*, struct xenc__CipherDataType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxenc__CipherDataType(struct soap*, const char *, int, struct xenc__CipherDataType *const*, const char *);
+SOAP_FMAC3 struct xenc__CipherDataType ** SOAP_FMAC4 soap_in_PointerToxenc__CipherDataType(struct soap*, const char*, struct xenc__CipherDataType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxenc__CipherDataType(struct soap*, struct xenc__CipherDataType *const*, const char*, const char*);
+SOAP_FMAC3 struct xenc__CipherDataType ** SOAP_FMAC4 soap_get_PointerToxenc__CipherDataType(struct soap*, struct xenc__CipherDataType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_ds__KeyInfo_DEFINED
+#define SOAP_TYPE_PointerTo_ds__KeyInfo_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_ds__KeyInfo(struct soap*, struct ds__KeyInfoType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_ds__KeyInfo(struct soap*, const char *, int, struct ds__KeyInfoType *const*, const char *);
+SOAP_FMAC3 struct ds__KeyInfoType ** SOAP_FMAC4 soap_in_PointerTo_ds__KeyInfo(struct soap*, const char*, struct ds__KeyInfoType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_ds__KeyInfo(struct soap*, struct ds__KeyInfoType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__KeyInfoType ** SOAP_FMAC4 soap_get_PointerTo_ds__KeyInfo(struct soap*, struct ds__KeyInfoType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToxenc__EncryptionMethodType_DEFINED
+#define SOAP_TYPE_PointerToxenc__EncryptionMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToxenc__EncryptionMethodType(struct soap*, struct xenc__EncryptionMethodType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToxenc__EncryptionMethodType(struct soap*, const char *, int, struct xenc__EncryptionMethodType *const*, const char *);
+SOAP_FMAC3 struct xenc__EncryptionMethodType ** SOAP_FMAC4 soap_in_PointerToxenc__EncryptionMethodType(struct soap*, const char*, struct xenc__EncryptionMethodType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToxenc__EncryptionMethodType(struct soap*, struct xenc__EncryptionMethodType *const*, const char*, const char*);
+SOAP_FMAC3 struct xenc__EncryptionMethodType ** SOAP_FMAC4 soap_get_PointerToxenc__EncryptionMethodType(struct soap*, struct xenc__EncryptionMethodType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__X509IssuerSerialType_DEFINED
+#define SOAP_TYPE_PointerTods__X509IssuerSerialType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__X509IssuerSerialType(struct soap*, struct ds__X509IssuerSerialType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__X509IssuerSerialType(struct soap*, const char *, int, struct ds__X509IssuerSerialType *const*, const char *);
+SOAP_FMAC3 struct ds__X509IssuerSerialType ** SOAP_FMAC4 soap_in_PointerTods__X509IssuerSerialType(struct soap*, const char*, struct ds__X509IssuerSerialType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__X509IssuerSerialType(struct soap*, struct ds__X509IssuerSerialType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__X509IssuerSerialType ** SOAP_FMAC4 soap_get_PointerTods__X509IssuerSerialType(struct soap*, struct ds__X509IssuerSerialType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__RSAKeyValueType_DEFINED
+#define SOAP_TYPE_PointerTods__RSAKeyValueType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__RSAKeyValueType(struct soap*, struct ds__RSAKeyValueType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__RSAKeyValueType(struct soap*, const char *, int, struct ds__RSAKeyValueType *const*, const char *);
+SOAP_FMAC3 struct ds__RSAKeyValueType ** SOAP_FMAC4 soap_in_PointerTods__RSAKeyValueType(struct soap*, const char*, struct ds__RSAKeyValueType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__RSAKeyValueType(struct soap*, struct ds__RSAKeyValueType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__RSAKeyValueType ** SOAP_FMAC4 soap_get_PointerTods__RSAKeyValueType(struct soap*, struct ds__RSAKeyValueType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__DSAKeyValueType_DEFINED
+#define SOAP_TYPE_PointerTods__DSAKeyValueType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__DSAKeyValueType(struct soap*, struct ds__DSAKeyValueType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__DSAKeyValueType(struct soap*, const char *, int, struct ds__DSAKeyValueType *const*, const char *);
+SOAP_FMAC3 struct ds__DSAKeyValueType ** SOAP_FMAC4 soap_in_PointerTods__DSAKeyValueType(struct soap*, const char*, struct ds__DSAKeyValueType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__DSAKeyValueType(struct soap*, struct ds__DSAKeyValueType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__DSAKeyValueType ** SOAP_FMAC4 soap_get_PointerTods__DSAKeyValueType(struct soap*, struct ds__DSAKeyValueType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__TransformType_DEFINED
+#define SOAP_TYPE_PointerTods__TransformType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__TransformType(struct soap*, struct ds__TransformType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__TransformType(struct soap*, const char *, int, struct ds__TransformType *const*, const char *);
+SOAP_FMAC3 struct ds__TransformType ** SOAP_FMAC4 soap_in_PointerTods__TransformType(struct soap*, const char*, struct ds__TransformType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__TransformType(struct soap*, struct ds__TransformType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__TransformType ** SOAP_FMAC4 soap_get_PointerTods__TransformType(struct soap*, struct ds__TransformType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__DigestMethodType_DEFINED
+#define SOAP_TYPE_PointerTods__DigestMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__DigestMethodType(struct soap*, struct ds__DigestMethodType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__DigestMethodType(struct soap*, const char *, int, struct ds__DigestMethodType *const*, const char *);
+SOAP_FMAC3 struct ds__DigestMethodType ** SOAP_FMAC4 soap_in_PointerTods__DigestMethodType(struct soap*, const char*, struct ds__DigestMethodType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__DigestMethodType(struct soap*, struct ds__DigestMethodType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__DigestMethodType ** SOAP_FMAC4 soap_get_PointerTods__DigestMethodType(struct soap*, struct ds__DigestMethodType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__TransformsType_DEFINED
+#define SOAP_TYPE_PointerTods__TransformsType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__TransformsType(struct soap*, struct ds__TransformsType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__TransformsType(struct soap*, const char *, int, struct ds__TransformsType *const*, const char *);
+SOAP_FMAC3 struct ds__TransformsType ** SOAP_FMAC4 soap_in_PointerTods__TransformsType(struct soap*, const char*, struct ds__TransformsType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__TransformsType(struct soap*, struct ds__TransformsType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__TransformsType ** SOAP_FMAC4 soap_get_PointerTods__TransformsType(struct soap*, struct ds__TransformsType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToint_DEFINED
+#define SOAP_TYPE_PointerToint_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToint(struct soap*, int *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToint(struct soap*, const char *, int, int *const*, const char *);
+SOAP_FMAC3 int ** SOAP_FMAC4 soap_in_PointerToint(struct soap*, const char*, int **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToint(struct soap*, int *const*, const char*, const char*);
+SOAP_FMAC3 int ** SOAP_FMAC4 soap_get_PointerToint(struct soap*, int **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerToPointerTods__ReferenceType_DEFINED
+#define SOAP_TYPE_PointerToPointerTods__ReferenceType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerToPointerTods__ReferenceType(struct soap*, struct ds__ReferenceType **const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerToPointerTods__ReferenceType(struct soap*, const char *, int, struct ds__ReferenceType **const*, const char *);
+SOAP_FMAC3 struct ds__ReferenceType *** SOAP_FMAC4 soap_in_PointerToPointerTods__ReferenceType(struct soap*, const char*, struct ds__ReferenceType ***, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerToPointerTods__ReferenceType(struct soap*, struct ds__ReferenceType **const*, const char*, const char*);
+SOAP_FMAC3 struct ds__ReferenceType *** SOAP_FMAC4 soap_get_PointerToPointerTods__ReferenceType(struct soap*, struct ds__ReferenceType ***, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__ReferenceType_DEFINED
+#define SOAP_TYPE_PointerTods__ReferenceType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__ReferenceType(struct soap*, struct ds__ReferenceType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__ReferenceType(struct soap*, const char *, int, struct ds__ReferenceType *const*, const char *);
+SOAP_FMAC3 struct ds__ReferenceType ** SOAP_FMAC4 soap_in_PointerTods__ReferenceType(struct soap*, const char*, struct ds__ReferenceType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__ReferenceType(struct soap*, struct ds__ReferenceType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__ReferenceType ** SOAP_FMAC4 soap_get_PointerTods__ReferenceType(struct soap*, struct ds__ReferenceType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__SignatureMethodType_DEFINED
+#define SOAP_TYPE_PointerTods__SignatureMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__SignatureMethodType(struct soap*, struct ds__SignatureMethodType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__SignatureMethodType(struct soap*, const char *, int, struct ds__SignatureMethodType *const*, const char *);
+SOAP_FMAC3 struct ds__SignatureMethodType ** SOAP_FMAC4 soap_in_PointerTods__SignatureMethodType(struct soap*, const char*, struct ds__SignatureMethodType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__SignatureMethodType(struct soap*, struct ds__SignatureMethodType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__SignatureMethodType ** SOAP_FMAC4 soap_get_PointerTods__SignatureMethodType(struct soap*, struct ds__SignatureMethodType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__CanonicalizationMethodType_DEFINED
+#define SOAP_TYPE_PointerTods__CanonicalizationMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__CanonicalizationMethodType(struct soap*, struct ds__CanonicalizationMethodType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__CanonicalizationMethodType(struct soap*, const char *, int, struct ds__CanonicalizationMethodType *const*, const char *);
+SOAP_FMAC3 struct ds__CanonicalizationMethodType ** SOAP_FMAC4 soap_in_PointerTods__CanonicalizationMethodType(struct soap*, const char*, struct ds__CanonicalizationMethodType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__CanonicalizationMethodType(struct soap*, struct ds__CanonicalizationMethodType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__CanonicalizationMethodType ** SOAP_FMAC4 soap_get_PointerTods__CanonicalizationMethodType(struct soap*, struct ds__CanonicalizationMethodType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsse__SecurityTokenReference_DEFINED
+#define SOAP_TYPE_PointerTo_wsse__SecurityTokenReference_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsse__SecurityTokenReference(struct soap*, struct _wsse__SecurityTokenReference *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsse__SecurityTokenReference(struct soap*, const char *, int, struct _wsse__SecurityTokenReference *const*, const char *);
+SOAP_FMAC3 struct _wsse__SecurityTokenReference ** SOAP_FMAC4 soap_in_PointerTo_wsse__SecurityTokenReference(struct soap*, const char*, struct _wsse__SecurityTokenReference **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsse__SecurityTokenReference(struct soap*, struct _wsse__SecurityTokenReference *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsse__SecurityTokenReference ** SOAP_FMAC4 soap_get_PointerTo_wsse__SecurityTokenReference(struct soap*, struct _wsse__SecurityTokenReference **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__RetrievalMethodType_DEFINED
+#define SOAP_TYPE_PointerTods__RetrievalMethodType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__RetrievalMethodType(struct soap*, struct ds__RetrievalMethodType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__RetrievalMethodType(struct soap*, const char *, int, struct ds__RetrievalMethodType *const*, const char *);
+SOAP_FMAC3 struct ds__RetrievalMethodType ** SOAP_FMAC4 soap_in_PointerTods__RetrievalMethodType(struct soap*, const char*, struct ds__RetrievalMethodType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__RetrievalMethodType(struct soap*, struct ds__RetrievalMethodType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__RetrievalMethodType ** SOAP_FMAC4 soap_get_PointerTods__RetrievalMethodType(struct soap*, struct ds__RetrievalMethodType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__KeyValueType_DEFINED
+#define SOAP_TYPE_PointerTods__KeyValueType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__KeyValueType(struct soap*, struct ds__KeyValueType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__KeyValueType(struct soap*, const char *, int, struct ds__KeyValueType *const*, const char *);
+SOAP_FMAC3 struct ds__KeyValueType ** SOAP_FMAC4 soap_in_PointerTods__KeyValueType(struct soap*, const char*, struct ds__KeyValueType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__KeyValueType(struct soap*, struct ds__KeyValueType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__KeyValueType ** SOAP_FMAC4 soap_get_PointerTods__KeyValueType(struct soap*, struct ds__KeyValueType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_c14n__InclusiveNamespaces_DEFINED
+#define SOAP_TYPE_PointerTo_c14n__InclusiveNamespaces_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_c14n__InclusiveNamespaces(struct soap*, struct _c14n__InclusiveNamespaces *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_c14n__InclusiveNamespaces(struct soap*, const char *, int, struct _c14n__InclusiveNamespaces *const*, const char *);
+SOAP_FMAC3 struct _c14n__InclusiveNamespaces ** SOAP_FMAC4 soap_in_PointerTo_c14n__InclusiveNamespaces(struct soap*, const char*, struct _c14n__InclusiveNamespaces **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_c14n__InclusiveNamespaces(struct soap*, struct _c14n__InclusiveNamespaces *const*, const char*, const char*);
+SOAP_FMAC3 struct _c14n__InclusiveNamespaces ** SOAP_FMAC4 soap_get_PointerTo_c14n__InclusiveNamespaces(struct soap*, struct _c14n__InclusiveNamespaces **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__KeyInfoType_DEFINED
+#define SOAP_TYPE_PointerTods__KeyInfoType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__KeyInfoType(struct soap*, struct ds__KeyInfoType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__KeyInfoType(struct soap*, const char *, int, struct ds__KeyInfoType *const*, const char *);
+SOAP_FMAC3 struct ds__KeyInfoType ** SOAP_FMAC4 soap_in_PointerTods__KeyInfoType(struct soap*, const char*, struct ds__KeyInfoType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__KeyInfoType(struct soap*, struct ds__KeyInfoType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__KeyInfoType ** SOAP_FMAC4 soap_get_PointerTods__KeyInfoType(struct soap*, struct ds__KeyInfoType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__SignedInfoType_DEFINED
+#define SOAP_TYPE_PointerTods__SignedInfoType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__SignedInfoType(struct soap*, struct ds__SignedInfoType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__SignedInfoType(struct soap*, const char *, int, struct ds__SignedInfoType *const*, const char *);
+SOAP_FMAC3 struct ds__SignedInfoType ** SOAP_FMAC4 soap_in_PointerTods__SignedInfoType(struct soap*, const char*, struct ds__SignedInfoType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__SignedInfoType(struct soap*, struct ds__SignedInfoType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__SignedInfoType ** SOAP_FMAC4 soap_get_PointerTods__SignedInfoType(struct soap*, struct ds__SignedInfoType **, const char*, const char*);
+#endif
+/* _ds__SignatureValue is a typedef synonym for string */
+
+#ifndef SOAP_TYPE__ds__SignatureValue_DEFINED
+#define SOAP_TYPE__ds__SignatureValue_DEFINED
+
+#define soap_default__ds__SignatureValue(soap, a) soap_default_string(soap, a)
+
+
+#define soap_serialize__ds__SignatureValue soap_serialize_string
+
+
+#define soap__ds__SignatureValue2s(soap, a) (a)
+
+#define soap_out__ds__SignatureValue soap_out_string
+
+
+#define soap_s2_ds__SignatureValue(soap, s, a) soap_s2char((soap), (s), (char**)(a), 0, -1, NULL)
+
+#define soap_in__ds__SignatureValue soap_in_string
+
+
+#define soap_put__ds__SignatureValue soap_put_string
+
+
+#define soap_write__ds__SignatureValue soap_write_string
+
+
+#define soap_get__ds__SignatureValue soap_get_string
+
+
+#define soap_read__ds__SignatureValue soap_read_string
+
+#endif
+
+#ifndef SOAP_TYPE_PointerTods__X509DataType_DEFINED
+#define SOAP_TYPE_PointerTods__X509DataType_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTods__X509DataType(struct soap*, struct ds__X509DataType *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTods__X509DataType(struct soap*, const char *, int, struct ds__X509DataType *const*, const char *);
+SOAP_FMAC3 struct ds__X509DataType ** SOAP_FMAC4 soap_in_PointerTods__X509DataType(struct soap*, const char*, struct ds__X509DataType **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTods__X509DataType(struct soap*, struct ds__X509DataType *const*, const char*, const char*);
+SOAP_FMAC3 struct ds__X509DataType ** SOAP_FMAC4 soap_get_PointerTods__X509DataType(struct soap*, struct ds__X509DataType **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsse__Embedded_DEFINED
+#define SOAP_TYPE_PointerTo_wsse__Embedded_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsse__Embedded(struct soap*, struct _wsse__Embedded *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsse__Embedded(struct soap*, const char *, int, struct _wsse__Embedded *const*, const char *);
+SOAP_FMAC3 struct _wsse__Embedded ** SOAP_FMAC4 soap_in_PointerTo_wsse__Embedded(struct soap*, const char*, struct _wsse__Embedded **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsse__Embedded(struct soap*, struct _wsse__Embedded *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsse__Embedded ** SOAP_FMAC4 soap_get_PointerTo_wsse__Embedded(struct soap*, struct _wsse__Embedded **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsse__KeyIdentifier_DEFINED
+#define SOAP_TYPE_PointerTo_wsse__KeyIdentifier_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsse__KeyIdentifier(struct soap*, struct _wsse__KeyIdentifier *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsse__KeyIdentifier(struct soap*, const char *, int, struct _wsse__KeyIdentifier *const*, const char *);
+SOAP_FMAC3 struct _wsse__KeyIdentifier ** SOAP_FMAC4 soap_in_PointerTo_wsse__KeyIdentifier(struct soap*, const char*, struct _wsse__KeyIdentifier **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsse__KeyIdentifier(struct soap*, struct _wsse__KeyIdentifier *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsse__KeyIdentifier ** SOAP_FMAC4 soap_get_PointerTo_wsse__KeyIdentifier(struct soap*, struct _wsse__KeyIdentifier **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsse__Reference_DEFINED
+#define SOAP_TYPE_PointerTo_wsse__Reference_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsse__Reference(struct soap*, struct _wsse__Reference *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsse__Reference(struct soap*, const char *, int, struct _wsse__Reference *const*, const char *);
+SOAP_FMAC3 struct _wsse__Reference ** SOAP_FMAC4 soap_in_PointerTo_wsse__Reference(struct soap*, const char*, struct _wsse__Reference **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsse__Reference(struct soap*, struct _wsse__Reference *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsse__Reference ** SOAP_FMAC4 soap_get_PointerTo_wsse__Reference(struct soap*, struct _wsse__Reference **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTowsse__EncodedString_DEFINED
+#define SOAP_TYPE_PointerTowsse__EncodedString_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTowsse__EncodedString(struct soap*, struct wsse__EncodedString *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTowsse__EncodedString(struct soap*, const char *, int, struct wsse__EncodedString *const*, const char *);
+SOAP_FMAC3 struct wsse__EncodedString ** SOAP_FMAC4 soap_in_PointerTowsse__EncodedString(struct soap*, const char*, struct wsse__EncodedString **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTowsse__EncodedString(struct soap*, struct wsse__EncodedString *const*, const char*, const char*);
+SOAP_FMAC3 struct wsse__EncodedString ** SOAP_FMAC4 soap_get_PointerTowsse__EncodedString(struct soap*, struct wsse__EncodedString **, const char*, const char*);
+#endif
+
+#ifndef SOAP_TYPE_PointerTo_wsse__Password_DEFINED
+#define SOAP_TYPE_PointerTo_wsse__Password_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_PointerTo_wsse__Password(struct soap*, struct _wsse__Password *const*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_PointerTo_wsse__Password(struct soap*, const char *, int, struct _wsse__Password *const*, const char *);
+SOAP_FMAC3 struct _wsse__Password ** SOAP_FMAC4 soap_in_PointerTo_wsse__Password(struct soap*, const char*, struct _wsse__Password **, const char*);
+SOAP_FMAC3 int SOAP_FMAC4 soap_put_PointerTo_wsse__Password(struct soap*, struct _wsse__Password *const*, const char*, const char*);
+SOAP_FMAC3 struct _wsse__Password ** SOAP_FMAC4 soap_get_PointerTo_wsse__Password(struct soap*, struct _wsse__Password **, const char*, const char*);
 #endif
 
 #ifndef SOAP_TYPE__XML_DEFINED
@@ -21901,17 +25363,17 @@ inline std::vector<ns2__DecisionManagerTravelLeg *>  * soap_new_std__vectorTempl
 }
 #endif
 
-#ifndef SOAP_TYPE_std__vectorTemplateOfstd__string_DEFINED
-#define SOAP_TYPE_std__vectorTemplateOfstd__string_DEFINED
-SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfstd__string(struct soap*, std::vector<std::string> *);
-SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfstd__string(struct soap*, const std::vector<std::string> *);
-SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfstd__string(struct soap*, const char*, int, const std::vector<std::string> *, const char*);
-SOAP_FMAC3 std::vector<std::string> * SOAP_FMAC4 soap_in_std__vectorTemplateOfstd__string(struct soap*, const char*, std::vector<std::string> *, const char*);
-SOAP_FMAC1 std::vector<std::string>  * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfstd__string(struct soap*, int, const char*, const char*, size_t*);
+#ifndef SOAP_TYPE_std__vectorTemplateOfwstring_DEFINED
+#define SOAP_TYPE_std__vectorTemplateOfwstring_DEFINED
+SOAP_FMAC3 void SOAP_FMAC4 soap_default_std__vectorTemplateOfwstring(struct soap*, std::vector<wchar_t *> *);
+SOAP_FMAC3 void SOAP_FMAC4 soap_serialize_std__vectorTemplateOfwstring(struct soap*, const std::vector<wchar_t *> *);
+SOAP_FMAC3 int SOAP_FMAC4 soap_out_std__vectorTemplateOfwstring(struct soap*, const char*, int, const std::vector<wchar_t *> *, const char*);
+SOAP_FMAC3 std::vector<wchar_t *> * SOAP_FMAC4 soap_in_std__vectorTemplateOfwstring(struct soap*, const char*, std::vector<wchar_t *> *, const char*);
+SOAP_FMAC1 std::vector<wchar_t *>  * SOAP_FMAC2 soap_instantiate_std__vectorTemplateOfwstring(struct soap*, int, const char*, const char*, size_t*);
 
-inline std::vector<std::string>  * soap_new_std__vectorTemplateOfstd__string(struct soap *soap, int n = -1)
+inline std::vector<wchar_t *>  * soap_new_std__vectorTemplateOfwstring(struct soap *soap, int n = -1)
 {
-	return soap_instantiate_std__vectorTemplateOfstd__string(soap, n, NULL, NULL, NULL);
+	return soap_instantiate_std__vectorTemplateOfwstring(soap, n, NULL, NULL, NULL);
 }
 #endif
 

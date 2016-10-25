@@ -76,8 +76,8 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         virtual char *soap_sprint_fault(char *buf, size_t len);
     #endif
         /// Web service operation 'runTransaction' (returns SOAP_OK or error code)
-        virtual int runTransaction(std::string ns2__nvpRequest, std::string &ns2__nvpReply)
+        virtual int runTransaction(wchar_t *ns2__nvpRequest, wchar_t *&ns2__nvpReply)
         { return this->runTransaction(NULL, NULL, ns2__nvpRequest, ns2__nvpReply); }
-        virtual int runTransaction(const char *soap_endpoint, const char *soap_action, std::string ns2__nvpRequest, std::string &ns2__nvpReply);
+        virtual int runTransaction(const char *soap_endpoint, const char *soap_action, wchar_t *ns2__nvpRequest, wchar_t *&ns2__nvpReply);
     };
 #endif

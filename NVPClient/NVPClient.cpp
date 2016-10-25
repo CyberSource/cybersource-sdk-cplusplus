@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "log.h"
+#include <map>
 
 #ifdef WIN32
 static HANDLE *lock_cs;
@@ -36,7 +37,7 @@ unsigned long pthreads_thread_id(void );
 
 char DEFAULT_CERT_FILE[]   = "ca-bundle";
 	char SERVER_PUBLIC_KEY_NAME[]          =    "CyberSource_SJC_US/serialNumber";
-static const char CLIENT_LIBRARY_VERSION[] = "clientLibraryVersion";
+static const wchar_t CLIENT_LIBRARY_VERSION[] = L"clientLibraryVersion";
 
 #define RETURN_ERROR( status, info ) \
 { \
@@ -214,32 +215,47 @@ public:
 
 CYBSCPP_BEGIN_END gCybsBeginEnd;
 
-static std::string convertMaptoString (CybsMap *reqMap) {
+static std::wstring convertMaptoString (std::map <std::wstring, std::wstring> m) {
 	int i = 0;
-	std::string reqString;
-	while (i < reqMap->length) {
-		CybsTable pair = reqMap->pairs[i];
-		reqString.append((char *)pair.key);
-		reqString.append("=");
-		reqString.append((char *)pair.value);
-		reqString.append("\n");
-		i = i + 1;
+	std::wstring reqString;
+	typedef std::map <std::wstring, std::wstring>::const_iterator it_type;
+	for(it_type iterator = m.begin(); iterator != m.end(); iterator++) {
+		reqString.append(std::wstring(iterator->first.begin(), iterator->first.end()));
+		reqString.append(L"=");
+		reqString.append(iterator->second);
+		reqString.append(L"\n");
 	}
 	return reqString;
 }
 
-void convertStringtoMap (std:: string str, CybsMap *resmap) {
-	char *res = (char *)str.c_str();
-	char *temp1;
-	char *token;
-	temp1 = strtok(res, "\n");
+std::map <std::wstring, std::wstring> convertStringtoMap (wchar_t *res) {
+	std::map <std::wstring, std::wstring> resmap;
+	std::wstring strResp = std::wstring(res);
+	wchar_t *res1 =  const_cast< wchar_t* > (strResp.c_str());
+	wchar_t *temp1;
+	wchar_t *token;
+	wchar_t *buf;
+	#ifdef WIN32
+		temp1 = wcstok(res1, L"\n");
+	#else
+		temp1 = wcstok(res1, L"\n", &buf);
+	#endif
+
 	while(temp1 != NULL) 
-	{
-		token = strchr(temp1, '=');
-		*token = '\0';
-		cybs_add(resmap, temp1, token+1);
-		temp1 = strtok(NULL, "\n");
+	{	
+		token = wcschr(temp1, L'=');
+		*token = L'\0';
+		std::wstring ws(temp1);
+		std::wstring temp2(token+1);
+		resmap.insert(std::pair<std::wstring, std::wstring>(ws,temp2));
+
+		#ifdef WIN32
+			temp1 = wcstok(NULL, L"\n");
+		#else
+			temp1 = wcstok(NULL, L"\n", &buf);
+		#endif
 	}
+	return resmap;
 }
 
 char cybs_flag_value( const char *szFlagString )
@@ -331,7 +347,7 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 	return ( 0 );
 }
 
-int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, CybsMap *reqMap, CybsMap *responseMap) {
+int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std::map <std::wstring, std::wstring> req, std::map <std::wstring, std::wstring> &resMap) {
 	char szDest[256];
 	char *mercID = (char *)cybs_get(configMap, CYBS_C_MERCHANT_ID);
 	char *keyDir = (char *)cybs_get(configMap, CYBS_C_KEYS_DIRECTORY);
@@ -391,9 +407,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, Cyb
 		RETURN_REQUIRED_ERROR( "Parameter config" );
 	}
 
-	if (!reqMap) 
+	if (req.empty()) 
 	{
-		RETURN_REQUIRED_ERROR( "Parameter pRequest" );
+		RETURN_REQUIRED_ERROR( "Parameter Request" );
 	}
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_KEYS_DIRECTORY);
@@ -402,18 +418,17 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, Cyb
 		RETURN_REQUIRED_ERROR( CYBS_C_KEYS_DIRECTORY );
 	}
 
-	temp = (const char *)cybs_get(reqMap, CYBS_C_MERCHANT_ID);
-	if (!temp) 
-	{
-		if (!mercID) 
-		{
+	if (req.find(L"merchantID") == req.end()) {
+		if (!mercID) {
 			RETURN_REQUIRED_ERROR( CYBS_C_MERCHANT_ID );
 		}
-		temp = mercID;
-		
-		cybs_add(reqMap, CYBS_C_MERCHANT_ID, mercID);
+
+		// convert char to wchar and put it in request
+		wchar_t *w = NULL;
+		soap_s2wchar(proxy->soap, mercID, &w, -1, -1, NULL);
+		req[L"merchantID"] = w;
 	}
-	strcpy(cfg.merchantID, temp);
+	wcstombs(cfg.merchantID, req.find(L"merchantID")->second.c_str(), (req.find(L"merchantID")->second).length() + 1);
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_SSL_CERT_FILE);
 	if (temp)
@@ -460,7 +475,6 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, Cyb
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
 
 	if (temp) {
-		//CHECK_LENGTH(CYBS_C_PASSWORD, CYBS_MAX_URL, srvrUrl);
 		cfg.proxyPort = atoi(temp);
 		proxy->soap->proxy_port = cfg.proxyPort;
 	}
@@ -521,7 +535,6 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, Cyb
 	if (temp)
 		cfg.isEncryptionEnabled = cybs_flag_value(temp);
 
-	//INVPTransactionProcessorProxy proxy = INVPTransactionProcessorProxy ();
 	int errFlag = configure(&proxy, cfg, &p12, &pkey1, &cert1, &ca);
 
 	if ( errFlag != 0 )
@@ -555,45 +568,44 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, Cyb
 		
 	}
 
-	cybs_add(reqMap, CLIENT_LIBRARY_VERSION, (char *)CLIENT_LIBRARY_VERSION_VALUE);
+	req[CLIENT_LIBRARY_VERSION] = CLIENT_LIBRARY_VERSION_VALUE;
 
 	if (cfg.isLogEnabled)
-		cybs_log_map(cfg, reqMap, CYBS_LT_REQUEST);
+	  cybs_log_NVP(cfg, req, CYBS_LT_REQUEST);
 
 	proxy->soap_endpoint = cfg.serverURL;
 	
 	if (cfg.isLogEnabled)
 		cybs_log (cfg, CYBS_LT_CONFIG, proxy->soap_endpoint);
 
-	std:: string rep;
-	int status = proxy->runTransaction(convertMaptoString (reqMap), rep);
+	//std:: string rep;
+	
+	wchar_t *rep;
+	int status = proxy->runTransaction( const_cast< wchar_t* >(convertMaptoString (req).c_str()), rep );
 
 	sk_X509_pop_free(ca, X509_free);
 	X509_free(cert1);
 	EVP_PKEY_free(pkey1);
 
-	if(rep.length()>0)
-	convertStringtoMap(rep, responseMap);
-
-	if (cfg.isLogEnabled)
-		cybs_log_map(cfg, responseMap, CYBS_LT_REPLY);
-
 	char *responseMsg = "\0";
 	responseMsg = proxy->soap->msgbuf;
 	
 	if (status == SOAP_OK) {
+		if(rep != NULL && wcslen(rep) > 0)
+		resMap = convertStringtoMap(rep);
+		
 		if (cfg.isLogEnabled)
 		cybs_log( cfg, CYBS_LT_SUCCESS, responseMsg );
 
 		if (cfg.isLogEnabled)
-		cybs_log_map(cfg, responseMap, CYBS_LT_REPLY);
+		cybs_log_NVP(cfg, resMap, CYBS_LT_REPLY);
 	} else {
 		const char *faultString = proxy->soap_fault_string();
 
 		if (faultString) {
-                  if (cfg.isLogEnabled)
-		     cybs_log( cfg, CYBS_LT_ERROR, faultString );
-                }
+			if (cfg.isLogEnabled)
+				cybs_log( cfg, CYBS_LT_ERROR, faultString );
+		}
 	}
 
 	return status;
@@ -615,7 +627,6 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 		szDest[nDirLen] = DIR_SEPARATOR;
 		szDest[nDirLen + 1] = '\0';
 	}
-	//strcat( szDest, strcat((char *)szFilename, ext ));
 	strcat( szDest, szFilename);
 	return( 0 );
 	

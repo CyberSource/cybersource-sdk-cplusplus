@@ -71,6 +71,12 @@ void INVPTransactionProcessorProxy::INVPTransactionProcessorProxy_init(soap_mode
         {"SOAP-ENC", "http://schemas.xmlsoap.org/soap/encoding/", "http://www.w3.org/*/soap-encoding", NULL},
         {"xsi", "http://www.w3.org/2001/XMLSchema-instance", "http://www.w3.org/*/XMLSchema-instance", NULL},
         {"xsd", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/*/XMLSchema", NULL},
+        {"c14n", "http://www.w3.org/2001/10/xml-exc-c14n#", NULL, NULL},
+        {"wsu", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd", NULL, NULL},
+        {"xenc", "http://www.w3.org/2001/04/xmlenc#", NULL, NULL},
+        {"wsc", "http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512", NULL, NULL},
+        {"ds", "http://www.w3.org/2000/09/xmldsig#", NULL, NULL},
+        {"wsse", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd", NULL},
         {"ns2", "urn:schemas-cybersource-com:transaction-data-1.129", NULL, NULL},
         {"ns1", "urn:schemas-cybersource-com:transaction-data:TransactionProcessor", NULL, NULL},
         {NULL, NULL, NULL, NULL}
@@ -110,6 +116,11 @@ void INVPTransactionProcessorProxy::reset()
 
 void INVPTransactionProcessorProxy::soap_noheader()
 {	this->soap->header = NULL;
+}
+
+void INVPTransactionProcessorProxy::soap_header(struct _wsse__Security *wsse__Security)
+{	::soap_header(this->soap);
+	this->soap->header->wsse__Security = wsse__Security;
 }
 
 ::SOAP_ENV__Header *INVPTransactionProcessorProxy::soap_header()
@@ -152,7 +163,7 @@ char *INVPTransactionProcessorProxy::soap_sprint_fault(char *buf, size_t len)
 }
 #endif
 
-int INVPTransactionProcessorProxy::runTransaction(const char *endpoint, const char *soap_action, std::string ns2__nvpRequest, std::string &ns2__nvpReply)
+int INVPTransactionProcessorProxy::runTransaction(const char *endpoint, const char *soap_action, wchar_t *ns2__nvpRequest, wchar_t *&ns2__nvpReply)
 {	struct soap *soap = this->soap;
 	struct __ns1__runTransaction soap_tmp___ns1__runTransaction;
 	struct __ns1__runTransactionResponse *soap_tmp___ns1__runTransactionResponse;
@@ -189,9 +200,7 @@ int INVPTransactionProcessorProxy::runTransaction(const char *endpoint, const ch
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!&ns2__nvpReply)
-		return soap_closesock(soap);
-	soap_default_std__string(soap, &ns2__nvpReply);
+	ns2__nvpReply = NULL;
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)
