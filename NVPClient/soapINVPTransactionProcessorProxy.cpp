@@ -163,7 +163,7 @@ char *INVPTransactionProcessorProxy::soap_sprint_fault(char *buf, size_t len)
 }
 #endif
 
-int INVPTransactionProcessorProxy::runTransaction(const char *endpoint, const char *soap_action, std::string ns2__nvpRequest, std::string &ns2__nvpReply)
+int INVPTransactionProcessorProxy::runTransaction(const char *endpoint, const char *soap_action, wchar_t *ns2__nvpRequest, wchar_t *&ns2__nvpReply)
 {	struct soap *soap = this->soap;
 	struct __ns1__runTransaction soap_tmp___ns1__runTransaction;
 	struct __ns1__runTransactionResponse *soap_tmp___ns1__runTransactionResponse;
@@ -200,9 +200,7 @@ int INVPTransactionProcessorProxy::runTransaction(const char *endpoint, const ch
 	 || soap_envelope_end_out(soap)
 	 || soap_end_send(soap))
 		return soap_closesock(soap);
-	if (!&ns2__nvpReply)
-		return soap_closesock(soap);
-	soap_default_std__string(soap, &ns2__nvpReply);
+	ns2__nvpReply = NULL;
 	if (soap_begin_recv(soap)
 	 || soap_envelope_begin_in(soap)
 	 || soap_recv_header(soap)

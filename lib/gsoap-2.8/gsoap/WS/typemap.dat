@@ -197,8 +197,11 @@ xsd__duration = #import "custom/duration.h" | xsd__duration
 # };
 # ]
 
-#	SOAP-ENV mapping (note: SOAP Body content is mapped to an XML string)
 
+[
+#import "wsse.h"
+]
+xsd__string = | wchar_t* | wchar_t*
 SOAP_ENV__Envelope	= struct SOAP_ENV__Envelope { struct SOAP_ENV__Header *SOAP_ENV__Header; _XML SOAP_ENV__Body; }; | struct SOAP_ENV__Envelope
 SOAP_ENV__Header	= | struct SOAP_ENV__Header
 SOAP_ENV__Fault		= | struct SOAP_ENV__Fault

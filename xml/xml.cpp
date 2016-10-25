@@ -10,6 +10,7 @@
 #include <sstream>
 #include <cstring>
 #include <string>
+#include <map>
 
 #pragma comment(lib, "XMLClient.lib")
 #pragma comment(lib, "BASECLIENT.lib")
@@ -118,11 +119,11 @@ char *run () {
 	{
 		case SOAP_OK:
 			printf( "CREDIT CARD AUTHORIZATION REPLY: \n" );
-			printf("decision = %s\n", (reply->decision).c_str());
-			printf("reasonCode = %d\n", (reply->reasonCode).c_str());
-			printf("requestID = %s\n", (reply->requestID).c_str());
-			printf("requestToken = %s\n", (reply->requestToken).c_str());
-			printf("ccAuthReply.reasonCode = %d\n", (reply->ccAuthReply->reasonCode).c_str());
+			//printf("decision = %s\n", (reply->decision).c_str());
+			//printf("reasonCode = %d\n", (reply->reasonCode).c_str());
+			//printf("requestID = %s\n", (reply->requestID).c_str());
+			//printf("requestToken = %s\n", (reply->requestToken).c_str());
+			//printf("ccAuthReply.reasonCode = %d\n", (reply->ccAuthReply->reasonCode).c_str());
 			printResponse(proxy, reply);
 
 		break;

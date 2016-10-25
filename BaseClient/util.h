@@ -50,7 +50,7 @@ const char CYBS_C_USE_AKAMAI[]              = "sendToAkamai";
 
 
 /* clientLibraryVersion */
-static const char CLIENT_LIBRARY_VERSION_VALUE[] = "6.0.0";
+static const wchar_t CLIENT_LIBRARY_VERSION_VALUE[] = L"6.0.0";
 
 typedef struct {
     const void *key;
@@ -91,8 +91,6 @@ BASECLIENT_API void cybs_destroy_map(CybsMap *store);
 BASECLIENT_API void cybs_add(CybsMap *store, const void *key, void *value);
 
 BASECLIENT_API void *cybs_get(CybsMap *store, const void *key);
-
-//BASECLIENT_API CybsMap *cybs_load_config (const char *configFilename);
 
 BASECLIENT_API void cybs_load_config (const char *configFilename, CybsMap *map);
 

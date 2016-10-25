@@ -393,10 +393,12 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 			RETURN_REQUIRED_ERROR( CYBS_C_MERCHANT_ID );
 		}
 		merchantID = temp;
-		ns2__requestMessage->merchantID = &merchantID;
+		wchar_t *w = NULL;
+		soap_s2wchar(proxy->soap, merchantID.c_str(), &w, -1, -1, NULL);
+		ns2__requestMessage->merchantID = w;
 	}
 
-	strcpy(cfg.merchantID, (ns2__requestMessage->merchantID)->c_str());
+	strcpy(cfg.merchantID, soap_wchar2s(proxy->soap, ns2__requestMessage->merchantID));
 
 	/* Check whether ssl cert file path is present in config file if not
 	then check in key directory with default config file name (ca-bundle) */
@@ -556,8 +558,8 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	}
 
 	// Set client library version in request
-	std::string clientLibVersion (CLIENT_LIBRARY_VERSION_VALUE);
-	ns2__requestMessage->clientLibraryVersion = &clientLibVersion;
+	//std::string clientLibVersion (CLIENT_LIBRARY_VERSION_VALUE);
+	ns2__requestMessage->clientLibraryVersion = const_cast< wchar_t* >(CLIENT_LIBRARY_VERSION_VALUE);
 
 	/* converting ns2__requestMessage to xml */
 	std::stringstream ss;

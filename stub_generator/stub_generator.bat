@@ -10,7 +10,7 @@ GOTO ISNVPWSDLEXIST
 :CONTINUENVP
 ..\..\lib\gsoap-2.8\gsoap\bin\win32\wsdl2h.exe -I ..\..\lib\gsoap-2.8\gsoap\WS -f -k -o CyberSourceTransaction_nvp_%targetAPIVersion%.h CyberSourceTransaction_NVP_%targetAPIVersion%.wsdl
 
-set /p DUMMY=Add #import "wsse.h" to CyberSourceTransaction_nvp_%targetAPIVersion%.h and hit ENTER to continue...
+REM set /p DUMMY=Add #import "wsse.h" to CyberSourceTransaction_nvp_%targetAPIVersion%.h and hit ENTER to continue...
 
 ..\..\lib\gsoap-2.8\gsoap\bin\win32\soapcpp2 -C -L -j -I ..\..\lib\gsoap-2.8\gsoap\import -w -x CyberSourceTransaction_nvp_%targetAPIVersion%.h
 
@@ -47,14 +47,13 @@ EXIT /b
 )
 
 if /I "%wsdlType%"=="XML" (
-echo HI
 cd XML
 GOTO ISXMLWSDLEXIST
 
 :CONTINUEXML
 ..\..\lib\gsoap-2.8\gsoap\bin\win32\wsdl2h.exe -I ..\..\lib\gsoap-2.8\gsoap\WS -f -k -o CyberSourceTransaction_xml_%targetAPIVersion%.h CyberSourceTransaction_%targetAPIVersion%.wsdl
 
-set /p DUMMY=Add #import "wsse.h" to CyberSourceTransaction_xml_%targetAPIVersion%.h and hit ENTER to continue...
+REM set /p DUMMY=Add #import "wsse.h" to CyberSourceTransaction_xml_%targetAPIVersion%.h and hit ENTER to continue...
 
 ..\..\lib\gsoap-2.8\gsoap\bin\win32\soapcpp2 -C -L -j -I ..\..\lib\gsoap-2.8\gsoap\import -w -x CyberSourceTransaction_xml_%targetAPIVersion%.h
 

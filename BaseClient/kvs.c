@@ -68,15 +68,6 @@ static void create_pair(CybsMap *store, const void *key, void *value) {
     sort_pairs(store);
 }
 
-/*void printdata(CybsMap *store) {
-	int i = 0;
-	while (i<8) {
-		CybsTable pair = store->pairs[i];
-		printf("pair 1 %s",pair.key);
-		i = i + 1;
-	}
-}*/
-
 static void remove_pair(CybsMap *store, CybsTable *pair) {
     if ((!store) || (!pair)) {
         return;
@@ -107,11 +98,7 @@ void cybs_destroy_map(CybsMap *store) {
 		free ((void *)pair.key);
 		free (pair.value);
 	}
-    /*if (store->pairs) {
-		free((void *)(store->pairs->key));
-		free(store->pairs->value);
-		free(store->pairs);
-    }*/
+
 	free(store->pairs);
 	store->length = 0;
 	store->totallength = 0;
