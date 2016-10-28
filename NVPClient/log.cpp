@@ -78,12 +78,14 @@ CybsLogError cybs_prepare_log(config cfg)
 	pFile = fopen( cfg.logFilePath, "a+" );
 	if (!pFile)
 	{
+		MUTEX_UNLOCK(mutexLock);
 		return( CYBS_LE_FOPEN );
 	}
 
 	if (fseek( pFile, 0, 2 ))
 	{
 		fclose( pFile );
+		MUTEX_UNLOCK(mutexLock);
 		return( CYBS_LE_FSEEK );
 	}
 	nSize = ftell( pFile );
@@ -106,13 +108,13 @@ CybsLogError cybs_prepare_log(config cfg)
 		nSize = 0;
 	}
 
-	MUTEX_UNLOCK(mutexLock);
+	//MUTEX_UNLOCK(mutexLock);
 	if (nSize == 0)
 	{
 		cybs_log(cfg, 
 			 CYBS_LT_FILESTART, FILESTART_ENTRY );
 	}
-	
+	MUTEX_UNLOCK(mutexLock);
 	return( CYBS_LE_OK );
 }
 
@@ -145,8 +147,8 @@ void cybs_log(
 		// TODO: see how long the thread id's usually are on Linux and adjust the length in the fprint format accordingly.
 
 		fclose( pFile );
-		MUTEX_UNLOCK(mutexLock);
 	}
+	MUTEX_UNLOCK(mutexLock);
 }
 
 void cybs_log(
@@ -191,8 +193,8 @@ void cybs_log(
 		
 		delete[] wszFormattedTime;
 		delete[] type;
-		MUTEX_UNLOCK(mutexLock);
 	}
+	MUTEX_UNLOCK(mutexLock);
 }
 
 /* Function to log text in name value form */
