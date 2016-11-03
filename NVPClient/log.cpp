@@ -102,19 +102,19 @@ CybsLogError cybs_prepare_log(config cfg)
 		// TODO: test this, esp. on Linux.  Not sure if the new name has to include the path on Linux.  On Windows, it doesn't.
 		if (rename( cfg.logFilePath, szArchiveName ))
 		{
+			MUTEX_UNLOCK(mutexLock);
 			return( CYBS_LE_RENAME );
 		}
 
 		nSize = 0;
 	}
 
-	//MUTEX_UNLOCK(mutexLock);
+	MUTEX_UNLOCK(mutexLock);
 	if (nSize == 0)
 	{
 		cybs_log(cfg, 
 			 CYBS_LT_FILESTART, FILESTART_ENTRY );
 	}
-	MUTEX_UNLOCK(mutexLock);
 	return( CYBS_LE_OK );
 }
 
