@@ -78,12 +78,14 @@ CybsLogError cybs_prepare_log(config cfg)
 	pFile = fopen( cfg.logFilePath, "a+" );
 	if (!pFile)
 	{
+		MUTEX_UNLOCK(mutexLock);
 		return( CYBS_LE_FOPEN );
 	}
 
 	if (fseek( pFile, 0, 2 ))
 	{
 		fclose( pFile );
+		MUTEX_UNLOCK(mutexLock);
 		return( CYBS_LE_FSEEK );
 	}
 	nSize = ftell( pFile );
@@ -100,6 +102,7 @@ CybsLogError cybs_prepare_log(config cfg)
 		// TODO: test this, esp. on Linux.  Not sure if the new name has to include the path on Linux.  On Windows, it doesn't.
 		if (rename( cfg.logFilePath, szArchiveName ))
 		{
+			MUTEX_UNLOCK(mutexLock);
 			return( CYBS_LE_RENAME );
 		}
 
@@ -112,7 +115,6 @@ CybsLogError cybs_prepare_log(config cfg)
 		cybs_log(cfg, 
 			 CYBS_LT_FILESTART, FILESTART_ENTRY );
 	}
-	
 	return( CYBS_LE_OK );
 }
 
@@ -145,8 +147,8 @@ void cybs_log(
 		// TODO: see how long the thread id's usually are on Linux and adjust the length in the fprint format accordingly.
 
 		fclose( pFile );
-		MUTEX_UNLOCK(mutexLock);
 	}
+	MUTEX_UNLOCK(mutexLock);
 }
 
 void cybs_log(
@@ -191,8 +193,8 @@ void cybs_log(
 		
 		delete[] wszFormattedTime;
 		delete[] type;
-		MUTEX_UNLOCK(mutexLock);
 	}
+	MUTEX_UNLOCK(mutexLock);
 }
 
 /* Function to log text in name value form */
