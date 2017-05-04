@@ -36,8 +36,11 @@ unsigned long pthreads_thread_id(void );
 	const char  akamaiCasserver[]   =    "https://ics2wstesta.ic3.com/commerce/1.x/transactionProcessor";
 
 char DEFAULT_CERT_FILE[]   = "ca-bundle";
-	char SERVER_PUBLIC_KEY_NAME[]          =    "CyberSource_SJC_US/serialNumber";
+char SERVER_PUBLIC_KEY_NAME[]  =    "CyberSource_SJC_US/serialNumber";
 static const wchar_t CLIENT_LIBRARY_VERSION[] = L"clientLibraryVersion";
+static const wchar_t CLIENT_LIBRARY[] = L"clientLibrary";
+static const wchar_t CLIENT_ENVIRONMENT[] = L"clientEnvironment";
+static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 
 #define RETURN_ERROR( status, info ) \
 { \
@@ -569,6 +572,13 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	}
 
 	req[CLIENT_LIBRARY_VERSION] = CLIENT_LIBRARY_VERSION_VALUE;
+
+	req[CLIENT_LIBRARY] = CLIENT_LIBRARY_VALUE;
+
+	req[CLIENT_ENVIRONMENT] = CLIENT_ENVIRONMENT_VALUE;
+
+	req[CLIENT_APPLICATION] = CLIENT_APPLICATION_VALUE;
+
 
 	if (cfg.isLogEnabled)
 	  cybs_log_NVP(cfg, req, CYBS_LT_REQUEST);

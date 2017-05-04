@@ -181,7 +181,6 @@ void runCapture( CybsMap* cfgMap, std::wstring authRequestID ) {
 	std::map <std::wstring, std::wstring> requestMap;
 	std::map <std::wstring, std::wstring> resMap;
 
-	requestMap[L"merchantID"] = L"cybs_test_ashish";
 	requestMap[L"ccCaptureService_run"] = L"true";
 	requestMap[L"merchantReferenceCode"] = L"your_merchant_reference_code";
 	requestMap[L"ccCaptureService_authRequestID"] = authRequestID;
