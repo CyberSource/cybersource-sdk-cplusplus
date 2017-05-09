@@ -13,6 +13,7 @@
 extern "C" {
 #endif
 
+/* Please do no modify these values */
 #if defined(_WIN64)
 static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Win64";
 #elif defined(_WIN32)
@@ -62,7 +63,7 @@ const char CYBS_SK_ERROR_INFO[]             = "_errorInfo";
 const char CYBS_C_USE_AKAMAI[]              = "sendToAkamai";
 
 
-/* clientLibraryVersion */
+/* Please do no modify these values */
 static const wchar_t CLIENT_LIBRARY_VERSION_VALUE[] = L"6.0.1";
 static const wchar_t CLIENT_LIBRARY_VALUE[] = L"C SOAP";
 static const wchar_t CLIENT_APPLICATION_VALUE[] = L"Simple Order API";
