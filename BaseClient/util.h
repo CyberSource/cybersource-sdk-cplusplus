@@ -15,14 +15,18 @@ extern "C" {
 
 /* Please do not modify these values */
 #if defined(_WIN64)
-static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Win64";
+   static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Win64";
 #elif defined(_WIN32)
-static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Win32";
+   static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Win32";
 #else
 #if defined(__linux)
-static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Linux";
+  #if defined(__LP64__) || defined(_LP64)
+      static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Linux x86_64";
+  #else
+      static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Linux x86_32";
+  #endif
 #else
-static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Unknown";
+    static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Unknown";
 #endif
 #endif
 
