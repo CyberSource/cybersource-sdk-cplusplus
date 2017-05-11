@@ -559,10 +559,10 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 
 	// Set client library version in request
 	//std::string clientLibVersion (CLIENT_LIBRARY_VERSION_VALUE);
-	ns2__requestMessage->clientLibraryVersion = const_cast< wchar_t* >(CLIENT_LIBRARY_VERSION_VALUE);
-	ns2__requestMessage->clientLibrary = const_cast< wchar_t* >(CLIENT_LIBRARY_VALUE);
-	ns2__requestMessage->clientEnvironment = const_cast< wchar_t* >(CLIENT_ENVIRONMENT_VALUE);
-	ns2__requestMessage->clientApplication = const_cast< wchar_t* >(CLIENT_APPLICATION_VALUE);
+	ns2__requestMessage->clientLibraryVersion= const_cast< wchar_t* >(CLIENT_LIBRARY_VERSION_VALUE);
+	ns2__requestMessage->clientLibrary= const_cast< wchar_t* >(CLIENT_LIBRARY_VALUE);
+	ns2__requestMessage->clientEnvironment= const_cast< wchar_t* >(CLIENT_ENVIRONMENT_VALUE);
+	ns2__requestMessage->clientApplication= const_cast< wchar_t* >(CLIENT_APPLICATION_VALUE);
 
 	/* converting ns2__requestMessage to xml */
 	std::stringstream ss;
