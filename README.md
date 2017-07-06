@@ -1,9 +1,9 @@
 # cybersource-sdk-cplusplus
 
-[![Build Status](https://travis-ci.org/CyberSource/cybersource-sdk-cplusplus.svg?branch=future)]
+[![Build Status](https://travis-ci.org/CyberSource/cybersource-sdk-cplusplus.svg?branch=master)]
 (https://travis-ci.org/CyberSource/cybersource-sdk-cplusplus)
 
-CyberSource C++ SDK for windows
+CyberSource C++ SDK
 ##Requirements
 ###Windows
 1. Visual Studio 2012
