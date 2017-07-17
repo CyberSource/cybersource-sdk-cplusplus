@@ -13,6 +13,24 @@
 extern "C" {
 #endif
 
+/* Please do not modify these values */
+#if defined(_WIN64)
+   static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Win64";
+#elif defined(_WIN32)
+   static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Win32";
+#else
+#if defined(__linux)
+  #if defined(__LP64__) || defined(_LP64)
+      static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Linux x86_64";
+  #else
+      static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Linux x86_32";
+  #endif
+#else
+    static const wchar_t CLIENT_ENVIRONMENT_VALUE[] = L"Unknown";
+#endif
+#endif
+
+
 #include <stdlib.h>
 
 	
@@ -49,8 +67,10 @@ const char CYBS_SK_ERROR_INFO[]             = "_errorInfo";
 const char CYBS_C_USE_AKAMAI[]              = "sendToAkamai";
 
 
-/* clientLibraryVersion */
-static const wchar_t CLIENT_LIBRARY_VERSION_VALUE[] = L"6.0.0";
+/* Please do not modify these values */
+static const wchar_t CLIENT_LIBRARY_VERSION_VALUE[] = L"6.0.1";
+static const wchar_t CLIENT_LIBRARY_VALUE[] = L"C SOAP";
+static const wchar_t CLIENT_APPLICATION_VALUE[] = L"Simple Order API";
 
 typedef struct {
     const void *key;
