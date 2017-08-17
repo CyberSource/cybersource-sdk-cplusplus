@@ -341,7 +341,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir);
 
 		// Get complete log path
-		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "") == -1) 
+		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "", sizeof(szDest)) == -1) 
 	    {
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
 	    }
@@ -352,7 +352,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		else
 			cfg.nLogMaxSizeInMB = atoi(DEFAULT_LOG_MAX_SIZE);
 
-		strcpy(cfg.logFilePath, szDest);
+		strncpy(cfg.logFilePath, szDest, sizeof(cfg.logFilePath)-1 );
 		CybsLogError nLogError = cybs_prepare_log (cfg);
 
 		if (nLogError != CYBS_LE_OK) {
@@ -412,13 +412,13 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	}
 	else
 	{
-		if ( getKeyFilePath (szDest, keyDir, DEFAULT_CERT_FILE, ".crt" ) == -1 ) 
+		if ( getKeyFilePath (szDest, keyDir, DEFAULT_CERT_FILE, ".crt", sizeof(szDest) ) == -1 ) 
 		{
 			RETURN_LENGTH_ERROR(CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH);
 		}
 		temp = szDest;
-		strcpy(cfg.sslCertFile, temp);
-		strcat(cfg.sslCertFile, ".crt");
+		strncpy(cfg.sslCertFile, temp, sizeof(cfg.sslCertFile)-1 );
+		strncat(cfg.sslCertFile, ".crt", sizeof(cfg.sslCertFile)-1 );
 	}
 
 	/* Check if key file name is present in config file if not then use
@@ -435,11 +435,11 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	}
 	
 	/* Get effective key file path */
-	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12") == -1) 
+	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12", sizeof(szDest)) == -1) 
 	{
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
 	}	 
-	strcpy(cfg.keyFile, szDest);
+	strncpy(cfg.keyFile, szDest, sizeof(cfg.keyFile)-1 );
 
 	/* Check if password is present in config file if not then use merchant
 	id as the password */
@@ -611,7 +611,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 }
 
 /* Create effective path */
-int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ext) {
+int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ext, int nDestLen) {
 	
 	int nDirLen = strlen( szDir );
 	char fAddSeparator = szDir[nDirLen - 1] == DIR_SEPARATOR ? 0 : 1;
@@ -621,14 +621,14 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 		return( -1 );
 	}
 
-	strcpy( szDest, szDir );
+	strncpy( szDest, szDir, nDestLen-1 );
 	if (fAddSeparator)
 	{
 		szDest[nDirLen] = DIR_SEPARATOR;
 		szDest[nDirLen + 1] = '\0';
 	}
 	//strcat( szDest, strcat((char *)szFilename, ext ));
-	strcat( szDest, szFilename );
+	strncat( szDest, szFilename, nDestLen-1 );
 	return( 0 );
 	
 }

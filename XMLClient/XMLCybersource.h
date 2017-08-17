@@ -40,4 +40,4 @@ typedef enum
 
 XMLCYBERSOURCE_API int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *ns2__requestMessage, ns2__ReplyMessage **ns2__replyMessage, CybsMap *configMap);
 XMLCYBERSOURCE_API void cybs_add_request(char *xml, ns2__RequestMessage *req);
-int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *merhantID);
+int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *merhantID, int nDestLen);

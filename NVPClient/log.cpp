@@ -229,7 +229,7 @@ char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData
 		if (szMapString) {
 		cybs_get_string(
 			cfg, szMapString, szDelim,
-			fMaskSensitiveData, eType, cfg->length );
+			fMaskSensitiveData, eType, cfg->length, sizeof(szMapString) );
 		return( szMapString );
 		}
 	}
@@ -238,7 +238,7 @@ char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData
 
 void cybs_get_string(
 	CybsMap *map, char szBuffer[], const char *szDelim,
-	bool fMaskSensitiveData, SafeFields::MessageType eType, int length ) {
+	bool fMaskSensitiveData, SafeFields::MessageType eType, int length, int nBufferLen ) {
 		char fPrependDelim = 0;
 		CybsTable pair;
 		szBuffer[0] = '\0';
@@ -246,21 +246,21 @@ void cybs_get_string(
 
 		for (i = 0; i < length; i++) {
 			if (fPrependDelim) {
-				strcat( szBuffer, szDelim );
+				strncat( szBuffer, szDelim, nBufferLen-1 );
 			}
 			pair = map->pairs[i];
 			fPrependDelim = 1;
-			strcat( szBuffer, (char *)pair.key );
-			strcat( szBuffer, "=" );
+			strncat( szBuffer, (char *)pair.key, nBufferLen-1 );
+			strncat( szBuffer, "=", nBufferLen-1 );
 
 			if (fMaskSensitiveData &&
 			    !gSafeFields.IsSafe( eType, (char *)pair.key ))
 			{
 				char *szMasked = mask((char*)pair.key, (char *)pair.value );
-				strcat( szBuffer, szMasked );
+				strncat( szBuffer, szMasked, nBufferLen-1 );
 				free( szMasked );
 			} else {
-				strcat( szBuffer, (char *)pair.value );
+				strncat( szBuffer, (char *)pair.value, nBufferLen-1 );
 			}
 		}
 }
