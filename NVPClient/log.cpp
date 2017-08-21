@@ -57,7 +57,7 @@ static MUTEX_TYPE mutexLock = PTHREAD_MUTEX_INITIALIZER;
 /* PROTOTYPES OF INTERNAL FUNCTIONS                                         */
 /****************************************************************************/
 
-void get_formatted_time( const char *szFormat, char *szDest );
+void get_formatted_time( const char *szFormat, char *szDest, int nDestLen );
 char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType);
 static char *mask( const char *szField, const char *szValue );
 static std::wstring mask( const std::wstring szField, const std::wstring szValue );
@@ -96,9 +96,9 @@ CybsLogError cybs_prepare_log(config cfg)
 		char szFormattedTime[FORMATTED_TIME_LENGTH + 1];
 		char szArchiveName[CYBS_MAX_PATH + 1];
 
-		get_formatted_time( ARCHIVE_TIMESTAMP, szFormattedTime );
-		sprintf(
-			szArchiveName, "%s.%s", cfg.logFilePath, szFormattedTime );
+		get_formatted_time( ARCHIVE_TIMESTAMP, szFormattedTime, sizeof(szFormattedTime) );
+		sprintf_s(
+			szArchiveName, sizeof(szArchiveName), "%s.%s", cfg.logFilePath, szFormattedTime );
 		// TODO: test this, esp. on Linux.  Not sure if the new name has to include the path on Linux.  On Windows, it doesn't.
 		if (rename( cfg.logFilePath, szArchiveName ))
 		{
@@ -137,7 +137,7 @@ void cybs_log(
 			fprintf( pFile, "%s%s%s", NEWLINE, TRANSTART_MARKER, NEWLINE );
 		}
 
-		get_formatted_time( ENTRY_TIMESTAMP, szFormattedTime );
+		get_formatted_time( ENTRY_TIMESTAMP, szFormattedTime, sizeof(szFormattedTime) );
 		fprintf(
 			pFile, "%s %4lu %s > %s%s%s",
 			szFormattedTime, "1", szType,
@@ -168,7 +168,7 @@ void cybs_log(
 			fprintf( pFile, "%s%s%s", NEWLINE, TRANSTART_MARKER, NEWLINE );
 		}
 
-		get_formatted_time( ENTRY_TIMESTAMP, szFormattedTime );
+		get_formatted_time( ENTRY_TIMESTAMP, szFormattedTime, sizeof(szFormattedTime) );
 		wchar_t *wszFormattedTime = new wchar_t[FORMATTED_TIME_LENGTH + 1];
 		mbstowcs (wszFormattedTime, szFormattedTime, FORMATTED_TIME_LENGTH + 1);
 
@@ -464,15 +464,15 @@ const char *cybs_get_log_error( CybsLogError error )
 	}
 }
 
-void get_formatted_time( const char *szFormat, char *szDest )
+void get_formatted_time( const char *szFormat, char *szDest, int nDestLen )
 {
 
 #ifdef WIN32
 
 	SYSTEMTIME time;
 	GetLocalTime( &time );
-	sprintf(
-		szDest, szFormat, time.wYear, time.wMonth, time.wDay,
+	sprintf_s(
+		szDest, nDestLen, szFormat, time.wYear, time.wMonth, time.wDay,
 		time.wHour, time.wMinute, time.wSecond, time.wMilliseconds );
 #else
 
@@ -486,7 +486,7 @@ void get_formatted_time( const char *szFormat, char *szDest )
 	loc = localtime( &clock );
 
 	sprintf(
-		szDest, szFormat, loc->tm_year + 1900, loc->tm_mon + 1, loc->tm_mday,
+		szDest, nDestLen, szFormat, loc->tm_year + 1900, loc->tm_mon + 1, loc->tm_mday,
 		loc->tm_hour, loc->tm_min, loc->tm_sec );
 
 #endif
