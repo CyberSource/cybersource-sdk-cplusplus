@@ -347,7 +347,7 @@ void read_doc (xmlNode *a_node, char *parentName, char *grandParent, SafeFields:
 					//printf("not safe %s %s \n", tempParentName, cur_node->content);
 					char *szMasked = mask( tempParentName, (const char *)cur_node->content );
 					//printf("After Mask %s: \n", szMasked);
-					strcpy((char *)cur_node->content, szMasked);
+					strncpy_s((char *)cur_node->content, sizeof(cur_node->content), szMasked, sizeof(cur_node->content)-1);
 					//cur_node->content = (xmlChar *)szMasked;
 					free(szMasked);
 					//printf("Changed content %s: \n", cur_node->content);
@@ -425,7 +425,7 @@ char *cybs_strdup( const char * szStringToDup )
 
 	if (szDup)
 	{
-		strcpy( szDup, szStringToDup );
+		strncpy_s( szDup, sizeof(szDup), szStringToDup, sizeof(szDup)-1 );
 		return( szDup );
 	}
 

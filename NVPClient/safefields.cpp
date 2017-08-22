@@ -225,7 +225,7 @@ bool SafeFields::IsSafe( SafeFields::MessageType eType, char *szField ) {
 	// strip-off any indices that are present in the field name
 	// e.g. item_0_unitPrice will become item_unitPrice.
 	char szStripped[MAX_FIELD_LENGTH+1];
-	strcpy( szStripped, szField );
+	strncpy_s( szStripped, sizeof(szStripped), szField, sizeof(szStripped)-1 );
 	RemoveIndices( szStripped );
 
 	 char *szParent, *szChild;

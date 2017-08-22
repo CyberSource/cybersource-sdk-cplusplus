@@ -373,14 +373,14 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_FILENAME);
 		if (!temp)
 			temp = DEFAULT_LOG_FILENAME;
-		strcpy(cfg.logFileName, temp);
+		strncpy_s(cfg.logFileName, sizeof(cfg.logFileName), temp, sizeof(cfg.logFileName)-1);
 		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName);
 
 		// Log File Directory
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_DIRECTORY);
 		if (!temp)
 			temp = DEFAULT_LOG_DIRECTORY;
-		strcpy(cfg.logFileDir, temp);
+		strncpy_s(cfg.logFileDir, sizeof(cfg.logFileDir), temp, sizeof(cfg.logFileDir)-1);
 		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir);
 
 		// Get complete log path
@@ -437,7 +437,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	{
 		CHECK_LENGTH(
 			CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH, temp );
-		strcpy(cfg.sslCertFile, temp);
+		strncpy_s(cfg.sslCertFile, sizeof(cfg.sslCertFile), temp, sizeof(cfg.sslCertFile)-1);
 	}
 	else
 	{
@@ -454,10 +454,10 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	if (!temp)
 	{
 		temp = cfg.merchantID;
-		strcpy(cfg.keyFileName, temp);
-		strcat(cfg.keyFileName, ".p12");
+		strncpy_s(cfg.keyFileName, sizeof(cfg.keyFileName), temp, sizeof(cfg.keyFileName)-1);
+		strncat_s(cfg.keyFileName, sizeof(cfg.keyFileName), ".p12", sizeof(cfg.keyFileName)-strnlen_s(cfg.keyFileName, sizeof(cfg.keyFileName))-1);
 	} else {
-		strcpy(cfg.keyFileName, temp);
+		strncpy_s(cfg.keyFileName, sizeof(cfg.keyFileName), temp, sizeof(cfg.keyFileName)-1);
 	}
 	
 	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12", sizeof(szDest) ) == -1) 
@@ -472,7 +472,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		temp = cfg.merchantID;
 	}
 	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password);
-	strcpy(cfg.password, temp);
+	strncpy_s(cfg.password, sizeof(cfg.password) ,temp, sizeof(cfg.password)-1);
 	
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
 
@@ -484,21 +484,21 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_SERVER);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_SERVER, CYBS_MAX_URL, temp);
-		strcpy(cfg.proxyServer, temp);
+		strncpy_s(cfg.proxyServer, sizeof(cfg.proxyServer), temp, sizeof(cfg.proxyServer)-1);
 		proxy->soap->proxy_host = cfg.proxyServer;
 	}
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PWD);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_PWD, CYBS_MAX_PASSWORD, temp);
-		strcpy(cfg.proxyPassword, temp);
+		strncpy_s(cfg.proxyPassword, sizeof(cfg.proxyPassword), temp, sizeof(cfg.proxyPassword)-1);
 		proxy->soap->proxy_passwd = cfg.proxyPassword;
 	}
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_USERNAME);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_USERNAME, CYBS_MAX_PASSWORD, temp);
-		strcpy(cfg.proxyUsername, temp);
+		strncpy_s(cfg.proxyUsername, sizeof(cfg.proxyUsername), temp, sizeof(cfg.proxyUsername)-1);
 		proxy->soap->proxy_userid = cfg.proxyUsername;
 	}
 
@@ -516,19 +516,19 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 	if ( temp ) {
 		CHECK_LENGTH(CYBS_C_SERVER_URL, CYBS_MAX_URL, temp);
-		strcpy(cfg.serverURL, temp);
+		strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), temp, sizeof(cfg.serverURL)-1);
 	} else {
 		if ( strcmp(prodFlag, "true") == 0 ) {
 			if ( cfg.useAkamai ) {
-				strcpy(cfg.serverURL, akamaiProdserver);
+				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), akamaiProdserver, sizeof(cfg.serverURL)-1);
 			} else {
-				strcpy(cfg.serverURL, prodserver);
+				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), prodserver, sizeof(cfg.serverURL)-1);
 			}
 		} else {
 			if ( cfg.useAkamai ) {
-				strcpy(cfg.serverURL, akamaiCasserver);
+				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), akamaiCasserver, sizeof(cfg.serverURL)-1);
 			} else {
-				strcpy(cfg.serverURL, casserver);
+				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), casserver, sizeof(cfg.serverURL)-1);
 			}
 		}
 	}
