@@ -384,7 +384,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir, sizeof(cfg.logFileDir));
 
 		// Get complete log path
-		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "", sizeof(szDest)) == -1) 
+		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "", sizeof(szDest), sizeof(cfg.logFileDir), sizeof(cfg.logFileName), sizeof("")) == -1) 
 	    {
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
 	    }
@@ -395,7 +395,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		else
 			cfg.nLogMaxSizeInMB = atoi(DEFAULT_LOG_MAX_SIZE);
 
-		strncpy(cfg.logFilePath, szDest, sizeof(cfg.logFilePath)-1 );
+		strncpy_s(cfg.logFilePath, sizeof(cfg.logFilePath), szDest, sizeof(cfg.logFilePath)-1 );
 
 		CybsLogError nLogError = cybs_prepare_log (cfg);
 
@@ -441,13 +441,13 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	}
 	else
 	{
-		if ( getKeyFilePath (szDest, keyDir, DEFAULT_CERT_FILE, ".crt", sizeof(szDest) ) == -1 ) 
+		if ( getKeyFilePath (szDest, keyDir, DEFAULT_CERT_FILE, ".crt", sizeof(szDest), sizeof(keyDir), sizeof(DEFAULT_CERT_FILE), sizeof(".crt") ) == -1 ) 
 		{
 			RETURN_LENGTH_ERROR(CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH);
 		}
 		temp = szDest;
-		strncpy(cfg.sslCertFile, temp, sizeof(cfg.sslCertFile)-1 );
-		strncat(cfg.sslCertFile, ".crt", sizeof(cfg.sslCertFile)-1 );
+		strncpy_s(cfg.sslCertFile, sizeof(cfg.sslCertFile), temp, sizeof(cfg.sslCertFile)-1 );
+		strncat_s(cfg.sslCertFile, sizeof(cfg.sslCertFile), ".crt", sizeof(cfg.sslCertFile)-strnlen_s(cfg.sslCertFile, sizeof(cfg.sslCertFile))-1 );
 	}
 
 	temp = (char *)cybs_get(configMap, CYBS_C_KEY_FILENAME);
@@ -460,11 +460,11 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		strncpy_s(cfg.keyFileName, sizeof(cfg.keyFileName), temp, sizeof(cfg.keyFileName)-1);
 	}
 	
-	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12", sizeof(szDest) ) == -1) 
+	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12", sizeof(szDest), sizeof(keyDir), sizeof(cfg.keyFileName), sizeof(".p12") ) == -1) 
 	{
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
 	}	 
-	strncpy(cfg.keyFile, szDest, sizeof(cfg.keyFile)-1 );
+	strncpy_s(cfg.keyFile, sizeof(cfg.keyFile), szDest, sizeof(cfg.keyFile)-1 );
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PWD);
 	if (!temp)
@@ -600,7 +600,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	responseMsg = proxy->soap->msgbuf;
 	
 	if (status == SOAP_OK) {
-		if(rep != NULL && wcslen(rep) > 0)
+		if(rep != NULL && wcsnlen_s(rep, sizeof(rep)) > 0)
 		resMap = convertStringtoMap(rep);
 		
 		if (cfg.isLogEnabled)
@@ -620,23 +620,23 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	return status;
 }
 
-int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ext, int nDestLen) {
+int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ext, int nDestLen, int dirLen, int nFileNameLen, int nExtLen) {
 	
-	int nDirLen = strlen( szDir );
+	int nDirLen = strnlen_s( szDir, dirLen );
 	char fAddSeparator = szDir[nDirLen - 1] == DIR_SEPARATOR ? 0 : 1;
-	if (nDirLen + fAddSeparator + strlen( szFilename ) + strlen(ext) >
+	if (nDirLen + fAddSeparator + strnlen_s( szFilename, nFileNameLen ) + strnlen_s(ext, nExtLen) >
 		CYBS_MAX_PATH)
 	{
 		return( -1 );
 	}
 
-	strncpy( szDest, szDir, nDestLen-1 );
+	strncpy_s( szDest, nDestLen, szDir, nDestLen-1 );
 	if (fAddSeparator)
 	{
 		szDest[nDirLen] = DIR_SEPARATOR;
 		szDest[nDirLen + 1] = '\0';
 	}
-	strncat( szDest, szFilename, nDestLen-1 );
+	strncat_s( szDest, nDestLen, szFilename, nDestLen-strnlen_s(szDest, nDestLen)-1 );
 	return( 0 );
 	
 }

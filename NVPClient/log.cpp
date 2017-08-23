@@ -58,7 +58,7 @@ static MUTEX_TYPE mutexLock = PTHREAD_MUTEX_INITIALIZER;
 /****************************************************************************/
 
 void get_formatted_time( const char *szFormat, char *szDest, int nDestLen );
-char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType);
+char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType, int nDelimLen);
 static char *mask( const char *szField, const char *szValue );
 static std::wstring mask( const std::wstring szField, const std::wstring szValue );
 void read_doc( xmlNode *a_node, char *parentName, char *grandParent, SafeFields::MessageType eType);
@@ -206,7 +206,7 @@ void cybs_log_map(config config , CybsMap *cfg, const char *szType) {
 	bool isConfig = strcmp( szType, CYBS_LT_CONFIG ) == 0;
 	
 	szDelim = (isConfig) ? CONFIG_DELIM : NEWLINE;
-	char *szMapString = get_log_string (cfg, szDelim, isRequest || isReply, isRequest ? SafeFields::Request : SafeFields::Reply);
+	char *szMapString = get_log_string (cfg, szDelim, isRequest || isReply, isRequest ? SafeFields::Request : SafeFields::Reply, sizeof(szDelim));
 	cybs_log(config, szType, szMapString);
 	if (szMapString)
 	{
@@ -215,14 +215,14 @@ void cybs_log_map(config config , CybsMap *cfg, const char *szType) {
 
 }
 
-char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType) {
+char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType, int nDelimLen) {
 	if (cfg) {
 		char *szMapString
 			= (char *) malloc(
 				/* total length of all names and values */
 				cfg->totallength +  
 				/* delimiters for each name-value pair */
-				((strlen( "=" ) + strlen( szDelim )) * cfg->length) +
+				((strnlen_s( "=", 2 ) + strnlen_s( szDelim, nDelimLen )) * cfg->length) +
 				/* null-terminator */
 				1 );
 		
@@ -246,21 +246,21 @@ void cybs_get_string(
 
 		for (i = 0; i < length; i++) {
 			if (fPrependDelim) {
-				strncat( szBuffer, szDelim, nBufferLen-1 );
+				strncat_s( szBuffer, nBufferLen, szDelim, nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
 			}
 			pair = map->pairs[i];
 			fPrependDelim = 1;
-			strncat( szBuffer, (char *)pair.key, nBufferLen-1 );
-			strncat( szBuffer, "=", nBufferLen-1 );
+			strncat_s( szBuffer, nBufferLen, (char *)pair.key, nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
+			strncat_s( szBuffer, nBufferLen, "=", nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
 
 			if (fMaskSensitiveData &&
 			    !gSafeFields.IsSafe( eType, (char *)pair.key ))
 			{
 				char *szMasked = mask((char*)pair.key, (char *)pair.value );
-				strncat( szBuffer, szMasked, nBufferLen-1 );
+				strncat_s( szBuffer, nBufferLen, szMasked, nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
 				free( szMasked );
 			} else {
-				strncat( szBuffer, (char *)pair.value, nBufferLen-1 );
+				strncat_s( szBuffer, nBufferLen, (char *)pair.value, nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
 			}
 		}
 }

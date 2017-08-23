@@ -40,4 +40,4 @@ typedef enum
 #endif
 
 NVPCYBERSOURCE_API int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std::map <std::wstring, std::wstring> request, std::map <std::wstring, std::wstring> &resMap);
-int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *merhantID, int nDestLen);
+int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *merhantID, int nDestLen, int nDirLen, int nFileNameLen, int nMerchantIDLen);

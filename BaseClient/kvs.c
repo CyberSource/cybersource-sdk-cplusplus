@@ -112,7 +112,7 @@ char *cybs_strdup( const char * szStringToDup )
 
 	if (szDup)
 	{
-		strcpy( szDup, szStringToDup );
+		strcpy( szDup, szStringToDup);
 		return( szDup );
 	}
 
