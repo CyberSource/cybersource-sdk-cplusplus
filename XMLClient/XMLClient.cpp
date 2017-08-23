@@ -75,8 +75,8 @@ unsigned long pthreads_thread_id(void );
 
 #define RETURN_REQUIRED_ERROR( name ) RETURN_ERROR1( CYBS_S_PRE_SEND_ERROR, "%s is required.", name )
 
-#define CHECK_LENGTH( name, maxlen, value ) \
-	if (strlen( value ) > maxlen) \
+#define CHECK_LENGTH( name, maxlen, value, nValueLen ) \
+	if (strnlen_s( value, nValueLen ) > maxlen) \
 		RETURN_LENGTH_ERROR( name, maxlen );
 
 #ifdef WIN32
@@ -331,14 +331,14 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		if (!temp)
 			temp = DEFAULT_LOG_FILENAME;
 		strncpy_s(cfg.logFileName, sizeof(cfg.logFileName), temp, sizeof(cfg.logFileName)-1);
-		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName);
+		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName, sizeof(cfg.logFileName));
 
 		// Log File Directory
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_DIRECTORY);
 		if (!temp)
 			temp = DEFAULT_LOG_DIRECTORY;
 		strncpy_s(cfg.logFileDir, sizeof(cfg.logFileDir), temp, sizeof(cfg.logFileDir)-1);
-		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir);
+		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir, sizeof(cfg.logFileDir));
 
 		// Get complete log path
 		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "", sizeof(szDest)) == -1) 
@@ -407,7 +407,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	if (temp)
 	{
 		CHECK_LENGTH(
-			CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH, temp );
+			CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH, temp, sizeof(temp) );
 		strncpy_s(cfg.sslCertFile, sizeof(cfg.sslCertFile), temp, sizeof(cfg.sslCertFile)-1);
 	}
 	else
@@ -449,7 +449,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	{
 		temp = cfg.merchantID;
 	}
-	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password);
+	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password, sizeof(cfg.password));
 	strncpy_s(cfg.password, sizeof(cfg.password), temp, sizeof(cfg.password)-1);
 
 	/* Get proxy port from config file */
@@ -462,7 +462,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	/* Get proxy server from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_SERVER);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_SERVER, CYBS_MAX_URL, temp);
+		CHECK_LENGTH(CYBS_C_PROXY_SERVER, CYBS_MAX_URL, temp, sizeof(temp));
 		strncpy_s(cfg.proxyServer, sizeof(cfg.proxyServer), temp, sizeof(cfg.proxyServer)-1);
 		proxy->soap->proxy_host = cfg.proxyServer;
 	}
@@ -470,7 +470,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	/* Get proxy password from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PWD);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_PWD, CYBS_MAX_PASSWORD, temp);
+		CHECK_LENGTH(CYBS_C_PROXY_PWD, CYBS_MAX_PASSWORD, temp, sizeof(temp));
 		strncpy_s(cfg.proxyPassword, sizeof(cfg.proxyPassword), temp, sizeof(cfg.proxyPassword)-1);
 		proxy->soap->proxy_passwd = cfg.proxyPassword;
 	}
@@ -478,7 +478,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	/* Get proxy username from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_USERNAME);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_USERNAME, CYBS_MAX_PASSWORD, temp);
+		CHECK_LENGTH(CYBS_C_PROXY_USERNAME, CYBS_MAX_PASSWORD, temp, sizeof(temp));
 		strncpy_s(cfg.proxyUsername, sizeof(cfg.proxyUsername), temp, sizeof(cfg.proxyUsername)-1);
 		proxy->soap->proxy_userid = cfg.proxyUsername;
 	}
@@ -500,7 +500,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	temp = (char *)cybs_get(configMap, CYBS_C_SERVER_URL);
 
 	if ( temp ) {
-		CHECK_LENGTH(CYBS_C_SERVER_URL, CYBS_MAX_URL, temp);
+		CHECK_LENGTH(CYBS_C_SERVER_URL, CYBS_MAX_URL, temp, sizeof(temp));
 		strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), temp, sizeof(cfg.serverURL)-1);
 	} else {
 		if ( strcmp(prodFlag, "true") == 0 ) {
