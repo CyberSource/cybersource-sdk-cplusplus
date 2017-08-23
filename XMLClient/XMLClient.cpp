@@ -330,14 +330,14 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_FILENAME);
 		if (!temp)
 			temp = DEFAULT_LOG_FILENAME;
-		strcpy(cfg.logFileName, temp);
+		strncpy_s(cfg.logFileName, sizeof(cfg.logFileName), temp, sizeof(cfg.logFileName)-1);
 		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName);
 
 		// Log File Directory
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_DIRECTORY);
 		if (!temp)
 			temp = DEFAULT_LOG_DIRECTORY;
-		strcpy(cfg.logFileDir, temp);
+		strncpy_s(cfg.logFileDir, sizeof(cfg.logFileDir), temp, sizeof(cfg.logFileDir)-1);
 		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir);
 
 		// Get complete log path
@@ -398,7 +398,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		ns2__requestMessage->merchantID = w;
 	}
 
-	strcpy(cfg.merchantID, soap_wchar2s(proxy->soap, ns2__requestMessage->merchantID));
+	strncpy_s(cfg.merchantID, sizeof(cfg.merchantID), soap_wchar2s(proxy->soap, ns2__requestMessage->merchantID), sizeof(cfg.merchantID)-1);
 
 	/* Check whether ssl cert file path is present in config file if not
 	then check in key directory with default config file name (ca-bundle) */
@@ -408,7 +408,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	{
 		CHECK_LENGTH(
 			CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH, temp );
-		strcpy(cfg.sslCertFile, temp);
+		strncpy_s(cfg.sslCertFile, sizeof(cfg.sslCertFile), temp, sizeof(cfg.sslCertFile)-1);
 	}
 	else
 	{
@@ -428,10 +428,10 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	if (!temp)
 	{
 		temp = cfg.merchantID;
-		strcpy(cfg.keyFileName, temp);
-		strcat(cfg.keyFileName, ".p12");
+		strncpy_s(cfg.keyFileName, sizeof(cfg.keyFileName), temp, sizeof(cfg.keyFileName)-1);
+		strncat_s(cfg.keyFileName, sizeof(cfg.keyFileName), ".p12", sizeof(cfg.keyFileName)-strnlen_s(cfg.keyFileName, sizeof(cfg.keyFileName))-1);
 	} else {
-		strcpy(cfg.keyFileName, temp);
+		strncpy_s(cfg.keyFileName, sizeof(cfg.keyFileName), temp, sizeof(cfg.keyFileName)-1);
 	}
 	
 	/* Get effective key file path */
@@ -439,7 +439,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	{
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
 	}	 
-	strncpy(cfg.keyFile, szDest, sizeof(cfg.keyFile)-1 );
+	strncpy_s(cfg.keyFile, sizeof(cfg.keyFile), szDest, sizeof(cfg.keyFile)-1 );
 
 	/* Check if password is present in config file if not then use merchant
 	id as the password */
@@ -450,7 +450,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		temp = cfg.merchantID;
 	}
 	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password);
-	strcpy(cfg.password, temp);
+	strncpy_s(cfg.password, sizeof(cfg.password), temp, sizeof(cfg.password)-1);
 
 	/* Get proxy port from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
@@ -463,7 +463,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_SERVER);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_SERVER, CYBS_MAX_URL, temp);
-		strcpy(cfg.proxyServer, temp);
+		strncpy_s(cfg.proxyServer, sizeof(cfg.proxyServer), temp, sizeof(cfg.proxyServer)-1);
 		proxy->soap->proxy_host = cfg.proxyServer;
 	}
 
@@ -471,7 +471,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PWD);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_PWD, CYBS_MAX_PASSWORD, temp);
-		strcpy(cfg.proxyPassword, temp);
+		strncpy_s(cfg.proxyPassword, sizeof(cfg.proxyPassword), temp, sizeof(cfg.proxyPassword)-1);
 		proxy->soap->proxy_passwd = cfg.proxyPassword;
 	}
 
@@ -479,7 +479,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_USERNAME);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_USERNAME, CYBS_MAX_PASSWORD, temp);
-		strcpy(cfg.proxyUsername, temp);
+		strncpy_s(cfg.proxyUsername, sizeof(cfg.proxyUsername), temp, sizeof(cfg.proxyUsername)-1);
 		proxy->soap->proxy_userid = cfg.proxyUsername;
 	}
 
@@ -501,19 +501,19 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 
 	if ( temp ) {
 		CHECK_LENGTH(CYBS_C_SERVER_URL, CYBS_MAX_URL, temp);
-		strcpy(cfg.serverURL, temp);
+		strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), temp, sizeof(cfg.serverURL)-1);
 	} else {
 		if ( strcmp(prodFlag, "true") == 0 ) {
 			if ( cfg.useAkamai ) {
-				strcpy(cfg.serverURL, akamaiProdserver);
+				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), akamaiProdserver, sizeof(cfg.serverURL)-1);
 			} else {
-				strcpy(cfg.serverURL, prodserver);
+				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), prodserver, sizeof(cfg.serverURL)-1);
 			}
 		} else {
 			if ( cfg.useAkamai ) {
-				strcpy(cfg.serverURL, akamaiCasserver);
+				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), akamaiCasserver, sizeof(cfg.serverURL)-1);
 			} else {
-				strcpy(cfg.serverURL, casserver);
+				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), casserver, sizeof(cfg.serverURL)-1);
 			}
 		}
 	}
