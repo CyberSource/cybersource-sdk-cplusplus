@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define __STDC_WANT_LIB_EXT1__ 1
 #include <string.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
@@ -15,7 +16,6 @@
 #else
 	#include "../lib/gsoap-2.8/gsoap/plugin/threads.h"
 #endif
-
 
 extern SafeFields gSafeFields;
 
@@ -63,6 +63,8 @@ static char *mask( const char *szField, const char *szValue );
 static std::wstring mask( const std::wstring szField, const std::wstring szValue );
 void read_doc( xmlNode *a_node, char *parentName, char *grandParent, SafeFields::MessageType eType);
 char *cybs_strdup( const char * szStringToDup );
+
+#ifdef __STDC_WANT_LIB_EXT1__
 
 /****************************************************************************/
 /* EXTERNAL FUNCTIONS                                                       */
@@ -493,3 +495,4 @@ void get_formatted_time( const char *szFormat, char *szDest, int nDestLen )
 
 }
 
+#endif

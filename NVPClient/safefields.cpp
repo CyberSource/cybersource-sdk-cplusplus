@@ -1,6 +1,7 @@
 #include "safefields.h"
 #include <ctype.h>
 #include <stdio.h>
+#define __STDC_WANT_LIB_EXT1__ 1
 #include <string.h>
 
 /*#define _DEBUG 
@@ -13,6 +14,8 @@ SafeFields gSafeFields;
 static const char UNDERSCORE = '_';
 static const char REQUEST_MESSAGE[] = "requestMessage";
 static const char REPLY_MESSAGE[] = "replyMessage";
+
+#ifdef __STDC_WANT_LIB_EXT1__
 
 SafeFields::SafeFields() {
 	m_pMap = cybs_create_map();
@@ -337,3 +340,5 @@ void SafeFields::RemoveIndices( char *szField ) {
 	} // for
 
 } // RemoveIndices
+
+#endif
