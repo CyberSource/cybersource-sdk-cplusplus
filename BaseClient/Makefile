@@ -1,7 +1,7 @@
 CC = g++
 #DEBUG = -g
 
-CFLAGS = -fPIC -std=c++0x
+CFLAGS = -fPIC
 source = kvs.c util.c
 OBJS = kvs.o util.o
 FPIC=-fPIC

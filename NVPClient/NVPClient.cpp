@@ -1,6 +1,7 @@
 // NVPClient.cpp : Defines the exported functions for the DLL application.
 //
 
+#include "iostream"
 #include "stdafx.h"
 #include "soapINVPTransactionProcessorProxy.h"
 #include "INVPTransactionProcessor.nsmap"
@@ -16,6 +17,8 @@
 #include <string.h>
 #include "log.h"
 #include <map>
+
+using namespace std;
 
 #ifdef WIN32
 static HANDLE *lock_cs;
@@ -376,7 +379,11 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_FILENAME);
 		if (!temp)
 			temp = DEFAULT_LOG_FILENAME;
-		strncpy_s(cfg.logFileName, sizeof(cfg.logFileName), temp, sizeof(cfg.logFileName)-1);
+		string temp_n(temp);
+
+		temp_n.copy(cfg.logFileName, temp_n.size(), 0);
+
+		//strncpy_s(cfg.logFileName, sizeof(cfg.logFileName), temp, sizeof(cfg.logFileName)-1);
 		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName, sizeof(cfg.logFileName));
 
 		// Log File Directory
