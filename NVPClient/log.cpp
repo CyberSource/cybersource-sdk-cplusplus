@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <iostream>
 #include <stdlib.h>
 #define __STDC_WANT_LIB_EXT1__ 1
 #include <string.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 #include <map>
+
+using namespace std;
 
 #ifndef WIN32
 #include <time.h>
@@ -231,7 +234,7 @@ char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData
 		if (szMapString) {
 		cybs_get_string(
 			cfg, szMapString, szDelim,
-			fMaskSensitiveData, eType, cfg->length, sizeof(szMapString) );
+			fMaskSensitiveData, eType, cfg->length );
 		return( szMapString );
 		}
 	}
@@ -240,30 +243,35 @@ char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData
 
 void cybs_get_string(
 	CybsMap *map, char szBuffer[], const char *szDelim,
-	bool fMaskSensitiveData, SafeFields::MessageType eType, int length, int nBufferLen ) {
+	bool fMaskSensitiveData, SafeFields::MessageType eType, int length) {
 		char fPrependDelim = 0;
 		CybsTable pair;
 		szBuffer[0] = '\0';
+	string szBufferCopy = szBuffer;
 		int i;
 
 		for (i = 0; i < length; i++) {
 			if (fPrependDelim) {
-				strncat_s( szBuffer, nBufferLen, szDelim, nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
+				szBufferCopy.append(szDelim);
 			}
 			pair = map->pairs[i];
 			fPrependDelim = 1;
-			strncat_s( szBuffer, nBufferLen, (char *)pair.key, nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
-			strncat_s( szBuffer, nBufferLen, "=", nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
+			szBufferCopy.append((char*)pair.key);
+			szBufferCopy.append("=");
 
 			if (fMaskSensitiveData &&
 			    !gSafeFields.IsSafe( eType, (char *)pair.key ))
 			{
 				char *szMasked = mask((char*)pair.key, (char *)pair.value );
-				strncat_s( szBuffer, nBufferLen, szMasked, nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
+				szBufferCopy.append(szMasked);
 				free( szMasked );
 			} else {
-				strncat_s( szBuffer, nBufferLen, (char *)pair.value, nBufferLen-strnlen_s(szBuffer, nBufferLen)-1 );
+				szBufferCopy.append((char*)pair.value);
 			}
+		}
+
+		for(i = 0; i < szBufferCopy.size(); i++) {
+			szBuffer[i]=szBufferCopy[i];
 		}
 }
 

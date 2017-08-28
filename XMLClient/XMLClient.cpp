@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include <iostream>
 #include <sstream>
 #include "soapITransactionProcessorProxy.h"
 #include "ITransactionProcessor.nsmap"
@@ -19,6 +20,8 @@
 #else
 	#include "../NVPClient/log.h"
 #endif
+
+using namespace std;
 
 #include <libxml/xmlmemory.h>
 #include "plugin.h"
@@ -345,7 +348,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir, sizeof(cfg.logFileDir));
 
 		// Get complete log path
-		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "", sizeof(szDest), sizeof(cfg.logFileDir), sizeof(cfg.logFileName), sizeof("")) == -1) 
+		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "") == -1) 
 	    {
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
 	    }
@@ -416,7 +419,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	}
 	else
 	{
-		if ( getKeyFilePath (szDest, keyDir, DEFAULT_CERT_FILE, ".crt", sizeof(szDest), sizeof(keyDir), sizeof(DEFAULT_CERT_FILE), sizeof(".crt") ) == -1 ) 
+		if ( getKeyFilePath (szDest, keyDir, DEFAULT_CERT_FILE, ".crt") == -1 ) 
 		{
 			RETURN_LENGTH_ERROR(CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH);
 		}
@@ -439,7 +442,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	}
 	
 	/* Get effective key file path */
-	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12", sizeof(szDest), sizeof(keyDir), sizeof(cfg.keyFileName), sizeof(".p12")) == -1) 
+	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12") == -1) 
 	{
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
 	}	 
@@ -615,24 +618,35 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 }
 
 /* Create effective path */
-int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ext, int nDestLen, int dirLen, int nFileNameLen, int nExtLen) {
+int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ext) {
 	
-	int nDirLen = strnlen_s( szDir, nDirLen );
-	char fAddSeparator = szDir[nDirLen - 1] == DIR_SEPARATOR ? 0 : 1;
-	if (nDirLen + fAddSeparator + strnlen_s( szFilename, nFileNameLen ) + strnlen_s(ext, nExtLen) >
+	string szDestCopy = szDest;
+	string szDirCopy(szDir);
+	string szFilenameCopy(szFilename);
+	string extCopy(ext);
+
+	int nDirLen = szDirCopy.size();
+	char fAddSeparator = szDirCopy[nDirLen - 1] == DIR_SEPARATOR ? 0 : 1;
+	if (nDirLen + fAddSeparator + szFilenameCopy.size() + extCopy.size() >
 		CYBS_MAX_PATH)
 	{
 		return( -1 );
 	}
 
-	strncpy_s( szDest, nDestLen, szDir, nDestLen-1 );
+	szDirCopy.copy(szDest, szDirCopy.size(), 0);
+
 	if (fAddSeparator)
 	{
 		szDest[nDirLen] = DIR_SEPARATOR;
 		szDest[nDirLen + 1] = '\0';
 	}
-	//strcat( szDest, strcat((char *)szFilename, ext ));
-	strncat_s( szDest, nDestLen, szFilename, nDestLen-strnlen_s(szDest, nDestLen)-1 );
+	szDestCopy = szDest;
+	szDestCopy.append(szFilenameCopy);
+	int i;
+	for(i = 0; i < szDestCopy.size(); i++) {
+		szDest[i]=szDestCopy[i];
+	}
+	szDest[i]='\0';
 	return( 0 );
 	
 }

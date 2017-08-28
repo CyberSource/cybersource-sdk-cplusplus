@@ -23,7 +23,7 @@ typedef enum
 void cybs_log(config cfg, const char *szType, const char *szText );
 CybsLogError cybs_prepare_log(config cfg);
 void cybs_log_map(config config, CybsMap *cfg, const char *szType );
-void cybs_get_string(CybsMap *cfg, char szBuffer[], const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType, int length, int nBufferLen );
+void cybs_get_string(CybsMap *cfg, char szBuffer[], const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType, int length );
 void cybs_log_xml(config cfg, const char *szType, char *xmlString);
 void cybs_log_NVP(config config, std::map <std::wstring, std::wstring> map, const char *szType);
 const char *cybs_get_log_error( CybsLogError error );
