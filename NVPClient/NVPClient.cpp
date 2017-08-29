@@ -13,7 +13,6 @@
 #include <openssl/err.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define __STDC_WANT_LIB_EXT1__ 1
 #include <string.h>
 #include "log.h"
 #include <map>
@@ -23,8 +22,6 @@ using namespace std;
 #ifdef WIN32
 static HANDLE *lock_cs;
 #endif /* WIN32 */
-
-#ifdef __STDC_WANT_LIB_EXT1__ 
 
 void cybs_openssl_init(void);
 void cybs_openssl_cleanup(void);
@@ -668,5 +665,3 @@ void opensslCleanup (EVP_PKEY *pkey1, X509 *cert1, STACK_OF(X509) *ca) {
 	X509_free(cert1);
 	EVP_PKEY_free(pkey1);
 }
-
-#endif

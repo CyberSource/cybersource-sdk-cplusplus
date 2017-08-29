@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
-#define __STDC_WANT_LIB_EXT1__ 1
 #include <string.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
@@ -67,8 +66,6 @@ static std::wstring mask( const std::wstring szField, const std::wstring szValue
 void read_doc( xmlNode *a_node, char *parentName, char *grandParent, SafeFields::MessageType eType);
 char *cybs_strdup( const char * szStringToDup );
 
-#ifdef __STDC_WANT_LIB_EXT1__
-
 /****************************************************************************/
 /* EXTERNAL FUNCTIONS                                                       */
 /****************************************************************************/
@@ -102,7 +99,7 @@ CybsLogError cybs_prepare_log(config cfg)
 		char szArchiveName[CYBS_MAX_PATH + 1];
 
 		get_formatted_time( ARCHIVE_TIMESTAMP, szFormattedTime, sizeof(szFormattedTime) );
-		sprintf_s(
+		_snprintf(
 			szArchiveName, sizeof(szArchiveName), "%s.%s", cfg.logFilePath, szFormattedTime );
 		// TODO: test this, esp. on Linux.  Not sure if the new name has to include the path on Linux.  On Windows, it doesn't.
 		if (rename( cfg.logFilePath, szArchiveName ))
@@ -227,7 +224,7 @@ char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData
 				/* total length of all names and values */
 				cfg->totallength +  
 				/* delimiters for each name-value pair */
-				((strnlen_s( "=", 2 ) + strnlen_s( szDelim, nDelimLen )) * cfg->length) +
+				( nDelimLen * cfg->length) +
 				/* null-terminator */
 				1 );
 		
@@ -357,7 +354,9 @@ void read_doc (xmlNode *a_node, char *parentName, char *grandParent, SafeFields:
 					//printf("not safe %s %s \n", tempParentName, cur_node->content);
 					char *szMasked = mask( tempParentName, (const char *)cur_node->content );
 					//printf("After Mask %s: \n", szMasked);
-					strncpy_s((char *)cur_node->content, sizeof(cur_node->content), szMasked, sizeof(cur_node->content)-1);
+					string szMaskedCopy(szMasked);
+					szMaskedCopy.copy((char *)cur_node->content, sizeof(cur_node->content), 0);
+					szMaskedCopy[sizeof(cur_node->content)]='\0';
 					//cur_node->content = (xmlChar *)szMasked;
 					free(szMasked);
 					//printf("Changed content %s: \n", cur_node->content);
@@ -430,15 +429,16 @@ void cybs_mask_in_place( const std::wstring szField, std::wstring &szValue )
 
 char *cybs_strdup( const char * szStringToDup )
 {
+	string szStringToDupCopy(szStringToDup);
 	char *szDup
-		= (char *) malloc( strlen( szStringToDup ) + sizeof( char ) );
+		  = (char *) malloc( szStringToDupCopy.size() + sizeof( char ) );
 
 	if (szDup)
 	{
-		strncpy_s( szDup, sizeof(szDup), szStringToDup, sizeof(szDup)-1 );
+		szStringToDupCopy.copy(szDup, szStringToDupCopy.size(), 0);
+		szDup[szStringToDupCopy.size()]='\0';
 		return( szDup );
 	}
-
 	return( 0 );
 }
 
@@ -481,7 +481,7 @@ void get_formatted_time( const char *szFormat, char *szDest, int nDestLen )
 
 	SYSTEMTIME time;
 	GetLocalTime( &time );
-	sprintf_s(
+	_snprintf(
 		szDest, nDestLen, szFormat, time.wYear, time.wMonth, time.wDay,
 		time.wHour, time.wMinute, time.wSecond, time.wMilliseconds );
 #else
@@ -495,7 +495,7 @@ void get_formatted_time( const char *szFormat, char *szDest, int nDestLen )
 	   functions so this is not an issue. */
 	loc = localtime( &clock );
 
-	sprintf(
+	_snprintf(
 		szDest, nDestLen, szFormat, loc->tm_year + 1900, loc->tm_mon + 1, loc->tm_mday,
 		loc->tm_hour, loc->tm_min, loc->tm_sec );
 
@@ -503,4 +503,3 @@ void get_formatted_time( const char *szFormat, char *szDest, int nDestLen )
 
 }
 
-#endif
