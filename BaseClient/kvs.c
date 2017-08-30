@@ -1,7 +1,10 @@
+#include "iostream"
 #include "util.h"
 #include "stdio.h"
 #include "string.h"
 #include "time.h"
+
+using namespace std;
 
 static const size_t kvs_pair_size = sizeof(CybsTable);
 
@@ -55,16 +58,20 @@ static void create_pair(CybsMap *store, const void *key, void *value) {
     if (!store) {
         return;
     }
+	string keyCopy((char *)key);
+    string valueCopy((char *)value);
     ++store->length;
-	store->totallength = store->totallength + (strlen((const char *)key) + strlen((const char *)value));
+	store->totallength = store->totallength + (keyCopy.size()) + valueCopy.size();
     resize_pairs(store);
     pair = &store->pairs[store->length - 1];
-	pair->key = (char *) malloc(strlen((const char *)key) + sizeof(char));
-	strcpy((char *)pair->key, (const char *)key);
+	pair->key = (char *) malloc(keyCopy.size() + sizeof(char));
+	keyCopy.copy((char *)pair->key, keyCopy.size(), 0);
+	((char *)pair->key)[keyCopy.size()]='\0';
     //pair->key = key;
     //pair->value = value;
-	pair->value = (char *) malloc(strlen((char *)value) + sizeof(char));
-	strcpy((char *)pair->value, (const char *)value);
+	pair->value = (char *) malloc(valueCopy.size() + sizeof(char));
+	valueCopy.copy((char *)pair->value, valueCopy.size(), 0);
+	((char *) pair->value)[valueCopy.size()]='\0';
     sort_pairs(store);
 }
 
@@ -107,12 +114,14 @@ void cybs_destroy_map(CybsMap *store) {
 
 char *cybs_strdup( const char * szStringToDup )
 {
+	string szStringToDupCopy(szStringToDup);
 	char *szDup
-		= (char *) malloc( strlen( szStringToDup ) + sizeof( char ) );
+		= (char *) malloc( szStringToDupCopy.size() + sizeof( char ) );
 
 	if (szDup)
 	{
-		strcpy( szDup, szStringToDup);
+		szStringToDupCopy.copy(szDup, szStringToDupCopy.size(), 0);
+		szDup[szStringToDupCopy.size()]='\0';
 		return( szDup );
 	}
 
@@ -125,8 +134,10 @@ void cybs_add(CybsMap *store, const void *key, void *value) {
     if (pair) {
 		if (value) {
 			free (pair->value);
-			pair->value = (char *) malloc(strlen((const char *)value) + sizeof(char));
-            strcpy((char *)pair->value, (const char *)value);
+			string valueCopy((char *)value);
+			pair->value = (char *) malloc(valueCopy.size() + sizeof(char));
+			valueCopy.copy((char *) pair->value, valueCopy.size(), 0);
+			((char *) pair->value)[valueCopy.size()]='\0';
         } else {
             remove_pair(store, pair);
         }

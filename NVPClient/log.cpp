@@ -346,7 +346,10 @@ void read_doc (xmlNode *a_node, char *parentName, char *grandParent, SafeFields:
 
 					memcpy(tempGrandPrnt, grandParent, strlen(grandParent));
 					memcpy(tempGrandPrnt+strlen(grandParent), "_", 2);
-					tempParentName = cybs_strdup(strcat(tempGrandPrnt,parentName));
+					string tempGrandPrntCopy(tempGrandPrnt);
+					tempGrandPrntCopy.append(parentName);
+					tempGrandPrntCopy[tempGrandPrntCopy.size()]='\0';
+					tempParentName = cybs_strdup(tempGrandPrntCopy.c_str());
 				} else {
 					tempParentName = cybs_strdup(parentName);
 				}
