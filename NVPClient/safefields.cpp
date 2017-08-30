@@ -1,7 +1,7 @@
+#include "iostream"
 #include "safefields.h"
 #include <ctype.h>
 #include <stdio.h>
-#define __STDC_WANT_LIB_EXT1__ 1
 #include <string.h>
 
 /*#define _DEBUG 
@@ -14,8 +14,6 @@ SafeFields gSafeFields;
 static const char UNDERSCORE = '_';
 static const char REQUEST_MESSAGE[] = "requestMessage";
 static const char REPLY_MESSAGE[] = "replyMessage";
-
-#ifdef __STDC_WANT_LIB_EXT1__
 
 SafeFields::SafeFields() {
 	m_pMap = cybs_create_map();
@@ -228,7 +226,9 @@ bool SafeFields::IsSafe( SafeFields::MessageType eType, char *szField ) {
 	// strip-off any indices that are present in the field name
 	// e.g. item_0_unitPrice will become item_unitPrice.
 	char szStripped[MAX_FIELD_LENGTH+1];
-	strncpy_s( szStripped, sizeof(szStripped), szField, sizeof(szStripped)-1 );
+	std::string szFieldCopy(szField);
+	szFieldCopy.copy(szStripped, szFieldCopy.size(), 0);
+	szStripped[szFieldCopy.size()]='\0';
 	RemoveIndices( szStripped );
 
 	 char *szParent, *szChild;
@@ -341,4 +341,3 @@ void SafeFields::RemoveIndices( char *szField ) {
 
 } // RemoveIndices
 
-#endif
