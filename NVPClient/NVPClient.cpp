@@ -63,7 +63,7 @@ static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 #define RETURN_ERROR1( status, info, arg1 ) \
 { \
 	char szErrorBuf[128]; \
-	sprintf_s( szErrorBuf, sizeof(szErrorBuf), info, arg1 ); \
+	_snprintf( szErrorBuf, sizeof(szErrorBuf), info, arg1 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
@@ -71,7 +71,7 @@ static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 #define RETURN_ERROR2( status, info, arg1, arg2 ) \
 { \
 	char szErrorBuf[128]; \
-	sprintf_s( szErrorBuf, sizeof(szErrorBuf), info, arg1, arg2 ); \
+	_snprintf( szErrorBuf, sizeof(szErrorBuf), info, arg1, arg2 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
@@ -79,9 +79,12 @@ static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 
 #define RETURN_REQUIRED_ERROR( name ) RETURN_ERROR1( CYBS_S_PRE_SEND_ERROR, "%s is required.", name )
 
-#define CHECK_LENGTH( name, maxlen, value, nValueLen ) \
-	if (strnlen_s( value, nValueLen ) > maxlen) \
-		RETURN_LENGTH_ERROR( name, maxlen );
+#define CHECK_LENGTH( name, maxlen, value ) \
+{ \
+	string valueCopy(value); \
+	if (valueCopy.size() > maxlen) \
+		RETURN_LENGTH_ERROR( name, maxlen ); \
+}
 
 #ifdef WIN32
 void cybs_openssl_init(void)
@@ -361,6 +364,8 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	EVP_PKEY *pkey1 = NULL;
 	X509 *cert1 = NULL;
 	STACK_OF(X509) *ca = NULL;
+	string szDestCopy;
+	string tempCopy;
 
 	const char *temp;
 
@@ -376,11 +381,12 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_FILENAME);
 		if (!temp)
 			temp = DEFAULT_LOG_FILENAME;
-		string tempCopy = temp;
+		tempCopy = temp;
 
 		tempCopy.copy(cfg.logFileName, tempCopy.size(), 0);
+		cfg.logFileName[tempCopy.size()]='\0';
 
-		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName, sizeof(cfg.logFileName));
+		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName);
 
 		// Log File Directory
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_DIRECTORY);
@@ -390,8 +396,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 			tempCopy = temp;
 
 			tempCopy.copy(cfg.logFileDir, tempCopy.size(), 0);
+			cfg.logFileDir[tempCopy.size()]='\0';
 
-		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir, sizeof(cfg.logFileDir));
+		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir);
 
 		// Get complete log path
 		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "") == -1) 
@@ -404,8 +411,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 			cfg.nLogMaxSizeInMB = atoi(temp);
 		else
 			cfg.nLogMaxSizeInMB = atoi(DEFAULT_LOG_MAX_SIZE);
-
-		strncpy_s(cfg.logFilePath, sizeof(cfg.logFilePath), szDest, sizeof(cfg.logFilePath)-1 );
+		szDestCopy = szDest;
+		szDestCopy.copy(cfg.logFilePath, szDestCopy.size(), 0);
+		cfg.logFilePath[szDestCopy.size()]='\0';
 
 		CybsLogError nLogError = cybs_prepare_log (cfg);
 
@@ -446,8 +454,10 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	if (temp)
 	{
 		CHECK_LENGTH(
-			CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH, temp, sizeof(temp) );
-		strncpy_s(cfg.sslCertFile, sizeof(cfg.sslCertFile), temp, sizeof(cfg.sslCertFile)-1);
+			CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH, temp );
+		tempCopy = temp;
+		tempCopy.copy(cfg.sslCertFile, tempCopy.size(), 0);
+		cfg.sslCertFile[tempCopy.size()]='\0';
 	}
 	else
 	{
@@ -456,33 +466,51 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 			RETURN_LENGTH_ERROR(CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH);
 		}
 		temp = szDest;
-		strncpy_s(cfg.sslCertFile, sizeof(cfg.sslCertFile), temp, sizeof(cfg.sslCertFile)-1 );
-		strncat_s(cfg.sslCertFile, sizeof(cfg.sslCertFile), ".crt", sizeof(cfg.sslCertFile)-strnlen_s(cfg.sslCertFile, sizeof(cfg.sslCertFile))-1 );
+		tempCopy = temp;
+		tempCopy.copy(cfg.sslCertFile, tempCopy.size(), 0);
+	    string cfgSSLCertFileCopy(cfg.sslCertFile);
+		cfgSSLCertFileCopy.append(".crt");
+		cfgSSLCertFileCopy[cfgSSLCertFileCopy.size()]='\0';
+		for(int i=0; i<=cfgSSLCertFileCopy.size(); i++) {
+			cfg.sslCertFile[i]=cfgSSLCertFileCopy[i];
+		}
 	}
 
 	temp = (char *)cybs_get(configMap, CYBS_C_KEY_FILENAME);
 	if (!temp)
-	{
+	{ 
 		temp = cfg.merchantID;
-		strncpy_s(cfg.keyFileName, sizeof(cfg.keyFileName), temp, sizeof(cfg.keyFileName)-1);
-		strncat_s(cfg.keyFileName, sizeof(cfg.keyFileName), ".p12", sizeof(cfg.keyFileName)-strnlen_s(cfg.keyFileName, sizeof(cfg.keyFileName))-1);
+		tempCopy = temp;
+		tempCopy.copy(cfg.keyFileName, tempCopy.size(), 0);
+		string cfgKeyFileNameCopy(cfg.keyFileName);
+		cfgKeyFileNameCopy.append(".p12");
+		cfgKeyFileNameCopy[cfgKeyFileNameCopy.size()]='\0';
+		for(int i=0; i<=cfgKeyFileNameCopy.size(); i++ ) {
+			cfg.keyFileName[i]=cfgKeyFileNameCopy[i];
+		}
 	} else {
-		strncpy_s(cfg.keyFileName, sizeof(cfg.keyFileName), temp, sizeof(cfg.keyFileName)-1);
+		tempCopy = temp;
+		tempCopy.copy(cfg.keyFileName, tempCopy.size(), 0);
+		cfg.keyFileName[tempCopy.size()]='\0';
 	}
 	
 	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12" ) == -1) 
 	{
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
-	}	 
-	strncpy_s(cfg.keyFile, sizeof(cfg.keyFile), szDest, sizeof(cfg.keyFile)-1 );
+	}
+	szDestCopy = szDest;
+	szDestCopy.copy(cfg.keyFile, szDestCopy.size(), 0);
+	cfg.keyFile[szDestCopy.size()]='\0';
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PWD);
 	if (!temp)
 	{
 		temp = cfg.merchantID;
 	}
-	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password, sizeof(cfg.password));
-	strncpy_s(cfg.password, sizeof(cfg.password) ,temp, sizeof(cfg.password)-1);
+	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password);
+	tempCopy = temp;
+	tempCopy.copy(cfg.password, tempCopy.size(), 0);
+	cfg.password[tempCopy.size()]='\0';
 	
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
 
@@ -493,22 +521,28 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_SERVER);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_SERVER, CYBS_MAX_URL, temp, sizeof(temp));
-		strncpy_s(cfg.proxyServer, sizeof(cfg.proxyServer), temp, sizeof(cfg.proxyServer)-1);
+		CHECK_LENGTH(CYBS_C_PROXY_SERVER, CYBS_MAX_URL, temp);
+		tempCopy = temp;
+		tempCopy.copy(cfg.proxyServer, tempCopy.size(), 0);
+		cfg.proxyServer[tempCopy.size()]='\0';
 		proxy->soap->proxy_host = cfg.proxyServer;
 	}
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PWD);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_PWD, CYBS_MAX_PASSWORD, temp, sizeof(temp));
-		strncpy_s(cfg.proxyPassword, sizeof(cfg.proxyPassword), temp, sizeof(cfg.proxyPassword)-1);
+		CHECK_LENGTH(CYBS_C_PROXY_PWD, CYBS_MAX_PASSWORD, temp);
+	    tempCopy = temp;
+		tempCopy.copy(cfg.proxyPassword, tempCopy.size(), 0);
+		cfg.proxyPassword[tempCopy.size()]='\0';
 		proxy->soap->proxy_passwd = cfg.proxyPassword;
 	}
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_USERNAME);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_USERNAME, CYBS_MAX_PASSWORD, temp, sizeof(temp));
-		strncpy_s(cfg.proxyUsername, sizeof(cfg.proxyUsername), temp, sizeof(cfg.proxyUsername)-1);
+		CHECK_LENGTH(CYBS_C_PROXY_USERNAME, CYBS_MAX_PASSWORD, temp);
+	    tempCopy = temp;
+		tempCopy.copy(cfg.proxyUsername, tempCopy.size(), 0);
+		cfg.proxyUsername[tempCopy.size()]='\0';
 		proxy->soap->proxy_userid = cfg.proxyUsername;
 	}
 
@@ -525,20 +559,30 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	temp = (char *)cybs_get(configMap, CYBS_C_SERVER_URL);
 
 	if ( temp ) {
-		CHECK_LENGTH(CYBS_C_SERVER_URL, CYBS_MAX_URL, temp, sizeof(temp));
-		strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), temp, sizeof(cfg.serverURL)-1);
+		CHECK_LENGTH(CYBS_C_SERVER_URL, CYBS_MAX_URL, temp);
+		tempCopy = temp;
+		tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+		cfg.serverURL[tempCopy.size()]='\0';
 	} else {
 		if ( strcmp(prodFlag, "true") == 0 ) {
 			if ( cfg.useAkamai ) {
-				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), akamaiProdserver, sizeof(cfg.serverURL)-1);
+				tempCopy = akamaiProdserver;
+				tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+				cfg.serverURL[tempCopy.size()]='\0';
 			} else {
-				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), prodserver, sizeof(cfg.serverURL)-1);
+				tempCopy = prodserver;
+				tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+				cfg.serverURL[tempCopy.size()]='\0';
 			}
 		} else {
 			if ( cfg.useAkamai ) {
-				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), akamaiCasserver, sizeof(cfg.serverURL)-1);
+				tempCopy = akamaiCasserver;
+				tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+				cfg.serverURL[tempCopy.size()]='\0';
 			} else {
-				strncpy_s(cfg.serverURL, sizeof(cfg.serverURL), casserver, sizeof(cfg.serverURL)-1);
+				tempCopy = casserver;
+				tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+				cfg.serverURL[tempCopy.size()]='\0';
 			}
 		}
 	}
