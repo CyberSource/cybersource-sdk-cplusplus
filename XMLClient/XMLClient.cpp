@@ -64,14 +64,14 @@ unsigned long pthreads_thread_id(void );
 #define RETURN_ERROR1( status, info, arg1 ) \
 { \
 	char szErrorBuf[128]; \
-	_snprintf( szErrorBuf, sizeof(szErrorBuf), info, arg1 ); \
+	sprintf( szErrorBuf, info, arg1 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
 #define RETURN_ERROR2( status, info, arg1, arg2 ) \
 { \
 	char szErrorBuf[128]; \
-	_snprintf( szErrorBuf, sizeof(szErrorBuf), info, arg1, arg2 ); \
+	sprintf( szErrorBuf, info, arg1, arg2 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
