@@ -271,7 +271,7 @@ void SafeFields::RemoveIndices( char *szField ) {
 
 	char ch;
 	int fDigit;
-	int nIndexStart;
+	int nIndexStart = 0;
 	FieldNameState state = SafeFields::Boundary;
 	for (int nSrc = 0, nDest = 0; state != SafeFields::Done; ++nSrc) {
 		ch = szField[nSrc];

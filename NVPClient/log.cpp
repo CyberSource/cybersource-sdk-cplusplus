@@ -358,8 +358,8 @@ void read_doc (xmlNode *a_node, char *parentName, char *grandParent, SafeFields:
 					char *szMasked = mask( tempParentName, (const char *)cur_node->content );
 					//printf("After Mask %s: \n", szMasked);
 					string szMaskedCopy(szMasked);
-					szMaskedCopy.copy((char *)cur_node->content, sizeof(cur_node->content), 0);
-					szMaskedCopy[sizeof(cur_node->content)]='\0';
+					szMaskedCopy.copy((char *)cur_node->content, szMaskedCopy.size(), 0);
+					((char *)cur_node->content)[szMaskedCopy.size()]='\0';
 					//cur_node->content = (xmlChar *)szMasked;
 					free(szMasked);
 					//printf("Changed content %s: \n", cur_node->content);
