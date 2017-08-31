@@ -82,7 +82,9 @@ static void remove_pair(CybsMap *store, CybsTable *pair) {
     pair->key = NULL;
     sort_pairs(store);
     --store->length;
-	store->totallength = store->totallength - ((strlen((const char *)pair->key) + strlen((const char *)pair->value)));
+	string pairKeyCopy((char *)pair->key);
+	string pairKeyValue((char *)pair->value);
+	store->totallength = store->totallength - (pairKeyCopy.size() + pairKeyValue.size());
     resize_pairs(store);
 }
 

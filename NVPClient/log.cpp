@@ -342,7 +342,9 @@ void read_doc (xmlNode *a_node, char *parentName, char *grandParent, SafeFields:
 				char *tempParentName = 0, *tempGrandPrnt = 0;
 				if (grandParent != NULL && strcmp(grandParent, "RequestMessage") != 0 && strcmp(grandParent, "ReplyMessage") != 0 ) {
 					//tempGrandPrnt = cybs_strdup(grandParent);
-					tempGrandPrnt = (char*) malloc(strlen(grandParent) +2 + strlen(parentName));
+					string grandParentCopy(grandParent);
+					string parentNameCopy(parentName);
+					tempGrandPrnt = (char*) malloc(grandParentCopy.size() +2 + parentNameCopy.size());
 
 					memcpy(tempGrandPrnt, grandParent, strlen(grandParent));
 					memcpy(tempGrandPrnt+strlen(grandParent), "_", 2);
