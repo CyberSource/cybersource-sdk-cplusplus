@@ -346,8 +346,8 @@ void read_doc (xmlNode *a_node, char *parentName, char *grandParent, SafeFields:
 					string parentNameCopy(parentName);
 					tempGrandPrnt = (char*) malloc(grandParentCopy.size() +2 + parentNameCopy.size());
 
-					memcpy(tempGrandPrnt, grandParent, strlen(grandParent));
-					memcpy(tempGrandPrnt+strlen(grandParent), "_", 2);
+					memcpy(tempGrandPrnt, grandParent, grandParentCopy.size());
+					memcpy(tempGrandPrnt+grandParentCopy.size(), "_", 2);
 					string tempGrandPrntCopy(tempGrandPrnt);
 					tempGrandPrntCopy.append(parentName);
 					tempGrandPrntCopy[tempGrandPrntCopy.size()]='\0';
@@ -378,7 +378,8 @@ static const char MASK_CHAR = 'x';
 static const char TRACK_DATA[] = "trackData";
 void cybs_mask_in_place( const char *szField, char *szValue )
 {
-        size_t nLen = szValue != NULL ? strlen( szValue ) : 0;
+	string szValueCopy(szValue);
+	size_t nLen = szValue != NULL ? szValueCopy.size() : 0;
 	if (nLen == 0) return;
 
 	if (strstr( szField, TRACK_DATA ) != NULL ||

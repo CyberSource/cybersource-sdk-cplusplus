@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 
+using namespace std;
+
 /*#define _DEBUG 
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
@@ -219,14 +221,14 @@ static const unsigned int MAX_FIELD_LENGTH = 128;
 bool SafeFields::IsSafe( SafeFields::MessageType eType, char *szField ) {
 	if (!m_pMap) return( false );
 
+	string szFieldCopy(szField);
 	// if field is too long to accomodate in our buffer,
 	// just treat it as unsafe.
-	if (strlen( szField ) > MAX_FIELD_LENGTH) return( false );
+	if (szFieldCopy.size() > MAX_FIELD_LENGTH) return( false );
 
 	// strip-off any indices that are present in the field name
 	// e.g. item_0_unitPrice will become item_unitPrice.
 	char szStripped[MAX_FIELD_LENGTH+1];
-	std::string szFieldCopy(szField);
 	szFieldCopy.copy(szStripped, szFieldCopy.size(), 0);
 	szStripped[szFieldCopy.size()]='\0';
 	RemoveIndices( szStripped );
