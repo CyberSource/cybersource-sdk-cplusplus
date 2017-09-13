@@ -79,7 +79,6 @@ static void remove_pair(CybsMap *store, CybsTable *pair) {
     if ((!store) || (!pair)) {
         return;
     }
-    pair->key = NULL;
     sort_pairs(store);
     --store->length;
 	string pairKeyCopy((char *)pair->key);
