@@ -1,7 +1,10 @@
+#include "iostream"
 #include "safefields.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+
+using namespace std;
 
 /*#define _DEBUG 
 #define _CRTDBG_MAP_ALLOC
@@ -218,14 +221,16 @@ static const unsigned int MAX_FIELD_LENGTH = 128;
 bool SafeFields::IsSafe( SafeFields::MessageType eType, char *szField ) {
 	if (!m_pMap) return( false );
 
+	string szFieldCopy(szField);
 	// if field is too long to accomodate in our buffer,
 	// just treat it as unsafe.
-	if (strlen( szField ) > MAX_FIELD_LENGTH) return( false );
+	if (szFieldCopy.size() > MAX_FIELD_LENGTH) return( false );
 
 	// strip-off any indices that are present in the field name
 	// e.g. item_0_unitPrice will become item_unitPrice.
 	char szStripped[MAX_FIELD_LENGTH+1];
-	strcpy( szStripped, szField );
+	szFieldCopy.copy(szStripped, szFieldCopy.size(), 0);
+	szStripped[szFieldCopy.size()]='\0';
 	RemoveIndices( szStripped );
 
 	 char *szParent, *szChild;
@@ -268,7 +273,7 @@ void SafeFields::RemoveIndices( char *szField ) {
 
 	char ch;
 	int fDigit;
-	int nIndexStart;
+	int nIndexStart = 0;
 	FieldNameState state = SafeFields::Boundary;
 	for (int nSrc = 0, nDest = 0; state != SafeFields::Done; ++nSrc) {
 		ch = szField[nSrc];
@@ -337,3 +342,4 @@ void SafeFields::RemoveIndices( char *szField ) {
 	} // for
 
 } // RemoveIndices
+

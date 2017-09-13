@@ -1,6 +1,7 @@
 // NVPClient.cpp : Defines the exported functions for the DLL application.
 //
 
+#include "iostream"
 #include "stdafx.h"
 #include "soapINVPTransactionProcessorProxy.h"
 #include "INVPTransactionProcessor.nsmap"
@@ -15,6 +16,8 @@
 #include <string.h>
 #include "log.h"
 #include <map>
+
+using namespace std;
 
 #ifdef WIN32
 static HANDLE *lock_cs;
@@ -77,8 +80,11 @@ static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 #define RETURN_REQUIRED_ERROR( name ) RETURN_ERROR1( CYBS_S_PRE_SEND_ERROR, "%s is required.", name )
 
 #define CHECK_LENGTH( name, maxlen, value ) \
-	if (strlen( value ) > maxlen) \
-		RETURN_LENGTH_ERROR( name, maxlen );
+{ \
+	string valueCopy(value); \
+	if (valueCopy.size() > maxlen) \
+		RETURN_LENGTH_ERROR( name, maxlen ); \
+}
 
 #ifdef WIN32
 void cybs_openssl_init(void)
@@ -238,6 +244,7 @@ std::map <std::wstring, std::wstring> convertStringtoMap (wchar_t *res) {
 	wchar_t *temp1;
 	wchar_t *token;
 	wchar_t *buf;
+
 	#ifdef WIN32
 		temp1 = wcstok(res1, L"\n");
 	#else
@@ -354,11 +361,12 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	char szDest[256];
 	char *mercID = (char *)cybs_get(configMap, CYBS_C_MERCHANT_ID);
 	char *keyDir = (char *)cybs_get(configMap, CYBS_C_KEYS_DIRECTORY);
-
 	PKCS12 *p12 = NULL;
 	EVP_PKEY *pkey1 = NULL;
 	X509 *cert1 = NULL;
 	STACK_OF(X509) *ca = NULL;
+	string szDestCopy;
+	string tempCopy;
 
 	const char *temp;
 
@@ -374,14 +382,23 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_FILENAME);
 		if (!temp)
 			temp = DEFAULT_LOG_FILENAME;
-		strcpy(cfg.logFileName, temp);
+		tempCopy = temp;
+
+		tempCopy.copy(cfg.logFileName, tempCopy.size(), 0);
+		cfg.logFileName[tempCopy.size()]='\0';
+
 		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName);
 
 		// Log File Directory
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_DIRECTORY);
+
 		if (!temp)
 			temp = DEFAULT_LOG_DIRECTORY;
-		strcpy(cfg.logFileDir, temp);
+			tempCopy = temp;
+
+			tempCopy.copy(cfg.logFileDir, tempCopy.size(), 0);
+			cfg.logFileDir[tempCopy.size()]='\0';
+
 		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir);
 
 		// Get complete log path
@@ -395,8 +412,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 			cfg.nLogMaxSizeInMB = atoi(temp);
 		else
 			cfg.nLogMaxSizeInMB = atoi(DEFAULT_LOG_MAX_SIZE);
-
-		strcpy(cfg.logFilePath, szDest);
+		szDestCopy = szDest;
+		szDestCopy.copy(cfg.logFilePath, szDestCopy.size(), 0);
+		cfg.logFilePath[szDestCopy.size()]='\0';
 
 		CybsLogError nLogError = cybs_prepare_log (cfg);
 
@@ -438,7 +456,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	{
 		CHECK_LENGTH(
 			CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH, temp );
-		strcpy(cfg.sslCertFile, temp);
+		tempCopy = temp;
+		tempCopy.copy(cfg.sslCertFile, tempCopy.size(), 0);
+		cfg.sslCertFile[tempCopy.size()]='\0';
 	}
 	else
 	{
@@ -447,25 +467,41 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 			RETURN_LENGTH_ERROR(CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH);
 		}
 		temp = szDest;
-		strcpy(cfg.sslCertFile, temp);
-		strcat(cfg.sslCertFile, ".crt");
+		tempCopy = temp;
+		tempCopy.copy(cfg.sslCertFile, tempCopy.size(), 0);
+	    string cfgSSLCertFileCopy(cfg.sslCertFile);
+		cfgSSLCertFileCopy.append(".crt");
+		cfgSSLCertFileCopy[cfgSSLCertFileCopy.size()]='\0';
+		for(int i=0; i<=cfgSSLCertFileCopy.size(); i++) {
+			cfg.sslCertFile[i]=cfgSSLCertFileCopy[i];
+		}
 	}
 
 	temp = (char *)cybs_get(configMap, CYBS_C_KEY_FILENAME);
 	if (!temp)
-	{
+	{ 
 		temp = cfg.merchantID;
-		strcpy(cfg.keyFileName, temp);
-		strcat(cfg.keyFileName, ".p12");
+		tempCopy = temp;
+		tempCopy.copy(cfg.keyFileName, tempCopy.size(), 0);
+		string cfgKeyFileNameCopy(cfg.keyFileName);
+		cfgKeyFileNameCopy.append(".p12");
+		cfgKeyFileNameCopy[cfgKeyFileNameCopy.size()]='\0';
+		for(int i=0; i<=cfgKeyFileNameCopy.size(); i++ ) {
+			cfg.keyFileName[i]=cfgKeyFileNameCopy[i];
+		}
 	} else {
-		strcpy(cfg.keyFileName, temp);
+		tempCopy = temp;
+		tempCopy.copy(cfg.keyFileName, tempCopy.size(), 0);
+		cfg.keyFileName[tempCopy.size()]='\0';
 	}
 	
-	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12") == -1) 
+	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12" ) == -1) 
 	{
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
-	}	 
-	strcpy(cfg.keyFile, szDest);
+	}
+	szDestCopy = szDest;
+	szDestCopy.copy(cfg.keyFile, szDestCopy.size(), 0);
+	cfg.keyFile[szDestCopy.size()]='\0';
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PWD);
 	if (!temp)
@@ -473,7 +509,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		temp = cfg.merchantID;
 	}
 	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password);
-	strcpy(cfg.password, temp);
+	tempCopy = temp;
+	tempCopy.copy(cfg.password, tempCopy.size(), 0);
+	cfg.password[tempCopy.size()]='\0';
 	
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
 
@@ -485,21 +523,27 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_SERVER);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_SERVER, CYBS_MAX_URL, temp);
-		strcpy(cfg.proxyServer, temp);
+		tempCopy = temp;
+		tempCopy.copy(cfg.proxyServer, tempCopy.size(), 0);
+		cfg.proxyServer[tempCopy.size()]='\0';
 		proxy->soap->proxy_host = cfg.proxyServer;
 	}
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PWD);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_PWD, CYBS_MAX_PASSWORD, temp);
-		strcpy(cfg.proxyPassword, temp);
+	    tempCopy = temp;
+		tempCopy.copy(cfg.proxyPassword, tempCopy.size(), 0);
+		cfg.proxyPassword[tempCopy.size()]='\0';
 		proxy->soap->proxy_passwd = cfg.proxyPassword;
 	}
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_USERNAME);
 	if (temp) {
 		CHECK_LENGTH(CYBS_C_PROXY_USERNAME, CYBS_MAX_PASSWORD, temp);
-		strcpy(cfg.proxyUsername, temp);
+	    tempCopy = temp;
+		tempCopy.copy(cfg.proxyUsername, tempCopy.size(), 0);
+		cfg.proxyUsername[tempCopy.size()]='\0';
 		proxy->soap->proxy_userid = cfg.proxyUsername;
 	}
 
@@ -517,19 +561,29 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 	if ( temp ) {
 		CHECK_LENGTH(CYBS_C_SERVER_URL, CYBS_MAX_URL, temp);
-		strcpy(cfg.serverURL, temp);
+		tempCopy = temp;
+		tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+		cfg.serverURL[tempCopy.size()]='\0';
 	} else {
 		if ( strcmp(prodFlag, "true") == 0 ) {
 			if ( cfg.useAkamai ) {
-				strcpy(cfg.serverURL, akamaiProdserver);
+				tempCopy = akamaiProdserver;
+				tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+				cfg.serverURL[tempCopy.size()]='\0';
 			} else {
-				strcpy(cfg.serverURL, prodserver);
+				tempCopy = prodserver;
+				tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+				cfg.serverURL[tempCopy.size()]='\0';
 			}
 		} else {
 			if ( cfg.useAkamai ) {
-				strcpy(cfg.serverURL, akamaiCasserver);
+				tempCopy = akamaiCasserver;
+				tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+				cfg.serverURL[tempCopy.size()]='\0';
 			} else {
-				strcpy(cfg.serverURL, casserver);
+				tempCopy = casserver;
+				tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
+				cfg.serverURL[tempCopy.size()]='\0';
 			}
 		}
 	}
@@ -599,9 +653,11 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 	char *responseMsg = "\0";
 	responseMsg = proxy->soap->msgbuf;
+
+	wstring repCopy(rep);
 	
 	if (status == SOAP_OK) {
-		if(rep != NULL && wcslen(rep) > 0)
+		if(rep != NULL && repCopy.size() > 0)
 		resMap = convertStringtoMap(rep);
 		
 		if (cfg.isLogEnabled)
@@ -623,21 +679,30 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ext) {
 	
-	int nDirLen = strlen( szDir );
-	char fAddSeparator = szDir[nDirLen - 1] == DIR_SEPARATOR ? 0 : 1;
-	if (nDirLen + fAddSeparator + strlen( szFilename ) + strlen(ext) >
+	string szDestCopy = szDest;
+	string szDirCopy(szDir);
+	string szFilenameCopy(szFilename);
+	string extCopy(ext);
+	int nDirLen = szDirCopy.size();
+	char fAddSeparator = szDirCopy[nDirLen - 1] == DIR_SEPARATOR ? 0 : 1;
+	if (nDirLen + fAddSeparator + szFilenameCopy.size() + extCopy.size() >
 		CYBS_MAX_PATH)
 	{
 		return( -1 );
 	}
-
-	strcpy( szDest, szDir );
+	szDirCopy.copy(szDest, szDirCopy.size(), 0);
 	if (fAddSeparator)
 	{
 		szDest[nDirLen] = DIR_SEPARATOR;
 		szDest[nDirLen + 1] = '\0';
 	}
-	strcat( szDest, szFilename);
+	szDestCopy = szDest;
+	szDestCopy.append(szFilenameCopy);
+	int i;
+	for(i = 0; i < szDestCopy.size(); i++) {
+		szDest[i]=szDestCopy[i];
+	}
+	szDest[i]='\0';
 	return( 0 );
 	
 }

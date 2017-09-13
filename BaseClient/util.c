@@ -4,8 +4,12 @@
 	#include "ctype.h"
 	#include "string.h"
 #endif
+#include "iostream"
 #include "stdio.h"
 #include "util.h"
+#include "string"
+
+using namespace std;
 
 static const char EQUALS[] = "=";
 #define NULL_STRING	(char *) 0;
@@ -46,7 +50,9 @@ static void trim( char **pszString )
 		++(*pszString);
 	}
 
-	nIndex = strlen( *pszString ) - 1;
+	string pszStringCopy(*pszString);
+
+	nIndex = pszStringCopy.size() - 1;
 	while (nIndex >= 0 && isspace( (*pszString)[nIndex] ))
 	{
 		(*pszString)[nIndex] = '\0';
@@ -67,7 +73,8 @@ void cybs_load_config (const char *configFilename, CybsMap *map) {
 	//CybsMap *cybsConfig = cybs_create_map();
 	while (fgets( szLine, 256, f )) {
 		split( szLine, &szName, &szValue );
-		if (szValue && !strlen(szValue) == 0)
+		string szValueCopy(szValue);
+		if (szValue && !szValueCopy.size() == 0)
 		{
 			trim( &szName );
 			if (szName[0] != INI_COMMENT_CHAR) 
