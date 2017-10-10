@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include <iostream>
 #include <stdlib.h>
 #include <string.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 #include <map>
+
+using namespace std;
 
 #ifndef WIN32
 #include <time.h>
@@ -15,7 +18,6 @@
 #else
 	#include "../lib/gsoap-2.8/gsoap/plugin/threads.h"
 #endif
-
 
 extern SafeFields gSafeFields;
 
@@ -57,8 +59,8 @@ static MUTEX_TYPE mutexLock = PTHREAD_MUTEX_INITIALIZER;
 /* PROTOTYPES OF INTERNAL FUNCTIONS                                         */
 /****************************************************************************/
 
-void get_formatted_time( const char *szFormat, char *szDest );
-char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType);
+void get_formatted_time( const char *szFormat, char *szDest);
+char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType, int nDelimLen);
 static char *mask( const char *szField, const char *szValue );
 static std::wstring mask( const std::wstring szField, const std::wstring szValue );
 void read_doc( xmlNode *a_node, char *parentName, char *grandParent, SafeFields::MessageType eType);
@@ -206,7 +208,7 @@ void cybs_log_map(config config , CybsMap *cfg, const char *szType) {
 	bool isConfig = strcmp( szType, CYBS_LT_CONFIG ) == 0;
 	
 	szDelim = (isConfig) ? CONFIG_DELIM : NEWLINE;
-	char *szMapString = get_log_string (cfg, szDelim, isRequest || isReply, isRequest ? SafeFields::Request : SafeFields::Reply);
+	char *szMapString = get_log_string (cfg, szDelim, isRequest || isReply, isRequest ? SafeFields::Request : SafeFields::Reply, sizeof(szDelim));
 	cybs_log(config, szType, szMapString);
 	if (szMapString)
 	{
@@ -215,14 +217,14 @@ void cybs_log_map(config config , CybsMap *cfg, const char *szType) {
 
 }
 
-char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType) {
+char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData, SafeFields::MessageType eType, int nDelimLen) {
 	if (cfg) {
 		char *szMapString
 			= (char *) malloc(
 				/* total length of all names and values */
 				cfg->totallength +  
 				/* delimiters for each name-value pair */
-				((strlen( "=" ) + strlen( szDelim )) * cfg->length) +
+				( nDelimLen * cfg->length) +
 				/* null-terminator */
 				1 );
 		
@@ -238,30 +240,35 @@ char *get_log_string (CybsMap *cfg, const char *szDelim, bool fMaskSensitiveData
 
 void cybs_get_string(
 	CybsMap *map, char szBuffer[], const char *szDelim,
-	bool fMaskSensitiveData, SafeFields::MessageType eType, int length ) {
+	bool fMaskSensitiveData, SafeFields::MessageType eType, int length) {
 		char fPrependDelim = 0;
 		CybsTable pair;
 		szBuffer[0] = '\0';
+	string szBufferCopy = szBuffer;
 		int i;
 
 		for (i = 0; i < length; i++) {
 			if (fPrependDelim) {
-				strcat( szBuffer, szDelim );
+				szBufferCopy.append(szDelim);
 			}
 			pair = map->pairs[i];
 			fPrependDelim = 1;
-			strcat( szBuffer, (char *)pair.key );
-			strcat( szBuffer, "=" );
+			szBufferCopy.append((char*)pair.key);
+			szBufferCopy.append("=");
 
 			if (fMaskSensitiveData &&
 			    !gSafeFields.IsSafe( eType, (char *)pair.key ))
 			{
 				char *szMasked = mask((char*)pair.key, (char *)pair.value );
-				strcat( szBuffer, szMasked );
+				szBufferCopy.append(szMasked);
 				free( szMasked );
 			} else {
-				strcat( szBuffer, (char *)pair.value );
+				szBufferCopy.append((char*)pair.value);
 			}
+		}
+
+		for(i = 0; i < szBufferCopy.size(); i++) {
+			szBuffer[i]=szBufferCopy[i];
 		}
 }
 
@@ -335,11 +342,16 @@ void read_doc (xmlNode *a_node, char *parentName, char *grandParent, SafeFields:
 				char *tempParentName = 0, *tempGrandPrnt = 0;
 				if (grandParent != NULL && strcmp(grandParent, "RequestMessage") != 0 && strcmp(grandParent, "ReplyMessage") != 0 ) {
 					//tempGrandPrnt = cybs_strdup(grandParent);
-					tempGrandPrnt = (char*) malloc(strlen(grandParent) +2 + strlen(parentName));
+					string grandParentCopy(grandParent);
+					string parentNameCopy(parentName);
+					tempGrandPrnt = (char*) malloc(grandParentCopy.size() +2 + parentNameCopy.size());
 
-					memcpy(tempGrandPrnt, grandParent, strlen(grandParent));
-					memcpy(tempGrandPrnt+strlen(grandParent), "_", 2);
-					tempParentName = cybs_strdup(strcat(tempGrandPrnt,parentName));
+					memcpy(tempGrandPrnt, grandParent, grandParentCopy.size());
+					memcpy(tempGrandPrnt+grandParentCopy.size(), "_", 2);
+					string tempGrandPrntCopy(tempGrandPrnt);
+					tempGrandPrntCopy.append(parentName);
+					tempGrandPrntCopy[tempGrandPrntCopy.size()]='\0';
+					tempParentName = cybs_strdup(tempGrandPrntCopy.c_str());
 				} else {
 					tempParentName = cybs_strdup(parentName);
 				}
@@ -347,7 +359,9 @@ void read_doc (xmlNode *a_node, char *parentName, char *grandParent, SafeFields:
 					//printf("not safe %s %s \n", tempParentName, cur_node->content);
 					char *szMasked = mask( tempParentName, (const char *)cur_node->content );
 					//printf("After Mask %s: \n", szMasked);
-					strcpy((char *)cur_node->content, szMasked);
+					string szMaskedCopy(szMasked);
+					szMaskedCopy.copy((char *)cur_node->content, szMaskedCopy.size(), 0);
+					((char *)cur_node->content)[szMaskedCopy.size()]='\0';
 					//cur_node->content = (xmlChar *)szMasked;
 					free(szMasked);
 					//printf("Changed content %s: \n", cur_node->content);
@@ -364,7 +378,8 @@ static const char MASK_CHAR = 'x';
 static const char TRACK_DATA[] = "trackData";
 void cybs_mask_in_place( const char *szField, char *szValue )
 {
-        size_t nLen = szValue != NULL ? strlen( szValue ) : 0;
+	string szValueCopy(szValue);
+	size_t nLen = szValue != NULL ? szValueCopy.size() : 0;
 	if (nLen == 0) return;
 
 	if (strstr( szField, TRACK_DATA ) != NULL ||
@@ -420,15 +435,16 @@ void cybs_mask_in_place( const std::wstring szField, std::wstring &szValue )
 
 char *cybs_strdup( const char * szStringToDup )
 {
+	string szStringToDupCopy(szStringToDup);
 	char *szDup
-		= (char *) malloc( strlen( szStringToDup ) + sizeof( char ) );
+		  = (char *) malloc( szStringToDupCopy.size() + sizeof( char ) );
 
 	if (szDup)
 	{
-		strcpy( szDup, szStringToDup );
+		szStringToDupCopy.copy(szDup, szStringToDupCopy.size(), 0);
+		szDup[szStringToDupCopy.size()]='\0';
 		return( szDup );
 	}
-
 	return( 0 );
 }
 

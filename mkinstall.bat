@@ -5,7 +5,7 @@ rem This is the packaging batch file for Windows.
 rem For Linux, run "make" in the client subdirectory.
 rem *************************************************
 set platform=%1
-set CLIENT_LIBRARY_VERSION_VALUE=6.0.1
+set CLIENT_LIBRARY_VERSION_VALUE=6.0.2
 
 set BUILD_DIR=builds
 if "%platform%"=="win32" (
