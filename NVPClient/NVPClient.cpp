@@ -245,11 +245,14 @@ std::map <std::wstring, std::wstring> convertStringtoMap (wchar_t *res) {
 	wchar_t *token;
 	wchar_t *buf;
 
+	/*
 	#ifdef WIN32
 		temp1 = wcstok(res1, L"\n");
 	#else
 		temp1 = wcstok(res1, L"\n", &buf);
 	#endif
+	*/
+	temp1 = wcstok(res1, L"\n", &buf);
 
 	while(temp1 != NULL) 
 	{	
@@ -259,11 +262,14 @@ std::map <std::wstring, std::wstring> convertStringtoMap (wchar_t *res) {
 		std::wstring temp2(token+1);
 		resmap.insert(std::pair<std::wstring, std::wstring>(ws,temp2));
 
+		/*
 		#ifdef WIN32
 			temp1 = wcstok(NULL, L"\n");
 		#else
 			temp1 = wcstok(NULL, L"\n", &buf);
 		#endif
+		*/
+		temp1 = wcstok(NULL, L"\n", &buf);
 	}
 	return resmap;
 }
