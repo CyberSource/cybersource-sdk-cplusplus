@@ -660,10 +660,10 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	char *responseMsg = "\0";
 	responseMsg = proxy->soap->msgbuf;
 
-	wstring repCopy(rep);
+	//wstring repCopy(rep);
 	
 	if (status == SOAP_OK) {
-		if(rep != NULL && repCopy.size() > 0)
+		//if(rep != NULL && repCopy.size() > 0)
 		resMap = convertStringtoMap(rep);
 		
 		if (cfg.isLogEnabled)
