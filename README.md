@@ -75,6 +75,10 @@ Go to \samples\nvp in command prompt and run NVPTest.exe
 
 For running the sample follow "Running the Samples" section.
 
+NOTE:To run NVPTest samples,Please provide a test account number instead of masked account number"xxxxx" in NVPTest.cpp file else transaction fails.
+
+
+
 ##Generating stub code for different wsdl version:
 1. Go to /stub_generator.
 2. copy the wsdl for particular version from "https://ics2wsa.ic3.com/commerce/1.x/transactionProcessor/" to NVP or XML.
