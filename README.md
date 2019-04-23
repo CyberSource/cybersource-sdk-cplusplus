@@ -1,6 +1,6 @@
 # cybersource-sdk-cplusplus
 
-[![Build Status](https://travis-ci.org/CyberSource/cybersource-sdk-cplusplus.svg?branch=master)]
+[![Build Status](https://travis-ci.org/CyberSource/cybersource-sdk-cplusplus.svg?branch=future)]
 (https://travis-ci.org/CyberSource/cybersource-sdk-cplusplus)
 
 CyberSource C++ SDK
@@ -74,6 +74,10 @@ Go to \samples\xml in command prompt and run XMLTest.exe.
 Go to \samples\nvp in command prompt and run NVPTest.exe
 
 For running the sample follow "Running the Samples" section.
+
+NOTE:To run NVPTest samples,Please provide a test account number instead of masked account number"xxxxx" in NVPTest.cpp file else transaction fails.
+
+
 
 ##Generating stub code for different wsdl version:
 1. Go to /stub_generator.
