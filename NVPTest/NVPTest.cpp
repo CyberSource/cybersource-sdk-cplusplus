@@ -111,7 +111,7 @@ std::wstring runAuth(CybsMap *cfgMap) {
 	request[L"shipTo_city"] = L"CA";
 	request[L"shipTo_postalCode"] = L"94401";
 	request[L"shipTo_country"] = L"US";
-	request[L"card_accountNumber"] = L"4111111111111111";
+	request[L"card_accountNumber"] = L"xxxxxxxxxxxxxxxx";
 	request[L"card_expirationMonth"] = L"12";
 	request[L"card_expirationYear"] = L"2020";
 	request[L"purchaseTotals_currency"] = L"USD";
