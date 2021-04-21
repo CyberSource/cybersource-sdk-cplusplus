@@ -113,7 +113,7 @@ std::wstring runAuth(CybsMap *cfgMap) {
 	request[L"shipTo_country"] = L"US";
 	request[L"card_accountNumber"] = L"xxxxxxxxxxxxxxxx";
 	request[L"card_expirationMonth"] = L"12";
-	request[L"card_expirationYear"] = L"2020";
+	request[L"card_expirationYear"] = L"2021";
 	request[L"purchaseTotals_currency"] = L"USD";
 	request[L"item_0_unitPrice"] = L"12.34";
 	request[L"ccAuthService_run"] = L"true";
