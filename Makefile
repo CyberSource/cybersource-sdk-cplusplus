@@ -1,4 +1,4 @@
-API_VERSION    = 6.0.3
+API_VERSION    = 6.0.4
 PROD_NAME      = simapi-c
 ZIP_NAME       = $(PROD_NAME)-linux
 DIST_BASE      = builds
