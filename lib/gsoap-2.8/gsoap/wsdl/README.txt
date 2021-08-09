@@ -142,44 +142,65 @@ COMMAND LINE OPTIONS
 -a      generate indexed struct names for local elements with anonymous types
 -b	bi-directional operations to serve one-way response messages (duplex)
 -c      generate C source code
+-c++    generate C++ source code (default)
+-c++11  generate C++11 source code
+-D      make attribute members with default/fixed values optional with pointers
 -d      use DOM to populate xs:any and xsd:anyType elements
 -e      don't qualify enum names
--f      generate flat C++ class hierarchy
--g      generate global top-level element declarations
--h      display help info
--Ipath  use path to find files
+-F      add transient members to structs to simulate struct-type derivation in C
+-f      generate flat C++ class hierarchy by removing inheritance
+-g      generate global top-level element and attribute declarations
+-h      display help info and exit
+-Ipath  use path to locate WSDL and XSD files
 -i      don't import (advanced option)
 -j	don't generate SOAP_ENV__Header and SOAP_ENV__Detail definitions
 -k	don't generate SOAP_ENV__Header mustUnderstand qualifiers
--l      include license information in output
--m      use xsd.h module to import primitive types
+-L      generate less documentation by removing generic @note comments
+-l      display license information
 -M      suppress error "must understand element with wsdl:required='true'"
+-m      use xsd.h module to import primitive types
 -Nname  use name for service prefixes to produce a service for each binding
 -nname  use name as the base namespace prefix instead of 'ns'
+-O1     optimize by omitting duplicate choice/sequence members
+-O2     optimize -O1 and omit unused schema types (unreachable from roots)
+-O3     optimize -O2 and omit unused schema root attributes
+-O4     optimize -O3 and omit unused schema root elements (use only with WSDLs)
+-Ow2    optimize -O2 while retaining all derived types of used base types
+-Ow3    optimize -O3 while retaining all derived types of used base types
+-Ow4    optimize -O4 while retaining all derived types of used base types
 -ofile  output to file
 -P      don't create polymorphic types with C++ inheritance from xsd__anyType
 -p      create polymorphic types with C++ inheritance from base xsd__anyType
+-Q      make xsd__anySimpleType equal to xsd__anyType to use as the base type
 -qname  use name for the C++ namespace for all service declarations
+-R      generate REST operations for REST bindings specified in a WSDL
 -rhost[:port[:uid:pwd]]
-        connect via proxy host, port, and proxy credentials
+        connect via proxy host, port, and proxy credentials uid and pwd
 -r:uid:pwd
-        connect with authentication credentials (digest auth requires SSL)
+        connect with authentication credentials uid and pwd
 -R      generate REST operations for REST bindings in the WSDL
+-Sname  use name instead of 'soap' for the C++ class member with soap context
 -s      don't generate STL code (no std::string and no std::vector)
 -tfile  use type map file instead of the default file typemap.dat
 -u      don't generate unions
+-V      display the current version and exit
 -v      verbose output
 -W      suppress warnings
 -w      always wrap response parameters in a response struct (<=1.1.4 behavior)
+-X      don't qualify part names to disambiguate doc/lit wrapped patterns
 -x      don't generate _XML any/anyAttribute extensibility elements
 -y      generate typedef synonyms for structs and enums
 -z1     compatibility with 2.7.6e: generate pointer-based arrays
 -z2     compatibility with 2.7.15: qualify element/attribute referenced members
 -z3     compatibility with 2.7.16 to 2.8.7: qualify element/attribute references
 -z4     compatibility up to 2.8.11: don't generate union structs in std::vector
--z5     compatibility up to 2.8.15
--z6     compatibility up to 2.8.17
--_      don't generate _USCORE (replace with UNICODE _x005f)
+-z5     compatibility up to 2.8.15: don't include minor improvements
+-z6     compatibility up to 2.8.17: don't include minor improvements
+-z7     compatibility up to 2.8.59: don't generate std::vector of class of union
+-z8     compatibility up to 2.8.74: don't gen quals for doc/lit wrapped patterns
+-z9     compatibility up to 2.8.93: always qualify element/attribute refs
+-z10    compatibility up to 2.8.96: gen quals even when defined w/o namespace
+-_      don't generate _USCORE (replace with Unicode code point _x005f)
 infile.wsdl infile.xsd http://www... list of input sources (if none use stdin)
 
 DOCUMENTATION
@@ -189,15 +210,13 @@ See soapdoc2.pdf for documentation.
 INSTALLATION
 
 Use './configure' and 'make' in the root directory, as explained in the 
-installation instructions.
+installation instructions.  This builds 'wsdl2h' with all features enabled.
 
 To build 'wsdl2h' when autoconf/automake fail, use:
 
 	make -f MakefileManual
 
-ENABLING HTTPS SSL/TLS CONNECTIVITY AND HTTP DIGEST AUTHENTICATION
-
-To build 'wsdl2h' with secure features, use:
+To build 'wsdl2h' with secure features when `./configure' and 'make' fail, use:
 
 	make -f MakefileManual secure
 
@@ -205,13 +224,19 @@ If you don't have OpenSSL installed, you cannot build an SSL-secure version of
 wsdl2h. In that case we recommend downloading the WSDL and schema files for
 processing with the non-SSL-enabled wsdl2h tool.
 
+A NOTE ON HEAP MEMORY USAGE
+
+Parts of the wsdl2h tool allocate heap memory during its execution to maintain
+critical state information during its execution.  No attempt is made to release
+this memory before the program terminates.
+
 LICENSE
 
-The gSOAP WSDL parser 'wsdl2h' and source code are released under GPL or
-a commercial license. The commercial license is available from Genivia.
+The gSOAP WSDL parser 'wsdl2h' and source code are released under GPLv2 or a
+commercial license. The commercial license is available from Genivia.
 Please visit http://genivia.com/Products/gsoap/contract.html
 
 COPYRIGHT NOTICE
 
 gSOAP XML Web services tools
-Copyright (C) 2000-2013, Robert van Engelen, Genivia, Inc. All Rights Reserved.
+Copyright (C) 2000-2017, Robert van Engelen, Genivia, Inc. All Rights Reserved.

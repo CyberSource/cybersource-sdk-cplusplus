@@ -9,7 +9,7 @@ Use soapcpp2 option -Ipath:path:... to specify the path(s) for #import
 gSOAP XML Web services tools
 Copyright (C) 2000-2005, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -49,4 +49,5 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 --------------------------------------------------------------------------------
 */
 
-//gsoap xlink schema import: http://www.w3.org/1999/xlink
+//gsoap xlink schema namespace: http://www.w3.org/1999/xlink
+//gsoap xlink schema form:      unqualified

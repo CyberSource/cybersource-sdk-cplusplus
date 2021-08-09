@@ -2,7 +2,7 @@
 
 Summary: Generator Tools for Coding SOAP/XML Web Services in C and C++
 Name: gsoap-commercial
-Version: 2.8.17
+Version: 2.8.116
 Release: fxs.46.2.%{?dist}
 # Bump the soversion when the new version is not backward compatible
 %global soversion 2

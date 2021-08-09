@@ -7,7 +7,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2014, Robert van Engelen, Genivia Inc. All Rights Reserved.
 This software is released under one of the following licenses:
-GPL or Genivia's license for commercial use.
+GPL.
 --------------------------------------------------------------------------------
 GPL license.
 
@@ -39,8 +39,11 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 //gsoap wsdl schema elementForm:        qualified
 //gsoap wsdl schema attributeForm:      unqualified
 
+class wsdl__definitions;                // forward declaration
+
 #import "imports.h"
 #import "schema.h"
+#import "wadl.h"
 #import "soap.h"
 #import "mime.h"
 #import "dime.h"
@@ -49,8 +52,6 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #import "wsam.h"
 #import "wsp.h"
 #import "bpel.h"
-
-class wsdl__definitions;                // forward declaration
 
 class wsdl__import
 { public:
@@ -64,6 +65,7 @@ class wsdl__import
         int                             traverse(wsdl__definitions&);
         void                            definitionsPtr(wsdl__definitions*);
         wsdl__definitions               *definitionsPtr() const;
+        void                            mark();
 };
 
 class wsdl__types : public xs__schema                           // WSDL 2.0 <types> inlined schema
@@ -73,6 +75,7 @@ class wsdl__types : public xs__schema                           // WSDL 2.0 <typ
   public:
         int                             preprocess(wsdl__definitions&);
         int                             traverse(wsdl__definitions&);
+        void                            mark();
 };
 
 class wsdl__part
@@ -82,6 +85,11 @@ class wsdl__part
         @xsd__QName                     type;
         xsd__string                     documentation;          // <wsdl:documentation>?
   private:
+        bool                            optional;               // WADL @required
+        bool                            repeating;              // WADL @repeating
+        bool                            fixed;                  // true if WADL @fixed
+        xsd__string                     default_;               // WADL @default and @fixed
+        std::vector<char*>              option;                 // WADL option/value*
         xs__element                     *elementRef;            // traverse() finds element
         xs__simpleType                  *simpleTypeRef;         // traverse() finds simpleType
         xs__complexType                 *complexTypeRef;        // traverse() finds complexType
@@ -94,6 +102,17 @@ class wsdl__part
         xs__element                     *elementPtr() const;
         xs__simpleType                  *simpleTypePtr() const;
         xs__complexType                 *complexTypePtr() const;
+        void                            set_optional(bool);
+        void                            set_fixed(bool);
+        void                            set_repeating(bool);
+        void                            set_default(char*);
+        void                            set_option(char*);
+        bool                            is_optional() const;
+        bool                            is_fixed() const;
+        bool                            is_repeating() const;
+        const char*                     get_default() const;
+        const std::vector<char*>&       options() const;
+        void                            mark();
 };
 
 class wsdl__message
@@ -105,6 +124,7 @@ class wsdl__message
         std::vector<wsdl__part>         part;                   // <wsdl:part>*
   public:
         int                             traverse(wsdl__definitions&);
+        void                            mark();
 };
 
 class wsdl__ioput
@@ -115,6 +135,7 @@ class wsdl__ioput
         @xsd__QName                     element;                // WSDL 2.0
         @xsd__anyURI                    wsa__Action;
         @xsd__anyURI                    wsam__Action;
+        @xsd__anyURI                    wsaw__Action;
         xsd__string                     documentation;          // <wsdl:documentation>?
         wsp__Policy                     *wsp__Policy_;          // <wsp:Policy>?
         wsp__PolicyReference            *wsp__PolicyReference_; // <wsp:PolicyReference>?
@@ -128,6 +149,7 @@ class wsdl__ioput
         wsdl__message                   *messagePtr() const;
         void                            elementPtr(xs__element*);
         xs__element                     *elementPtr() const;
+        void                            mark();
 };
 
 class wsdl__fault
@@ -139,6 +161,7 @@ class wsdl__fault
         @xsd__QName                     element;                // WSDL 2.0
         @xsd__anyURI                    wsa__Action;
         @xsd__anyURI                    wsam__Action;
+        @xsd__anyURI                    wsaw__Action;
         xsd__string                     documentation;          // <wsdl:documentation>?
         wsp__Policy                     *wsp__Policy_;          // <wsp:Policy>?
         wsp__PolicyReference            *wsp__PolicyReference_; // <wsp:PolicyReference>?
@@ -152,6 +175,7 @@ class wsdl__fault
         wsdl__message                   *messagePtr() const;
         void                            elementPtr(xs__element*);
         xs__element                     *elementPtr() const;
+        void                            mark();
 };
 
 class wsdl__operation
@@ -176,6 +200,7 @@ class wsdl__operation
         std::vector<wsdl__fault>        outfault;               // <wsdl:outfault>* WSDL 2.0
   public:
         int                             traverse(wsdl__definitions&);
+        void                            mark();
 };
 
 class wsdl__portType                    // ... and WSDL 2.0 interface
@@ -195,6 +220,7 @@ class wsdl__portType                    // ... and WSDL 2.0 interface
         int                             traverse(wsdl__definitions&);
         void                            definitionsPtr(wsdl__definitions*);
         wsdl__definitions               *definitionsPtr() const;
+        void                            mark();
 };      
 
 class wsdl__ext_ioput                   // binding extensibility element
@@ -216,6 +242,7 @@ class wsdl__ext_ioput                   // binding extensibility element
         std::vector<whttp__header>      whttp__header_;         // <whttp:header>* WSDL 2.0
   public:
         int                             traverse(wsdl__definitions&);
+        void                            mark();
 };
 
 class wsdl__ext_fault                   // binding extensibility element
@@ -264,6 +291,7 @@ class wsdl__ext_operation               // binding extensibility element
         int                             traverse(wsdl__definitions&, wsdl__portType*);
         void                            operationPtr(wsdl__operation*);
         wsdl__operation                 *operationPtr() const;
+        void                            mark();
 };
 
 class wsdl__binding
@@ -282,6 +310,7 @@ class wsdl__binding
         std::vector<wsp__PolicyReference> wsp__PolicyReference_;// <wsp:PolicyReference>*
         soap__binding                   *soap__binding_;        // <soap:binding>?
         http__binding                   *http__binding_;        // <http:binding>?
+        xsd__string                     *wsaw__UsingAddressing; // <wsaw:UsingAddressing wsdl:required="true">?
         std::vector<wsoap__module>      wsoap__module_;         // <wsoap:module>* WSDL 2.0
         std::vector<wsdl__ext_fault>    fault;                  // <wsdl:fault>* WSDL 2.0
         std::vector<wsdl__ext_operation> operation;             // <wsdl:operation>*
@@ -292,6 +321,7 @@ class wsdl__binding
         int                             traverse(wsdl__definitions&);
         void                            portTypePtr(wsdl__portType*);
         wsdl__portType                  *portTypePtr() const;
+        void                            mark();
 };
 
 class wsdl__port                        // ... and WSDL 2.0 endpoint
@@ -357,35 +387,45 @@ class wsdl__definitions
         bool                            updated;
         char*                           location;
         int                             redirs;
+        MapOfStringToString             builtinTypeMap;
         SetOfString                     builtinTypeSet;
         SetOfString                     builtinElementSet;
         SetOfString                     builtinAttributeSet;
+        wadl__application               *appRef;
+        bool                            used;
   public:
                                         wsdl__definitions();
                                         wsdl__definitions(struct soap*);
-                                        wsdl__definitions(struct soap*, const char*, const char*);
+                                        wsdl__definitions(struct soap*, const char*, const char*, const char*);
         virtual                         ~wsdl__definitions();
-        int                             get(struct soap*);      // gSOAP getter is triggered after parsing
+        int                             get(struct soap*);      // getter is triggered after parsing
         int                             preprocess();
         int                             traverse();
         int                             read(int, char**);
-        int                             read(const char *cwd, const char*);
+        int                             read(const char*, const char*, const char*);
         const char*                     sourceLocation();
+        char*                           absoluteLocation(const char *loc) const;
         int                             error();
         bool                            is_updated();
         void                            print_fault();
         void                            builtinType(const char*);
         void                            builtinTypes(const SetOfString&);
+        void                            builtinTypeDerivation(xs__schema&, const char*, const char*);
+        void                            builtinTypeDerivations(const MapOfStringToString&);
         void                            builtinElement(const char*);
         void                            builtinElements(const SetOfString&);
         void                            builtinAttribute(const char*);
         void                            builtinAttributes(const SetOfString&);
         const SetOfString&              builtinTypes() const;
+        const MapOfStringToString&      builtinTypeDerivations() const;
         const SetOfString&              builtinElements() const;
         const SetOfString&              builtinAttributes() const;
-        friend ostream&                 operator<<(ostream&, const wsdl__definitions&);
-        friend istream&                 operator>>(istream&, wsdl__definitions&);
+        void                            appPtr(wadl__application*);
+        wadl__application*              appPtr() const;
+        void                            mark();
+        friend std::ostream&            operator<<(std::ostream&, const wsdl__definitions&);
+        friend std::istream&            operator>>(std::istream&, wsdl__definitions&);
 };
 
-extern ostream &operator<<(ostream &o, const wsdl__definitions &e);
-extern istream &operator>>(istream &i, wsdl__definitions &e);
+extern std::ostream &operator<<(std::ostream &o, const wsdl__definitions &e);
+extern std::istream &operator>>(std::istream &i, wsdl__definitions &e);

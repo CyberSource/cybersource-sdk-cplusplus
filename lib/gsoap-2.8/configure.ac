@@ -22,6 +22,8 @@ AC_PROG_LN_S
 AC_PROG_AWK
 AC_PROG_INSTALL
 
+AC_CHECK_TOOL([AR], [ar], [:])
+
 # AC_DECL_YYTEXT
 
 SAMPLE_EXTRA_LIBS="-lm"
@@ -57,12 +59,14 @@ case "${host}" in
                         case "${host}" in
                             *-*-aix4.1*)   osver=AIX41;;
                             *-*-aix4.2*)   osver=AIX42;;
-                            *-*-aix4.3*)   osver=AIX43;;
                             *-*-aix4.*)    osver=AIX43;;
-                            *-*-aix5.2)    osver=AIX52;;
-                            *-*-aix5.3)    osver=AIX53;;
-                            *-*-aix6.1)    osver=AIX61;;
+                            *-*-aix5.1*)   osver=AIX51;;
+                            *-*-aix5.2*)   osver=AIX52;;
+                            *-*-aix5.3*)   osver=AIX53;;
+                            *-*-aix6.*)    osver=AIX61;;
+                            *-*-aix7.*)    osver=AIX71;;
                         esac
+			SAMPLE_EXTRA_LIBS="-lm"
 			;;
         *-sequent-*)    platform=PTX ;;
         *-*-hp*)        platform=HP_UX ;
@@ -84,7 +88,9 @@ case "${host}" in
 	*-nto-qnx)	platform=QNX
 			SAMPLE_EXTRA_LIBS="-lsocket -lm"
 			;;
-        *)              platform=UNKNOWN ;;
+        *)              platform=UNKNOWN
+			SAMPLE_EXTRA_LIBS="-lm"
+                        ;;
 esac
 
 AC_SUBST(SAMPLE_EXTRA_LIBS)
@@ -92,7 +98,15 @@ AC_SUBST(platform)
 
 # Checks for header files.
 AC_HEADER_STDC
-AC_CHECK_HEADERS([arpa/inet.h xlocale.h errno.h fcntl.h ctype.h limits.h float.h math.h netdb.h netinet/in.h stdlib.h string.h strings.h stdint.h inttypes.h time.h sys/inttypes.h sys/socket.h sys/types.h sys/time.h sys/timeb.h unistd.h poll.h openssl/ssl.h gnutls/gnutls.h zlib.h])
+AC_CHECK_HEADERS([arpa/inet.h locale.h xlocale.h errno.h fcntl.h ctype.h limits.h float.h math.h netdb.h netinet/in.h stdlib.h string.h strings.h stdint.h inttypes.h time.h sys/inttypes.h sys/socket.h sys/types.h sys/time.h sys/timeb.h unistd.h poll.h openssl/ssl.h gnutls/gnutls.h zlib.h])
+
+
+AC_CHECK_TYPES([socklen_t],,,
+[
+#if HAVE_SYS_SOCKET_H
+# include <sys/socket.h>
+#endif
+])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
@@ -109,7 +123,7 @@ AC_CHECK_MEMBERS([struct tm.tm_gmtoff, struct tm.__tm_gmtoff],,,
 AC_FUNC_MKTIME
 AC_TYPE_SIGNAL
 AC_FUNC_STRFTIME
-AC_CHECK_FUNCS([random gettimeofday ftime localtime_r timegm gmtime gmtime_r memset select socket snprintf strchr strerror strerror_r strlcpy strrchr strstr strtol strtoul strtoll strtoull strtold strtod strtof strtold_l strtod_l strtof_l sscanf sscanf_l snprintf sprintf_l wctomb mbtowc poll])
+AC_CHECK_FUNCS([random gettimeofday ftime localtime_r timegm gmtime gmtime_r asctime asctime_r memset select socket snprintf strchr strerror strerror_r strlcpy strlcat strrchr strstr strtol strtoul strtoll strtoull strtold strtod strtof strtold_l strtod_l strtof_l sscanf sscanf_l snprintf sprintf_l poll newlocale uselocale freelocale])
 
 # Checks for isnan and isinf
 AC_CHECK_FUNC(isnan, [has_isnan=1; AC_DEFINE(HAVE_ISNAN, 1, isnan)], has_isnan=0)
@@ -177,7 +191,7 @@ AC_SUBST(WSDL2H_IMPORTPATH)
 AC_ARG_ENABLE(namespaces,
               [AC_HELP_STRING([--disable-namespaces],
                               [compile library without namespaces])],
-              [with_namespaces="$enable_ns"],
+              [with_namespaces="$enable_namespaces"],
               [with_namespaces="yes"])
 
 AC_MSG_CHECKING(for disable namespaces in library)
@@ -188,6 +202,40 @@ else
   SOAPCPP2_NONAMESPACES="-DWITH_NONAMESPACES" ##define to remove nsmap link dependence
 fi
 AC_SUBST(SOAPCPP2_NONAMESPACES)
+
+# the enable-xlocale option adds the -DWITH_INCLUDE_XLOCALE_H to the
+# library compilation thus forcing the inclusion of xlocale.h
+AC_ARG_ENABLE(xlocale,
+              [AC_HELP_STRING([--enable-xlocale],
+                              [compile library with forced inclusion of xlocale.h])],
+              [with_xlocale="$enable_xlocale"],
+              [with_xlocale="no"])
+
+AC_MSG_CHECKING(for enable xlocale usage in library)
+if test "x$with_xlocale" = "xyes"; then
+  AC_MSG_RESULT(yes)
+  SOAPCPP2_INCLUDE_XLOCALE="-DWITH_INCLUDE_XLOCALE_H"
+else
+  AC_MSG_RESULT(no)
+fi
+AC_SUBST(SOAPCPP2_INCLUDE_XLOCALE)
+
+# the disable-c-locale option adds the -DWITH_NO_C_LOCALE to the
+# library compilation thus disabling the use of the C locale usage
+AC_ARG_ENABLE(c-locale,
+              [AC_HELP_STRING([--disable-c-locale],
+                              [compile library without c locale usage])],
+              [with_no_c_locale="$enable_c_locale"],
+              [with_no_c_locale="yes"])
+
+AC_MSG_CHECKING(for disable c locale usage in library)
+if test "x$with_no_c_locale" = "xyes"; then
+  AC_MSG_RESULT(no)
+else
+  AC_MSG_RESULT(yes)
+  SOAPCPP2_NO_C_LOCALE="-DWITH_NO_C_LOCALE"
+fi
+AC_SUBST(SOAPCPP2_NO_C_LOCALE)
 
 # the enable-ipv6 option adds the -DWITH_IPV6 to the
 # library compilation thus enabling IPv6
@@ -200,11 +248,34 @@ AC_ARG_ENABLE(ipv6,
 AC_MSG_CHECKING(for enable ipv6 in library)
 if test "x$with_ipv6" = "xyes"; then
   AC_MSG_RESULT(yes)
-  SOAPCPP2_IPV6="-DWITH_IPV6 -DWITH_NO_IPV6_V6ONLY" ##define to add IPv6 support
+  SOAPCPP2_IPV6="-DWITH_IPV6" ##define to add IPv6 support
 else
   AC_MSG_RESULT(no)
 fi
 AC_SUBST(SOAPCPP2_IPV6)
+
+# the enable-ipv6-v6only option adds the -DWITH_IPV6_V6ONLY to the
+# library compilation thus enabling IPv6 without remapping IPv4 to IPv6
+AC_ARG_ENABLE(ipv6-v6only,
+              [AC_HELP_STRING([--enable-ipv6-v6only],
+                              [compile library with IPv6-v6only support])],
+              [with_ipv6_v6only="$enable_ipv6_v6only"],
+              [with_ipv6_v6only="no"])
+
+AC_MSG_CHECKING(for enable ipv6-v6only in library)
+if test "x$with_ipv6_v6only" = "xyes"; then
+  AC_MSG_RESULT(yes)
+  SOAPCPP2_IPV6_V6ONLY="-DWITH_IPV6_V6ONLY"
+else
+  AC_MSG_RESULT(no)
+fi
+AC_SUBST(SOAPCPP2_IPV6_V6ONLY)
+
+# the zlib installation prefix path
+AC_ARG_WITH([zlib],
+            AS_HELP_STRING([--with-zlib=DIR],
+                           [zlib installation prefix]),
+            [ZLIB=$withval],)
 
 # the OpenSSL installation prefix path
 AC_ARG_WITH([openssl],
@@ -215,8 +286,8 @@ AC_ARG_WITH([openssl],
 # the disable-ssl option removes the dependence on OpenSSL
 AC_ARG_ENABLE(ssl,
               [AC_HELP_STRING([--disable-ssl],
-                              [build without SSL/TLS])],
-              [with_openssl="$enable_openssl"],
+                              [build without SSL/TLS -- note: the wsse and wst examples will fail to build])],
+              [with_openssl="$enable_ssl"],
               [with_openssl="yes"])
 
 # the enable-gnutls option enables GNUTLS in favor of OpenSSL
@@ -240,12 +311,17 @@ if test "x$with_openssl" = "xyes"; then
   else
     AC_MSG_RESULT(no)
     WSDL2H_EXTRA_FLAGS="-DWITH_OPENSSL -DWITH_GZIP"
-    # an ugly hack to get httpda and smdevp plugins to conditionally
     # compile with wsdl2h when OPENSSL is available
-    WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} ../plugin/httpda.c ../plugin/smdevp.c ../plugin/threads.c -lssl -lcrypto -lz"
+    WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} -lssl -lcrypto -lz"
     SAMPLE_INCLUDES=
     SAMPLE_SSL_LIBS="-lssl -lcrypto -lz"
     WSDL2H_SOAP_CPP_LIB="libgsoapssl++.a"
+  fi
+  if test -n "$ZLIB"; then
+    WSDL2H_EXTRA_FLAGS="-I${ZLIB}/include ${WSDL2H_EXTRA_FLAGS}"
+    WSDL2H_EXTRA_LIBS="-L${ZLIB}/lib ${WSDL2H_EXTRA_LIBS}"
+    SAMPLE_INCLUDES="-I${ZLIB}/include ${SAMPLE_SSL_LIBS}"
+    SAMPLE_SSL_LIBS="-L${ZLIB}/lib ${SAMPLE_SSL_LIBS}"
   fi
   if test -n "$OPENSSL"; then
     WSDL2H_EXTRA_FLAGS="-I${OPENSSL}/include ${WSDL2H_EXTRA_FLAGS}"
@@ -260,6 +336,7 @@ else
   SAMPLE_INCLUDES=
   WSDL2H_SOAP_CPP_LIB="libgsoap++.a"
 fi
+AM_CONDITIONAL([WITH_OPENSSL], [test "x$with_openssl" = "xyes" -a "x$with_gnutls" != "xyes"])
 AC_SUBST(WSDL2H_EXTRA_FLAGS)
 AC_SUBST(WSDL2H_EXTRA_LIBS)
 AC_SUBST(SAMPLE_INCLUDES)
@@ -340,6 +417,7 @@ AC_CONFIG_FILES([ Makefile \
     gsoap/samples/primes/Makefile \
     gsoap/samples/roll/Makefile \
     gsoap/samples/router/Makefile \
+    gsoap/samples/atom/Makefile \
     gsoap/samples/rss/Makefile \
     gsoap/samples/ssl/Makefile \
     gsoap/samples/template/Makefile \
@@ -348,7 +426,10 @@ AC_CONFIG_FILES([ Makefile \
     gsoap/samples/wsa/Makefile \
     gsoap/samples/wsrm/Makefile \
     gsoap/samples/wsse/Makefile \
-    gsoap/samples/xml-rpc-json/Makefile
-    gsoap/samples/rest/Makefile
+    gsoap/samples/wst/Makefile \
+    gsoap/samples/xml-rpc-json/Makefile \
+    gsoap/samples/rest/Makefile \
+    gsoap/samples/testmsgr/Makefile \
+    gsoap/samples/async/Makefile
 ])
 AC_OUTPUT

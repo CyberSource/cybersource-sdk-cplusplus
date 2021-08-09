@@ -8,7 +8,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under ONE of the following licenses:
-GPL, the gSOAP public license, OR Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -76,11 +76,11 @@ compiling, linking, and/or using OpenSSL is allowed.
         To get query string key-value pairs within a service routine, use:
 
         char *s;
-        s = query(soap);
+        s = soap_query(soap);
         while (s)
         {
-          char *key = query(soap, &s);
-          char *val = query(soap, &s);
+          char *key = soap_query_key(soap, &s);
+          char *val = soap_query_val(soap, &s);
           ...
         }
 
@@ -93,51 +93,38 @@ compiling, linking, and/or using OpenSSL is allowed.
 
         Usage (client side):
 
-        For SOAP calls, declare a one-way response message in the header file,
-        for example:
-        int ns__methodResponse(... params ..., void);
-        The params will hold the return values returned by the server's SOAP
-        response message.
+	For SOAP GET method calls, declare the service method with protocol GET:
 
-        Client code:
+	//gsoap ns service method-protocol: someMethod GET
+        int ns__someMethod(... in-params ..., struct ns__someMethodResponse { ... out-params ... } *);
 
-        struct soap soap;
-        soap_init(&soap);
-        soap_register_plugin(&soap, http_get); // register plugin
-        ...
-        if (soap_get_connect(&soap, endpoint, action))
-          ... connect error ...
-        else if (soap_recv_ns__methodResponse(&soap, ... params ...))
-          ... error ...
-        else
-          ... ok ...
-        soap_destroy(&soap);
-        soap_end(&soap);
-        soap_done(&soap);
+	and to make the call in your code:
 
-        Note that the endpoint URL may contain a query string with key-value
-        pairs to pass to the server, e.g.: http://domain/path?key=val&key=val
+	struct ns__someMethodResponse res;
+	soap_call_ns__someMethod(soap, "endpoint", "action", ... in-params ...., &res)
+
+        Client code for non-SOAP REST GET:
 
         To use general HTTP GET, for example to retrieve an HTML document, use:
 
         struct soap soap;
         char *buf = NULL;
-        size_t len;
+        size_t len = 0;
         soap_init(&soap);
-        soap_register_plugin(&soap, http_get); // register plugin
-        if (soap_get_connect(&soap, endpoint, action)
+        if (soap_GET(&soap, endpoint, action)
          || soap_begin_recv(&soap))
           ... connect/recv error ...
         else
-          buf = soap_get_http_body(&soap, &len);
+          buf = soap_http_get_body(&soap, &len);
         soap_end_recv(&soap);
         ... process data in buf[0..len-1]
         soap_destroy(&soap);
         soap_end(&soap);
         soap_done(&soap);
 
-        The soap_get_http_body() function above moves HTTP body content into a
-        buffer.
+        The soap_http_get_body() function above returns the HTTP body content
+        as a string.
+        
 */
 
 #include "httpget.h"
@@ -146,24 +133,26 @@ compiling, linking, and/or using OpenSSL is allowed.
 extern "C" {
 #endif
 
-const char http_get_id[13] = HTTP_GET_ID;
+const char http_get_id[] = HTTP_GET_ID;
 
 static int http_get_init(struct soap *soap, struct http_get_data *data, int (*handler)(struct soap*));
 static void http_get_delete(struct soap *soap, struct soap_plugin *p);
 static int http_get_parse(struct soap *soap);
+static int http_get_handler(struct soap *soap);
 
 int http_get(struct soap *soap, struct soap_plugin *p, void *arg)
 {
   p->id = http_get_id;
-  p->data = (void*)malloc(sizeof(struct http_get_data));
+  p->data = (void*)SOAP_MALLOC(soap, sizeof(struct http_get_data));
   /* p->fcopy = http_get_copy; obsolete, see note with http_get_copy() */
   p->fdelete = http_get_delete;
-  if (p->data)
-    if (http_get_init(soap, (struct http_get_data*)p->data, (int (*)(struct soap*))arg))
-    {
-      free(p->data); /* error: could not init */
-      return SOAP_EOM; /* return error */
-    }
+  if (!p->data)
+    return SOAP_EOM;
+  if (http_get_init(soap, (struct http_get_data*)p->data, (int (*)(struct soap*))arg))
+  {
+    SOAP_FREE(soap, p->data); /* error: could not init */
+    return SOAP_EOM; /* return error */
+  }
   return SOAP_OK;
 }
 
@@ -174,10 +163,11 @@ static int http_get_init(struct soap *soap, struct http_get_data *data, int (*ha
   data->stat_get = 0;
   data->stat_post = 0;
   data->stat_fail = 0;
-  memset((void*)data->min, 0, sizeof(data->min));
-  memset((void*)data->hour, 0, sizeof(data->hour));
-  memset((void*)data->day, 0, sizeof(data->day));
+  memset((void*)data->hist_min, 0, sizeof(data->hist_min));
+  memset((void*)data->hist_hour, 0, sizeof(data->hist_hour));
+  memset((void*)data->hist_day, 0, sizeof(data->hist_day));
   soap->fparse = http_get_parse; /* replace HTTP header parser callback with ours */
+  soap->fget = http_get_handler; /* replace HTTP GET callback with ours */
   return SOAP_OK;
 }
 
@@ -192,14 +182,17 @@ static int http_get_copy(struct soap *soap, struct soap_plugin *dst, struct soap
 static void http_get_delete(struct soap *soap, struct soap_plugin *p)
 {
   (void)soap;
-  free(p->data); /* free allocated plugin data (this function is not called for shared plugin data, but only when the final soap_done() is invoked on the original soap struct) */
+  SOAP_FREE(soap, p->data); /* free allocated plugin data (this function is not called for shared plugin data, but only when the final soap_done() is invoked on the original soap struct) */
 }
 
 static int http_get_parse(struct soap *soap)
 {
 #ifndef WITH_LEAN
   time_t t;
-  struct tm T, *pT;
+#ifdef HAVE_LOCALTIME_R
+  struct tm T;
+#endif
+  struct tm *pT;
 #endif
   struct http_get_data *data = (struct http_get_data*)soap_lookup_plugin(soap, http_get_id);
   if (!data)
@@ -212,151 +205,71 @@ static int http_get_parse(struct soap *soap)
   pT = localtime(&t);
 #endif
   /* updates should be in mutex, but we don't mind some inaccuracy in the count to preserve performance */
-  data->day[pT->tm_yday]++;
-  data->day[(pT->tm_yday + 1) % 365] = 0;
-  data->hour[pT->tm_hour]++;
-  data->hour[(pT->tm_hour + 1) % 24] = 0;
-  data->min[pT->tm_min]++;
-  data->min[(pT->tm_min + 1) % 60] = 0;
+  data->hist_day[pT->tm_yday]++;
+  data->hist_day[(pT->tm_yday + 1) % 365] = 0;
+  data->hist_hour[pT->tm_hour]++;
+  data->hist_hour[(pT->tm_hour + 1) % 24] = 0;
+  data->hist_min[pT->tm_min]++;
+  data->hist_min[(pT->tm_min + 1) % 60] = 0;
 #endif
   soap->error = data->fparse(soap); /* parse HTTP header */
-  if (soap->error == SOAP_OK)
+  if (!soap->error)
   {
-    /* update should be in mutex, but we don't mind some inaccuracy in the count */
-    data->stat_post++;
-  }
-  else if (soap->error == SOAP_GET_METHOD && data->fget)
-  {
-    soap->error = SOAP_OK;
-    soap->error = data->fget(soap); /* call user-defined HTTP GET handler */
-    if (soap->error)
-    {
-      /* update should be in mutex, but we don't mind some inaccuracy in the count */
-      data->stat_fail++;
-      return soap->error;
-    }
-    /* update should be in mutex, but we don't mind some inaccuracy in the count */
-    data->stat_get++;
-    return SOAP_STOP; /* stop processing the request and do not return SOAP Fault */
+    if (soap->status == SOAP_POST)
+      data->stat_post++; /* update should be in mutex, but we don't mind some inaccuracy in the count */
   }
   else
   {
-    /* update should be in mutex, but we don't mind some inaccuracy in the count */
-    data->stat_fail++;
+    data->stat_fail++; /* update should be in mutex, but we don't mind some inaccuracy in the count */
   }
   return soap->error;
 }
 
 /******************************************************************************/
 
-int soap_get_connect(struct soap *soap, const char *endpoint, const char *action)
+static int http_get_handler(struct soap *soap)
 {
-  return soap_connect_command(soap, SOAP_GET, endpoint, action);
-}
-
-char *query(struct soap *soap)
-{
-  return strchr(soap->path, '?');
-}
-
-char *query_key(struct soap *soap, char **s)
-{
-  char *t = *s;
-  (void)soap;
-  if (t && *t)
+  struct http_get_data *data = (struct http_get_data*)soap_lookup_plugin(soap, http_get_id);
+  if (!data)
+    return SOAP_PLUGIN_ERROR;
+  soap->error = data->fget(soap); /* call user-defined HTTP GET handler */
+  if (soap->error)
   {
-    *s = (char*)soap_decode_string(t, strlen(t), t + 1);
-    return t;
+    /* update should be in mutex, but we don't mind some inaccuracy in the count */
+    data->stat_fail++;
+    return soap->error;
   }
-  return *s = NULL;
-}
-
-char *query_val(struct soap *soap, char **s)
-{
-  char *t = *s;
-  (void)soap;
-  if (t && *t == '=')
-  {
-    *s = (char*)soap_decode_string(t, strlen(t), t + 1);
-    return t;
-  }
-  return NULL;
-}
-
-int soap_encode_string(const char *s, char *t, size_t len)
-{
-  int c;
-  size_t n = len;
-  while ((c = *s++) && n-- > 1)
-  {
-    if (c == ' ') 
-      *t++ = '+';
-    else if (c == '!'
-          || c == '$'
-          || (c >= '(' && c <= '.')
-          || (c >= '0' && c <= '9')
-          || (c >= 'A' && c <= 'Z')
-          || c == '_'
-          || (c >= 'a' && c <= 'z'))
-      *t++ = (char)c;
-    else if (n > 2)
-    {
-      *t++ = '%';
-      *t++ = (char)((c >> 4) + (c > 159 ? '7' : '0'));
-      c &= 0xF;
-      *t++ = (char)(c + (c > 9 ? '7' : '0'));
-      n -= 2;
-    }
-    else
-      break;
-  }
-  *t = '\0';
-  return len - n;
-}
-
-const char* soap_decode_string(char *buf, size_t len, const char *val)
-{
-  const char *s;
-  char *t;
-  for (s = val; *s; s++)
-    if (*s != ' ' && *s != '=')
-      break;
-  if (*s == '"')
-  {
-    t = buf;
-    s++;
-    while (*s && *s != '"' && --len)
-      *t++ = *s++;
-    *t = '\0';
-    do s++;
-    while (*s && *s != '&' && *s != '=');
-  }
-  else
-  {
-    t = buf;
-    while (*s && *s != '&' && *s != '=' && --len)
-    {
-      switch (*s)
-      {
-        case '+':
-          *t++ = ' ';
-        case ' ':
-          s++;
-          break;
-        case '%':
-          *t++ = ((s[1] >= 'A' ? (s[1]&0x7) + 9 : s[1] - '0') << 4) + (s[2] >= 'A' ? (s[2]&0x7) + 9 : s[2] - '0');
-          s += 3;
-          break;
-        default:
-          *t++ = *s++;
-      }
-    }
-    *t = '\0';
-  }
-  return s;
+  /* update should be in mutex, but we don't mind some inaccuracy in the count */
+  data->stat_get++;
+  return SOAP_OK;
 }
 
 /******************************************************************************/
+
+void soap_http_get_stats(struct soap *soap, size_t *stat_get, size_t *stat_post, size_t *stat_fail, size_t **hist_min, size_t **hist_hour, size_t **hist_day)
+{
+  struct http_get_data *data = (struct http_get_data*)soap_lookup_plugin(soap, http_get_id);
+  if (!data)
+    return;
+  if (stat_get)
+    *stat_get = data->stat_get;
+  if (stat_post)
+    *stat_post = data->stat_post;
+  if (stat_fail)
+    *stat_fail = data->stat_fail;
+  if (hist_min)
+    *hist_min = data->hist_min;
+  if (hist_hour)
+    *hist_hour = data->hist_hour;
+  if (hist_day)
+    *hist_day = data->hist_day;
+}
+
+/* deprecated: use soap_GET instead */
+int soap_http_get_connect(struct soap *soap, const char *endpoint, const char *action)
+{
+  return soap_GET(soap, endpoint, action);
+}
 
 #ifdef __cplusplus
 }

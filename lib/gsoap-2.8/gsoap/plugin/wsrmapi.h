@@ -8,7 +8,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2013, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -51,7 +51,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #ifndef WSRMAPI_H
 #define WSRMAPI_H
 
-#include "wsaapi.h"	/* also includes stdsoap2.h, soapH.h */
+#include "wsaapi.h"     /* also includes soapH.h, see wsaapi.h if you are using a different fileH.h */
 #include "threads.h"	/* mutex for sequence database */
 
 #ifdef __cplusplus
@@ -59,7 +59,7 @@ extern "C" {
 #endif
 
 /** Plugin identification for plugin registry */
-#define SOAP_WSRM_ID "WS-RM-1.14"
+#define SOAP_WSRM_ID "WS-RM/1.14"
 
 /** Use fast O(1) message allocation/deallocation and lookup at the cost of
     storing an array of N pointers per sequence, where N = 2^k >= is the number
@@ -74,9 +74,9 @@ extern const char soap_wsrm_id[];
 # define SOAP_WSRM_MAX_RETRIES 100
 #endif
 
-/** Max seconds to expire a non-terminated sequence and reclaim its resources */
+/** Max seconds (hard limit!) expiration of sequences */
 #ifndef SOAP_WSRM_MAX_SEC_TO_EXPIRE
-# define SOAP_WSRM_MAX_SEC_TO_EXPIRE 600	/* 600 sec = 10 minutes */
+# define SOAP_WSRM_MAX_SEC_TO_EXPIRE 3600	/* 3600 sec = one hour */
 #endif
 
 /** Seconds to timeout when sending ack messages to independent acksto server */

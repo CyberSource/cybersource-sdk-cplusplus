@@ -6,7 +6,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2015, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -53,6 +53,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 
 #include <openssl/evp.h>
 #include <openssl/ssl.h>
+#include <openssl/err.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -70,7 +71,7 @@ extern "C" {
 /** Engine off */
 #define SOAP_MEC_NONE                   (0)
 
-/** Cipher type (triple DES CBC) */
+/** Cipher type (triple 3DES EDE CBC) */
 #define SOAP_MEC_DES_CBC                (0x0010)
 
 /** Cipher type (AES128 CBC) */

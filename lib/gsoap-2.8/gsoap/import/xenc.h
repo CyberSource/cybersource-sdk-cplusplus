@@ -4,8 +4,18 @@
 	Generated with:
 	wsdl2h -cuxy -o xenc.h -t WS/WS-typemap.dat WS/xenc.xsd
 
+        This file imports:
+        - ds.h
+        - c14n.h
+
 	- Removed //gsoapopt
 	- Added //gsoap xenc    schema import: http://www.w3.org/2001/04/xmlenc#
+	- Added before #import "ds.h":
+	    // Add xenc:Encrypted to ds:KeyInfoType
+	    mutable struct ds__KeyInfoType
+            {
+                struct xenc__EncryptedKeyType* xenc__EncryptedKey;
+            };
 
 */
 
@@ -23,6 +33,12 @@
  *                                                                            *
 \******************************************************************************/
 
+// Add xenc:Encrypted to ds:KeyInfoType
+mutable struct ds__KeyInfoType
+{
+	struct xenc__EncryptedKeyType*		xenc__EncryptedKey;
+};
+
 #import "ds.h"	// ds = <http://www.w3.org/2000/09/xmldsig#>
 
 /******************************************************************************\
@@ -31,6 +47,7 @@
  *                                                                            *
 \******************************************************************************/
 
+#define SOAP_NAMESPACE_OF_xenc	"http://www.w3.org/2001/04/xmlenc#"
 //gsoap xenc  schema import:	http://www.w3.org/2001/04/xmlenc#
 //gsoap xenc  schema elementForm:	qualified
 //gsoap xenc  schema attributeForm:	unqualified
@@ -158,7 +175,6 @@ struct xenc__CipherDataType
     char*                                CipherValue                   ;
 /// Element reference "http://www.w3.org/2001/04/xmlenc#":CipherReference.
     struct xenc__CipherReferenceType*    CipherReference               ;
-;
 //  END OF CHOICE
 };
 
@@ -168,7 +184,6 @@ struct xenc__CipherReferenceType
 /// CHOICE OF ELEMENTS <xs:choice>
 /// Element Transforms of type "http://www.w3.org/2001/04/xmlenc#":TransformsType.
     struct xenc__TransformsType*         Transforms                    ;
-;
 //  END OF CHOICE
 /// Attribute URI of type xs:anyURI.
    @char*                                URI                            1;	///< Required attribute.
