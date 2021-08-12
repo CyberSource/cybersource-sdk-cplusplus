@@ -1,0 +1,180 @@
+make -C BaseClient
+make[1]: Entering directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/BaseClient'
+make[1]: Nothing to be done for `dynamic'.
+make[1]: Leaving directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/BaseClient'
+make -C BaseClient static
+make[1]: Entering directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/BaseClient'
+make[1]: Nothing to be done for `static'.
+make[1]: Leaving directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/BaseClient'
+make -C NVPClient 64
+make[1]: Entering directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/NVPClient'
+g++ -c -DWITH_OPENSSL -DWITH_DOM -DLINUX -DCERTC_SW_PLATFORM=CERTC_SW_LINUX -DPTHREADS -DOPENSSL_SYS_UNIX -D_POSIX_THREADS -Wall -fPIC NVPClient.cpp soapC.cpp soapINVPTransactionProcessorProxy.cpp log.cpp safefields.cpp ../lib/gsoap-2.8/gsoap/stdsoap2.cpp ../lib/gsoap-2.8/gsoap/plugin/threads.c ../lib/gsoap-2.8/gsoap/dom.cpp ../lib/gsoap-2.8/gsoap/plugin/smdevp.c ../lib/gsoap-2.8/gsoap/plugin/mecevp.c ../lib/gsoap-2.8/gsoap/plugin/wsseapi.c -I../lib/gsoap-2.8/gsoap -I../lib/gsoap-2.8/gsoap/import -I../lib/gsoap-2.8/gsoap/plugin -I../lib/openssl-1.1.1k/linux64/include -I../BaseClient -I../lib/libxml2/linux64/include/libxml2
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from stdsoap2.h:901,
+                 from soapStub.h:26,
+                 from soapH.h:16,
+                 from soapINVPTransactionProcessorProxy.h:16,
+                 from NVPClient.cpp:6:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+NVPClient.cpp:34:0: warning: ignoring #pragma comment  [-Wunknown-pragmas]
+ #pragma comment(lib, "BASECLIENT.lib")
+ ^
+NVPClient.cpp: In function ‘std::wstring convertMaptoString(std::map<std::basic_string<wchar_t>, std::basic_string<wchar_t> >)’:
+NVPClient.cpp:228:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i = 0;
+      ^
+NVPClient.cpp: In function ‘int configure(INVPTransactionProcessorProxy**, config, PKCS12**, EVP_PKEY**, X509**, stack_st_X509**)’:
+NVPClient.cpp:298:50: warning: format ‘%s’ expects a matching ‘char*’ argument [-Wformat=]
+         fprintf(stderr, "Error opening file %s\n");
+                                                  ^
+NVPClient.cpp:344:48: error: invalid use of incomplete type ‘X509 {aka struct x509_st}’
+    for (token1 = strtok_r(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
+                                                ^
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/crypto.h:25:0,
+                 from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:20,
+                 from stdsoap2.h:901,
+                 from soapStub.h:26,
+                 from soapH.h:16,
+                 from soapINVPTransactionProcessorProxy.h:16,
+                 from NVPClient.cpp:6:
+../lib/openssl-1.1.1k/linux64/include/openssl/ossl_typ.h:121:16: error: forward declaration of ‘X509 {aka struct x509_st}’
+ typedef struct x509_st X509;
+                ^
+NVPClient.cpp:288:8: warning: unused variable ‘sslCertFile’ [-Wunused-variable]
+  char *sslCertFile = cfg.sslCertFile;
+        ^
+NVPClient.cpp: In function ‘int runTransaction(INVPTransactionProcessorProxy*, CybsMap*, std::map<std::basic_string<wchar_t>, std::basic_string<wchar_t> >, std::map<std::basic_string<wchar_t>, std::basic_string<wchar_t> >&)’:
+NVPClient.cpp:411:65: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "") == -1) 
+                                                                 ^
+NVPClient.cpp:471:66: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   if ( getKeyFilePath (szDest, keyDir, DEFAULT_CERT_FILE, ".crt" ) == -1 ) 
+                                                                  ^
+NVPClient.cpp:481:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<=cfgSSLCertFileCopy.size(); i++) {
+                                           ^
+NVPClient.cpp:495:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<=cfgKeyFileNameCopy.size(); i++ ) {
+                                           ^
+NVPClient.cpp:504:61: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12" ) == -1) 
+                                                             ^
+NVPClient.cpp:559:14: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+     prodFlag = "false";
+              ^
+NVPClient.cpp:659:22: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  char *responseMsg = "\0";
+                      ^
+NVPClient.cpp: In function ‘int getKeyFilePath(char*, char*, const char*, char*)’:
+NVPClient.cpp:710:33: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(i = 0; i < szDestCopy.size(); i++) {
+                                 ^
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from stdsoap2.h:901,
+                 from soapStub.h:26,
+                 from soapH.h:16,
+                 from soapC.cpp:19:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from stdsoap2.h:901,
+                 from soapStub.h:26,
+                 from soapH.h:16,
+                 from soapINVPTransactionProcessorProxy.h:16,
+                 from soapINVPTransactionProcessorProxy.cpp:14:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from ../lib/gsoap-2.8/gsoap/stdsoap2.h:901,
+                 from ../lib/gsoap-2.8/gsoap/plugin/threads.h:83,
+                 from log.cpp:19:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+log.cpp: In function ‘void cybs_log(config, const char*, const char*)’:
+log.cpp:147:25: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘const char*’ [-Wformat=]
+    szTextToLog, NEWLINE );
+                         ^
+log.cpp: In function ‘void cybs_get_string(CybsMap*, char*, const char*, bool, SafeFields::MessageType, int)’:
+log.cpp:270:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(i = 0; i < szBufferCopy.size(); i++) {
+                                    ^
+log.cpp: In function ‘void cybs_log_NVP(config, std::map<std::basic_string<wchar_t>, std::basic_string<wchar_t> >, const char*)’:
+log.cpp:278:7: warning: unused variable ‘isReply’ [-Wunused-variable]
+  bool isReply = strcmp( szType, CYBS_LT_REPLY ) == 0;
+       ^
+log.cpp:279:7: warning: unused variable ‘isConfig’ [-Wunused-variable]
+  bool isConfig = strcmp( szType, CYBS_LT_CONFIG ) == 0;
+       ^
+log.cpp: In function ‘void cybs_log_xml(config, const char*, char*)’:
+log.cpp:326:69: warning: left operand of comma operator has no effect [-Wunused-value]
+  read_doc (root_element, (char *)root_element->name, "", (isRequest || isReply == 0, isRequest ? SafeFields::Request : SafeFields::Reply));
+                                                                     ^
+log.cpp:326:138: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  read_doc (root_element, (char *)root_element->name, "", (isRequest || isReply == 0, isRequest ? SafeFields::Request : SafeFields::Reply));
+                                                                                                                                          ^
+log.cpp:314:7: warning: unused variable ‘isConfig’ [-Wunused-variable]
+  bool isConfig = strcmp( szType, CYBS_LT_CONFIG ) == 0;
+       ^
+log.cpp:323:13: warning: unused variable ‘new_node’ [-Wunused-variable]
+  xmlNodePtr new_node = NULL;
+             ^
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from ../lib/gsoap-2.8/gsoap/stdsoap2.h:901,
+                 from ../lib/gsoap-2.8/gsoap/stdsoap2.cpp:65:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from ../lib/gsoap-2.8/gsoap/stdsoap2.h:901,
+                 from ../lib/gsoap-2.8/gsoap/plugin/threads.h:83,
+                 from ../lib/gsoap-2.8/gsoap/plugin/threads.c:49:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from ../lib/gsoap-2.8/gsoap/stdsoap2.h:901,
+                 from ../lib/gsoap-2.8/gsoap/dom.cpp:55:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from ../lib/gsoap-2.8/gsoap/stdsoap2.h:901,
+                 from ../lib/gsoap-2.8/gsoap/plugin/smdevp.h:52,
+                 from ../lib/gsoap-2.8/gsoap/plugin/smdevp.c:304:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from ../lib/gsoap-2.8/gsoap/stdsoap2.h:901,
+                 from ../lib/gsoap-2.8/gsoap/plugin/mecevp.h:52,
+                 from ../lib/gsoap-2.8/gsoap/plugin/mecevp.c:288:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from ../lib/openssl-1.1.1k/linux64/include/openssl/bio.h:13:0,
+                 from ../lib/gsoap-2.8/gsoap/plugin/../../../../NVPClient/stdsoap2.h:901,
+                 from ../lib/gsoap-2.8/gsoap/plugin/../../../../NVPClient/soapStub.h:26,
+                 from ../lib/gsoap-2.8/gsoap/plugin/../../../../NVPClient/soapH.h:16,
+                 from ../lib/gsoap-2.8/gsoap/plugin/wsseapi.h:59,
+                 from ../lib/gsoap-2.8/gsoap/plugin/wsseapi.c:2298:
+../lib/openssl-1.1.1k/linux64/include/openssl/e_os2.h:25:0: warning: "OPENSSL_SYS_UNIX" redefined [enabled by default]
+ # define OPENSSL_SYS_UNIX
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+make[1]: *** [.cpp.o64] Error 1
+make[1]: Leaving directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/NVPClient'
+make: *** [build64] Error 2

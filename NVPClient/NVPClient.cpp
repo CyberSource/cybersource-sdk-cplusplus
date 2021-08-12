@@ -452,7 +452,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 		// convert char to wchar and put it in request
 		wchar_t *w = NULL;
-		soap_s2wchar(proxy->soap, mercID, &w, -1, -1, NULL);
+		soap_s2wchar(proxy->soap, mercID, &w, 0, -1, -1, NULL);
 		req[L"merchantID"] = w;
 	}
 	wcstombs(cfg.merchantID, req.find(L"merchantID")->second.c_str(), (req.find(L"merchantID")->second).length() + 1);
@@ -649,9 +649,8 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		cybs_log (cfg, CYBS_LT_CONFIG, proxy->soap_endpoint);
 
 	//std:: string rep;
-	
-	wchar_t *rep;
-	int status = proxy->runTransaction( const_cast< wchar_t* >(convertMaptoString (req).c_str()), rep );
+	std::string rep;
+	int status = proxy->runTransaction( wsToStr(convertMaptoString (req).c_str()), rep );
 
 	sk_X509_pop_free(ca, X509_free);
 	X509_free(cert1);
@@ -660,13 +659,14 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	char *responseMsg = "\0";
 	responseMsg = proxy->soap->msgbuf;
 
-	if (rep != NULL) {
-		wstring repCopy(rep);
+        wchar_t* reply = strToWchar(rep);
+	if (reply != NULL) {
+		wstring repCopy(reply);
 	}
 
 	if (status == SOAP_OK) {
-		if(rep != NULL)
-		resMap = convertStringtoMap(rep);
+		if(reply != NULL)
+		resMap = convertStringtoMap(reply);
 		
 		if (cfg.isLogEnabled)
 		cybs_log( cfg, CYBS_LT_SUCCESS, responseMsg );

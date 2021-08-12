@@ -409,7 +409,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		}
 		merchantID = temp;
 		wchar_t *w = NULL;
-		soap_s2wchar(proxy->soap, merchantID.c_str(), &w, -1, -1, NULL);
+		soap_s2wchar(proxy->soap, merchantID.c_str(), &w, 0, -1, -1, NULL);
 		ns2__requestMessage->merchantID = w;
 	}
 

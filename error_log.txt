@@ -1,0 +1,12 @@
+make -C BaseClient
+make[1]: Entering directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/BaseClient'
+make[1]: Nothing to be done for `dynamic'.
+make[1]: Leaving directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/BaseClient'
+make -C BaseClient static
+make[1]: Entering directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/BaseClient'
+make[1]: Nothing to be done for `static'.
+make[1]: Leaving directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/BaseClient'
+make -C NVPClient 64
+make[1]: Entering directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/NVPClient'
+g++ -c -DWITH_OPENSSL -DWITH_DOM -DLINUX -DCERTC_SW_PLATFORM=CERTC_SW_LINUX -DPTHREADS -DOPENSSL_SYS_UNIX -D_POSIX_THREADS -Wall -fPIC NVPClient.cpp soapC.cpp soapINVPTransactionProcessorProxy.cpp log.cpp safefields.cpp ../lib/gsoap-2.8/gsoap/stdsoap2.cpp ../lib/gsoap-2.8/gsoap/plugin/threads.c ../lib/gsoap-2.8/gsoap/dom.cpp ../lib/gsoap-2.8/gsoap/plugin/smdevp.c ../lib/gsoap-2.8/gsoap/plugin/mecevp.c ../lib/gsoap-2.8/gsoap/plugin/wsseapi.c -I../lib/gsoap-2.8/gsoap -I../lib/gsoap-2.8/gsoap/import -I../lib/gsoap-2.8/gsoap/plugin -I../lib/openssl-1.1.1k/linux64/include -I../BaseClient -I../lib/libxml2/linux64/include/libxml2
+make[1]: Leaving directory `/home/rkesarwa/metakey/final/cybersource-sdk-cplusplus/NVPClient'
