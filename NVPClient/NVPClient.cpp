@@ -330,9 +330,10 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 		for (int i = 0; i < sk_X509_num(*ca); i++) {
 			//token1 = strchr(sk_X509_value(*ca, i)->name, '=');
 			//token2 = strchr(token1, '=');
-
+                char subj[1024];
+                X509_NAME_oneline(X509_get_subject_name(sk_X509_value(*ca, i)), subj, sizeof(subj));
 		#ifdef WIN32
-			for (token1 = strtok_s(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
+			for (token1 = strtok_s(subj, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
 			{
 				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
@@ -340,8 +341,7 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 					}
 			}
 		#else
-
-			for (token1 = strtok_r(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
+			for (token1 = strtok_r(subj, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
 			{
 				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
@@ -649,8 +649,8 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		cybs_log (cfg, CYBS_LT_CONFIG, proxy->soap_endpoint);
 
 	//std:: string rep;
-	std::string rep;
-	int status = proxy->runTransaction( wsToStr(convertMaptoString (req).c_str()), rep );
+	string rep;
+	int status = proxy->runTransaction( soap_wchar2s(proxy->soap, convertMaptoString (req).c_str()), rep );
 
 	sk_X509_pop_free(ca, X509_free);
 	X509_free(cert1);
@@ -659,7 +659,8 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	char *responseMsg = "\0";
 	responseMsg = proxy->soap->msgbuf;
 
-        wchar_t* reply = strToWchar(rep);
+        wchar_t* reply;
+        soap_s2wchar(proxy->soap, rep.c_str(), &reply, 0, -1, -1, NULL);
 	if (reply != NULL) {
 		wstring repCopy(reply);
 	}

@@ -30,10 +30,8 @@ extern "C" {
 #endif
 #endif
 
-
 #include <stdlib.h>
 
-	
 #define CYBS_NUM_BUCKETS 256;
 
 #define CYBS_MAX_NAMESPACE_URI	64
@@ -116,9 +114,6 @@ BASECLIENT_API void cybs_load_config (const char *configFilename, CybsMap *map);
 
 void printdata(CybsMap *store);
 
-std::string wsToStr(std::wstring ws);
-
-wchar_t* strToWchar(std::string str);
 
 #ifdef __cplusplus
 }

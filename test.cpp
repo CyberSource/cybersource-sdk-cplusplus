@@ -22,9 +22,13 @@ std::wstring strToWs(std::string str)
 }
 int main()
 {
-   std::wstring ws(L"<xml>Awe!!yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy#!!#*</xml>");
-   std::cout<<wsToStr(ws)<<"\n";
-   std::wcout<<ws<<"\n";
-   std::wcout<<strToWs(wsToStr(ws))<<"\n";
-   std::cout<<"done";
+   //std::wstring ws(L"<xml>Awe!!yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy#!!#*</xml>");
+   //std::cout<<wsToStr(ws)<<"\n";
+   //std::wcout<<ws<<"\n";
+   //std::wcout<<strToWs(wsToStr(ws))<<"\n";
+   //std::cout<<"done";
+   const char* ch = "Hello";
+   std::string str = ch;
+   std::string* str2 = new std::string(ch);
+   std::cout<<*str2;
 }

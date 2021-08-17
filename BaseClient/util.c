@@ -89,20 +89,4 @@ void cybs_load_config (const char *configFilename, CybsMap *map) {
 	fclose( f );
 }
 
-std::string wsToStr(std::wstring ws)
-{
-  int  size = ws.length();
-  char *str = new char[size+1];
-  wcstombs(str, ws.c_str(), size+1);
-  std::string tmp(str);
-  delete[] str;
-  return tmp;
-}
 
-wchar_t* strToWchar(std::string str)
-{
-   int size = str.length();
-   wchar_t* ws = new wchar_t[size+1];
-   mbstowcs(ws ,str.c_str(), size+1);
-   return ws;
-}

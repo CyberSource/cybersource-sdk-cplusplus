@@ -1,6 +1,6 @@
 prefix=/usr/local
 exec_prefix=${prefix}
-libdir=${exec_prefix}/lib64
+libdir=${exec_prefix}/lib643
 includedir=${prefix}/include
 
 Name: OpenSSL-libssl

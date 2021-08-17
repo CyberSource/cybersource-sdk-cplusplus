@@ -278,9 +278,10 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 	char *token1, *token2;
 	if ( cfg.isEncryptionEnabled ) {
 		for (int i = 0; i < sk_X509_num(*ca); i++) {
-
+                        char subj[1024];
+                        X509_NAME_oneline(X509_get_subject_name(sk_X509_value(*ca, i)), subj, sizeof(subj));
 			#ifdef WIN32
-			for (token1 = strtok_s(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
+			for (token1 = strtok_s(subj, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
 			{
 				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
@@ -289,7 +290,7 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 			}
 		#else
 
-			for (token1 = strtok_r(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
+			for (token1 = strtok_r(subj, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
 			{
 				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
@@ -408,12 +409,12 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 			RETURN_REQUIRED_ERROR( CYBS_C_MERCHANT_ID );
 		}
 		merchantID = temp;
-		wchar_t *w = NULL;
-		soap_s2wchar(proxy->soap, merchantID.c_str(), &w, 0, -1, -1, NULL);
-		ns2__requestMessage->merchantID = w;
+		//wchar_t *w = NULL;
+		//soap_s2wchar(proxy->soap, merchantID.c_str(), &w, 0, -1, -1, NULL);
+		ns2__requestMessage->merchantID = new std::string(merchantID);
 	}
 
-	tempCopy = soap_wchar2s(proxy->soap, ns2__requestMessage->merchantID);
+	tempCopy = *ns2__requestMessage->merchantID;
 	tempCopy.copy(cfg.merchantID, tempCopy.size(), 0);
 	cfg.merchantID[tempCopy.size()]='\0';
 
@@ -612,10 +613,10 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 
 	// Set client library version in request
 	//std::string clientLibVersion (CLIENT_LIBRARY_VERSION_VALUE);
-	ns2__requestMessage->clientLibraryVersion = const_cast< wchar_t* >(CLIENT_LIBRARY_VERSION_VALUE);
-	ns2__requestMessage->clientLibrary = const_cast< wchar_t* >(CLIENT_LIBRARY_VALUE);
-	ns2__requestMessage->clientEnvironment = const_cast< wchar_t* >(CLIENT_ENVIRONMENT_VALUE);
-	ns2__requestMessage->clientApplication = const_cast< wchar_t* >(CLIENT_APPLICATION_VALUE);
+	ns2__requestMessage->clientLibraryVersion = new std::string(soap_wchar2s(proxy->soap, CLIENT_LIBRARY_VERSION_VALUE));
+	ns2__requestMessage->clientLibrary = new std::string(soap_wchar2s(proxy->soap, CLIENT_LIBRARY_VALUE));
+	ns2__requestMessage->clientEnvironment = new std::string(soap_wchar2s(proxy->soap, CLIENT_ENVIRONMENT_VALUE));
+	ns2__requestMessage->clientApplication = new std::string(soap_wchar2s(proxy->soap, CLIENT_APPLICATION_VALUE));
 
 	/* converting ns2__requestMessage to xml */
 	std::stringstream ss;
