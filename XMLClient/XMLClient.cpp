@@ -14,6 +14,9 @@
 #include <openssl/pem.h>
 #include <openssl/err.h>
 #include <string>
+#include <stdio.h>
+#include <wchar.h>
+
 #ifdef WIN32
 	#include "..\NVPClient\log.h"
 #else
@@ -283,24 +286,25 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 			#ifdef WIN32
 			for (token1 = strtok_s(subj, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
 			{
-				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
+				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0){
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
 						return ( 4 );
 					}
+                             }
 			}
 		#else
-
 			for (token1 = strtok_r(subj, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
 			{
-				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
+				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0){
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
-						return ( 4 );
+			       			return ( 4 );
 					}
+                            }
 			}
 		#endif
 		}
 	}
-
+        
 	/****Set up configuration for signing the request ends*************/
 
 	/****Set up SSL context to enable SSL*******	*****/

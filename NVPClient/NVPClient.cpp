@@ -347,6 +347,7 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
 						return ( 4 );
 					}
+                                
 			}
 		#endif
 		}
@@ -668,7 +669,6 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	if (status == SOAP_OK) {
 		if(reply != NULL)
 		resMap = convertStringtoMap(reply);
-		
 		if (cfg.isLogEnabled)
 		cybs_log( cfg, CYBS_LT_SUCCESS, responseMsg );
 

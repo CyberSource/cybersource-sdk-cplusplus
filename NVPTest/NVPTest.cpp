@@ -111,12 +111,13 @@ std::wstring runAuth(CybsMap *cfgMap) {
 	request[L"shipTo_city"] = L"CA";
 	request[L"shipTo_postalCode"] = L"94401";
 	request[L"shipTo_country"] = L"US";
-	request[L"card_accountNumber"] = L"xxxxxxxxxxxxxxxx";
+	request[L"card_accountNumber"] = L"4111111111111111";
 	request[L"card_expirationMonth"] = L"12";
-	request[L"card_expirationYear"] = L"2020";
+	request[L"card_expirationYear"] = L"2025";
 	request[L"purchaseTotals_currency"] = L"USD";
 	request[L"item_0_unitPrice"] = L"12.34";
 	request[L"ccAuthService_run"] = L"true";
+        request[L"merchantID"] = L"cybs_test_new1";
 
 	wprintf( L"CREDIT CARD AUTHORIZATION REQUEST: \n" );
 	printMap (request);
@@ -127,7 +128,7 @@ std::wstring runAuth(CybsMap *cfgMap) {
 	switch (status)
 	{
 		case SOAP_OK:
-			wprintf( L"\nCREDIT CARD AUTHORIZATION REPLY: \n" );
+			wprintf( L"\nCREDIT CARD AUTHORIZATION REPLY2: \n" );
 			printMap(resMap);
 			decision = resMap.find(L"decision")->second;
 			if( wcscmp (decision.c_str(), L"ACCEPT") == 0 ) {
@@ -186,6 +187,7 @@ void runCapture( CybsMap* cfgMap, std::wstring authRequestID ) {
 	requestMap[L"ccCaptureService_authRequestID"] = authRequestID;
 	requestMap[L"purchaseTotals_currency"] = L"USD";
 	requestMap[L"item_0_unitPrice"] = L"12.34";
+        requestMap[L"merchantID"] = L"cybs_test_new1";
 
 	wprintf( L"\nFOLLOW-ON CAPTURE REQUEST: \n" );
 	printMap(requestMap);
