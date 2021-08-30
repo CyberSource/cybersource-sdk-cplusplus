@@ -123,12 +123,14 @@ std::wstring runAuth(CybsMap *cfgMap) {
 	printMap (request);
 	std::map <std::wstring, std::wstring> resMap;
 
+	wprintf( L"CREDIT CARD AUTHORIZATION : \n" );
+
 	int status = runTransaction(&proxy, cfgMap, request, resMap);
 
 	switch (status)
 	{
 		case SOAP_OK:
-			wprintf( L"\nCREDIT CARD AUTHORIZATION REPLY2: \n" );
+			wprintf( L"\nCREDIT CARD AUTHORIZATION REPLY: \n" );
 			printMap(resMap);
 			decision = resMap.find(L"decision")->second;
 			if( wcscmp (decision.c_str(), L"ACCEPT") == 0 ) {

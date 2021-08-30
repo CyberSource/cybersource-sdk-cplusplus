@@ -259,7 +259,9 @@ int ITransactionProcessorService::dispatch(struct soap* soap)
 }
 
 static int serve___ns1__runTransaction(struct soap *soap, ITransactionProcessorService *service)
-{	struct __ns1__runTransaction soap_tmp___ns1__runTransaction;
+{
+
+    struct __ns1__runTransaction soap_tmp___ns1__runTransaction;
 	ns2__ReplyMessage ns2__replyMessage;
 	ns2__replyMessage.soap_default(soap);
 	soap_default___ns1__runTransaction(soap, &soap_tmp___ns1__runTransaction);

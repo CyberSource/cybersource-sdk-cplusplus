@@ -243,14 +243,17 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 	soap_ssl_init();
 	soap_register_plugin((*proxy)->soap, soap_wsse);
 
-	FILE *fp;
+/*	FILE *fp;
 
 	if (!(fp = fopen(cfg.keyFile, "rb"))) {
 		return ( 1 );
-	}
+	}*/
 
-	*p12 = d2i_PKCS12_fp(fp, NULL);
-	fclose(fp);
+	//*p12 = d2i_PKCS12_fp(fp, NULL);
+	BIO* bio1;
+    	bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
+	*p12 = d2i_PKCS12_bio(bio1, NULL);
+	//fclose(fp);
 
 	if (!p12) {
 		return ( 1 );
@@ -281,8 +284,8 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 	char *token1, *token2;
 	if ( cfg.isEncryptionEnabled ) {
 		for (int i = 0; i < sk_X509_num(*ca); i++) {
-                        char subj[1024];
-                        X509_NAME_oneline(X509_get_subject_name(sk_X509_value(*ca, i)), subj, sizeof(subj));
+            char subj[1024];
+            X509_NAME_oneline(X509_get_subject_name(sk_X509_value(*ca, i)), subj, sizeof(subj));
 			#ifdef WIN32
 			for (token1 = strtok_s(subj, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
 			{
@@ -299,7 +302,7 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
 			       			return ( 4 );
 					}
-                            }
+                }
 			}
 		#endif
 		}
@@ -584,6 +587,8 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	//int errFlag = configure(&proxy, cfg, &p12, &pkey1, &cert1, &ca);
 	int errFlag = configure(&proxy, cfg, &p12, &pkey1, &cert1, &ca);
 
+	printf("ENC REQ: %s\n", proxy->soap->buf);
+
 	if ( errFlag != 0 )
 	{
 		switch ( errFlag ) {
@@ -627,6 +632,8 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	proxy->soap->os = &ss;
 	soap_write_ns2__RequestMessage(proxy->soap, ns2__requestMessage);
 	proxy->soap->os = NULL;
+
+	printf("REQ MSG: %s\n", (char *)ss.str().c_str());
 	
 	/* Log request */
 	if (cfg.isLogEnabled)

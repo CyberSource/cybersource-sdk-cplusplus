@@ -77,7 +77,8 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
     #endif
         /// Web service operation 'runTransaction' (returns SOAP_OK or error code)
         virtual int runTransaction(ns2__RequestMessage *ns2__requestMessage, ns2__ReplyMessage &ns2__replyMessage)
-        { return this->runTransaction(NULL, NULL, ns2__requestMessage, ns2__replyMessage); }
+        {
+            return this->runTransaction(NULL, NULL, ns2__requestMessage, ns2__replyMessage); }
         virtual int runTransaction(const char *soap_endpoint, const char *soap_action, ns2__RequestMessage *ns2__requestMessage, ns2__ReplyMessage &ns2__replyMessage);
     };
 #endif

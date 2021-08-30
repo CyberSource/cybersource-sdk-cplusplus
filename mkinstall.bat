@@ -21,10 +21,12 @@ set LATEST_DIR=%BUILD_DIR%\simapi-c-latest
 
 if "%platform%"=="win32" (
 	set subdir="win32"
+	set verSuffix=
 )
 
 if "%platform%"=="win64" (
 	set subdir="win64"
+	set verSuffix=-x64
 )	
 
 set SAMPLES_DIR=%DIST_DIR%\samples
@@ -43,6 +45,8 @@ if "%platform%"=="win64" (
 )
 
 echo ---------------------------------------------------------------
+echo LIB VERSION : %LIB_SSL%
+echo LIB VERSION : %LIB_CRYPTO%
 echo Client Library Version : %CLIENT_LIBRARY_VERSION_VALUE%
 echo Distribution Directory : %DIST_DIR%
 echo ---------------------------------------------------------------
@@ -97,11 +101,15 @@ copy /Y xml\Release\%subdir%\XMLTest.exe %DIST_DIR%\samples\xml
 copy /Y XMLClient\Release\%subdir%\XMLClient.dll %DIST_DIR%\samples\xml
 copy /Y BaseClient\Release\%subdir%\BaseClient.dll %DIST_DIR%\samples\xml
 copy /Y lib\libxml2\%subdir%\lib\libxml2.dll %DIST_DIR%\samples\xml
+copy /Y lib\openssl-1.1.1k\%subdir%\bin\libcrypto-1_1%verSuffix%.dll %DIST_DIR%\samples\xml
+copy /Y lib\openssl-1.1.1k\%subdir%\bin\libssl-1_1%verSuffix%.dll %DIST_DIR%\samples\xml
 
 copy /Y NVPTest\Release\%subdir%\NVPTest.exe %DIST_DIR%\samples\nvp
 copy /Y NVPClient\Release\%subdir%\NVPClient.dll %DIST_DIR%\samples\nvp
 copy /Y BaseClient\Release\%subdir%\BaseClient.dll %DIST_DIR%\samples\nvp
 copy /Y lib\libxml2\%subdir%\lib\libxml2.dll %DIST_DIR%\samples\nvp
+copy /Y lib\openssl-1.1.1k\%subdir%\bin\libcrypto-1_1%verSuffix%.dll %DIST_DIR%\samples\nvp
+copy /Y lib\openssl-1.1.1k\%subdir%\bin\libssl-1_1%verSuffix%.dll %DIST_DIR%\samples\nvp
 
 copy /Y resources\cybs.ini %DIST_DIR%\samples
 copy /Y resources\auth.xml %DIST_DIR%\samples

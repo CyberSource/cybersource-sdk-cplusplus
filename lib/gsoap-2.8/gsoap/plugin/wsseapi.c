@@ -7338,9 +7338,12 @@ soap_wsse_element_end_in(struct soap *soap, const char *tag1, const char *tag2)
 static int
 soap_wsse_element_begin_out(struct soap *soap, const char *tag, int id, const char *type)
 {
+  int d = id;
+  printf("deb-tag: %s %d %s\n", tag, d, type); wprintf(L"deb-tag: %s %d %s\n", tag, d, type);
   struct soap_wsse_data *data = (struct soap_wsse_data*)soap_lookup_plugin(soap, soap_wsse_id);
   if (data && (!data->encid || soap_tagsearch(data->encid, tag)))
   {
+     printf("deb2-tag: %s %d %s\n", tag, d, type); wprintf(L"deb2-tag: %s %d %s\n", tag, d, type);
     char *URI = NULL;
 #if 0 /* deprecated */
     _wsse__Security *security = soap_wsse_Security(soap);
@@ -7357,17 +7360,21 @@ soap_wsse_element_begin_out(struct soap *soap, const char *tag, int id, const ch
 #endif
     if (tag && !strcmp(tag, "SOAP-ENV:Body"))
     {
+    printf("deb3-tag: %s %d %s\n", tag, d, type); wprintf(L"deb3-tag: %s %d %s\n", tag, d, type);
       if (soap_element(soap, tag, id, type)
        || soap_element_start_end_out(soap, NULL))
         return soap->error;
+      printf("deb4-tag: %s %d %s\n", tag, d, type); wprintf(L"deb4-tag: %s %d %s\n", tag, d, type);
       return soap_wsse_encrypt_begin(soap, "SOAP-ENV_Body", data->enco_alg, URI, data->enco_keyname, NULL, xenc_contentURI);
     }
     if (data->encid)
     {
+    printf("deb5-tag: %s %d %s\n", tag, d, type); wprintf(L"deb5-tag: %s %d %s\n", tag, d, type);
       struct soap_attribute *tp, *tq, *tr = soap->attributes; /* preserve attribute lists */
       int err;
       soap->attributes = NULL;
       err = soap_wsse_encrypt_begin(soap, soap_wsse_ids(soap, tag, '_'), data->enco_alg, URI, data->enco_keyname, NULL, xenc_elementURI);
+     printf("deb6-tag: %s %d %s\n", tag, d, type); wprintf(L"deb6-tag: %s %d %s\n", tag, d, type);
       for (tp = soap->attributes; tp; tp = tq)
       { tq = tp->next;
         if (tp->value)
