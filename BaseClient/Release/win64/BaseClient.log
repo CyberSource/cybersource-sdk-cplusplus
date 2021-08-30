@@ -1,0 +1,11 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  kvs.c
+  util.c
+D:\SDK\cybersource-sdk-cplusplus\BaseClient\util.c(55,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+     Creating library .\Release\win64\BaseClient.lib and object .\Release\win64\BaseClient.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 89 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  BaseClient.vcxproj -> D:\SDK\cybersource-sdk-cplusplus\BaseClient\Release\win64\BaseClient.dll

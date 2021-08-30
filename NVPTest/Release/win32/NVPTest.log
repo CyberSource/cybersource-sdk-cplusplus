@@ -1,0 +1,13 @@
+﻿  stdafx.cpp
+  NVPTest.cpp
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(32,13): warning C4477: 'wprintf' : format string '%s' requires an argument of type 'wchar_t *', but variadic argument 1 has type 'void *'
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(36,13): warning C4477: 'wprintf' : format string '%s' requires an argument of type 'wchar_t *', but variadic argument 1 has type 'void *'
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(40,13): warning C4477: 'wprintf' : format string '%s' requires an argument of type 'wchar_t *', but variadic argument 1 has type 'void *'
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(148,14): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(158,14): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(213,14): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(224,14): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'void *'
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(281,11): warning C4018: '<': signed/unsigned mismatch
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(284,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const void *'
+D:\SDK\cybersource-sdk-cplusplus\NVPTest\NVPTest.cpp(284,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'void *'
+LINK : fatal error LNK1181: cannot open input file 'NVPClient.lib'
