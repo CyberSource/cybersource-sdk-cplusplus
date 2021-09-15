@@ -251,9 +251,9 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 
 	//*p12 = d2i_PKCS12_fp(fp, NULL);
 	BIO* bio1;
-    	bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
+    bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
 	*p12 = d2i_PKCS12_bio(bio1, NULL);
-	//fclose(fp);
+	BIO_free(bio1);
 
 	if (!p12) {
 		return ( 1 );
@@ -273,11 +273,11 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 
 	/* Decalre tags that will have wsu id */
 	soap_wsse_set_wsu_id((*proxy)->soap, "wsse:BinarySecurityToken SOAP-ENV:Body");
-	
+
 	if ( soap_wsse_add_BinarySecurityTokenX509((*proxy)->soap, "X509Token", *cert1 )
 	|| soap_wsse_add_KeyInfo_SecurityTokenReferenceX509((*proxy)->soap, "#X509Token")
 	|| soap_wsse_sign_body((*proxy)->soap, SOAP_SMD_SIGN_RSA_SHA256, *pkey1, 0)
-	|| soap_wsse_sign_only((*proxy)->soap, "SOAP-ENV:Body") ) {
+	|| soap_wsse_sign_only((*proxy)->soap, "SOAP-ENV-Body") ) {
 		return ( 3 );
 	}
 
@@ -307,7 +307,7 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 		#endif
 		}
 	}
-        
+
 	/****Set up configuration for signing the request ends*************/
 
 	/****Set up SSL context to enable SSL*******	*****/
@@ -587,8 +587,6 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	//int errFlag = configure(&proxy, cfg, &p12, &pkey1, &cert1, &ca);
 	int errFlag = configure(&proxy, cfg, &p12, &pkey1, &cert1, &ca);
 
-	printf("ENC REQ: %s\n", proxy->soap->buf);
-
 	if ( errFlag != 0 )
 	{
 		switch ( errFlag ) {
@@ -633,8 +631,6 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	soap_write_ns2__RequestMessage(proxy->soap, ns2__requestMessage);
 	proxy->soap->os = NULL;
 
-	printf("REQ MSG: %s\n", (char *)ss.str().c_str());
-	
 	/* Log request */
 	if (cfg.isLogEnabled)
 		cybs_log_xml(cfg, CYBS_LT_REQUEST, (char *)ss.str().c_str());

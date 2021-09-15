@@ -13015,12 +13015,18 @@ soap_element_begin_out(struct soap *soap, const char *tag, int id, const char *t
 {
   if (*tag == '-')
     return SOAP_OK;
+
 #ifdef WITH_DOM
-  if (soap->feltbegout)
-    return soap->error = soap->feltbegout(soap, tag, id, type);
+
+  if (soap->feltbegout) {
+      return soap->error = soap->feltbegout(soap, tag, id, type);
+  }
+
 #endif
+
   if (soap_element(soap, tag, id, type))
     return soap->error;
+
   return soap_element_start_end_out(soap, NULL);
 }
 
@@ -13499,12 +13505,16 @@ int
 SOAP_FMAC2
 soap_element_end_out(struct soap *soap, const char *tag)
 {
+
   if (*tag == '-')
     return SOAP_OK;
 #ifdef WITH_DOM
-  if (soap->feltendout)
+  if (soap->feltendout) {
     return soap->error = soap->feltendout(soap, tag);
+
+    }
 #endif
+
   return soap_element_end(soap, tag);
 }
 
@@ -21171,6 +21181,7 @@ int
 SOAP_FMAC2
 soap_body_begin_out(struct soap *soap)
 {
+
   if (soap->version == 1)
     soap->encoding = 1;
 #ifndef WITH_LEAN
@@ -21180,6 +21191,7 @@ soap_body_begin_out(struct soap *soap)
   if (soap->version == 0)
     return SOAP_OK;
   soap->part = SOAP_IN_BODY;
+
   return soap_element_begin_out(soap, "SOAP-ENV:Body", 0, NULL);
 }
 

@@ -13,6 +13,8 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
 
 #include "soapITransactionProcessorProxy.h"
 
+#include "wsseapi.h"
+
 ITransactionProcessorProxy::ITransactionProcessorProxy()
 {	this->soap = soap_new();
 	this->soap_own = true;

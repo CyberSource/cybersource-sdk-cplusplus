@@ -19,8 +19,9 @@ void handleFault(ITransactionProcessorProxy proxy);
 void printRequest(ITransactionProcessorProxy proxy, ns2__RequestMessage *request);
 void printResponse(ITransactionProcessorProxy proxy, ns2__ReplyMessage *reply);
 
-const char CYBS_INI_FILE[]   = "../cybs.ini";
-const char AUTH_XML_FILE[]   = "../auth.xml";
+const char CYBS_INI_FILE[]   = "D:/SDK/cybersource-sdk-cplusplus/builds/simapi-c-win64-6.0.3/simapi-c-6.0.3/samples/cybs.ini";
+const char AUTH_XML_FILE[] = "D:/SDK/cybersource-sdk-cplusplus/builds/simapi-c-win64-6.0.3/simapi-c-6.0.3/samples/auth.xml";
+
 
 char* getInputXML (const char* xmlfile) {
 	FILE *fp;

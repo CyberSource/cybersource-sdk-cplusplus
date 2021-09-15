@@ -291,6 +291,8 @@ SOAP_FMAC1 int SOAP_FMAC2 soap_wsse_encrypt_end(struct soap *soap);
 SOAP_FMAC1 int SOAP_FMAC2 soap_wsse_decrypt_begin(struct soap *soap);
 SOAP_FMAC1 int SOAP_FMAC2 soap_wsse_decrypt_end(struct soap *soap);
 
+SOAP_FMAC1 int SOAP_FMAC2 soap_wsse_element_begin_out2(struct soap *soap, const char *tag, int id, const char *type);
+
 #ifdef __cplusplus
 }
 #endif

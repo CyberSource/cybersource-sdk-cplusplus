@@ -83,9 +83,7 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         //
         /// Web service synchronous operation 'runTransaction' with default endpoint and default SOAP Action header, returns SOAP_OK or error code
         virtual int runTransaction(ns2__RequestMessage *ns2__requestMessage, ns2__ReplyMessage &ns2__replyMessage) {
-            printf("RUN_TRANS:\n");
             return this->runTransaction(NULL, NULL, ns2__requestMessage, ns2__replyMessage);
-                        printf("RUN_TRANS2:\n");
 
         }
         /// Web service synchronous operation 'runTransaction' to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
