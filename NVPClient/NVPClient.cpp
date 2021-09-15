@@ -288,57 +288,39 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 
 
 	char *sslCertFile = cfg.sslCertFile;
-		wprintf(L"deb61");
 
-	soap_ssl_init();	wprintf(L"deb62");
+	soap_ssl_init();
 
 	soap_register_plugin((*proxy)->soap, soap_wsse);
-	wprintf(L"deb63");
 
 	/****Read pkcs12*************/
 	 FILE *fp;
-	BIO* bio1;
-	bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
-
-/*	 if (!(fp = fopen(cfg.keyFile, "rb"))) {
-	 	wprintf(L"deb65");
-
-		return ( 1 );
-			wprintf(L"deb66");
-
-        fprintf(stderr, "Error opening file %s\n");
-        	wprintf(L"deb66");
-
-        //exit(1);
-     }*/
+	 BIO* bio1;
+	 bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
 
 	 *p12 = d2i_PKCS12_bio(bio1, NULL);
-	 	wprintf(L"deb68");
+	 BIO_free(bio1);
 
 	// fclose(fp);
-wprintf(L"deb50");
 
 	  if (!p12) {
-	  wprintf(L"deb501");
 
 		  return ( 1 );
 		  ERR_print_errors_fp(stderr);
-		  	  	  wprintf(L"deb500");
 
 	  }
 
 	  if (!PKCS12_parse(*p12, cfg.password, pkey1, cert1, ca)) {
-	  	  wprintf(L"deb503");
 
 		 //std::cout << "\nerror >>>>>" << getErrorInfo(kvsStore);
 		 return ( 2 );
        // fprintf(stderr, "Error parsing PKCS#12 file\n");
         ERR_print_errors_fp(stderr);
-        	  	  wprintf(L"deb506");
 
 	  }
 
 	  PKCS12_free(*p12);
+	  soap_register_plugin((*proxy)->soap, soap_wsse);
 	 /****Read pkcs12 completed*************/
 	  /****Set up configuration for signing the request*************/
    soap_wsse_set_wsu_id((*proxy)->soap, "wsse:BinarySecurityToken SOAP-ENV:Body");
@@ -349,10 +331,8 @@ wprintf(L"deb50");
 	 return ( 3 );
    }
 
-wprintf(L"deb53");
 	char *token1, *token2;
 	if ( cfg.isEncryptionEnabled ) {
-	wprintf(L"deb54");
 
 		for (int i = 0; i < sk_X509_num(*ca); i++) {
 			//token1 = strchr(sk_X509_value(*ca, i)->name, '=');
@@ -378,7 +358,6 @@ wprintf(L"deb53");
 			}
 		#endif
 		}
-		wprintf(L"deb55");
 
 	}
 
@@ -628,10 +607,8 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 	if (temp)
 		cfg.isEncryptionEnabled = cybs_flag_value(temp);
-			wprintf( L"deb132:\n" );
 
 	int errFlag = configure(&proxy, cfg, &p12, &pkey1, &cert1, &ca);
-			wprintf( L"deb14:\n" );
 
 	if ( errFlag != 0 )
 	{
