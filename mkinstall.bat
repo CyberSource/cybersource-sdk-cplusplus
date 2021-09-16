@@ -101,15 +101,15 @@ copy /Y xml\Release\%subdir%\XMLTest.exe %DIST_DIR%\samples\xml
 copy /Y XMLClient\Release\%subdir%\XMLClient.dll %DIST_DIR%\samples\xml
 copy /Y BaseClient\Release\%subdir%\BaseClient.dll %DIST_DIR%\samples\xml
 copy /Y lib\libxml2\%subdir%\lib\libxml2.dll %DIST_DIR%\samples\xml
-copy /Y lib\openssl-1.1.1k\%subdir%\bin\libcrypto-1_1%verSuffix%.dll %DIST_DIR%\samples\xml
-copy /Y lib\openssl-1.1.1k\%subdir%\bin\libssl-1_1%verSuffix%.dll %DIST_DIR%\samples\xml
+copy /Y lib\openssl-1.1.1l\%subdir%\bin\libcrypto-1_1%verSuffix%.dll %DIST_DIR%\samples\xml
+copy /Y lib\openssl-1.1.1l\%subdir%\bin\libssl-1_1%verSuffix%.dll %DIST_DIR%\samples\xml
 
 copy /Y NVPTest\Release\%subdir%\NVPTest.exe %DIST_DIR%\samples\nvp
 copy /Y NVPClient\Release\%subdir%\NVPClient.dll %DIST_DIR%\samples\nvp
 copy /Y BaseClient\Release\%subdir%\BaseClient.dll %DIST_DIR%\samples\nvp
 copy /Y lib\libxml2\%subdir%\lib\libxml2.dll %DIST_DIR%\samples\nvp
-copy /Y lib\openssl-1.1.1k\%subdir%\bin\libcrypto-1_1%verSuffix%.dll %DIST_DIR%\samples\nvp
-copy /Y lib\openssl-1.1.1k\%subdir%\bin\libssl-1_1%verSuffix%.dll %DIST_DIR%\samples\nvp
+copy /Y lib\openssl-1.1.1l\%subdir%\bin\libcrypto-1_1%verSuffix%.dll %DIST_DIR%\samples\nvp
+copy /Y lib\openssl-1.1.1l\%subdir%\bin\libssl-1_1%verSuffix%.dll %DIST_DIR%\samples\nvp
 
 copy /Y resources\cybs.ini %DIST_DIR%\samples
 copy /Y resources\auth.xml %DIST_DIR%\samples

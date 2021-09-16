@@ -43,8 +43,8 @@ dist:
 	mkdir -p $(DIST)/lib
 	cp lib/libxml2/linux64/lib/libxml2.a $(DIST)/lib
 	cp lib/libxml2/linux64/lib/libxml2.so.2.9.11  $(DIST)/lib
-	cp lib/openssl-1.1.1k/linux64/lib/libssl.so.1.1 $(DIST)/lib
-	cp lib/openssl-1.1.1k/linux64/lib/libcrypto.so.1.1 $(DIST)/lib
+	cp lib/openssl-1.1.1l/linux64/lib/libssl.so.1.1 $(DIST)/lib
+	cp lib/openssl-1.1.1l/linux64/lib/libcrypto.so.1.1 $(DIST)/lib
         
 	cp NVPClient/libNVPClient.so $(DIST)/lib
 	cp XMLClient/libXMLClient.so $(DIST)/lib
