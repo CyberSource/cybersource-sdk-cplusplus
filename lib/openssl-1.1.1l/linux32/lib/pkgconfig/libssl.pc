@@ -1,12 +1,11 @@
-prefix=/home/ashchand/Desktop/sdklibs/openssl32/openssl32libs
+prefix=/home/rkesarwa/metakey/openssl1.1.1l_32/openssl
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
-Name: OpenSSL
+Name: OpenSSL-libssl
 Description: Secure Sockets Layer and cryptography libraries
-Version: 1.0.1t
-Requires: 
-Libs: -L${libdir} -lssl -lcrypto
-Libs.private: -ldl
-Cflags: -I${includedir} 
+Version: 1.1.1l
+Requires.private: libcrypto
+Libs: -L${libdir} -lssl
+Cflags: -I${includedir}
