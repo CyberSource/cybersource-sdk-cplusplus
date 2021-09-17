@@ -1,4 +1,4 @@
-prefix=/home/rkesarwa/metakey/openssl1.1.1l_32/openssl
+prefix=/home/rkesarwa/metakey/openssl1.1.1l
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

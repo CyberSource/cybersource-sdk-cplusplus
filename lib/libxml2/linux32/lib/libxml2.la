@@ -8,7 +8,7 @@
 dlname='libxml2.so.2'
 
 # Names of this library.
-library_names='libxml2.so.2.9.3 libxml2.so.2 libxml2.so'
+library_names='libxml2.so.2.9.11 libxml2.so.2 libxml2.so'
 
 # The name of the static archive.
 old_library='libxml2.a'
@@ -25,7 +25,7 @@ weak_library_names=''
 # Version information for libxml2.
 current=11
 age=9
-revision=3
+revision=11
 
 # Is this an already installed library?
 installed=yes
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/ashchand/Desktop/sdklibs/libxml32/libxml32libs/lib'
+libdir='/home/rkesarwa/metakey/libxml2/lib'
