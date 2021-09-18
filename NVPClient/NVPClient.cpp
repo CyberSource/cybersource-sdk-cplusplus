@@ -64,7 +64,7 @@ static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 #define RETURN_ERROR1( status, info, arg1 ) \
 { \
 	char szErrorBuf[128]; \
-	sprintf( szErrorBuf, info, arg1 ); \
+	snprintf( szErrorBuf, 128, info, arg1 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
@@ -72,7 +72,7 @@ static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 #define RETURN_ERROR2( status, info, arg1, arg2 ) \
 { \
 	char szErrorBuf[128]; \
-	sprintf( szErrorBuf, info, arg1, arg2 ); \
+	snprintf( szErrorBuf, 128, info, arg1, arg2 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
