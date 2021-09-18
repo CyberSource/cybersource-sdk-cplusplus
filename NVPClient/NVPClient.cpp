@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdexcept>
 #include "log.h"
 #include <map>
 
@@ -376,8 +377,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 	const char *temp;
 
-	config cfg;
-	memset(&cfg, '\0', sizeof (cfg));
+	config cfg = {'\0'};
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_ENABLE_LOG);
 	if (temp)
@@ -632,20 +632,24 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		
 	}
 
-	req[CLIENT_LIBRARY_VERSION] = CLIENT_LIBRARY_VERSION_VALUE;
+        if(CLIENT_LIBRARY_VERSION != NULL)
+           req[CLIENT_LIBRARY_VERSION] = CLIENT_LIBRARY_VERSION_VALUE;
 
-	req[CLIENT_LIBRARY] = CLIENT_LIBRARY_VALUE;
+        if(CLIENT_LIBRARY != NULL)
+	   req[CLIENT_LIBRARY] = CLIENT_LIBRARY_VALUE;
 
-	req[CLIENT_ENVIRONMENT] = CLIENT_ENVIRONMENT_VALUE;
+        if(CLIENT_ENVIRONMENT != NULL)
+   	   req[CLIENT_ENVIRONMENT] = CLIENT_ENVIRONMENT_VALUE;
 
-	req[CLIENT_APPLICATION] = CLIENT_APPLICATION_VALUE;
+        if(CLIENT_APPLICATION != NULL)
+	   req[CLIENT_APPLICATION] = CLIENT_APPLICATION_VALUE;
 
 
 	if (cfg.isLogEnabled)
 	  cybs_log_NVP(cfg, req, CYBS_LT_REQUEST);
 
 	proxy->soap_endpoint = cfg.serverURL;
-	
+
 	if (cfg.isLogEnabled)
 		cybs_log (cfg, CYBS_LT_CONFIG, proxy->soap_endpoint);
 
@@ -702,8 +706,12 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 	szDirCopy.copy(szDest, szDirCopy.size(), 0);
 	if (fAddSeparator)
 	{
-		szDest[nDirLen] = DIR_SEPARATOR;
-		szDest[nDirLen + 1] = '\0';
+             if(nDirLen < 0)
+             {
+                 throw std::out_of_range("Invalid index");
+             }
+	     szDest[nDirLen] = DIR_SEPARATOR;
+	     szDest[nDirLen + 1] = '\0';
 	}
 	szDestCopy = szDest;
 	szDestCopy.append(szFilenameCopy);
@@ -711,6 +719,10 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 	for(i = 0; i < szDestCopy.size(); i++) {
 		szDest[i]=szDestCopy[i];
 	}
+        if(i < 0 || i > szDestCopy.size())
+        {
+            throw std::out_of_range("Invalid index");  
+        }
 	szDest[i]='\0';
 	return( 0 );
 	

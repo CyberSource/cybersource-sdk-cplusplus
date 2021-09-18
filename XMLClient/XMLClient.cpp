@@ -14,6 +14,7 @@
 #include <openssl/pem.h>
 #include <openssl/err.h>
 #include <string>
+#include <stdexcept>
 #include <stdio.h>
 #include <wchar.h>
 
@@ -333,9 +334,8 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	string szDestCopy;
 	string tempCopy;
 	
-	config cfg;
-	memset(&cfg, '\0', sizeof (cfg));
-
+	config cfg = {'\0'};
+        
 	temp = (const char *)cybs_get(configMap, CYBS_C_ENABLE_LOG);
 	if (temp)
 		cfg.isLogEnabled = cybs_flag_value(temp);
@@ -690,6 +690,10 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 
 	if (fAddSeparator)
 	{
+                if(nDirLen < 0)
+                {
+                     throw std::out_of_range("Invalid index");
+                }
 		szDest[nDirLen] = DIR_SEPARATOR;
 		szDest[nDirLen + 1] = '\0';
 	}
@@ -699,6 +703,11 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 	for(i = 0; i < szDestCopy.size(); i++) {
 		szDest[i]=szDestCopy[i];
 	}
+
+        if(i < 0 || i > szDestCopy.size())
+        {
+            throw std::out_of_range("Invalid index");
+        }
 	szDest[i]='\0';
 	return( 0 );
 	
