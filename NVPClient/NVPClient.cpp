@@ -419,9 +419,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_MAXIMUM_SIZE);
 		if (temp)
-			cfg.nLogMaxSizeInMB = atoi(temp);
+			cfg.nLogMaxSizeInMB = strtol(temp, NULL, 10);
 		else
-			cfg.nLogMaxSizeInMB = atoi(DEFAULT_LOG_MAX_SIZE);
+			cfg.nLogMaxSizeInMB = strtol(DEFAULT_LOG_MAX_SIZE, NULL, 10);
 		szDestCopy = szDest;
 		szDestCopy.copy(cfg.logFilePath, szDestCopy.size(), 0);
 		cfg.logFilePath[szDestCopy.size()]='\0';
@@ -526,7 +526,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
 
 	if (temp) {
-		cfg.proxyPort = atoi(temp);
+		cfg.proxyPort = strtol(temp, NULL, 10);
 		proxy->soap->proxy_port = cfg.proxyPort;
 	}
 
@@ -655,7 +655,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 	//std:: string rep;
 
-	wchar_t *rep;
+	wchar_t *rep = NULL;
 	int status = proxy->runTransaction( const_cast< wchar_t* >(convertMaptoString (req).c_str()), rep );
 
 	sk_X509_pop_free(ca, X509_free);

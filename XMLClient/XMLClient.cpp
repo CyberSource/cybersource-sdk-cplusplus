@@ -369,9 +369,9 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_MAXIMUM_SIZE);
 		if (temp)
-			cfg.nLogMaxSizeInMB = atoi(temp);
+			cfg.nLogMaxSizeInMB = strtol(temp, NULL, 10);
 		else
-			cfg.nLogMaxSizeInMB = atoi(DEFAULT_LOG_MAX_SIZE);
+			cfg.nLogMaxSizeInMB = strtol(DEFAULT_LOG_MAX_SIZE, NULL, 10);
 
 		szDestCopy = szDest;
 		szDestCopy.copy(cfg.logFilePath, szDestCopy.size(), 0);
@@ -500,7 +500,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	/* Get proxy port from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
 	if (temp) {
-		cfg.proxyPort = atoi(temp);
+		cfg.proxyPort = strtol(temp, NULL, 10);
 		proxy->soap->proxy_port = cfg.proxyPort;
 	}
 
