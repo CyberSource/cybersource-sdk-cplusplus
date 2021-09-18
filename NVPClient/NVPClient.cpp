@@ -285,37 +285,33 @@ char cybs_flag_value( const char *szFlagString )
 int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, EVP_PKEY **pkey1, X509 **cert1, STACK_OF(X509) **ca) 
 {
 
-
 	char *sslCertFile = cfg.sslCertFile;
 
 	soap_ssl_init();
-
 	soap_register_plugin((*proxy)->soap, soap_wsse);
 
 	/****Read pkcs12*************/
-	 FILE *fp;
 	 BIO* bio1;
 	 bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
+
+	 if (!bio1) {
+		return ( 1 );
+        fprintf(stderr, "Error opening file %s\n");
+     }
 
 	 *p12 = d2i_PKCS12_bio(bio1, NULL);
 	 BIO_free(bio1);
 
-	// fclose(fp);
-
 	  if (!p12) {
-
 		  return ( 1 );
 		  ERR_print_errors_fp(stderr);
-
 	  }
 
 	  if (!PKCS12_parse(*p12, cfg.password, pkey1, cert1, ca)) {
-
 		 //std::cout << "\nerror >>>>>" << getErrorInfo(kvsStore);
 		 return ( 2 );
        // fprintf(stderr, "Error parsing PKCS#12 file\n");
         ERR_print_errors_fp(stderr);
-
 	  }
 
 	  PKCS12_free(*p12);
