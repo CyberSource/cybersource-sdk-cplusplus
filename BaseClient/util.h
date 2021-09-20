@@ -66,7 +66,7 @@ const char CYBS_C_USE_AKAMAI[]              = "sendToAkamai";
 
 
 /* Please do not modify these values */
-static const wchar_t CLIENT_LIBRARY_VERSION_VALUE[] = L"6.0.3";
+static const wchar_t CLIENT_LIBRARY_VERSION_VALUE[] = L"6.0.4";
 static const wchar_t CLIENT_LIBRARY_VALUE[] = L"C SOAP";
 static const wchar_t CLIENT_APPLICATION_VALUE[] = L"Simple Order API";
 

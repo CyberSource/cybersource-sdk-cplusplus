@@ -11,7 +11,6 @@
 #include <openssl/pkcs12.h>
 #include <openssl/pem.h>
 #include <openssl/err.h>
-//#include <openssl/applink.c>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

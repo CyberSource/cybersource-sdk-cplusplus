@@ -1,4 +1,4 @@
-API_VERSION    = 6.0.3
+API_VERSION    = 6.0.4
 PROD_NAME      = simapi-c
 ZIP_NAME       = $(PROD_NAME)-linux
 DIST_BASE      = builds
@@ -21,6 +21,22 @@ clean:
 	$(MAKE) -C NVPClient clean
 	$(MAKE) -C XMLClient clean
 
+dist64:
+	$(MAKE) dist
+	cp lib/libxml2/linux64/lib/libxml2.a $(DIST)/lib
+	cp lib/libxml2/linux64/lib/libxml2.so.2.9.11  $(DIST)/lib
+	cp lib/openssl-1.1.1l/linux64/lib/libssl.so.1.1 $(DIST)/lib
+	cp lib/openssl-1.1.1l/linux64/lib/libcrypto.so.1.1 $(DIST)/lib
+	@echo Done building package: $(DIST_BASE)/$(ZIP_NAME)-$(API_VERSION).tar.gz
+        
+dist32: 
+	$(MAKE) dist
+	cp lib/libxml2/linux32/lib/libxml2.a $(DIST)/lib
+	cp lib/libxml2/linux32/lib/libxml2.so.2.9.11  $(DIST)/lib
+	cp lib/openssl-1.1.1l/linux32/lib/libssl.so.1.1 $(DIST)/lib
+	cp lib/openssl-1.1.1l/linux32/lib/libcrypto.so.1.1 $(DIST)/lib
+	@echo Done building package: $(DIST_BASE)/$(ZIP_NAME)-$(API_VERSION).tar.gz
+		
 dist:
 	mkdir -p $(DIST_BASE)
 	mkdir -p $(DIST)
@@ -41,10 +57,6 @@ dist:
 	cp xml/xml $(DIST)/samples/xml
 
 	mkdir -p $(DIST)/lib
-	cp lib/libxml2/linux64/lib/libxml2.a $(DIST)/lib
-	cp lib/libxml2/linux64/lib/libxml2.so.2.9.11  $(DIST)/lib
-	cp lib/openssl-1.1.1l/linux64/lib/libssl.so.1.1 $(DIST)/lib
-	cp lib/openssl-1.1.1l/linux64/lib/libcrypto.so.1.1 $(DIST)/lib
         
 	cp NVPClient/libNVPClient.so $(DIST)/lib
 	cp XMLClient/libXMLClient.so $(DIST)/lib
@@ -73,4 +85,3 @@ dist:
 	rm -f $(ZIP_NAME)-$(API_VERSION).tar.gz
 	cd $(DIST_BASE); tar -zcvf $(ZIP_NAME)-$(API_VERSION).tar.gz $(PROD_NAME)-$(API_VERSION)
 
-	@echo Done building package: $(DIST_BASE)/$(ZIP_NAME)-$(API_VERSION).tar.gz
