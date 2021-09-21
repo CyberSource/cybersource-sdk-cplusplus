@@ -57,7 +57,11 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 # include "stdsoap2.h"
 # include SOAP_XSTRINGIFY(SOAP_H_FILE)
 #else
-# include "soapH.h"	/* or manually replace with soapcpp2-generated *H.h file */
+#ifdef WIN32
+        #include "..\..\..\..\NVPClient\soapH.h"        /* replace with soapcpp2-generated *H.h file */
+#else
+        #include "../../../../NVPClient/soapH.h"
+#endif
 #endif
 
 SOAP_FMAC3 void SOAP_FMAC4 soap_default_xsd__dateTime(struct soap *soap, struct timeval *a)

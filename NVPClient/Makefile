@@ -2,8 +2,8 @@ CC = g++
 #DEBUG = -g
 
 CFLAGS = -DWITH_OPENSSL -DWITH_DOM -DLINUX -DCERTC_SW_PLATFORM=CERTC_SW_LINUX -DPTHREADS -DOPENSSL_SYS_UNIX -D_POSIX_THREADS
-source = NVPClient.cpp soapC.cpp soapINVPTransactionProcessorProxy.cpp log.cpp safefields.cpp ../lib/gsoap-2.8/gsoap/stdsoap2.cpp ../lib/gsoap-2.8/gsoap/plugin/threads.c ../lib/gsoap-2.8/gsoap/dom.cpp ../lib/gsoap-2.8/gsoap/plugin/smdevp.c ../lib/gsoap-2.8/gsoap/plugin/mecevp.c ../lib/gsoap-2.8/gsoap/plugin/wsseapi.c
-OBJS =  NVPClient.o soapC.o soapINVPTransactionProcessorProxy.o log.o safefields.o stdsoap2.o threads.o dom.o smdevp.o mecevp.o wsseapi.o
+source = NVPClient.cpp soapC.cpp soapINVPTransactionProcessorProxy.cpp log.cpp safefields.cpp ../lib/gsoap-2.8/gsoap/stdsoap2.cpp ../lib/gsoap-2.8/gsoap/plugin/threads.c ../lib/gsoap-2.8/gsoap/dom.cpp ../lib/gsoap-2.8/gsoap/plugin/smdevp.c ../lib/gsoap-2.8/gsoap/plugin/mecevp.c ../lib/gsoap-2.8/gsoap/plugin/wsseapi.c ../lib/gsoap-2.8/gsoap/custom/struct_timeval.c
+OBJS =  NVPClient.o soapC.o soapINVPTransactionProcessorProxy.o log.o safefields.o stdsoap2.o threads.o dom.o smdevp.o mecevp.o wsseapi.o struct_timeval.o
 FPIC=-fPIC
 
 EXTERNAL32 = ../lib/openssl-1.1.1l/linux32/lib

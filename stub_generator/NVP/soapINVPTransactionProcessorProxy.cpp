@@ -80,6 +80,14 @@ void INVPTransactionProcessorProxy::INVPTransactionProcessorProxy_init(soap_mode
         { "SOAP-ENC", "http://schemas.xmlsoap.org/soap/encoding/", "http://www.w3.org/*/soap-encoding", NULL },
         { "xsi", "http://www.w3.org/2001/XMLSchema-instance", "http://www.w3.org/*/XMLSchema-instance", NULL },
         { "xsd", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/*/XMLSchema", NULL },
+        { "c14n", "http://www.w3.org/2001/10/xml-exc-c14n#", NULL, NULL },
+        { "ds", "http://www.w3.org/2000/09/xmldsig#", NULL, NULL },
+        { "saml1", "urn:oasis:names:tc:SAML:1.0:assertion", NULL, NULL },
+        { "saml2", "urn:oasis:names:tc:SAML:2.0:assertion", NULL, NULL },
+        { "wsu", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd", NULL, NULL },
+        { "xenc", "http://www.w3.org/2001/04/xmlenc#", NULL, NULL },
+        { "wsc", "http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512", "http://schemas.xmlsoap.org/ws/2005/02/sc", NULL },
+        { "wsse", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd", NULL },
         { "ns2", "urn:schemas-cybersource-com:transaction-data-1.183", NULL, NULL },
         { "ns1", "urn:schemas-cybersource-com:transaction-data:TransactionProcessor", NULL, NULL },
         { NULL, NULL, NULL, NULL}
@@ -121,6 +129,12 @@ void INVPTransactionProcessorProxy::reset()
 
 void INVPTransactionProcessorProxy::soap_noheader()
 {	this->soap->header = NULL;
+}
+
+void INVPTransactionProcessorProxy::soap_header(struct _wsse__Security *wsse__Security)
+{
+	::soap_header(this->soap);
+	this->soap->header->wsse__Security = wsse__Security;
 }
 
 ::SOAP_ENV__Header *INVPTransactionProcessorProxy::soap_header()
