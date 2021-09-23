@@ -82,12 +82,12 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
     #endif
         //
         /// Web service synchronous operation 'runTransaction' with default endpoint and default SOAP Action header, returns SOAP_OK or error code
-        virtual int runTransaction(const std::string& ns2__nvpRequest, std::string &ns2__nvpReply) { return this->runTransaction(NULL, NULL, ns2__nvpRequest, ns2__nvpReply); }
+        virtual int runTransaction(wchar_t *ns2__nvpRequest, wchar_t *&ns2__nvpReply) { return this->runTransaction(NULL, NULL, ns2__nvpRequest, ns2__nvpReply); }
         /// Web service synchronous operation 'runTransaction' to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
-        virtual int runTransaction(const char *soap_endpoint_url, const char *soap_action, const std::string& ns2__nvpRequest, std::string &ns2__nvpReply) { return this->send_runTransaction(soap_endpoint_url, soap_action, ns2__nvpRequest) || this->recv_runTransaction(ns2__nvpReply) ? this->soap->error : SOAP_OK; }
+        virtual int runTransaction(const char *soap_endpoint_url, const char *soap_action, wchar_t *ns2__nvpRequest, wchar_t *&ns2__nvpReply) { return this->send_runTransaction(soap_endpoint_url, soap_action, ns2__nvpRequest) || this->recv_runTransaction(ns2__nvpReply) ? this->soap->error : SOAP_OK; }
         /// Web service asynchronous operation 'send_runTransaction' to send a request message to the specified endpoint and SOAP Action header, returns SOAP_OK or error code
-        virtual int send_runTransaction(const char *soap_endpoint_url, const char *soap_action, const std::string& ns2__nvpRequest);
+        virtual int send_runTransaction(const char *soap_endpoint_url, const char *soap_action, wchar_t *ns2__nvpRequest);
         /// Web service asynchronous operation 'recv_runTransaction' to receive a response message from the connected endpoint, returns SOAP_OK or error code
-        virtual int recv_runTransaction(std::string &ns2__nvpReply);
+        virtual int recv_runTransaction(wchar_t *&ns2__nvpReply);
     };
 #endif

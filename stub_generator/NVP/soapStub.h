@@ -2769,282 +2769,282 @@ class SOAP_CMAC xsd__base64Binary {
 
 /* CyberSourceTransaction_nvp_1.183.h:176 */
 #ifndef SOAP_TYPE_ns2__Item
-#define SOAP_TYPE_ns2__Item (283)
+#define SOAP_TYPE_ns2__Item (284)
 /* complex XML schema type 'ns2:Item': */
 class SOAP_CMAC ns2__Item {
       public:
         /// Optional element 'ns2:unitPrice' of XML schema type 'ns2:amount'
-        std::string *unitPrice;
+        wchar_t *unitPrice;
         /// Optional element 'ns2:quantity' of XML schema type 'ns2:amount'
-        std::string *quantity;
+        wchar_t *quantity;
         /// Optional element 'ns2:productCode' of XML schema type 'xsd:string'
-        std::string *productCode;
+        wchar_t *productCode;
         /// Optional element 'ns2:productName' of XML schema type 'xsd:string'
-        std::string *productName;
+        wchar_t *productName;
         /// Optional element 'ns2:productSKU' of XML schema type 'xsd:string'
-        std::string *productSKU;
+        wchar_t *productSKU;
         /// Optional element 'ns2:productRisk' of XML schema type 'xsd:string'
-        std::string *productRisk;
+        wchar_t *productRisk;
         /// Optional element 'ns2:taxAmount' of XML schema type 'ns2:amount'
-        std::string *taxAmount;
+        wchar_t *taxAmount;
         /// Optional element 'ns2:cityOverrideAmount' of XML schema type 'ns2:amount'
-        std::string *cityOverrideAmount;
+        wchar_t *cityOverrideAmount;
         /// Optional element 'ns2:cityOverrideRate' of XML schema type 'ns2:amount'
-        std::string *cityOverrideRate;
+        wchar_t *cityOverrideRate;
         /// Optional element 'ns2:countyOverrideAmount' of XML schema type 'ns2:amount'
-        std::string *countyOverrideAmount;
+        wchar_t *countyOverrideAmount;
         /// Optional element 'ns2:countyOverrideRate' of XML schema type 'ns2:amount'
-        std::string *countyOverrideRate;
+        wchar_t *countyOverrideRate;
         /// Optional element 'ns2:districtOverrideAmount' of XML schema type 'ns2:amount'
-        std::string *districtOverrideAmount;
+        wchar_t *districtOverrideAmount;
         /// Optional element 'ns2:districtOverrideRate' of XML schema type 'ns2:amount'
-        std::string *districtOverrideRate;
+        wchar_t *districtOverrideRate;
         /// Optional element 'ns2:stateOverrideAmount' of XML schema type 'ns2:amount'
-        std::string *stateOverrideAmount;
+        wchar_t *stateOverrideAmount;
         /// Optional element 'ns2:stateOverrideRate' of XML schema type 'ns2:amount'
-        std::string *stateOverrideRate;
+        wchar_t *stateOverrideRate;
         /// Optional element 'ns2:countryOverrideAmount' of XML schema type 'ns2:amount'
-        std::string *countryOverrideAmount;
+        wchar_t *countryOverrideAmount;
         /// Optional element 'ns2:countryOverrideRate' of XML schema type 'ns2:amount'
-        std::string *countryOverrideRate;
+        wchar_t *countryOverrideRate;
         /// Optional element 'ns2:orderAcceptanceCity' of XML schema type 'xsd:string'
-        std::string *orderAcceptanceCity;
+        wchar_t *orderAcceptanceCity;
         /// Optional element 'ns2:orderAcceptanceCounty' of XML schema type 'xsd:string'
-        std::string *orderAcceptanceCounty;
+        wchar_t *orderAcceptanceCounty;
         /// Optional element 'ns2:orderAcceptanceCountry' of XML schema type 'xsd:string'
-        std::string *orderAcceptanceCountry;
+        wchar_t *orderAcceptanceCountry;
         /// Optional element 'ns2:orderAcceptanceState' of XML schema type 'xsd:string'
-        std::string *orderAcceptanceState;
+        wchar_t *orderAcceptanceState;
         /// Optional element 'ns2:orderAcceptancePostalCode' of XML schema type 'xsd:string'
-        std::string *orderAcceptancePostalCode;
+        wchar_t *orderAcceptancePostalCode;
         /// Optional element 'ns2:orderOriginCity' of XML schema type 'xsd:string'
-        std::string *orderOriginCity;
+        wchar_t *orderOriginCity;
         /// Optional element 'ns2:orderOriginCounty' of XML schema type 'xsd:string'
-        std::string *orderOriginCounty;
+        wchar_t *orderOriginCounty;
         /// Optional element 'ns2:orderOriginCountry' of XML schema type 'xsd:string'
-        std::string *orderOriginCountry;
+        wchar_t *orderOriginCountry;
         /// Optional element 'ns2:orderOriginState' of XML schema type 'xsd:string'
-        std::string *orderOriginState;
+        wchar_t *orderOriginState;
         /// Optional element 'ns2:orderOriginPostalCode' of XML schema type 'xsd:string'
-        std::string *orderOriginPostalCode;
+        wchar_t *orderOriginPostalCode;
         /// Optional element 'ns2:shipFromCity' of XML schema type 'xsd:string'
-        std::string *shipFromCity;
+        wchar_t *shipFromCity;
         /// Optional element 'ns2:shipFromCounty' of XML schema type 'xsd:string'
-        std::string *shipFromCounty;
+        wchar_t *shipFromCounty;
         /// Optional element 'ns2:shipFromCountry' of XML schema type 'xsd:string'
-        std::string *shipFromCountry;
+        wchar_t *shipFromCountry;
         /// Optional element 'ns2:shipFromState' of XML schema type 'xsd:string'
-        std::string *shipFromState;
+        wchar_t *shipFromState;
         /// Optional element 'ns2:shipFromPostalCode' of XML schema type 'xsd:string'
-        std::string *shipFromPostalCode;
+        wchar_t *shipFromPostalCode;
         /// Optional element 'ns2:export' of XML schema type 'xsd:string'
-        std::string *export_;
+        wchar_t *export_;
         /// Optional element 'ns2:noExport' of XML schema type 'xsd:string'
-        std::string *noExport;
+        wchar_t *noExport;
         /// Optional element 'ns2:nationalTax' of XML schema type 'ns2:amount'
-        std::string *nationalTax;
+        wchar_t *nationalTax;
         /// Optional element 'ns2:vatRate' of XML schema type 'ns2:amount'
-        std::string *vatRate;
+        wchar_t *vatRate;
         /// Optional element 'ns2:sellerRegistration' of XML schema type 'xsd:string'
-        std::string *sellerRegistration;
+        wchar_t *sellerRegistration;
         /// Optional element 'ns2:sellerRegistration0' of XML schema type 'xsd:string'
-        std::string *sellerRegistration0;
+        wchar_t *sellerRegistration0;
         /// Optional element 'ns2:sellerRegistration1' of XML schema type 'xsd:string'
-        std::string *sellerRegistration1;
+        wchar_t *sellerRegistration1;
         /// Optional element 'ns2:sellerRegistration2' of XML schema type 'xsd:string'
-        std::string *sellerRegistration2;
+        wchar_t *sellerRegistration2;
         /// Optional element 'ns2:sellerRegistration3' of XML schema type 'xsd:string'
-        std::string *sellerRegistration3;
+        wchar_t *sellerRegistration3;
         /// Optional element 'ns2:sellerRegistration4' of XML schema type 'xsd:string'
-        std::string *sellerRegistration4;
+        wchar_t *sellerRegistration4;
         /// Optional element 'ns2:sellerRegistration5' of XML schema type 'xsd:string'
-        std::string *sellerRegistration5;
+        wchar_t *sellerRegistration5;
         /// Optional element 'ns2:sellerRegistration6' of XML schema type 'xsd:string'
-        std::string *sellerRegistration6;
+        wchar_t *sellerRegistration6;
         /// Optional element 'ns2:sellerRegistration7' of XML schema type 'xsd:string'
-        std::string *sellerRegistration7;
+        wchar_t *sellerRegistration7;
         /// Optional element 'ns2:sellerRegistration8' of XML schema type 'xsd:string'
-        std::string *sellerRegistration8;
+        wchar_t *sellerRegistration8;
         /// Optional element 'ns2:sellerRegistration9' of XML schema type 'xsd:string'
-        std::string *sellerRegistration9;
+        wchar_t *sellerRegistration9;
         /// Optional element 'ns2:buyerRegistration' of XML schema type 'xsd:string'
-        std::string *buyerRegistration;
+        wchar_t *buyerRegistration;
         /// Optional element 'ns2:middlemanRegistration' of XML schema type 'xsd:string'
-        std::string *middlemanRegistration;
+        wchar_t *middlemanRegistration;
         /// Optional element 'ns2:pointOfTitleTransfer' of XML schema type 'xsd:string'
-        std::string *pointOfTitleTransfer;
+        wchar_t *pointOfTitleTransfer;
         /// Optional element 'ns2:giftCategory' of XML schema type 'ns2:boolean'
-        std::string *giftCategory;
+        wchar_t *giftCategory;
         /// Optional element 'ns2:timeCategory' of XML schema type 'xsd:string'
-        std::string *timeCategory;
+        wchar_t *timeCategory;
         /// Optional element 'ns2:hostHedge' of XML schema type 'xsd:string'
-        std::string *hostHedge;
+        wchar_t *hostHedge;
         /// Optional element 'ns2:timeHedge' of XML schema type 'xsd:string'
-        std::string *timeHedge;
+        wchar_t *timeHedge;
         /// Optional element 'ns2:velocityHedge' of XML schema type 'xsd:string'
-        std::string *velocityHedge;
+        wchar_t *velocityHedge;
         /// Optional element 'ns2:nonsensicalHedge' of XML schema type 'xsd:string'
-        std::string *nonsensicalHedge;
+        wchar_t *nonsensicalHedge;
         /// Optional element 'ns2:phoneHedge' of XML schema type 'xsd:string'
-        std::string *phoneHedge;
+        wchar_t *phoneHedge;
         /// Optional element 'ns2:obscenitiesHedge' of XML schema type 'xsd:string'
-        std::string *obscenitiesHedge;
+        wchar_t *obscenitiesHedge;
         /// Optional element 'ns2:unitOfMeasure' of XML schema type 'xsd:string'
-        std::string *unitOfMeasure;
+        wchar_t *unitOfMeasure;
         /// Optional element 'ns2:taxRate' of XML schema type 'ns2:amount'
-        std::string *taxRate;
+        wchar_t *taxRate;
         /// Optional element 'ns2:totalAmount' of XML schema type 'ns2:amount'
-        std::string *totalAmount;
+        wchar_t *totalAmount;
         /// Optional element 'ns2:discountAmount' of XML schema type 'ns2:amount'
-        std::string *discountAmount;
+        wchar_t *discountAmount;
         /// Optional element 'ns2:discountRate' of XML schema type 'ns2:amount'
-        std::string *discountRate;
+        wchar_t *discountRate;
         /// Optional element 'ns2:commodityCode' of XML schema type 'xsd:string'
-        std::string *commodityCode;
+        wchar_t *commodityCode;
         /// Optional element 'ns2:grossNetIndicator' of XML schema type 'xsd:string'
-        std::string *grossNetIndicator;
+        wchar_t *grossNetIndicator;
         /// Optional element 'ns2:taxTypeApplied' of XML schema type 'xsd:string'
-        std::string *taxTypeApplied;
+        wchar_t *taxTypeApplied;
         /// Optional element 'ns2:discountIndicator' of XML schema type 'xsd:string'
-        std::string *discountIndicator;
+        wchar_t *discountIndicator;
         /// Optional element 'ns2:alternateTaxID' of XML schema type 'xsd:string'
-        std::string *alternateTaxID;
+        wchar_t *alternateTaxID;
         /// Optional element 'ns2:alternateTaxAmount' of XML schema type 'ns2:amount'
-        std::string *alternateTaxAmount;
+        wchar_t *alternateTaxAmount;
         /// Optional element 'ns2:alternateTaxTypeApplied' of XML schema type 'xsd:string'
-        std::string *alternateTaxTypeApplied;
+        wchar_t *alternateTaxTypeApplied;
         /// Optional element 'ns2:alternateTaxRate' of XML schema type 'ns2:amount'
-        std::string *alternateTaxRate;
+        wchar_t *alternateTaxRate;
         /// Optional element 'ns2:alternateTaxType' of XML schema type 'xsd:string'
-        std::string *alternateTaxType;
+        wchar_t *alternateTaxType;
         /// Optional element 'ns2:localTax' of XML schema type 'ns2:amount'
-        std::string *localTax;
+        wchar_t *localTax;
         /// Optional element 'ns2:zeroCostToCustomerIndicator' of XML schema type 'xsd:string'
-        std::string *zeroCostToCustomerIndicator;
+        wchar_t *zeroCostToCustomerIndicator;
         /// Optional element 'ns2:passengerFirstName' of XML schema type 'xsd:string'
-        std::string *passengerFirstName;
+        wchar_t *passengerFirstName;
         /// Optional element 'ns2:passengerLastName' of XML schema type 'xsd:string'
-        std::string *passengerLastName;
+        wchar_t *passengerLastName;
         /// Optional element 'ns2:passengerID' of XML schema type 'xsd:string'
-        std::string *passengerID;
+        wchar_t *passengerID;
         /// Optional element 'ns2:passengerStatus' of XML schema type 'xsd:string'
-        std::string *passengerStatus;
+        wchar_t *passengerStatus;
         /// Optional element 'ns2:passengerType' of XML schema type 'xsd:string'
-        std::string *passengerType;
+        wchar_t *passengerType;
         /// Optional element 'ns2:passengerEmail' of XML schema type 'xsd:string'
-        std::string *passengerEmail;
+        wchar_t *passengerEmail;
         /// Optional element 'ns2:passengerPhone' of XML schema type 'xsd:string'
-        std::string *passengerPhone;
+        wchar_t *passengerPhone;
         /// Optional element 'ns2:passengerNationality' of XML schema type 'xsd:string'
-        std::string *passengerNationality;
+        wchar_t *passengerNationality;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Optional element 'ns2:productDescription' of XML schema type 'xsd:string'
-        std::string *productDescription;
+        wchar_t *productDescription;
         /// Optional element 'ns2:taxStatusIndicator' of XML schema type 'xsd:string'
-        std::string *taxStatusIndicator;
+        wchar_t *taxStatusIndicator;
         /// Optional element 'ns2:discountManagementIndicator' of XML schema type 'xsd:string'
-        std::string *discountManagementIndicator;
+        wchar_t *discountManagementIndicator;
         /// Optional element 'ns2:typeOfSupply' of XML schema type 'xsd:string'
-        std::string *typeOfSupply;
+        wchar_t *typeOfSupply;
         /// Optional element 'ns2:sign' of XML schema type 'xsd:string'
-        std::string *sign;
+        wchar_t *sign;
         /// Optional element 'ns2:unitTaxAmount' of XML schema type 'xsd:string'
-        std::string *unitTaxAmount;
+        wchar_t *unitTaxAmount;
         /// Optional element 'ns2:weightAmount' of XML schema type 'xsd:string'
-        std::string *weightAmount;
+        wchar_t *weightAmount;
         /// Optional element 'ns2:weightID' of XML schema type 'xsd:string'
-        std::string *weightID;
+        wchar_t *weightID;
         /// Optional element 'ns2:weightUnitMeasurement' of XML schema type 'xsd:string'
-        std::string *weightUnitMeasurement;
+        wchar_t *weightUnitMeasurement;
         /// Optional element 'ns2:otherTax_1_type' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE1_USCOREtype;
+        wchar_t *otherTax_USCORE1_USCOREtype;
         /// Optional element 'ns2:otherTax_1_amount' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE1_USCOREamount;
+        wchar_t *otherTax_USCORE1_USCOREamount;
         /// Optional element 'ns2:otherTax_1_rate' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE1_USCORErate;
+        wchar_t *otherTax_USCORE1_USCORErate;
         /// Optional element 'ns2:otherTax_1_statusIndicator' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE1_USCOREstatusIndicator;
+        wchar_t *otherTax_USCORE1_USCOREstatusIndicator;
         /// Optional element 'ns2:otherTax_2_type' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE2_USCOREtype;
+        wchar_t *otherTax_USCORE2_USCOREtype;
         /// Optional element 'ns2:otherTax_2_amount' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE2_USCOREamount;
+        wchar_t *otherTax_USCORE2_USCOREamount;
         /// Optional element 'ns2:otherTax_2_rate' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE2_USCORErate;
+        wchar_t *otherTax_USCORE2_USCORErate;
         /// Optional element 'ns2:otherTax_2_statusIndicator' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE2_USCOREstatusIndicator;
+        wchar_t *otherTax_USCORE2_USCOREstatusIndicator;
         /// Optional element 'ns2:otherTax_3_type' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE3_USCOREtype;
+        wchar_t *otherTax_USCORE3_USCOREtype;
         /// Optional element 'ns2:otherTax_3_amount' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE3_USCOREamount;
+        wchar_t *otherTax_USCORE3_USCOREamount;
         /// Optional element 'ns2:otherTax_3_rate' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE3_USCORErate;
+        wchar_t *otherTax_USCORE3_USCORErate;
         /// Optional element 'ns2:otherTax_3_statusIndicator' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE3_USCOREstatusIndicator;
+        wchar_t *otherTax_USCORE3_USCOREstatusIndicator;
         /// Optional element 'ns2:otherTax_4_type' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE4_USCOREtype;
+        wchar_t *otherTax_USCORE4_USCOREtype;
         /// Optional element 'ns2:otherTax_4_amount' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE4_USCOREamount;
+        wchar_t *otherTax_USCORE4_USCOREamount;
         /// Optional element 'ns2:otherTax_4_rate' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE4_USCORErate;
+        wchar_t *otherTax_USCORE4_USCORErate;
         /// Optional element 'ns2:otherTax_4_statusIndicator' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE4_USCOREstatusIndicator;
+        wchar_t *otherTax_USCORE4_USCOREstatusIndicator;
         /// Optional element 'ns2:otherTax_5_type' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE5_USCOREtype;
+        wchar_t *otherTax_USCORE5_USCOREtype;
         /// Optional element 'ns2:otherTax_5_amount' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE5_USCOREamount;
+        wchar_t *otherTax_USCORE5_USCOREamount;
         /// Optional element 'ns2:otherTax_5_rate' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE5_USCORErate;
+        wchar_t *otherTax_USCORE5_USCORErate;
         /// Optional element 'ns2:otherTax_5_statusIndicator' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE5_USCOREstatusIndicator;
+        wchar_t *otherTax_USCORE5_USCOREstatusIndicator;
         /// Optional element 'ns2:otherTax_6_type' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE6_USCOREtype;
+        wchar_t *otherTax_USCORE6_USCOREtype;
         /// Optional element 'ns2:otherTax_6_amount' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE6_USCOREamount;
+        wchar_t *otherTax_USCORE6_USCOREamount;
         /// Optional element 'ns2:otherTax_6_rate' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE6_USCORErate;
+        wchar_t *otherTax_USCORE6_USCORErate;
         /// Optional element 'ns2:otherTax_6_statusIndicator' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE6_USCOREstatusIndicator;
+        wchar_t *otherTax_USCORE6_USCOREstatusIndicator;
         /// Optional element 'ns2:otherTax_7_type' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE7_USCOREtype;
+        wchar_t *otherTax_USCORE7_USCOREtype;
         /// Optional element 'ns2:otherTax_7_amount' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE7_USCOREamount;
+        wchar_t *otherTax_USCORE7_USCOREamount;
         /// Optional element 'ns2:otherTax_7_rate' of XML schema type 'ns2:amount'
-        std::string *otherTax_USCORE7_USCORErate;
+        wchar_t *otherTax_USCORE7_USCORErate;
         /// Optional element 'ns2:otherTax_7_statusIndicator' of XML schema type 'xsd:string'
-        std::string *otherTax_USCORE7_USCOREstatusIndicator;
+        wchar_t *otherTax_USCORE7_USCOREstatusIndicator;
         /// Optional element 'ns2:referenceData_1_number' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE1_USCOREnumber;
+        wchar_t *referenceData_USCORE1_USCOREnumber;
         /// Optional element 'ns2:referenceData_1_code' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE1_USCOREcode;
+        wchar_t *referenceData_USCORE1_USCOREcode;
         /// Optional element 'ns2:referenceData_2_number' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE2_USCOREnumber;
+        wchar_t *referenceData_USCORE2_USCOREnumber;
         /// Optional element 'ns2:referenceData_2_code' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE2_USCOREcode;
+        wchar_t *referenceData_USCORE2_USCOREcode;
         /// Optional element 'ns2:referenceData_3_number' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE3_USCOREnumber;
+        wchar_t *referenceData_USCORE3_USCOREnumber;
         /// Optional element 'ns2:referenceData_3_code' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE3_USCOREcode;
+        wchar_t *referenceData_USCORE3_USCOREcode;
         /// Optional element 'ns2:referenceData_4_number' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE4_USCOREnumber;
+        wchar_t *referenceData_USCORE4_USCOREnumber;
         /// Optional element 'ns2:referenceData_4_code' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE4_USCOREcode;
+        wchar_t *referenceData_USCORE4_USCOREcode;
         /// Optional element 'ns2:referenceData_5_number' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE5_USCOREnumber;
+        wchar_t *referenceData_USCORE5_USCOREnumber;
         /// Optional element 'ns2:referenceData_5_code' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE5_USCOREcode;
+        wchar_t *referenceData_USCORE5_USCOREcode;
         /// Optional element 'ns2:referenceData_6_number' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE6_USCOREnumber;
+        wchar_t *referenceData_USCORE6_USCOREnumber;
         /// Optional element 'ns2:referenceData_6_code' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE6_USCOREcode;
+        wchar_t *referenceData_USCORE6_USCOREcode;
         /// Optional element 'ns2:referenceData_7_number' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE7_USCOREnumber;
+        wchar_t *referenceData_USCORE7_USCOREnumber;
         /// Optional element 'ns2:referenceData_7_code' of XML schema type 'xsd:string'
-        std::string *referenceData_USCORE7_USCOREcode;
+        wchar_t *referenceData_USCORE7_USCOREcode;
         /// Optional element 'ns2:shippingDestinationTypes' of XML schema type 'xsd:string'
-        std::string *shippingDestinationTypes;
+        wchar_t *shippingDestinationTypes;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3075,126 +3075,126 @@ class SOAP_CMAC ns2__Item {
 
 /* CyberSourceTransaction_nvp_1.183.h:178 */
 #ifndef SOAP_TYPE_ns2__CCAuthService
-#define SOAP_TYPE_ns2__CCAuthService (284)
+#define SOAP_TYPE_ns2__CCAuthService (285)
 /* complex XML schema type 'ns2:CCAuthService': */
 class SOAP_CMAC ns2__CCAuthService {
       public:
         /// Optional element 'ns2:cavv' of XML schema type 'xsd:string'
-        std::string *cavv;
+        wchar_t *cavv;
         /// Optional element 'ns2:cavvAlgorithm' of XML schema type 'xsd:string'
-        std::string *cavvAlgorithm;
+        wchar_t *cavvAlgorithm;
         /// Optional element 'ns2:networkTokenCryptogram' of XML schema type 'xsd:string'
-        std::string *networkTokenCryptogram;
+        wchar_t *networkTokenCryptogram;
         /// Optional element 'ns2:paSpecificationVersion' of XML schema type 'xsd:string'
-        std::string *paSpecificationVersion;
+        wchar_t *paSpecificationVersion;
         /// Optional element 'ns2:directoryServerTransactionID' of XML schema type 'xsd:string'
-        std::string *directoryServerTransactionID;
+        wchar_t *directoryServerTransactionID;
         /// Optional element 'ns2:acsServerTransactionID' of XML schema type 'xsd:string'
-        std::string *acsServerTransactionID;
+        wchar_t *acsServerTransactionID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:eciRaw' of XML schema type 'xsd:string'
-        std::string *eciRaw;
+        wchar_t *eciRaw;
         /// Optional element 'ns2:xid' of XML schema type 'xsd:string'
-        std::string *xid;
+        wchar_t *xid;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:avsLevel' of XML schema type 'xsd:string'
-        std::string *avsLevel;
+        wchar_t *avsLevel;
         /// Optional element 'ns2:fxQuoteID' of XML schema type 'xsd:string'
-        std::string *fxQuoteID;
+        wchar_t *fxQuoteID;
         /// Optional element 'ns2:returnAuthRecord' of XML schema type 'ns2:boolean'
-        std::string *returnAuthRecord;
+        wchar_t *returnAuthRecord;
         /// Optional element 'ns2:authType' of XML schema type 'xsd:string'
-        std::string *authType;
+        wchar_t *authType;
         /// Optional element 'ns2:verbalAuthCode' of XML schema type 'xsd:string'
-        std::string *verbalAuthCode;
+        wchar_t *verbalAuthCode;
         /// Optional element 'ns2:billPayment' of XML schema type 'ns2:boolean'
-        std::string *billPayment;
+        wchar_t *billPayment;
         /// Optional element 'ns2:authenticationXID' of XML schema type 'xsd:string'
-        std::string *authenticationXID;
+        wchar_t *authenticationXID;
         /// Optional element 'ns2:authorizationXID' of XML schema type 'xsd:string'
-        std::string *authorizationXID;
+        wchar_t *authorizationXID;
         /// Optional element 'ns2:industryDatatype' of XML schema type 'xsd:string'
-        std::string *industryDatatype;
+        wchar_t *industryDatatype;
         /// Optional element 'ns2:traceNumber' of XML schema type 'xsd:string'
-        std::string *traceNumber;
+        wchar_t *traceNumber;
         /// Optional element 'ns2:checksumKey' of XML schema type 'xsd:string'
-        std::string *checksumKey;
+        wchar_t *checksumKey;
         /// Optional element 'ns2:aggregatorID' of XML schema type 'xsd:string'
-        std::string *aggregatorID;
+        wchar_t *aggregatorID;
         /// Optional element 'ns2:aggregatorName' of XML schema type 'xsd:string'
-        std::string *aggregatorName;
+        wchar_t *aggregatorName;
         /// Optional element 'ns2:splitTenderIndicator' of XML schema type 'xsd:string'
-        std::string *splitTenderIndicator;
+        wchar_t *splitTenderIndicator;
         /// Optional element 'ns2:veresEnrolled' of XML schema type 'xsd:string'
-        std::string *veresEnrolled;
+        wchar_t *veresEnrolled;
         /// Optional element 'ns2:paresStatus' of XML schema type 'xsd:string'
-        std::string *paresStatus;
+        wchar_t *paresStatus;
         /// Optional element 'ns2:partialAuthIndicator' of XML schema type 'ns2:boolean'
-        std::string *partialAuthIndicator;
+        wchar_t *partialAuthIndicator;
         /// Optional element 'ns2:captureDate' of XML schema type 'xsd:string'
-        std::string *captureDate;
+        wchar_t *captureDate;
         /// Optional element 'ns2:firstRecurringPayment' of XML schema type 'xsd:string'
-        std::string *firstRecurringPayment;
+        wchar_t *firstRecurringPayment;
         /// Optional element 'ns2:duration' of XML schema type 'xsd:integer'
-        std::string *duration;
+        wchar_t *duration;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:mobileRemotePaymentType' of XML schema type 'xsd:string'
-        std::string *mobileRemotePaymentType;
+        wchar_t *mobileRemotePaymentType;
         /// Optional element 'ns2:cardholderVerificationMethod' of XML schema type 'xsd:string'
-        std::string *cardholderVerificationMethod;
+        wchar_t *cardholderVerificationMethod;
         /// Optional element 'ns2:dccRequestID' of XML schema type 'xsd:string'
-        std::string *dccRequestID;
+        wchar_t *dccRequestID;
         /// Optional element 'ns2:overridePaymentDetails' of XML schema type 'xsd:string'
-        std::string *overridePaymentDetails;
+        wchar_t *overridePaymentDetails;
         /// Optional element 'ns2:cardholderAuthenticationMethod' of XML schema type 'xsd:string'
-        std::string *cardholderAuthenticationMethod;
+        wchar_t *cardholderAuthenticationMethod;
         /// Optional element 'ns2:leastCostRouting' of XML schema type 'ns2:boolean'
-        std::string *leastCostRouting;
+        wchar_t *leastCostRouting;
         /// Optional element 'ns2:verificationType' of XML schema type 'xsd:string'
-        std::string *verificationType;
+        wchar_t *verificationType;
         /// Optional element 'ns2:cryptocurrencyPurchase' of XML schema type 'xsd:string'
-        std::string *cryptocurrencyPurchase;
+        wchar_t *cryptocurrencyPurchase;
         /// Optional element 'ns2:lowValueExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *lowValueExemptionIndicator;
+        wchar_t *lowValueExemptionIndicator;
         /// Optional element 'ns2:riskAnalysisExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *riskAnalysisExemptionIndicator;
+        wchar_t *riskAnalysisExemptionIndicator;
         /// Optional element 'ns2:trustedMerchantExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *trustedMerchantExemptionIndicator;
+        wchar_t *trustedMerchantExemptionIndicator;
         /// Optional element 'ns2:secureCorporatePaymentIndicator' of XML schema type 'xsd:string'
-        std::string *secureCorporatePaymentIndicator;
+        wchar_t *secureCorporatePaymentIndicator;
         /// Optional element 'ns2:deferredAuthIndicator' of XML schema type 'xsd:string'
-        std::string *deferredAuthIndicator;
+        wchar_t *deferredAuthIndicator;
         /// Optional element 'ns2:aggregatedAuthIndicator' of XML schema type 'xsd:string'
-        std::string *aggregatedAuthIndicator;
+        wchar_t *aggregatedAuthIndicator;
         /// Optional element 'ns2:debtRecoveryIndicator' of XML schema type 'xsd:string'
-        std::string *debtRecoveryIndicator;
+        wchar_t *debtRecoveryIndicator;
         /// Optional element 'ns2:delegatedAuthenticationExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *delegatedAuthenticationExemptionIndicator;
+        wchar_t *delegatedAuthenticationExemptionIndicator;
         /// Optional element 'ns2:transitTransactionType' of XML schema type 'xsd:string'
-        std::string *transitTransactionType;
+        wchar_t *transitTransactionType;
         /// Optional element 'ns2:transportationMode' of XML schema type 'xsd:string'
-        std::string *transportationMode;
+        wchar_t *transportationMode;
         /// Optional element 'ns2:totaloffersCount' of XML schema type 'xsd:string'
-        std::string *totaloffersCount;
+        wchar_t *totaloffersCount;
         /// Optional element 'ns2:effectiveAuthenticationType' of XML schema type 'xsd:string'
-        std::string *effectiveAuthenticationType;
+        wchar_t *effectiveAuthenticationType;
         /// Optional element 'ns2:paChallengeCode' of XML schema type 'xsd:string'
-        std::string *paChallengeCode;
+        wchar_t *paChallengeCode;
         /// Optional element 'ns2:paresStatusReason' of XML schema type 'xsd:string'
-        std::string *paresStatusReason;
+        wchar_t *paresStatusReason;
         /// Optional element 'ns2:challengeCancelCode' of XML schema type 'xsd:string'
-        std::string *challengeCancelCode;
+        wchar_t *challengeCancelCode;
         /// Optional element 'ns2:paNetworkScore' of XML schema type 'xsd:string'
-        std::string *paNetworkScore;
+        wchar_t *paNetworkScore;
         /// Optional element 'ns2:paAuthenticationDate' of XML schema type 'xsd:string'
-        std::string *paAuthenticationDate;
+        wchar_t *paAuthenticationDate;
         /// Optional element 'ns2:authenticationOutageExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *authenticationOutageExemptionIndicator;
+        wchar_t *authenticationOutageExemptionIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3225,20 +3225,20 @@ class SOAP_CMAC ns2__CCAuthService {
 
 /* CyberSourceTransaction_nvp_1.183.h:180 */
 #ifndef SOAP_TYPE_ns2__OCTService
-#define SOAP_TYPE_ns2__OCTService (285)
+#define SOAP_TYPE_ns2__OCTService (286)
 /* complex XML schema type 'ns2:OCTService': */
 class SOAP_CMAC ns2__OCTService {
       public:
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:networkOrder' of XML schema type 'xsd:string'
-        std::string *networkOrder;
+        wchar_t *networkOrder;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3269,14 +3269,14 @@ class SOAP_CMAC ns2__OCTService {
 
 /* CyberSourceTransaction_nvp_1.183.h:182 */
 #ifndef SOAP_TYPE_ns2__VerificationService
-#define SOAP_TYPE_ns2__VerificationService (286)
+#define SOAP_TYPE_ns2__VerificationService (287)
 /* complex XML schema type 'ns2:VerificationService': */
 class SOAP_CMAC ns2__VerificationService {
       public:
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3307,50 +3307,50 @@ class SOAP_CMAC ns2__VerificationService {
 
 /* CyberSourceTransaction_nvp_1.183.h:184 */
 #ifndef SOAP_TYPE_ns2__CCSaleService
-#define SOAP_TYPE_ns2__CCSaleService (287)
+#define SOAP_TYPE_ns2__CCSaleService (288)
 /* complex XML schema type 'ns2:CCSaleService': */
 class SOAP_CMAC ns2__CCSaleService {
       public:
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:partialAuthIndicator' of XML schema type 'ns2:boolean'
-        std::string *partialAuthIndicator;
+        wchar_t *partialAuthIndicator;
         /// Optional element 'ns2:cavv' of XML schema type 'xsd:string'
-        std::string *cavv;
+        wchar_t *cavv;
         /// Optional element 'ns2:xid' of XML schema type 'xsd:string'
-        std::string *xid;
+        wchar_t *xid;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:industryDatatype' of XML schema type 'xsd:string'
-        std::string *industryDatatype;
+        wchar_t *industryDatatype;
         /// Optional element 'ns2:networkTokenCryptogram' of XML schema type 'xsd:string'
-        std::string *networkTokenCryptogram;
+        wchar_t *networkTokenCryptogram;
         /// Optional element 'ns2:paSpecificationVersion' of XML schema type 'xsd:string'
-        std::string *paSpecificationVersion;
+        wchar_t *paSpecificationVersion;
         /// Optional element 'ns2:directoryServerTransactionID' of XML schema type 'xsd:string'
-        std::string *directoryServerTransactionID;
+        wchar_t *directoryServerTransactionID;
         /// Optional element 'ns2:cryptocurrencyPurchase' of XML schema type 'xsd:string'
-        std::string *cryptocurrencyPurchase;
+        wchar_t *cryptocurrencyPurchase;
         /// Optional element 'ns2:lowValueExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *lowValueExemptionIndicator;
+        wchar_t *lowValueExemptionIndicator;
         /// Optional element 'ns2:riskAnalysisExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *riskAnalysisExemptionIndicator;
+        wchar_t *riskAnalysisExemptionIndicator;
         /// Optional element 'ns2:trustedMerchantExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *trustedMerchantExemptionIndicator;
+        wchar_t *trustedMerchantExemptionIndicator;
         /// Optional element 'ns2:secureCorporatePaymentIndicator' of XML schema type 'xsd:string'
-        std::string *secureCorporatePaymentIndicator;
+        wchar_t *secureCorporatePaymentIndicator;
         /// Optional element 'ns2:deferredAuthIndicator' of XML schema type 'xsd:string'
-        std::string *deferredAuthIndicator;
+        wchar_t *deferredAuthIndicator;
         /// Optional element 'ns2:delegatedAuthenticationExemptionIndicator' of XML schema type 'xsd:string'
-        std::string *delegatedAuthenticationExemptionIndicator;
+        wchar_t *delegatedAuthenticationExemptionIndicator;
         /// Optional element 'ns2:transitTransactionType' of XML schema type 'xsd:string'
-        std::string *transitTransactionType;
+        wchar_t *transitTransactionType;
         /// Optional element 'ns2:transportationMode' of XML schema type 'xsd:string'
-        std::string *transportationMode;
+        wchar_t *transportationMode;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3381,22 +3381,22 @@ class SOAP_CMAC ns2__CCSaleService {
 
 /* CyberSourceTransaction_nvp_1.183.h:186 */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditService
-#define SOAP_TYPE_ns2__CCSaleCreditService (288)
+#define SOAP_TYPE_ns2__CCSaleCreditService (289)
 /* complex XML schema type 'ns2:CCSaleCreditService': */
 class SOAP_CMAC ns2__CCSaleCreditService {
       public:
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:refundReason' of XML schema type 'xsd:string'
-        std::string *refundReason;
+        wchar_t *refundReason;
         /// Optional element 'ns2:saleRequestID' of XML schema type 'xsd:string'
-        std::string *saleRequestID;
+        wchar_t *saleRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3427,14 +3427,14 @@ class SOAP_CMAC ns2__CCSaleCreditService {
 
 /* CyberSourceTransaction_nvp_1.183.h:188 */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalService
-#define SOAP_TYPE_ns2__CCSaleReversalService (289)
+#define SOAP_TYPE_ns2__CCSaleReversalService (290)
 /* complex XML schema type 'ns2:CCSaleReversalService': */
 class SOAP_CMAC ns2__CCSaleReversalService {
       public:
         /// Optional element 'ns2:saleRequestID' of XML schema type 'xsd:string'
-        std::string *saleRequestID;
+        wchar_t *saleRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3465,16 +3465,16 @@ class SOAP_CMAC ns2__CCSaleReversalService {
 
 /* CyberSourceTransaction_nvp_1.183.h:190 */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthService
-#define SOAP_TYPE_ns2__CCIncrementalAuthService (290)
+#define SOAP_TYPE_ns2__CCIncrementalAuthService (291)
 /* complex XML schema type 'ns2:CCIncrementalAuthService': */
 class SOAP_CMAC ns2__CCIncrementalAuthService {
       public:
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Optional element 'ns2:duration' of XML schema type 'xsd:integer'
-        std::string *duration;
+        wchar_t *duration;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3505,52 +3505,52 @@ class SOAP_CMAC ns2__CCIncrementalAuthService {
 
 /* CyberSourceTransaction_nvp_1.183.h:192 */
 #ifndef SOAP_TYPE_ns2__CCCaptureService
-#define SOAP_TYPE_ns2__CCCaptureService (291)
+#define SOAP_TYPE_ns2__CCCaptureService (292)
 /* complex XML schema type 'ns2:CCCaptureService': */
 class SOAP_CMAC ns2__CCCaptureService {
       public:
         /// Optional element 'ns2:authType' of XML schema type 'xsd:string'
-        std::string *authType;
+        wchar_t *authType;
         /// Optional element 'ns2:verbalAuthCode' of XML schema type 'xsd:string'
-        std::string *verbalAuthCode;
+        wchar_t *verbalAuthCode;
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:partialPaymentID' of XML schema type 'xsd:string'
-        std::string *partialPaymentID;
+        wchar_t *partialPaymentID;
         /// Optional element 'ns2:purchasingLevel' of XML schema type 'xsd:string'
-        std::string *purchasingLevel;
+        wchar_t *purchasingLevel;
         /// Optional element 'ns2:industryDatatype' of XML schema type 'xsd:string'
-        std::string *industryDatatype;
+        wchar_t *industryDatatype;
         /// Optional element 'ns2:authRequestToken' of XML schema type 'xsd:string'
-        std::string *authRequestToken;
+        wchar_t *authRequestToken;
         /// Optional element 'ns2:merchantReceiptNumber' of XML schema type 'xsd:string'
-        std::string *merchantReceiptNumber;
+        wchar_t *merchantReceiptNumber;
         /// Optional element 'ns2:posData' of XML schema type 'xsd:string'
-        std::string *posData;
+        wchar_t *posData;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:checksumKey' of XML schema type 'xsd:string'
-        std::string *checksumKey;
+        wchar_t *checksumKey;
         /// Optional element 'ns2:gratuityAmount' of XML schema type 'xsd:string'
-        std::string *gratuityAmount;
+        wchar_t *gratuityAmount;
         /// Optional element 'ns2:duration' of XML schema type 'xsd:integer'
-        std::string *duration;
+        wchar_t *duration;
         /// Optional element 'ns2:dpdeBillingMonth' of XML schema type 'xsd:integer'
-        std::string *dpdeBillingMonth;
+        wchar_t *dpdeBillingMonth;
         /// Optional element 'ns2:sequence' of XML schema type 'xsd:string'
-        std::string *sequence;
+        wchar_t *sequence;
         /// Optional element 'ns2:totalCount' of XML schema type 'xsd:string'
-        std::string *totalCount;
+        wchar_t *totalCount;
         /// Optional element 'ns2:reconciliationIDAlternate' of XML schema type 'xsd:string'
-        std::string *reconciliationIDAlternate;
+        wchar_t *reconciliationIDAlternate;
         /// Optional element 'ns2:aggregatorID' of XML schema type 'xsd:string'
-        std::string *aggregatorID;
+        wchar_t *aggregatorID;
         /// Optional element 'ns2:aggregatorName' of XML schema type 'xsd:string'
-        std::string *aggregatorName;
+        wchar_t *aggregatorName;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3581,54 +3581,54 @@ class SOAP_CMAC ns2__CCCaptureService {
 
 /* CyberSourceTransaction_nvp_1.183.h:194 */
 #ifndef SOAP_TYPE_ns2__CCCreditService
-#define SOAP_TYPE_ns2__CCCreditService (292)
+#define SOAP_TYPE_ns2__CCCreditService (293)
 /* complex XML schema type 'ns2:CCCreditService': */
 class SOAP_CMAC ns2__CCCreditService {
       public:
         /// Optional element 'ns2:captureRequestID' of XML schema type 'xsd:string'
-        std::string *captureRequestID;
+        wchar_t *captureRequestID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:partialPaymentID' of XML schema type 'xsd:string'
-        std::string *partialPaymentID;
+        wchar_t *partialPaymentID;
         /// Optional element 'ns2:purchasingLevel' of XML schema type 'xsd:string'
-        std::string *purchasingLevel;
+        wchar_t *purchasingLevel;
         /// Optional element 'ns2:industryDatatype' of XML schema type 'xsd:string'
-        std::string *industryDatatype;
+        wchar_t *industryDatatype;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:billPayment' of XML schema type 'ns2:boolean'
-        std::string *billPayment;
+        wchar_t *billPayment;
         /// Optional element 'ns2:authorizationXID' of XML schema type 'xsd:string'
-        std::string *authorizationXID;
+        wchar_t *authorizationXID;
         /// Optional element 'ns2:occurrenceNumber' of XML schema type 'xsd:string'
-        std::string *occurrenceNumber;
+        wchar_t *occurrenceNumber;
         /// Optional element 'ns2:authCode' of XML schema type 'xsd:string'
-        std::string *authCode;
+        wchar_t *authCode;
         /// Optional element 'ns2:captureRequestToken' of XML schema type 'xsd:string'
-        std::string *captureRequestToken;
+        wchar_t *captureRequestToken;
         /// Optional element 'ns2:merchantReceiptNumber' of XML schema type 'xsd:string'
-        std::string *merchantReceiptNumber;
+        wchar_t *merchantReceiptNumber;
         /// Optional element 'ns2:checksumKey' of XML schema type 'xsd:string'
-        std::string *checksumKey;
+        wchar_t *checksumKey;
         /// Optional element 'ns2:aggregatorID' of XML schema type 'xsd:string'
-        std::string *aggregatorID;
+        wchar_t *aggregatorID;
         /// Optional element 'ns2:aggregatorName' of XML schema type 'xsd:string'
-        std::string *aggregatorName;
+        wchar_t *aggregatorName;
         /// Optional element 'ns2:duration' of XML schema type 'xsd:integer'
-        std::string *duration;
+        wchar_t *duration;
         /// Optional element 'ns2:dpdeBillingMonth' of XML schema type 'xsd:integer'
-        std::string *dpdeBillingMonth;
+        wchar_t *dpdeBillingMonth;
         /// Optional element 'ns2:reconciliationIDAlternate' of XML schema type 'xsd:string'
-        std::string *reconciliationIDAlternate;
+        wchar_t *reconciliationIDAlternate;
         /// Optional element 'ns2:refundReason' of XML schema type 'xsd:string'
-        std::string *refundReason;
+        wchar_t *refundReason;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:overridePaymentDetails' of XML schema type 'xsd:string'
-        std::string *overridePaymentDetails;
+        wchar_t *overridePaymentDetails;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3659,18 +3659,18 @@ class SOAP_CMAC ns2__CCCreditService {
 
 /* CyberSourceTransaction_nvp_1.183.h:196 */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalService
-#define SOAP_TYPE_ns2__CCAuthReversalService (293)
+#define SOAP_TYPE_ns2__CCAuthReversalService (294)
 /* complex XML schema type 'ns2:CCAuthReversalService': */
 class SOAP_CMAC ns2__CCAuthReversalService {
       public:
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Optional element 'ns2:authRequestToken' of XML schema type 'xsd:string'
-        std::string *authRequestToken;
+        wchar_t *authRequestToken;
         /// Optional element 'ns2:reversalReason' of XML schema type 'xsd:string'
-        std::string *reversalReason;
+        wchar_t *reversalReason;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3701,32 +3701,32 @@ class SOAP_CMAC ns2__CCAuthReversalService {
 
 /* CyberSourceTransaction_nvp_1.183.h:198 */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalService
-#define SOAP_TYPE_ns2__CCAutoAuthReversalService (294)
+#define SOAP_TYPE_ns2__CCAutoAuthReversalService (295)
 /* complex XML schema type 'ns2:CCAutoAuthReversalService': */
 class SOAP_CMAC ns2__CCAutoAuthReversalService {
       public:
         /// Optional element 'ns2:authPaymentServiceData' of XML schema type 'xsd:string'
-        std::string *authPaymentServiceData;
+        wchar_t *authPaymentServiceData;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:authAmount' of XML schema type 'xsd:string'
-        std::string *authAmount;
+        wchar_t *authAmount;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Optional element 'ns2:billAmount' of XML schema type 'xsd:string'
-        std::string *billAmount;
+        wchar_t *billAmount;
         /// Optional element 'ns2:authCode' of XML schema type 'xsd:string'
-        std::string *authCode;
+        wchar_t *authCode;
         /// Optional element 'ns2:authType' of XML schema type 'xsd:string'
-        std::string *authType;
+        wchar_t *authType;
         /// Optional element 'ns2:billPayment' of XML schema type 'ns2:boolean'
-        std::string *billPayment;
+        wchar_t *billPayment;
         /// Optional element 'ns2:dateAdded' of XML schema type 'xsd:string'
-        std::string *dateAdded;
+        wchar_t *dateAdded;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3757,12 +3757,12 @@ class SOAP_CMAC ns2__CCAutoAuthReversalService {
 
 /* CyberSourceTransaction_nvp_1.183.h:200 */
 #ifndef SOAP_TYPE_ns2__CCDCCService
-#define SOAP_TYPE_ns2__CCDCCService (295)
+#define SOAP_TYPE_ns2__CCDCCService (296)
 /* complex XML schema type 'ns2:CCDCCService': */
 class SOAP_CMAC ns2__CCDCCService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3793,12 +3793,12 @@ class SOAP_CMAC ns2__CCDCCService {
 
 /* CyberSourceTransaction_nvp_1.183.h:202 */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateService
-#define SOAP_TYPE_ns2__ServiceFeeCalculateService (296)
+#define SOAP_TYPE_ns2__ServiceFeeCalculateService (297)
 /* complex XML schema type 'ns2:ServiceFeeCalculateService': */
 class SOAP_CMAC ns2__ServiceFeeCalculateService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3829,30 +3829,30 @@ class SOAP_CMAC ns2__ServiceFeeCalculateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:204 */
 #ifndef SOAP_TYPE_ns2__ECDebitService
-#define SOAP_TYPE_ns2__ECDebitService (297)
+#define SOAP_TYPE_ns2__ECDebitService (298)
 /* complex XML schema type 'ns2:ECDebitService': */
 class SOAP_CMAC ns2__ECDebitService {
       public:
         /// Optional element 'ns2:paymentMode' of XML schema type 'xsd:integer'
-        std::string *paymentMode;
+        wchar_t *paymentMode;
         /// Optional element 'ns2:referenceNumber' of XML schema type 'xsd:string'
-        std::string *referenceNumber;
+        wchar_t *referenceNumber;
         /// Optional element 'ns2:settlementMethod' of XML schema type 'xsd:string'
-        std::string *settlementMethod;
+        wchar_t *settlementMethod;
         /// Optional element 'ns2:transactionToken' of XML schema type 'xsd:string'
-        std::string *transactionToken;
+        wchar_t *transactionToken;
         /// Optional element 'ns2:verificationLevel' of XML schema type 'xsd:integer'
-        std::string *verificationLevel;
+        wchar_t *verificationLevel;
         /// Optional element 'ns2:partialPaymentID' of XML schema type 'xsd:string'
-        std::string *partialPaymentID;
+        wchar_t *partialPaymentID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:debitRequestID' of XML schema type 'xsd:string'
-        std::string *debitRequestID;
+        wchar_t *debitRequestID;
         /// Optional element 'ns2:effectiveDate' of XML schema type 'xsd:string'
-        std::string *effectiveDate;
+        wchar_t *effectiveDate;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3883,28 +3883,28 @@ class SOAP_CMAC ns2__ECDebitService {
 
 /* CyberSourceTransaction_nvp_1.183.h:206 */
 #ifndef SOAP_TYPE_ns2__ECCreditService
-#define SOAP_TYPE_ns2__ECCreditService (298)
+#define SOAP_TYPE_ns2__ECCreditService (299)
 /* complex XML schema type 'ns2:ECCreditService': */
 class SOAP_CMAC ns2__ECCreditService {
       public:
         /// Optional element 'ns2:referenceNumber' of XML schema type 'xsd:string'
-        std::string *referenceNumber;
+        wchar_t *referenceNumber;
         /// Optional element 'ns2:settlementMethod' of XML schema type 'xsd:string'
-        std::string *settlementMethod;
+        wchar_t *settlementMethod;
         /// Optional element 'ns2:transactionToken' of XML schema type 'xsd:string'
-        std::string *transactionToken;
+        wchar_t *transactionToken;
         /// Optional element 'ns2:debitRequestID' of XML schema type 'xsd:string'
-        std::string *debitRequestID;
+        wchar_t *debitRequestID;
         /// Optional element 'ns2:partialPaymentID' of XML schema type 'xsd:string'
-        std::string *partialPaymentID;
+        wchar_t *partialPaymentID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:debitRequestToken' of XML schema type 'xsd:string'
-        std::string *debitRequestToken;
+        wchar_t *debitRequestToken;
         /// Optional element 'ns2:effectiveDate' of XML schema type 'xsd:string'
-        std::string *effectiveDate;
+        wchar_t *effectiveDate;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3935,14 +3935,14 @@ class SOAP_CMAC ns2__ECCreditService {
 
 /* CyberSourceTransaction_nvp_1.183.h:208 */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateService
-#define SOAP_TYPE_ns2__ECAuthenticateService (299)
+#define SOAP_TYPE_ns2__ECAuthenticateService (300)
 /* complex XML schema type 'ns2:ECAuthenticateService': */
 class SOAP_CMAC ns2__ECAuthenticateService {
       public:
         /// Optional element 'ns2:referenceNumber' of XML schema type 'xsd:string'
-        std::string *referenceNumber;
+        wchar_t *referenceNumber;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -3973,160 +3973,160 @@ class SOAP_CMAC ns2__ECAuthenticateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:210 */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollService
-#define SOAP_TYPE_ns2__PayerAuthEnrollService (300)
+#define SOAP_TYPE_ns2__PayerAuthEnrollService (301)
 /* complex XML schema type 'ns2:PayerAuthEnrollService': */
 class SOAP_CMAC ns2__PayerAuthEnrollService {
       public:
         /// Optional element 'ns2:httpAccept' of XML schema type 'xsd:string'
-        std::string *httpAccept;
+        wchar_t *httpAccept;
         /// Optional element 'ns2:httpUserAgent' of XML schema type 'xsd:string'
-        std::string *httpUserAgent;
+        wchar_t *httpUserAgent;
         /// Optional element 'ns2:merchantName' of XML schema type 'xsd:string'
-        std::string *merchantName;
+        wchar_t *merchantName;
         /// Optional element 'ns2:merchantURL' of XML schema type 'xsd:string'
-        std::string *merchantURL;
+        wchar_t *merchantURL;
         /// Optional element 'ns2:purchaseDescription' of XML schema type 'xsd:string'
-        std::string *purchaseDescription;
+        wchar_t *purchaseDescription;
         /// Optional element 'ns2:purchaseTime' of XML schema type 'ns2:dateTime'
-        std::string *purchaseTime;
+        wchar_t *purchaseTime;
         /// Optional element 'ns2:countryCode' of XML schema type 'xsd:string'
-        std::string *countryCode;
+        wchar_t *countryCode;
         /// Optional element 'ns2:acquirerBin' of XML schema type 'xsd:string'
-        std::string *acquirerBin;
+        wchar_t *acquirerBin;
         /// Optional element 'ns2:loginID' of XML schema type 'xsd:string'
-        std::string *loginID;
+        wchar_t *loginID;
         /// Optional element 'ns2:password' of XML schema type 'xsd:string'
-        std::string *password;
+        wchar_t *password;
         /// Optional element 'ns2:merchantID' of XML schema type 'xsd:string'
-        std::string *merchantID;
+        wchar_t *merchantID;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:mobilePhone' of XML schema type 'xsd:string'
-        std::string *mobilePhone;
+        wchar_t *mobilePhone;
         /// Optional element 'ns2:MCC' of XML schema type 'xsd:string'
-        std::string *MCC;
+        wchar_t *MCC;
         /// Optional element 'ns2:productCode' of XML schema type 'xsd:string'
-        std::string *productCode;
+        wchar_t *productCode;
         /// Optional element 'ns2:referenceID' of XML schema type 'xsd:string'
-        std::string *referenceID;
+        wchar_t *referenceID;
         /// Optional element 'ns2:marketingOptIn' of XML schema type 'ns2:boolean'
-        std::string *marketingOptIn;
+        wchar_t *marketingOptIn;
         /// Optional element 'ns2:marketingSource' of XML schema type 'xsd:string'
-        std::string *marketingSource;
+        wchar_t *marketingSource;
         /// Optional element 'ns2:defaultCard' of XML schema type 'ns2:boolean'
-        std::string *defaultCard;
+        wchar_t *defaultCard;
         /// Optional element 'ns2:shipAddressUsageDate' of XML schema type 'xsd:string'
-        std::string *shipAddressUsageDate;
+        wchar_t *shipAddressUsageDate;
         /// Optional element 'ns2:transactionCountDay' of XML schema type 'xsd:string'
-        std::string *transactionCountDay;
+        wchar_t *transactionCountDay;
         /// Optional element 'ns2:transactionCountYear' of XML schema type 'xsd:string'
-        std::string *transactionCountYear;
+        wchar_t *transactionCountYear;
         /// Optional element 'ns2:addCardAttempts' of XML schema type 'xsd:string'
-        std::string *addCardAttempts;
+        wchar_t *addCardAttempts;
         /// Optional element 'ns2:accountPurchases' of XML schema type 'xsd:string'
-        std::string *accountPurchases;
+        wchar_t *accountPurchases;
         /// Optional element 'ns2:fraudActivity' of XML schema type 'ns2:boolean'
-        std::string *fraudActivity;
+        wchar_t *fraudActivity;
         /// Optional element 'ns2:paymentAccountDate' of XML schema type 'xsd:string'
-        std::string *paymentAccountDate;
+        wchar_t *paymentAccountDate;
         /// Optional element 'ns2:alternateAuthenticationMethod' of XML schema type 'xsd:string'
-        std::string *alternateAuthenticationMethod;
+        wchar_t *alternateAuthenticationMethod;
         /// Optional element 'ns2:alternateAuthenticationDate' of XML schema type 'xsd:string'
-        std::string *alternateAuthenticationDate;
+        wchar_t *alternateAuthenticationDate;
         /// Optional element 'ns2:alternateAuthenticationData' of XML schema type 'xsd:string'
-        std::string *alternateAuthenticationData;
+        wchar_t *alternateAuthenticationData;
         /// Optional element 'ns2:challengeRequired' of XML schema type 'ns2:boolean'
-        std::string *challengeRequired;
+        wchar_t *challengeRequired;
         /// Optional element 'ns2:challengeCode' of XML schema type 'xsd:string'
-        std::string *challengeCode;
+        wchar_t *challengeCode;
         /// Optional element 'ns2:preorder' of XML schema type 'xsd:string'
-        std::string *preorder;
+        wchar_t *preorder;
         /// Optional element 'ns2:reorder' of XML schema type 'xsd:string'
-        std::string *reorder;
+        wchar_t *reorder;
         /// Optional element 'ns2:preorderDate' of XML schema type 'xsd:string'
-        std::string *preorderDate;
+        wchar_t *preorderDate;
         /// Optional element 'ns2:giftCardAmount' of XML schema type 'xsd:string'
-        std::string *giftCardAmount;
+        wchar_t *giftCardAmount;
         /// Optional element 'ns2:giftCardCurrency' of XML schema type 'xsd:string'
-        std::string *giftCardCurrency;
+        wchar_t *giftCardCurrency;
         /// Optional element 'ns2:giftCardCount' of XML schema type 'xsd:string'
-        std::string *giftCardCount;
+        wchar_t *giftCardCount;
         /// Optional element 'ns2:messageCategory' of XML schema type 'xsd:string'
-        std::string *messageCategory;
+        wchar_t *messageCategory;
         /// Optional element 'ns2:npaCode' of XML schema type 'xsd:string'
-        std::string *npaCode;
+        wchar_t *npaCode;
         /// Optional element 'ns2:recurringOriginalPurchaseDate' of XML schema type 'xsd:string'
-        std::string *recurringOriginalPurchaseDate;
+        wchar_t *recurringOriginalPurchaseDate;
         /// Optional element 'ns2:returnURL' of XML schema type 'xsd:string'
-        std::string *returnURL;
+        wchar_t *returnURL;
         /// Optional element 'ns2:transactionMode' of XML schema type 'xsd:string'
-        std::string *transactionMode;
+        wchar_t *transactionMode;
         /// Optional element 'ns2:recurringEndDate' of XML schema type 'xsd:string'
-        std::string *recurringEndDate;
+        wchar_t *recurringEndDate;
         /// Optional element 'ns2:recurringFrequency' of XML schema type 'xsd:string'
-        std::string *recurringFrequency;
+        wchar_t *recurringFrequency;
         /// Optional element 'ns2:merchantNewCustomer' of XML schema type 'xsd:string'
-        std::string *merchantNewCustomer;
+        wchar_t *merchantNewCustomer;
         /// Optional element 'ns2:customerCCAlias' of XML schema type 'xsd:string'
-        std::string *customerCCAlias;
+        wchar_t *customerCCAlias;
         /// Optional element 'ns2:installmentTotalCount' of XML schema type 'xsd:string'
-        std::string *installmentTotalCount;
+        wchar_t *installmentTotalCount;
         /// Optional element 'ns2:authenticationTransactionID' of XML schema type 'xsd:string'
-        std::string *authenticationTransactionID;
+        wchar_t *authenticationTransactionID;
         /// Optional element 'ns2:httpUserAccept' of XML schema type 'xsd:string'
-        std::string *httpUserAccept;
+        wchar_t *httpUserAccept;
         /// Optional element 'ns2:mobilePhoneDomestic' of XML schema type 'xsd:string'
-        std::string *mobilePhoneDomestic;
+        wchar_t *mobilePhoneDomestic;
         /// Optional element 'ns2:pareqChannel' of XML schema type 'xsd:string'
-        std::string *pareqChannel;
+        wchar_t *pareqChannel;
         /// Optional element 'ns2:shoppingChannel' of XML schema type 'xsd:string'
-        std::string *shoppingChannel;
+        wchar_t *shoppingChannel;
         /// Optional element 'ns2:authenticationChannel' of XML schema type 'xsd:string'
-        std::string *authenticationChannel;
+        wchar_t *authenticationChannel;
         /// Optional element 'ns2:merchantTTPCredential' of XML schema type 'xsd:string'
-        std::string *merchantTTPCredential;
+        wchar_t *merchantTTPCredential;
         /// Optional element 'ns2:requestorID' of XML schema type 'xsd:string'
-        std::string *requestorID;
+        wchar_t *requestorID;
         /// Optional element 'ns2:requestorName' of XML schema type 'xsd:string'
-        std::string *requestorName;
+        wchar_t *requestorName;
         /// Optional element 'ns2:acsWindowSize' of XML schema type 'xsd:integer'
-        std::string *acsWindowSize;
+        wchar_t *acsWindowSize;
         /// Optional element 'ns2:decoupledAuthenticationIndicator' of XML schema type 'xsd:string'
-        std::string *decoupledAuthenticationIndicator;
+        wchar_t *decoupledAuthenticationIndicator;
         /// Optional element 'ns2:decoupledAuthenticationMaxTime' of XML schema type 'xsd:integer'
-        std::string *decoupledAuthenticationMaxTime;
+        wchar_t *decoupledAuthenticationMaxTime;
         /// Optional element 'ns2:deviceChannel' of XML schema type 'xsd:string'
-        std::string *deviceChannel;
+        wchar_t *deviceChannel;
         /// Optional element 'ns2:priorAuthenticationReferenceID' of XML schema type 'xsd:string'
-        std::string *priorAuthenticationReferenceID;
+        wchar_t *priorAuthenticationReferenceID;
         /// Optional element 'ns2:priorAuthenticationData' of XML schema type 'xsd:string'
-        std::string *priorAuthenticationData;
+        wchar_t *priorAuthenticationData;
         /// Optional element 'ns2:priorAuthenticationMethod' of XML schema type 'xsd:integer'
-        std::string *priorAuthenticationMethod;
+        wchar_t *priorAuthenticationMethod;
         /// Optional element 'ns2:priorAuthenticationTime' of XML schema type 'xsd:integer'
-        std::string *priorAuthenticationTime;
+        wchar_t *priorAuthenticationTime;
         /// Optional element 'ns2:requestorInitiatedAuthenticationIndicator' of XML schema type 'xsd:integer'
-        std::string *requestorInitiatedAuthenticationIndicator;
+        wchar_t *requestorInitiatedAuthenticationIndicator;
         /// Optional element 'ns2:sdkMaxTimeout' of XML schema type 'xsd:string'
-        std::string *sdkMaxTimeout;
+        wchar_t *sdkMaxTimeout;
         /// Optional element 'ns2:authenticationIndicator' of XML schema type 'xsd:integer'
-        std::string *authenticationIndicator;
+        wchar_t *authenticationIndicator;
         /// Optional element 'ns2:whiteListStatus' of XML schema type 'xsd:string'
-        std::string *whiteListStatus;
+        wchar_t *whiteListStatus;
         /// Optional element 'ns2:totalOffersCount' of XML schema type 'xsd:integer'
-        std::string *totalOffersCount;
+        wchar_t *totalOffersCount;
         /// Optional element 'ns2:merchantScore' of XML schema type 'xsd:string'
-        std::string *merchantScore;
+        wchar_t *merchantScore;
         /// Optional element 'ns2:merchantFraudRate' of XML schema type 'xsd:integer'
-        std::string *merchantFraudRate;
+        wchar_t *merchantFraudRate;
         /// Optional element 'ns2:acquirerCountry' of XML schema type 'xsd:string'
-        std::string *acquirerCountry;
+        wchar_t *acquirerCountry;
         /// Optional element 'ns2:secureCorporatePaymentIndicator' of XML schema type 'xsd:string'
-        std::string *secureCorporatePaymentIndicator;
+        wchar_t *secureCorporatePaymentIndicator;
         /// Optional element 'ns2:resendCount' of XML schema type 'xsd:string'
-        std::string *resendCount;
+        wchar_t *resendCount;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4157,20 +4157,20 @@ class SOAP_CMAC ns2__PayerAuthEnrollService {
 
 /* CyberSourceTransaction_nvp_1.183.h:212 */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateService
-#define SOAP_TYPE_ns2__PayerAuthValidateService (301)
+#define SOAP_TYPE_ns2__PayerAuthValidateService (302)
 /* complex XML schema type 'ns2:PayerAuthValidateService': */
 class SOAP_CMAC ns2__PayerAuthValidateService {
       public:
         /// Optional element 'ns2:signedPARes' of XML schema type 'xsd:string'
-        std::string *signedPARes;
+        wchar_t *signedPARes;
         /// Optional element 'ns2:authenticationTransactionID' of XML schema type 'xsd:string'
-        std::string *authenticationTransactionID;
+        wchar_t *authenticationTransactionID;
         /// Optional element 'ns2:responseAccessToken' of XML schema type 'xsd:string'
-        std::string *responseAccessToken;
+        wchar_t *responseAccessToken;
         /// Optional element 'ns2:otpToken' of XML schema type 'xsd:string'
-        std::string *otpToken;
+        wchar_t *otpToken;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4201,12 +4201,12 @@ class SOAP_CMAC ns2__PayerAuthValidateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:214 */
 #ifndef SOAP_TYPE_ns2__PayerAuthSetupService
-#define SOAP_TYPE_ns2__PayerAuthSetupService (302)
+#define SOAP_TYPE_ns2__PayerAuthSetupService (303)
 /* complex XML schema type 'ns2:PayerAuthSetupService': */
 class SOAP_CMAC ns2__PayerAuthSetupService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4237,72 +4237,72 @@ class SOAP_CMAC ns2__PayerAuthSetupService {
 
 /* CyberSourceTransaction_nvp_1.183.h:216 */
 #ifndef SOAP_TYPE_ns2__TaxService
-#define SOAP_TYPE_ns2__TaxService (303)
+#define SOAP_TYPE_ns2__TaxService (304)
 /* complex XML schema type 'ns2:TaxService': */
 class SOAP_CMAC ns2__TaxService {
       public:
         /// Optional element 'ns2:nexus' of XML schema type 'xsd:string'
-        std::string *nexus;
+        wchar_t *nexus;
         /// Optional element 'ns2:noNexus' of XML schema type 'xsd:string'
-        std::string *noNexus;
+        wchar_t *noNexus;
         /// Optional element 'ns2:orderAcceptanceCity' of XML schema type 'xsd:string'
-        std::string *orderAcceptanceCity;
+        wchar_t *orderAcceptanceCity;
         /// Optional element 'ns2:orderAcceptanceCounty' of XML schema type 'xsd:string'
-        std::string *orderAcceptanceCounty;
+        wchar_t *orderAcceptanceCounty;
         /// Optional element 'ns2:orderAcceptanceCountry' of XML schema type 'xsd:string'
-        std::string *orderAcceptanceCountry;
+        wchar_t *orderAcceptanceCountry;
         /// Optional element 'ns2:orderAcceptanceState' of XML schema type 'xsd:string'
-        std::string *orderAcceptanceState;
+        wchar_t *orderAcceptanceState;
         /// Optional element 'ns2:orderAcceptancePostalCode' of XML schema type 'xsd:string'
-        std::string *orderAcceptancePostalCode;
+        wchar_t *orderAcceptancePostalCode;
         /// Optional element 'ns2:orderOriginCity' of XML schema type 'xsd:string'
-        std::string *orderOriginCity;
+        wchar_t *orderOriginCity;
         /// Optional element 'ns2:orderOriginCounty' of XML schema type 'xsd:string'
-        std::string *orderOriginCounty;
+        wchar_t *orderOriginCounty;
         /// Optional element 'ns2:orderOriginCountry' of XML schema type 'xsd:string'
-        std::string *orderOriginCountry;
+        wchar_t *orderOriginCountry;
         /// Optional element 'ns2:orderOriginState' of XML schema type 'xsd:string'
-        std::string *orderOriginState;
+        wchar_t *orderOriginState;
         /// Optional element 'ns2:orderOriginPostalCode' of XML schema type 'xsd:string'
-        std::string *orderOriginPostalCode;
+        wchar_t *orderOriginPostalCode;
         /// Optional element 'ns2:sellerRegistration' of XML schema type 'xsd:string'
-        std::string *sellerRegistration;
+        wchar_t *sellerRegistration;
         /// Optional element 'ns2:sellerRegistration0' of XML schema type 'xsd:string'
-        std::string *sellerRegistration0;
+        wchar_t *sellerRegistration0;
         /// Optional element 'ns2:sellerRegistration1' of XML schema type 'xsd:string'
-        std::string *sellerRegistration1;
+        wchar_t *sellerRegistration1;
         /// Optional element 'ns2:sellerRegistration2' of XML schema type 'xsd:string'
-        std::string *sellerRegistration2;
+        wchar_t *sellerRegistration2;
         /// Optional element 'ns2:sellerRegistration3' of XML schema type 'xsd:string'
-        std::string *sellerRegistration3;
+        wchar_t *sellerRegistration3;
         /// Optional element 'ns2:sellerRegistration4' of XML schema type 'xsd:string'
-        std::string *sellerRegistration4;
+        wchar_t *sellerRegistration4;
         /// Optional element 'ns2:sellerRegistration5' of XML schema type 'xsd:string'
-        std::string *sellerRegistration5;
+        wchar_t *sellerRegistration5;
         /// Optional element 'ns2:sellerRegistration6' of XML schema type 'xsd:string'
-        std::string *sellerRegistration6;
+        wchar_t *sellerRegistration6;
         /// Optional element 'ns2:sellerRegistration7' of XML schema type 'xsd:string'
-        std::string *sellerRegistration7;
+        wchar_t *sellerRegistration7;
         /// Optional element 'ns2:sellerRegistration8' of XML schema type 'xsd:string'
-        std::string *sellerRegistration8;
+        wchar_t *sellerRegistration8;
         /// Optional element 'ns2:sellerRegistration9' of XML schema type 'xsd:string'
-        std::string *sellerRegistration9;
+        wchar_t *sellerRegistration9;
         /// Optional element 'ns2:buyerRegistration' of XML schema type 'xsd:string'
-        std::string *buyerRegistration;
+        wchar_t *buyerRegistration;
         /// Optional element 'ns2:middlemanRegistration' of XML schema type 'xsd:string'
-        std::string *middlemanRegistration;
+        wchar_t *middlemanRegistration;
         /// Optional element 'ns2:pointOfTitleTransfer' of XML schema type 'xsd:string'
-        std::string *pointOfTitleTransfer;
+        wchar_t *pointOfTitleTransfer;
         /// Optional element 'ns2:commitIndicator' of XML schema type 'xsd:string'
-        std::string *commitIndicator;
+        wchar_t *commitIndicator;
         /// Optional element 'ns2:refundIndicator' of XML schema type 'xsd:string'
-        std::string *refundIndicator;
+        wchar_t *refundIndicator;
         /// Optional element 'ns2:dateOverrideReason' of XML schema type 'xsd:string'
-        std::string *dateOverrideReason;
+        wchar_t *dateOverrideReason;
         /// Optional element 'ns2:reportingDate' of XML schema type 'xsd:string'
-        std::string *reportingDate;
+        wchar_t *reportingDate;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4333,16 +4333,16 @@ class SOAP_CMAC ns2__TaxService {
 
 /* CyberSourceTransaction_nvp_1.183.h:218 */
 #ifndef SOAP_TYPE_ns2__DMEService
-#define SOAP_TYPE_ns2__DMEService (304)
+#define SOAP_TYPE_ns2__DMEService (305)
 /* complex XML schema type 'ns2:DMEService': */
 class SOAP_CMAC ns2__DMEService {
       public:
         /// Optional element 'ns2:eventType' of XML schema type 'xsd:string'
-        std::string *eventType;
+        wchar_t *eventType;
         /// Optional element 'ns2:eventPolicy' of XML schema type 'xsd:string'
-        std::string *eventPolicy;
+        wchar_t *eventPolicy;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4373,20 +4373,20 @@ class SOAP_CMAC ns2__DMEService {
 
 /* CyberSourceTransaction_nvp_1.183.h:220 */
 #ifndef SOAP_TYPE_ns2__AFSService
-#define SOAP_TYPE_ns2__AFSService (305)
+#define SOAP_TYPE_ns2__AFSService (306)
 /* complex XML schema type 'ns2:AFSService': */
 class SOAP_CMAC ns2__AFSService {
       public:
         /// Optional element 'ns2:avsCode' of XML schema type 'xsd:string'
-        std::string *avsCode;
+        wchar_t *avsCode;
         /// Optional element 'ns2:cvCode' of XML schema type 'xsd:string'
-        std::string *cvCode;
+        wchar_t *cvCode;
         /// Optional element 'ns2:disableAVSScoring' of XML schema type 'ns2:boolean'
-        std::string *disableAVSScoring;
+        wchar_t *disableAVSScoring;
         /// Optional element 'ns2:customRiskModel' of XML schema type 'xsd:string'
-        std::string *customRiskModel;
+        wchar_t *customRiskModel;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4417,12 +4417,12 @@ class SOAP_CMAC ns2__AFSService {
 
 /* CyberSourceTransaction_nvp_1.183.h:222 */
 #ifndef SOAP_TYPE_ns2__DAVService
-#define SOAP_TYPE_ns2__DAVService (306)
+#define SOAP_TYPE_ns2__DAVService (307)
 /* complex XML schema type 'ns2:DAVService': */
 class SOAP_CMAC ns2__DAVService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4453,22 +4453,22 @@ class SOAP_CMAC ns2__DAVService {
 
 /* CyberSourceTransaction_nvp_1.183.h:224 */
 #ifndef SOAP_TYPE_ns2__ExportService
-#define SOAP_TYPE_ns2__ExportService (307)
+#define SOAP_TYPE_ns2__ExportService (308)
 /* complex XML schema type 'ns2:ExportService': */
 class SOAP_CMAC ns2__ExportService {
       public:
         /// Optional element 'ns2:addressOperator' of XML schema type 'xsd:string'
-        std::string *addressOperator;
+        wchar_t *addressOperator;
         /// Optional element 'ns2:addressWeight' of XML schema type 'xsd:string'
-        std::string *addressWeight;
+        wchar_t *addressWeight;
         /// Optional element 'ns2:companyWeight' of XML schema type 'xsd:string'
-        std::string *companyWeight;
+        wchar_t *companyWeight;
         /// Optional element 'ns2:nameWeight' of XML schema type 'xsd:string'
-        std::string *nameWeight;
+        wchar_t *nameWeight;
         /// Optional element 'ns2:sanctionsLists' of XML schema type 'xsd:string'
-        std::string *sanctionsLists;
+        wchar_t *sanctionsLists;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4499,12 +4499,12 @@ class SOAP_CMAC ns2__ExportService {
 
 /* CyberSourceTransaction_nvp_1.183.h:226 */
 #ifndef SOAP_TYPE_ns2__FXRatesService
-#define SOAP_TYPE_ns2__FXRatesService (308)
+#define SOAP_TYPE_ns2__FXRatesService (309)
 /* complex XML schema type 'ns2:FXRatesService': */
 class SOAP_CMAC ns2__FXRatesService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4535,12 +4535,12 @@ class SOAP_CMAC ns2__FXRatesService {
 
 /* CyberSourceTransaction_nvp_1.183.h:228 */
 #ifndef SOAP_TYPE_ns2__BankTransferService
-#define SOAP_TYPE_ns2__BankTransferService (309)
+#define SOAP_TYPE_ns2__BankTransferService (310)
 /* complex XML schema type 'ns2:BankTransferService': */
 class SOAP_CMAC ns2__BankTransferService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4571,24 +4571,24 @@ class SOAP_CMAC ns2__BankTransferService {
 
 /* CyberSourceTransaction_nvp_1.183.h:230 */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundService
-#define SOAP_TYPE_ns2__BankTransferRefundService (310)
+#define SOAP_TYPE_ns2__BankTransferRefundService (311)
 /* complex XML schema type 'ns2:BankTransferRefundService': */
 class SOAP_CMAC ns2__BankTransferRefundService {
       public:
         /// Optional element 'ns2:bankTransferRequestID' of XML schema type 'xsd:string'
-        std::string *bankTransferRequestID;
+        wchar_t *bankTransferRequestID;
         /// Optional element 'ns2:bankTransferRealTimeRequestID' of XML schema type 'xsd:string'
-        std::string *bankTransferRealTimeRequestID;
+        wchar_t *bankTransferRealTimeRequestID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:bankTransferRealTimeReconciliationID' of XML schema type 'xsd:string'
-        std::string *bankTransferRealTimeReconciliationID;
+        wchar_t *bankTransferRealTimeReconciliationID;
         /// Optional element 'ns2:bankTransferRequestToken' of XML schema type 'xsd:string'
-        std::string *bankTransferRequestToken;
+        wchar_t *bankTransferRequestToken;
         /// Optional element 'ns2:bankTransferRealTimeRequestToken' of XML schema type 'xsd:string'
-        std::string *bankTransferRealTimeRequestToken;
+        wchar_t *bankTransferRealTimeRequestToken;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4619,14 +4619,14 @@ class SOAP_CMAC ns2__BankTransferRefundService {
 
 /* CyberSourceTransaction_nvp_1.183.h:232 */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeService
-#define SOAP_TYPE_ns2__BankTransferRealTimeService (311)
+#define SOAP_TYPE_ns2__BankTransferRealTimeService (312)
 /* complex XML schema type 'ns2:BankTransferRealTimeService': */
 class SOAP_CMAC ns2__BankTransferRealTimeService {
       public:
         /// Optional element 'ns2:bankTransferRealTimeType' of XML schema type 'xsd:string'
-        std::string *bankTransferRealTimeType;
+        wchar_t *bankTransferRealTimeType;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4657,16 +4657,16 @@ class SOAP_CMAC ns2__BankTransferRealTimeService {
 
 /* CyberSourceTransaction_nvp_1.183.h:234 */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateService
-#define SOAP_TYPE_ns2__DirectDebitMandateService (312)
+#define SOAP_TYPE_ns2__DirectDebitMandateService (313)
 /* complex XML schema type 'ns2:DirectDebitMandateService': */
 class SOAP_CMAC ns2__DirectDebitMandateService {
       public:
         /// Optional element 'ns2:mandateDescriptor' of XML schema type 'xsd:string'
-        std::string *mandateDescriptor;
+        wchar_t *mandateDescriptor;
         /// Optional element 'ns2:firstDebitDate' of XML schema type 'xsd:string'
-        std::string *firstDebitDate;
+        wchar_t *firstDebitDate;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4697,34 +4697,34 @@ class SOAP_CMAC ns2__DirectDebitMandateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:236 */
 #ifndef SOAP_TYPE_ns2__DirectDebitService
-#define SOAP_TYPE_ns2__DirectDebitService (313)
+#define SOAP_TYPE_ns2__DirectDebitService (314)
 /* complex XML schema type 'ns2:DirectDebitService': */
 class SOAP_CMAC ns2__DirectDebitService {
       public:
         /// Optional element 'ns2:dateCollect' of XML schema type 'xsd:string'
-        std::string *dateCollect;
+        wchar_t *dateCollect;
         /// Optional element 'ns2:directDebitText' of XML schema type 'xsd:string'
-        std::string *directDebitText;
+        wchar_t *directDebitText;
         /// Optional element 'ns2:authorizationID' of XML schema type 'xsd:string'
-        std::string *authorizationID;
+        wchar_t *authorizationID;
         /// Optional element 'ns2:transactionType' of XML schema type 'xsd:string'
-        std::string *transactionType;
+        wchar_t *transactionType;
         /// Optional element 'ns2:directDebitType' of XML schema type 'xsd:string'
-        std::string *directDebitType;
+        wchar_t *directDebitType;
         /// Optional element 'ns2:validateRequestID' of XML schema type 'xsd:string'
-        std::string *validateRequestID;
+        wchar_t *validateRequestID;
         /// Optional element 'ns2:recurringType' of XML schema type 'xsd:string'
-        std::string *recurringType;
+        wchar_t *recurringType;
         /// Optional element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string *mandateID;
+        wchar_t *mandateID;
         /// Optional element 'ns2:validateRequestToken' of XML schema type 'xsd:string'
-        std::string *validateRequestToken;
+        wchar_t *validateRequestToken;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:mandateAuthenticationDate' of XML schema type 'xsd:string'
-        std::string *mandateAuthenticationDate;
+        wchar_t *mandateAuthenticationDate;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4755,26 +4755,26 @@ class SOAP_CMAC ns2__DirectDebitService {
 
 /* CyberSourceTransaction_nvp_1.183.h:238 */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundService
-#define SOAP_TYPE_ns2__DirectDebitRefundService (314)
+#define SOAP_TYPE_ns2__DirectDebitRefundService (315)
 /* complex XML schema type 'ns2:DirectDebitRefundService': */
 class SOAP_CMAC ns2__DirectDebitRefundService {
       public:
         /// Optional element 'ns2:directDebitRequestID' of XML schema type 'xsd:string'
-        std::string *directDebitRequestID;
+        wchar_t *directDebitRequestID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:directDebitRequestToken' of XML schema type 'xsd:string'
-        std::string *directDebitRequestToken;
+        wchar_t *directDebitRequestToken;
         /// Optional element 'ns2:directDebitType' of XML schema type 'xsd:string'
-        std::string *directDebitType;
+        wchar_t *directDebitType;
         /// Optional element 'ns2:recurringType' of XML schema type 'xsd:string'
-        std::string *recurringType;
+        wchar_t *recurringType;
         /// Optional element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string *mandateID;
+        wchar_t *mandateID;
         /// Optional element 'ns2:mandateAuthenticationDate' of XML schema type 'xsd:string'
-        std::string *mandateAuthenticationDate;
+        wchar_t *mandateAuthenticationDate;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4805,14 +4805,14 @@ class SOAP_CMAC ns2__DirectDebitRefundService {
 
 /* CyberSourceTransaction_nvp_1.183.h:240 */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateService
-#define SOAP_TYPE_ns2__DirectDebitValidateService (315)
+#define SOAP_TYPE_ns2__DirectDebitValidateService (316)
 /* complex XML schema type 'ns2:DirectDebitValidateService': */
 class SOAP_CMAC ns2__DirectDebitValidateService {
       public:
         /// Optional element 'ns2:directDebitValidateText' of XML schema type 'xsd:string'
-        std::string *directDebitValidateText;
+        wchar_t *directDebitValidateText;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4843,16 +4843,16 @@ class SOAP_CMAC ns2__DirectDebitValidateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:242 */
 #ifndef SOAP_TYPE_ns2__DeviceFingerprintData
-#define SOAP_TYPE_ns2__DeviceFingerprintData (316)
+#define SOAP_TYPE_ns2__DeviceFingerprintData (317)
 /* complex XML schema type 'ns2:DeviceFingerprintData': */
 class SOAP_CMAC ns2__DeviceFingerprintData {
       public:
         /// Optional element 'ns2:data' of XML schema type 'xsd:string'
-        std::string *data;
+        wchar_t *data;
         /// Optional element 'ns2:provider' of XML schema type 'xsd:string'
-        std::string *provider;
+        wchar_t *provider;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4883,18 +4883,18 @@ class SOAP_CMAC ns2__DeviceFingerprintData {
 
 /* CyberSourceTransaction_nvp_1.183.h:244 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateService
-#define SOAP_TYPE_ns2__PaySubscriptionCreateService (317)
+#define SOAP_TYPE_ns2__PaySubscriptionCreateService (318)
 /* complex XML schema type 'ns2:PaySubscriptionCreateService': */
 class SOAP_CMAC ns2__PaySubscriptionCreateService {
       public:
         /// Optional element 'ns2:paymentRequestID' of XML schema type 'xsd:string'
-        std::string *paymentRequestID;
+        wchar_t *paymentRequestID;
         /// Optional element 'ns2:paymentRequestToken' of XML schema type 'xsd:string'
-        std::string *paymentRequestToken;
+        wchar_t *paymentRequestToken;
         /// Optional element 'ns2:disableAutoAuth' of XML schema type 'ns2:boolean'
-        std::string *disableAutoAuth;
+        wchar_t *disableAutoAuth;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4925,12 +4925,12 @@ class SOAP_CMAC ns2__PaySubscriptionCreateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:246 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateService
-#define SOAP_TYPE_ns2__PaySubscriptionUpdateService (318)
+#define SOAP_TYPE_ns2__PaySubscriptionUpdateService (319)
 /* complex XML schema type 'ns2:PaySubscriptionUpdateService': */
 class SOAP_CMAC ns2__PaySubscriptionUpdateService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4961,14 +4961,14 @@ class SOAP_CMAC ns2__PaySubscriptionUpdateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:248 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateService
-#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (319)
+#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (320)
 /* complex XML schema type 'ns2:PaySubscriptionEventUpdateService': */
 class SOAP_CMAC ns2__PaySubscriptionEventUpdateService {
       public:
         /// Optional element 'ns2:action' of XML schema type 'xsd:string'
-        std::string *action;
+        wchar_t *action;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -4999,12 +4999,12 @@ class SOAP_CMAC ns2__PaySubscriptionEventUpdateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:250 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveService
-#define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (320)
+#define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (321)
 /* complex XML schema type 'ns2:PaySubscriptionRetrieveService': */
 class SOAP_CMAC ns2__PaySubscriptionRetrieveService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5035,12 +5035,12 @@ class SOAP_CMAC ns2__PaySubscriptionRetrieveService {
 
 /* CyberSourceTransaction_nvp_1.183.h:252 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteService
-#define SOAP_TYPE_ns2__PaySubscriptionDeleteService (321)
+#define SOAP_TYPE_ns2__PaySubscriptionDeleteService (322)
 /* complex XML schema type 'ns2:PaySubscriptionDeleteService': */
 class SOAP_CMAC ns2__PaySubscriptionDeleteService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5071,18 +5071,18 @@ class SOAP_CMAC ns2__PaySubscriptionDeleteService {
 
 /* CyberSourceTransaction_nvp_1.183.h:254 */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentService
-#define SOAP_TYPE_ns2__PayPalPaymentService (322)
+#define SOAP_TYPE_ns2__PayPalPaymentService (323)
 /* complex XML schema type 'ns2:PayPalPaymentService': */
 class SOAP_CMAC ns2__PayPalPaymentService {
       public:
         /// Optional element 'ns2:cancelURL' of XML schema type 'xsd:string'
-        std::string *cancelURL;
+        wchar_t *cancelURL;
         /// Optional element 'ns2:successURL' of XML schema type 'xsd:string'
-        std::string *successURL;
+        wchar_t *successURL;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5113,18 +5113,18 @@ class SOAP_CMAC ns2__PayPalPaymentService {
 
 /* CyberSourceTransaction_nvp_1.183.h:256 */
 #ifndef SOAP_TYPE_ns2__PayPalCreditService
-#define SOAP_TYPE_ns2__PayPalCreditService (323)
+#define SOAP_TYPE_ns2__PayPalCreditService (324)
 /* complex XML schema type 'ns2:PayPalCreditService': */
 class SOAP_CMAC ns2__PayPalCreditService {
       public:
         /// Optional element 'ns2:payPalPaymentRequestID' of XML schema type 'xsd:string'
-        std::string *payPalPaymentRequestID;
+        wchar_t *payPalPaymentRequestID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:payPalPaymentRequestToken' of XML schema type 'xsd:string'
-        std::string *payPalPaymentRequestToken;
+        wchar_t *payPalPaymentRequestToken;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5155,62 +5155,62 @@ class SOAP_CMAC ns2__PayPalCreditService {
 
 /* CyberSourceTransaction_nvp_1.183.h:258 */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetService
-#define SOAP_TYPE_ns2__PayPalEcSetService (324)
+#define SOAP_TYPE_ns2__PayPalEcSetService (325)
 /* complex XML schema type 'ns2:PayPalEcSetService': */
 class SOAP_CMAC ns2__PayPalEcSetService {
       public:
         /// Optional element 'ns2:paypalReturn' of XML schema type 'xsd:string'
-        std::string *paypalReturn;
+        wchar_t *paypalReturn;
         /// Optional element 'ns2:paypalCancelReturn' of XML schema type 'xsd:string'
-        std::string *paypalCancelReturn;
+        wchar_t *paypalCancelReturn;
         /// Optional element 'ns2:paypalMaxamt' of XML schema type 'xsd:string'
-        std::string *paypalMaxamt;
+        wchar_t *paypalMaxamt;
         /// Optional element 'ns2:paypalCustomerEmail' of XML schema type 'xsd:string'
-        std::string *paypalCustomerEmail;
+        wchar_t *paypalCustomerEmail;
         /// Optional element 'ns2:paypalDesc' of XML schema type 'xsd:string'
-        std::string *paypalDesc;
+        wchar_t *paypalDesc;
         /// Optional element 'ns2:paypalReqconfirmshipping' of XML schema type 'xsd:string'
-        std::string *paypalReqconfirmshipping;
+        wchar_t *paypalReqconfirmshipping;
         /// Optional element 'ns2:paypalNoshipping' of XML schema type 'xsd:string'
-        std::string *paypalNoshipping;
+        wchar_t *paypalNoshipping;
         /// Optional element 'ns2:paypalAddressOverride' of XML schema type 'xsd:string'
-        std::string *paypalAddressOverride;
+        wchar_t *paypalAddressOverride;
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:paypalLc' of XML schema type 'xsd:string'
-        std::string *paypalLc;
+        wchar_t *paypalLc;
         /// Optional element 'ns2:paypalPagestyle' of XML schema type 'xsd:string'
-        std::string *paypalPagestyle;
+        wchar_t *paypalPagestyle;
         /// Optional element 'ns2:paypalHdrimg' of XML schema type 'xsd:string'
-        std::string *paypalHdrimg;
+        wchar_t *paypalHdrimg;
         /// Optional element 'ns2:paypalHdrbordercolor' of XML schema type 'xsd:string'
-        std::string *paypalHdrbordercolor;
+        wchar_t *paypalHdrbordercolor;
         /// Optional element 'ns2:paypalHdrbackcolor' of XML schema type 'xsd:string'
-        std::string *paypalHdrbackcolor;
+        wchar_t *paypalHdrbackcolor;
         /// Optional element 'ns2:paypalPayflowcolor' of XML schema type 'xsd:string'
-        std::string *paypalPayflowcolor;
+        wchar_t *paypalPayflowcolor;
         /// Optional element 'ns2:paypalEcSetRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestID;
+        wchar_t *paypalEcSetRequestID;
         /// Optional element 'ns2:paypalEcSetRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestToken;
+        wchar_t *paypalEcSetRequestToken;
         /// Optional element 'ns2:promoCode0' of XML schema type 'xsd:string'
-        std::string *promoCode0;
+        wchar_t *promoCode0;
         /// Optional element 'ns2:requestBillingAddress' of XML schema type 'xsd:string'
-        std::string *requestBillingAddress;
+        wchar_t *requestBillingAddress;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Optional element 'ns2:paypalBillingType' of XML schema type 'xsd:string'
-        std::string *paypalBillingType;
+        wchar_t *paypalBillingType;
         /// Optional element 'ns2:paypalBillingAgreementDesc' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementDesc;
+        wchar_t *paypalBillingAgreementDesc;
         /// Optional element 'ns2:paypalPaymentType' of XML schema type 'xsd:string'
-        std::string *paypalPaymentType;
+        wchar_t *paypalPaymentType;
         /// Optional element 'ns2:paypalBillingAgreementCustom' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementCustom;
+        wchar_t *paypalBillingAgreementCustom;
         /// Optional element 'ns2:paypalLogoimg' of XML schema type 'xsd:string'
-        std::string *paypalLogoimg;
+        wchar_t *paypalLogoimg;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5241,18 +5241,18 @@ class SOAP_CMAC ns2__PayPalEcSetService {
 
 /* CyberSourceTransaction_nvp_1.183.h:260 */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsService
-#define SOAP_TYPE_ns2__PayPalEcGetDetailsService (325)
+#define SOAP_TYPE_ns2__PayPalEcGetDetailsService (326)
 /* complex XML schema type 'ns2:PayPalEcGetDetailsService': */
 class SOAP_CMAC ns2__PayPalEcGetDetailsService {
       public:
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:paypalEcSetRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestID;
+        wchar_t *paypalEcSetRequestID;
         /// Optional element 'ns2:paypalEcSetRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestToken;
+        wchar_t *paypalEcSetRequestToken;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5283,28 +5283,28 @@ class SOAP_CMAC ns2__PayPalEcGetDetailsService {
 
 /* CyberSourceTransaction_nvp_1.183.h:262 */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentService
-#define SOAP_TYPE_ns2__PayPalEcDoPaymentService (326)
+#define SOAP_TYPE_ns2__PayPalEcDoPaymentService (327)
 /* complex XML schema type 'ns2:PayPalEcDoPaymentService': */
 class SOAP_CMAC ns2__PayPalEcDoPaymentService {
       public:
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:paypalPayerId' of XML schema type 'xsd:string'
-        std::string *paypalPayerId;
+        wchar_t *paypalPayerId;
         /// Optional element 'ns2:paypalCustomerEmail' of XML schema type 'xsd:string'
-        std::string *paypalCustomerEmail;
+        wchar_t *paypalCustomerEmail;
         /// Optional element 'ns2:paypalDesc' of XML schema type 'xsd:string'
-        std::string *paypalDesc;
+        wchar_t *paypalDesc;
         /// Optional element 'ns2:paypalEcSetRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestID;
+        wchar_t *paypalEcSetRequestID;
         /// Optional element 'ns2:paypalEcSetRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestToken;
+        wchar_t *paypalEcSetRequestToken;
         /// Optional element 'ns2:promoCode0' of XML schema type 'xsd:string'
-        std::string *promoCode0;
+        wchar_t *promoCode0;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5335,26 +5335,26 @@ class SOAP_CMAC ns2__PayPalEcDoPaymentService {
 
 /* CyberSourceTransaction_nvp_1.183.h:264 */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureService
-#define SOAP_TYPE_ns2__PayPalDoCaptureService (327)
+#define SOAP_TYPE_ns2__PayPalDoCaptureService (328)
 /* complex XML schema type 'ns2:PayPalDoCaptureService': */
 class SOAP_CMAC ns2__PayPalDoCaptureService {
       public:
         /// Optional element 'ns2:paypalAuthorizationId' of XML schema type 'xsd:string'
-        std::string *paypalAuthorizationId;
+        wchar_t *paypalAuthorizationId;
         /// Optional element 'ns2:completeType' of XML schema type 'xsd:string'
-        std::string *completeType;
+        wchar_t *completeType;
         /// Optional element 'ns2:paypalEcDoPaymentRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcDoPaymentRequestID;
+        wchar_t *paypalEcDoPaymentRequestID;
         /// Optional element 'ns2:paypalEcDoPaymentRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcDoPaymentRequestToken;
+        wchar_t *paypalEcDoPaymentRequestToken;
         /// Optional element 'ns2:paypalAuthorizationRequestID' of XML schema type 'xsd:string'
-        std::string *paypalAuthorizationRequestID;
+        wchar_t *paypalAuthorizationRequestID;
         /// Optional element 'ns2:paypalAuthorizationRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalAuthorizationRequestToken;
+        wchar_t *paypalAuthorizationRequestToken;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5385,26 +5385,26 @@ class SOAP_CMAC ns2__PayPalDoCaptureService {
 
 /* CyberSourceTransaction_nvp_1.183.h:266 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalService
-#define SOAP_TYPE_ns2__PayPalAuthReversalService (328)
+#define SOAP_TYPE_ns2__PayPalAuthReversalService (329)
 /* complex XML schema type 'ns2:PayPalAuthReversalService': */
 class SOAP_CMAC ns2__PayPalAuthReversalService {
       public:
         /// Optional element 'ns2:paypalAuthorizationId' of XML schema type 'xsd:string'
-        std::string *paypalAuthorizationId;
+        wchar_t *paypalAuthorizationId;
         /// Optional element 'ns2:paypalEcDoPaymentRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcDoPaymentRequestID;
+        wchar_t *paypalEcDoPaymentRequestID;
         /// Optional element 'ns2:paypalEcDoPaymentRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcDoPaymentRequestToken;
+        wchar_t *paypalEcDoPaymentRequestToken;
         /// Optional element 'ns2:paypalAuthorizationRequestID' of XML schema type 'xsd:string'
-        std::string *paypalAuthorizationRequestID;
+        wchar_t *paypalAuthorizationRequestID;
         /// Optional element 'ns2:paypalAuthorizationRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalAuthorizationRequestToken;
+        wchar_t *paypalAuthorizationRequestToken;
         /// Optional element 'ns2:paypalEcOrderSetupRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcOrderSetupRequestID;
+        wchar_t *paypalEcOrderSetupRequestID;
         /// Optional element 'ns2:paypalEcOrderSetupRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcOrderSetupRequestToken;
+        wchar_t *paypalEcOrderSetupRequestToken;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5435,20 +5435,20 @@ class SOAP_CMAC ns2__PayPalAuthReversalService {
 
 /* CyberSourceTransaction_nvp_1.183.h:268 */
 #ifndef SOAP_TYPE_ns2__PayPalRefundService
-#define SOAP_TYPE_ns2__PayPalRefundService (329)
+#define SOAP_TYPE_ns2__PayPalRefundService (330)
 /* complex XML schema type 'ns2:PayPalRefundService': */
 class SOAP_CMAC ns2__PayPalRefundService {
       public:
         /// Optional element 'ns2:paypalDoCaptureRequestID' of XML schema type 'xsd:string'
-        std::string *paypalDoCaptureRequestID;
+        wchar_t *paypalDoCaptureRequestID;
         /// Optional element 'ns2:paypalDoCaptureRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalDoCaptureRequestToken;
+        wchar_t *paypalDoCaptureRequestToken;
         /// Optional element 'ns2:paypalCaptureId' of XML schema type 'xsd:string'
-        std::string *paypalCaptureId;
+        wchar_t *paypalCaptureId;
         /// Optional element 'ns2:paypalNote' of XML schema type 'xsd:string'
-        std::string *paypalNote;
+        wchar_t *paypalNote;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5479,28 +5479,28 @@ class SOAP_CMAC ns2__PayPalRefundService {
 
 /* CyberSourceTransaction_nvp_1.183.h:270 */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupService
-#define SOAP_TYPE_ns2__PayPalEcOrderSetupService (330)
+#define SOAP_TYPE_ns2__PayPalEcOrderSetupService (331)
 /* complex XML schema type 'ns2:PayPalEcOrderSetupService': */
 class SOAP_CMAC ns2__PayPalEcOrderSetupService {
       public:
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:paypalPayerId' of XML schema type 'xsd:string'
-        std::string *paypalPayerId;
+        wchar_t *paypalPayerId;
         /// Optional element 'ns2:paypalCustomerEmail' of XML schema type 'xsd:string'
-        std::string *paypalCustomerEmail;
+        wchar_t *paypalCustomerEmail;
         /// Optional element 'ns2:paypalDesc' of XML schema type 'xsd:string'
-        std::string *paypalDesc;
+        wchar_t *paypalDesc;
         /// Optional element 'ns2:paypalEcSetRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestID;
+        wchar_t *paypalEcSetRequestID;
         /// Optional element 'ns2:paypalEcSetRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestToken;
+        wchar_t *paypalEcSetRequestToken;
         /// Optional element 'ns2:promoCode0' of XML schema type 'xsd:string'
-        std::string *promoCode0;
+        wchar_t *promoCode0;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5531,24 +5531,24 @@ class SOAP_CMAC ns2__PayPalEcOrderSetupService {
 
 /* CyberSourceTransaction_nvp_1.183.h:272 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationService
-#define SOAP_TYPE_ns2__PayPalAuthorizationService (331)
+#define SOAP_TYPE_ns2__PayPalAuthorizationService (332)
 /* complex XML schema type 'ns2:PayPalAuthorizationService': */
 class SOAP_CMAC ns2__PayPalAuthorizationService {
       public:
         /// Optional element 'ns2:paypalOrderId' of XML schema type 'xsd:string'
-        std::string *paypalOrderId;
+        wchar_t *paypalOrderId;
         /// Optional element 'ns2:paypalEcOrderSetupRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcOrderSetupRequestID;
+        wchar_t *paypalEcOrderSetupRequestID;
         /// Optional element 'ns2:paypalEcOrderSetupRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcOrderSetupRequestToken;
+        wchar_t *paypalEcOrderSetupRequestToken;
         /// Optional element 'ns2:paypalDoRefTransactionRequestID' of XML schema type 'xsd:string'
-        std::string *paypalDoRefTransactionRequestID;
+        wchar_t *paypalDoRefTransactionRequestID;
         /// Optional element 'ns2:paypalDoRefTransactionRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalDoRefTransactionRequestToken;
+        wchar_t *paypalDoRefTransactionRequestToken;
         /// Optional element 'ns2:paypalCustomerEmail' of XML schema type 'xsd:string'
-        std::string *paypalCustomerEmail;
+        wchar_t *paypalCustomerEmail;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5579,20 +5579,20 @@ class SOAP_CMAC ns2__PayPalAuthorizationService {
 
 /* CyberSourceTransaction_nvp_1.183.h:274 */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementService
-#define SOAP_TYPE_ns2__PayPalUpdateAgreementService (332)
+#define SOAP_TYPE_ns2__PayPalUpdateAgreementService (333)
 /* complex XML schema type 'ns2:PayPalUpdateAgreementService': */
 class SOAP_CMAC ns2__PayPalUpdateAgreementService {
       public:
         /// Optional element 'ns2:paypalBillingAgreementId' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementId;
+        wchar_t *paypalBillingAgreementId;
         /// Optional element 'ns2:paypalBillingAgreementStatus' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementStatus;
+        wchar_t *paypalBillingAgreementStatus;
         /// Optional element 'ns2:paypalBillingAgreementDesc' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementDesc;
+        wchar_t *paypalBillingAgreementDesc;
         /// Optional element 'ns2:paypalBillingAgreementCustom' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementCustom;
+        wchar_t *paypalBillingAgreementCustom;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5623,18 +5623,18 @@ class SOAP_CMAC ns2__PayPalUpdateAgreementService {
 
 /* CyberSourceTransaction_nvp_1.183.h:276 */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementService
-#define SOAP_TYPE_ns2__PayPalCreateAgreementService (333)
+#define SOAP_TYPE_ns2__PayPalCreateAgreementService (334)
 /* complex XML schema type 'ns2:PayPalCreateAgreementService': */
 class SOAP_CMAC ns2__PayPalCreateAgreementService {
       public:
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:paypalEcSetRequestID' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestID;
+        wchar_t *paypalEcSetRequestID;
         /// Optional element 'ns2:paypalEcSetRequestToken' of XML schema type 'xsd:string'
-        std::string *paypalEcSetRequestToken;
+        wchar_t *paypalEcSetRequestToken;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5665,30 +5665,30 @@ class SOAP_CMAC ns2__PayPalCreateAgreementService {
 
 /* CyberSourceTransaction_nvp_1.183.h:278 */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionService
-#define SOAP_TYPE_ns2__PayPalDoRefTransactionService (334)
+#define SOAP_TYPE_ns2__PayPalDoRefTransactionService (335)
 /* complex XML schema type 'ns2:PayPalDoRefTransactionService': */
 class SOAP_CMAC ns2__PayPalDoRefTransactionService {
       public:
         /// Optional element 'ns2:paypalBillingAgreementId' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementId;
+        wchar_t *paypalBillingAgreementId;
         /// Optional element 'ns2:paypalPaymentType' of XML schema type 'xsd:string'
-        std::string *paypalPaymentType;
+        wchar_t *paypalPaymentType;
         /// Optional element 'ns2:paypalReqconfirmshipping' of XML schema type 'xsd:string'
-        std::string *paypalReqconfirmshipping;
+        wchar_t *paypalReqconfirmshipping;
         /// Optional element 'ns2:paypalReturnFmfDetails' of XML schema type 'xsd:string'
-        std::string *paypalReturnFmfDetails;
+        wchar_t *paypalReturnFmfDetails;
         /// Optional element 'ns2:paypalSoftDescriptor' of XML schema type 'xsd:string'
-        std::string *paypalSoftDescriptor;
+        wchar_t *paypalSoftDescriptor;
         /// Optional element 'ns2:paypalShippingdiscount' of XML schema type 'xsd:string'
-        std::string *paypalShippingdiscount;
+        wchar_t *paypalShippingdiscount;
         /// Optional element 'ns2:paypalDesc' of XML schema type 'xsd:string'
-        std::string *paypalDesc;
+        wchar_t *paypalDesc;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Optional element 'ns2:paypalEcNotifyUrl' of XML schema type 'xsd:string'
-        std::string *paypalEcNotifyUrl;
+        wchar_t *paypalEcNotifyUrl;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5719,18 +5719,18 @@ class SOAP_CMAC ns2__PayPalDoRefTransactionService {
 
 /* CyberSourceTransaction_nvp_1.183.h:280 */
 #ifndef SOAP_TYPE_ns2__VoidService
-#define SOAP_TYPE_ns2__VoidService (335)
+#define SOAP_TYPE_ns2__VoidService (336)
 /* complex XML schema type 'ns2:VoidService': */
 class SOAP_CMAC ns2__VoidService {
       public:
         /// Optional element 'ns2:voidRequestID' of XML schema type 'xsd:string'
-        std::string *voidRequestID;
+        wchar_t *voidRequestID;
         /// Optional element 'ns2:voidRequestToken' of XML schema type 'xsd:string'
-        std::string *voidRequestToken;
+        wchar_t *voidRequestToken;
         /// Optional element 'ns2:voidReason' of XML schema type 'xsd:string'
-        std::string *voidReason;
+        wchar_t *voidReason;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5761,16 +5761,16 @@ class SOAP_CMAC ns2__VoidService {
 
 /* CyberSourceTransaction_nvp_1.183.h:282 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitService
-#define SOAP_TYPE_ns2__PinlessDebitService (336)
+#define SOAP_TYPE_ns2__PinlessDebitService (337)
 /* complex XML schema type 'ns2:PinlessDebitService': */
 class SOAP_CMAC ns2__PinlessDebitService {
       public:
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5801,12 +5801,12 @@ class SOAP_CMAC ns2__PinlessDebitService {
 
 /* CyberSourceTransaction_nvp_1.183.h:284 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateService
-#define SOAP_TYPE_ns2__PinlessDebitValidateService (337)
+#define SOAP_TYPE_ns2__PinlessDebitValidateService (338)
 /* complex XML schema type 'ns2:PinlessDebitValidateService': */
 class SOAP_CMAC ns2__PinlessDebitValidateService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5837,18 +5837,18 @@ class SOAP_CMAC ns2__PinlessDebitValidateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:286 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalService
-#define SOAP_TYPE_ns2__PinlessDebitReversalService (338)
+#define SOAP_TYPE_ns2__PinlessDebitReversalService (339)
 /* complex XML schema type 'ns2:PinlessDebitReversalService': */
 class SOAP_CMAC ns2__PinlessDebitReversalService {
       public:
         /// Optional element 'ns2:pinlessDebitRequestID' of XML schema type 'xsd:string'
-        std::string *pinlessDebitRequestID;
+        wchar_t *pinlessDebitRequestID;
         /// Optional element 'ns2:pinlessDebitRequestToken' of XML schema type 'xsd:string'
-        std::string *pinlessDebitRequestToken;
+        wchar_t *pinlessDebitRequestToken;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5879,32 +5879,32 @@ class SOAP_CMAC ns2__PinlessDebitReversalService {
 
 /* CyberSourceTransaction_nvp_1.183.h:288 */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseService
-#define SOAP_TYPE_ns2__PinDebitPurchaseService (339)
+#define SOAP_TYPE_ns2__PinDebitPurchaseService (340)
 /* complex XML schema type 'ns2:PinDebitPurchaseService': */
 class SOAP_CMAC ns2__PinDebitPurchaseService {
       public:
         /// Optional element 'ns2:networkOrder' of XML schema type 'xsd:string'
-        std::string *networkOrder;
+        wchar_t *networkOrder;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:partialAuthIndicator' of XML schema type 'ns2:boolean'
-        std::string *partialAuthIndicator;
+        wchar_t *partialAuthIndicator;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:paymentType' of XML schema type 'xsd:string'
-        std::string *paymentType;
+        wchar_t *paymentType;
         /// Optional element 'ns2:ebtCategory' of XML schema type 'xsd:string'
-        std::string *ebtCategory;
+        wchar_t *ebtCategory;
         /// Optional element 'ns2:transactionType' of XML schema type 'xsd:string'
-        std::string *transactionType;
+        wchar_t *transactionType;
         /// Optional element 'ns2:ebtVoucherSerialNumber' of XML schema type 'xsd:string'
-        std::string *ebtVoucherSerialNumber;
+        wchar_t *ebtVoucherSerialNumber;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5935,26 +5935,26 @@ class SOAP_CMAC ns2__PinDebitPurchaseService {
 
 /* CyberSourceTransaction_nvp_1.183.h:290 */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditService
-#define SOAP_TYPE_ns2__PinDebitCreditService (340)
+#define SOAP_TYPE_ns2__PinDebitCreditService (341)
 /* complex XML schema type 'ns2:PinDebitCreditService': */
 class SOAP_CMAC ns2__PinDebitCreditService {
       public:
         /// Optional element 'ns2:networkOrder' of XML schema type 'xsd:string'
-        std::string *networkOrder;
+        wchar_t *networkOrder;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:paymentType' of XML schema type 'xsd:string'
-        std::string *paymentType;
+        wchar_t *paymentType;
         /// Optional element 'ns2:ebtCategory' of XML schema type 'xsd:string'
-        std::string *ebtCategory;
+        wchar_t *ebtCategory;
         /// Optional element 'ns2:transactionType' of XML schema type 'xsd:string'
-        std::string *transactionType;
+        wchar_t *transactionType;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -5985,14 +5985,14 @@ class SOAP_CMAC ns2__PinDebitCreditService {
 
 /* CyberSourceTransaction_nvp_1.183.h:292 */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalService
-#define SOAP_TYPE_ns2__PinDebitReversalService (341)
+#define SOAP_TYPE_ns2__PinDebitReversalService (342)
 /* complex XML schema type 'ns2:PinDebitReversalService': */
 class SOAP_CMAC ns2__PinDebitReversalService {
       public:
         /// Optional element 'ns2:pinDebitRequestID' of XML schema type 'xsd:string'
-        std::string *pinDebitRequestID;
+        wchar_t *pinDebitRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6023,16 +6023,16 @@ class SOAP_CMAC ns2__PinDebitReversalService {
 
 /* CyberSourceTransaction_nvp_1.183.h:294 */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateService
-#define SOAP_TYPE_ns2__PayPalButtonCreateService (342)
+#define SOAP_TYPE_ns2__PayPalButtonCreateService (343)
 /* complex XML schema type 'ns2:PayPalButtonCreateService': */
 class SOAP_CMAC ns2__PayPalButtonCreateService {
       public:
         /// Optional element 'ns2:buttonType' of XML schema type 'xsd:string'
-        std::string *buttonType;
+        wchar_t *buttonType;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6063,16 +6063,16 @@ class SOAP_CMAC ns2__PayPalButtonCreateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:296 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentService
-#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (343)
+#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (344)
 /* complex XML schema type 'ns2:PayPalPreapprovedPaymentService': */
 class SOAP_CMAC ns2__PayPalPreapprovedPaymentService {
       public:
         /// Optional element 'ns2:mpID' of XML schema type 'xsd:string'
-        std::string *mpID;
+        wchar_t *mpID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6103,16 +6103,16 @@ class SOAP_CMAC ns2__PayPalPreapprovedPaymentService {
 
 /* CyberSourceTransaction_nvp_1.183.h:298 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateService
-#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (344)
+#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (345)
 /* complex XML schema type 'ns2:PayPalPreapprovedUpdateService': */
 class SOAP_CMAC ns2__PayPalPreapprovedUpdateService {
       public:
         /// Optional element 'ns2:mpID' of XML schema type 'xsd:string'
-        std::string *mpID;
+        wchar_t *mpID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6143,24 +6143,24 @@ class SOAP_CMAC ns2__PayPalPreapprovedUpdateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:300 */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentService
-#define SOAP_TYPE_ns2__ChinaPaymentService (345)
+#define SOAP_TYPE_ns2__ChinaPaymentService (346)
 /* complex XML schema type 'ns2:ChinaPaymentService': */
 class SOAP_CMAC ns2__ChinaPaymentService {
       public:
         /// Optional element 'ns2:paymentMode' of XML schema type 'xsd:string'
-        std::string *paymentMode;
+        wchar_t *paymentMode;
         /// Optional element 'ns2:returnURL' of XML schema type 'xsd:string'
-        std::string *returnURL;
+        wchar_t *returnURL;
         /// Optional element 'ns2:pickUpAddress' of XML schema type 'xsd:string'
-        std::string *pickUpAddress;
+        wchar_t *pickUpAddress;
         /// Optional element 'ns2:pickUpPhoneNumber' of XML schema type 'xsd:string'
-        std::string *pickUpPhoneNumber;
+        wchar_t *pickUpPhoneNumber;
         /// Optional element 'ns2:pickUpPostalCode' of XML schema type 'xsd:string'
-        std::string *pickUpPostalCode;
+        wchar_t *pickUpPostalCode;
         /// Optional element 'ns2:pickUpName' of XML schema type 'xsd:string'
-        std::string *pickUpName;
+        wchar_t *pickUpName;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6191,18 +6191,18 @@ class SOAP_CMAC ns2__ChinaPaymentService {
 
 /* CyberSourceTransaction_nvp_1.183.h:302 */
 #ifndef SOAP_TYPE_ns2__ChinaRefundService
-#define SOAP_TYPE_ns2__ChinaRefundService (346)
+#define SOAP_TYPE_ns2__ChinaRefundService (347)
 /* complex XML schema type 'ns2:ChinaRefundService': */
 class SOAP_CMAC ns2__ChinaRefundService {
       public:
         /// Optional element 'ns2:chinaPaymentRequestID' of XML schema type 'xsd:string'
-        std::string *chinaPaymentRequestID;
+        wchar_t *chinaPaymentRequestID;
         /// Optional element 'ns2:chinaPaymentRequestToken' of XML schema type 'xsd:string'
-        std::string *chinaPaymentRequestToken;
+        wchar_t *chinaPaymentRequestToken;
         /// Optional element 'ns2:refundReason' of XML schema type 'xsd:string'
-        std::string *refundReason;
+        wchar_t *refundReason;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6233,18 +6233,18 @@ class SOAP_CMAC ns2__ChinaRefundService {
 
 /* CyberSourceTransaction_nvp_1.183.h:304 */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentService
-#define SOAP_TYPE_ns2__BoletoPaymentService (347)
+#define SOAP_TYPE_ns2__BoletoPaymentService (348)
 /* complex XML schema type 'ns2:BoletoPaymentService': */
 class SOAP_CMAC ns2__BoletoPaymentService {
       public:
         /// Optional element 'ns2:instruction' of XML schema type 'xsd:string'
-        std::string *instruction;
+        wchar_t *instruction;
         /// Optional element 'ns2:expirationDate' of XML schema type 'xsd:string'
-        std::string *expirationDate;
+        wchar_t *expirationDate;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6275,22 +6275,22 @@ class SOAP_CMAC ns2__BoletoPaymentService {
 
 /* CyberSourceTransaction_nvp_1.183.h:306 */
 #ifndef SOAP_TYPE_ns2__PersonalID
-#define SOAP_TYPE_ns2__PersonalID (348)
+#define SOAP_TYPE_ns2__PersonalID (349)
 /* complex XML schema type 'ns2:PersonalID': */
 class SOAP_CMAC ns2__PersonalID {
       public:
         /// Optional element 'ns2:number' of XML schema type 'xsd:string'
-        std::string *number;
+        wchar_t *number;
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:address' of XML schema type 'xsd:string'
-        std::string *address;
+        wchar_t *address;
         /// Optional element 'ns2:issuedBy' of XML schema type 'xsd:string'
-        std::string *issuedBy;
+        wchar_t *issuedBy;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6321,16 +6321,16 @@ class SOAP_CMAC ns2__PersonalID {
 
 /* CyberSourceTransaction_nvp_1.183.h:308 */
 #ifndef SOAP_TYPE_ns2__Routing
-#define SOAP_TYPE_ns2__Routing (349)
+#define SOAP_TYPE_ns2__Routing (350)
 /* complex XML schema type 'ns2:Routing': */
 class SOAP_CMAC ns2__Routing {
       public:
         /// Optional element 'ns2:networkType' of XML schema type 'xsd:string'
-        std::string *networkType;
+        wchar_t *networkType;
         /// Optional element 'ns2:networkLabel' of XML schema type 'xsd:string'
-        std::string *networkLabel;
+        wchar_t *networkLabel;
         /// Optional element 'ns2:signatureCVMRequired' of XML schema type 'xsd:string'
-        std::string *signatureCVMRequired;
+        wchar_t *signatureCVMRequired;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6361,22 +6361,22 @@ class SOAP_CMAC ns2__Routing {
 
 /* CyberSourceTransaction_nvp_1.183.h:310 */
 #ifndef SOAP_TYPE_ns2__Address
-#define SOAP_TYPE_ns2__Address (350)
+#define SOAP_TYPE_ns2__Address (351)
 /* complex XML schema type 'ns2:Address': */
 class SOAP_CMAC ns2__Address {
       public:
         /// Optional element 'ns2:street1' of XML schema type 'xsd:string'
-        std::string *street1;
+        wchar_t *street1;
         /// Optional element 'ns2:street2' of XML schema type 'xsd:string'
-        std::string *street2;
+        wchar_t *street2;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6407,38 +6407,38 @@ class SOAP_CMAC ns2__Address {
 
 /* CyberSourceTransaction_nvp_1.183.h:312 */
 #ifndef SOAP_TYPE_ns2__APInitiateService
-#define SOAP_TYPE_ns2__APInitiateService (351)
+#define SOAP_TYPE_ns2__APInitiateService (352)
 /* complex XML schema type 'ns2:APInitiateService': */
 class SOAP_CMAC ns2__APInitiateService {
       public:
         /// Optional element 'ns2:returnURL' of XML schema type 'xsd:string'
-        std::string *returnURL;
+        wchar_t *returnURL;
         /// Optional element 'ns2:productName' of XML schema type 'xsd:string'
-        std::string *productName;
+        wchar_t *productName;
         /// Optional element 'ns2:productDescription' of XML schema type 'xsd:string'
-        std::string *productDescription;
+        wchar_t *productDescription;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:bankID' of XML schema type 'xsd:string'
-        std::string *bankID;
+        wchar_t *bankID;
         /// Optional element 'ns2:countryCode' of XML schema type 'xsd:string'
-        std::string *countryCode;
+        wchar_t *countryCode;
         /// Optional element 'ns2:escrowAgreement' of XML schema type 'xsd:string'
-        std::string *escrowAgreement;
+        wchar_t *escrowAgreement;
         /// Optional element 'ns2:languageInterface' of XML schema type 'xsd:string'
-        std::string *languageInterface;
+        wchar_t *languageInterface;
         /// Optional element 'ns2:intent' of XML schema type 'xsd:string'
-        std::string *intent;
+        wchar_t *intent;
         /// Optional element 'ns2:successURL' of XML schema type 'xsd:string'
-        std::string *successURL;
+        wchar_t *successURL;
         /// Optional element 'ns2:cancelURL' of XML schema type 'xsd:string'
-        std::string *cancelURL;
+        wchar_t *cancelURL;
         /// Optional element 'ns2:failureURL' of XML schema type 'xsd:string'
-        std::string *failureURL;
+        wchar_t *failureURL;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6469,20 +6469,20 @@ class SOAP_CMAC ns2__APInitiateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:314 */
 #ifndef SOAP_TYPE_ns2__APCheckStatusService
-#define SOAP_TYPE_ns2__APCheckStatusService (352)
+#define SOAP_TYPE_ns2__APCheckStatusService (353)
 /* complex XML schema type 'ns2:APCheckStatusService': */
 class SOAP_CMAC ns2__APCheckStatusService {
       public:
         /// Optional element 'ns2:apInitiateRequestID' of XML schema type 'xsd:string'
-        std::string *apInitiateRequestID;
+        wchar_t *apInitiateRequestID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:checkStatusRequestID' of XML schema type 'xsd:string'
-        std::string *checkStatusRequestID;
+        wchar_t *checkStatusRequestID;
         /// Optional element 'ns2:sessionsRequestID' of XML schema type 'xsd:string'
-        std::string *sessionsRequestID;
+        wchar_t *sessionsRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6513,32 +6513,32 @@ class SOAP_CMAC ns2__APCheckStatusService {
 
 /* CyberSourceTransaction_nvp_1.183.h:316 */
 #ifndef SOAP_TYPE_ns2__RiskUpdateService
-#define SOAP_TYPE_ns2__RiskUpdateService (353)
+#define SOAP_TYPE_ns2__RiskUpdateService (354)
 /* complex XML schema type 'ns2:RiskUpdateService': */
 class SOAP_CMAC ns2__RiskUpdateService {
       public:
         /// Optional element 'ns2:actionCode' of XML schema type 'xsd:string'
-        std::string *actionCode;
+        wchar_t *actionCode;
         /// Optional element 'ns2:recordID' of XML schema type 'xsd:string'
-        std::string *recordID;
+        wchar_t *recordID;
         /// Optional element 'ns2:recordName' of XML schema type 'xsd:string'
-        std::string *recordName;
+        wchar_t *recordName;
         /// Optional element 'ns2:negativeAddress' of XML schema type 'ns2:Address'
         ns2__Address *negativeAddress;
         /// Optional element 'ns2:markingReason' of XML schema type 'xsd:string'
-        std::string *markingReason;
+        wchar_t *markingReason;
         /// Optional element 'ns2:markingNotes' of XML schema type 'xsd:string'
-        std::string *markingNotes;
+        wchar_t *markingNotes;
         /// Optional element 'ns2:markingRequestID' of XML schema type 'xsd:string'
-        std::string *markingRequestID;
+        wchar_t *markingRequestID;
         /// Optional element 'ns2:deviceFingerprintSmartID' of XML schema type 'xsd:string'
-        std::string *deviceFingerprintSmartID;
+        wchar_t *deviceFingerprintSmartID;
         /// Optional element 'ns2:deviceFingerprintTrueIPAddress' of XML schema type 'xsd:string'
-        std::string *deviceFingerprintTrueIPAddress;
+        wchar_t *deviceFingerprintTrueIPAddress;
         /// Optional element 'ns2:deviceFingerprintProxyIPAddress' of XML schema type 'xsd:string'
-        std::string *deviceFingerprintProxyIPAddress;
+        wchar_t *deviceFingerprintProxyIPAddress;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6569,30 +6569,30 @@ class SOAP_CMAC ns2__RiskUpdateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:318 */
 #ifndef SOAP_TYPE_ns2__FraudUpdateService
-#define SOAP_TYPE_ns2__FraudUpdateService (354)
+#define SOAP_TYPE_ns2__FraudUpdateService (355)
 /* complex XML schema type 'ns2:FraudUpdateService': */
 class SOAP_CMAC ns2__FraudUpdateService {
       public:
         /// Optional element 'ns2:actionCode' of XML schema type 'xsd:string'
-        std::string *actionCode;
+        wchar_t *actionCode;
         /// Optional element 'ns2:markedData' of XML schema type 'xsd:string'
-        std::string *markedData;
+        wchar_t *markedData;
         /// Optional element 'ns2:markingReason' of XML schema type 'xsd:string'
-        std::string *markingReason;
+        wchar_t *markingReason;
         /// Optional element 'ns2:markingNotes' of XML schema type 'xsd:string'
-        std::string *markingNotes;
+        wchar_t *markingNotes;
         /// Optional element 'ns2:markingRequestID' of XML schema type 'xsd:string'
-        std::string *markingRequestID;
+        wchar_t *markingRequestID;
         /// Optional element 'ns2:markingTransactionDate' of XML schema type 'xsd:string'
-        std::string *markingTransactionDate;
+        wchar_t *markingTransactionDate;
         /// Optional element 'ns2:markingAmount' of XML schema type 'ns2:amount'
-        std::string *markingAmount;
+        wchar_t *markingAmount;
         /// Optional element 'ns2:markingCurrency' of XML schema type 'xsd:string'
-        std::string *markingCurrency;
+        wchar_t *markingCurrency;
         /// Optional element 'ns2:markingIndicator' of XML schema type 'xsd:string'
-        std::string *markingIndicator;
+        wchar_t *markingIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6623,18 +6623,18 @@ class SOAP_CMAC ns2__FraudUpdateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:320 */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionService
-#define SOAP_TYPE_ns2__CaseManagementActionService (355)
+#define SOAP_TYPE_ns2__CaseManagementActionService (356)
 /* complex XML schema type 'ns2:CaseManagementActionService': */
 class SOAP_CMAC ns2__CaseManagementActionService {
       public:
         /// Optional element 'ns2:actionCode' of XML schema type 'xsd:string'
-        std::string *actionCode;
+        wchar_t *actionCode;
         /// Optional element 'ns2:requestID' of XML schema type 'xsd:string'
-        std::string *requestID;
+        wchar_t *requestID;
         /// Optional element 'ns2:comments' of XML schema type 'xsd:string'
-        std::string *comments;
+        wchar_t *comments;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6665,12 +6665,12 @@ class SOAP_CMAC ns2__CaseManagementActionService {
 
 /* CyberSourceTransaction_nvp_1.183.h:322 */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataService
-#define SOAP_TYPE_ns2__EncryptPaymentDataService (356)
+#define SOAP_TYPE_ns2__EncryptPaymentDataService (357)
 /* complex XML schema type 'ns2:EncryptPaymentDataService': */
 class SOAP_CMAC ns2__EncryptPaymentDataService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6701,106 +6701,106 @@ class SOAP_CMAC ns2__EncryptPaymentDataService {
 
 /* CyberSourceTransaction_nvp_1.183.h:324 */
 #ifndef SOAP_TYPE_ns2__InvoiceHeader
-#define SOAP_TYPE_ns2__InvoiceHeader (357)
+#define SOAP_TYPE_ns2__InvoiceHeader (358)
 /* complex XML schema type 'ns2:InvoiceHeader': */
 class SOAP_CMAC ns2__InvoiceHeader {
       public:
         /// Optional element 'ns2:merchantDescriptor' of XML schema type 'xsd:string'
-        std::string *merchantDescriptor;
+        wchar_t *merchantDescriptor;
         /// Optional element 'ns2:merchantDescriptorContact' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorContact;
+        wchar_t *merchantDescriptorContact;
         /// Optional element 'ns2:merchantDescriptorAlternate' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorAlternate;
+        wchar_t *merchantDescriptorAlternate;
         /// Optional element 'ns2:merchantDescriptorStreet' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorStreet;
+        wchar_t *merchantDescriptorStreet;
         /// Optional element 'ns2:merchantDescriptorCity' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorCity;
+        wchar_t *merchantDescriptorCity;
         /// Optional element 'ns2:merchantDescriptorState' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorState;
+        wchar_t *merchantDescriptorState;
         /// Optional element 'ns2:merchantDescriptorPostalCode' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorPostalCode;
+        wchar_t *merchantDescriptorPostalCode;
         /// Optional element 'ns2:merchantDescriptorCountry' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorCountry;
+        wchar_t *merchantDescriptorCountry;
         /// Optional element 'ns2:isGift' of XML schema type 'ns2:boolean'
-        std::string *isGift;
+        wchar_t *isGift;
         /// Optional element 'ns2:returnsAccepted' of XML schema type 'ns2:boolean'
-        std::string *returnsAccepted;
+        wchar_t *returnsAccepted;
         /// Optional element 'ns2:tenderType' of XML schema type 'xsd:string'
-        std::string *tenderType;
+        wchar_t *tenderType;
         /// Optional element 'ns2:merchantVATRegistrationNumber' of XML schema type 'xsd:string'
-        std::string *merchantVATRegistrationNumber;
+        wchar_t *merchantVATRegistrationNumber;
         /// Optional element 'ns2:purchaserOrderDate' of XML schema type 'xsd:string'
-        std::string *purchaserOrderDate;
+        wchar_t *purchaserOrderDate;
         /// Optional element 'ns2:purchaserVATRegistrationNumber' of XML schema type 'xsd:string'
-        std::string *purchaserVATRegistrationNumber;
+        wchar_t *purchaserVATRegistrationNumber;
         /// Optional element 'ns2:vatInvoiceReferenceNumber' of XML schema type 'xsd:string'
-        std::string *vatInvoiceReferenceNumber;
+        wchar_t *vatInvoiceReferenceNumber;
         /// Optional element 'ns2:summaryCommodityCode' of XML schema type 'xsd:string'
-        std::string *summaryCommodityCode;
+        wchar_t *summaryCommodityCode;
         /// Optional element 'ns2:supplierOrderReference' of XML schema type 'xsd:string'
-        std::string *supplierOrderReference;
+        wchar_t *supplierOrderReference;
         /// Optional element 'ns2:userPO' of XML schema type 'xsd:string'
-        std::string *userPO;
+        wchar_t *userPO;
         /// Optional element 'ns2:costCenter' of XML schema type 'xsd:string'
-        std::string *costCenter;
+        wchar_t *costCenter;
         /// Optional element 'ns2:purchaserCode' of XML schema type 'xsd:string'
-        std::string *purchaserCode;
+        wchar_t *purchaserCode;
         /// Optional element 'ns2:taxable' of XML schema type 'ns2:boolean'
-        std::string *taxable;
+        wchar_t *taxable;
         /// Optional element 'ns2:amexDataTAA1' of XML schema type 'xsd:string'
-        std::string *amexDataTAA1;
+        wchar_t *amexDataTAA1;
         /// Optional element 'ns2:amexDataTAA2' of XML schema type 'xsd:string'
-        std::string *amexDataTAA2;
+        wchar_t *amexDataTAA2;
         /// Optional element 'ns2:amexDataTAA3' of XML schema type 'xsd:string'
-        std::string *amexDataTAA3;
+        wchar_t *amexDataTAA3;
         /// Optional element 'ns2:amexDataTAA4' of XML schema type 'xsd:string'
-        std::string *amexDataTAA4;
+        wchar_t *amexDataTAA4;
         /// Optional element 'ns2:invoiceDate' of XML schema type 'xsd:string'
-        std::string *invoiceDate;
+        wchar_t *invoiceDate;
         /// Optional element 'ns2:totalTaxTypeCode' of XML schema type 'xsd:string'
-        std::string *totalTaxTypeCode;
+        wchar_t *totalTaxTypeCode;
         /// Optional element 'ns2:cardAcceptorRefNumber' of XML schema type 'xsd:string'
-        std::string *cardAcceptorRefNumber;
+        wchar_t *cardAcceptorRefNumber;
         /// Optional element 'ns2:authorizedContactName' of XML schema type 'xsd:string'
-        std::string *authorizedContactName;
+        wchar_t *authorizedContactName;
         /// Optional element 'ns2:businessApplicationID' of XML schema type 'xsd:string'
-        std::string *businessApplicationID;
+        wchar_t *businessApplicationID;
         /// Optional element 'ns2:salesOrganizationID' of XML schema type 'xsd:integer'
-        std::string *salesOrganizationID;
+        wchar_t *salesOrganizationID;
         /// Optional element 'ns2:submerchantID' of XML schema type 'xsd:string'
-        std::string *submerchantID;
+        wchar_t *submerchantID;
         /// Optional element 'ns2:submerchantName' of XML schema type 'xsd:string'
-        std::string *submerchantName;
+        wchar_t *submerchantName;
         /// Optional element 'ns2:submerchantStreet' of XML schema type 'xsd:string'
-        std::string *submerchantStreet;
+        wchar_t *submerchantStreet;
         /// Optional element 'ns2:submerchantCity' of XML schema type 'xsd:string'
-        std::string *submerchantCity;
+        wchar_t *submerchantCity;
         /// Optional element 'ns2:submerchantPostalCode' of XML schema type 'xsd:string'
-        std::string *submerchantPostalCode;
+        wchar_t *submerchantPostalCode;
         /// Optional element 'ns2:submerchantState' of XML schema type 'xsd:string'
-        std::string *submerchantState;
+        wchar_t *submerchantState;
         /// Optional element 'ns2:submerchantCountry' of XML schema type 'xsd:string'
-        std::string *submerchantCountry;
+        wchar_t *submerchantCountry;
         /// Optional element 'ns2:submerchantEmail' of XML schema type 'xsd:string'
-        std::string *submerchantEmail;
+        wchar_t *submerchantEmail;
         /// Optional element 'ns2:submerchantTelephoneNumber' of XML schema type 'xsd:string'
-        std::string *submerchantTelephoneNumber;
+        wchar_t *submerchantTelephoneNumber;
         /// Optional element 'ns2:submerchantRegion' of XML schema type 'xsd:string'
-        std::string *submerchantRegion;
+        wchar_t *submerchantRegion;
         /// Optional element 'ns2:submerchantMerchantID' of XML schema type 'xsd:string'
-        std::string *submerchantMerchantID;
+        wchar_t *submerchantMerchantID;
         /// Optional element 'ns2:merchantDescriptorCounty' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorCounty;
+        wchar_t *merchantDescriptorCounty;
         /// Optional element 'ns2:referenceDataCode' of XML schema type 'xsd:string'
-        std::string *referenceDataCode;
+        wchar_t *referenceDataCode;
         /// Optional element 'ns2:referenceDataNumber' of XML schema type 'xsd:string'
-        std::string *referenceDataNumber;
+        wchar_t *referenceDataNumber;
         /// Optional element 'ns2:merchantDescriptorStoreID' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorStoreID;
+        wchar_t *merchantDescriptorStoreID;
         /// Optional element 'ns2:clerkID' of XML schema type 'xsd:string'
-        std::string *clerkID;
+        wchar_t *clerkID;
         /// Optional element 'ns2:customData_1' of XML schema type 'xsd:string'
-        std::string *customData_USCORE1;
+        wchar_t *customData_USCORE1;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6831,24 +6831,24 @@ class SOAP_CMAC ns2__InvoiceHeader {
 
 /* CyberSourceTransaction_nvp_1.183.h:326 */
 #ifndef SOAP_TYPE_ns2__BusinessRules
-#define SOAP_TYPE_ns2__BusinessRules (358)
+#define SOAP_TYPE_ns2__BusinessRules (359)
 /* complex XML schema type 'ns2:BusinessRules': */
 class SOAP_CMAC ns2__BusinessRules {
       public:
         /// Optional element 'ns2:ignoreAVSResult' of XML schema type 'ns2:boolean'
-        std::string *ignoreAVSResult;
+        wchar_t *ignoreAVSResult;
         /// Optional element 'ns2:ignoreCVResult' of XML schema type 'ns2:boolean'
-        std::string *ignoreCVResult;
+        wchar_t *ignoreCVResult;
         /// Optional element 'ns2:ignoreDAVResult' of XML schema type 'ns2:boolean'
-        std::string *ignoreDAVResult;
+        wchar_t *ignoreDAVResult;
         /// Optional element 'ns2:ignoreExportResult' of XML schema type 'ns2:boolean'
-        std::string *ignoreExportResult;
+        wchar_t *ignoreExportResult;
         /// Optional element 'ns2:ignoreValidateResult' of XML schema type 'ns2:boolean'
-        std::string *ignoreValidateResult;
+        wchar_t *ignoreValidateResult;
         /// Optional element 'ns2:declineAVSFlags' of XML schema type 'xsd:string'
-        std::string *declineAVSFlags;
+        wchar_t *declineAVSFlags;
         /// Optional element 'ns2:scoreThreshold' of XML schema type 'xsd:integer'
-        std::string *scoreThreshold;
+        wchar_t *scoreThreshold;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -6879,136 +6879,136 @@ class SOAP_CMAC ns2__BusinessRules {
 
 /* CyberSourceTransaction_nvp_1.183.h:328 */
 #ifndef SOAP_TYPE_ns2__BillTo
-#define SOAP_TYPE_ns2__BillTo (359)
+#define SOAP_TYPE_ns2__BillTo (360)
 /* complex XML schema type 'ns2:BillTo': */
 class SOAP_CMAC ns2__BillTo {
       public:
         /// Optional element 'ns2:title' of XML schema type 'xsd:string'
-        std::string *title;
+        wchar_t *title;
         /// Optional element 'ns2:firstName' of XML schema type 'xsd:string'
-        std::string *firstName;
+        wchar_t *firstName;
         /// Optional element 'ns2:middleName' of XML schema type 'xsd:string'
-        std::string *middleName;
+        wchar_t *middleName;
         /// Optional element 'ns2:lastName' of XML schema type 'xsd:string'
-        std::string *lastName;
+        wchar_t *lastName;
         /// Optional element 'ns2:suffix' of XML schema type 'xsd:string'
-        std::string *suffix;
+        wchar_t *suffix;
         /// Optional element 'ns2:buildingNumber' of XML schema type 'xsd:string'
-        std::string *buildingNumber;
+        wchar_t *buildingNumber;
         /// Optional element 'ns2:street1' of XML schema type 'xsd:string'
-        std::string *street1;
+        wchar_t *street1;
         /// Optional element 'ns2:street2' of XML schema type 'xsd:string'
-        std::string *street2;
+        wchar_t *street2;
         /// Optional element 'ns2:street3' of XML schema type 'xsd:string'
-        std::string *street3;
+        wchar_t *street3;
         /// Optional element 'ns2:street4' of XML schema type 'xsd:string'
-        std::string *street4;
+        wchar_t *street4;
         /// Optional element 'ns2:street5' of XML schema type 'xsd:string'
-        std::string *street5;
+        wchar_t *street5;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:district' of XML schema type 'xsd:string'
-        std::string *district;
+        wchar_t *district;
         /// Optional element 'ns2:county' of XML schema type 'xsd:string'
-        std::string *county;
+        wchar_t *county;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:company' of XML schema type 'xsd:string'
-        std::string *company;
+        wchar_t *company;
         /// Optional element 'ns2:companyTaxID' of XML schema type 'xsd:string'
-        std::string *companyTaxID;
+        wchar_t *companyTaxID;
         /// Optional element 'ns2:phoneNumber' of XML schema type 'xsd:string'
-        std::string *phoneNumber;
+        wchar_t *phoneNumber;
         /// Optional element 'ns2:email' of XML schema type 'xsd:string'
-        std::string *email;
+        wchar_t *email;
         /// Optional element 'ns2:ipAddress' of XML schema type 'xsd:string'
-        std::string *ipAddress;
+        wchar_t *ipAddress;
         /// Optional element 'ns2:customerUserName' of XML schema type 'xsd:string'
-        std::string *customerUserName;
+        wchar_t *customerUserName;
         /// Optional element 'ns2:customerPassword' of XML schema type 'xsd:string'
-        std::string *customerPassword;
+        wchar_t *customerPassword;
         /// Optional element 'ns2:ipNetworkAddress' of XML schema type 'xsd:string'
-        std::string *ipNetworkAddress;
+        wchar_t *ipNetworkAddress;
         /// Optional element 'ns2:hostname' of XML schema type 'xsd:string'
-        std::string *hostname;
+        wchar_t *hostname;
         /// Optional element 'ns2:domainName' of XML schema type 'xsd:string'
-        std::string *domainName;
+        wchar_t *domainName;
         /// Optional element 'ns2:dateOfBirth' of XML schema type 'xsd:string'
-        std::string *dateOfBirth;
+        wchar_t *dateOfBirth;
         /// Optional element 'ns2:driversLicenseNumber' of XML schema type 'xsd:string'
-        std::string *driversLicenseNumber;
+        wchar_t *driversLicenseNumber;
         /// Optional element 'ns2:driversLicenseState' of XML schema type 'xsd:string'
-        std::string *driversLicenseState;
+        wchar_t *driversLicenseState;
         /// Optional element 'ns2:ssn' of XML schema type 'xsd:string'
-        std::string *ssn;
+        wchar_t *ssn;
         /// Optional element 'ns2:customerID' of XML schema type 'xsd:string'
-        std::string *customerID;
+        wchar_t *customerID;
         /// Optional element 'ns2:httpBrowserType' of XML schema type 'xsd:string'
-        std::string *httpBrowserType;
+        wchar_t *httpBrowserType;
         /// Optional element 'ns2:httpBrowserEmail' of XML schema type 'xsd:string'
-        std::string *httpBrowserEmail;
+        wchar_t *httpBrowserEmail;
         /// Optional element 'ns2:httpBrowserCookiesAccepted' of XML schema type 'ns2:boolean'
-        std::string *httpBrowserCookiesAccepted;
+        wchar_t *httpBrowserCookiesAccepted;
         /// Optional element 'ns2:nif' of XML schema type 'xsd:string'
-        std::string *nif;
+        wchar_t *nif;
         /// Optional element 'ns2:personalID' of XML schema type 'xsd:string'
-        std::string *personalID;
+        wchar_t *personalID;
         /// Optional element 'ns2:language' of XML schema type 'xsd:string'
-        std::string *language;
+        wchar_t *language;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:gender' of XML schema type 'xsd:string'
-        std::string *gender;
+        wchar_t *gender;
         /// Optional element 'ns2:merchantTaxID' of XML schema type 'xsd:string'
-        std::string *merchantTaxID;
+        wchar_t *merchantTaxID;
         /// Optional element 'ns2:passportNumber' of XML schema type 'xsd:string'
-        std::string *passportNumber;
+        wchar_t *passportNumber;
         /// Optional element 'ns2:passportCountry' of XML schema type 'xsd:string'
-        std::string *passportCountry;
+        wchar_t *passportCountry;
         /// Optional element 'ns2:customerAccountCreateDate' of XML schema type 'xsd:string'
-        std::string *customerAccountCreateDate;
+        wchar_t *customerAccountCreateDate;
         /// Optional element 'ns2:customerAccountChangeDate' of XML schema type 'xsd:string'
-        std::string *customerAccountChangeDate;
+        wchar_t *customerAccountChangeDate;
         /// Optional element 'ns2:customerAccountPasswordChangeDate' of XML schema type 'xsd:string'
-        std::string *customerAccountPasswordChangeDate;
+        wchar_t *customerAccountPasswordChangeDate;
         /// Optional element 'ns2:pointOfReference' of XML schema type 'ns2:boolean'
-        std::string *pointOfReference;
+        wchar_t *pointOfReference;
         /// Optional element 'ns2:defaultIndicator' of XML schema type 'ns2:boolean'
-        std::string *defaultIndicator;
+        wchar_t *defaultIndicator;
         /// Optional element 'ns2:companyStreet1' of XML schema type 'xsd:string'
-        std::string *companyStreet1;
+        wchar_t *companyStreet1;
         /// Optional element 'ns2:companyStreet2' of XML schema type 'xsd:string'
-        std::string *companyStreet2;
+        wchar_t *companyStreet2;
         /// Optional element 'ns2:companyCity' of XML schema type 'xsd:string'
-        std::string *companyCity;
+        wchar_t *companyCity;
         /// Optional element 'ns2:companyCountry' of XML schema type 'xsd:string'
-        std::string *companyCountry;
+        wchar_t *companyCountry;
         /// Optional element 'ns2:companyState' of XML schema type 'xsd:string'
-        std::string *companyState;
+        wchar_t *companyState;
         /// Optional element 'ns2:companyPostalCode' of XML schema type 'xsd:string'
-        std::string *companyPostalCode;
+        wchar_t *companyPostalCode;
         /// Optional element 'ns2:prefix' of XML schema type 'xsd:string'
-        std::string *prefix;
+        wchar_t *prefix;
         /// Optional element 'ns2:companyPhoneNumber' of XML schema type 'xsd:string'
-        std::string *companyPhoneNumber;
+        wchar_t *companyPhoneNumber;
         /// Optional element 'ns2:httpBrowserColorDepth' of XML schema type 'xsd:string'
-        std::string *httpBrowserColorDepth;
+        wchar_t *httpBrowserColorDepth;
         /// Optional element 'ns2:httpBrowserJavaEnabled' of XML schema type 'ns2:boolean'
-        std::string *httpBrowserJavaEnabled;
+        wchar_t *httpBrowserJavaEnabled;
         /// Optional element 'ns2:httpBrowserJavaScriptEnabled' of XML schema type 'ns2:boolean'
-        std::string *httpBrowserJavaScriptEnabled;
+        wchar_t *httpBrowserJavaScriptEnabled;
         /// Optional element 'ns2:httpBrowserLanguage' of XML schema type 'xsd:string'
-        std::string *httpBrowserLanguage;
+        wchar_t *httpBrowserLanguage;
         /// Optional element 'ns2:httpBrowserScreenHeight' of XML schema type 'xsd:string'
-        std::string *httpBrowserScreenHeight;
+        wchar_t *httpBrowserScreenHeight;
         /// Optional element 'ns2:httpBrowserScreenWidth' of XML schema type 'xsd:string'
-        std::string *httpBrowserScreenWidth;
+        wchar_t *httpBrowserScreenWidth;
         /// Optional element 'ns2:httpBrowserTimeDifference' of XML schema type 'xsd:string'
-        std::string *httpBrowserTimeDifference;
+        wchar_t *httpBrowserTimeDifference;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7039,70 +7039,70 @@ class SOAP_CMAC ns2__BillTo {
 
 /* CyberSourceTransaction_nvp_1.183.h:330 */
 #ifndef SOAP_TYPE_ns2__ShipTo
-#define SOAP_TYPE_ns2__ShipTo (360)
+#define SOAP_TYPE_ns2__ShipTo (361)
 /* complex XML schema type 'ns2:ShipTo': */
 class SOAP_CMAC ns2__ShipTo {
       public:
         /// Optional element 'ns2:title' of XML schema type 'xsd:string'
-        std::string *title;
+        wchar_t *title;
         /// Optional element 'ns2:firstName' of XML schema type 'xsd:string'
-        std::string *firstName;
+        wchar_t *firstName;
         /// Optional element 'ns2:middleName' of XML schema type 'xsd:string'
-        std::string *middleName;
+        wchar_t *middleName;
         /// Optional element 'ns2:lastName' of XML schema type 'xsd:string'
-        std::string *lastName;
+        wchar_t *lastName;
         /// Optional element 'ns2:suffix' of XML schema type 'xsd:string'
-        std::string *suffix;
+        wchar_t *suffix;
         /// Optional element 'ns2:street1' of XML schema type 'xsd:string'
-        std::string *street1;
+        wchar_t *street1;
         /// Optional element 'ns2:street2' of XML schema type 'xsd:string'
-        std::string *street2;
+        wchar_t *street2;
         /// Optional element 'ns2:street3' of XML schema type 'xsd:string'
-        std::string *street3;
+        wchar_t *street3;
         /// Optional element 'ns2:street4' of XML schema type 'xsd:string'
-        std::string *street4;
+        wchar_t *street4;
         /// Optional element 'ns2:street5' of XML schema type 'xsd:string'
-        std::string *street5;
+        wchar_t *street5;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:county' of XML schema type 'xsd:string'
-        std::string *county;
+        wchar_t *county;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:buildingNumber' of XML schema type 'xsd:string'
-        std::string *buildingNumber;
+        wchar_t *buildingNumber;
         /// Optional element 'ns2:district' of XML schema type 'xsd:string'
-        std::string *district;
+        wchar_t *district;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:company' of XML schema type 'xsd:string'
-        std::string *company;
+        wchar_t *company;
         /// Optional element 'ns2:phoneNumber' of XML schema type 'xsd:string'
-        std::string *phoneNumber;
+        wchar_t *phoneNumber;
         /// Optional element 'ns2:email' of XML schema type 'xsd:string'
-        std::string *email;
+        wchar_t *email;
         /// Optional element 'ns2:shippingMethod' of XML schema type 'xsd:string'
-        std::string *shippingMethod;
+        wchar_t *shippingMethod;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:id' of XML schema type 'xsd:string'
-        std::string *id;
+        wchar_t *id;
         /// Optional element 'ns2:addressVerificationStatus' of XML schema type 'xsd:string'
-        std::string *addressVerificationStatus;
+        wchar_t *addressVerificationStatus;
         /// Optional element 'ns2:notApplicable' of XML schema type 'ns2:boolean'
-        std::string *notApplicable;
+        wchar_t *notApplicable;
         /// Optional element 'ns2:immutable' of XML schema type 'ns2:boolean'
-        std::string *immutable;
+        wchar_t *immutable;
         /// Optional element 'ns2:destinationCode' of XML schema type 'xsd:string'
-        std::string *destinationCode;
+        wchar_t *destinationCode;
         /// Optional element 'ns2:pointOfReference' of XML schema type 'ns2:boolean'
-        std::string *pointOfReference;
+        wchar_t *pointOfReference;
         /// Optional element 'ns2:default' of XML schema type 'ns2:boolean'
-        std::string *default_;
+        wchar_t *default_;
         /// Optional element 'ns2:destinationTypes' of XML schema type 'xsd:string'
-        std::string *destinationTypes;
+        wchar_t *destinationTypes;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7133,44 +7133,44 @@ class SOAP_CMAC ns2__ShipTo {
 
 /* CyberSourceTransaction_nvp_1.183.h:332 */
 #ifndef SOAP_TYPE_ns2__ShipFrom
-#define SOAP_TYPE_ns2__ShipFrom (361)
+#define SOAP_TYPE_ns2__ShipFrom (362)
 /* complex XML schema type 'ns2:ShipFrom': */
 class SOAP_CMAC ns2__ShipFrom {
       public:
         /// Optional element 'ns2:title' of XML schema type 'xsd:string'
-        std::string *title;
+        wchar_t *title;
         /// Optional element 'ns2:firstName' of XML schema type 'xsd:string'
-        std::string *firstName;
+        wchar_t *firstName;
         /// Optional element 'ns2:middleName' of XML schema type 'xsd:string'
-        std::string *middleName;
+        wchar_t *middleName;
         /// Optional element 'ns2:lastName' of XML schema type 'xsd:string'
-        std::string *lastName;
+        wchar_t *lastName;
         /// Optional element 'ns2:suffix' of XML schema type 'xsd:string'
-        std::string *suffix;
+        wchar_t *suffix;
         /// Optional element 'ns2:street1' of XML schema type 'xsd:string'
-        std::string *street1;
+        wchar_t *street1;
         /// Optional element 'ns2:street2' of XML schema type 'xsd:string'
-        std::string *street2;
+        wchar_t *street2;
         /// Optional element 'ns2:street3' of XML schema type 'xsd:string'
-        std::string *street3;
+        wchar_t *street3;
         /// Optional element 'ns2:street4' of XML schema type 'xsd:string'
-        std::string *street4;
+        wchar_t *street4;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:county' of XML schema type 'xsd:string'
-        std::string *county;
+        wchar_t *county;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:company' of XML schema type 'xsd:string'
-        std::string *company;
+        wchar_t *company;
         /// Optional element 'ns2:phoneNumber' of XML schema type 'xsd:string'
-        std::string *phoneNumber;
+        wchar_t *phoneNumber;
         /// Optional element 'ns2:email' of XML schema type 'xsd:string'
-        std::string *email;
+        wchar_t *email;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7201,104 +7201,104 @@ class SOAP_CMAC ns2__ShipFrom {
 
 /* CyberSourceTransaction_nvp_1.183.h:334 */
 #ifndef SOAP_TYPE_ns2__Card
-#define SOAP_TYPE_ns2__Card (362)
+#define SOAP_TYPE_ns2__Card (363)
 /* complex XML schema type 'ns2:Card': */
 class SOAP_CMAC ns2__Card {
       public:
         /// Optional element 'ns2:fullName' of XML schema type 'xsd:string'
-        std::string *fullName;
+        wchar_t *fullName;
         /// Optional element 'ns2:accountNumber' of XML schema type 'xsd:string'
-        std::string *accountNumber;
+        wchar_t *accountNumber;
         /// Optional element 'ns2:expirationMonth' of XML schema type 'xsd:integer'
-        std::string *expirationMonth;
+        wchar_t *expirationMonth;
         /// Optional element 'ns2:expirationYear' of XML schema type 'xsd:integer'
-        std::string *expirationYear;
+        wchar_t *expirationYear;
         /// Optional element 'ns2:cvIndicator' of XML schema type 'xsd:string'
-        std::string *cvIndicator;
+        wchar_t *cvIndicator;
         /// Optional element 'ns2:cvNumber' of XML schema type 'xsd:string'
-        std::string *cvNumber;
+        wchar_t *cvNumber;
         /// Optional element 'ns2:cardType' of XML schema type 'xsd:string'
-        std::string *cardType;
+        wchar_t *cardType;
         /// Optional element 'ns2:issueNumber' of XML schema type 'xsd:string'
-        std::string *issueNumber;
+        wchar_t *issueNumber;
         /// Optional element 'ns2:startMonth' of XML schema type 'xsd:integer'
-        std::string *startMonth;
+        wchar_t *startMonth;
         /// Optional element 'ns2:startYear' of XML schema type 'xsd:integer'
-        std::string *startYear;
+        wchar_t *startYear;
         /// Optional element 'ns2:pin' of XML schema type 'xsd:string'
-        std::string *pin;
+        wchar_t *pin;
         /// Optional element 'ns2:accountEncoderID' of XML schema type 'xsd:string'
-        std::string *accountEncoderID;
+        wchar_t *accountEncoderID;
         /// Optional element 'ns2:bin' of XML schema type 'xsd:string'
-        std::string *bin;
+        wchar_t *bin;
         /// Optional element 'ns2:encryptedData' of XML schema type 'xsd:string'
-        std::string *encryptedData;
+        wchar_t *encryptedData;
         /// Optional element 'ns2:suffix' of XML schema type 'xsd:string'
-        std::string *suffix;
+        wchar_t *suffix;
         /// Optional element 'ns2:virtual' of XML schema type 'ns2:boolean'
-        std::string *virtual_;
+        wchar_t *virtual_;
         /// Optional element 'ns2:prefix' of XML schema type 'xsd:string'
-        std::string *prefix;
+        wchar_t *prefix;
         /// Optional element 'ns2:cardTypeName' of XML schema type 'xsd:string'
-        std::string *cardTypeName;
+        wchar_t *cardTypeName;
         /// Optional element 'ns2:cardSubType' of XML schema type 'xsd:string'
-        std::string *cardSubType;
+        wchar_t *cardSubType;
         /// Optional element 'ns2:level2Eligible' of XML schema type 'xsd:string'
-        std::string *level2Eligible;
+        wchar_t *level2Eligible;
         /// Optional element 'ns2:level3Eligible' of XML schema type 'xsd:string'
-        std::string *level3Eligible;
+        wchar_t *level3Eligible;
         /// Optional element 'ns2:productCategory' of XML schema type 'xsd:string'
-        std::string *productCategory;
+        wchar_t *productCategory;
         /// Optional element 'ns2:billingCurrency' of XML schema type 'xsd:string'
-        std::string *billingCurrency;
+        wchar_t *billingCurrency;
         /// Optional element 'ns2:billingCurrencyNumericCode' of XML schema type 'xsd:string'
-        std::string *billingCurrencyNumericCode;
+        wchar_t *billingCurrencyNumericCode;
         /// Optional element 'ns2:billingCurrencyMinorDigits' of XML schema type 'xsd:string'
-        std::string *billingCurrencyMinorDigits;
+        wchar_t *billingCurrencyMinorDigits;
         /// Optional element 'ns2:productName' of XML schema type 'xsd:string'
-        std::string *productName;
+        wchar_t *productName;
         /// Optional element 'ns2:usage' of XML schema type 'xsd:string'
-        std::string *usage;
+        wchar_t *usage;
         /// Optional element 'ns2:prepaidReloadable' of XML schema type 'xsd:string'
-        std::string *prepaidReloadable;
+        wchar_t *prepaidReloadable;
         /// Optional element 'ns2:prepaidType' of XML schema type 'xsd:string'
-        std::string *prepaidType;
+        wchar_t *prepaidType;
         /// Sequence of 0 to 5 elements 'ns2:brands' of XML schema type 'ns2:Brands'
         std::vector<ns2__Brands> brands;
         /// Optional element 'ns2:fastFundsBusinessFundedTransferDomestic' of XML schema type 'xsd:string'
-        std::string *fastFundsBusinessFundedTransferDomestic;
+        wchar_t *fastFundsBusinessFundedTransferDomestic;
         /// Optional element 'ns2:fastFundsBusinessFundedTransferCrossBorder' of XML schema type 'xsd:string'
-        std::string *fastFundsBusinessFundedTransferCrossBorder;
+        wchar_t *fastFundsBusinessFundedTransferCrossBorder;
         /// Optional element 'ns2:fastFundsConsumerFundedTransferDomestic' of XML schema type 'xsd:string'
-        std::string *fastFundsConsumerFundedTransferDomestic;
+        wchar_t *fastFundsConsumerFundedTransferDomestic;
         /// Optional element 'ns2:fastFundsConsumerFundedTransferCrossBorder' of XML schema type 'xsd:string'
-        std::string *fastFundsConsumerFundedTransferCrossBorder;
+        wchar_t *fastFundsConsumerFundedTransferCrossBorder;
         /// Optional element 'ns2:octBusinessFundedTransferDomestic' of XML schema type 'xsd:string'
-        std::string *octBusinessFundedTransferDomestic;
+        wchar_t *octBusinessFundedTransferDomestic;
         /// Optional element 'ns2:octBusinessFundedTransferCrossBorder' of XML schema type 'xsd:string'
-        std::string *octBusinessFundedTransferCrossBorder;
+        wchar_t *octBusinessFundedTransferCrossBorder;
         /// Optional element 'ns2:octConsumerFundedTransferDomestic' of XML schema type 'xsd:string'
-        std::string *octConsumerFundedTransferDomestic;
+        wchar_t *octConsumerFundedTransferDomestic;
         /// Optional element 'ns2:octConsumerFundedTransferCrossBorder' of XML schema type 'xsd:string'
-        std::string *octConsumerFundedTransferCrossBorder;
+        wchar_t *octConsumerFundedTransferCrossBorder;
         /// Optional element 'ns2:octGamblingDomestic' of XML schema type 'xsd:string'
-        std::string *octGamblingDomestic;
+        wchar_t *octGamblingDomestic;
         /// Optional element 'ns2:octGamblingCrossBorder' of XML schema type 'xsd:string'
-        std::string *octGamblingCrossBorder;
+        wchar_t *octGamblingCrossBorder;
         /// Optional element 'ns2:fastFundsGamblingDomestic' of XML schema type 'xsd:string'
-        std::string *fastFundsGamblingDomestic;
+        wchar_t *fastFundsGamblingDomestic;
         /// Optional element 'ns2:fastFundsGamblingCrossBorder' of XML schema type 'xsd:string'
-        std::string *fastFundsGamblingCrossBorder;
+        wchar_t *fastFundsGamblingCrossBorder;
         /// Optional element 'ns2:octGeoRestrictionIndicator' of XML schema type 'xsd:string'
-        std::string *octGeoRestrictionIndicator;
+        wchar_t *octGeoRestrictionIndicator;
         /// Optional element 'ns2:comboCardType' of XML schema type 'xsd:string'
-        std::string *comboCardType;
+        wchar_t *comboCardType;
         /// Optional element 'ns2:prepaidIndicator' of XML schema type 'xsd:string'
-        std::string *prepaidIndicator;
+        wchar_t *prepaidIndicator;
         /// Optional element 'ns2:passPhrase' of XML schema type 'xsd:string'
-        std::string *passPhrase;
+        wchar_t *passPhrase;
         /// Optional element 'ns2:personalData' of XML schema type 'xsd:string'
-        std::string *personalData;
+        wchar_t *personalData;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7329,40 +7329,40 @@ class SOAP_CMAC ns2__Card {
 
 /* CyberSourceTransaction_nvp_1.183.h:336 */
 #ifndef SOAP_TYPE_ns2__Check
-#define SOAP_TYPE_ns2__Check (363)
+#define SOAP_TYPE_ns2__Check (364)
 /* complex XML schema type 'ns2:Check': */
 class SOAP_CMAC ns2__Check {
       public:
         /// Optional element 'ns2:fullName' of XML schema type 'xsd:string'
-        std::string *fullName;
+        wchar_t *fullName;
         /// Optional element 'ns2:accountNumber' of XML schema type 'xsd:string'
-        std::string *accountNumber;
+        wchar_t *accountNumber;
         /// Optional element 'ns2:accountType' of XML schema type 'xsd:string'
-        std::string *accountType;
+        wchar_t *accountType;
         /// Optional element 'ns2:bankTransitNumber' of XML schema type 'xsd:string'
-        std::string *bankTransitNumber;
+        wchar_t *bankTransitNumber;
         /// Optional element 'ns2:checkNumber' of XML schema type 'xsd:string'
-        std::string *checkNumber;
+        wchar_t *checkNumber;
         /// Optional element 'ns2:secCode' of XML schema type 'xsd:string'
-        std::string *secCode;
+        wchar_t *secCode;
         /// Optional element 'ns2:accountEncoderID' of XML schema type 'xsd:string'
-        std::string *accountEncoderID;
+        wchar_t *accountEncoderID;
         /// Optional element 'ns2:authenticateID' of XML schema type 'xsd:string'
-        std::string *authenticateID;
+        wchar_t *authenticateID;
         /// Optional element 'ns2:paymentInfo' of XML schema type 'xsd:string'
-        std::string *paymentInfo;
+        wchar_t *paymentInfo;
         /// Optional element 'ns2:imageReferenceNumber' of XML schema type 'xsd:string'
-        std::string *imageReferenceNumber;
+        wchar_t *imageReferenceNumber;
         /// Optional element 'ns2:terminalCity' of XML schema type 'xsd:string'
-        std::string *terminalCity;
+        wchar_t *terminalCity;
         /// Optional element 'ns2:terminalState' of XML schema type 'xsd:string'
-        std::string *terminalState;
+        wchar_t *terminalState;
         /// Optional element 'ns2:customerPresent' of XML schema type 'xsd:string'
-        std::string *customerPresent;
+        wchar_t *customerPresent;
         /// Optional element 'ns2:checkTransactionCode' of XML schema type 'xsd:string'
-        std::string *checkTransactionCode;
+        wchar_t *checkTransactionCode;
         /// Optional element 'ns2:disableAccountValidation' of XML schema type 'ns2:boolean'
-        std::string *disableAccountValidation;
+        wchar_t *disableAccountValidation;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7393,182 +7393,182 @@ class SOAP_CMAC ns2__Check {
 
 /* CyberSourceTransaction_nvp_1.183.h:338 */
 #ifndef SOAP_TYPE_ns2__BML
-#define SOAP_TYPE_ns2__BML (364)
+#define SOAP_TYPE_ns2__BML (365)
 /* complex XML schema type 'ns2:BML': */
 class SOAP_CMAC ns2__BML {
       public:
         /// Optional element 'ns2:customerBillingAddressChange' of XML schema type 'ns2:boolean'
-        std::string *customerBillingAddressChange;
+        wchar_t *customerBillingAddressChange;
         /// Optional element 'ns2:customerEmailChange' of XML schema type 'ns2:boolean'
-        std::string *customerEmailChange;
+        wchar_t *customerEmailChange;
         /// Optional element 'ns2:customerHasCheckingAccount' of XML schema type 'ns2:boolean'
-        std::string *customerHasCheckingAccount;
+        wchar_t *customerHasCheckingAccount;
         /// Optional element 'ns2:customerHasSavingsAccount' of XML schema type 'ns2:boolean'
-        std::string *customerHasSavingsAccount;
+        wchar_t *customerHasSavingsAccount;
         /// Optional element 'ns2:customerPasswordChange' of XML schema type 'ns2:boolean'
-        std::string *customerPasswordChange;
+        wchar_t *customerPasswordChange;
         /// Optional element 'ns2:customerPhoneChange' of XML schema type 'ns2:boolean'
-        std::string *customerPhoneChange;
+        wchar_t *customerPhoneChange;
         /// Optional element 'ns2:customerRegistrationDate' of XML schema type 'xsd:string'
-        std::string *customerRegistrationDate;
+        wchar_t *customerRegistrationDate;
         /// Optional element 'ns2:customerTypeFlag' of XML schema type 'xsd:string'
-        std::string *customerTypeFlag;
+        wchar_t *customerTypeFlag;
         /// Optional element 'ns2:grossHouseholdIncome' of XML schema type 'ns2:amount'
-        std::string *grossHouseholdIncome;
+        wchar_t *grossHouseholdIncome;
         /// Optional element 'ns2:householdIncomeCurrency' of XML schema type 'xsd:string'
-        std::string *householdIncomeCurrency;
+        wchar_t *householdIncomeCurrency;
         /// Optional element 'ns2:itemCategory' of XML schema type 'xsd:string'
-        std::string *itemCategory;
+        wchar_t *itemCategory;
         /// Optional element 'ns2:merchantPromotionCode' of XML schema type 'xsd:string'
-        std::string *merchantPromotionCode;
+        wchar_t *merchantPromotionCode;
         /// Optional element 'ns2:preapprovalNumber' of XML schema type 'xsd:string'
-        std::string *preapprovalNumber;
+        wchar_t *preapprovalNumber;
         /// Optional element 'ns2:productDeliveryTypeIndicator' of XML schema type 'xsd:string'
-        std::string *productDeliveryTypeIndicator;
+        wchar_t *productDeliveryTypeIndicator;
         /// Optional element 'ns2:residenceStatus' of XML schema type 'xsd:string'
-        std::string *residenceStatus;
+        wchar_t *residenceStatus;
         /// Optional element 'ns2:tcVersion' of XML schema type 'xsd:string'
-        std::string *tcVersion;
+        wchar_t *tcVersion;
         /// Optional element 'ns2:yearsAtCurrentResidence' of XML schema type 'xsd:integer'
-        std::string *yearsAtCurrentResidence;
+        wchar_t *yearsAtCurrentResidence;
         /// Optional element 'ns2:yearsWithCurrentEmployer' of XML schema type 'xsd:integer'
-        std::string *yearsWithCurrentEmployer;
+        wchar_t *yearsWithCurrentEmployer;
         /// Optional element 'ns2:employerStreet1' of XML schema type 'xsd:string'
-        std::string *employerStreet1;
+        wchar_t *employerStreet1;
         /// Optional element 'ns2:employerStreet2' of XML schema type 'xsd:string'
-        std::string *employerStreet2;
+        wchar_t *employerStreet2;
         /// Optional element 'ns2:employerCity' of XML schema type 'xsd:string'
-        std::string *employerCity;
+        wchar_t *employerCity;
         /// Optional element 'ns2:employerCompanyName' of XML schema type 'xsd:string'
-        std::string *employerCompanyName;
+        wchar_t *employerCompanyName;
         /// Optional element 'ns2:employerCountry' of XML schema type 'xsd:string'
-        std::string *employerCountry;
+        wchar_t *employerCountry;
         /// Optional element 'ns2:employerPhoneNumber' of XML schema type 'xsd:string'
-        std::string *employerPhoneNumber;
+        wchar_t *employerPhoneNumber;
         /// Optional element 'ns2:employerPhoneType' of XML schema type 'xsd:string'
-        std::string *employerPhoneType;
+        wchar_t *employerPhoneType;
         /// Optional element 'ns2:employerState' of XML schema type 'xsd:string'
-        std::string *employerState;
+        wchar_t *employerState;
         /// Optional element 'ns2:employerPostalCode' of XML schema type 'xsd:string'
-        std::string *employerPostalCode;
+        wchar_t *employerPostalCode;
         /// Optional element 'ns2:shipToPhoneType' of XML schema type 'xsd:string'
-        std::string *shipToPhoneType;
+        wchar_t *shipToPhoneType;
         /// Optional element 'ns2:billToPhoneType' of XML schema type 'xsd:string'
-        std::string *billToPhoneType;
+        wchar_t *billToPhoneType;
         /// Optional element 'ns2:methodOfPayment' of XML schema type 'xsd:string'
-        std::string *methodOfPayment;
+        wchar_t *methodOfPayment;
         /// Optional element 'ns2:productType' of XML schema type 'xsd:string'
-        std::string *productType;
+        wchar_t *productType;
         /// Optional element 'ns2:customerAuthenticatedByMerchant' of XML schema type 'xsd:string'
-        std::string *customerAuthenticatedByMerchant;
+        wchar_t *customerAuthenticatedByMerchant;
         /// Optional element 'ns2:backOfficeIndicator' of XML schema type 'xsd:string'
-        std::string *backOfficeIndicator;
+        wchar_t *backOfficeIndicator;
         /// Optional element 'ns2:shipToEqualsBillToNameIndicator' of XML schema type 'xsd:string'
-        std::string *shipToEqualsBillToNameIndicator;
+        wchar_t *shipToEqualsBillToNameIndicator;
         /// Optional element 'ns2:shipToEqualsBillToAddressIndicator' of XML schema type 'xsd:string'
-        std::string *shipToEqualsBillToAddressIndicator;
+        wchar_t *shipToEqualsBillToAddressIndicator;
         /// Optional element 'ns2:alternateIPAddress' of XML schema type 'xsd:string'
-        std::string *alternateIPAddress;
+        wchar_t *alternateIPAddress;
         /// Optional element 'ns2:businessLegalName' of XML schema type 'xsd:string'
-        std::string *businessLegalName;
+        wchar_t *businessLegalName;
         /// Optional element 'ns2:dbaName' of XML schema type 'xsd:string'
-        std::string *dbaName;
+        wchar_t *dbaName;
         /// Optional element 'ns2:businessAddress1' of XML schema type 'xsd:string'
-        std::string *businessAddress1;
+        wchar_t *businessAddress1;
         /// Optional element 'ns2:businessAddress2' of XML schema type 'xsd:string'
-        std::string *businessAddress2;
+        wchar_t *businessAddress2;
         /// Optional element 'ns2:businessCity' of XML schema type 'xsd:string'
-        std::string *businessCity;
+        wchar_t *businessCity;
         /// Optional element 'ns2:businessState' of XML schema type 'xsd:string'
-        std::string *businessState;
+        wchar_t *businessState;
         /// Optional element 'ns2:businessPostalCode' of XML schema type 'xsd:string'
-        std::string *businessPostalCode;
+        wchar_t *businessPostalCode;
         /// Optional element 'ns2:businessCountry' of XML schema type 'xsd:string'
-        std::string *businessCountry;
+        wchar_t *businessCountry;
         /// Optional element 'ns2:businessMainPhone' of XML schema type 'xsd:string'
-        std::string *businessMainPhone;
+        wchar_t *businessMainPhone;
         /// Optional element 'ns2:userID' of XML schema type 'xsd:string'
-        std::string *userID;
+        wchar_t *userID;
         /// Optional element 'ns2:pin' of XML schema type 'xsd:string'
-        std::string *pin;
+        wchar_t *pin;
         /// Optional element 'ns2:adminLastName' of XML schema type 'xsd:string'
-        std::string *adminLastName;
+        wchar_t *adminLastName;
         /// Optional element 'ns2:adminFirstName' of XML schema type 'xsd:string'
-        std::string *adminFirstName;
+        wchar_t *adminFirstName;
         /// Optional element 'ns2:adminPhone' of XML schema type 'xsd:string'
-        std::string *adminPhone;
+        wchar_t *adminPhone;
         /// Optional element 'ns2:adminFax' of XML schema type 'xsd:string'
-        std::string *adminFax;
+        wchar_t *adminFax;
         /// Optional element 'ns2:adminEmailAddress' of XML schema type 'xsd:string'
-        std::string *adminEmailAddress;
+        wchar_t *adminEmailAddress;
         /// Optional element 'ns2:adminTitle' of XML schema type 'xsd:string'
-        std::string *adminTitle;
+        wchar_t *adminTitle;
         /// Optional element 'ns2:supervisorLastName' of XML schema type 'xsd:string'
-        std::string *supervisorLastName;
+        wchar_t *supervisorLastName;
         /// Optional element 'ns2:supervisorFirstName' of XML schema type 'xsd:string'
-        std::string *supervisorFirstName;
+        wchar_t *supervisorFirstName;
         /// Optional element 'ns2:supervisorEmailAddress' of XML schema type 'xsd:string'
-        std::string *supervisorEmailAddress;
+        wchar_t *supervisorEmailAddress;
         /// Optional element 'ns2:businessDAndBNumber' of XML schema type 'xsd:string'
-        std::string *businessDAndBNumber;
+        wchar_t *businessDAndBNumber;
         /// Optional element 'ns2:businessTaxID' of XML schema type 'xsd:string'
-        std::string *businessTaxID;
+        wchar_t *businessTaxID;
         /// Optional element 'ns2:businessNAICSCode' of XML schema type 'xsd:string'
-        std::string *businessNAICSCode;
+        wchar_t *businessNAICSCode;
         /// Optional element 'ns2:businessType' of XML schema type 'xsd:string'
-        std::string *businessType;
+        wchar_t *businessType;
         /// Optional element 'ns2:businessYearsInBusiness' of XML schema type 'xsd:string'
-        std::string *businessYearsInBusiness;
+        wchar_t *businessYearsInBusiness;
         /// Optional element 'ns2:businessNumberOfEmployees' of XML schema type 'xsd:string'
-        std::string *businessNumberOfEmployees;
+        wchar_t *businessNumberOfEmployees;
         /// Optional element 'ns2:businessPONumber' of XML schema type 'xsd:string'
-        std::string *businessPONumber;
+        wchar_t *businessPONumber;
         /// Optional element 'ns2:businessLoanType' of XML schema type 'xsd:string'
-        std::string *businessLoanType;
+        wchar_t *businessLoanType;
         /// Optional element 'ns2:businessApplicationID' of XML schema type 'xsd:string'
-        std::string *businessApplicationID;
+        wchar_t *businessApplicationID;
         /// Optional element 'ns2:businessProductCode' of XML schema type 'xsd:string'
-        std::string *businessProductCode;
+        wchar_t *businessProductCode;
         /// Optional element 'ns2:pgLastName' of XML schema type 'xsd:string'
-        std::string *pgLastName;
+        wchar_t *pgLastName;
         /// Optional element 'ns2:pgFirstName' of XML schema type 'xsd:string'
-        std::string *pgFirstName;
+        wchar_t *pgFirstName;
         /// Optional element 'ns2:pgSSN' of XML schema type 'xsd:string'
-        std::string *pgSSN;
+        wchar_t *pgSSN;
         /// Optional element 'ns2:pgDateOfBirth' of XML schema type 'xsd:string'
-        std::string *pgDateOfBirth;
+        wchar_t *pgDateOfBirth;
         /// Optional element 'ns2:pgAnnualIncome' of XML schema type 'xsd:string'
-        std::string *pgAnnualIncome;
+        wchar_t *pgAnnualIncome;
         /// Optional element 'ns2:pgIncomeCurrencyType' of XML schema type 'xsd:string'
-        std::string *pgIncomeCurrencyType;
+        wchar_t *pgIncomeCurrencyType;
         /// Optional element 'ns2:pgResidenceStatus' of XML schema type 'xsd:string'
-        std::string *pgResidenceStatus;
+        wchar_t *pgResidenceStatus;
         /// Optional element 'ns2:pgCheckingAccountIndicator' of XML schema type 'xsd:string'
-        std::string *pgCheckingAccountIndicator;
+        wchar_t *pgCheckingAccountIndicator;
         /// Optional element 'ns2:pgSavingsAccountIndicator' of XML schema type 'xsd:string'
-        std::string *pgSavingsAccountIndicator;
+        wchar_t *pgSavingsAccountIndicator;
         /// Optional element 'ns2:pgYearsAtEmployer' of XML schema type 'xsd:string'
-        std::string *pgYearsAtEmployer;
+        wchar_t *pgYearsAtEmployer;
         /// Optional element 'ns2:pgYearsAtResidence' of XML schema type 'xsd:string'
-        std::string *pgYearsAtResidence;
+        wchar_t *pgYearsAtResidence;
         /// Optional element 'ns2:pgHomeAddress1' of XML schema type 'xsd:string'
-        std::string *pgHomeAddress1;
+        wchar_t *pgHomeAddress1;
         /// Optional element 'ns2:pgHomeAddress2' of XML schema type 'xsd:string'
-        std::string *pgHomeAddress2;
+        wchar_t *pgHomeAddress2;
         /// Optional element 'ns2:pgHomeCity' of XML schema type 'xsd:string'
-        std::string *pgHomeCity;
+        wchar_t *pgHomeCity;
         /// Optional element 'ns2:pgHomeState' of XML schema type 'xsd:string'
-        std::string *pgHomeState;
+        wchar_t *pgHomeState;
         /// Optional element 'ns2:pgHomePostalCode' of XML schema type 'xsd:string'
-        std::string *pgHomePostalCode;
+        wchar_t *pgHomePostalCode;
         /// Optional element 'ns2:pgHomeCountry' of XML schema type 'xsd:string'
-        std::string *pgHomeCountry;
+        wchar_t *pgHomeCountry;
         /// Optional element 'ns2:pgEmailAddress' of XML schema type 'xsd:string'
-        std::string *pgEmailAddress;
+        wchar_t *pgEmailAddress;
         /// Optional element 'ns2:pgHomePhone' of XML schema type 'xsd:string'
-        std::string *pgHomePhone;
+        wchar_t *pgHomePhone;
         /// Optional element 'ns2:pgTitle' of XML schema type 'xsd:string'
-        std::string *pgTitle;
+        wchar_t *pgTitle;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7599,30 +7599,30 @@ class SOAP_CMAC ns2__BML {
 
 /* CyberSourceTransaction_nvp_1.183.h:340 */
 #ifndef SOAP_TYPE_ns2__OtherTax
-#define SOAP_TYPE_ns2__OtherTax (365)
+#define SOAP_TYPE_ns2__OtherTax (366)
 /* complex XML schema type 'ns2:OtherTax': */
 class SOAP_CMAC ns2__OtherTax {
       public:
         /// Optional element 'ns2:vatTaxAmount' of XML schema type 'ns2:amount'
-        std::string *vatTaxAmount;
+        wchar_t *vatTaxAmount;
         /// Optional element 'ns2:vatTaxRate' of XML schema type 'ns2:amount'
-        std::string *vatTaxRate;
+        wchar_t *vatTaxRate;
         /// Optional element 'ns2:vatTaxAmountSign' of XML schema type 'xsd:string'
-        std::string *vatTaxAmountSign;
+        wchar_t *vatTaxAmountSign;
         /// Optional element 'ns2:alternateTaxAmount' of XML schema type 'ns2:amount'
-        std::string *alternateTaxAmount;
+        wchar_t *alternateTaxAmount;
         /// Optional element 'ns2:alternateTaxIndicator' of XML schema type 'xsd:string'
-        std::string *alternateTaxIndicator;
+        wchar_t *alternateTaxIndicator;
         /// Optional element 'ns2:alternateTaxID' of XML schema type 'xsd:string'
-        std::string *alternateTaxID;
+        wchar_t *alternateTaxID;
         /// Optional element 'ns2:localTaxAmount' of XML schema type 'ns2:amount'
-        std::string *localTaxAmount;
+        wchar_t *localTaxAmount;
         /// Optional element 'ns2:localTaxIndicator' of XML schema type 'xsd:integer'
-        std::string *localTaxIndicator;
+        wchar_t *localTaxIndicator;
         /// Optional element 'ns2:nationalTaxAmount' of XML schema type 'ns2:amount'
-        std::string *nationalTaxAmount;
+        wchar_t *nationalTaxAmount;
         /// Optional element 'ns2:nationalTaxIndicator' of XML schema type 'xsd:integer'
-        std::string *nationalTaxIndicator;
+        wchar_t *nationalTaxIndicator;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7653,16 +7653,16 @@ class SOAP_CMAC ns2__OtherTax {
 
 /* CyberSourceTransaction_nvp_1.183.h:342 */
 #ifndef SOAP_TYPE_ns2__Aft
-#define SOAP_TYPE_ns2__Aft (366)
+#define SOAP_TYPE_ns2__Aft (367)
 /* complex XML schema type 'ns2:Aft': */
 class SOAP_CMAC ns2__Aft {
       public:
         /// Optional element 'ns2:indicator' of XML schema type 'xsd:string'
-        std::string *indicator;
+        wchar_t *indicator;
         /// Optional element 'ns2:serviceFee' of XML schema type 'xsd:string'
-        std::string *serviceFee;
+        wchar_t *serviceFee;
         /// Optional element 'ns2:foreignExchangeFee' of XML schema type 'xsd:string'
-        std::string *foreignExchangeFee;
+        wchar_t *foreignExchangeFee;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7693,60 +7693,60 @@ class SOAP_CMAC ns2__Aft {
 
 /* CyberSourceTransaction_nvp_1.183.h:344 */
 #ifndef SOAP_TYPE_ns2__Wallet
-#define SOAP_TYPE_ns2__Wallet (367)
+#define SOAP_TYPE_ns2__Wallet (368)
 /* complex XML schema type 'ns2:Wallet': */
 class SOAP_CMAC ns2__Wallet {
       public:
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Optional element 'ns2:orderID' of XML schema type 'xsd:string'
-        std::string *orderID;
+        wchar_t *orderID;
         /// Optional element 'ns2:merchantReferenceID' of XML schema type 'xsd:string'
-        std::string *merchantReferenceID;
+        wchar_t *merchantReferenceID;
         /// Optional element 'ns2:userPhone' of XML schema type 'xsd:string'
-        std::string *userPhone;
+        wchar_t *userPhone;
         /// Optional element 'ns2:avv' of XML schema type 'xsd:string'
-        std::string *avv;
+        wchar_t *avv;
         /// Optional element 'ns2:eciRaw' of XML schema type 'xsd:string'
-        std::string *eciRaw;
+        wchar_t *eciRaw;
         /// Optional element 'ns2:authenticatonMethod' of XML schema type 'xsd:string'
-        std::string *authenticatonMethod;
+        wchar_t *authenticatonMethod;
         /// Optional element 'ns2:cardEnrollmentMethod' of XML schema type 'xsd:string'
-        std::string *cardEnrollmentMethod;
+        wchar_t *cardEnrollmentMethod;
         /// Optional element 'ns2:paresStatus' of XML schema type 'xsd:string'
-        std::string *paresStatus;
+        wchar_t *paresStatus;
         /// Optional element 'ns2:veresEnrolled' of XML schema type 'xsd:string'
-        std::string *veresEnrolled;
+        wchar_t *veresEnrolled;
         /// Optional element 'ns2:xid' of XML schema type 'xsd:string'
-        std::string *xid;
+        wchar_t *xid;
         /// Optional element 'ns2:totalPurchaseAmount' of XML schema type 'xsd:string'
-        std::string *totalPurchaseAmount;
+        wchar_t *totalPurchaseAmount;
         /// Optional element 'ns2:subtotalAmount' of XML schema type 'xsd:string'
-        std::string *subtotalAmount;
+        wchar_t *subtotalAmount;
         /// Optional element 'ns2:discountAmount' of XML schema type 'xsd:string'
-        std::string *discountAmount;
+        wchar_t *discountAmount;
         /// Optional element 'ns2:giftWrapAmount' of XML schema type 'xsd:string'
-        std::string *giftWrapAmount;
+        wchar_t *giftWrapAmount;
         /// Optional element 'ns2:eventType' of XML schema type 'xsd:string'
-        std::string *eventType;
+        wchar_t *eventType;
         /// Optional element 'ns2:promotionCode' of XML schema type 'xsd:string'
-        std::string *promotionCode;
+        wchar_t *promotionCode;
         /// Optional element 'ns2:enrollmentID' of XML schema type 'xsd:string'
-        std::string *enrollmentID;
+        wchar_t *enrollmentID;
         /// Optional element 'ns2:staySignedInIndicator' of XML schema type 'xsd:string'
-        std::string *staySignedInIndicator;
+        wchar_t *staySignedInIndicator;
         /// Optional element 'ns2:authenticationData' of XML schema type 'xsd:string'
-        std::string *authenticationData;
+        wchar_t *authenticationData;
         /// Optional element 'ns2:deviceID' of XML schema type 'xsd:string'
-        std::string *deviceID;
+        wchar_t *deviceID;
         /// Optional element 'ns2:httpResponse' of XML schema type 'xsd:string'
-        std::string *httpResponse;
+        wchar_t *httpResponse;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:errorDescription' of XML schema type 'xsd:string'
-        std::string *errorDescription;
+        wchar_t *errorDescription;
         /// Optional element 'ns2:pinURL' of XML schema type 'xsd:string'
-        std::string *pinURL;
+        wchar_t *pinURL;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7777,80 +7777,80 @@ class SOAP_CMAC ns2__Wallet {
 
 /* CyberSourceTransaction_nvp_1.183.h:346 */
 #ifndef SOAP_TYPE_ns2__PurchaseTotals
-#define SOAP_TYPE_ns2__PurchaseTotals (368)
+#define SOAP_TYPE_ns2__PurchaseTotals (369)
 /* complex XML schema type 'ns2:PurchaseTotals': */
 class SOAP_CMAC ns2__PurchaseTotals {
       public:
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:discountAmount' of XML schema type 'ns2:amount'
-        std::string *discountAmount;
+        wchar_t *discountAmount;
         /// Optional element 'ns2:discountAmountSign' of XML schema type 'xsd:string'
-        std::string *discountAmountSign;
+        wchar_t *discountAmountSign;
         /// Optional element 'ns2:discountManagementIndicator' of XML schema type 'xsd:string'
-        std::string *discountManagementIndicator;
+        wchar_t *discountManagementIndicator;
         /// Optional element 'ns2:taxAmount' of XML schema type 'ns2:amount'
-        std::string *taxAmount;
+        wchar_t *taxAmount;
         /// Optional element 'ns2:dutyAmount' of XML schema type 'ns2:amount'
-        std::string *dutyAmount;
+        wchar_t *dutyAmount;
         /// Optional element 'ns2:dutyAmountSign' of XML schema type 'xsd:string'
-        std::string *dutyAmountSign;
+        wchar_t *dutyAmountSign;
         /// Optional element 'ns2:grandTotalAmount' of XML schema type 'ns2:amount'
-        std::string *grandTotalAmount;
+        wchar_t *grandTotalAmount;
         /// Optional element 'ns2:freightAmount' of XML schema type 'ns2:amount'
-        std::string *freightAmount;
+        wchar_t *freightAmount;
         /// Optional element 'ns2:freightAmountSign' of XML schema type 'xsd:string'
-        std::string *freightAmountSign;
+        wchar_t *freightAmountSign;
         /// Optional element 'ns2:foreignAmount' of XML schema type 'ns2:amount'
-        std::string *foreignAmount;
+        wchar_t *foreignAmount;
         /// Optional element 'ns2:foreignCurrency' of XML schema type 'xsd:string'
-        std::string *foreignCurrency;
+        wchar_t *foreignCurrency;
         /// Optional element 'ns2:originalAmount' of XML schema type 'ns2:amount'
-        std::string *originalAmount;
+        wchar_t *originalAmount;
         /// Optional element 'ns2:originalCurrency' of XML schema type 'xsd:string'
-        std::string *originalCurrency;
+        wchar_t *originalCurrency;
         /// Optional element 'ns2:exchangeRate' of XML schema type 'ns2:amount'
-        std::string *exchangeRate;
+        wchar_t *exchangeRate;
         /// Optional element 'ns2:exchangeRateTimeStamp' of XML schema type 'xsd:string'
-        std::string *exchangeRateTimeStamp;
+        wchar_t *exchangeRateTimeStamp;
         /// Optional element 'ns2:exchangeRateType' of XML schema type 'xsd:string'
-        std::string *exchangeRateType;
+        wchar_t *exchangeRateType;
         /// Optional element 'ns2:additionalAmountType0' of XML schema type 'xsd:string'
-        std::string *additionalAmountType0;
+        wchar_t *additionalAmountType0;
         /// Optional element 'ns2:additionalAmount0' of XML schema type 'xsd:string'
-        std::string *additionalAmount0;
+        wchar_t *additionalAmount0;
         /// Optional element 'ns2:additionalAmountType1' of XML schema type 'xsd:string'
-        std::string *additionalAmountType1;
+        wchar_t *additionalAmountType1;
         /// Optional element 'ns2:additionalAmount1' of XML schema type 'xsd:string'
-        std::string *additionalAmount1;
+        wchar_t *additionalAmount1;
         /// Optional element 'ns2:additionalAmountType2' of XML schema type 'xsd:string'
-        std::string *additionalAmountType2;
+        wchar_t *additionalAmountType2;
         /// Optional element 'ns2:additionalAmount2' of XML schema type 'xsd:string'
-        std::string *additionalAmount2;
+        wchar_t *additionalAmount2;
         /// Optional element 'ns2:additionalAmountType3' of XML schema type 'xsd:string'
-        std::string *additionalAmountType3;
+        wchar_t *additionalAmountType3;
         /// Optional element 'ns2:additionalAmount3' of XML schema type 'xsd:string'
-        std::string *additionalAmount3;
+        wchar_t *additionalAmount3;
         /// Optional element 'ns2:additionalAmountType4' of XML schema type 'xsd:string'
-        std::string *additionalAmountType4;
+        wchar_t *additionalAmountType4;
         /// Optional element 'ns2:additionalAmount4' of XML schema type 'xsd:string'
-        std::string *additionalAmount4;
+        wchar_t *additionalAmount4;
         /// Optional element 'ns2:serviceFeeAmount' of XML schema type 'ns2:amount'
-        std::string *serviceFeeAmount;
+        wchar_t *serviceFeeAmount;
         /// Optional element 'ns2:subtotalAmount' of XML schema type 'ns2:amount'
-        std::string *subtotalAmount;
+        wchar_t *subtotalAmount;
         /// Optional element 'ns2:shippingAmount' of XML schema type 'ns2:amount'
-        std::string *shippingAmount;
+        wchar_t *shippingAmount;
         /// Optional element 'ns2:handlingAmount' of XML schema type 'ns2:amount'
-        std::string *handlingAmount;
+        wchar_t *handlingAmount;
         /// Optional element 'ns2:shippingHandlingAmount' of XML schema type 'ns2:amount'
-        std::string *shippingHandlingAmount;
+        wchar_t *shippingHandlingAmount;
         /// Optional element 'ns2:shippingDiscountAmount' of XML schema type 'ns2:amount'
-        std::string *shippingDiscountAmount;
+        wchar_t *shippingDiscountAmount;
         /// Optional element 'ns2:giftWrapAmount' of XML schema type 'ns2:amount'
-        std::string *giftWrapAmount;
+        wchar_t *giftWrapAmount;
         /// Optional element 'ns2:insuranceAmount' of XML schema type 'ns2:amount'
-        std::string *insuranceAmount;
+        wchar_t *insuranceAmount;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7881,14 +7881,14 @@ class SOAP_CMAC ns2__PurchaseTotals {
 
 /* CyberSourceTransaction_nvp_1.183.h:348 */
 #ifndef SOAP_TYPE_ns2__FundingTotals
-#define SOAP_TYPE_ns2__FundingTotals (369)
+#define SOAP_TYPE_ns2__FundingTotals (370)
 /* complex XML schema type 'ns2:FundingTotals': */
 class SOAP_CMAC ns2__FundingTotals {
       public:
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:grandTotalAmount' of XML schema type 'ns2:amount'
-        std::string *grandTotalAmount;
+        wchar_t *grandTotalAmount;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7919,22 +7919,22 @@ class SOAP_CMAC ns2__FundingTotals {
 
 /* CyberSourceTransaction_nvp_1.183.h:350 */
 #ifndef SOAP_TYPE_ns2__GECC
-#define SOAP_TYPE_ns2__GECC (370)
+#define SOAP_TYPE_ns2__GECC (371)
 /* complex XML schema type 'ns2:GECC': */
 class SOAP_CMAC ns2__GECC {
       public:
         /// Optional element 'ns2:saleType' of XML schema type 'xsd:string'
-        std::string *saleType;
+        wchar_t *saleType;
         /// Optional element 'ns2:planNumber' of XML schema type 'xsd:string'
-        std::string *planNumber;
+        wchar_t *planNumber;
         /// Optional element 'ns2:sequenceNumber' of XML schema type 'xsd:string'
-        std::string *sequenceNumber;
+        wchar_t *sequenceNumber;
         /// Optional element 'ns2:promotionEndDate' of XML schema type 'xsd:string'
-        std::string *promotionEndDate;
+        wchar_t *promotionEndDate;
         /// Optional element 'ns2:promotionPlan' of XML schema type 'xsd:string'
-        std::string *promotionPlan;
+        wchar_t *promotionPlan;
         /// Sequence of 0 to 7 elements 'ns2:line' of XML schema type 'xsd:string'
-        std::vector<std::string> line;
+        std::vector<wchar_t *> line;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -7965,16 +7965,16 @@ class SOAP_CMAC ns2__GECC {
 
 /* CyberSourceTransaction_nvp_1.183.h:352 */
 #ifndef SOAP_TYPE_ns2__UCAF
-#define SOAP_TYPE_ns2__UCAF (371)
+#define SOAP_TYPE_ns2__UCAF (372)
 /* complex XML schema type 'ns2:UCAF': */
 class SOAP_CMAC ns2__UCAF {
       public:
         /// Optional element 'ns2:authenticationData' of XML schema type 'xsd:string'
-        std::string *authenticationData;
+        wchar_t *authenticationData;
         /// Optional element 'ns2:collectionIndicator' of XML schema type 'xsd:string'
-        std::string *collectionIndicator;
+        wchar_t *collectionIndicator;
         /// Optional element 'ns2:downgradeReasonCode' of XML schema type 'xsd:string'
-        std::string *downgradeReasonCode;
+        wchar_t *downgradeReasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8005,24 +8005,24 @@ class SOAP_CMAC ns2__UCAF {
 
 /* CyberSourceTransaction_nvp_1.183.h:354 */
 #ifndef SOAP_TYPE_ns2__Network
-#define SOAP_TYPE_ns2__Network (372)
+#define SOAP_TYPE_ns2__Network (373)
 /* complex XML schema type 'ns2:Network': */
 class SOAP_CMAC ns2__Network {
       public:
         /// Optional element 'ns2:octDomesticIndicator' of XML schema type 'xsd:string'
-        std::string *octDomesticIndicator;
+        wchar_t *octDomesticIndicator;
         /// Optional element 'ns2:octCrossBorderIndicator' of XML schema type 'xsd:string'
-        std::string *octCrossBorderIndicator;
+        wchar_t *octCrossBorderIndicator;
         /// Optional element 'ns2:aftDomesticIndicator' of XML schema type 'xsd:string'
-        std::string *aftDomesticIndicator;
+        wchar_t *aftDomesticIndicator;
         /// Optional element 'ns2:aftCrossBorderIndicator' of XML schema type 'xsd:string'
-        std::string *aftCrossBorderIndicator;
+        wchar_t *aftCrossBorderIndicator;
         /// Optional element 'ns2:networkID' of XML schema type 'xsd:string'
-        std::string *networkID;
+        wchar_t *networkID;
         /// Optional element 'ns2:networkOrder' of XML schema type 'xsd:string'
-        std::string *networkOrder;
+        wchar_t *networkOrder;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8053,16 +8053,16 @@ class SOAP_CMAC ns2__Network {
 
 /* CyberSourceTransaction_nvp_1.183.h:356 */
 #ifndef SOAP_TYPE_ns2__Brands
-#define SOAP_TYPE_ns2__Brands (373)
+#define SOAP_TYPE_ns2__Brands (374)
 /* complex XML schema type 'ns2:Brands': */
 class SOAP_CMAC ns2__Brands {
       public:
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8093,18 +8093,18 @@ class SOAP_CMAC ns2__Brands {
 
 /* CyberSourceTransaction_nvp_1.183.h:358 */
 #ifndef SOAP_TYPE_ns2__FundTransfer
-#define SOAP_TYPE_ns2__FundTransfer (374)
+#define SOAP_TYPE_ns2__FundTransfer (375)
 /* complex XML schema type 'ns2:FundTransfer': */
 class SOAP_CMAC ns2__FundTransfer {
       public:
         /// Optional element 'ns2:accountNumber' of XML schema type 'xsd:string'
-        std::string *accountNumber;
+        wchar_t *accountNumber;
         /// Optional element 'ns2:accountName' of XML schema type 'xsd:string'
-        std::string *accountName;
+        wchar_t *accountName;
         /// Optional element 'ns2:bankCheckDigit' of XML schema type 'xsd:string'
-        std::string *bankCheckDigit;
+        wchar_t *bankCheckDigit;
         /// Optional element 'ns2:iban' of XML schema type 'xsd:string'
-        std::string *iban;
+        wchar_t *iban;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8135,28 +8135,28 @@ class SOAP_CMAC ns2__FundTransfer {
 
 /* CyberSourceTransaction_nvp_1.183.h:360 */
 #ifndef SOAP_TYPE_ns2__BankInfo
-#define SOAP_TYPE_ns2__BankInfo (375)
+#define SOAP_TYPE_ns2__BankInfo (376)
 /* complex XML schema type 'ns2:BankInfo': */
 class SOAP_CMAC ns2__BankInfo {
       public:
         /// Optional element 'ns2:bankCode' of XML schema type 'xsd:string'
-        std::string *bankCode;
+        wchar_t *bankCode;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:address' of XML schema type 'xsd:string'
-        std::string *address;
+        wchar_t *address;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:branchCode' of XML schema type 'xsd:string'
-        std::string *branchCode;
+        wchar_t *branchCode;
         /// Optional element 'ns2:swiftCode' of XML schema type 'xsd:string'
-        std::string *swiftCode;
+        wchar_t *swiftCode;
         /// Optional element 'ns2:sortCode' of XML schema type 'xsd:string'
-        std::string *sortCode;
+        wchar_t *sortCode;
         /// Optional element 'ns2:issuerID' of XML schema type 'xsd:string'
-        std::string *issuerID;
+        wchar_t *issuerID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8187,36 +8187,36 @@ class SOAP_CMAC ns2__BankInfo {
 
 /* CyberSourceTransaction_nvp_1.183.h:362 */
 #ifndef SOAP_TYPE_ns2__RecurringSubscriptionInfo
-#define SOAP_TYPE_ns2__RecurringSubscriptionInfo (376)
+#define SOAP_TYPE_ns2__RecurringSubscriptionInfo (377)
 /* complex XML schema type 'ns2:RecurringSubscriptionInfo': */
 class SOAP_CMAC ns2__RecurringSubscriptionInfo {
       public:
         /// Optional element 'ns2:subscriptionID' of XML schema type 'xsd:string'
-        std::string *subscriptionID;
+        wchar_t *subscriptionID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:numberOfPayments' of XML schema type 'xsd:integer'
-        std::string *numberOfPayments;
+        wchar_t *numberOfPayments;
         /// Optional element 'ns2:numberOfPaymentsToAdd' of XML schema type 'xsd:integer'
-        std::string *numberOfPaymentsToAdd;
+        wchar_t *numberOfPaymentsToAdd;
         /// Optional element 'ns2:sequenceNumber' of XML schema type 'xsd:integer'
-        std::string *sequenceNumber;
+        wchar_t *sequenceNumber;
         /// Optional element 'ns2:automaticRenew' of XML schema type 'ns2:boolean'
-        std::string *automaticRenew;
+        wchar_t *automaticRenew;
         /// Optional element 'ns2:frequency' of XML schema type 'xsd:string'
-        std::string *frequency;
+        wchar_t *frequency;
         /// Optional element 'ns2:startDate' of XML schema type 'xsd:string'
-        std::string *startDate;
+        wchar_t *startDate;
         /// Optional element 'ns2:endDate' of XML schema type 'xsd:string'
-        std::string *endDate;
+        wchar_t *endDate;
         /// Optional element 'ns2:approvalRequired' of XML schema type 'ns2:boolean'
-        std::string *approvalRequired;
+        wchar_t *approvalRequired;
         /// Optional element 'ns2:event' of XML schema type 'ns2:PaySubscriptionEvent'
         ns2__PaySubscriptionEvent *event;
         /// Optional element 'ns2:billPayment' of XML schema type 'ns2:boolean'
-        std::string *billPayment;
+        wchar_t *billPayment;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8247,16 +8247,16 @@ class SOAP_CMAC ns2__RecurringSubscriptionInfo {
 
 /* CyberSourceTransaction_nvp_1.183.h:364 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEvent
-#define SOAP_TYPE_ns2__PaySubscriptionEvent (377)
+#define SOAP_TYPE_ns2__PaySubscriptionEvent (378)
 /* complex XML schema type 'ns2:PaySubscriptionEvent': */
 class SOAP_CMAC ns2__PaySubscriptionEvent {
       public:
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:approvedBy' of XML schema type 'xsd:string'
-        std::string *approvedBy;
+        wchar_t *approvedBy;
         /// Optional element 'ns2:number' of XML schema type 'xsd:integer'
-        std::string *number;
+        wchar_t *number;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8287,14 +8287,14 @@ class SOAP_CMAC ns2__PaySubscriptionEvent {
 
 /* CyberSourceTransaction_nvp_1.183.h:366 */
 #ifndef SOAP_TYPE_ns2__Subscription
-#define SOAP_TYPE_ns2__Subscription (378)
+#define SOAP_TYPE_ns2__Subscription (379)
 /* complex XML schema type 'ns2:Subscription': */
 class SOAP_CMAC ns2__Subscription {
       public:
         /// Optional element 'ns2:title' of XML schema type 'xsd:string'
-        std::string *title;
+        wchar_t *title;
         /// Optional element 'ns2:paymentMethod' of XML schema type 'xsd:string'
-        std::string *paymentMethod;
+        wchar_t *paymentMethod;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8325,14 +8325,14 @@ class SOAP_CMAC ns2__Subscription {
 
 /* CyberSourceTransaction_nvp_1.183.h:368 */
 #ifndef SOAP_TYPE_ns2__TokenSource
-#define SOAP_TYPE_ns2__TokenSource (379)
+#define SOAP_TYPE_ns2__TokenSource (380)
 /* complex XML schema type 'ns2:TokenSource': */
 class SOAP_CMAC ns2__TokenSource {
       public:
         /// Optional element 'ns2:transientToken' of XML schema type 'xsd:string'
-        std::string *transientToken;
+        wchar_t *transientToken;
         /// Optional element 'ns2:networkTokenOption' of XML schema type 'xsd:string'
-        std::string *networkTokenOption;
+        wchar_t *networkTokenOption;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8363,22 +8363,22 @@ class SOAP_CMAC ns2__TokenSource {
 
 /* CyberSourceTransaction_nvp_1.183.h:370 */
 #ifndef SOAP_TYPE_ns2__PaymentNetworkToken
-#define SOAP_TYPE_ns2__PaymentNetworkToken (380)
+#define SOAP_TYPE_ns2__PaymentNetworkToken (381)
 /* complex XML schema type 'ns2:PaymentNetworkToken': */
 class SOAP_CMAC ns2__PaymentNetworkToken {
       public:
         /// Optional element 'ns2:requestorID' of XML schema type 'xsd:string'
-        std::string *requestorID;
+        wchar_t *requestorID;
         /// Optional element 'ns2:transactionType' of XML schema type 'xsd:string'
-        std::string *transactionType;
+        wchar_t *transactionType;
         /// Optional element 'ns2:assuranceLevel' of XML schema type 'xsd:string'
-        std::string *assuranceLevel;
+        wchar_t *assuranceLevel;
         /// Optional element 'ns2:accountStatus' of XML schema type 'xsd:string'
-        std::string *accountStatus;
+        wchar_t *accountStatus;
         /// Optional element 'ns2:originalCardCategory' of XML schema type 'xsd:string'
-        std::string *originalCardCategory;
+        wchar_t *originalCardCategory;
         /// Optional element 'ns2:deviceTechType' of XML schema type 'xsd:string'
-        std::string *deviceTechType;
+        wchar_t *deviceTechType;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8409,16 +8409,16 @@ class SOAP_CMAC ns2__PaymentNetworkToken {
 
 /* CyberSourceTransaction_nvp_1.183.h:372 */
 #ifndef SOAP_TYPE_ns2__DecisionManager
-#define SOAP_TYPE_ns2__DecisionManager (381)
+#define SOAP_TYPE_ns2__DecisionManager (382)
 /* complex XML schema type 'ns2:DecisionManager': */
 class SOAP_CMAC ns2__DecisionManager {
       public:
         /// Optional element 'ns2:enabled' of XML schema type 'ns2:boolean'
-        std::string *enabled;
+        wchar_t *enabled;
         /// Optional element 'ns2:profile' of XML schema type 'xsd:string'
-        std::string *profile;
+        wchar_t *profile;
         /// Optional element 'ns2:pausedRequestID' of XML schema type 'xsd:string'
-        std::string *pausedRequestID;
+        wchar_t *pausedRequestID;
         /// Optional element 'ns2:authentication' of XML schema type 'ns2:Authentication'
         ns2__Authentication *authentication;
         /// Optional element 'ns2:travelData' of XML schema type 'ns2:DecisionManagerTravelData'
@@ -8453,14 +8453,14 @@ class SOAP_CMAC ns2__DecisionManager {
 
 /* CyberSourceTransaction_nvp_1.183.h:374 */
 #ifndef SOAP_TYPE_ns2__Authentication
-#define SOAP_TYPE_ns2__Authentication (382)
+#define SOAP_TYPE_ns2__Authentication (383)
 /* complex XML schema type 'ns2:Authentication': */
 class SOAP_CMAC ns2__Authentication {
       public:
         /// Optional element 'ns2:outOfScope' of XML schema type 'xsd:string'
-        std::string *outOfScope;
+        wchar_t *outOfScope;
         /// Optional element 'ns2:exemption' of XML schema type 'xsd:string'
-        std::string *exemption;
+        wchar_t *exemption;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8491,20 +8491,20 @@ class SOAP_CMAC ns2__Authentication {
 
 /* CyberSourceTransaction_nvp_1.183.h:376 */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelData
-#define SOAP_TYPE_ns2__DecisionManagerTravelData (383)
+#define SOAP_TYPE_ns2__DecisionManagerTravelData (384)
 /* complex XML schema type 'ns2:DecisionManagerTravelData': */
 class SOAP_CMAC ns2__DecisionManagerTravelData {
       public:
         /// Sequence of 0 to 100 elements 'ns2:leg' of XML schema type 'ns2:DecisionManagerTravelLeg'
         std::vector<ns2__DecisionManagerTravelLeg> leg;
         /// Optional element 'ns2:departureDateTime' of XML schema type 'ns2:dateTime'
-        std::string *departureDateTime;
+        wchar_t *departureDateTime;
         /// Optional element 'ns2:completeRoute' of XML schema type 'xsd:string'
-        std::string *completeRoute;
+        wchar_t *completeRoute;
         /// Optional element 'ns2:journeyType' of XML schema type 'xsd:string'
-        std::string *journeyType;
+        wchar_t *journeyType;
         /// Optional element 'ns2:actualFinalDestination' of XML schema type 'xsd:string'
-        std::string *actualFinalDestination;
+        wchar_t *actualFinalDestination;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8535,18 +8535,18 @@ class SOAP_CMAC ns2__DecisionManagerTravelData {
 
 /* CyberSourceTransaction_nvp_1.183.h:378 */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelLeg
-#define SOAP_TYPE_ns2__DecisionManagerTravelLeg (384)
+#define SOAP_TYPE_ns2__DecisionManagerTravelLeg (385)
 /* complex XML schema type 'ns2:DecisionManagerTravelLeg': */
 class SOAP_CMAC ns2__DecisionManagerTravelLeg {
       public:
         /// Optional element 'ns2:origin' of XML schema type 'xsd:string'
-        std::string *origin;
+        wchar_t *origin;
         /// Optional element 'ns2:destination' of XML schema type 'xsd:string'
-        std::string *destination;
+        wchar_t *destination;
         /// Optional element 'ns2:departureDateTime' of XML schema type 'ns2:dateTime'
-        std::string *departureDateTime;
+        wchar_t *departureDateTime;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8577,14 +8577,14 @@ class SOAP_CMAC ns2__DecisionManagerTravelLeg {
 
 /* CyberSourceTransaction_nvp_1.183.h:380 */
 #ifndef SOAP_TYPE_ns2__Batch
-#define SOAP_TYPE_ns2__Batch (385)
+#define SOAP_TYPE_ns2__Batch (386)
 /* complex XML schema type 'ns2:Batch': */
 class SOAP_CMAC ns2__Batch {
       public:
         /// Optional element 'ns2:batchID' of XML schema type 'xsd:string'
-        std::string *batchID;
+        wchar_t *batchID;
         /// Optional element 'ns2:recordID' of XML schema type 'xsd:string'
-        std::string *recordID;
+        wchar_t *recordID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8615,7 +8615,7 @@ class SOAP_CMAC ns2__Batch {
 
 /* CyberSourceTransaction_nvp_1.183.h:382 */
 #ifndef SOAP_TYPE_ns2__PayPal
-#define SOAP_TYPE_ns2__PayPal (386)
+#define SOAP_TYPE_ns2__PayPal (387)
 /* complex XML schema type 'ns2:PayPal': */
 class SOAP_CMAC ns2__PayPal {
       public:
@@ -8650,32 +8650,32 @@ class SOAP_CMAC ns2__PayPal {
 
 /* CyberSourceTransaction_nvp_1.183.h:384 */
 #ifndef SOAP_TYPE_ns2__JPO
-#define SOAP_TYPE_ns2__JPO (387)
+#define SOAP_TYPE_ns2__JPO (388)
 /* complex XML schema type 'ns2:JPO': */
 class SOAP_CMAC ns2__JPO {
       public:
         /// Optional element 'ns2:paymentMethod' of XML schema type 'xsd:integer'
-        std::string *paymentMethod;
+        wchar_t *paymentMethod;
         /// Optional element 'ns2:bonusAmount' of XML schema type 'ns2:amount'
-        std::string *bonusAmount;
+        wchar_t *bonusAmount;
         /// Optional element 'ns2:bonuses' of XML schema type 'xsd:integer'
-        std::string *bonuses;
+        wchar_t *bonuses;
         /// Optional element 'ns2:installments' of XML schema type 'xsd:integer'
-        std::string *installments;
+        wchar_t *installments;
         /// Optional element 'ns2:firstBillingMonth' of XML schema type 'xsd:integer'
-        std::string *firstBillingMonth;
+        wchar_t *firstBillingMonth;
         /// Optional element 'ns2:jccaTerminalID' of XML schema type 'xsd:integer'
-        std::string *jccaTerminalID;
+        wchar_t *jccaTerminalID;
         /// Optional element 'ns2:issuerMessage' of XML schema type 'xsd:integer'
-        std::string *issuerMessage;
+        wchar_t *issuerMessage;
         /// Optional element 'ns2:jis2TrackData' of XML schema type 'xsd:string'
-        std::string *jis2TrackData;
+        wchar_t *jis2TrackData;
         /// Optional element 'ns2:businessNameAlphanumeric' of XML schema type 'xsd:string'
-        std::string *businessNameAlphanumeric;
+        wchar_t *businessNameAlphanumeric;
         /// Optional element 'ns2:businessNameJapanese' of XML schema type 'xsd:string'
-        std::string *businessNameJapanese;
+        wchar_t *businessNameJapanese;
         /// Optional element 'ns2:businessNameKatakana' of XML schema type 'xsd:string'
-        std::string *businessNameKatakana;
+        wchar_t *businessNameKatakana;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8706,18 +8706,18 @@ class SOAP_CMAC ns2__JPO {
 
 /* CyberSourceTransaction_nvp_1.183.h:386 */
 #ifndef SOAP_TYPE_ns2__Token
-#define SOAP_TYPE_ns2__Token (388)
+#define SOAP_TYPE_ns2__Token (389)
 /* complex XML schema type 'ns2:Token': */
 class SOAP_CMAC ns2__Token {
       public:
         /// Optional element 'ns2:prefix' of XML schema type 'xsd:string'
-        std::string *prefix;
+        wchar_t *prefix;
         /// Optional element 'ns2:suffix' of XML schema type 'xsd:string'
-        std::string *suffix;
+        wchar_t *suffix;
         /// Optional element 'ns2:expirationMonth' of XML schema type 'xsd:string'
-        std::string *expirationMonth;
+        wchar_t *expirationMonth;
         /// Optional element 'ns2:expirationYear' of XML schema type 'xsd:string'
-        std::string *expirationYear;
+        wchar_t *expirationYear;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8748,58 +8748,58 @@ class SOAP_CMAC ns2__Token {
 
 /* CyberSourceTransaction_nvp_1.183.h:388 */
 #ifndef SOAP_TYPE_ns2__AP
-#define SOAP_TYPE_ns2__AP (389)
+#define SOAP_TYPE_ns2__AP (390)
 /* complex XML schema type 'ns2:AP': */
 class SOAP_CMAC ns2__AP {
       public:
         /// Optional element 'ns2:orderID' of XML schema type 'xsd:string'
-        std::string *orderID;
+        wchar_t *orderID;
         /// Optional element 'ns2:pspBarcodeID' of XML schema type 'xsd:string'
-        std::string *pspBarcodeID;
+        wchar_t *pspBarcodeID;
         /// Optional element 'ns2:customerRepresentativeID' of XML schema type 'xsd:string'
-        std::string *customerRepresentativeID;
+        wchar_t *customerRepresentativeID;
         /// Optional element 'ns2:productDescription' of XML schema type 'xsd:string'
-        std::string *productDescription;
+        wchar_t *productDescription;
         /// Optional element 'ns2:settlementCurrency' of XML schema type 'xsd:string'
-        std::string *settlementCurrency;
+        wchar_t *settlementCurrency;
         /// Optional element 'ns2:subtotalAmount' of XML schema type 'xsd:string'
-        std::string *subtotalAmount;
+        wchar_t *subtotalAmount;
         /// Optional element 'ns2:shippingAmount' of XML schema type 'xsd:string'
-        std::string *shippingAmount;
+        wchar_t *shippingAmount;
         /// Optional element 'ns2:handlingAmount' of XML schema type 'xsd:string'
-        std::string *handlingAmount;
+        wchar_t *handlingAmount;
         /// Optional element 'ns2:shippingHandlingAmount' of XML schema type 'xsd:string'
-        std::string *shippingHandlingAmount;
+        wchar_t *shippingHandlingAmount;
         /// Optional element 'ns2:additionalAmount' of XML schema type 'xsd:string'
-        std::string *additionalAmount;
+        wchar_t *additionalAmount;
         /// Optional element 'ns2:taxAmount' of XML schema type 'xsd:string'
-        std::string *taxAmount;
+        wchar_t *taxAmount;
         /// Optional element 'ns2:giftWrapAmount' of XML schema type 'xsd:string'
-        std::string *giftWrapAmount;
+        wchar_t *giftWrapAmount;
         /// Optional element 'ns2:discountAmount' of XML schema type 'xsd:string'
-        std::string *discountAmount;
+        wchar_t *discountAmount;
         /// Optional element 'ns2:purchaseID' of XML schema type 'xsd:string'
-        std::string *purchaseID;
+        wchar_t *purchaseID;
         /// Optional element 'ns2:productID' of XML schema type 'xsd:string'
-        std::string *productID;
+        wchar_t *productID;
         /// Optional element 'ns2:device' of XML schema type 'ns2:APDevice'
         ns2__APDevice *device;
         /// Optional element 'ns2:apiKey' of XML schema type 'xsd:string'
-        std::string *apiKey;
+        wchar_t *apiKey;
         /// Optional element 'ns2:insuranceAmount' of XML schema type 'xsd:string'
-        std::string *insuranceAmount;
+        wchar_t *insuranceAmount;
         /// Optional element 'ns2:billingAgreementIndicator' of XML schema type 'ns2:boolean'
-        std::string *billingAgreementIndicator;
+        wchar_t *billingAgreementIndicator;
         /// Optional element 'ns2:billingAgreementID' of XML schema type 'xsd:string'
-        std::string *billingAgreementID;
+        wchar_t *billingAgreementID;
         /// Optional element 'ns2:billingAgreementDescription' of XML schema type 'xsd:string'
-        std::string *billingAgreementDescription;
+        wchar_t *billingAgreementDescription;
         /// Optional element 'ns2:payerID' of XML schema type 'xsd:string'
-        std::string *payerID;
+        wchar_t *payerID;
         /// Optional element 'ns2:fundingSource' of XML schema type 'xsd:string'
-        std::string *fundingSource;
+        wchar_t *fundingSource;
         /// Optional element 'ns2:shippingAddressImmutable' of XML schema type 'xsd:string'
-        std::string *shippingAddressImmutable;
+        wchar_t *shippingAddressImmutable;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8830,16 +8830,16 @@ class SOAP_CMAC ns2__AP {
 
 /* CyberSourceTransaction_nvp_1.183.h:390 */
 #ifndef SOAP_TYPE_ns2__APDevice
-#define SOAP_TYPE_ns2__APDevice (390)
+#define SOAP_TYPE_ns2__APDevice (391)
 /* complex XML schema type 'ns2:APDevice': */
 class SOAP_CMAC ns2__APDevice {
       public:
         /// Optional element 'ns2:id' of XML schema type 'xsd:string'
-        std::string *id;
+        wchar_t *id;
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Optional element 'ns2:userAgent' of XML schema type 'xsd:string'
-        std::string *userAgent;
+        wchar_t *userAgent;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8870,26 +8870,26 @@ class SOAP_CMAC ns2__APDevice {
 
 /* CyberSourceTransaction_nvp_1.183.h:392 */
 #ifndef SOAP_TYPE_ns2__APAuthService
-#define SOAP_TYPE_ns2__APAuthService (391)
+#define SOAP_TYPE_ns2__APAuthService (392)
 /* complex XML schema type 'ns2:APAuthService': */
 class SOAP_CMAC ns2__APAuthService {
       public:
         /// Optional element 'ns2:cancelURL' of XML schema type 'xsd:string'
-        std::string *cancelURL;
+        wchar_t *cancelURL;
         /// Optional element 'ns2:successURL' of XML schema type 'xsd:string'
-        std::string *successURL;
+        wchar_t *successURL;
         /// Optional element 'ns2:failureURL' of XML schema type 'xsd:string'
-        std::string *failureURL;
+        wchar_t *failureURL;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:preapprovalToken' of XML schema type 'xsd:string'
-        std::string *preapprovalToken;
+        wchar_t *preapprovalToken;
         /// Optional element 'ns2:orderRequestID' of XML schema type 'xsd:string'
-        std::string *orderRequestID;
+        wchar_t *orderRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8920,14 +8920,14 @@ class SOAP_CMAC ns2__APAuthService {
 
 /* CyberSourceTransaction_nvp_1.183.h:394 */
 #ifndef SOAP_TYPE_ns2__APImportMandateService
-#define SOAP_TYPE_ns2__APImportMandateService (392)
+#define SOAP_TYPE_ns2__APImportMandateService (393)
 /* complex XML schema type 'ns2:APImportMandateService': */
 class SOAP_CMAC ns2__APImportMandateService {
       public:
         /// Optional element 'ns2:dateSigned' of XML schema type 'xsd:string'
-        std::string *dateSigned;
+        wchar_t *dateSigned;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8958,16 +8958,16 @@ class SOAP_CMAC ns2__APImportMandateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:396 */
 #ifndef SOAP_TYPE_ns2__APAuthReversalService
-#define SOAP_TYPE_ns2__APAuthReversalService (393)
+#define SOAP_TYPE_ns2__APAuthReversalService (394)
 /* complex XML schema type 'ns2:APAuthReversalService': */
 class SOAP_CMAC ns2__APAuthReversalService {
       public:
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -8998,18 +8998,18 @@ class SOAP_CMAC ns2__APAuthReversalService {
 
 /* CyberSourceTransaction_nvp_1.183.h:398 */
 #ifndef SOAP_TYPE_ns2__APCaptureService
-#define SOAP_TYPE_ns2__APCaptureService (394)
+#define SOAP_TYPE_ns2__APCaptureService (395)
 /* complex XML schema type 'ns2:APCaptureService': */
 class SOAP_CMAC ns2__APCaptureService {
       public:
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:isFinal' of XML schema type 'ns2:boolean'
-        std::string *isFinal;
+        wchar_t *isFinal;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9040,16 +9040,16 @@ class SOAP_CMAC ns2__APCaptureService {
 
 /* CyberSourceTransaction_nvp_1.183.h:400 */
 #ifndef SOAP_TYPE_ns2__APOptionsService
-#define SOAP_TYPE_ns2__APOptionsService (395)
+#define SOAP_TYPE_ns2__APOptionsService (396)
 /* complex XML schema type 'ns2:APOptionsService': */
 class SOAP_CMAC ns2__APOptionsService {
       public:
         /// Optional element 'ns2:limit' of XML schema type 'xsd:string'
-        std::string *limit;
+        wchar_t *limit;
         /// Optional element 'ns2:offset' of XML schema type 'xsd:string'
-        std::string *offset;
+        wchar_t *offset;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9080,30 +9080,30 @@ class SOAP_CMAC ns2__APOptionsService {
 
 /* CyberSourceTransaction_nvp_1.183.h:402 */
 #ifndef SOAP_TYPE_ns2__APRefundService
-#define SOAP_TYPE_ns2__APRefundService (396)
+#define SOAP_TYPE_ns2__APRefundService (397)
 /* complex XML schema type 'ns2:APRefundService': */
 class SOAP_CMAC ns2__APRefundService {
       public:
         /// Optional element 'ns2:captureRequestID' of XML schema type 'xsd:string'
-        std::string *captureRequestID;
+        wchar_t *captureRequestID;
         /// Optional element 'ns2:refundRequestID' of XML schema type 'xsd:string'
-        std::string *refundRequestID;
+        wchar_t *refundRequestID;
         /// Optional element 'ns2:reason' of XML schema type 'xsd:string'
-        std::string *reason;
+        wchar_t *reason;
         /// Optional element 'ns2:instant' of XML schema type 'xsd:string'
-        std::string *instant;
+        wchar_t *instant;
         /// Optional element 'ns2:note' of XML schema type 'xsd:string'
-        std::string *note;
+        wchar_t *note;
         /// Optional element 'ns2:apInitiateRequestID' of XML schema type 'xsd:string'
-        std::string *apInitiateRequestID;
+        wchar_t *apInitiateRequestID;
         /// Optional element 'ns2:returnRef' of XML schema type 'xsd:string'
-        std::string *returnRef;
+        wchar_t *returnRef;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:saleRequestID' of XML schema type 'xsd:string'
-        std::string *saleRequestID;
+        wchar_t *saleRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9134,36 +9134,36 @@ class SOAP_CMAC ns2__APRefundService {
 
 /* CyberSourceTransaction_nvp_1.183.h:404 */
 #ifndef SOAP_TYPE_ns2__APSaleService
-#define SOAP_TYPE_ns2__APSaleService (397)
+#define SOAP_TYPE_ns2__APSaleService (398)
 /* complex XML schema type 'ns2:APSaleService': */
 class SOAP_CMAC ns2__APSaleService {
       public:
         /// Optional element 'ns2:cancelURL' of XML schema type 'xsd:string'
-        std::string *cancelURL;
+        wchar_t *cancelURL;
         /// Optional element 'ns2:successURL' of XML schema type 'xsd:string'
-        std::string *successURL;
+        wchar_t *successURL;
         /// Optional element 'ns2:failureURL' of XML schema type 'xsd:string'
-        std::string *failureURL;
+        wchar_t *failureURL;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:paymentOptionID' of XML schema type 'xsd:string'
-        std::string *paymentOptionID;
+        wchar_t *paymentOptionID;
         /// Optional element 'ns2:transactionTimeout' of XML schema type 'xsd:string'
-        std::string *transactionTimeout;
+        wchar_t *transactionTimeout;
         /// Optional element 'ns2:orderRequestID' of XML schema type 'xsd:string'
-        std::string *orderRequestID;
+        wchar_t *orderRequestID;
         /// Optional element 'ns2:billingAgreementID' of XML schema type 'xsd:string'
-        std::string *billingAgreementID;
+        wchar_t *billingAgreementID;
         /// Optional element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string *mandateID;
+        wchar_t *mandateID;
         /// Optional element 'ns2:dateCollect' of XML schema type 'xsd:string'
-        std::string *dateCollect;
+        wchar_t *dateCollect;
         /// Optional element 'ns2:preapprovalToken' of XML schema type 'xsd:string'
-        std::string *preapprovalToken;
+        wchar_t *preapprovalToken;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9194,12 +9194,12 @@ class SOAP_CMAC ns2__APSaleService {
 
 /* CyberSourceTransaction_nvp_1.183.h:406 */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsService
-#define SOAP_TYPE_ns2__APCheckOutDetailsService (398)
+#define SOAP_TYPE_ns2__APCheckOutDetailsService (399)
 /* complex XML schema type 'ns2:APCheckOutDetailsService': */
 class SOAP_CMAC ns2__APCheckOutDetailsService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9230,14 +9230,14 @@ class SOAP_CMAC ns2__APCheckOutDetailsService {
 
 /* CyberSourceTransaction_nvp_1.183.h:408 */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsService
-#define SOAP_TYPE_ns2__APTransactionDetailsService (399)
+#define SOAP_TYPE_ns2__APTransactionDetailsService (400)
 /* complex XML schema type 'ns2:APTransactionDetailsService': */
 class SOAP_CMAC ns2__APTransactionDetailsService {
       public:
         /// Optional element 'ns2:transactionDetailsRequestID' of XML schema type 'xsd:string'
-        std::string *transactionDetailsRequestID;
+        wchar_t *transactionDetailsRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9268,12 +9268,12 @@ class SOAP_CMAC ns2__APTransactionDetailsService {
 
 /* CyberSourceTransaction_nvp_1.183.h:410 */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseService
-#define SOAP_TYPE_ns2__APConfirmPurchaseService (400)
+#define SOAP_TYPE_ns2__APConfirmPurchaseService (401)
 /* complex XML schema type 'ns2:APConfirmPurchaseService': */
 class SOAP_CMAC ns2__APConfirmPurchaseService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9304,28 +9304,28 @@ class SOAP_CMAC ns2__APConfirmPurchaseService {
 
 /* CyberSourceTransaction_nvp_1.183.h:412 */
 #ifndef SOAP_TYPE_ns2__APSessionsService
-#define SOAP_TYPE_ns2__APSessionsService (401)
+#define SOAP_TYPE_ns2__APSessionsService (402)
 /* complex XML schema type 'ns2:APSessionsService': */
 class SOAP_CMAC ns2__APSessionsService {
       public:
         /// Optional element 'ns2:cancelURL' of XML schema type 'xsd:string'
-        std::string *cancelURL;
+        wchar_t *cancelURL;
         /// Optional element 'ns2:successURL' of XML schema type 'xsd:string'
-        std::string *successURL;
+        wchar_t *successURL;
         /// Optional element 'ns2:failureURL' of XML schema type 'xsd:string'
-        std::string *failureURL;
+        wchar_t *failureURL;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:overridePaymentMethod' of XML schema type 'xsd:string'
-        std::string *overridePaymentMethod;
+        wchar_t *overridePaymentMethod;
         /// Optional element 'ns2:paymentOptionID' of XML schema type 'xsd:string'
-        std::string *paymentOptionID;
+        wchar_t *paymentOptionID;
         /// Optional element 'ns2:sessionsType' of XML schema type 'xsd:string'
-        std::string *sessionsType;
+        wchar_t *sessionsType;
         /// Optional element 'ns2:sessionsRequestID' of XML schema type 'xsd:string'
-        std::string *sessionsRequestID;
+        wchar_t *sessionsRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9356,32 +9356,32 @@ class SOAP_CMAC ns2__APSessionsService {
 
 /* CyberSourceTransaction_nvp_1.183.h:414 */
 #ifndef SOAP_TYPE_ns2__APUI
-#define SOAP_TYPE_ns2__APUI (402)
+#define SOAP_TYPE_ns2__APUI (403)
 /* complex XML schema type 'ns2:APUI': */
 class SOAP_CMAC ns2__APUI {
       public:
         /// Optional element 'ns2:colorBorder' of XML schema type 'xsd:string'
-        std::string *colorBorder;
+        wchar_t *colorBorder;
         /// Optional element 'ns2:colorBorderSelected' of XML schema type 'xsd:string'
-        std::string *colorBorderSelected;
+        wchar_t *colorBorderSelected;
         /// Optional element 'ns2:colorButton' of XML schema type 'xsd:string'
-        std::string *colorButton;
+        wchar_t *colorButton;
         /// Optional element 'ns2:colorButtonText' of XML schema type 'xsd:string'
-        std::string *colorButtonText;
+        wchar_t *colorButtonText;
         /// Optional element 'ns2:colorCheckbox' of XML schema type 'xsd:string'
-        std::string *colorCheckbox;
+        wchar_t *colorCheckbox;
         /// Optional element 'ns2:colorCheckboxCheckMark' of XML schema type 'xsd:string'
-        std::string *colorCheckboxCheckMark;
+        wchar_t *colorCheckboxCheckMark;
         /// Optional element 'ns2:colorHeader' of XML schema type 'xsd:string'
-        std::string *colorHeader;
+        wchar_t *colorHeader;
         /// Optional element 'ns2:colorLink' of XML schema type 'xsd:string'
-        std::string *colorLink;
+        wchar_t *colorLink;
         /// Optional element 'ns2:colorText' of XML schema type 'xsd:string'
-        std::string *colorText;
+        wchar_t *colorText;
         /// Optional element 'ns2:borderRadius' of XML schema type 'xsd:string'
-        std::string *borderRadius;
+        wchar_t *borderRadius;
         /// Optional element 'ns2:theme' of XML schema type 'xsd:string'
-        std::string *theme;
+        wchar_t *theme;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9412,14 +9412,14 @@ class SOAP_CMAC ns2__APUI {
 
 /* CyberSourceTransaction_nvp_1.183.h:416 */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsService
-#define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (403)
+#define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (404)
 /* complex XML schema type 'ns2:PayPalGetTxnDetailsService': */
 class SOAP_CMAC ns2__PayPalGetTxnDetailsService {
       public:
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9450,40 +9450,40 @@ class SOAP_CMAC ns2__PayPalGetTxnDetailsService {
 
 /* CyberSourceTransaction_nvp_1.183.h:418 */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchService
-#define SOAP_TYPE_ns2__PayPalTransactionSearchService (404)
+#define SOAP_TYPE_ns2__PayPalTransactionSearchService (405)
 /* complex XML schema type 'ns2:PayPalTransactionSearchService': */
 class SOAP_CMAC ns2__PayPalTransactionSearchService {
       public:
         /// Optional element 'ns2:startDate' of XML schema type 'xsd:string'
-        std::string *startDate;
+        wchar_t *startDate;
         /// Optional element 'ns2:endDate' of XML schema type 'xsd:string'
-        std::string *endDate;
+        wchar_t *endDate;
         /// Optional element 'ns2:paypalCustomerEmail' of XML schema type 'xsd:string'
-        std::string *paypalCustomerEmail;
+        wchar_t *paypalCustomerEmail;
         /// Optional element 'ns2:paypalReceiptId' of XML schema type 'xsd:string'
-        std::string *paypalReceiptId;
+        wchar_t *paypalReceiptId;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Optional element 'ns2:grandTotalAmount' of XML schema type 'ns2:amount'
-        std::string *grandTotalAmount;
+        wchar_t *grandTotalAmount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:payerSalutation' of XML schema type 'xsd:string'
-        std::string *payerSalutation;
+        wchar_t *payerSalutation;
         /// Optional element 'ns2:payerFirstname' of XML schema type 'xsd:string'
-        std::string *payerFirstname;
+        wchar_t *payerFirstname;
         /// Optional element 'ns2:payerMiddlename' of XML schema type 'xsd:string'
-        std::string *payerMiddlename;
+        wchar_t *payerMiddlename;
         /// Optional element 'ns2:payerLastname' of XML schema type 'xsd:string'
-        std::string *payerLastname;
+        wchar_t *payerLastname;
         /// Optional element 'ns2:payerSuffix' of XML schema type 'xsd:string'
-        std::string *payerSuffix;
+        wchar_t *payerSuffix;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9514,42 +9514,42 @@ class SOAP_CMAC ns2__PayPalTransactionSearchService {
 
 /* CyberSourceTransaction_nvp_1.183.h:420 */
 #ifndef SOAP_TYPE_ns2__Recipient
-#define SOAP_TYPE_ns2__Recipient (405)
+#define SOAP_TYPE_ns2__Recipient (406)
 /* complex XML schema type 'ns2:Recipient': */
 class SOAP_CMAC ns2__Recipient {
       public:
         /// Optional element 'ns2:dateOfBirth' of XML schema type 'xsd:string'
-        std::string *dateOfBirth;
+        wchar_t *dateOfBirth;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:accountID' of XML schema type 'xsd:string'
-        std::string *accountID;
+        wchar_t *accountID;
         /// Optional element 'ns2:lastName' of XML schema type 'xsd:string'
-        std::string *lastName;
+        wchar_t *lastName;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:billingAmount' of XML schema type 'ns2:amount'
-        std::string *billingAmount;
+        wchar_t *billingAmount;
         /// Optional element 'ns2:billingCurrency' of XML schema type 'xsd:string'
-        std::string *billingCurrency;
+        wchar_t *billingCurrency;
         /// Optional element 'ns2:billingConversionRate' of XML schema type 'ns2:amount'
-        std::string *billingConversionRate;
+        wchar_t *billingConversionRate;
         /// Optional element 'ns2:firstName' of XML schema type 'xsd:string'
-        std::string *firstName;
+        wchar_t *firstName;
         /// Optional element 'ns2:middleName' of XML schema type 'xsd:string'
-        std::string *middleName;
+        wchar_t *middleName;
         /// Optional element 'ns2:middleInitial' of XML schema type 'xsd:string'
-        std::string *middleInitial;
+        wchar_t *middleInitial;
         /// Optional element 'ns2:address' of XML schema type 'xsd:string'
-        std::string *address;
+        wchar_t *address;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:phoneNumber' of XML schema type 'xsd:string'
-        std::string *phoneNumber;
+        wchar_t *phoneNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9580,40 +9580,40 @@ class SOAP_CMAC ns2__Recipient {
 
 /* CyberSourceTransaction_nvp_1.183.h:422 */
 #ifndef SOAP_TYPE_ns2__Sender
-#define SOAP_TYPE_ns2__Sender (406)
+#define SOAP_TYPE_ns2__Sender (407)
 /* complex XML schema type 'ns2:Sender': */
 class SOAP_CMAC ns2__Sender {
       public:
         /// Optional element 'ns2:referenceNumber' of XML schema type 'xsd:string'
-        std::string *referenceNumber;
+        wchar_t *referenceNumber;
         /// Optional element 'ns2:sourceOfFunds' of XML schema type 'xsd:string'
-        std::string *sourceOfFunds;
+        wchar_t *sourceOfFunds;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:address' of XML schema type 'xsd:string'
-        std::string *address;
+        wchar_t *address;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:accountNumber' of XML schema type 'xsd:string'
-        std::string *accountNumber;
+        wchar_t *accountNumber;
         /// Optional element 'ns2:dateOfBirth' of XML schema type 'xsd:string'
-        std::string *dateOfBirth;
+        wchar_t *dateOfBirth;
         /// Optional element 'ns2:firstName' of XML schema type 'xsd:string'
-        std::string *firstName;
+        wchar_t *firstName;
         /// Optional element 'ns2:middleName' of XML schema type 'xsd:string'
-        std::string *middleName;
+        wchar_t *middleName;
         /// Optional element 'ns2:middleInitial' of XML schema type 'xsd:string'
-        std::string *middleInitial;
+        wchar_t *middleInitial;
         /// Optional element 'ns2:lastName' of XML schema type 'xsd:string'
-        std::string *lastName;
+        wchar_t *lastName;
         /// Optional element 'ns2:phoneNumber' of XML schema type 'xsd:string'
-        std::string *phoneNumber;
+        wchar_t *phoneNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9644,14 +9644,14 @@ class SOAP_CMAC ns2__Sender {
 
 /* CyberSourceTransaction_nvp_1.183.h:424 */
 #ifndef SOAP_TYPE_ns2__CCCheckStatusService
-#define SOAP_TYPE_ns2__CCCheckStatusService (407)
+#define SOAP_TYPE_ns2__CCCheckStatusService (408)
 /* complex XML schema type 'ns2:CCCheckStatusService': */
 class SOAP_CMAC ns2__CCCheckStatusService {
       public:
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -9682,50 +9682,50 @@ class SOAP_CMAC ns2__CCCheckStatusService {
 
 /* CyberSourceTransaction_nvp_1.183.h:426 */
 #ifndef SOAP_TYPE_ns2__RequestMessage
-#define SOAP_TYPE_ns2__RequestMessage (408)
+#define SOAP_TYPE_ns2__RequestMessage (409)
 /* complex XML schema type 'ns2:RequestMessage': */
 class SOAP_CMAC ns2__RequestMessage {
       public:
         /// Optional element 'ns2:merchantID' of XML schema type 'xsd:string'
-        std::string *merchantID;
+        wchar_t *merchantID;
         /// Optional element 'ns2:merchantReferenceCode' of XML schema type 'xsd:string'
-        std::string *merchantReferenceCode;
+        wchar_t *merchantReferenceCode;
         /// Optional element 'ns2:debtIndicator' of XML schema type 'ns2:boolean'
-        std::string *debtIndicator;
+        wchar_t *debtIndicator;
         /// Optional element 'ns2:clientLibrary' of XML schema type 'xsd:string'
-        std::string *clientLibrary;
+        wchar_t *clientLibrary;
         /// Optional element 'ns2:clientLibraryVersion' of XML schema type 'xsd:string'
-        std::string *clientLibraryVersion;
+        wchar_t *clientLibraryVersion;
         /// Optional element 'ns2:clientEnvironment' of XML schema type 'xsd:string'
-        std::string *clientEnvironment;
+        wchar_t *clientEnvironment;
         /// Optional element 'ns2:clientSecurityLibraryVersion' of XML schema type 'xsd:string'
-        std::string *clientSecurityLibraryVersion;
+        wchar_t *clientSecurityLibraryVersion;
         /// Optional element 'ns2:clientApplication' of XML schema type 'xsd:string'
-        std::string *clientApplication;
+        wchar_t *clientApplication;
         /// Optional element 'ns2:clientApplicationVersion' of XML schema type 'xsd:string'
-        std::string *clientApplicationVersion;
+        wchar_t *clientApplicationVersion;
         /// Optional element 'ns2:clientApplicationUser' of XML schema type 'xsd:string'
-        std::string *clientApplicationUser;
+        wchar_t *clientApplicationUser;
         /// Optional element 'ns2:routingCode' of XML schema type 'xsd:string'
-        std::string *routingCode;
+        wchar_t *routingCode;
         /// Optional element 'ns2:comments' of XML schema type 'xsd:string'
-        std::string *comments;
+        wchar_t *comments;
         /// Optional element 'ns2:returnURL' of XML schema type 'xsd:string'
-        std::string *returnURL;
+        wchar_t *returnURL;
         /// Optional element 'ns2:invoiceHeader' of XML schema type 'ns2:InvoiceHeader'
         ns2__InvoiceHeader *invoiceHeader;
         /// Optional element 'ns2:paymentScheme' of XML schema type 'xsd:string'
-        std::string *paymentScheme;
+        wchar_t *paymentScheme;
         /// Optional element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string *mandateID;
+        wchar_t *mandateID;
         /// Optional element 'ns2:aggregatorMerchantIdentifier' of XML schema type 'xsd:string'
-        std::string *aggregatorMerchantIdentifier;
+        wchar_t *aggregatorMerchantIdentifier;
         /// Optional element 'ns2:customerID' of XML schema type 'xsd:string'
-        std::string *customerID;
+        wchar_t *customerID;
         /// Optional element 'ns2:customerFirstName' of XML schema type 'xsd:string'
-        std::string *customerFirstName;
+        wchar_t *customerFirstName;
         /// Optional element 'ns2:customerLastName' of XML schema type 'xsd:string'
-        std::string *customerLastName;
+        wchar_t *customerLastName;
         /// Optional element 'ns2:billTo' of XML schema type 'ns2:BillTo'
         ns2__BillTo *billTo;
         /// Optional element 'ns2:shipTo' of XML schema type 'ns2:ShipTo'
@@ -9787,9 +9787,9 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Optional element 'ns2:jpo' of XML schema type 'ns2:JPO'
         ns2__JPO *jpo;
         /// Optional element 'ns2:orderRequestToken' of XML schema type 'xsd:string'
-        std::string *orderRequestToken;
+        wchar_t *orderRequestToken;
         /// Optional element 'ns2:linkToRequest' of XML schema type 'xsd:string'
-        std::string *linkToRequest;
+        wchar_t *linkToRequest;
         /// Optional element 'ns2:serviceFee' of XML schema type 'ns2:ServiceFee'
         ns2__ServiceFee *serviceFee;
         /// Optional element 'ns2:giftCard' of XML schema type 'ns2:GiftCard'
@@ -9923,11 +9923,11 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Sequence of 0 to 999 elements 'ns2:reserved' of XML schema type 'ns2:RequestReserved'
         std::vector<ns2__RequestReserved> reserved;
         /// Optional element 'ns2:deviceFingerprintID' of XML schema type 'xsd:string'
-        std::string *deviceFingerprintID;
+        wchar_t *deviceFingerprintID;
         /// Optional element 'ns2:deviceFingerprintRaw' of XML schema type 'ns2:boolean'
-        std::string *deviceFingerprintRaw;
+        wchar_t *deviceFingerprintRaw;
         /// Optional element 'ns2:deviceFingerprintHash' of XML schema type 'xsd:string'
-        std::string *deviceFingerprintHash;
+        wchar_t *deviceFingerprintHash;
         /// Optional element 'ns2:payPalRefundService' of XML schema type 'ns2:PayPalRefundService'
         ns2__PayPalRefundService *payPalRefundService;
         /// Optional element 'ns2:payPalAuthReversalService' of XML schema type 'ns2:PayPalAuthReversalService'
@@ -9957,35 +9957,35 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Optional element 'ns2:boletoPaymentService' of XML schema type 'ns2:BoletoPaymentService'
         ns2__BoletoPaymentService *boletoPaymentService;
         /// Optional element 'ns2:apPaymentType' of XML schema type 'xsd:string'
-        std::string *apPaymentType;
+        wchar_t *apPaymentType;
         /// Optional element 'ns2:apInitiateService' of XML schema type 'ns2:APInitiateService'
         ns2__APInitiateService *apInitiateService;
         /// Optional element 'ns2:apCheckStatusService' of XML schema type 'ns2:APCheckStatusService'
         ns2__APCheckStatusService *apCheckStatusService;
         /// Optional element 'ns2:ignoreCardExpiration' of XML schema type 'ns2:boolean'
-        std::string *ignoreCardExpiration;
+        wchar_t *ignoreCardExpiration;
         /// Optional element 'ns2:reportGroup' of XML schema type 'xsd:string'
-        std::string *reportGroup;
+        wchar_t *reportGroup;
         /// Optional element 'ns2:processorID' of XML schema type 'xsd:string'
-        std::string *processorID;
+        wchar_t *processorID;
         /// Optional element 'ns2:thirdPartyCertificationNumber' of XML schema type 'xsd:string'
-        std::string *thirdPartyCertificationNumber;
+        wchar_t *thirdPartyCertificationNumber;
         /// Optional element 'ns2:transactionLocalDateTime' of XML schema type 'ns2:dateTime'
-        std::string *transactionLocalDateTime;
+        wchar_t *transactionLocalDateTime;
         /// Optional element 'ns2:solutionProviderTransactionID' of XML schema type 'xsd:string'
-        std::string *solutionProviderTransactionID;
+        wchar_t *solutionProviderTransactionID;
         /// Optional element 'ns2:surchargeAmount' of XML schema type 'ns2:amount'
-        std::string *surchargeAmount;
+        wchar_t *surchargeAmount;
         /// Optional element 'ns2:surchargeSign' of XML schema type 'xsd:string'
-        std::string *surchargeSign;
+        wchar_t *surchargeSign;
         /// Optional element 'ns2:pinDataEncryptedPIN' of XML schema type 'xsd:string'
-        std::string *pinDataEncryptedPIN;
+        wchar_t *pinDataEncryptedPIN;
         /// Optional element 'ns2:pinDataKeySerialNumber' of XML schema type 'xsd:string'
-        std::string *pinDataKeySerialNumber;
+        wchar_t *pinDataKeySerialNumber;
         /// Optional element 'ns2:pinDataPinBlockEncodingFormat' of XML schema type 'xsd:integer'
-        std::string *pinDataPinBlockEncodingFormat;
+        wchar_t *pinDataPinBlockEncodingFormat;
         /// Optional element 'ns2:cashbackAmount' of XML schema type 'ns2:amount'
-        std::string *cashbackAmount;
+        wchar_t *cashbackAmount;
         /// Optional element 'ns2:pinDebitPurchaseService' of XML schema type 'ns2:PinDebitPurchaseService'
         ns2__PinDebitPurchaseService *pinDebitPurchaseService;
         /// Optional element 'ns2:pinDebitCreditService' of XML schema type 'ns2:PinDebitCreditService'
@@ -10027,29 +10027,29 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Optional element 'ns2:merchant' of XML schema type 'ns2:merchant'
         ns2__merchant *merchant;
         /// Optional element 'ns2:merchantTransactionIdentifier' of XML schema type 'xsd:string'
-        std::string *merchantTransactionIdentifier;
+        wchar_t *merchantTransactionIdentifier;
         /// Optional element 'ns2:hostedDataCreateService' of XML schema type 'ns2:HostedDataCreateService'
         ns2__HostedDataCreateService *hostedDataCreateService;
         /// Optional element 'ns2:hostedDataRetrieveService' of XML schema type 'ns2:HostedDataRetrieveService'
         ns2__HostedDataRetrieveService *hostedDataRetrieveService;
         /// Optional element 'ns2:merchantDomainName' of XML schema type 'xsd:string'
-        std::string *merchantDomainName;
+        wchar_t *merchantDomainName;
         /// Optional element 'ns2:merchantCategoryCode' of XML schema type 'xsd:string'
-        std::string *merchantCategoryCode;
+        wchar_t *merchantCategoryCode;
         /// Optional element 'ns2:merchantCategoryCodeDomestic' of XML schema type 'xsd:string'
-        std::string *merchantCategoryCodeDomestic;
+        wchar_t *merchantCategoryCodeDomestic;
         /// Optional element 'ns2:salesSlipNumber' of XML schema type 'xsd:string'
-        std::string *salesSlipNumber;
+        wchar_t *salesSlipNumber;
         /// Optional element 'ns2:merchandiseCode' of XML schema type 'xsd:string'
-        std::string *merchandiseCode;
+        wchar_t *merchandiseCode;
         /// Optional element 'ns2:merchandiseDescription' of XML schema type 'xsd:string'
-        std::string *merchandiseDescription;
+        wchar_t *merchandiseDescription;
         /// Optional element 'ns2:paymentInitiationChannel' of XML schema type 'xsd:string'
-        std::string *paymentInitiationChannel;
+        wchar_t *paymentInitiationChannel;
         /// Optional element 'ns2:extendedCreditTotalCount' of XML schema type 'xsd:string'
-        std::string *extendedCreditTotalCount;
+        wchar_t *extendedCreditTotalCount;
         /// Optional element 'ns2:authIndicator' of XML schema type 'xsd:string'
-        std::string *authIndicator;
+        wchar_t *authIndicator;
         /// Optional element 'ns2:paymentNetworkToken' of XML schema type 'ns2:PaymentNetworkToken'
         ns2__PaymentNetworkToken *paymentNetworkToken;
         /// Optional element 'ns2:recipient' of XML schema type 'ns2:Recipient'
@@ -10059,13 +10059,13 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Optional element 'ns2:autoRentalData' of XML schema type 'ns2:AutoRentalData'
         ns2__AutoRentalData *autoRentalData;
         /// Optional element 'ns2:paymentSolution' of XML schema type 'xsd:string'
-        std::string *paymentSolution;
+        wchar_t *paymentSolution;
         /// Optional element 'ns2:vc' of XML schema type 'ns2:VC'
         ns2__VC *vc;
         /// Optional element 'ns2:decryptVisaCheckoutDataService' of XML schema type 'ns2:DecryptVisaCheckoutDataService'
         ns2__DecryptVisaCheckoutDataService *decryptVisaCheckoutDataService;
         /// Optional element 'ns2:taxManagementIndicator' of XML schema type 'xsd:string'
-        std::string *taxManagementIndicator;
+        wchar_t *taxManagementIndicator;
         /// Sequence of 0 to 100 elements 'ns2:promotionGroup' of XML schema type 'ns2:PromotionGroup'
         std::vector<ns2__PromotionGroup> promotionGroup;
         /// Optional element 'ns2:wallet' of XML schema type 'ns2:Wallet'
@@ -10073,55 +10073,55 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Optional element 'ns2:aft' of XML schema type 'ns2:Aft'
         ns2__Aft *aft;
         /// Optional element 'ns2:balanceInquiry' of XML schema type 'ns2:boolean'
-        std::string *balanceInquiry;
+        wchar_t *balanceInquiry;
         /// Optional element 'ns2:prenoteTransaction' of XML schema type 'ns2:boolean'
-        std::string *prenoteTransaction;
+        wchar_t *prenoteTransaction;
         /// Optional element 'ns2:encryptPaymentDataService' of XML schema type 'ns2:EncryptPaymentDataService'
         ns2__EncryptPaymentDataService *encryptPaymentDataService;
         /// Optional element 'ns2:nationalNetDomesticData' of XML schema type 'xsd:string'
-        std::string *nationalNetDomesticData;
+        wchar_t *nationalNetDomesticData;
         /// Optional element 'ns2:subsequentAuth' of XML schema type 'xsd:string'
-        std::string *subsequentAuth;
+        wchar_t *subsequentAuth;
         /// Optional element 'ns2:subsequentAuthOriginalAmount' of XML schema type 'ns2:amount'
-        std::string *subsequentAuthOriginalAmount;
+        wchar_t *subsequentAuthOriginalAmount;
         /// Optional element 'ns2:binLookupService' of XML schema type 'ns2:BinLookupService'
         ns2__BinLookupService *binLookupService;
         /// Optional element 'ns2:verificationCode' of XML schema type 'xsd:string'
-        std::string *verificationCode;
+        wchar_t *verificationCode;
         /// Optional element 'ns2:mobileNumber' of XML schema type 'xsd:string'
-        std::string *mobileNumber;
+        wchar_t *mobileNumber;
         /// Optional element 'ns2:issuer' of XML schema type 'ns2:issuer'
         ns2__issuer *issuer;
         /// Optional element 'ns2:partnerSolutionID' of XML schema type 'xsd:string'
-        std::string *partnerSolutionID;
+        wchar_t *partnerSolutionID;
         /// Optional element 'ns2:developerID' of XML schema type 'xsd:string'
-        std::string *developerID;
+        wchar_t *developerID;
         /// Optional element 'ns2:getVisaCheckoutDataService' of XML schema type 'ns2:GETVisaCheckoutDataService'
         ns2__GETVisaCheckoutDataService *getVisaCheckoutDataService;
         /// Optional element 'ns2:customerSignatureImage' of XML schema type 'xsd:string'
-        std::string *customerSignatureImage;
+        wchar_t *customerSignatureImage;
         /// Optional element 'ns2:transactionMetadataService' of XML schema type 'ns2:TransactionMetadataService'
         ns2__TransactionMetadataService *transactionMetadataService;
         /// Optional element 'ns2:subsequentAuthFirst' of XML schema type 'xsd:string'
-        std::string *subsequentAuthFirst;
+        wchar_t *subsequentAuthFirst;
         /// Optional element 'ns2:subsequentAuthReason' of XML schema type 'xsd:string'
-        std::string *subsequentAuthReason;
+        wchar_t *subsequentAuthReason;
         /// Optional element 'ns2:subsequentAuthTransactionID' of XML schema type 'xsd:string'
-        std::string *subsequentAuthTransactionID;
+        wchar_t *subsequentAuthTransactionID;
         /// Optional element 'ns2:subsequentAuthStoredCredential' of XML schema type 'xsd:string'
-        std::string *subsequentAuthStoredCredential;
+        wchar_t *subsequentAuthStoredCredential;
         /// Optional element 'ns2:subsequentAuthCumulativeAuthAmount' of XML schema type 'ns2:amount'
-        std::string *subsequentAuthCumulativeAuthAmount;
+        wchar_t *subsequentAuthCumulativeAuthAmount;
         /// Optional element 'ns2:subsequentAuthCITAuthenticationData' of XML schema type 'xsd:string'
-        std::string *subsequentAuthCITAuthenticationData;
+        wchar_t *subsequentAuthCITAuthenticationData;
         /// Optional element 'ns2:loan' of XML schema type 'ns2:Loan'
         ns2__Loan *loan;
         /// Optional element 'ns2:eligibilityInquiry' of XML schema type 'xsd:string'
-        std::string *eligibilityInquiry;
+        wchar_t *eligibilityInquiry;
         /// Optional element 'ns2:redemptionInquiry' of XML schema type 'xsd:string'
-        std::string *redemptionInquiry;
+        wchar_t *redemptionInquiry;
         /// Optional element 'ns2:feeProgramIndicator' of XML schema type 'xsd:string'
-        std::string *feeProgramIndicator;
+        wchar_t *feeProgramIndicator;
         /// Optional element 'ns2:apOrderService' of XML schema type 'ns2:APOrderService'
         ns2__APOrderService *apOrderService;
         /// Optional element 'ns2:apCancelService' of XML schema type 'ns2:APCancelService'
@@ -10129,17 +10129,17 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Optional element 'ns2:apBillingAgreementService' of XML schema type 'ns2:APBillingAgreementService'
         ns2__APBillingAgreementService *apBillingAgreementService;
         /// Optional element 'ns2:note_toPayee' of XML schema type 'xsd:string'
-        std::string *note_USCOREtoPayee;
+        wchar_t *note_USCOREtoPayee;
         /// Optional element 'ns2:note_toPayer' of XML schema type 'xsd:string'
-        std::string *note_USCOREtoPayer;
+        wchar_t *note_USCOREtoPayer;
         /// Optional element 'ns2:clientMetadataID' of XML schema type 'xsd:string'
-        std::string *clientMetadataID;
+        wchar_t *clientMetadataID;
         /// Optional element 'ns2:partnerSDKversion' of XML schema type 'xsd:string'
-        std::string *partnerSDKversion;
+        wchar_t *partnerSDKversion;
         /// Optional element 'ns2:partnerOriginalTransactionID' of XML schema type 'xsd:string'
-        std::string *partnerOriginalTransactionID;
+        wchar_t *partnerOriginalTransactionID;
         /// Optional element 'ns2:cardTypeSelectionIndicator' of XML schema type 'xsd:string'
-        std::string *cardTypeSelectionIndicator;
+        wchar_t *cardTypeSelectionIndicator;
         /// Optional element 'ns2:apCreateMandateService' of XML schema type 'ns2:APCreateMandateService'
         ns2__APCreateMandateService *apCreateMandateService;
         /// Optional element 'ns2:apMandateStatusService' of XML schema type 'ns2:APMandateStatusService'
@@ -10151,7 +10151,7 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Optional element 'ns2:apRevokeMandateService' of XML schema type 'ns2:APRevokeMandateService'
         ns2__APRevokeMandateService *apRevokeMandateService;
         /// Optional element 'ns2:billPaymentType' of XML schema type 'xsd:string'
-        std::string *billPaymentType;
+        wchar_t *billPaymentType;
         /// Optional element 'ns2:postdatedTransaction' of XML schema type 'ns2:PostdatedTransaction'
         ns2__PostdatedTransaction *postdatedTransaction;
         /// Optional element 'ns2:getMasterpassDataService' of XML schema type 'ns2:GetMasterpassDataService'
@@ -10163,7 +10163,7 @@ class SOAP_CMAC ns2__RequestMessage {
         /// Optional element 'ns2:abortService' of XML schema type 'ns2:AbortService'
         ns2__AbortService *abortService;
         /// Optional element 'ns2:ignoreRelaxAVS' of XML schema type 'ns2:boolean'
-        std::string *ignoreRelaxAVS;
+        wchar_t *ignoreRelaxAVS;
         /// Optional element 'ns2:agencyInformation' of XML schema type 'ns2:AgencyInformation'
         ns2__AgencyInformation *agencyInformation;
         /// Optional element 'ns2:autoRental' of XML schema type 'ns2:AutoRental'
@@ -10202,12 +10202,12 @@ class SOAP_CMAC ns2__RequestMessage {
 
 /* CyberSourceTransaction_nvp_1.183.h:428 */
 #ifndef SOAP_TYPE_ns2__VC
-#define SOAP_TYPE_ns2__VC (409)
+#define SOAP_TYPE_ns2__VC (410)
 /* complex XML schema type 'ns2:VC': */
 class SOAP_CMAC ns2__VC {
       public:
         /// Optional element 'ns2:orderID' of XML schema type 'xsd:string'
-        std::string *orderID;
+        wchar_t *orderID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10238,12 +10238,12 @@ class SOAP_CMAC ns2__VC {
 
 /* CyberSourceTransaction_nvp_1.183.h:430 */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataService
-#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (410)
+#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (411)
 /* complex XML schema type 'ns2:DecryptVisaCheckoutDataService': */
 class SOAP_CMAC ns2__DecryptVisaCheckoutDataService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10274,14 +10274,14 @@ class SOAP_CMAC ns2__DecryptVisaCheckoutDataService {
 
 /* CyberSourceTransaction_nvp_1.183.h:432 */
 #ifndef SOAP_TYPE_ns2__DCC
-#define SOAP_TYPE_ns2__DCC (411)
+#define SOAP_TYPE_ns2__DCC (412)
 /* complex XML schema type 'ns2:DCC': */
 class SOAP_CMAC ns2__DCC {
       public:
         /// Optional element 'ns2:dccIndicator' of XML schema type 'xsd:integer'
-        std::string *dccIndicator;
+        wchar_t *dccIndicator;
         /// Optional element 'ns2:referenceNumber' of XML schema type 'xsd:string'
-        std::string *referenceNumber;
+        wchar_t *referenceNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10312,24 +10312,24 @@ class SOAP_CMAC ns2__DCC {
 
 /* CyberSourceTransaction_nvp_1.183.h:434 */
 #ifndef SOAP_TYPE_ns2__Promotion
-#define SOAP_TYPE_ns2__Promotion (412)
+#define SOAP_TYPE_ns2__Promotion (413)
 /* complex XML schema type 'ns2:Promotion': */
 class SOAP_CMAC ns2__Promotion {
       public:
         /// Optional element 'ns2:discountedAmount' of XML schema type 'ns2:amount'
-        std::string *discountedAmount;
+        wchar_t *discountedAmount;
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Optional element 'ns2:code' of XML schema type 'xsd:string'
-        std::string *code;
+        wchar_t *code;
         /// Optional element 'ns2:receiptData' of XML schema type 'xsd:string'
-        std::string *receiptData;
+        wchar_t *receiptData;
         /// Optional element 'ns2:discountApplied' of XML schema type 'ns2:amount'
-        std::string *discountApplied;
+        wchar_t *discountApplied;
         /// Optional element 'ns2:description' of XML schema type 'xsd:string'
-        std::string *description;
+        wchar_t *description;
         /// Optional element 'ns2:additionalCode' of XML schema type 'xsd:string'
-        std::string *additionalCode;
+        wchar_t *additionalCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10360,18 +10360,18 @@ class SOAP_CMAC ns2__Promotion {
 
 /* CyberSourceTransaction_nvp_1.183.h:436 */
 #ifndef SOAP_TYPE_ns2__PromotionGroup
-#define SOAP_TYPE_ns2__PromotionGroup (413)
+#define SOAP_TYPE_ns2__PromotionGroup (414)
 /* complex XML schema type 'ns2:PromotionGroup': */
 class SOAP_CMAC ns2__PromotionGroup {
       public:
         /// Optional element 'ns2:subtotalAmount' of XML schema type 'ns2:amount'
-        std::string *subtotalAmount;
+        wchar_t *subtotalAmount;
         /// Optional element 'ns2:taxRate' of XML schema type 'ns2:amount'
-        std::string *taxRate;
+        wchar_t *taxRate;
         /// Optional element 'ns2:prohibitDiscount' of XML schema type 'xsd:string'
-        std::string *prohibitDiscount;
+        wchar_t *prohibitDiscount;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10402,14 +10402,14 @@ class SOAP_CMAC ns2__PromotionGroup {
 
 /* CyberSourceTransaction_nvp_1.183.h:438 */
 #ifndef SOAP_TYPE_ns2__PromotionGroupReply
-#define SOAP_TYPE_ns2__PromotionGroupReply (414)
+#define SOAP_TYPE_ns2__PromotionGroupReply (415)
 /* complex XML schema type 'ns2:PromotionGroupReply': */
 class SOAP_CMAC ns2__PromotionGroupReply {
       public:
         /// Optional element 'ns2:discountApplied' of XML schema type 'ns2:amount'
-        std::string *discountApplied;
+        wchar_t *discountApplied;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10440,22 +10440,22 @@ class SOAP_CMAC ns2__PromotionGroupReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:440 */
 #ifndef SOAP_TYPE_ns2__BalanceInfo
-#define SOAP_TYPE_ns2__BalanceInfo (415)
+#define SOAP_TYPE_ns2__BalanceInfo (416)
 /* complex XML schema type 'ns2:BalanceInfo': */
 class SOAP_CMAC ns2__BalanceInfo {
       public:
         /// Optional element 'ns2:accountType' of XML schema type 'xsd:string'
-        std::string *accountType;
+        wchar_t *accountType;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:amountType' of XML schema type 'xsd:string'
-        std::string *amountType;
+        wchar_t *amountType;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:sign' of XML schema type 'xsd:string'
-        std::string *sign;
+        wchar_t *sign;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10486,174 +10486,174 @@ class SOAP_CMAC ns2__BalanceInfo {
 
 /* CyberSourceTransaction_nvp_1.183.h:442 */
 #ifndef SOAP_TYPE_ns2__CCAuthReply
-#define SOAP_TYPE_ns2__CCAuthReply (416)
+#define SOAP_TYPE_ns2__CCAuthReply (417)
 /* complex XML schema type 'ns2:CCAuthReply': */
 class SOAP_CMAC ns2__CCAuthReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:avsCode' of XML schema type 'xsd:string'
-        std::string *avsCode;
+        wchar_t *avsCode;
         /// Optional element 'ns2:avsCodeRaw' of XML schema type 'xsd:string'
-        std::string *avsCodeRaw;
+        wchar_t *avsCodeRaw;
         /// Optional element 'ns2:cvCode' of XML schema type 'xsd:string'
-        std::string *cvCode;
+        wchar_t *cvCode;
         /// Optional element 'ns2:cvCodeRaw' of XML schema type 'xsd:string'
-        std::string *cvCodeRaw;
+        wchar_t *cvCodeRaw;
         /// Optional element 'ns2:personalIDCode' of XML schema type 'xsd:string'
-        std::string *personalIDCode;
+        wchar_t *personalIDCode;
         /// Optional element 'ns2:authorizedDateTime' of XML schema type 'ns2:dateTime'
-        std::string *authorizedDateTime;
+        wchar_t *authorizedDateTime;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:bmlAccountNumber' of XML schema type 'xsd:string'
-        std::string *bmlAccountNumber;
+        wchar_t *bmlAccountNumber;
         /// Optional element 'ns2:authFactorCode' of XML schema type 'xsd:string'
-        std::string *authFactorCode;
+        wchar_t *authFactorCode;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:fundingTotals' of XML schema type 'ns2:FundingTotals'
         ns2__FundingTotals *fundingTotals;
         /// Optional element 'ns2:fxQuoteID' of XML schema type 'xsd:string'
-        std::string *fxQuoteID;
+        wchar_t *fxQuoteID;
         /// Optional element 'ns2:fxQuoteRate' of XML schema type 'ns2:dateTime'
-        std::string *fxQuoteRate;
+        wchar_t *fxQuoteRate;
         /// Optional element 'ns2:fxQuoteType' of XML schema type 'xsd:string'
-        std::string *fxQuoteType;
+        wchar_t *fxQuoteType;
         /// Optional element 'ns2:fxQuoteExpirationDateTime' of XML schema type 'ns2:dateTime'
-        std::string *fxQuoteExpirationDateTime;
+        wchar_t *fxQuoteExpirationDateTime;
         /// Optional element 'ns2:authRecord' of XML schema type 'xsd:string'
-        std::string *authRecord;
+        wchar_t *authRecord;
         /// Optional element 'ns2:merchantAdviceCode' of XML schema type 'xsd:string'
-        std::string *merchantAdviceCode;
+        wchar_t *merchantAdviceCode;
         /// Optional element 'ns2:merchantAdviceCodeRaw' of XML schema type 'xsd:string'
-        std::string *merchantAdviceCodeRaw;
+        wchar_t *merchantAdviceCodeRaw;
         /// Optional element 'ns2:cavvResponseCode' of XML schema type 'xsd:string'
-        std::string *cavvResponseCode;
+        wchar_t *cavvResponseCode;
         /// Optional element 'ns2:cavvResponseCodeRaw' of XML schema type 'xsd:string'
-        std::string *cavvResponseCodeRaw;
+        wchar_t *cavvResponseCodeRaw;
         /// Optional element 'ns2:authenticationXID' of XML schema type 'xsd:string'
-        std::string *authenticationXID;
+        wchar_t *authenticationXID;
         /// Optional element 'ns2:authorizationXID' of XML schema type 'xsd:string'
-        std::string *authorizationXID;
+        wchar_t *authorizationXID;
         /// Optional element 'ns2:processorCardType' of XML schema type 'xsd:string'
-        std::string *processorCardType;
+        wchar_t *processorCardType;
         /// Optional element 'ns2:accountBalance' of XML schema type 'ns2:amount'
-        std::string *accountBalance;
+        wchar_t *accountBalance;
         /// Optional element 'ns2:forwardCode' of XML schema type 'xsd:string'
-        std::string *forwardCode;
+        wchar_t *forwardCode;
         /// Optional element 'ns2:enhancedDataEnabled' of XML schema type 'xsd:string'
-        std::string *enhancedDataEnabled;
+        wchar_t *enhancedDataEnabled;
         /// Optional element 'ns2:referralResponseNumber' of XML schema type 'xsd:string'
-        std::string *referralResponseNumber;
+        wchar_t *referralResponseNumber;
         /// Optional element 'ns2:subResponseCode' of XML schema type 'xsd:string'
-        std::string *subResponseCode;
+        wchar_t *subResponseCode;
         /// Optional element 'ns2:approvedAmount' of XML schema type 'xsd:string'
-        std::string *approvedAmount;
+        wchar_t *approvedAmount;
         /// Optional element 'ns2:creditLine' of XML schema type 'xsd:string'
-        std::string *creditLine;
+        wchar_t *creditLine;
         /// Optional element 'ns2:approvedTerms' of XML schema type 'xsd:string'
-        std::string *approvedTerms;
+        wchar_t *approvedTerms;
         /// Optional element 'ns2:paymentNetworkTransactionID' of XML schema type 'xsd:string'
-        std::string *paymentNetworkTransactionID;
+        wchar_t *paymentNetworkTransactionID;
         /// Optional element 'ns2:cardCategory' of XML schema type 'xsd:string'
-        std::string *cardCategory;
+        wchar_t *cardCategory;
         /// Optional element 'ns2:ownerMerchantID' of XML schema type 'xsd:string'
-        std::string *ownerMerchantID;
+        wchar_t *ownerMerchantID;
         /// Optional element 'ns2:requestAmount' of XML schema type 'ns2:amount'
-        std::string *requestAmount;
+        wchar_t *requestAmount;
         /// Optional element 'ns2:requestCurrency' of XML schema type 'xsd:string'
-        std::string *requestCurrency;
+        wchar_t *requestCurrency;
         /// Optional element 'ns2:accountBalanceCurrency' of XML schema type 'xsd:string'
-        std::string *accountBalanceCurrency;
+        wchar_t *accountBalanceCurrency;
         /// Optional element 'ns2:accountBalanceSign' of XML schema type 'xsd:string'
-        std::string *accountBalanceSign;
+        wchar_t *accountBalanceSign;
         /// Optional element 'ns2:amountType' of XML schema type 'xsd:string'
-        std::string *amountType;
+        wchar_t *amountType;
         /// Optional element 'ns2:accountType' of XML schema type 'xsd:string'
-        std::string *accountType;
+        wchar_t *accountType;
         /// Optional element 'ns2:affluenceIndicator' of XML schema type 'xsd:string'
-        std::string *affluenceIndicator;
+        wchar_t *affluenceIndicator;
         /// Optional element 'ns2:evEmail' of XML schema type 'xsd:string'
-        std::string *evEmail;
+        wchar_t *evEmail;
         /// Optional element 'ns2:evPhoneNumber' of XML schema type 'xsd:string'
-        std::string *evPhoneNumber;
+        wchar_t *evPhoneNumber;
         /// Optional element 'ns2:evPostalCode' of XML schema type 'xsd:string'
-        std::string *evPostalCode;
+        wchar_t *evPostalCode;
         /// Optional element 'ns2:evName' of XML schema type 'xsd:string'
-        std::string *evName;
+        wchar_t *evName;
         /// Optional element 'ns2:evStreet' of XML schema type 'xsd:string'
-        std::string *evStreet;
+        wchar_t *evStreet;
         /// Optional element 'ns2:evEmailRaw' of XML schema type 'xsd:string'
-        std::string *evEmailRaw;
+        wchar_t *evEmailRaw;
         /// Optional element 'ns2:evPhoneNumberRaw' of XML schema type 'xsd:string'
-        std::string *evPhoneNumberRaw;
+        wchar_t *evPhoneNumberRaw;
         /// Optional element 'ns2:evPostalCodeRaw' of XML schema type 'xsd:string'
-        std::string *evPostalCodeRaw;
+        wchar_t *evPostalCodeRaw;
         /// Optional element 'ns2:evNameRaw' of XML schema type 'xsd:string'
-        std::string *evNameRaw;
+        wchar_t *evNameRaw;
         /// Optional element 'ns2:evStreetRaw' of XML schema type 'xsd:string'
-        std::string *evStreetRaw;
+        wchar_t *evStreetRaw;
         /// Optional element 'ns2:cardGroup' of XML schema type 'xsd:string'
-        std::string *cardGroup;
+        wchar_t *cardGroup;
         /// Optional element 'ns2:posData' of XML schema type 'xsd:string'
-        std::string *posData;
+        wchar_t *posData;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:cardIssuerCountry' of XML schema type 'xsd:string'
-        std::string *cardIssuerCountry;
+        wchar_t *cardIssuerCountry;
         /// Optional element 'ns2:cardRegulated' of XML schema type 'xsd:string'
-        std::string *cardRegulated;
+        wchar_t *cardRegulated;
         /// Optional element 'ns2:cardCommercial' of XML schema type 'xsd:string'
-        std::string *cardCommercial;
+        wchar_t *cardCommercial;
         /// Optional element 'ns2:cardPrepaid' of XML schema type 'xsd:string'
-        std::string *cardPrepaid;
+        wchar_t *cardPrepaid;
         /// Optional element 'ns2:cardPayroll' of XML schema type 'xsd:string'
-        std::string *cardPayroll;
+        wchar_t *cardPayroll;
         /// Optional element 'ns2:cardHealthcare' of XML schema type 'xsd:string'
-        std::string *cardHealthcare;
+        wchar_t *cardHealthcare;
         /// Optional element 'ns2:cardSignatureDebit' of XML schema type 'xsd:string'
-        std::string *cardSignatureDebit;
+        wchar_t *cardSignatureDebit;
         /// Optional element 'ns2:cardPINlessDebit' of XML schema type 'xsd:string'
-        std::string *cardPINlessDebit;
+        wchar_t *cardPINlessDebit;
         /// Optional element 'ns2:cardLevel3Eligible' of XML schema type 'xsd:string'
-        std::string *cardLevel3Eligible;
+        wchar_t *cardLevel3Eligible;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:providerReasonCode' of XML schema type 'xsd:string'
-        std::string *providerReasonCode;
+        wchar_t *providerReasonCode;
         /// Optional element 'ns2:providerReasonDescription' of XML schema type 'xsd:string'
-        std::string *providerReasonDescription;
+        wchar_t *providerReasonDescription;
         /// Optional element 'ns2:providerPassThroughData' of XML schema type 'xsd:string'
-        std::string *providerPassThroughData;
+        wchar_t *providerPassThroughData;
         /// Optional element 'ns2:providerCVNResponseCode' of XML schema type 'xsd:string'
-        std::string *providerCVNResponseCode;
+        wchar_t *providerCVNResponseCode;
         /// Optional element 'ns2:providerAVSResponseCode' of XML schema type 'xsd:string'
-        std::string *providerAVSResponseCode;
+        wchar_t *providerAVSResponseCode;
         /// Optional element 'ns2:providerAcquirerBankCode' of XML schema type 'xsd:string'
-        std::string *providerAcquirerBankCode;
+        wchar_t *providerAcquirerBankCode;
         /// Optional element 'ns2:paymentCardService' of XML schema type 'xsd:string'
-        std::string *paymentCardService;
+        wchar_t *paymentCardService;
         /// Optional element 'ns2:paymentCardServiceResult' of XML schema type 'xsd:string'
-        std::string *paymentCardServiceResult;
+        wchar_t *paymentCardServiceResult;
         /// Optional element 'ns2:transactionQualification' of XML schema type 'xsd:string'
-        std::string *transactionQualification;
+        wchar_t *transactionQualification;
         /// Optional element 'ns2:transactionIntegrity' of XML schema type 'xsd:string'
-        std::string *transactionIntegrity;
+        wchar_t *transactionIntegrity;
         /// Optional element 'ns2:emsTransactionRiskScore' of XML schema type 'xsd:string'
-        std::string *emsTransactionRiskScore;
+        wchar_t *emsTransactionRiskScore;
         /// Optional element 'ns2:reconciliationReferenceNumber' of XML schema type 'xsd:string'
-        std::string *reconciliationReferenceNumber;
+        wchar_t *reconciliationReferenceNumber;
         /// Optional element 'ns2:cardReferenceData' of XML schema type 'xsd:string'
-        std::string *cardReferenceData;
+        wchar_t *cardReferenceData;
         /// Optional element 'ns2:partialPANandIBAN' of XML schema type 'xsd:string'
-        std::string *partialPANandIBAN;
+        wchar_t *partialPANandIBAN;
         /// Optional element 'ns2:issuerPINrequest' of XML schema type 'xsd:string'
-        std::string *issuerPINrequest;
+        wchar_t *issuerPINrequest;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10684,32 +10684,32 @@ class SOAP_CMAC ns2__CCAuthReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:444 */
 #ifndef SOAP_TYPE_ns2__OCTReply
-#define SOAP_TYPE_ns2__OCTReply (417)
+#define SOAP_TYPE_ns2__OCTReply (418)
 /* complex XML schema type 'ns2:OCTReply': */
 class SOAP_CMAC ns2__OCTReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:approvalCode' of XML schema type 'xsd:string'
-        std::string *approvalCode;
+        wchar_t *approvalCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:paymentNetworkTransactionID' of XML schema type 'xsd:string'
-        std::string *paymentNetworkTransactionID;
+        wchar_t *paymentNetworkTransactionID;
         /// Optional element 'ns2:prepaidBalanceCurrency' of XML schema type 'xsd:string'
-        std::string *prepaidBalanceCurrency;
+        wchar_t *prepaidBalanceCurrency;
         /// Optional element 'ns2:prepaidBalanceAmount' of XML schema type 'xsd:string'
-        std::string *prepaidBalanceAmount;
+        wchar_t *prepaidBalanceAmount;
         /// Optional element 'ns2:processorResponseSource' of XML schema type 'xsd:string'
-        std::string *processorResponseSource;
+        wchar_t *processorResponseSource;
         /// Optional element 'ns2:reconciliationIdType' of XML schema type 'xsd:string'
-        std::string *reconciliationIdType;
+        wchar_t *reconciliationIdType;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10740,20 +10740,20 @@ class SOAP_CMAC ns2__OCTReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:446 */
 #ifndef SOAP_TYPE_ns2__VerificationReply
-#define SOAP_TYPE_ns2__VerificationReply (418)
+#define SOAP_TYPE_ns2__VerificationReply (419)
 /* complex XML schema type 'ns2:VerificationReply': */
 class SOAP_CMAC ns2__VerificationReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:verifiedDateTime' of XML schema type 'xsd:string'
-        std::string *verifiedDateTime;
+        wchar_t *verifiedDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10784,52 +10784,52 @@ class SOAP_CMAC ns2__VerificationReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:448 */
 #ifndef SOAP_TYPE_ns2__CCSaleReply
-#define SOAP_TYPE_ns2__CCSaleReply (419)
+#define SOAP_TYPE_ns2__CCSaleReply (420)
 /* complex XML schema type 'ns2:CCSaleReply': */
 class SOAP_CMAC ns2__CCSaleReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:avsCode' of XML schema type 'xsd:string'
-        std::string *avsCode;
+        wchar_t *avsCode;
         /// Optional element 'ns2:avsCodeRaw' of XML schema type 'xsd:string'
-        std::string *avsCodeRaw;
+        wchar_t *avsCodeRaw;
         /// Optional element 'ns2:cvCode' of XML schema type 'xsd:string'
-        std::string *cvCode;
+        wchar_t *cvCode;
         /// Optional element 'ns2:cvCodeRaw' of XML schema type 'xsd:string'
-        std::string *cvCodeRaw;
+        wchar_t *cvCodeRaw;
         /// Optional element 'ns2:cavvResponseCode' of XML schema type 'xsd:string'
-        std::string *cavvResponseCode;
+        wchar_t *cavvResponseCode;
         /// Optional element 'ns2:cavvResponseCodeRaw' of XML schema type 'xsd:string'
-        std::string *cavvResponseCodeRaw;
+        wchar_t *cavvResponseCodeRaw;
         /// Optional element 'ns2:cardGroup' of XML schema type 'xsd:string'
-        std::string *cardGroup;
+        wchar_t *cardGroup;
         /// Optional element 'ns2:paymentNetworkTransactionID' of XML schema type 'xsd:string'
-        std::string *paymentNetworkTransactionID;
+        wchar_t *paymentNetworkTransactionID;
         /// Optional element 'ns2:cardCategory' of XML schema type 'xsd:string'
-        std::string *cardCategory;
+        wchar_t *cardCategory;
         /// Optional element 'ns2:accountBalance' of XML schema type 'ns2:amount'
-        std::string *accountBalance;
+        wchar_t *accountBalance;
         /// Optional element 'ns2:authorizedDateTime' of XML schema type 'ns2:dateTime'
-        std::string *authorizedDateTime;
+        wchar_t *authorizedDateTime;
         /// Optional element 'ns2:requestAmount' of XML schema type 'ns2:amount'
-        std::string *requestAmount;
+        wchar_t *requestAmount;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:accountBalanceCurrency' of XML schema type 'xsd:string'
-        std::string *accountBalanceCurrency;
+        wchar_t *accountBalanceCurrency;
         /// Optional element 'ns2:accountBalanceSign' of XML schema type 'xsd:string'
-        std::string *accountBalanceSign;
+        wchar_t *accountBalanceSign;
         /// Optional element 'ns2:cardReferenceData' of XML schema type 'xsd:string'
-        std::string *cardReferenceData;
+        wchar_t *cardReferenceData;
         /// Optional element 'ns2:partialPANandIBAN' of XML schema type 'xsd:string'
-        std::string *partialPANandIBAN;
+        wchar_t *partialPANandIBAN;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10860,24 +10860,24 @@ class SOAP_CMAC ns2__CCSaleReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:450 */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditReply
-#define SOAP_TYPE_ns2__CCSaleCreditReply (420)
+#define SOAP_TYPE_ns2__CCSaleCreditReply (421)
 /* complex XML schema type 'ns2:CCSaleCreditReply': */
 class SOAP_CMAC ns2__CCSaleCreditReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:authorizedDateTime' of XML schema type 'ns2:dateTime'
-        std::string *authorizedDateTime;
+        wchar_t *authorizedDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:paymentNetworkTransactionID' of XML schema type 'xsd:string'
-        std::string *paymentNetworkTransactionID;
+        wchar_t *paymentNetworkTransactionID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10908,22 +10908,22 @@ class SOAP_CMAC ns2__CCSaleCreditReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:452 */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalReply
-#define SOAP_TYPE_ns2__CCSaleReversalReply (421)
+#define SOAP_TYPE_ns2__CCSaleReversalReply (422)
 /* complex XML schema type 'ns2:CCSaleReversalReply': */
 class SOAP_CMAC ns2__CCSaleReversalReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -10954,26 +10954,26 @@ class SOAP_CMAC ns2__CCSaleReversalReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:454 */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthReply
-#define SOAP_TYPE_ns2__CCIncrementalAuthReply (422)
+#define SOAP_TYPE_ns2__CCIncrementalAuthReply (423)
 /* complex XML schema type 'ns2:CCIncrementalAuthReply': */
 class SOAP_CMAC ns2__CCIncrementalAuthReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:authorizedDateTime' of XML schema type 'ns2:dateTime'
-        std::string *authorizedDateTime;
+        wchar_t *authorizedDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:paymentNetworkTransactionID' of XML schema type 'xsd:string'
-        std::string *paymentNetworkTransactionID;
+        wchar_t *paymentNetworkTransactionID;
         /// Optional element 'ns2:cardCategory' of XML schema type 'xsd:string'
-        std::string *cardCategory;
+        wchar_t *cardCategory;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11004,34 +11004,34 @@ class SOAP_CMAC ns2__CCIncrementalAuthReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:456 */
 #ifndef SOAP_TYPE_ns2__CCCaptureReply
-#define SOAP_TYPE_ns2__CCCaptureReply (423)
+#define SOAP_TYPE_ns2__CCCaptureReply (424)
 /* complex XML schema type 'ns2:CCCaptureReply': */
 class SOAP_CMAC ns2__CCCaptureReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:fundingTotals' of XML schema type 'ns2:FundingTotals'
         ns2__FundingTotals *fundingTotals;
         /// Optional element 'ns2:fxQuoteID' of XML schema type 'xsd:string'
-        std::string *fxQuoteID;
+        wchar_t *fxQuoteID;
         /// Optional element 'ns2:fxQuoteRate' of XML schema type 'ns2:dateTime'
-        std::string *fxQuoteRate;
+        wchar_t *fxQuoteRate;
         /// Optional element 'ns2:fxQuoteType' of XML schema type 'xsd:string'
-        std::string *fxQuoteType;
+        wchar_t *fxQuoteType;
         /// Optional element 'ns2:fxQuoteExpirationDateTime' of XML schema type 'ns2:dateTime'
-        std::string *fxQuoteExpirationDateTime;
+        wchar_t *fxQuoteExpirationDateTime;
         /// Optional element 'ns2:purchasingLevel3Enabled' of XML schema type 'xsd:string'
-        std::string *purchasingLevel3Enabled;
+        wchar_t *purchasingLevel3Enabled;
         /// Optional element 'ns2:enhancedDataEnabled' of XML schema type 'xsd:string'
-        std::string *enhancedDataEnabled;
+        wchar_t *enhancedDataEnabled;
         /// Optional element 'ns2:reconciliationReferenceNumber' of XML schema type 'xsd:string'
-        std::string *reconciliationReferenceNumber;
+        wchar_t *reconciliationReferenceNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11062,16 +11062,16 @@ class SOAP_CMAC ns2__CCCaptureReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:458 */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateReply
-#define SOAP_TYPE_ns2__ServiceFeeCalculateReply (424)
+#define SOAP_TYPE_ns2__ServiceFeeCalculateReply (425)
 /* complex XML schema type 'ns2:ServiceFeeCalculateReply': */
 class SOAP_CMAC ns2__ServiceFeeCalculateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11102,36 +11102,36 @@ class SOAP_CMAC ns2__ServiceFeeCalculateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:460 */
 #ifndef SOAP_TYPE_ns2__CCCreditReply
-#define SOAP_TYPE_ns2__CCCreditReply (425)
+#define SOAP_TYPE_ns2__CCCreditReply (426)
 /* complex XML schema type 'ns2:CCCreditReply': */
 class SOAP_CMAC ns2__CCCreditReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:purchasingLevel3Enabled' of XML schema type 'xsd:string'
-        std::string *purchasingLevel3Enabled;
+        wchar_t *purchasingLevel3Enabled;
         /// Optional element 'ns2:enhancedDataEnabled' of XML schema type 'xsd:string'
-        std::string *enhancedDataEnabled;
+        wchar_t *enhancedDataEnabled;
         /// Optional element 'ns2:authorizationXID' of XML schema type 'xsd:string'
-        std::string *authorizationXID;
+        wchar_t *authorizationXID;
         /// Optional element 'ns2:forwardCode' of XML schema type 'xsd:string'
-        std::string *forwardCode;
+        wchar_t *forwardCode;
         /// Optional element 'ns2:ownerMerchantID' of XML schema type 'xsd:string'
-        std::string *ownerMerchantID;
+        wchar_t *ownerMerchantID;
         /// Optional element 'ns2:reconciliationReferenceNumber' of XML schema type 'xsd:string'
-        std::string *reconciliationReferenceNumber;
+        wchar_t *reconciliationReferenceNumber;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:paymentNetworkTransactionID' of XML schema type 'xsd:string'
-        std::string *paymentNetworkTransactionID;
+        wchar_t *paymentNetworkTransactionID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11162,40 +11162,40 @@ class SOAP_CMAC ns2__CCCreditReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:462 */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseReply
-#define SOAP_TYPE_ns2__PinDebitPurchaseReply (426)
+#define SOAP_TYPE_ns2__PinDebitPurchaseReply (427)
 /* complex XML schema type 'ns2:PinDebitPurchaseReply': */
 class SOAP_CMAC ns2__PinDebitPurchaseReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:networkCode' of XML schema type 'xsd:string'
-        std::string *networkCode;
+        wchar_t *networkCode;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:requestAmount' of XML schema type 'ns2:amount'
-        std::string *requestAmount;
+        wchar_t *requestAmount;
         /// Optional element 'ns2:requestCurrency' of XML schema type 'xsd:string'
-        std::string *requestCurrency;
+        wchar_t *requestCurrency;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:accountType' of XML schema type 'xsd:string'
-        std::string *accountType;
+        wchar_t *accountType;
         /// Optional element 'ns2:amountType' of XML schema type 'xsd:string'
-        std::string *amountType;
+        wchar_t *amountType;
         /// Optional element 'ns2:accountBalance' of XML schema type 'xsd:string'
-        std::string *accountBalance;
+        wchar_t *accountBalance;
         /// Optional element 'ns2:accountBalanceCurrency' of XML schema type 'xsd:string'
-        std::string *accountBalanceCurrency;
+        wchar_t *accountBalanceCurrency;
         /// Optional element 'ns2:accountBalanceSign' of XML schema type 'xsd:string'
-        std::string *accountBalanceSign;
+        wchar_t *accountBalanceSign;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11226,26 +11226,26 @@ class SOAP_CMAC ns2__PinDebitPurchaseReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:464 */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditReply
-#define SOAP_TYPE_ns2__PinDebitCreditReply (427)
+#define SOAP_TYPE_ns2__PinDebitCreditReply (428)
 /* complex XML schema type 'ns2:PinDebitCreditReply': */
 class SOAP_CMAC ns2__PinDebitCreditReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:networkCode' of XML schema type 'xsd:string'
-        std::string *networkCode;
+        wchar_t *networkCode;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11276,20 +11276,20 @@ class SOAP_CMAC ns2__PinDebitCreditReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:466 */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalReply
-#define SOAP_TYPE_ns2__PinDebitReversalReply (428)
+#define SOAP_TYPE_ns2__PinDebitReversalReply (429)
 /* complex XML schema type 'ns2:PinDebitReversalReply': */
 class SOAP_CMAC ns2__PinDebitReversalReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11320,30 +11320,30 @@ class SOAP_CMAC ns2__PinDebitReversalReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:468 */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalReply
-#define SOAP_TYPE_ns2__CCAuthReversalReply (429)
+#define SOAP_TYPE_ns2__CCAuthReversalReply (430)
 /* complex XML schema type 'ns2:CCAuthReversalReply': */
 class SOAP_CMAC ns2__CCAuthReversalReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:forwardCode' of XML schema type 'xsd:string'
-        std::string *forwardCode;
+        wchar_t *forwardCode;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:paymentCardService' of XML schema type 'xsd:string'
-        std::string *paymentCardService;
+        wchar_t *paymentCardService;
         /// Optional element 'ns2:paymentCardServiceResult' of XML schema type 'xsd:string'
-        std::string *paymentCardServiceResult;
+        wchar_t *paymentCardServiceResult;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11374,16 +11374,16 @@ class SOAP_CMAC ns2__CCAuthReversalReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:470 */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalReply
-#define SOAP_TYPE_ns2__CCAutoAuthReversalReply (430)
+#define SOAP_TYPE_ns2__CCAutoAuthReversalReply (431)
 /* complex XML schema type 'ns2:CCAutoAuthReversalReply': */
 class SOAP_CMAC ns2__CCAutoAuthReversalReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:result' of XML schema type 'xsd:string'
-        std::string *result;
+        wchar_t *result;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11414,86 +11414,86 @@ class SOAP_CMAC ns2__CCAutoAuthReversalReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:472 */
 #ifndef SOAP_TYPE_ns2__ECAVSReply
-#define SOAP_TYPE_ns2__ECAVSReply (431)
+#define SOAP_TYPE_ns2__ECAVSReply (432)
 /* complex XML schema type 'ns2:ECAVSReply': */
 class SOAP_CMAC ns2__ECAVSReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:validationType' of XML schema type 'xsd:string'
-        std::string *validationType;
+        wchar_t *validationType;
         /// Optional element 'ns2:primaryStatusCode' of XML schema type 'xsd:string'
-        std::string *primaryStatusCode;
+        wchar_t *primaryStatusCode;
         /// Optional element 'ns2:secondaryStatusCode' of XML schema type 'xsd:string'
-        std::string *secondaryStatusCode;
+        wchar_t *secondaryStatusCode;
         /// Optional element 'ns2:additionalStatusCode' of XML schema type 'xsd:string'
-        std::string *additionalStatusCode;
+        wchar_t *additionalStatusCode;
         /// Optional element 'ns2:numberOfReturns' of XML schema type 'xsd:string'
-        std::string *numberOfReturns;
+        wchar_t *numberOfReturns;
         /// Optional element 'ns2:lastReturnDate' of XML schema type 'xsd:string'
-        std::string *lastReturnDate;
+        wchar_t *lastReturnDate;
         /// Optional element 'ns2:lastReturnProcessorResponse' of XML schema type 'xsd:string'
-        std::string *lastReturnProcessorResponse;
+        wchar_t *lastReturnProcessorResponse;
         /// Optional element 'ns2:lastUpdateDate' of XML schema type 'xsd:string'
-        std::string *lastUpdateDate;
+        wchar_t *lastUpdateDate;
         /// Optional element 'ns2:addedOrClosedDate' of XML schema type 'xsd:string'
-        std::string *addedOrClosedDate;
+        wchar_t *addedOrClosedDate;
         /// Optional element 'ns2:previousStatusCode' of XML schema type 'xsd:string'
-        std::string *previousStatusCode;
+        wchar_t *previousStatusCode;
         /// Optional element 'ns2:fcraDisputeCode' of XML schema type 'xsd:string'
-        std::string *fcraDisputeCode;
+        wchar_t *fcraDisputeCode;
         /// Optional element 'ns2:scoredAccountProcessorResponse1' of XML schema type 'xsd:string'
-        std::string *scoredAccountProcessorResponse1;
+        wchar_t *scoredAccountProcessorResponse1;
         /// Optional element 'ns2:scoredAccountProcessorResponse2' of XML schema type 'xsd:string'
-        std::string *scoredAccountProcessorResponse2;
+        wchar_t *scoredAccountProcessorResponse2;
         /// Optional element 'ns2:scoredAccountProcessorResponse3' of XML schema type 'xsd:string'
-        std::string *scoredAccountProcessorResponse3;
+        wchar_t *scoredAccountProcessorResponse3;
         /// Optional element 'ns2:scoredAccountProcessorResponse5' of XML schema type 'xsd:string'
-        std::string *scoredAccountProcessorResponse5;
+        wchar_t *scoredAccountProcessorResponse5;
         /// Optional element 'ns2:customerDataConditionCode' of XML schema type 'xsd:string'
-        std::string *customerDataConditionCode;
+        wchar_t *customerDataConditionCode;
         /// Optional element 'ns2:matchBillToFullName' of XML schema type 'xsd:string'
-        std::string *matchBillToFullName;
+        wchar_t *matchBillToFullName;
         /// Optional element 'ns2:matchBillToPrefix' of XML schema type 'xsd:string'
-        std::string *matchBillToPrefix;
+        wchar_t *matchBillToPrefix;
         /// Optional element 'ns2:matchBillToFirstName' of XML schema type 'xsd:string'
-        std::string *matchBillToFirstName;
+        wchar_t *matchBillToFirstName;
         /// Optional element 'ns2:matchBillToMiddleName' of XML schema type 'xsd:string'
-        std::string *matchBillToMiddleName;
+        wchar_t *matchBillToMiddleName;
         /// Optional element 'ns2:matchBillToLastName' of XML schema type 'xsd:string'
-        std::string *matchBillToLastName;
+        wchar_t *matchBillToLastName;
         /// Optional element 'ns2:matchBillToSuffix' of XML schema type 'xsd:string'
-        std::string *matchBillToSuffix;
+        wchar_t *matchBillToSuffix;
         /// Optional element 'ns2:matchBillToCompany' of XML schema type 'xsd:string'
-        std::string *matchBillToCompany;
+        wchar_t *matchBillToCompany;
         /// Optional element 'ns2:matchBillToAddress' of XML schema type 'xsd:string'
-        std::string *matchBillToAddress;
+        wchar_t *matchBillToAddress;
         /// Optional element 'ns2:matchBillToCity' of XML schema type 'xsd:string'
-        std::string *matchBillToCity;
+        wchar_t *matchBillToCity;
         /// Optional element 'ns2:matchBillToState' of XML schema type 'xsd:string'
-        std::string *matchBillToState;
+        wchar_t *matchBillToState;
         /// Optional element 'ns2:matchBillToPostalCode' of XML schema type 'xsd:string'
-        std::string *matchBillToPostalCode;
+        wchar_t *matchBillToPostalCode;
         /// Optional element 'ns2:matchBillToPhoneNumber' of XML schema type 'xsd:string'
-        std::string *matchBillToPhoneNumber;
+        wchar_t *matchBillToPhoneNumber;
         /// Optional element 'ns2:matchBillToCompanyPhoneNumber' of XML schema type 'xsd:string'
-        std::string *matchBillToCompanyPhoneNumber;
+        wchar_t *matchBillToCompanyPhoneNumber;
         /// Optional element 'ns2:matchBillToCompanyTaxID' of XML schema type 'xsd:string'
-        std::string *matchBillToCompanyTaxID;
+        wchar_t *matchBillToCompanyTaxID;
         /// Optional element 'ns2:matchBillToSSN' of XML schema type 'xsd:string'
-        std::string *matchBillToSSN;
+        wchar_t *matchBillToSSN;
         /// Optional element 'ns2:matchBillToDateOfBirth' of XML schema type 'xsd:string'
-        std::string *matchBillToDateOfBirth;
+        wchar_t *matchBillToDateOfBirth;
         /// Optional element 'ns2:matchPersonalIDType' of XML schema type 'xsd:string'
-        std::string *matchPersonalIDType;
+        wchar_t *matchPersonalIDType;
         /// Optional element 'ns2:matchPersonalID' of XML schema type 'xsd:string'
-        std::string *matchPersonalID;
+        wchar_t *matchPersonalID;
         /// Optional element 'ns2:matchPersonalIDIssuedBy' of XML schema type 'xsd:string'
-        std::string *matchPersonalIDIssuedBy;
+        wchar_t *matchPersonalIDIssuedBy;
         /// Optional element 'ns2:overallMatchScore' of XML schema type 'xsd:integer'
-        std::string *overallMatchScore;
+        wchar_t *overallMatchScore;
         /// Optional element 'ns2:calculatedResponse' of XML schema type 'xsd:string'
-        std::string *calculatedResponse;
+        wchar_t *calculatedResponse;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11524,40 +11524,40 @@ class SOAP_CMAC ns2__ECAVSReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:474 */
 #ifndef SOAP_TYPE_ns2__ECDebitReply
-#define SOAP_TYPE_ns2__ECDebitReply (432)
+#define SOAP_TYPE_ns2__ECDebitReply (433)
 /* complex XML schema type 'ns2:ECDebitReply': */
 class SOAP_CMAC ns2__ECDebitReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:settlementMethod' of XML schema type 'xsd:string'
-        std::string *settlementMethod;
+        wchar_t *settlementMethod;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:verificationLevel' of XML schema type 'xsd:integer'
-        std::string *verificationLevel;
+        wchar_t *verificationLevel;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:avsCode' of XML schema type 'xsd:string'
-        std::string *avsCode;
+        wchar_t *avsCode;
         /// Optional element 'ns2:avsCodeRaw' of XML schema type 'xsd:string'
-        std::string *avsCodeRaw;
+        wchar_t *avsCodeRaw;
         /// Optional element 'ns2:verificationCode' of XML schema type 'xsd:string'
-        std::string *verificationCode;
+        wchar_t *verificationCode;
         /// Optional element 'ns2:verificationCodeRaw' of XML schema type 'xsd:string'
-        std::string *verificationCodeRaw;
+        wchar_t *verificationCodeRaw;
         /// Optional element 'ns2:correctedAccountNumber' of XML schema type 'xsd:string'
-        std::string *correctedAccountNumber;
+        wchar_t *correctedAccountNumber;
         /// Optional element 'ns2:correctedRoutingNumber' of XML schema type 'xsd:string'
-        std::string *correctedRoutingNumber;
+        wchar_t *correctedRoutingNumber;
         /// Optional element 'ns2:ownerMerchantID' of XML schema type 'xsd:string'
-        std::string *ownerMerchantID;
+        wchar_t *ownerMerchantID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11588,34 +11588,34 @@ class SOAP_CMAC ns2__ECDebitReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:476 */
 #ifndef SOAP_TYPE_ns2__ECCreditReply
-#define SOAP_TYPE_ns2__ECCreditReply (433)
+#define SOAP_TYPE_ns2__ECCreditReply (434)
 /* complex XML schema type 'ns2:ECCreditReply': */
 class SOAP_CMAC ns2__ECCreditReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:settlementMethod' of XML schema type 'xsd:string'
-        std::string *settlementMethod;
+        wchar_t *settlementMethod;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:verificationCode' of XML schema type 'xsd:string'
-        std::string *verificationCode;
+        wchar_t *verificationCode;
         /// Optional element 'ns2:verificationCodeRaw' of XML schema type 'xsd:string'
-        std::string *verificationCodeRaw;
+        wchar_t *verificationCodeRaw;
         /// Optional element 'ns2:correctedAccountNumber' of XML schema type 'xsd:string'
-        std::string *correctedAccountNumber;
+        wchar_t *correctedAccountNumber;
         /// Optional element 'ns2:correctedRoutingNumber' of XML schema type 'xsd:string'
-        std::string *correctedRoutingNumber;
+        wchar_t *correctedRoutingNumber;
         /// Optional element 'ns2:ownerMerchantID' of XML schema type 'xsd:string'
-        std::string *ownerMerchantID;
+        wchar_t *ownerMerchantID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11646,22 +11646,22 @@ class SOAP_CMAC ns2__ECCreditReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:478 */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateReply
-#define SOAP_TYPE_ns2__ECAuthenticateReply (434)
+#define SOAP_TYPE_ns2__ECAuthenticateReply (435)
 /* complex XML schema type 'ns2:ECAuthenticateReply': */
 class SOAP_CMAC ns2__ECAuthenticateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:checkpointSummary' of XML schema type 'xsd:string'
-        std::string *checkpointSummary;
+        wchar_t *checkpointSummary;
         /// Optional element 'ns2:fraudShieldIndicators' of XML schema type 'xsd:string'
-        std::string *fraudShieldIndicators;
+        wchar_t *fraudShieldIndicators;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11692,18 +11692,18 @@ class SOAP_CMAC ns2__ECAuthenticateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:480 */
 #ifndef SOAP_TYPE_ns2__PayerAuthSetupReply
-#define SOAP_TYPE_ns2__PayerAuthSetupReply (435)
+#define SOAP_TYPE_ns2__PayerAuthSetupReply (436)
 /* complex XML schema type 'ns2:PayerAuthSetupReply': */
 class SOAP_CMAC ns2__PayerAuthSetupReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:referenceID' of XML schema type 'xsd:string'
-        std::string *referenceID;
+        wchar_t *referenceID;
         /// Optional element 'ns2:deviceDataCollectionURL' of XML schema type 'xsd:string'
-        std::string *deviceDataCollectionURL;
+        wchar_t *deviceDataCollectionURL;
         /// Optional element 'ns2:accessToken' of XML schema type 'xsd:string'
-        std::string *accessToken;
+        wchar_t *accessToken;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11734,112 +11734,112 @@ class SOAP_CMAC ns2__PayerAuthSetupReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:482 */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollReply
-#define SOAP_TYPE_ns2__PayerAuthEnrollReply (436)
+#define SOAP_TYPE_ns2__PayerAuthEnrollReply (437)
 /* complex XML schema type 'ns2:PayerAuthEnrollReply': */
 class SOAP_CMAC ns2__PayerAuthEnrollReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:acsURL' of XML schema type 'xsd:string'
-        std::string *acsURL;
+        wchar_t *acsURL;
         /// Optional element 'ns2:accessToken' of XML schema type 'xsd:string'
-        std::string *accessToken;
+        wchar_t *accessToken;
         /// Optional element 'ns2:authenticationResult' of XML schema type 'xsd:string'
-        std::string *authenticationResult;
+        wchar_t *authenticationResult;
         /// Optional element 'ns2:authenticationStatusMessage' of XML schema type 'xsd:string'
-        std::string *authenticationStatusMessage;
+        wchar_t *authenticationStatusMessage;
         /// Optional element 'ns2:cavv' of XML schema type 'xsd:string'
-        std::string *cavv;
+        wchar_t *cavv;
         /// Optional element 'ns2:cavvAlgorithm' of XML schema type 'xsd:string'
-        std::string *cavvAlgorithm;
+        wchar_t *cavvAlgorithm;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:eci' of XML schema type 'xsd:string'
-        std::string *eci;
+        wchar_t *eci;
         /// Optional element 'ns2:eciRaw' of XML schema type 'xsd:string'
-        std::string *eciRaw;
+        wchar_t *eciRaw;
         /// Optional element 'ns2:paReq' of XML schema type 'xsd:string'
-        std::string *paReq;
+        wchar_t *paReq;
         /// Optional element 'ns2:proxyPAN' of XML schema type 'xsd:string'
-        std::string *proxyPAN;
+        wchar_t *proxyPAN;
         /// Optional element 'ns2:xid' of XML schema type 'xsd:string'
-        std::string *xid;
+        wchar_t *xid;
         /// Optional element 'ns2:proofXML' of XML schema type 'xsd:string'
-        std::string *proofXML;
+        wchar_t *proofXML;
         /// Optional element 'ns2:ucafAuthenticationData' of XML schema type 'xsd:string'
-        std::string *ucafAuthenticationData;
+        wchar_t *ucafAuthenticationData;
         /// Optional element 'ns2:ucafCollectionIndicator' of XML schema type 'xsd:string'
-        std::string *ucafCollectionIndicator;
+        wchar_t *ucafCollectionIndicator;
         /// Optional element 'ns2:paresStatus' of XML schema type 'xsd:string'
-        std::string *paresStatus;
+        wchar_t *paresStatus;
         /// Optional element 'ns2:veresEnrolled' of XML schema type 'xsd:string'
-        std::string *veresEnrolled;
+        wchar_t *veresEnrolled;
         /// Optional element 'ns2:authenticationPath' of XML schema type 'xsd:string'
-        std::string *authenticationPath;
+        wchar_t *authenticationPath;
         /// Optional element 'ns2:specificationVersion' of XML schema type 'xsd:string'
-        std::string *specificationVersion;
+        wchar_t *specificationVersion;
         /// Optional element 'ns2:authenticationTransactionID' of XML schema type 'xsd:string'
-        std::string *authenticationTransactionID;
+        wchar_t *authenticationTransactionID;
         /// Optional element 'ns2:directoryServerTransactionID' of XML schema type 'xsd:string'
-        std::string *directoryServerTransactionID;
+        wchar_t *directoryServerTransactionID;
         /// Optional element 'ns2:challengeRequired' of XML schema type 'ns2:boolean'
-        std::string *challengeRequired;
+        wchar_t *challengeRequired;
         /// Optional element 'ns2:threeDSServerTransactionID' of XML schema type 'xsd:string'
-        std::string *threeDSServerTransactionID;
+        wchar_t *threeDSServerTransactionID;
         /// Optional element 'ns2:acsRenderingType' of XML schema type 'xsd:string'
-        std::string *acsRenderingType;
+        wchar_t *acsRenderingType;
         /// Optional element 'ns2:acsTransactionID' of XML schema type 'xsd:string'
-        std::string *acsTransactionID;
+        wchar_t *acsTransactionID;
         /// Optional element 'ns2:authenticationType' of XML schema type 'xsd:integer'
-        std::string *authenticationType;
+        wchar_t *authenticationType;
         /// Optional element 'ns2:cardholderMessage' of XML schema type 'xsd:string'
-        std::string *cardholderMessage;
+        wchar_t *cardholderMessage;
         /// Optional element 'ns2:directoryServerErrorCode' of XML schema type 'xsd:integer'
-        std::string *directoryServerErrorCode;
+        wchar_t *directoryServerErrorCode;
         /// Optional element 'ns2:directoryServerErrorDescription' of XML schema type 'xsd:string'
-        std::string *directoryServerErrorDescription;
+        wchar_t *directoryServerErrorDescription;
         /// Optional element 'ns2:ivrEnabledMessage' of XML schema type 'ns2:boolean'
-        std::string *ivrEnabledMessage;
+        wchar_t *ivrEnabledMessage;
         /// Optional element 'ns2:ivrEncryptionKey' of XML schema type 'xsd:string'
-        std::string *ivrEncryptionKey;
+        wchar_t *ivrEncryptionKey;
         /// Optional element 'ns2:ivrEncryptionMandatory' of XML schema type 'ns2:boolean'
-        std::string *ivrEncryptionMandatory;
+        wchar_t *ivrEncryptionMandatory;
         /// Optional element 'ns2:ivrEncryptionType' of XML schema type 'xsd:string'
-        std::string *ivrEncryptionType;
+        wchar_t *ivrEncryptionType;
         /// Optional element 'ns2:ivrLabel' of XML schema type 'xsd:string'
-        std::string *ivrLabel;
+        wchar_t *ivrLabel;
         /// Optional element 'ns2:ivrPrompt' of XML schema type 'xsd:string'
-        std::string *ivrPrompt;
+        wchar_t *ivrPrompt;
         /// Optional element 'ns2:ivrStatusMessage' of XML schema type 'xsd:string'
-        std::string *ivrStatusMessage;
+        wchar_t *ivrStatusMessage;
         /// Optional element 'ns2:sdkTransactionID' of XML schema type 'xsd:string'
-        std::string *sdkTransactionID;
+        wchar_t *sdkTransactionID;
         /// Optional element 'ns2:stepUpUrl' of XML schema type 'xsd:string'
-        std::string *stepUpUrl;
+        wchar_t *stepUpUrl;
         /// Optional element 'ns2:whiteListStatus' of XML schema type 'xsd:string'
-        std::string *whiteListStatus;
+        wchar_t *whiteListStatus;
         /// Optional element 'ns2:whiteListStatusSource' of XML schema type 'xsd:integer'
-        std::string *whiteListStatusSource;
+        wchar_t *whiteListStatusSource;
         /// Optional element 'ns2:effectiveAuthenticationType' of XML schema type 'xsd:string'
-        std::string *effectiveAuthenticationType;
+        wchar_t *effectiveAuthenticationType;
         /// Optional element 'ns2:authenticationStatusReason' of XML schema type 'xsd:string'
-        std::string *authenticationStatusReason;
+        wchar_t *authenticationStatusReason;
         /// Optional element 'ns2:networkScore' of XML schema type 'xsd:string'
-        std::string *networkScore;
+        wchar_t *networkScore;
         /// Optional element 'ns2:authorizationPayload' of XML schema type 'xsd:base64Binary'
         xsd__base64Binary *authorizationPayload;
         /// Optional element 'ns2:challengeCancelCode' of XML schema type 'xsd:string'
-        std::string *challengeCancelCode;
+        wchar_t *challengeCancelCode;
         /// Optional element 'ns2:decoupledAuthenticationIndicator' of XML schema type 'xsd:string'
-        std::string *decoupledAuthenticationIndicator;
+        wchar_t *decoupledAuthenticationIndicator;
         /// Optional element 'ns2:cardBin' of XML schema type 'xsd:string'
-        std::string *cardBin;
+        wchar_t *cardBin;
         /// Optional element 'ns2:cardTypeName' of XML schema type 'xsd:string'
-        std::string *cardTypeName;
+        wchar_t *cardTypeName;
         /// Optional element 'ns2:transactionIndicator' of XML schema type 'xsd:string'
-        std::string *transactionIndicator;
+        wchar_t *transactionIndicator;
         /// Optional element 'ns2:resendCountRemaining' of XML schema type 'xsd:string'
-        std::string *resendCountRemaining;
+        wchar_t *resendCountRemaining;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11870,70 +11870,70 @@ class SOAP_CMAC ns2__PayerAuthEnrollReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:484 */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateReply
-#define SOAP_TYPE_ns2__PayerAuthValidateReply (437)
+#define SOAP_TYPE_ns2__PayerAuthValidateReply (438)
 /* complex XML schema type 'ns2:PayerAuthValidateReply': */
 class SOAP_CMAC ns2__PayerAuthValidateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authenticationResult' of XML schema type 'xsd:string'
-        std::string *authenticationResult;
+        wchar_t *authenticationResult;
         /// Optional element 'ns2:authenticationStatusMessage' of XML schema type 'xsd:string'
-        std::string *authenticationStatusMessage;
+        wchar_t *authenticationStatusMessage;
         /// Optional element 'ns2:cavv' of XML schema type 'xsd:string'
-        std::string *cavv;
+        wchar_t *cavv;
         /// Optional element 'ns2:cavvAlgorithm' of XML schema type 'xsd:string'
-        std::string *cavvAlgorithm;
+        wchar_t *cavvAlgorithm;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Optional element 'ns2:eci' of XML schema type 'xsd:string'
-        std::string *eci;
+        wchar_t *eci;
         /// Optional element 'ns2:eciRaw' of XML schema type 'xsd:string'
-        std::string *eciRaw;
+        wchar_t *eciRaw;
         /// Optional element 'ns2:xid' of XML schema type 'xsd:string'
-        std::string *xid;
+        wchar_t *xid;
         /// Optional element 'ns2:ucafAuthenticationData' of XML schema type 'xsd:string'
-        std::string *ucafAuthenticationData;
+        wchar_t *ucafAuthenticationData;
         /// Optional element 'ns2:ucafCollectionIndicator' of XML schema type 'xsd:string'
-        std::string *ucafCollectionIndicator;
+        wchar_t *ucafCollectionIndicator;
         /// Optional element 'ns2:paresStatus' of XML schema type 'xsd:string'
-        std::string *paresStatus;
+        wchar_t *paresStatus;
         /// Optional element 'ns2:specificationVersion' of XML schema type 'xsd:string'
-        std::string *specificationVersion;
+        wchar_t *specificationVersion;
         /// Optional element 'ns2:directoryServerTransactionID' of XML schema type 'xsd:string'
-        std::string *directoryServerTransactionID;
+        wchar_t *directoryServerTransactionID;
         /// Optional element 'ns2:threeDSServerTransactionID' of XML schema type 'xsd:string'
-        std::string *threeDSServerTransactionID;
+        wchar_t *threeDSServerTransactionID;
         /// Optional element 'ns2:acsRenderingType' of XML schema type 'xsd:string'
-        std::string *acsRenderingType;
+        wchar_t *acsRenderingType;
         /// Optional element 'ns2:acsTransactionID' of XML schema type 'xsd:string'
-        std::string *acsTransactionID;
+        wchar_t *acsTransactionID;
         /// Optional element 'ns2:authenticationType' of XML schema type 'xsd:integer'
-        std::string *authenticationType;
+        wchar_t *authenticationType;
         /// Optional element 'ns2:directoryServerErrorCode' of XML schema type 'xsd:integer'
-        std::string *directoryServerErrorCode;
+        wchar_t *directoryServerErrorCode;
         /// Optional element 'ns2:directoryServerErrorDescription' of XML schema type 'xsd:string'
-        std::string *directoryServerErrorDescription;
+        wchar_t *directoryServerErrorDescription;
         /// Optional element 'ns2:interactionCounter' of XML schema type 'xsd:integer'
-        std::string *interactionCounter;
+        wchar_t *interactionCounter;
         /// Optional element 'ns2:sdkTransactionID' of XML schema type 'xsd:string'
-        std::string *sdkTransactionID;
+        wchar_t *sdkTransactionID;
         /// Optional element 'ns2:whiteListStatus' of XML schema type 'xsd:string'
-        std::string *whiteListStatus;
+        wchar_t *whiteListStatus;
         /// Optional element 'ns2:whiteListStatusSource' of XML schema type 'xsd:integer'
-        std::string *whiteListStatusSource;
+        wchar_t *whiteListStatusSource;
         /// Optional element 'ns2:effectiveAuthenticationType' of XML schema type 'xsd:string'
-        std::string *effectiveAuthenticationType;
+        wchar_t *effectiveAuthenticationType;
         /// Optional element 'ns2:authenticationStatusReason' of XML schema type 'xsd:string'
-        std::string *authenticationStatusReason;
+        wchar_t *authenticationStatusReason;
         /// Optional element 'ns2:challengeCancelCode' of XML schema type 'xsd:string'
-        std::string *challengeCancelCode;
+        wchar_t *challengeCancelCode;
         /// Optional element 'ns2:authorizationPayload' of XML schema type 'xsd:base64Binary'
         xsd__base64Binary *authorizationPayload;
         /// Optional element 'ns2:cardBin' of XML schema type 'xsd:string'
-        std::string *cardBin;
+        wchar_t *cardBin;
         /// Optional element 'ns2:cardTypeName' of XML schema type 'xsd:string'
-        std::string *cardTypeName;
+        wchar_t *cardTypeName;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -11964,32 +11964,32 @@ class SOAP_CMAC ns2__PayerAuthValidateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:486 */
 #ifndef SOAP_TYPE_ns2__TaxReplyItem
-#define SOAP_TYPE_ns2__TaxReplyItem (438)
+#define SOAP_TYPE_ns2__TaxReplyItem (439)
 /* complex XML schema type 'ns2:TaxReplyItem': */
 class SOAP_CMAC ns2__TaxReplyItem {
       public:
         /// Optional element 'ns2:taxableAmount' of XML schema type 'ns2:amount'
-        std::string *taxableAmount;
+        wchar_t *taxableAmount;
         /// Optional element 'ns2:exemptAmount' of XML schema type 'ns2:amount'
-        std::string *exemptAmount;
+        wchar_t *exemptAmount;
         /// Optional element 'ns2:specialTaxAmount' of XML schema type 'ns2:amount'
-        std::string *specialTaxAmount;
+        wchar_t *specialTaxAmount;
         /// Optional element 'ns2:cityTaxAmount' of XML schema type 'ns2:amount'
-        std::string *cityTaxAmount;
+        wchar_t *cityTaxAmount;
         /// Optional element 'ns2:countyTaxAmount' of XML schema type 'ns2:amount'
-        std::string *countyTaxAmount;
+        wchar_t *countyTaxAmount;
         /// Optional element 'ns2:districtTaxAmount' of XML schema type 'ns2:amount'
-        std::string *districtTaxAmount;
+        wchar_t *districtTaxAmount;
         /// Optional element 'ns2:stateTaxAmount' of XML schema type 'ns2:amount'
-        std::string *stateTaxAmount;
+        wchar_t *stateTaxAmount;
         /// Optional element 'ns2:countryTaxAmount' of XML schema type 'ns2:amount'
-        std::string *countryTaxAmount;
+        wchar_t *countryTaxAmount;
         /// Required element 'ns2:totalTaxAmount' of XML schema type 'ns2:amount'
-        std::string totalTaxAmount;
+        wchar_t *totalTaxAmount;
         /// Sequence of 0 to 1000 elements 'ns2:jurisdiction' of XML schema type 'ns2:TaxReplyItemJurisdiction'
         std::vector<ns2__TaxReplyItemJurisdiction> jurisdiction;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12020,30 +12020,30 @@ class SOAP_CMAC ns2__TaxReplyItem {
 
 /* CyberSourceTransaction_nvp_1.183.h:488 */
 #ifndef SOAP_TYPE_ns2__TaxReplyItemJurisdiction
-#define SOAP_TYPE_ns2__TaxReplyItemJurisdiction (439)
+#define SOAP_TYPE_ns2__TaxReplyItemJurisdiction (440)
 /* complex XML schema type 'ns2:TaxReplyItemJurisdiction': */
 class SOAP_CMAC ns2__TaxReplyItemJurisdiction {
       public:
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:region' of XML schema type 'xsd:string'
-        std::string *region;
+        wchar_t *region;
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Optional element 'ns2:code' of XML schema type 'xsd:string'
-        std::string *code;
+        wchar_t *code;
         /// Optional element 'ns2:taxable' of XML schema type 'ns2:amount'
-        std::string *taxable;
+        wchar_t *taxable;
         /// Optional element 'ns2:rate' of XML schema type 'ns2:amount'
-        std::string *rate;
+        wchar_t *rate;
         /// Optional element 'ns2:taxAmount' of XML schema type 'ns2:amount'
-        std::string *taxAmount;
+        wchar_t *taxAmount;
         /// Required element 'ns2:name' of XML schema type 'xsd:string'
-        std::string name;
+        wchar_t *name;
         /// Required element 'ns2:taxName' of XML schema type 'xsd:string'
-        std::string taxName;
+        wchar_t *taxName;
         /// Required attribute 'jurisId' of XML schema type 'xsd:integer'
-        std::string jurisId;
+        wchar_t *jurisId;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12074,48 +12074,48 @@ class SOAP_CMAC ns2__TaxReplyItemJurisdiction {
 
 /* CyberSourceTransaction_nvp_1.183.h:490 */
 #ifndef SOAP_TYPE_ns2__TaxReply
-#define SOAP_TYPE_ns2__TaxReply (440)
+#define SOAP_TYPE_ns2__TaxReply (441)
 /* complex XML schema type 'ns2:TaxReply': */
 class SOAP_CMAC ns2__TaxReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:grandTotalAmount' of XML schema type 'ns2:amount'
-        std::string *grandTotalAmount;
+        wchar_t *grandTotalAmount;
         /// Optional element 'ns2:totalTaxableAmount' of XML schema type 'ns2:amount'
-        std::string *totalTaxableAmount;
+        wchar_t *totalTaxableAmount;
         /// Optional element 'ns2:totalExemptAmount' of XML schema type 'ns2:amount'
-        std::string *totalExemptAmount;
+        wchar_t *totalExemptAmount;
         /// Optional element 'ns2:totalSpecialTaxAmount' of XML schema type 'ns2:amount'
-        std::string *totalSpecialTaxAmount;
+        wchar_t *totalSpecialTaxAmount;
         /// Optional element 'ns2:totalCityTaxAmount' of XML schema type 'ns2:amount'
-        std::string *totalCityTaxAmount;
+        wchar_t *totalCityTaxAmount;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:totalCountyTaxAmount' of XML schema type 'ns2:amount'
-        std::string *totalCountyTaxAmount;
+        wchar_t *totalCountyTaxAmount;
         /// Optional element 'ns2:county' of XML schema type 'xsd:string'
-        std::string *county;
+        wchar_t *county;
         /// Optional element 'ns2:totalDistrictTaxAmount' of XML schema type 'ns2:amount'
-        std::string *totalDistrictTaxAmount;
+        wchar_t *totalDistrictTaxAmount;
         /// Optional element 'ns2:totalStateTaxAmount' of XML schema type 'ns2:amount'
-        std::string *totalStateTaxAmount;
+        wchar_t *totalStateTaxAmount;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:totalCountryTaxAmount' of XML schema type 'ns2:amount'
-        std::string *totalCountryTaxAmount;
+        wchar_t *totalCountryTaxAmount;
         /// Optional element 'ns2:totalTaxAmount' of XML schema type 'ns2:amount'
-        std::string *totalTaxAmount;
+        wchar_t *totalTaxAmount;
         /// Optional element 'ns2:commitIndicator' of XML schema type 'xsd:string'
-        std::string *commitIndicator;
+        wchar_t *commitIndicator;
         /// Optional element 'ns2:refundIndicator' of XML schema type 'xsd:string'
-        std::string *refundIndicator;
+        wchar_t *refundIndicator;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:geocode' of XML schema type 'xsd:string'
-        std::string *geocode;
+        wchar_t *geocode;
         /// Sequence of 0 to 1000 elements 'ns2:item' of XML schema type 'ns2:TaxReplyItem'
         std::vector<ns2__TaxReplyItem> item;
         /// Context that manages this object
@@ -12148,76 +12148,76 @@ class SOAP_CMAC ns2__TaxReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:492 */
 #ifndef SOAP_TYPE_ns2__DeviceFingerprint
-#define SOAP_TYPE_ns2__DeviceFingerprint (441)
+#define SOAP_TYPE_ns2__DeviceFingerprint (442)
 /* complex XML schema type 'ns2:DeviceFingerprint': */
 class SOAP_CMAC ns2__DeviceFingerprint {
       public:
         /// Optional element 'ns2:cookiesEnabled' of XML schema type 'ns2:boolean'
-        std::string *cookiesEnabled;
+        wchar_t *cookiesEnabled;
         /// Optional element 'ns2:flashEnabled' of XML schema type 'ns2:boolean'
-        std::string *flashEnabled;
+        wchar_t *flashEnabled;
         /// Optional element 'ns2:hash' of XML schema type 'xsd:string'
-        std::string *hash;
+        wchar_t *hash;
         /// Optional element 'ns2:imagesEnabled' of XML schema type 'ns2:boolean'
-        std::string *imagesEnabled;
+        wchar_t *imagesEnabled;
         /// Optional element 'ns2:javascriptEnabled' of XML schema type 'ns2:boolean'
-        std::string *javascriptEnabled;
+        wchar_t *javascriptEnabled;
         /// Optional element 'ns2:proxyIPAddress' of XML schema type 'xsd:string'
-        std::string *proxyIPAddress;
+        wchar_t *proxyIPAddress;
         /// Optional element 'ns2:proxyIPAddressActivities' of XML schema type 'xsd:string'
-        std::string *proxyIPAddressActivities;
+        wchar_t *proxyIPAddressActivities;
         /// Optional element 'ns2:proxyIPAddressAttributes' of XML schema type 'xsd:string'
-        std::string *proxyIPAddressAttributes;
+        wchar_t *proxyIPAddressAttributes;
         /// Optional element 'ns2:proxyServerType' of XML schema type 'xsd:string'
-        std::string *proxyServerType;
+        wchar_t *proxyServerType;
         /// Optional element 'ns2:trueIPAddress' of XML schema type 'xsd:string'
-        std::string *trueIPAddress;
+        wchar_t *trueIPAddress;
         /// Optional element 'ns2:trueIPAddressActivities' of XML schema type 'xsd:string'
-        std::string *trueIPAddressActivities;
+        wchar_t *trueIPAddressActivities;
         /// Optional element 'ns2:trueIPAddressAttributes' of XML schema type 'xsd:string'
-        std::string *trueIPAddressAttributes;
+        wchar_t *trueIPAddressAttributes;
         /// Optional element 'ns2:trueIPAddressCity' of XML schema type 'xsd:string'
-        std::string *trueIPAddressCity;
+        wchar_t *trueIPAddressCity;
         /// Optional element 'ns2:trueIPAddressState' of XML schema type 'xsd:string'
-        std::string *trueIPAddressState;
+        wchar_t *trueIPAddressState;
         /// Optional element 'ns2:trueIPAddressCountry' of XML schema type 'xsd:string'
-        std::string *trueIPAddressCountry;
+        wchar_t *trueIPAddressCountry;
         /// Optional element 'ns2:smartID' of XML schema type 'xsd:string'
-        std::string *smartID;
+        wchar_t *smartID;
         /// Optional element 'ns2:smartIDConfidenceLevel' of XML schema type 'xsd:string'
-        std::string *smartIDConfidenceLevel;
+        wchar_t *smartIDConfidenceLevel;
         /// Optional element 'ns2:screenResolution' of XML schema type 'xsd:string'
-        std::string *screenResolution;
+        wchar_t *screenResolution;
         /// Optional element 'ns2:browserLanguage' of XML schema type 'xsd:string'
-        std::string *browserLanguage;
+        wchar_t *browserLanguage;
         /// Optional element 'ns2:agentType' of XML schema type 'xsd:string'
-        std::string *agentType;
+        wchar_t *agentType;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:profileDuration' of XML schema type 'xsd:integer'
-        std::string *profileDuration;
+        wchar_t *profileDuration;
         /// Optional element 'ns2:profiledURL' of XML schema type 'xsd:string'
-        std::string *profiledURL;
+        wchar_t *profiledURL;
         /// Optional element 'ns2:timeOnPage' of XML schema type 'xsd:integer'
-        std::string *timeOnPage;
+        wchar_t *timeOnPage;
         /// Optional element 'ns2:deviceMatch' of XML schema type 'xsd:string'
-        std::string *deviceMatch;
+        wchar_t *deviceMatch;
         /// Optional element 'ns2:firstEncounter' of XML schema type 'xsd:string'
-        std::string *firstEncounter;
+        wchar_t *firstEncounter;
         /// Optional element 'ns2:flashOS' of XML schema type 'xsd:string'
-        std::string *flashOS;
+        wchar_t *flashOS;
         /// Optional element 'ns2:flashVersion' of XML schema type 'xsd:string'
-        std::string *flashVersion;
+        wchar_t *flashVersion;
         /// Optional element 'ns2:deviceLatitude' of XML schema type 'xsd:string'
-        std::string *deviceLatitude;
+        wchar_t *deviceLatitude;
         /// Optional element 'ns2:deviceLongitude' of XML schema type 'xsd:string'
-        std::string *deviceLongitude;
+        wchar_t *deviceLongitude;
         /// Optional element 'ns2:gpsAccuracy' of XML schema type 'xsd:string'
-        std::string *gpsAccuracy;
+        wchar_t *gpsAccuracy;
         /// Optional element 'ns2:jbRoot' of XML schema type 'xsd:integer'
-        std::string *jbRoot;
+        wchar_t *jbRoot;
         /// Optional element 'ns2:jbRootReason' of XML schema type 'xsd:string'
-        std::string *jbRootReason;
+        wchar_t *jbRootReason;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12248,62 +12248,62 @@ class SOAP_CMAC ns2__DeviceFingerprint {
 
 /* CyberSourceTransaction_nvp_1.183.h:494 */
 #ifndef SOAP_TYPE_ns2__AFSReply
-#define SOAP_TYPE_ns2__AFSReply (442)
+#define SOAP_TYPE_ns2__AFSReply (443)
 /* complex XML schema type 'ns2:AFSReply': */
 class SOAP_CMAC ns2__AFSReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:afsResult' of XML schema type 'xsd:integer'
-        std::string *afsResult;
+        wchar_t *afsResult;
         /// Optional element 'ns2:hostSeverity' of XML schema type 'xsd:integer'
-        std::string *hostSeverity;
+        wchar_t *hostSeverity;
         /// Optional element 'ns2:consumerLocalTime' of XML schema type 'xsd:string'
-        std::string *consumerLocalTime;
+        wchar_t *consumerLocalTime;
         /// Optional element 'ns2:afsFactorCode' of XML schema type 'xsd:string'
-        std::string *afsFactorCode;
+        wchar_t *afsFactorCode;
         /// Optional element 'ns2:addressInfoCode' of XML schema type 'xsd:string'
-        std::string *addressInfoCode;
+        wchar_t *addressInfoCode;
         /// Optional element 'ns2:hotlistInfoCode' of XML schema type 'xsd:string'
-        std::string *hotlistInfoCode;
+        wchar_t *hotlistInfoCode;
         /// Optional element 'ns2:internetInfoCode' of XML schema type 'xsd:string'
-        std::string *internetInfoCode;
+        wchar_t *internetInfoCode;
         /// Optional element 'ns2:phoneInfoCode' of XML schema type 'xsd:string'
-        std::string *phoneInfoCode;
+        wchar_t *phoneInfoCode;
         /// Optional element 'ns2:suspiciousInfoCode' of XML schema type 'xsd:string'
-        std::string *suspiciousInfoCode;
+        wchar_t *suspiciousInfoCode;
         /// Optional element 'ns2:deviceBehaviorInfoCode' of XML schema type 'xsd:string'
-        std::string *deviceBehaviorInfoCode;
+        wchar_t *deviceBehaviorInfoCode;
         /// Optional element 'ns2:velocityInfoCode' of XML schema type 'xsd:string'
-        std::string *velocityInfoCode;
+        wchar_t *velocityInfoCode;
         /// Optional element 'ns2:identityInfoCode' of XML schema type 'xsd:string'
-        std::string *identityInfoCode;
+        wchar_t *identityInfoCode;
         /// Optional element 'ns2:ipCountry' of XML schema type 'xsd:string'
-        std::string *ipCountry;
+        wchar_t *ipCountry;
         /// Optional element 'ns2:ipState' of XML schema type 'xsd:string'
-        std::string *ipState;
+        wchar_t *ipState;
         /// Optional element 'ns2:ipCity' of XML schema type 'xsd:string'
-        std::string *ipCity;
+        wchar_t *ipCity;
         /// Optional element 'ns2:ipRoutingMethod' of XML schema type 'xsd:string'
-        std::string *ipRoutingMethod;
+        wchar_t *ipRoutingMethod;
         /// Optional element 'ns2:ipAnonymizerStatus' of XML schema type 'xsd:string'
-        std::string *ipAnonymizerStatus;
+        wchar_t *ipAnonymizerStatus;
         /// Optional element 'ns2:ipCarrier' of XML schema type 'xsd:string'
-        std::string *ipCarrier;
+        wchar_t *ipCarrier;
         /// Optional element 'ns2:ipOrganization' of XML schema type 'xsd:string'
-        std::string *ipOrganization;
+        wchar_t *ipOrganization;
         /// Optional element 'ns2:scoreModelUsed' of XML schema type 'xsd:string'
-        std::string *scoreModelUsed;
+        wchar_t *scoreModelUsed;
         /// Optional element 'ns2:cardBin' of XML schema type 'xsd:string'
-        std::string *cardBin;
+        wchar_t *cardBin;
         /// Optional element 'ns2:binCountry' of XML schema type 'xsd:string'
-        std::string *binCountry;
+        wchar_t *binCountry;
         /// Optional element 'ns2:cardAccountType' of XML schema type 'xsd:string'
-        std::string *cardAccountType;
+        wchar_t *cardAccountType;
         /// Optional element 'ns2:cardScheme' of XML schema type 'xsd:string'
-        std::string *cardScheme;
+        wchar_t *cardScheme;
         /// Optional element 'ns2:cardIssuer' of XML schema type 'xsd:string'
-        std::string *cardIssuer;
+        wchar_t *cardIssuer;
         /// Optional element 'ns2:deviceFingerprint' of XML schema type 'ns2:DeviceFingerprint'
         ns2__DeviceFingerprint *deviceFingerprint;
         /// Context that manages this object
@@ -12336,78 +12336,78 @@ class SOAP_CMAC ns2__AFSReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:496 */
 #ifndef SOAP_TYPE_ns2__DAVReply
-#define SOAP_TYPE_ns2__DAVReply (443)
+#define SOAP_TYPE_ns2__DAVReply (444)
 /* complex XML schema type 'ns2:DAVReply': */
 class SOAP_CMAC ns2__DAVReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:addressType' of XML schema type 'xsd:string'
-        std::string *addressType;
+        wchar_t *addressType;
         /// Optional element 'ns2:apartmentInfo' of XML schema type 'xsd:string'
-        std::string *apartmentInfo;
+        wchar_t *apartmentInfo;
         /// Optional element 'ns2:barCode' of XML schema type 'xsd:string'
-        std::string *barCode;
+        wchar_t *barCode;
         /// Optional element 'ns2:barCodeCheckDigit' of XML schema type 'xsd:string'
-        std::string *barCodeCheckDigit;
+        wchar_t *barCodeCheckDigit;
         /// Optional element 'ns2:careOf' of XML schema type 'xsd:string'
-        std::string *careOf;
+        wchar_t *careOf;
         /// Optional element 'ns2:cityInfo' of XML schema type 'xsd:string'
-        std::string *cityInfo;
+        wchar_t *cityInfo;
         /// Optional element 'ns2:countryInfo' of XML schema type 'xsd:string'
-        std::string *countryInfo;
+        wchar_t *countryInfo;
         /// Optional element 'ns2:directionalInfo' of XML schema type 'xsd:string'
-        std::string *directionalInfo;
+        wchar_t *directionalInfo;
         /// Optional element 'ns2:lvrInfo' of XML schema type 'xsd:string'
-        std::string *lvrInfo;
+        wchar_t *lvrInfo;
         /// Optional element 'ns2:matchScore' of XML schema type 'xsd:integer'
-        std::string *matchScore;
+        wchar_t *matchScore;
         /// Optional element 'ns2:standardizedAddress1' of XML schema type 'xsd:string'
-        std::string *standardizedAddress1;
+        wchar_t *standardizedAddress1;
         /// Optional element 'ns2:standardizedAddress2' of XML schema type 'xsd:string'
-        std::string *standardizedAddress2;
+        wchar_t *standardizedAddress2;
         /// Optional element 'ns2:standardizedAddress3' of XML schema type 'xsd:string'
-        std::string *standardizedAddress3;
+        wchar_t *standardizedAddress3;
         /// Optional element 'ns2:standardizedAddress4' of XML schema type 'xsd:string'
-        std::string *standardizedAddress4;
+        wchar_t *standardizedAddress4;
         /// Optional element 'ns2:standardizedAddressNoApt' of XML schema type 'xsd:string'
-        std::string *standardizedAddressNoApt;
+        wchar_t *standardizedAddressNoApt;
         /// Optional element 'ns2:standardizedCity' of XML schema type 'xsd:string'
-        std::string *standardizedCity;
+        wchar_t *standardizedCity;
         /// Optional element 'ns2:standardizedCounty' of XML schema type 'xsd:string'
-        std::string *standardizedCounty;
+        wchar_t *standardizedCounty;
         /// Optional element 'ns2:standardizedCSP' of XML schema type 'xsd:string'
-        std::string *standardizedCSP;
+        wchar_t *standardizedCSP;
         /// Optional element 'ns2:standardizedState' of XML schema type 'xsd:string'
-        std::string *standardizedState;
+        wchar_t *standardizedState;
         /// Optional element 'ns2:standardizedPostalCode' of XML schema type 'xsd:string'
-        std::string *standardizedPostalCode;
+        wchar_t *standardizedPostalCode;
         /// Optional element 'ns2:standardizedCountry' of XML schema type 'xsd:string'
-        std::string *standardizedCountry;
+        wchar_t *standardizedCountry;
         /// Optional element 'ns2:standardizedISOCountry' of XML schema type 'xsd:string'
-        std::string *standardizedISOCountry;
+        wchar_t *standardizedISOCountry;
         /// Optional element 'ns2:stateInfo' of XML schema type 'xsd:string'
-        std::string *stateInfo;
+        wchar_t *stateInfo;
         /// Optional element 'ns2:streetInfo' of XML schema type 'xsd:string'
-        std::string *streetInfo;
+        wchar_t *streetInfo;
         /// Optional element 'ns2:suffixInfo' of XML schema type 'xsd:string'
-        std::string *suffixInfo;
+        wchar_t *suffixInfo;
         /// Optional element 'ns2:postalCodeInfo' of XML schema type 'xsd:string'
-        std::string *postalCodeInfo;
+        wchar_t *postalCodeInfo;
         /// Optional element 'ns2:overallInfo' of XML schema type 'xsd:string'
-        std::string *overallInfo;
+        wchar_t *overallInfo;
         /// Optional element 'ns2:usInfo' of XML schema type 'xsd:string'
-        std::string *usInfo;
+        wchar_t *usInfo;
         /// Optional element 'ns2:caInfo' of XML schema type 'xsd:string'
-        std::string *caInfo;
+        wchar_t *caInfo;
         /// Optional element 'ns2:intlInfo' of XML schema type 'xsd:string'
-        std::string *intlInfo;
+        wchar_t *intlInfo;
         /// Optional element 'ns2:usErrorInfo' of XML schema type 'xsd:string'
-        std::string *usErrorInfo;
+        wchar_t *usErrorInfo;
         /// Optional element 'ns2:caErrorInfo' of XML schema type 'xsd:string'
-        std::string *caErrorInfo;
+        wchar_t *caErrorInfo;
         /// Optional element 'ns2:intlErrorInfo' of XML schema type 'xsd:string'
-        std::string *intlErrorInfo;
+        wchar_t *intlErrorInfo;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12438,18 +12438,18 @@ class SOAP_CMAC ns2__DAVReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:498 */
 #ifndef SOAP_TYPE_ns2__DeniedPartiesMatch
-#define SOAP_TYPE_ns2__DeniedPartiesMatch (444)
+#define SOAP_TYPE_ns2__DeniedPartiesMatch (445)
 /* complex XML schema type 'ns2:DeniedPartiesMatch': */
 class SOAP_CMAC ns2__DeniedPartiesMatch {
       public:
         /// Optional element 'ns2:list' of XML schema type 'xsd:string'
-        std::string *list;
+        wchar_t *list;
         /// Sequence of 0 to 100 elements 'ns2:name' of XML schema type 'xsd:string'
-        std::vector<std::string> name;
+        std::vector<wchar_t *> name;
         /// Sequence of 0 to 100 elements 'ns2:address' of XML schema type 'xsd:string'
-        std::vector<std::string> address;
+        std::vector<wchar_t *> address;
         /// Sequence of 0 to 100 elements 'ns2:program' of XML schema type 'xsd:string'
-        std::vector<std::string> program;
+        std::vector<wchar_t *> program;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12480,16 +12480,16 @@ class SOAP_CMAC ns2__DeniedPartiesMatch {
 
 /* CyberSourceTransaction_nvp_1.183.h:500 */
 #ifndef SOAP_TYPE_ns2__ExportReply
-#define SOAP_TYPE_ns2__ExportReply (445)
+#define SOAP_TYPE_ns2__ExportReply (446)
 /* complex XML schema type 'ns2:ExportReply': */
 class SOAP_CMAC ns2__ExportReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:ipCountryConfidence' of XML schema type 'xsd:integer'
-        std::string *ipCountryConfidence;
+        wchar_t *ipCountryConfidence;
         /// Optional element 'ns2:infoCode' of XML schema type 'xsd:string'
-        std::string *infoCode;
+        wchar_t *infoCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12520,24 +12520,24 @@ class SOAP_CMAC ns2__ExportReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:502 */
 #ifndef SOAP_TYPE_ns2__FXQuote
-#define SOAP_TYPE_ns2__FXQuote (446)
+#define SOAP_TYPE_ns2__FXQuote (447)
 /* complex XML schema type 'ns2:FXQuote': */
 class SOAP_CMAC ns2__FXQuote {
       public:
         /// Optional element 'ns2:id' of XML schema type 'xsd:string'
-        std::string *id;
+        wchar_t *id;
         /// Optional element 'ns2:rate' of XML schema type 'xsd:string'
-        std::string *rate;
+        wchar_t *rate;
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Optional element 'ns2:expirationDateTime' of XML schema type 'ns2:dateTime'
-        std::string *expirationDateTime;
+        wchar_t *expirationDateTime;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:fundingCurrency' of XML schema type 'xsd:string'
-        std::string *fundingCurrency;
+        wchar_t *fundingCurrency;
         /// Optional element 'ns2:receivedDateTime' of XML schema type 'ns2:dateTime'
-        std::string *receivedDateTime;
+        wchar_t *receivedDateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12568,12 +12568,12 @@ class SOAP_CMAC ns2__FXQuote {
 
 /* CyberSourceTransaction_nvp_1.183.h:504 */
 #ifndef SOAP_TYPE_ns2__FXRatesReply
-#define SOAP_TYPE_ns2__FXRatesReply (447)
+#define SOAP_TYPE_ns2__FXRatesReply (448)
 /* complex XML schema type 'ns2:FXRatesReply': */
 class SOAP_CMAC ns2__FXRatesReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Sequence of 0 to 999 elements 'ns2:quote' of XML schema type 'ns2:FXQuote'
         std::vector<ns2__FXQuote> quote;
         /// Context that manages this object
@@ -12606,44 +12606,44 @@ class SOAP_CMAC ns2__FXRatesReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:506 */
 #ifndef SOAP_TYPE_ns2__BankTransferReply
-#define SOAP_TYPE_ns2__BankTransferReply (448)
+#define SOAP_TYPE_ns2__BankTransferReply (449)
 /* complex XML schema type 'ns2:BankTransferReply': */
 class SOAP_CMAC ns2__BankTransferReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:accountHolder' of XML schema type 'xsd:string'
-        std::string *accountHolder;
+        wchar_t *accountHolder;
         /// Optional element 'ns2:accountNumber' of XML schema type 'xsd:string'
-        std::string *accountNumber;
+        wchar_t *accountNumber;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:bankName' of XML schema type 'xsd:string'
-        std::string *bankName;
+        wchar_t *bankName;
         /// Optional element 'ns2:bankCity' of XML schema type 'xsd:string'
-        std::string *bankCity;
+        wchar_t *bankCity;
         /// Optional element 'ns2:bankCountry' of XML schema type 'xsd:string'
-        std::string *bankCountry;
+        wchar_t *bankCountry;
         /// Optional element 'ns2:paymentReference' of XML schema type 'xsd:string'
-        std::string *paymentReference;
+        wchar_t *paymentReference;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:bankSwiftCode' of XML schema type 'xsd:string'
-        std::string *bankSwiftCode;
+        wchar_t *bankSwiftCode;
         /// Optional element 'ns2:bankSpecialID' of XML schema type 'xsd:string'
-        std::string *bankSpecialID;
+        wchar_t *bankSpecialID;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:iban' of XML schema type 'xsd:string'
-        std::string *iban;
+        wchar_t *iban;
         /// Optional element 'ns2:bankCode' of XML schema type 'xsd:string'
-        std::string *bankCode;
+        wchar_t *bankCode;
         /// Optional element 'ns2:branchCode' of XML schema type 'xsd:string'
-        std::string *branchCode;
+        wchar_t *branchCode;
         /// Optional element 'ns2:reconciliationReferenceNumber' of XML schema type 'xsd:string'
-        std::string *reconciliationReferenceNumber;
+        wchar_t *reconciliationReferenceNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12674,26 +12674,26 @@ class SOAP_CMAC ns2__BankTransferReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:508 */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeReply
-#define SOAP_TYPE_ns2__BankTransferRealTimeReply (449)
+#define SOAP_TYPE_ns2__BankTransferRealTimeReply (450)
 /* complex XML schema type 'ns2:BankTransferRealTimeReply': */
 class SOAP_CMAC ns2__BankTransferRealTimeReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:formMethod' of XML schema type 'xsd:string'
-        std::string *formMethod;
+        wchar_t *formMethod;
         /// Optional element 'ns2:formAction' of XML schema type 'xsd:string'
-        std::string *formAction;
+        wchar_t *formAction;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:paymentReference' of XML schema type 'xsd:string'
-        std::string *paymentReference;
+        wchar_t *paymentReference;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:reconciliationReferenceNumber' of XML schema type 'xsd:string'
-        std::string *reconciliationReferenceNumber;
+        wchar_t *reconciliationReferenceNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12724,22 +12724,22 @@ class SOAP_CMAC ns2__BankTransferRealTimeReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:510 */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateReply
-#define SOAP_TYPE_ns2__DirectDebitMandateReply (450)
+#define SOAP_TYPE_ns2__DirectDebitMandateReply (451)
 /* complex XML schema type 'ns2:DirectDebitMandateReply': */
 class SOAP_CMAC ns2__DirectDebitMandateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string *mandateID;
+        wchar_t *mandateID;
         /// Optional element 'ns2:mandateMaturationDate' of XML schema type 'xsd:string'
-        std::string *mandateMaturationDate;
+        wchar_t *mandateMaturationDate;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12770,24 +12770,24 @@ class SOAP_CMAC ns2__DirectDebitMandateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:512 */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundReply
-#define SOAP_TYPE_ns2__BankTransferRefundReply (451)
+#define SOAP_TYPE_ns2__BankTransferRefundReply (452)
 /* complex XML schema type 'ns2:BankTransferRefundReply': */
 class SOAP_CMAC ns2__BankTransferRefundReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:iban' of XML schema type 'xsd:string'
-        std::string *iban;
+        wchar_t *iban;
         /// Optional element 'ns2:reconciliationReferenceNumber' of XML schema type 'xsd:string'
-        std::string *reconciliationReferenceNumber;
+        wchar_t *reconciliationReferenceNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12818,30 +12818,30 @@ class SOAP_CMAC ns2__BankTransferRefundReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:514 */
 #ifndef SOAP_TYPE_ns2__DirectDebitReply
-#define SOAP_TYPE_ns2__DirectDebitReply (452)
+#define SOAP_TYPE_ns2__DirectDebitReply (453)
 /* complex XML schema type 'ns2:DirectDebitReply': */
 class SOAP_CMAC ns2__DirectDebitReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:mandateAuthenticationDate' of XML schema type 'xsd:string'
-        std::string *mandateAuthenticationDate;
+        wchar_t *mandateAuthenticationDate;
         /// Optional element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string *mandateID;
+        wchar_t *mandateID;
         /// Optional element 'ns2:iban' of XML schema type 'xsd:string'
-        std::string *iban;
+        wchar_t *iban;
         /// Optional element 'ns2:reconciliationReferenceNumber' of XML schema type 'xsd:string'
-        std::string *reconciliationReferenceNumber;
+        wchar_t *reconciliationReferenceNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12872,24 +12872,24 @@ class SOAP_CMAC ns2__DirectDebitReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:516 */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateReply
-#define SOAP_TYPE_ns2__DirectDebitValidateReply (453)
+#define SOAP_TYPE_ns2__DirectDebitValidateReply (454)
 /* complex XML schema type 'ns2:DirectDebitValidateReply': */
 class SOAP_CMAC ns2__DirectDebitValidateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:iban' of XML schema type 'xsd:string'
-        std::string *iban;
+        wchar_t *iban;
         /// Optional element 'ns2:bankSwiftCode' of XML schema type 'xsd:string'
-        std::string *bankSwiftCode;
+        wchar_t *bankSwiftCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12920,26 +12920,26 @@ class SOAP_CMAC ns2__DirectDebitValidateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:518 */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundReply
-#define SOAP_TYPE_ns2__DirectDebitRefundReply (454)
+#define SOAP_TYPE_ns2__DirectDebitRefundReply (455)
 /* complex XML schema type 'ns2:DirectDebitRefundReply': */
 class SOAP_CMAC ns2__DirectDebitRefundReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:iban' of XML schema type 'xsd:string'
-        std::string *iban;
+        wchar_t *iban;
         /// Optional element 'ns2:reconciliationReferenceNumber' of XML schema type 'xsd:string'
-        std::string *reconciliationReferenceNumber;
+        wchar_t *reconciliationReferenceNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -12970,22 +12970,22 @@ class SOAP_CMAC ns2__DirectDebitRefundReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:520 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateReply
-#define SOAP_TYPE_ns2__PaySubscriptionCreateReply (455)
+#define SOAP_TYPE_ns2__PaySubscriptionCreateReply (456)
 /* complex XML schema type 'ns2:PaySubscriptionCreateReply': */
 class SOAP_CMAC ns2__PaySubscriptionCreateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Required element 'ns2:subscriptionID' of XML schema type 'xsd:string'
-        std::string subscriptionID;
+        wchar_t *subscriptionID;
         /// Optional element 'ns2:instrumentIdentifierID' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierID;
+        wchar_t *instrumentIdentifierID;
         /// Optional element 'ns2:instrumentIdentifierStatus' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierStatus;
+        wchar_t *instrumentIdentifierStatus;
         /// Optional element 'ns2:instrumentIdentifierNew' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierNew;
+        wchar_t *instrumentIdentifierNew;
         /// Optional element 'ns2:instrumentIdentifierSuccessorID' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierSuccessorID;
+        wchar_t *instrumentIdentifierSuccessorID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13016,26 +13016,26 @@ class SOAP_CMAC ns2__PaySubscriptionCreateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:522 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateReply
-#define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (456)
+#define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (457)
 /* complex XML schema type 'ns2:PaySubscriptionUpdateReply': */
 class SOAP_CMAC ns2__PaySubscriptionUpdateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Required element 'ns2:subscriptionID' of XML schema type 'xsd:string'
-        std::string subscriptionID;
+        wchar_t *subscriptionID;
         /// Optional element 'ns2:subscriptionIDNew' of XML schema type 'xsd:string'
-        std::string *subscriptionIDNew;
+        wchar_t *subscriptionIDNew;
         /// Optional element 'ns2:ownerMerchantID' of XML schema type 'xsd:string'
-        std::string *ownerMerchantID;
+        wchar_t *ownerMerchantID;
         /// Optional element 'ns2:instrumentIdentifierID' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierID;
+        wchar_t *instrumentIdentifierID;
         /// Optional element 'ns2:instrumentIdentifierStatus' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierStatus;
+        wchar_t *instrumentIdentifierStatus;
         /// Optional element 'ns2:instrumentIdentifierNew' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierNew;
+        wchar_t *instrumentIdentifierNew;
         /// Optional element 'ns2:instrumentIdentifierSuccessorID' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierSuccessorID;
+        wchar_t *instrumentIdentifierSuccessorID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13066,14 +13066,14 @@ class SOAP_CMAC ns2__PaySubscriptionUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:524 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply
-#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (457)
+#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (458)
 /* complex XML schema type 'ns2:PaySubscriptionEventUpdateReply': */
 class SOAP_CMAC ns2__PaySubscriptionEventUpdateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:ownerMerchantID' of XML schema type 'xsd:string'
-        std::string *ownerMerchantID;
+        wchar_t *ownerMerchantID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13104,154 +13104,154 @@ class SOAP_CMAC ns2__PaySubscriptionEventUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:526 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveReply
-#define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (458)
+#define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (459)
 /* complex XML schema type 'ns2:PaySubscriptionRetrieveReply': */
 class SOAP_CMAC ns2__PaySubscriptionRetrieveReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:approvalRequired' of XML schema type 'xsd:string'
-        std::string *approvalRequired;
+        wchar_t *approvalRequired;
         /// Optional element 'ns2:automaticRenew' of XML schema type 'xsd:string'
-        std::string *automaticRenew;
+        wchar_t *automaticRenew;
         /// Optional element 'ns2:cardAccountNumber' of XML schema type 'xsd:string'
-        std::string *cardAccountNumber;
+        wchar_t *cardAccountNumber;
         /// Optional element 'ns2:cardExpirationMonth' of XML schema type 'xsd:string'
-        std::string *cardExpirationMonth;
+        wchar_t *cardExpirationMonth;
         /// Optional element 'ns2:cardExpirationYear' of XML schema type 'xsd:string'
-        std::string *cardExpirationYear;
+        wchar_t *cardExpirationYear;
         /// Optional element 'ns2:cardIssueNumber' of XML schema type 'xsd:string'
-        std::string *cardIssueNumber;
+        wchar_t *cardIssueNumber;
         /// Optional element 'ns2:cardStartMonth' of XML schema type 'xsd:string'
-        std::string *cardStartMonth;
+        wchar_t *cardStartMonth;
         /// Optional element 'ns2:cardStartYear' of XML schema type 'xsd:string'
-        std::string *cardStartYear;
+        wchar_t *cardStartYear;
         /// Optional element 'ns2:cardType' of XML schema type 'xsd:string'
-        std::string *cardType;
+        wchar_t *cardType;
         /// Optional element 'ns2:checkAccountNumber' of XML schema type 'xsd:string'
-        std::string *checkAccountNumber;
+        wchar_t *checkAccountNumber;
         /// Optional element 'ns2:checkAccountType' of XML schema type 'xsd:string'
-        std::string *checkAccountType;
+        wchar_t *checkAccountType;
         /// Optional element 'ns2:checkBankTransitNumber' of XML schema type 'xsd:string'
-        std::string *checkBankTransitNumber;
+        wchar_t *checkBankTransitNumber;
         /// Optional element 'ns2:checkSecCode' of XML schema type 'xsd:string'
-        std::string *checkSecCode;
+        wchar_t *checkSecCode;
         /// Optional element 'ns2:checkAuthenticateID' of XML schema type 'xsd:string'
-        std::string *checkAuthenticateID;
+        wchar_t *checkAuthenticateID;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:comments' of XML schema type 'xsd:string'
-        std::string *comments;
+        wchar_t *comments;
         /// Optional element 'ns2:companyName' of XML schema type 'xsd:string'
-        std::string *companyName;
+        wchar_t *companyName;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:customerAccountID' of XML schema type 'xsd:string'
-        std::string *customerAccountID;
+        wchar_t *customerAccountID;
         /// Optional element 'ns2:email' of XML schema type 'xsd:string'
-        std::string *email;
+        wchar_t *email;
         /// Optional element 'ns2:endDate' of XML schema type 'xsd:string'
-        std::string *endDate;
+        wchar_t *endDate;
         /// Optional element 'ns2:firstName' of XML schema type 'xsd:string'
-        std::string *firstName;
+        wchar_t *firstName;
         /// Optional element 'ns2:frequency' of XML schema type 'xsd:string'
-        std::string *frequency;
+        wchar_t *frequency;
         /// Optional element 'ns2:lastName' of XML schema type 'xsd:string'
-        std::string *lastName;
+        wchar_t *lastName;
         /// Optional element 'ns2:merchantReferenceCode' of XML schema type 'xsd:string'
-        std::string *merchantReferenceCode;
+        wchar_t *merchantReferenceCode;
         /// Optional element 'ns2:paymentMethod' of XML schema type 'xsd:string'
-        std::string *paymentMethod;
+        wchar_t *paymentMethod;
         /// Optional element 'ns2:paymentsRemaining' of XML schema type 'xsd:string'
-        std::string *paymentsRemaining;
+        wchar_t *paymentsRemaining;
         /// Optional element 'ns2:phoneNumber' of XML schema type 'xsd:string'
-        std::string *phoneNumber;
+        wchar_t *phoneNumber;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:recurringAmount' of XML schema type 'xsd:string'
-        std::string *recurringAmount;
+        wchar_t *recurringAmount;
         /// Optional element 'ns2:setupAmount' of XML schema type 'xsd:string'
-        std::string *setupAmount;
+        wchar_t *setupAmount;
         /// Optional element 'ns2:startDate' of XML schema type 'xsd:string'
-        std::string *startDate;
+        wchar_t *startDate;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:street1' of XML schema type 'xsd:string'
-        std::string *street1;
+        wchar_t *street1;
         /// Optional element 'ns2:street2' of XML schema type 'xsd:string'
-        std::string *street2;
+        wchar_t *street2;
         /// Optional element 'ns2:subscriptionID' of XML schema type 'xsd:string'
-        std::string *subscriptionID;
+        wchar_t *subscriptionID;
         /// Optional element 'ns2:subscriptionIDNew' of XML schema type 'xsd:string'
-        std::string *subscriptionIDNew;
+        wchar_t *subscriptionIDNew;
         /// Optional element 'ns2:title' of XML schema type 'xsd:string'
-        std::string *title;
+        wchar_t *title;
         /// Optional element 'ns2:totalPayments' of XML schema type 'xsd:string'
-        std::string *totalPayments;
+        wchar_t *totalPayments;
         /// Optional element 'ns2:shipToFirstName' of XML schema type 'xsd:string'
-        std::string *shipToFirstName;
+        wchar_t *shipToFirstName;
         /// Optional element 'ns2:shipToLastName' of XML schema type 'xsd:string'
-        std::string *shipToLastName;
+        wchar_t *shipToLastName;
         /// Optional element 'ns2:shipToStreet1' of XML schema type 'xsd:string'
-        std::string *shipToStreet1;
+        wchar_t *shipToStreet1;
         /// Optional element 'ns2:shipToStreet2' of XML schema type 'xsd:string'
-        std::string *shipToStreet2;
+        wchar_t *shipToStreet2;
         /// Optional element 'ns2:shipToCity' of XML schema type 'xsd:string'
-        std::string *shipToCity;
+        wchar_t *shipToCity;
         /// Optional element 'ns2:shipToState' of XML schema type 'xsd:string'
-        std::string *shipToState;
+        wchar_t *shipToState;
         /// Optional element 'ns2:shipToPostalCode' of XML schema type 'xsd:string'
-        std::string *shipToPostalCode;
+        wchar_t *shipToPostalCode;
         /// Optional element 'ns2:shipToCompany' of XML schema type 'xsd:string'
-        std::string *shipToCompany;
+        wchar_t *shipToCompany;
         /// Optional element 'ns2:shipToCountry' of XML schema type 'xsd:string'
-        std::string *shipToCountry;
+        wchar_t *shipToCountry;
         /// Optional element 'ns2:billPayment' of XML schema type 'xsd:string'
-        std::string *billPayment;
+        wchar_t *billPayment;
         /// Optional element 'ns2:merchantDefinedDataField1' of XML schema type 'xsd:string'
-        std::string *merchantDefinedDataField1;
+        wchar_t *merchantDefinedDataField1;
         /// Optional element 'ns2:merchantDefinedDataField2' of XML schema type 'xsd:string'
-        std::string *merchantDefinedDataField2;
+        wchar_t *merchantDefinedDataField2;
         /// Optional element 'ns2:merchantDefinedDataField3' of XML schema type 'xsd:string'
-        std::string *merchantDefinedDataField3;
+        wchar_t *merchantDefinedDataField3;
         /// Optional element 'ns2:merchantDefinedDataField4' of XML schema type 'xsd:string'
-        std::string *merchantDefinedDataField4;
+        wchar_t *merchantDefinedDataField4;
         /// Optional element 'ns2:merchantSecureDataField1' of XML schema type 'xsd:string'
-        std::string *merchantSecureDataField1;
+        wchar_t *merchantSecureDataField1;
         /// Optional element 'ns2:merchantSecureDataField2' of XML schema type 'xsd:string'
-        std::string *merchantSecureDataField2;
+        wchar_t *merchantSecureDataField2;
         /// Optional element 'ns2:merchantSecureDataField3' of XML schema type 'xsd:string'
-        std::string *merchantSecureDataField3;
+        wchar_t *merchantSecureDataField3;
         /// Optional element 'ns2:merchantSecureDataField4' of XML schema type 'xsd:string'
-        std::string *merchantSecureDataField4;
+        wchar_t *merchantSecureDataField4;
         /// Optional element 'ns2:ownerMerchantID' of XML schema type 'xsd:string'
-        std::string *ownerMerchantID;
+        wchar_t *ownerMerchantID;
         /// Optional element 'ns2:companyTaxID' of XML schema type 'xsd:string'
-        std::string *companyTaxID;
+        wchar_t *companyTaxID;
         /// Optional element 'ns2:driversLicenseNumber' of XML schema type 'xsd:string'
-        std::string *driversLicenseNumber;
+        wchar_t *driversLicenseNumber;
         /// Optional element 'ns2:driversLicenseState' of XML schema type 'xsd:string'
-        std::string *driversLicenseState;
+        wchar_t *driversLicenseState;
         /// Optional element 'ns2:dateOfBirth' of XML schema type 'xsd:string'
-        std::string *dateOfBirth;
+        wchar_t *dateOfBirth;
         /// Optional element 'ns2:instrumentIdentifierID' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierID;
+        wchar_t *instrumentIdentifierID;
         /// Optional element 'ns2:instrumentIdentifierStatus' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierStatus;
+        wchar_t *instrumentIdentifierStatus;
         /// Optional element 'ns2:instrumentIdentifierSuccessorID' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierSuccessorID;
+        wchar_t *instrumentIdentifierSuccessorID;
         /// Optional element 'ns2:subsequentAuthTransactionID' of XML schema type 'xsd:string'
-        std::string *subsequentAuthTransactionID;
+        wchar_t *subsequentAuthTransactionID;
         /// Optional element 'ns2:latestCardSuffix' of XML schema type 'xsd:string'
-        std::string *latestCardSuffix;
+        wchar_t *latestCardSuffix;
         /// Optional element 'ns2:latestCardExpirationMonth' of XML schema type 'xsd:string'
-        std::string *latestCardExpirationMonth;
+        wchar_t *latestCardExpirationMonth;
         /// Optional element 'ns2:latestCardExpirationYear' of XML schema type 'xsd:string'
-        std::string *latestCardExpirationYear;
+        wchar_t *latestCardExpirationYear;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13282,16 +13282,16 @@ class SOAP_CMAC ns2__PaySubscriptionRetrieveReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:528 */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteReply
-#define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (459)
+#define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (460)
 /* complex XML schema type 'ns2:PaySubscriptionDeleteReply': */
 class SOAP_CMAC ns2__PaySubscriptionDeleteReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Required element 'ns2:subscriptionID' of XML schema type 'xsd:string'
-        std::string subscriptionID;
+        wchar_t *subscriptionID;
         /// Optional element 'ns2:instrumentIdentifierID' of XML schema type 'xsd:string'
-        std::string *instrumentIdentifierID;
+        wchar_t *instrumentIdentifierID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13322,20 +13322,20 @@ class SOAP_CMAC ns2__PaySubscriptionDeleteReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:530 */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentReply
-#define SOAP_TYPE_ns2__PayPalPaymentReply (460)
+#define SOAP_TYPE_ns2__PayPalPaymentReply (461)
 /* complex XML schema type 'ns2:PayPalPaymentReply': */
 class SOAP_CMAC ns2__PayPalPaymentReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:secureData' of XML schema type 'xsd:string'
-        std::string *secureData;
+        wchar_t *secureData;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13366,20 +13366,20 @@ class SOAP_CMAC ns2__PayPalPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:532 */
 #ifndef SOAP_TYPE_ns2__PayPalCreditReply
-#define SOAP_TYPE_ns2__PayPalCreditReply (461)
+#define SOAP_TYPE_ns2__PayPalCreditReply (462)
 /* complex XML schema type 'ns2:PayPalCreditReply': */
 class SOAP_CMAC ns2__PayPalCreditReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13410,20 +13410,20 @@ class SOAP_CMAC ns2__PayPalCreditReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:534 */
 #ifndef SOAP_TYPE_ns2__VoidReply
-#define SOAP_TYPE_ns2__VoidReply (462)
+#define SOAP_TYPE_ns2__VoidReply (463)
 /* complex XML schema type 'ns2:VoidReply': */
 class SOAP_CMAC ns2__VoidReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:reversalSubmitted' of XML schema type 'ns2:boolean'
-        std::string *reversalSubmitted;
+        wchar_t *reversalSubmitted;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13454,26 +13454,26 @@ class SOAP_CMAC ns2__VoidReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:536 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReply
-#define SOAP_TYPE_ns2__PinlessDebitReply (463)
+#define SOAP_TYPE_ns2__PinlessDebitReply (464)
 /* complex XML schema type 'ns2:PinlessDebitReply': */
 class SOAP_CMAC ns2__PinlessDebitReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:receiptNumber' of XML schema type 'xsd:string'
-        std::string *receiptNumber;
+        wchar_t *receiptNumber;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:ownerMerchantID' of XML schema type 'xsd:string'
-        std::string *ownerMerchantID;
+        wchar_t *ownerMerchantID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13504,16 +13504,16 @@ class SOAP_CMAC ns2__PinlessDebitReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:538 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateReply
-#define SOAP_TYPE_ns2__PinlessDebitValidateReply (464)
+#define SOAP_TYPE_ns2__PinlessDebitValidateReply (465)
 /* complex XML schema type 'ns2:PinlessDebitValidateReply': */
 class SOAP_CMAC ns2__PinlessDebitValidateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13544,20 +13544,20 @@ class SOAP_CMAC ns2__PinlessDebitValidateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:540 */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalReply
-#define SOAP_TYPE_ns2__PinlessDebitReversalReply (465)
+#define SOAP_TYPE_ns2__PinlessDebitReversalReply (466)
 /* complex XML schema type 'ns2:PinlessDebitReversalReply': */
 class SOAP_CMAC ns2__PinlessDebitReversalReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13588,22 +13588,22 @@ class SOAP_CMAC ns2__PinlessDebitReversalReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:542 */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateReply
-#define SOAP_TYPE_ns2__PayPalButtonCreateReply (466)
+#define SOAP_TYPE_ns2__PayPalButtonCreateReply (467)
 /* complex XML schema type 'ns2:PayPalButtonCreateReply': */
 class SOAP_CMAC ns2__PayPalButtonCreateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:encryptedFormData' of XML schema type 'xsd:string'
-        std::string *encryptedFormData;
+        wchar_t *encryptedFormData;
         /// Optional element 'ns2:unencryptedFormData' of XML schema type 'xsd:string'
-        std::string *unencryptedFormData;
+        wchar_t *unencryptedFormData;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:buttonType' of XML schema type 'xsd:string'
-        std::string *buttonType;
+        wchar_t *buttonType;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13634,58 +13634,58 @@ class SOAP_CMAC ns2__PayPalButtonCreateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:544 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply
-#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (467)
+#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (468)
 /* complex XML schema type 'ns2:PayPalPreapprovedPaymentReply': */
 class SOAP_CMAC ns2__PayPalPreapprovedPaymentReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:payerStatus' of XML schema type 'xsd:string'
-        std::string *payerStatus;
+        wchar_t *payerStatus;
         /// Optional element 'ns2:payerName' of XML schema type 'xsd:string'
-        std::string *payerName;
+        wchar_t *payerName;
         /// Optional element 'ns2:transactionType' of XML schema type 'xsd:string'
-        std::string *transactionType;
+        wchar_t *transactionType;
         /// Optional element 'ns2:feeAmount' of XML schema type 'xsd:string'
-        std::string *feeAmount;
+        wchar_t *feeAmount;
         /// Optional element 'ns2:payerCountry' of XML schema type 'xsd:string'
-        std::string *payerCountry;
+        wchar_t *payerCountry;
         /// Optional element 'ns2:pendingReason' of XML schema type 'xsd:string'
-        std::string *pendingReason;
+        wchar_t *pendingReason;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:mpStatus' of XML schema type 'xsd:string'
-        std::string *mpStatus;
+        wchar_t *mpStatus;
         /// Optional element 'ns2:payer' of XML schema type 'xsd:string'
-        std::string *payer;
+        wchar_t *payer;
         /// Optional element 'ns2:payerID' of XML schema type 'xsd:string'
-        std::string *payerID;
+        wchar_t *payerID;
         /// Optional element 'ns2:payerBusiness' of XML schema type 'xsd:string'
-        std::string *payerBusiness;
+        wchar_t *payerBusiness;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:desc' of XML schema type 'xsd:string'
-        std::string *desc;
+        wchar_t *desc;
         /// Optional element 'ns2:mpMax' of XML schema type 'xsd:string'
-        std::string *mpMax;
+        wchar_t *mpMax;
         /// Optional element 'ns2:paymentType' of XML schema type 'xsd:string'
-        std::string *paymentType;
+        wchar_t *paymentType;
         /// Optional element 'ns2:paymentDate' of XML schema type 'xsd:string'
-        std::string *paymentDate;
+        wchar_t *paymentDate;
         /// Optional element 'ns2:paymentGrossAmount' of XML schema type 'xsd:string'
-        std::string *paymentGrossAmount;
+        wchar_t *paymentGrossAmount;
         /// Optional element 'ns2:settleAmount' of XML schema type 'xsd:string'
-        std::string *settleAmount;
+        wchar_t *settleAmount;
         /// Optional element 'ns2:taxAmount' of XML schema type 'xsd:string'
-        std::string *taxAmount;
+        wchar_t *taxAmount;
         /// Optional element 'ns2:exchangeRate' of XML schema type 'xsd:string'
-        std::string *exchangeRate;
+        wchar_t *exchangeRate;
         /// Optional element 'ns2:paymentSourceID' of XML schema type 'xsd:string'
-        std::string *paymentSourceID;
+        wchar_t *paymentSourceID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13716,36 +13716,36 @@ class SOAP_CMAC ns2__PayPalPreapprovedPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:546 */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply
-#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (468)
+#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (469)
 /* complex XML schema type 'ns2:PayPalPreapprovedUpdateReply': */
 class SOAP_CMAC ns2__PayPalPreapprovedUpdateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:payerStatus' of XML schema type 'xsd:string'
-        std::string *payerStatus;
+        wchar_t *payerStatus;
         /// Optional element 'ns2:payerName' of XML schema type 'xsd:string'
-        std::string *payerName;
+        wchar_t *payerName;
         /// Optional element 'ns2:payerCountry' of XML schema type 'xsd:string'
-        std::string *payerCountry;
+        wchar_t *payerCountry;
         /// Optional element 'ns2:mpStatus' of XML schema type 'xsd:string'
-        std::string *mpStatus;
+        wchar_t *mpStatus;
         /// Optional element 'ns2:payer' of XML schema type 'xsd:string'
-        std::string *payer;
+        wchar_t *payer;
         /// Optional element 'ns2:payerID' of XML schema type 'xsd:string'
-        std::string *payerID;
+        wchar_t *payerID;
         /// Optional element 'ns2:payerBusiness' of XML schema type 'xsd:string'
-        std::string *payerBusiness;
+        wchar_t *payerBusiness;
         /// Optional element 'ns2:desc' of XML schema type 'xsd:string'
-        std::string *desc;
+        wchar_t *desc;
         /// Optional element 'ns2:mpMax' of XML schema type 'xsd:string'
-        std::string *mpMax;
+        wchar_t *mpMax;
         /// Optional element 'ns2:paymentSourceID' of XML schema type 'xsd:string'
-        std::string *paymentSourceID;
+        wchar_t *paymentSourceID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13776,22 +13776,22 @@ class SOAP_CMAC ns2__PayPalPreapprovedUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:548 */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetReply
-#define SOAP_TYPE_ns2__PayPalEcSetReply (469)
+#define SOAP_TYPE_ns2__PayPalEcSetReply (470)
 /* complex XML schema type 'ns2:PayPalEcSetReply': */
 class SOAP_CMAC ns2__PayPalEcSetReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13822,78 +13822,78 @@ class SOAP_CMAC ns2__PayPalEcSetReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:550 */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsReply
-#define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (470)
+#define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (471)
 /* complex XML schema type 'ns2:PayPalEcGetDetailsReply': */
 class SOAP_CMAC ns2__PayPalEcGetDetailsReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:payer' of XML schema type 'xsd:string'
-        std::string *payer;
+        wchar_t *payer;
         /// Optional element 'ns2:payerId' of XML schema type 'xsd:string'
-        std::string *payerId;
+        wchar_t *payerId;
         /// Optional element 'ns2:payerStatus' of XML schema type 'xsd:string'
-        std::string *payerStatus;
+        wchar_t *payerStatus;
         /// Optional element 'ns2:payerSalutation' of XML schema type 'xsd:string'
-        std::string *payerSalutation;
+        wchar_t *payerSalutation;
         /// Optional element 'ns2:payerFirstname' of XML schema type 'xsd:string'
-        std::string *payerFirstname;
+        wchar_t *payerFirstname;
         /// Optional element 'ns2:payerMiddlename' of XML schema type 'xsd:string'
-        std::string *payerMiddlename;
+        wchar_t *payerMiddlename;
         /// Optional element 'ns2:payerLastname' of XML schema type 'xsd:string'
-        std::string *payerLastname;
+        wchar_t *payerLastname;
         /// Optional element 'ns2:payerSuffix' of XML schema type 'xsd:string'
-        std::string *payerSuffix;
+        wchar_t *payerSuffix;
         /// Optional element 'ns2:payerCountry' of XML schema type 'xsd:string'
-        std::string *payerCountry;
+        wchar_t *payerCountry;
         /// Optional element 'ns2:payerBusiness' of XML schema type 'xsd:string'
-        std::string *payerBusiness;
+        wchar_t *payerBusiness;
         /// Optional element 'ns2:shipToName' of XML schema type 'xsd:string'
-        std::string *shipToName;
+        wchar_t *shipToName;
         /// Optional element 'ns2:shipToAddress1' of XML schema type 'xsd:string'
-        std::string *shipToAddress1;
+        wchar_t *shipToAddress1;
         /// Optional element 'ns2:shipToAddress2' of XML schema type 'xsd:string'
-        std::string *shipToAddress2;
+        wchar_t *shipToAddress2;
         /// Optional element 'ns2:shipToCity' of XML schema type 'xsd:string'
-        std::string *shipToCity;
+        wchar_t *shipToCity;
         /// Optional element 'ns2:shipToState' of XML schema type 'xsd:string'
-        std::string *shipToState;
+        wchar_t *shipToState;
         /// Optional element 'ns2:shipToCountry' of XML schema type 'xsd:string'
-        std::string *shipToCountry;
+        wchar_t *shipToCountry;
         /// Optional element 'ns2:shipToZip' of XML schema type 'xsd:string'
-        std::string *shipToZip;
+        wchar_t *shipToZip;
         /// Optional element 'ns2:addressStatus' of XML schema type 'xsd:string'
-        std::string *addressStatus;
+        wchar_t *addressStatus;
         /// Optional element 'ns2:payerPhone' of XML schema type 'xsd:string'
-        std::string *payerPhone;
+        wchar_t *payerPhone;
         /// Optional element 'ns2:avsCode' of XML schema type 'xsd:string'
-        std::string *avsCode;
+        wchar_t *avsCode;
         /// Optional element 'ns2:street1' of XML schema type 'xsd:string'
-        std::string *street1;
+        wchar_t *street1;
         /// Optional element 'ns2:street2' of XML schema type 'xsd:string'
-        std::string *street2;
+        wchar_t *street2;
         /// Optional element 'ns2:city' of XML schema type 'xsd:string'
-        std::string *city;
+        wchar_t *city;
         /// Optional element 'ns2:state' of XML schema type 'xsd:string'
-        std::string *state;
+        wchar_t *state;
         /// Optional element 'ns2:postalCode' of XML schema type 'xsd:string'
-        std::string *postalCode;
+        wchar_t *postalCode;
         /// Optional element 'ns2:countryCode' of XML schema type 'xsd:string'
-        std::string *countryCode;
+        wchar_t *countryCode;
         /// Optional element 'ns2:countryName' of XML schema type 'xsd:string'
-        std::string *countryName;
+        wchar_t *countryName;
         /// Optional element 'ns2:addressID' of XML schema type 'xsd:string'
-        std::string *addressID;
+        wchar_t *addressID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Optional element 'ns2:paypalBillingAgreementAcceptedStatus' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementAcceptedStatus;
+        wchar_t *paypalBillingAgreementAcceptedStatus;
         /// Optional element 'ns2:paypalTaxAmount' of XML schema type 'xsd:string'
-        std::string *paypalTaxAmount;
+        wchar_t *paypalTaxAmount;
         /// Sequence of 0 to 1000 elements 'ns2:item' of XML schema type 'ns2:Item'
         std::vector<ns2__Item> item;
         /// Context that manages this object
@@ -13926,48 +13926,48 @@ class SOAP_CMAC ns2__PayPalEcGetDetailsReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:552 */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentReply
-#define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (471)
+#define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (472)
 /* complex XML schema type 'ns2:PayPalEcDoPaymentReply': */
 class SOAP_CMAC ns2__PayPalEcDoPaymentReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:transactionId' of XML schema type 'xsd:string'
-        std::string *transactionId;
+        wchar_t *transactionId;
         /// Optional element 'ns2:paypalTransactiontype' of XML schema type 'xsd:string'
-        std::string *paypalTransactiontype;
+        wchar_t *paypalTransactiontype;
         /// Optional element 'ns2:paymentType' of XML schema type 'xsd:string'
-        std::string *paymentType;
+        wchar_t *paymentType;
         /// Optional element 'ns2:paypalOrderTime' of XML schema type 'xsd:string'
-        std::string *paypalOrderTime;
+        wchar_t *paypalOrderTime;
         /// Optional element 'ns2:paypalAmount' of XML schema type 'xsd:string'
-        std::string *paypalAmount;
+        wchar_t *paypalAmount;
         /// Optional element 'ns2:paypalFeeAmount' of XML schema type 'xsd:string'
-        std::string *paypalFeeAmount;
+        wchar_t *paypalFeeAmount;
         /// Optional element 'ns2:paypalTaxAmount' of XML schema type 'xsd:string'
-        std::string *paypalTaxAmount;
+        wchar_t *paypalTaxAmount;
         /// Optional element 'ns2:paypalExchangeRate' of XML schema type 'xsd:string'
-        std::string *paypalExchangeRate;
+        wchar_t *paypalExchangeRate;
         /// Optional element 'ns2:paypalPaymentStatus' of XML schema type 'xsd:string'
-        std::string *paypalPaymentStatus;
+        wchar_t *paypalPaymentStatus;
         /// Optional element 'ns2:paypalPendingReason' of XML schema type 'xsd:string'
-        std::string *paypalPendingReason;
+        wchar_t *paypalPendingReason;
         /// Optional element 'ns2:orderId' of XML schema type 'xsd:string'
-        std::string *orderId;
+        wchar_t *orderId;
         /// Optional element 'ns2:paypalReasonCode' of XML schema type 'xsd:string'
-        std::string *paypalReasonCode;
+        wchar_t *paypalReasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:paypalBillingAgreementId' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementId;
+        wchar_t *paypalBillingAgreementId;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -13998,46 +13998,46 @@ class SOAP_CMAC ns2__PayPalEcDoPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:554 */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureReply
-#define SOAP_TYPE_ns2__PayPalDoCaptureReply (472)
+#define SOAP_TYPE_ns2__PayPalDoCaptureReply (473)
 /* complex XML schema type 'ns2:PayPalDoCaptureReply': */
 class SOAP_CMAC ns2__PayPalDoCaptureReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationId' of XML schema type 'xsd:string'
-        std::string *authorizationId;
+        wchar_t *authorizationId;
         /// Optional element 'ns2:transactionId' of XML schema type 'xsd:string'
-        std::string *transactionId;
+        wchar_t *transactionId;
         /// Optional element 'ns2:parentTransactionId' of XML schema type 'xsd:string'
-        std::string *parentTransactionId;
+        wchar_t *parentTransactionId;
         /// Optional element 'ns2:paypalReceiptId' of XML schema type 'xsd:string'
-        std::string *paypalReceiptId;
+        wchar_t *paypalReceiptId;
         /// Optional element 'ns2:paypalTransactiontype' of XML schema type 'xsd:string'
-        std::string *paypalTransactiontype;
+        wchar_t *paypalTransactiontype;
         /// Optional element 'ns2:paypalPaymentType' of XML schema type 'xsd:string'
-        std::string *paypalPaymentType;
+        wchar_t *paypalPaymentType;
         /// Optional element 'ns2:paypalOrderTime' of XML schema type 'xsd:string'
-        std::string *paypalOrderTime;
+        wchar_t *paypalOrderTime;
         /// Optional element 'ns2:paypalPaymentGrossAmount' of XML schema type 'xsd:string'
-        std::string *paypalPaymentGrossAmount;
+        wchar_t *paypalPaymentGrossAmount;
         /// Optional element 'ns2:paypalFeeAmount' of XML schema type 'xsd:string'
-        std::string *paypalFeeAmount;
+        wchar_t *paypalFeeAmount;
         /// Optional element 'ns2:paypalTaxAmount' of XML schema type 'xsd:string'
-        std::string *paypalTaxAmount;
+        wchar_t *paypalTaxAmount;
         /// Optional element 'ns2:paypalExchangeRate' of XML schema type 'xsd:string'
-        std::string *paypalExchangeRate;
+        wchar_t *paypalExchangeRate;
         /// Optional element 'ns2:paypalPaymentStatus' of XML schema type 'xsd:string'
-        std::string *paypalPaymentStatus;
+        wchar_t *paypalPaymentStatus;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:paypalPendingReason' of XML schema type 'xsd:string'
-        std::string *paypalPendingReason;
+        wchar_t *paypalPendingReason;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14068,18 +14068,18 @@ class SOAP_CMAC ns2__PayPalDoCaptureReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:556 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalReply
-#define SOAP_TYPE_ns2__PayPalAuthReversalReply (473)
+#define SOAP_TYPE_ns2__PayPalAuthReversalReply (474)
 /* complex XML schema type 'ns2:PayPalAuthReversalReply': */
 class SOAP_CMAC ns2__PayPalAuthReversalReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationId' of XML schema type 'xsd:string'
-        std::string *authorizationId;
+        wchar_t *authorizationId;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14110,24 +14110,24 @@ class SOAP_CMAC ns2__PayPalAuthReversalReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:558 */
 #ifndef SOAP_TYPE_ns2__PayPalRefundReply
-#define SOAP_TYPE_ns2__PayPalRefundReply (474)
+#define SOAP_TYPE_ns2__PayPalRefundReply (475)
 /* complex XML schema type 'ns2:PayPalRefundReply': */
 class SOAP_CMAC ns2__PayPalRefundReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:transactionId' of XML schema type 'xsd:string'
-        std::string *transactionId;
+        wchar_t *transactionId;
         /// Optional element 'ns2:paypalNetRefundAmount' of XML schema type 'xsd:string'
-        std::string *paypalNetRefundAmount;
+        wchar_t *paypalNetRefundAmount;
         /// Optional element 'ns2:paypalFeeRefundAmount' of XML schema type 'xsd:string'
-        std::string *paypalFeeRefundAmount;
+        wchar_t *paypalFeeRefundAmount;
         /// Optional element 'ns2:paypalGrossRefundAmount' of XML schema type 'xsd:string'
-        std::string *paypalGrossRefundAmount;
+        wchar_t *paypalGrossRefundAmount;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14158,44 +14158,44 @@ class SOAP_CMAC ns2__PayPalRefundReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:560 */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupReply
-#define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (475)
+#define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (476)
 /* complex XML schema type 'ns2:PayPalEcOrderSetupReply': */
 class SOAP_CMAC ns2__PayPalEcOrderSetupReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paypalToken' of XML schema type 'xsd:string'
-        std::string *paypalToken;
+        wchar_t *paypalToken;
         /// Optional element 'ns2:transactionId' of XML schema type 'xsd:string'
-        std::string *transactionId;
+        wchar_t *transactionId;
         /// Optional element 'ns2:paypalTransactiontype' of XML schema type 'xsd:string'
-        std::string *paypalTransactiontype;
+        wchar_t *paypalTransactiontype;
         /// Optional element 'ns2:paymentType' of XML schema type 'xsd:string'
-        std::string *paymentType;
+        wchar_t *paymentType;
         /// Optional element 'ns2:paypalOrderTime' of XML schema type 'xsd:string'
-        std::string *paypalOrderTime;
+        wchar_t *paypalOrderTime;
         /// Optional element 'ns2:paypalAmount' of XML schema type 'xsd:string'
-        std::string *paypalAmount;
+        wchar_t *paypalAmount;
         /// Optional element 'ns2:paypalFeeAmount' of XML schema type 'xsd:string'
-        std::string *paypalFeeAmount;
+        wchar_t *paypalFeeAmount;
         /// Optional element 'ns2:paypalTaxAmount' of XML schema type 'xsd:string'
-        std::string *paypalTaxAmount;
+        wchar_t *paypalTaxAmount;
         /// Optional element 'ns2:paypalExchangeRate' of XML schema type 'xsd:string'
-        std::string *paypalExchangeRate;
+        wchar_t *paypalExchangeRate;
         /// Optional element 'ns2:paypalPaymentStatus' of XML schema type 'xsd:string'
-        std::string *paypalPaymentStatus;
+        wchar_t *paypalPaymentStatus;
         /// Optional element 'ns2:paypalPendingReason' of XML schema type 'xsd:string'
-        std::string *paypalPendingReason;
+        wchar_t *paypalPendingReason;
         /// Optional element 'ns2:paypalReasonCode' of XML schema type 'xsd:string'
-        std::string *paypalReasonCode;
+        wchar_t *paypalReasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14226,28 +14226,28 @@ class SOAP_CMAC ns2__PayPalEcOrderSetupReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:562 */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationReply
-#define SOAP_TYPE_ns2__PayPalAuthorizationReply (476)
+#define SOAP_TYPE_ns2__PayPalAuthorizationReply (477)
 /* complex XML schema type 'ns2:PayPalAuthorizationReply': */
 class SOAP_CMAC ns2__PayPalAuthorizationReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:transactionId' of XML schema type 'xsd:string'
-        std::string *transactionId;
+        wchar_t *transactionId;
         /// Optional element 'ns2:paypalAmount' of XML schema type 'xsd:string'
-        std::string *paypalAmount;
+        wchar_t *paypalAmount;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:protectionEligibility' of XML schema type 'xsd:string'
-        std::string *protectionEligibility;
+        wchar_t *protectionEligibility;
         /// Optional element 'ns2:protectionEligibilityType' of XML schema type 'xsd:string'
-        std::string *protectionEligibilityType;
+        wchar_t *protectionEligibilityType;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14278,46 +14278,46 @@ class SOAP_CMAC ns2__PayPalAuthorizationReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:564 */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementReply
-#define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (477)
+#define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (478)
 /* complex XML schema type 'ns2:PayPalUpdateAgreementReply': */
 class SOAP_CMAC ns2__PayPalUpdateAgreementReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paypalBillingAgreementId' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementId;
+        wchar_t *paypalBillingAgreementId;
         /// Optional element 'ns2:paypalBillingAgreementDesc' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementDesc;
+        wchar_t *paypalBillingAgreementDesc;
         /// Optional element 'ns2:paypalBillingAgreementCustom' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementCustom;
+        wchar_t *paypalBillingAgreementCustom;
         /// Optional element 'ns2:paypalBillingAgreementStatus' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementStatus;
+        wchar_t *paypalBillingAgreementStatus;
         /// Optional element 'ns2:payer' of XML schema type 'xsd:string'
-        std::string *payer;
+        wchar_t *payer;
         /// Optional element 'ns2:payerId' of XML schema type 'xsd:string'
-        std::string *payerId;
+        wchar_t *payerId;
         /// Optional element 'ns2:payerStatus' of XML schema type 'xsd:string'
-        std::string *payerStatus;
+        wchar_t *payerStatus;
         /// Optional element 'ns2:payerCountry' of XML schema type 'xsd:string'
-        std::string *payerCountry;
+        wchar_t *payerCountry;
         /// Optional element 'ns2:payerBusiness' of XML schema type 'xsd:string'
-        std::string *payerBusiness;
+        wchar_t *payerBusiness;
         /// Optional element 'ns2:payerSalutation' of XML schema type 'xsd:string'
-        std::string *payerSalutation;
+        wchar_t *payerSalutation;
         /// Optional element 'ns2:payerFirstname' of XML schema type 'xsd:string'
-        std::string *payerFirstname;
+        wchar_t *payerFirstname;
         /// Optional element 'ns2:payerMiddlename' of XML schema type 'xsd:string'
-        std::string *payerMiddlename;
+        wchar_t *payerMiddlename;
         /// Optional element 'ns2:payerLastname' of XML schema type 'xsd:string'
-        std::string *payerLastname;
+        wchar_t *payerLastname;
         /// Optional element 'ns2:payerSuffix' of XML schema type 'xsd:string'
-        std::string *payerSuffix;
+        wchar_t *payerSuffix;
         /// Optional element 'ns2:addressStatus' of XML schema type 'xsd:string'
-        std::string *addressStatus;
+        wchar_t *addressStatus;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14348,18 +14348,18 @@ class SOAP_CMAC ns2__PayPalUpdateAgreementReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:566 */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementReply
-#define SOAP_TYPE_ns2__PayPalCreateAgreementReply (478)
+#define SOAP_TYPE_ns2__PayPalCreateAgreementReply (479)
 /* complex XML schema type 'ns2:PayPalCreateAgreementReply': */
 class SOAP_CMAC ns2__PayPalCreateAgreementReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paypalBillingAgreementId' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementId;
+        wchar_t *paypalBillingAgreementId;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14390,40 +14390,40 @@ class SOAP_CMAC ns2__PayPalCreateAgreementReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:568 */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionReply
-#define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (479)
+#define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (480)
 /* complex XML schema type 'ns2:PayPalDoRefTransactionReply': */
 class SOAP_CMAC ns2__PayPalDoRefTransactionReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paypalBillingAgreementId' of XML schema type 'xsd:string'
-        std::string *paypalBillingAgreementId;
+        wchar_t *paypalBillingAgreementId;
         /// Optional element 'ns2:transactionId' of XML schema type 'xsd:string'
-        std::string *transactionId;
+        wchar_t *transactionId;
         /// Optional element 'ns2:paypalTransactionType' of XML schema type 'xsd:string'
-        std::string *paypalTransactionType;
+        wchar_t *paypalTransactionType;
         /// Optional element 'ns2:paypalPaymentType' of XML schema type 'xsd:string'
-        std::string *paypalPaymentType;
+        wchar_t *paypalPaymentType;
         /// Optional element 'ns2:paypalOrderTime' of XML schema type 'xsd:string'
-        std::string *paypalOrderTime;
+        wchar_t *paypalOrderTime;
         /// Optional element 'ns2:paypalAmount' of XML schema type 'xsd:string'
-        std::string *paypalAmount;
+        wchar_t *paypalAmount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:paypalTaxAmount' of XML schema type 'xsd:string'
-        std::string *paypalTaxAmount;
+        wchar_t *paypalTaxAmount;
         /// Optional element 'ns2:paypalExchangeRate' of XML schema type 'xsd:string'
-        std::string *paypalExchangeRate;
+        wchar_t *paypalExchangeRate;
         /// Optional element 'ns2:paypalPaymentStatus' of XML schema type 'xsd:string'
-        std::string *paypalPaymentStatus;
+        wchar_t *paypalPaymentStatus;
         /// Optional element 'ns2:paypalPendingReason' of XML schema type 'xsd:string'
-        std::string *paypalPendingReason;
+        wchar_t *paypalPendingReason;
         /// Optional element 'ns2:paypalReasonCode' of XML schema type 'xsd:string'
-        std::string *paypalReasonCode;
+        wchar_t *paypalReasonCode;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:correlationID' of XML schema type 'xsd:string'
-        std::string *correlationID;
+        wchar_t *correlationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14454,12 +14454,12 @@ class SOAP_CMAC ns2__PayPalDoRefTransactionReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:570 */
 #ifndef SOAP_TYPE_ns2__RiskUpdateReply
-#define SOAP_TYPE_ns2__RiskUpdateReply (480)
+#define SOAP_TYPE_ns2__RiskUpdateReply (481)
 /* complex XML schema type 'ns2:RiskUpdateReply': */
 class SOAP_CMAC ns2__RiskUpdateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14490,12 +14490,12 @@ class SOAP_CMAC ns2__RiskUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:572 */
 #ifndef SOAP_TYPE_ns2__FraudUpdateReply
-#define SOAP_TYPE_ns2__FraudUpdateReply (481)
+#define SOAP_TYPE_ns2__FraudUpdateReply (482)
 /* complex XML schema type 'ns2:FraudUpdateReply': */
 class SOAP_CMAC ns2__FraudUpdateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14526,12 +14526,12 @@ class SOAP_CMAC ns2__FraudUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:574 */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionReply
-#define SOAP_TYPE_ns2__CaseManagementActionReply (482)
+#define SOAP_TYPE_ns2__CaseManagementActionReply (483)
 /* complex XML schema type 'ns2:CaseManagementActionReply': */
 class SOAP_CMAC ns2__CaseManagementActionReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14562,18 +14562,18 @@ class SOAP_CMAC ns2__CaseManagementActionReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:576 */
 #ifndef SOAP_TYPE_ns2__RuleResultItem
-#define SOAP_TYPE_ns2__RuleResultItem (483)
+#define SOAP_TYPE_ns2__RuleResultItem (484)
 /* complex XML schema type 'ns2:RuleResultItem': */
 class SOAP_CMAC ns2__RuleResultItem {
       public:
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:decision' of XML schema type 'xsd:string'
-        std::string *decision;
+        wchar_t *decision;
         /// Optional element 'ns2:evaluation' of XML schema type 'xsd:string'
-        std::string *evaluation;
+        wchar_t *evaluation;
         /// Optional element 'ns2:ruleID' of XML schema type 'xsd:integer'
-        std::string *ruleID;
+        wchar_t *ruleID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14604,7 +14604,7 @@ class SOAP_CMAC ns2__RuleResultItem {
 
 /* CyberSourceTransaction_nvp_1.183.h:578 */
 #ifndef SOAP_TYPE_ns2__RuleResultItems
-#define SOAP_TYPE_ns2__RuleResultItems (484)
+#define SOAP_TYPE_ns2__RuleResultItems (485)
 /* complex XML schema type 'ns2:RuleResultItems': */
 class SOAP_CMAC ns2__RuleResultItems {
       public:
@@ -14640,16 +14640,16 @@ class SOAP_CMAC ns2__RuleResultItems {
 
 /* CyberSourceTransaction_nvp_1.183.h:580 */
 #ifndef SOAP_TYPE_ns2__DecisionReply
-#define SOAP_TYPE_ns2__DecisionReply (485)
+#define SOAP_TYPE_ns2__DecisionReply (486)
 /* complex XML schema type 'ns2:DecisionReply': */
 class SOAP_CMAC ns2__DecisionReply {
       public:
         /// Optional element 'ns2:casePriority' of XML schema type 'xsd:integer'
-        std::string *casePriority;
+        wchar_t *casePriority;
         /// Optional element 'ns2:activeProfileReply' of XML schema type 'ns2:ProfileReply'
         ns2__ProfileReply *activeProfileReply;
         /// Optional element 'ns2:velocityInfoCode' of XML schema type 'xsd:string'
-        std::string *velocityInfoCode;
+        wchar_t *velocityInfoCode;
         /// Optional element 'ns2:additionalFields' of XML schema type 'ns2:AdditionalFields'
         ns2__AdditionalFields *additionalFields;
         /// Optional element 'ns2:morphingElement' of XML schema type 'ns2:MorphingElement'
@@ -14659,7 +14659,7 @@ class SOAP_CMAC ns2__DecisionReply {
         /// Optional element 'ns2:travel' of XML schema type 'ns2:Travel'
         ns2__Travel *travel;
         /// Optional element 'ns2:unavailableInfoCode' of XML schema type 'xsd:string'
-        std::string *unavailableInfoCode;
+        wchar_t *unavailableInfoCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14690,7 +14690,7 @@ class SOAP_CMAC ns2__DecisionReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:582 */
 #ifndef SOAP_TYPE_ns2__ProviderFields
-#define SOAP_TYPE_ns2__ProviderFields (486)
+#define SOAP_TYPE_ns2__ProviderFields (487)
 /* complex XML schema type 'ns2:ProviderFields': */
 class SOAP_CMAC ns2__ProviderFields {
       public:
@@ -14726,12 +14726,12 @@ class SOAP_CMAC ns2__ProviderFields {
 
 /* CyberSourceTransaction_nvp_1.183.h:584 */
 #ifndef SOAP_TYPE_ns2__Provider
-#define SOAP_TYPE_ns2__Provider (487)
+#define SOAP_TYPE_ns2__Provider (488)
 /* complex XML schema type 'ns2:Provider': */
 class SOAP_CMAC ns2__Provider {
       public:
         /// Required element 'ns2:name' of XML schema type 'xsd:string'
-        std::string name;
+        wchar_t *name;
         /// Sequence of 0 to 500 elements 'ns2:field' of XML schema type 'ns2:ProviderField'
         std::vector<ns2__ProviderField> field;
         /// Context that manages this object
@@ -14764,14 +14764,14 @@ class SOAP_CMAC ns2__Provider {
 
 /* CyberSourceTransaction_nvp_1.183.h:586 */
 #ifndef SOAP_TYPE_ns2__ProviderField
-#define SOAP_TYPE_ns2__ProviderField (488)
+#define SOAP_TYPE_ns2__ProviderField (489)
 /* complex XML schema type 'ns2:ProviderField': */
 class SOAP_CMAC ns2__ProviderField {
       public:
         /// Required element 'ns2:name' of XML schema type 'xsd:string'
-        std::string name;
+        wchar_t *name;
         /// Required element 'ns2:value' of XML schema type 'xsd:string'
-        std::string value;
+        wchar_t *value;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14802,7 +14802,7 @@ class SOAP_CMAC ns2__ProviderField {
 
 /* CyberSourceTransaction_nvp_1.183.h:588 */
 #ifndef SOAP_TYPE_ns2__AdditionalFields
-#define SOAP_TYPE_ns2__AdditionalFields (489)
+#define SOAP_TYPE_ns2__AdditionalFields (490)
 /* complex XML schema type 'ns2:AdditionalFields': */
 class SOAP_CMAC ns2__AdditionalFields {
       public:
@@ -14838,16 +14838,16 @@ class SOAP_CMAC ns2__AdditionalFields {
 
 /* CyberSourceTransaction_nvp_1.183.h:590 */
 #ifndef SOAP_TYPE_ns2__Field
-#define SOAP_TYPE_ns2__Field (490)
+#define SOAP_TYPE_ns2__Field (491)
 /* complex XML schema type 'ns2:Field': */
 class SOAP_CMAC ns2__Field {
       public:
         /// Required element 'ns2:provider' of XML schema type 'xsd:string'
-        std::string provider;
+        wchar_t *provider;
         /// Required element 'ns2:name' of XML schema type 'xsd:string'
-        std::string name;
+        wchar_t *name;
         /// Required element 'ns2:value' of XML schema type 'xsd:string'
-        std::string value;
+        wchar_t *value;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14878,7 +14878,7 @@ class SOAP_CMAC ns2__Field {
 
 /* CyberSourceTransaction_nvp_1.183.h:592 */
 #ifndef SOAP_TYPE_ns2__MorphingElement
-#define SOAP_TYPE_ns2__MorphingElement (491)
+#define SOAP_TYPE_ns2__MorphingElement (492)
 /* complex XML schema type 'ns2:MorphingElement': */
 class SOAP_CMAC ns2__MorphingElement {
       public:
@@ -14914,16 +14914,16 @@ class SOAP_CMAC ns2__MorphingElement {
 
 /* CyberSourceTransaction_nvp_1.183.h:594 */
 #ifndef SOAP_TYPE_ns2__Element
-#define SOAP_TYPE_ns2__Element (492)
+#define SOAP_TYPE_ns2__Element (493)
 /* complex XML schema type 'ns2:Element': */
 class SOAP_CMAC ns2__Element {
       public:
         /// Required element 'ns2:infoCode' of XML schema type 'xsd:string'
-        std::string infoCode;
+        wchar_t *infoCode;
         /// Required element 'ns2:fieldName' of XML schema type 'xsd:string'
-        std::string fieldName;
+        wchar_t *fieldName;
         /// Required element 'ns2:count' of XML schema type 'xsd:integer'
-        std::string count;
+        wchar_t *count;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -14954,42 +14954,42 @@ class SOAP_CMAC ns2__Element {
 
 /* CyberSourceTransaction_nvp_1.183.h:596 */
 #ifndef SOAP_TYPE_ns2__Travel
-#define SOAP_TYPE_ns2__Travel (493)
+#define SOAP_TYPE_ns2__Travel (494)
 /* complex XML schema type 'ns2:Travel': */
 class SOAP_CMAC ns2__Travel {
       public:
         /// Optional element 'ns2:actualFinalDestinationCountry' of XML schema type 'ns2:RestrictedString'
-        std::string *actualFinalDestinationCountry;
+        wchar_t *actualFinalDestinationCountry;
         /// Optional element 'ns2:actualFinalDestinationCity' of XML schema type 'ns2:RestrictedString'
-        std::string *actualFinalDestinationCity;
+        wchar_t *actualFinalDestinationCity;
         /// Optional element 'ns2:actualFinalDestinationLatitude' of XML schema type 'ns2:RestrictedDecimal'
-        std::string *actualFinalDestinationLatitude;
+        wchar_t *actualFinalDestinationLatitude;
         /// Optional element 'ns2:actualFinalDestinationLongitude' of XML schema type 'ns2:RestrictedDecimal'
-        std::string *actualFinalDestinationLongitude;
+        wchar_t *actualFinalDestinationLongitude;
         /// Optional element 'ns2:firstDepartureCountry' of XML schema type 'ns2:RestrictedString'
-        std::string *firstDepartureCountry;
+        wchar_t *firstDepartureCountry;
         /// Optional element 'ns2:firstDepartureCity' of XML schema type 'ns2:RestrictedString'
-        std::string *firstDepartureCity;
+        wchar_t *firstDepartureCity;
         /// Optional element 'ns2:firstDepartureLatitude' of XML schema type 'ns2:RestrictedDecimal'
-        std::string *firstDepartureLatitude;
+        wchar_t *firstDepartureLatitude;
         /// Optional element 'ns2:firstDepartureLongitude' of XML schema type 'ns2:RestrictedDecimal'
-        std::string *firstDepartureLongitude;
+        wchar_t *firstDepartureLongitude;
         /// Optional element 'ns2:firstDestinationCountry' of XML schema type 'ns2:RestrictedString'
-        std::string *firstDestinationCountry;
+        wchar_t *firstDestinationCountry;
         /// Optional element 'ns2:firstDestinationCity' of XML schema type 'ns2:RestrictedString'
-        std::string *firstDestinationCity;
+        wchar_t *firstDestinationCity;
         /// Optional element 'ns2:firstDestinationLatitude' of XML schema type 'ns2:RestrictedDecimal'
-        std::string *firstDestinationLatitude;
+        wchar_t *firstDestinationLatitude;
         /// Optional element 'ns2:firstDestinationLongitude' of XML schema type 'ns2:RestrictedDecimal'
-        std::string *firstDestinationLongitude;
+        wchar_t *firstDestinationLongitude;
         /// Optional element 'ns2:lastDestinationCountry' of XML schema type 'ns2:RestrictedString'
-        std::string *lastDestinationCountry;
+        wchar_t *lastDestinationCountry;
         /// Optional element 'ns2:lastDestinationCity' of XML schema type 'ns2:RestrictedString'
-        std::string *lastDestinationCity;
+        wchar_t *lastDestinationCity;
         /// Optional element 'ns2:lastDestinationLatitude' of XML schema type 'ns2:RestrictedDecimal'
-        std::string *lastDestinationLatitude;
+        wchar_t *lastDestinationLatitude;
         /// Optional element 'ns2:lastDestinationLongitude' of XML schema type 'ns2:RestrictedDecimal'
-        std::string *lastDestinationLongitude;
+        wchar_t *lastDestinationLongitude;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15020,36 +15020,36 @@ class SOAP_CMAC ns2__Travel {
 
 /* CyberSourceTransaction_nvp_1.183.h:598 */
 #ifndef SOAP_TYPE_ns2__DMEReply
-#define SOAP_TYPE_ns2__DMEReply (494)
+#define SOAP_TYPE_ns2__DMEReply (495)
 /* complex XML schema type 'ns2:DMEReply': */
 class SOAP_CMAC ns2__DMEReply {
       public:
         /// Optional element 'ns2:eventType' of XML schema type 'xsd:string'
-        std::string *eventType;
+        wchar_t *eventType;
         /// Optional element 'ns2:eventInfo' of XML schema type 'xsd:string'
-        std::string *eventInfo;
+        wchar_t *eventInfo;
         /// Optional element 'ns2:eventDeviceBehaviorInfo' of XML schema type 'xsd:string'
-        std::string *eventDeviceBehaviorInfo;
+        wchar_t *eventDeviceBehaviorInfo;
         /// Optional element 'ns2:eventHotlistInfo' of XML schema type 'xsd:string'
-        std::string *eventHotlistInfo;
+        wchar_t *eventHotlistInfo;
         /// Optional element 'ns2:eventPolicy' of XML schema type 'xsd:string'
-        std::string *eventPolicy;
+        wchar_t *eventPolicy;
         /// Optional element 'ns2:eventVelocityInfoCode' of XML schema type 'xsd:string'
-        std::string *eventVelocityInfoCode;
+        wchar_t *eventVelocityInfoCode;
         /// Optional element 'ns2:additionalFields' of XML schema type 'ns2:AdditionalFields'
         ns2__AdditionalFields *additionalFields;
         /// Optional element 'ns2:morphingElement' of XML schema type 'ns2:MorphingElement'
         ns2__MorphingElement *morphingElement;
         /// Optional element 'ns2:cardBin' of XML schema type 'xsd:string'
-        std::string *cardBin;
+        wchar_t *cardBin;
         /// Optional element 'ns2:binCountry' of XML schema type 'xsd:string'
-        std::string *binCountry;
+        wchar_t *binCountry;
         /// Optional element 'ns2:cardAccountType' of XML schema type 'xsd:string'
-        std::string *cardAccountType;
+        wchar_t *cardAccountType;
         /// Optional element 'ns2:cardScheme' of XML schema type 'xsd:string'
-        std::string *cardScheme;
+        wchar_t *cardScheme;
         /// Optional element 'ns2:cardIssuer' of XML schema type 'xsd:string'
-        std::string *cardIssuer;
+        wchar_t *cardIssuer;
         /// Optional element 'ns2:providerFields' of XML schema type 'ns2:ProviderFields'
         ns2__ProviderFields *providerFields;
         /// Context that manages this object
@@ -15082,18 +15082,18 @@ class SOAP_CMAC ns2__DMEReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:600 */
 #ifndef SOAP_TYPE_ns2__ProfileReply
-#define SOAP_TYPE_ns2__ProfileReply (495)
+#define SOAP_TYPE_ns2__ProfileReply (496)
 /* complex XML schema type 'ns2:ProfileReply': */
 class SOAP_CMAC ns2__ProfileReply {
       public:
         /// Optional element 'ns2:selectedBy' of XML schema type 'xsd:string'
-        std::string *selectedBy;
+        wchar_t *selectedBy;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:destinationQueue' of XML schema type 'xsd:string'
-        std::string *destinationQueue;
+        wchar_t *destinationQueue;
         /// Optional element 'ns2:profileScore' of XML schema type 'xsd:string'
-        std::string *profileScore;
+        wchar_t *profileScore;
         /// Optional element 'ns2:rulesTriggered' of XML schema type 'ns2:RuleResultItems'
         ns2__RuleResultItems *rulesTriggered;
         /// Context that manages this object
@@ -15126,20 +15126,20 @@ class SOAP_CMAC ns2__ProfileReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:602 */
 #ifndef SOAP_TYPE_ns2__CCDCCReply
-#define SOAP_TYPE_ns2__CCDCCReply (496)
+#define SOAP_TYPE_ns2__CCDCCReply (497)
 /* complex XML schema type 'ns2:CCDCCReply': */
 class SOAP_CMAC ns2__CCDCCReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:dccSupported' of XML schema type 'ns2:boolean'
-        std::string *dccSupported;
+        wchar_t *dccSupported;
         /// Optional element 'ns2:validHours' of XML schema type 'xsd:string'
-        std::string *validHours;
+        wchar_t *validHours;
         /// Optional element 'ns2:marginRatePercentage' of XML schema type 'xsd:string'
-        std::string *marginRatePercentage;
+        wchar_t *marginRatePercentage;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Sequence of 0 to 150 elements 'ns2:paymentCurrencyOffer' of XML schema type 'ns2:paymentCurrencyOffer'
         std::vector<ns2__paymentCurrencyOffer> paymentCurrencyOffer;
         /// Context that manages this object
@@ -15172,20 +15172,20 @@ class SOAP_CMAC ns2__CCDCCReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:604 */
 #ifndef SOAP_TYPE_ns2__paymentCurrencyOffer
-#define SOAP_TYPE_ns2__paymentCurrencyOffer (497)
+#define SOAP_TYPE_ns2__paymentCurrencyOffer (498)
 /* complex XML schema type 'ns2:paymentCurrencyOffer': */
 class SOAP_CMAC ns2__paymentCurrencyOffer {
       public:
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:exchangeRate' of XML schema type 'xsd:string'
-        std::string *exchangeRate;
+        wchar_t *exchangeRate;
         /// Optional element 'ns2:marginRatePercentage' of XML schema type 'xsd:string'
-        std::string *marginRatePercentage;
+        wchar_t *marginRatePercentage;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15216,12 +15216,12 @@ class SOAP_CMAC ns2__paymentCurrencyOffer {
 
 /* CyberSourceTransaction_nvp_1.183.h:606 */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateReply
-#define SOAP_TYPE_ns2__CCDCCUpdateReply (498)
+#define SOAP_TYPE_ns2__CCDCCUpdateReply (499)
 /* complex XML schema type 'ns2:CCDCCUpdateReply': */
 class SOAP_CMAC ns2__CCDCCUpdateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15252,28 +15252,28 @@ class SOAP_CMAC ns2__CCDCCUpdateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:608 */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentReply
-#define SOAP_TYPE_ns2__ChinaPaymentReply (499)
+#define SOAP_TYPE_ns2__ChinaPaymentReply (500)
 /* complex XML schema type 'ns2:ChinaPaymentReply': */
 class SOAP_CMAC ns2__ChinaPaymentReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:formData' of XML schema type 'xsd:string'
-        std::string *formData;
+        wchar_t *formData;
         /// Optional element 'ns2:verifyFailure' of XML schema type 'xsd:string'
-        std::string *verifyFailure;
+        wchar_t *verifyFailure;
         /// Optional element 'ns2:verifyInProcess' of XML schema type 'xsd:string'
-        std::string *verifyInProcess;
+        wchar_t *verifyInProcess;
         /// Optional element 'ns2:verifySuccess' of XML schema type 'xsd:string'
-        std::string *verifySuccess;
+        wchar_t *verifySuccess;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15304,18 +15304,18 @@ class SOAP_CMAC ns2__ChinaPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:610 */
 #ifndef SOAP_TYPE_ns2__ChinaRefundReply
-#define SOAP_TYPE_ns2__ChinaRefundReply (500)
+#define SOAP_TYPE_ns2__ChinaRefundReply (501)
 /* complex XML schema type 'ns2:ChinaRefundReply': */
 class SOAP_CMAC ns2__ChinaRefundReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15346,32 +15346,32 @@ class SOAP_CMAC ns2__ChinaRefundReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:612 */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentReply
-#define SOAP_TYPE_ns2__BoletoPaymentReply (501)
+#define SOAP_TYPE_ns2__BoletoPaymentReply (502)
 /* complex XML schema type 'ns2:BoletoPaymentReply': */
 class SOAP_CMAC ns2__BoletoPaymentReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:boletoNumber' of XML schema type 'xsd:string'
-        std::string *boletoNumber;
+        wchar_t *boletoNumber;
         /// Optional element 'ns2:expirationDate' of XML schema type 'xsd:string'
-        std::string *expirationDate;
+        wchar_t *expirationDate;
         /// Optional element 'ns2:url' of XML schema type 'xsd:string'
-        std::string *url;
+        wchar_t *url;
         /// Optional element 'ns2:avsCode' of XML schema type 'xsd:string'
-        std::string *avsCode;
+        wchar_t *avsCode;
         /// Optional element 'ns2:avsCodeRaw' of XML schema type 'xsd:string'
-        std::string *avsCodeRaw;
+        wchar_t *avsCodeRaw;
         /// Optional element 'ns2:barCodeNumber' of XML schema type 'xsd:string'
-        std::string *barCodeNumber;
+        wchar_t *barCodeNumber;
         /// Optional element 'ns2:assignor' of XML schema type 'xsd:string'
-        std::string *assignor;
+        wchar_t *assignor;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15402,28 +15402,28 @@ class SOAP_CMAC ns2__BoletoPaymentReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:614 */
 #ifndef SOAP_TYPE_ns2__APInitiateReply
-#define SOAP_TYPE_ns2__APInitiateReply (502)
+#define SOAP_TYPE_ns2__APInitiateReply (503)
 /* complex XML schema type 'ns2:APInitiateReply': */
 class SOAP_CMAC ns2__APInitiateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:merchantURL' of XML schema type 'xsd:string'
-        std::string *merchantURL;
+        wchar_t *merchantURL;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:signature' of XML schema type 'xsd:string'
-        std::string *signature;
+        wchar_t *signature;
         /// Optional element 'ns2:publicKey' of XML schema type 'xsd:string'
-        std::string *publicKey;
+        wchar_t *publicKey;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15454,28 +15454,28 @@ class SOAP_CMAC ns2__APInitiateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:616 */
 #ifndef SOAP_TYPE_ns2__APCheckStatusReply
-#define SOAP_TYPE_ns2__APCheckStatusReply (503)
+#define SOAP_TYPE_ns2__APCheckStatusReply (504)
 /* complex XML schema type 'ns2:APCheckStatusReply': */
 class SOAP_CMAC ns2__APCheckStatusReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:processorTradeNo' of XML schema type 'xsd:string'
-        std::string *processorTradeNo;
+        wchar_t *processorTradeNo;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:ibanSuffix' of XML schema type 'xsd:string'
-        std::string *ibanSuffix;
+        wchar_t *ibanSuffix;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:processorToken' of XML schema type 'xsd:string'
-        std::string *processorToken;
+        wchar_t *processorToken;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15506,14 +15506,14 @@ class SOAP_CMAC ns2__APCheckStatusReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:618 */
 #ifndef SOAP_TYPE_ns2__SellerProtection
-#define SOAP_TYPE_ns2__SellerProtection (504)
+#define SOAP_TYPE_ns2__SellerProtection (505)
 /* complex XML schema type 'ns2:SellerProtection': */
 class SOAP_CMAC ns2__SellerProtection {
       public:
         /// Optional element 'ns2:eligibility' of XML schema type 'xsd:string'
-        std::string *eligibility;
+        wchar_t *eligibility;
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15544,72 +15544,72 @@ class SOAP_CMAC ns2__SellerProtection {
 
 /* CyberSourceTransaction_nvp_1.183.h:620 */
 #ifndef SOAP_TYPE_ns2__APReply
-#define SOAP_TYPE_ns2__APReply (505)
+#define SOAP_TYPE_ns2__APReply (506)
 /* complex XML schema type 'ns2:APReply': */
 class SOAP_CMAC ns2__APReply {
       public:
         /// Optional element 'ns2:orderID' of XML schema type 'xsd:string'
-        std::string *orderID;
+        wchar_t *orderID;
         /// Optional element 'ns2:cardGroup' of XML schema type 'xsd:string'
-        std::string *cardGroup;
+        wchar_t *cardGroup;
         /// Optional element 'ns2:cardType' of XML schema type 'xsd:string'
-        std::string *cardType;
+        wchar_t *cardType;
         /// Optional element 'ns2:cardNumberSuffix' of XML schema type 'xsd:string'
-        std::string *cardNumberSuffix;
+        wchar_t *cardNumberSuffix;
         /// Optional element 'ns2:cardExpirationMonth' of XML schema type 'xsd:string'
-        std::string *cardExpirationMonth;
+        wchar_t *cardExpirationMonth;
         /// Optional element 'ns2:cardExpirationYear' of XML schema type 'xsd:string'
-        std::string *cardExpirationYear;
+        wchar_t *cardExpirationYear;
         /// Optional element 'ns2:avsCodeRaw' of XML schema type 'xsd:string'
-        std::string *avsCodeRaw;
+        wchar_t *avsCodeRaw;
         /// Optional element 'ns2:purchaseID' of XML schema type 'xsd:string'
-        std::string *purchaseID;
+        wchar_t *purchaseID;
         /// Optional element 'ns2:productID' of XML schema type 'xsd:string'
-        std::string *productID;
+        wchar_t *productID;
         /// Optional element 'ns2:productDescription' of XML schema type 'xsd:string'
-        std::string *productDescription;
+        wchar_t *productDescription;
         /// Optional element 'ns2:shippingAmount' of XML schema type 'xsd:string'
-        std::string *shippingAmount;
+        wchar_t *shippingAmount;
         /// Optional element 'ns2:handlingAmount' of XML schema type 'xsd:string'
-        std::string *handlingAmount;
+        wchar_t *handlingAmount;
         /// Optional element 'ns2:shippingHandlingAmount' of XML schema type 'xsd:string'
-        std::string *shippingHandlingAmount;
+        wchar_t *shippingHandlingAmount;
         /// Optional element 'ns2:additionalAmount' of XML schema type 'xsd:string'
-        std::string *additionalAmount;
+        wchar_t *additionalAmount;
         /// Optional element 'ns2:taxAmount' of XML schema type 'xsd:string'
-        std::string *taxAmount;
+        wchar_t *taxAmount;
         /// Optional element 'ns2:subtotalAmount' of XML schema type 'xsd:string'
-        std::string *subtotalAmount;
+        wchar_t *subtotalAmount;
         /// Optional element 'ns2:totalPurchaseAmount' of XML schema type 'xsd:string'
-        std::string *totalPurchaseAmount;
+        wchar_t *totalPurchaseAmount;
         /// Optional element 'ns2:giftWrapAmount' of XML schema type 'xsd:string'
-        std::string *giftWrapAmount;
+        wchar_t *giftWrapAmount;
         /// Optional element 'ns2:discountAmount' of XML schema type 'xsd:string'
-        std::string *discountAmount;
+        wchar_t *discountAmount;
         /// Optional element 'ns2:cardNumberPrefix' of XML schema type 'xsd:string'
-        std::string *cardNumberPrefix;
+        wchar_t *cardNumberPrefix;
         /// Optional element 'ns2:riskIndicator' of XML schema type 'xsd:string'
-        std::string *riskIndicator;
+        wchar_t *riskIndicator;
         /// Optional element 'ns2:merchantUUID' of XML schema type 'xsd:string'
-        std::string *merchantUUID;
+        wchar_t *merchantUUID;
         /// Optional element 'ns2:merchantSiteID' of XML schema type 'xsd:string'
-        std::string *merchantSiteID;
+        wchar_t *merchantSiteID;
         /// Optional element 'ns2:transactionExpirationDate' of XML schema type 'xsd:string'
-        std::string *transactionExpirationDate;
+        wchar_t *transactionExpirationDate;
         /// Optional element 'ns2:sellerProtection' of XML schema type 'ns2:SellerProtection'
         ns2__SellerProtection *sellerProtection;
         /// Optional element 'ns2:processorFraudDecision' of XML schema type 'xsd:string'
-        std::string *processorFraudDecision;
+        wchar_t *processorFraudDecision;
         /// Optional element 'ns2:processorFraudDecisionReason' of XML schema type 'xsd:string'
-        std::string *processorFraudDecisionReason;
+        wchar_t *processorFraudDecisionReason;
         /// Optional element 'ns2:customerID' of XML schema type 'xsd:string'
-        std::string *customerID;
+        wchar_t *customerID;
         /// Optional element 'ns2:billingAgreementID' of XML schema type 'xsd:string'
-        std::string *billingAgreementID;
+        wchar_t *billingAgreementID;
         /// Optional element 'ns2:payerID' of XML schema type 'xsd:string'
-        std::string *payerID;
+        wchar_t *payerID;
         /// Optional element 'ns2:fundingSource' of XML schema type 'xsd:string'
-        std::string *fundingSource;
+        wchar_t *fundingSource;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15640,36 +15640,36 @@ class SOAP_CMAC ns2__APReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:622 */
 #ifndef SOAP_TYPE_ns2__APAuthReply
-#define SOAP_TYPE_ns2__APAuthReply (506)
+#define SOAP_TYPE_ns2__APAuthReply (507)
 /* complex XML schema type 'ns2:APAuthReply': */
 class SOAP_CMAC ns2__APAuthReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:providerResponse' of XML schema type 'xsd:string'
-        std::string *providerResponse;
+        wchar_t *providerResponse;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:merchantURL' of XML schema type 'xsd:string'
-        std::string *merchantURL;
+        wchar_t *merchantURL;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15700,32 +15700,32 @@ class SOAP_CMAC ns2__APAuthReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:624 */
 #ifndef SOAP_TYPE_ns2__APAuthReversalReply
-#define SOAP_TYPE_ns2__APAuthReversalReply (507)
+#define SOAP_TYPE_ns2__APAuthReversalReply (508)
 /* complex XML schema type 'ns2:APAuthReversalReply': */
 class SOAP_CMAC ns2__APAuthReversalReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:providerResponse' of XML schema type 'xsd:string'
-        std::string *providerResponse;
+        wchar_t *providerResponse;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15756,32 +15756,32 @@ class SOAP_CMAC ns2__APAuthReversalReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:626 */
 #ifndef SOAP_TYPE_ns2__APCaptureReply
-#define SOAP_TYPE_ns2__APCaptureReply (508)
+#define SOAP_TYPE_ns2__APCaptureReply (509)
 /* complex XML schema type 'ns2:APCaptureReply': */
 class SOAP_CMAC ns2__APCaptureReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:providerResponse' of XML schema type 'xsd:string'
-        std::string *providerResponse;
+        wchar_t *providerResponse;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:processorTransactionFee' of XML schema type 'xsd:string'
-        std::string *processorTransactionFee;
+        wchar_t *processorTransactionFee;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15812,20 +15812,20 @@ class SOAP_CMAC ns2__APCaptureReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:628 */
 #ifndef SOAP_TYPE_ns2__APOptionsReply
-#define SOAP_TYPE_ns2__APOptionsReply (509)
+#define SOAP_TYPE_ns2__APOptionsReply (510)
 /* complex XML schema type 'ns2:APOptionsReply': */
 class SOAP_CMAC ns2__APOptionsReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:offset' of XML schema type 'xsd:string'
-        std::string *offset;
+        wchar_t *offset;
         /// Optional element 'ns2:count' of XML schema type 'xsd:string'
-        std::string *count;
+        wchar_t *count;
         /// Optional element 'ns2:totalCount' of XML schema type 'xsd:string'
-        std::string *totalCount;
+        wchar_t *totalCount;
         /// Sequence of 0 to 250 elements 'ns2:option' of XML schema type 'ns2:APOptionsOption'
         std::vector<ns2__APOptionsOption> option;
         /// Context that manages this object
@@ -15858,16 +15858,16 @@ class SOAP_CMAC ns2__APOptionsReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:630 */
 #ifndef SOAP_TYPE_ns2__APOptionsOption
-#define SOAP_TYPE_ns2__APOptionsOption (510)
+#define SOAP_TYPE_ns2__APOptionsOption (511)
 /* complex XML schema type 'ns2:APOptionsOption': */
 class SOAP_CMAC ns2__APOptionsOption {
       public:
         /// Optional element 'ns2:id' of XML schema type 'xsd:string'
-        std::string *id;
+        wchar_t *id;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional attribute 'data' of XML schema type 'xsd:integer'
-        std::string *data;
+        wchar_t *data;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15898,34 +15898,34 @@ class SOAP_CMAC ns2__APOptionsOption {
 
 /* CyberSourceTransaction_nvp_1.183.h:632 */
 #ifndef SOAP_TYPE_ns2__APRefundReply
-#define SOAP_TYPE_ns2__APRefundReply (511)
+#define SOAP_TYPE_ns2__APRefundReply (512)
 /* complex XML schema type 'ns2:APRefundReply': */
 class SOAP_CMAC ns2__APRefundReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:returnRef' of XML schema type 'xsd:string'
-        std::string *returnRef;
+        wchar_t *returnRef;
         /// Optional element 'ns2:providerResponse' of XML schema type 'xsd:string'
-        std::string *providerResponse;
+        wchar_t *providerResponse;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -15956,38 +15956,38 @@ class SOAP_CMAC ns2__APRefundReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:634 */
 #ifndef SOAP_TYPE_ns2__APSaleReply
-#define SOAP_TYPE_ns2__APSaleReply (512)
+#define SOAP_TYPE_ns2__APSaleReply (513)
 /* complex XML schema type 'ns2:APSaleReply': */
 class SOAP_CMAC ns2__APSaleReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:merchantURL' of XML schema type 'xsd:string'
-        std::string *merchantURL;
+        wchar_t *merchantURL;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:processorTransactionFee' of XML schema type 'xsd:string'
-        std::string *processorTransactionFee;
+        wchar_t *processorTransactionFee;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:exchangeRate' of XML schema type 'xsd:string'
-        std::string *exchangeRate;
+        wchar_t *exchangeRate;
         /// Optional element 'ns2:foreignCurrency' of XML schema type 'xsd:string'
-        std::string *foreignCurrency;
+        wchar_t *foreignCurrency;
         /// Optional element 'ns2:foreignAmount' of XML schema type 'xsd:string'
-        std::string *foreignAmount;
+        wchar_t *foreignAmount;
         /// Optional element 'ns2:discountAmount' of XML schema type 'xsd:string'
-        std::string *discountAmount;
+        wchar_t *discountAmount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16018,20 +16018,20 @@ class SOAP_CMAC ns2__APSaleReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:636 */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsReply
-#define SOAP_TYPE_ns2__APCheckOutDetailsReply (513)
+#define SOAP_TYPE_ns2__APCheckOutDetailsReply (514)
 /* complex XML schema type 'ns2:APCheckOutDetailsReply': */
 class SOAP_CMAC ns2__APCheckOutDetailsReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:providerResponse' of XML schema type 'xsd:string'
-        std::string *providerResponse;
+        wchar_t *providerResponse;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16062,24 +16062,24 @@ class SOAP_CMAC ns2__APCheckOutDetailsReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:638 */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsReply
-#define SOAP_TYPE_ns2__APTransactionDetailsReply (514)
+#define SOAP_TYPE_ns2__APTransactionDetailsReply (515)
 /* complex XML schema type 'ns2:APTransactionDetailsReply': */
 class SOAP_CMAC ns2__APTransactionDetailsReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:providerResponse' of XML schema type 'xsd:string'
-        std::string *providerResponse;
+        wchar_t *providerResponse;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16110,22 +16110,22 @@ class SOAP_CMAC ns2__APTransactionDetailsReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:640 */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseReply
-#define SOAP_TYPE_ns2__APConfirmPurchaseReply (515)
+#define SOAP_TYPE_ns2__APConfirmPurchaseReply (516)
 /* complex XML schema type 'ns2:APConfirmPurchaseReply': */
 class SOAP_CMAC ns2__APConfirmPurchaseReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:providerResponse' of XML schema type 'xsd:string'
-        std::string *providerResponse;
+        wchar_t *providerResponse;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16156,28 +16156,28 @@ class SOAP_CMAC ns2__APConfirmPurchaseReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:642 */
 #ifndef SOAP_TYPE_ns2__APSessionsReply
-#define SOAP_TYPE_ns2__APSessionsReply (516)
+#define SOAP_TYPE_ns2__APSessionsReply (517)
 /* complex XML schema type 'ns2:APSessionsReply': */
 class SOAP_CMAC ns2__APSessionsReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:merchantURL' of XML schema type 'xsd:string'
-        std::string *merchantURL;
+        wchar_t *merchantURL;
         /// Optional element 'ns2:processorToken' of XML schema type 'xsd:string'
-        std::string *processorToken;
+        wchar_t *processorToken;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16208,16 +16208,16 @@ class SOAP_CMAC ns2__APSessionsReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:644 */
 #ifndef SOAP_TYPE_ns2__CCCheckStatusReply
-#define SOAP_TYPE_ns2__CCCheckStatusReply (517)
+#define SOAP_TYPE_ns2__CCCheckStatusReply (518)
 /* complex XML schema type 'ns2:CCCheckStatusReply': */
 class SOAP_CMAC ns2__CCCheckStatusReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16248,24 +16248,24 @@ class SOAP_CMAC ns2__CCCheckStatusReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:646 */
 #ifndef SOAP_TYPE_ns2__ReplyMessage
-#define SOAP_TYPE_ns2__ReplyMessage (518)
+#define SOAP_TYPE_ns2__ReplyMessage (519)
 /* complex XML schema type 'ns2:ReplyMessage': */
 class SOAP_CMAC ns2__ReplyMessage {
       public:
         /// Optional element 'ns2:merchantReferenceCode' of XML schema type 'xsd:string'
-        std::string *merchantReferenceCode;
+        wchar_t *merchantReferenceCode;
         /// Required element 'ns2:requestID' of XML schema type 'xsd:string'
-        std::string requestID;
+        wchar_t *requestID;
         /// Required element 'ns2:decision' of XML schema type 'xsd:string'
-        std::string decision;
+        wchar_t *decision;
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Sequence of 0 to 1000 elements 'ns2:missingField' of XML schema type 'xsd:string'
-        std::vector<std::string> missingField;
+        std::vector<wchar_t *> missingField;
         /// Sequence of 0 to 1000 elements 'ns2:invalidField' of XML schema type 'xsd:string'
-        std::vector<std::string> invalidField;
+        std::vector<wchar_t *> invalidField;
         /// Required element 'ns2:requestToken' of XML schema type 'xsd:string'
-        std::string requestToken;
+        wchar_t *requestToken;
         /// Optional element 'ns2:purchaseTotals' of XML schema type 'ns2:PurchaseTotals'
         ns2__PurchaseTotals *purchaseTotals;
         /// Sequence of 0 to 100 elements 'ns2:deniedPartiesMatch' of XML schema type 'ns2:DeniedPartiesMatch'
@@ -16417,11 +16417,11 @@ class SOAP_CMAC ns2__ReplyMessage {
         /// Optional element 'ns2:apCheckStatusReply' of XML schema type 'ns2:APCheckStatusReply'
         ns2__APCheckStatusReply *apCheckStatusReply;
         /// Optional element 'ns2:receiptNumber' of XML schema type 'xsd:string'
-        std::string *receiptNumber;
+        wchar_t *receiptNumber;
         /// Optional element 'ns2:additionalData' of XML schema type 'xsd:string'
-        std::string *additionalData;
+        wchar_t *additionalData;
         /// Optional element 'ns2:solutionProviderTransactionID' of XML schema type 'xsd:string'
-        std::string *solutionProviderTransactionID;
+        wchar_t *solutionProviderTransactionID;
         /// Optional element 'ns2:apReply' of XML schema type 'ns2:APReply'
         ns2__APReply *apReply;
         /// Optional element 'ns2:shipTo' of XML schema type 'ns2:ShipTo'
@@ -16465,9 +16465,9 @@ class SOAP_CMAC ns2__ReplyMessage {
         /// Optional element 'ns2:hostedDataRetrieveReply' of XML schema type 'ns2:HostedDataRetrieveReply'
         ns2__HostedDataRetrieveReply *hostedDataRetrieveReply;
         /// Optional element 'ns2:salesSlipNumber' of XML schema type 'xsd:string'
-        std::string *salesSlipNumber;
+        wchar_t *salesSlipNumber;
         /// Optional element 'ns2:additionalProcessorResponse' of XML schema type 'xsd:string'
-        std::string *additionalProcessorResponse;
+        wchar_t *additionalProcessorResponse;
         /// Optional element 'ns2:jpo' of XML schema type 'ns2:JPO'
         ns2__JPO *jpo;
         /// Optional element 'ns2:card' of XML schema type 'ns2:Card'
@@ -16483,7 +16483,7 @@ class SOAP_CMAC ns2__ReplyMessage {
         /// Optional element 'ns2:binLookupReply' of XML schema type 'ns2:BinLookupReply'
         ns2__BinLookupReply *binLookupReply;
         /// Optional element 'ns2:issuerMessage' of XML schema type 'xsd:string'
-        std::string *issuerMessage;
+        wchar_t *issuerMessage;
         /// Optional element 'ns2:token' of XML schema type 'ns2:Token'
         ns2__Token *token;
         /// Optional element 'ns2:issuer' of XML schema type 'ns2:issuer'
@@ -16491,15 +16491,15 @@ class SOAP_CMAC ns2__ReplyMessage {
         /// Optional element 'ns2:recipient' of XML schema type 'ns2:Recipient'
         ns2__Recipient *recipient;
         /// Optional element 'ns2:feeProgramIndicator' of XML schema type 'xsd:string'
-        std::string *feeProgramIndicator;
+        wchar_t *feeProgramIndicator;
         /// Optional element 'ns2:installment' of XML schema type 'ns2:Installment'
         ns2__Installment *installment;
         /// Optional element 'ns2:paymentAccountReference' of XML schema type 'xsd:string'
-        std::string *paymentAccountReference;
+        wchar_t *paymentAccountReference;
         /// Optional element 'ns2:paymentSolution' of XML schema type 'xsd:string'
-        std::string *paymentSolution;
+        wchar_t *paymentSolution;
         /// Optional element 'ns2:authIndicator' of XML schema type 'xsd:string'
-        std::string *authIndicator;
+        wchar_t *authIndicator;
         /// Optional element 'ns2:ucaf' of XML schema type 'ns2:UCAF'
         ns2__UCAF *ucaf;
         /// Sequence of 0 to 100 elements 'ns2:network' of XML schema type 'ns2:Network'
@@ -16513,23 +16513,23 @@ class SOAP_CMAC ns2__ReplyMessage {
         /// Optional element 'ns2:apBillingAgreementReply' of XML schema type 'ns2:APBillingAgreementReply'
         ns2__APBillingAgreementReply *apBillingAgreementReply;
         /// Optional element 'ns2:customerVerificationStatus' of XML schema type 'xsd:string'
-        std::string *customerVerificationStatus;
+        wchar_t *customerVerificationStatus;
         /// Optional element 'ns2:personalID' of XML schema type 'ns2:PersonalID'
         ns2__PersonalID *personalID;
         /// Optional element 'ns2:acquirerMerchantNumber' of XML schema type 'xsd:string'
-        std::string *acquirerMerchantNumber;
+        wchar_t *acquirerMerchantNumber;
         /// Optional element 'ns2:pos' of XML schema type 'ns2:Pos'
         ns2__Pos *pos;
         /// Sequence of 0 to 6 elements 'ns2:balanceInfo' of XML schema type 'ns2:BalanceInfo'
         std::vector<ns2__BalanceInfo> balanceInfo;
         /// Optional element 'ns2:issuerMessageAction' of XML schema type 'xsd:string'
-        std::string *issuerMessageAction;
+        wchar_t *issuerMessageAction;
         /// Optional element 'ns2:customerID' of XML schema type 'xsd:string'
-        std::string *customerID;
+        wchar_t *customerID;
         /// Optional element 'ns2:routing' of XML schema type 'ns2:Routing'
         ns2__Routing *routing;
         /// Optional element 'ns2:transactionLocalDateTime' of XML schema type 'ns2:dateTime'
-        std::string *transactionLocalDateTime;
+        wchar_t *transactionLocalDateTime;
         /// Optional element 'ns2:apCreateMandateReply' of XML schema type 'ns2:APCreateMandateReply'
         ns2__APCreateMandateReply *apCreateMandateReply;
         /// Optional element 'ns2:apMandateStatusReply' of XML schema type 'ns2:APMandateStatusReply'
@@ -16543,11 +16543,11 @@ class SOAP_CMAC ns2__ReplyMessage {
         /// Optional element 'ns2:getMasterpassDataReply' of XML schema type 'ns2:GetMasterpassDataReply'
         ns2__GetMasterpassDataReply *getMasterpassDataReply;
         /// Optional element 'ns2:paymentNetworkMerchantID' of XML schema type 'xsd:string'
-        std::string *paymentNetworkMerchantID;
+        wchar_t *paymentNetworkMerchantID;
         /// Optional element 'ns2:wallet' of XML schema type 'ns2:Wallet'
         ns2__Wallet *wallet;
         /// Optional element 'ns2:cashbackAmount' of XML schema type 'ns2:amount'
-        std::string *cashbackAmount;
+        wchar_t *cashbackAmount;
         /// Optional element 'ns2:giftCard' of XML schema type 'ns2:GiftCard'
         ns2__GiftCard *giftCard;
         /// Optional element 'ns2:giftCardActivationReply' of XML schema type 'ns2:GiftCardActivationReply'
@@ -16604,12 +16604,12 @@ class SOAP_CMAC ns2__ReplyMessage {
 
 /* CyberSourceTransaction_nvp_1.183.h:648 */
 #ifndef SOAP_TYPE_ns2__FaultDetails
-#define SOAP_TYPE_ns2__FaultDetails (519)
+#define SOAP_TYPE_ns2__FaultDetails (520)
 /* complex XML schema type 'ns2:FaultDetails': */
 class SOAP_CMAC ns2__FaultDetails {
       public:
         /// Required element 'ns2:requestID' of XML schema type 'xsd:string'
-        std::string requestID;
+        wchar_t *requestID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16640,104 +16640,104 @@ class SOAP_CMAC ns2__FaultDetails {
 
 /* CyberSourceTransaction_nvp_1.183.h:650 */
 #ifndef SOAP_TYPE_ns2__AirlineData
-#define SOAP_TYPE_ns2__AirlineData (520)
+#define SOAP_TYPE_ns2__AirlineData (521)
 /* complex XML schema type 'ns2:AirlineData': */
 class SOAP_CMAC ns2__AirlineData {
       public:
         /// Optional element 'ns2:agentCode' of XML schema type 'xsd:string'
-        std::string *agentCode;
+        wchar_t *agentCode;
         /// Optional element 'ns2:agentName' of XML schema type 'xsd:string'
-        std::string *agentName;
+        wchar_t *agentName;
         /// Optional element 'ns2:ticketIssuerCity' of XML schema type 'xsd:string'
-        std::string *ticketIssuerCity;
+        wchar_t *ticketIssuerCity;
         /// Optional element 'ns2:ticketIssuerState' of XML schema type 'xsd:string'
-        std::string *ticketIssuerState;
+        wchar_t *ticketIssuerState;
         /// Optional element 'ns2:ticketIssuerPostalCode' of XML schema type 'xsd:string'
-        std::string *ticketIssuerPostalCode;
+        wchar_t *ticketIssuerPostalCode;
         /// Optional element 'ns2:ticketIssuerCountry' of XML schema type 'xsd:string'
-        std::string *ticketIssuerCountry;
+        wchar_t *ticketIssuerCountry;
         /// Optional element 'ns2:ticketIssuerAddress' of XML schema type 'xsd:string'
-        std::string *ticketIssuerAddress;
+        wchar_t *ticketIssuerAddress;
         /// Optional element 'ns2:ticketIssuerCode' of XML schema type 'xsd:string'
-        std::string *ticketIssuerCode;
+        wchar_t *ticketIssuerCode;
         /// Optional element 'ns2:ticketIssuerName' of XML schema type 'xsd:string'
-        std::string *ticketIssuerName;
+        wchar_t *ticketIssuerName;
         /// Optional element 'ns2:ticketNumber' of XML schema type 'xsd:string'
-        std::string *ticketNumber;
+        wchar_t *ticketNumber;
         /// Optional element 'ns2:checkDigit' of XML schema type 'xsd:integer'
-        std::string *checkDigit;
+        wchar_t *checkDigit;
         /// Optional element 'ns2:restrictedTicketIndicator' of XML schema type 'xsd:integer'
-        std::string *restrictedTicketIndicator;
+        wchar_t *restrictedTicketIndicator;
         /// Optional element 'ns2:transactionType' of XML schema type 'xsd:string'
-        std::string *transactionType;
+        wchar_t *transactionType;
         /// Optional element 'ns2:extendedPaymentCode' of XML schema type 'xsd:string'
-        std::string *extendedPaymentCode;
+        wchar_t *extendedPaymentCode;
         /// Optional element 'ns2:carrierName' of XML schema type 'xsd:string'
-        std::string *carrierName;
+        wchar_t *carrierName;
         /// Optional element 'ns2:passengerName' of XML schema type 'xsd:string'
-        std::string *passengerName;
+        wchar_t *passengerName;
         /// Sequence of 0 to 1000 elements 'ns2:passenger' of XML schema type 'ns2:Passenger'
         std::vector<ns2__Passenger> passenger;
         /// Optional element 'ns2:customerCode' of XML schema type 'xsd:string'
-        std::string *customerCode;
+        wchar_t *customerCode;
         /// Optional element 'ns2:documentType' of XML schema type 'xsd:string'
-        std::string *documentType;
+        wchar_t *documentType;
         /// Optional element 'ns2:documentNumber' of XML schema type 'xsd:string'
-        std::string *documentNumber;
+        wchar_t *documentNumber;
         /// Optional element 'ns2:documentNumberOfParts' of XML schema type 'xsd:string'
-        std::string *documentNumberOfParts;
+        wchar_t *documentNumberOfParts;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Optional element 'ns2:invoiceDate' of XML schema type 'xsd:string'
-        std::string *invoiceDate;
+        wchar_t *invoiceDate;
         /// Optional element 'ns2:chargeDetails' of XML schema type 'xsd:string'
-        std::string *chargeDetails;
+        wchar_t *chargeDetails;
         /// Optional element 'ns2:bookingReference' of XML schema type 'xsd:string'
-        std::string *bookingReference;
+        wchar_t *bookingReference;
         /// Optional element 'ns2:totalFee' of XML schema type 'ns2:amount'
-        std::string *totalFee;
+        wchar_t *totalFee;
         /// Optional element 'ns2:clearingSequence' of XML schema type 'xsd:string'
-        std::string *clearingSequence;
+        wchar_t *clearingSequence;
         /// Optional element 'ns2:clearingCount' of XML schema type 'xsd:integer'
-        std::string *clearingCount;
+        wchar_t *clearingCount;
         /// Optional element 'ns2:totalClearingAmount' of XML schema type 'ns2:amount'
-        std::string *totalClearingAmount;
+        wchar_t *totalClearingAmount;
         /// Sequence of 0 to 1000 elements 'ns2:leg' of XML schema type 'ns2:Leg'
         std::vector<ns2__Leg> leg;
         /// Optional element 'ns2:numberOfPassengers' of XML schema type 'xsd:string'
-        std::string *numberOfPassengers;
+        wchar_t *numberOfPassengers;
         /// Optional element 'ns2:reservationSystem' of XML schema type 'xsd:string'
-        std::string *reservationSystem;
+        wchar_t *reservationSystem;
         /// Optional element 'ns2:processIdentifier' of XML schema type 'xsd:string'
-        std::string *processIdentifier;
+        wchar_t *processIdentifier;
         /// Optional element 'ns2:iataNumericCode' of XML schema type 'xsd:string'
-        std::string *iataNumericCode;
+        wchar_t *iataNumericCode;
         /// Optional element 'ns2:ticketIssueDate' of XML schema type 'xsd:string'
-        std::string *ticketIssueDate;
+        wchar_t *ticketIssueDate;
         /// Optional element 'ns2:electronicTicket' of XML schema type 'xsd:string'
-        std::string *electronicTicket;
+        wchar_t *electronicTicket;
         /// Optional element 'ns2:originalTicketNumber' of XML schema type 'xsd:string'
-        std::string *originalTicketNumber;
+        wchar_t *originalTicketNumber;
         /// Optional element 'ns2:purchaseType' of XML schema type 'xsd:string'
-        std::string *purchaseType;
+        wchar_t *purchaseType;
         /// Optional element 'ns2:creditReasonIndicator' of XML schema type 'xsd:string'
-        std::string *creditReasonIndicator;
+        wchar_t *creditReasonIndicator;
         /// Optional element 'ns2:ticketUpdateIndicator' of XML schema type 'xsd:string'
-        std::string *ticketUpdateIndicator;
+        wchar_t *ticketUpdateIndicator;
         /// Optional element 'ns2:planNumber' of XML schema type 'xsd:string'
-        std::string *planNumber;
+        wchar_t *planNumber;
         /// Optional element 'ns2:arrivalDate' of XML schema type 'xsd:string'
-        std::string *arrivalDate;
+        wchar_t *arrivalDate;
         /// Optional element 'ns2:ticketRestrictionText' of XML schema type 'xsd:string'
-        std::string *ticketRestrictionText;
+        wchar_t *ticketRestrictionText;
         /// Optional element 'ns2:exchangeTicketAmount' of XML schema type 'ns2:amount'
-        std::string *exchangeTicketAmount;
+        wchar_t *exchangeTicketAmount;
         /// Optional element 'ns2:exchangeTicketFee' of XML schema type 'ns2:amount'
-        std::string *exchangeTicketFee;
+        wchar_t *exchangeTicketFee;
         /// Optional element 'ns2:journeyType' of XML schema type 'xsd:string'
-        std::string *journeyType;
+        wchar_t *journeyType;
         /// Optional element 'ns2:boardingFee' of XML schema type 'xsd:string'
-        std::string *boardingFee;
+        wchar_t *boardingFee;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16768,52 +16768,52 @@ class SOAP_CMAC ns2__AirlineData {
 
 /* CyberSourceTransaction_nvp_1.183.h:652 */
 #ifndef SOAP_TYPE_ns2__Leg
-#define SOAP_TYPE_ns2__Leg (521)
+#define SOAP_TYPE_ns2__Leg (522)
 /* complex XML schema type 'ns2:Leg': */
 class SOAP_CMAC ns2__Leg {
       public:
         /// Optional element 'ns2:carrierCode' of XML schema type 'xsd:string'
-        std::string *carrierCode;
+        wchar_t *carrierCode;
         /// Optional element 'ns2:flightNumber' of XML schema type 'xsd:string'
-        std::string *flightNumber;
+        wchar_t *flightNumber;
         /// Optional element 'ns2:originatingAirportCode' of XML schema type 'xsd:string'
-        std::string *originatingAirportCode;
+        wchar_t *originatingAirportCode;
         /// Optional element 'ns2:class' of XML schema type 'xsd:string'
-        std::string *class_;
+        wchar_t *class_;
         /// Optional element 'ns2:stopoverCode' of XML schema type 'xsd:string'
-        std::string *stopoverCode;
+        wchar_t *stopoverCode;
         /// Optional element 'ns2:departureDate' of XML schema type 'xsd:string'
-        std::string *departureDate;
+        wchar_t *departureDate;
         /// Optional element 'ns2:destination' of XML schema type 'xsd:string'
-        std::string *destination;
+        wchar_t *destination;
         /// Optional element 'ns2:fareBasis' of XML schema type 'xsd:string'
-        std::string *fareBasis;
+        wchar_t *fareBasis;
         /// Optional element 'ns2:departTax' of XML schema type 'xsd:string'
-        std::string *departTax;
+        wchar_t *departTax;
         /// Optional element 'ns2:conjunctionTicket' of XML schema type 'xsd:string'
-        std::string *conjunctionTicket;
+        wchar_t *conjunctionTicket;
         /// Optional element 'ns2:exchangeTicket' of XML schema type 'xsd:string'
-        std::string *exchangeTicket;
+        wchar_t *exchangeTicket;
         /// Optional element 'ns2:couponNumber' of XML schema type 'xsd:string'
-        std::string *couponNumber;
+        wchar_t *couponNumber;
         /// Optional element 'ns2:departureTime' of XML schema type 'xsd:string'
-        std::string *departureTime;
+        wchar_t *departureTime;
         /// Optional element 'ns2:departureTimeSegment' of XML schema type 'xsd:string'
-        std::string *departureTimeSegment;
+        wchar_t *departureTimeSegment;
         /// Optional element 'ns2:arrivalTime' of XML schema type 'xsd:string'
-        std::string *arrivalTime;
+        wchar_t *arrivalTime;
         /// Optional element 'ns2:arrivalTimeSegment' of XML schema type 'xsd:string'
-        std::string *arrivalTimeSegment;
+        wchar_t *arrivalTimeSegment;
         /// Optional element 'ns2:endorsementsRestrictions' of XML schema type 'xsd:string'
-        std::string *endorsementsRestrictions;
+        wchar_t *endorsementsRestrictions;
         /// Optional element 'ns2:fare' of XML schema type 'xsd:string'
-        std::string *fare;
+        wchar_t *fare;
         /// Optional element 'ns2:fee' of XML schema type 'xsd:string'
-        std::string *fee;
+        wchar_t *fee;
         /// Optional element 'ns2:tax' of XML schema type 'xsd:string'
-        std::string *tax;
+        wchar_t *tax;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16844,18 +16844,18 @@ class SOAP_CMAC ns2__Leg {
 
 /* CyberSourceTransaction_nvp_1.183.h:654 */
 #ifndef SOAP_TYPE_ns2__AncillaryData
-#define SOAP_TYPE_ns2__AncillaryData (522)
+#define SOAP_TYPE_ns2__AncillaryData (523)
 /* complex XML schema type 'ns2:AncillaryData': */
 class SOAP_CMAC ns2__AncillaryData {
       public:
         /// Optional element 'ns2:ticketNumber' of XML schema type 'xsd:string'
-        std::string *ticketNumber;
+        wchar_t *ticketNumber;
         /// Optional element 'ns2:passengerName' of XML schema type 'xsd:string'
-        std::string *passengerName;
+        wchar_t *passengerName;
         /// Optional element 'ns2:connectedTicketNumber' of XML schema type 'xsd:string'
-        std::string *connectedTicketNumber;
+        wchar_t *connectedTicketNumber;
         /// Optional element 'ns2:creditReasonIndicator' of XML schema type 'xsd:string'
-        std::string *creditReasonIndicator;
+        wchar_t *creditReasonIndicator;
         /// Sequence of 0 to 1000 elements 'ns2:service' of XML schema type 'ns2:Service'
         std::vector<ns2__Service> service;
         /// Context that manages this object
@@ -16888,16 +16888,16 @@ class SOAP_CMAC ns2__AncillaryData {
 
 /* CyberSourceTransaction_nvp_1.183.h:656 */
 #ifndef SOAP_TYPE_ns2__Service
-#define SOAP_TYPE_ns2__Service (523)
+#define SOAP_TYPE_ns2__Service (524)
 /* complex XML schema type 'ns2:Service': */
 class SOAP_CMAC ns2__Service {
       public:
         /// Optional element 'ns2:categoryCode' of XML schema type 'xsd:string'
-        std::string *categoryCode;
+        wchar_t *categoryCode;
         /// Optional element 'ns2:subcategoryCode' of XML schema type 'xsd:string'
-        std::string *subcategoryCode;
+        wchar_t *subcategoryCode;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -16928,110 +16928,110 @@ class SOAP_CMAC ns2__Service {
 
 /* CyberSourceTransaction_nvp_1.183.h:658 */
 #ifndef SOAP_TYPE_ns2__LodgingData
-#define SOAP_TYPE_ns2__LodgingData (524)
+#define SOAP_TYPE_ns2__LodgingData (525)
 /* complex XML schema type 'ns2:LodgingData': */
 class SOAP_CMAC ns2__LodgingData {
       public:
         /// Optional element 'ns2:checkInDate' of XML schema type 'xsd:string'
-        std::string *checkInDate;
+        wchar_t *checkInDate;
         /// Optional element 'ns2:checkOutDate' of XML schema type 'xsd:string'
-        std::string *checkOutDate;
+        wchar_t *checkOutDate;
         /// Optional element 'ns2:dailyRoomRate1' of XML schema type 'ns2:amount'
-        std::string *dailyRoomRate1;
+        wchar_t *dailyRoomRate1;
         /// Optional element 'ns2:dailyRoomRate2' of XML schema type 'ns2:amount'
-        std::string *dailyRoomRate2;
+        wchar_t *dailyRoomRate2;
         /// Optional element 'ns2:dailyRoomRate3' of XML schema type 'ns2:amount'
-        std::string *dailyRoomRate3;
+        wchar_t *dailyRoomRate3;
         /// Optional element 'ns2:roomNights1' of XML schema type 'xsd:integer'
-        std::string *roomNights1;
+        wchar_t *roomNights1;
         /// Optional element 'ns2:roomNights2' of XML schema type 'xsd:integer'
-        std::string *roomNights2;
+        wchar_t *roomNights2;
         /// Optional element 'ns2:roomNights3' of XML schema type 'xsd:integer'
-        std::string *roomNights3;
+        wchar_t *roomNights3;
         /// Optional element 'ns2:guestSmokingPreference' of XML schema type 'xsd:string'
-        std::string *guestSmokingPreference;
+        wchar_t *guestSmokingPreference;
         /// Optional element 'ns2:numberOfRoomsBooked' of XML schema type 'xsd:integer'
-        std::string *numberOfRoomsBooked;
+        wchar_t *numberOfRoomsBooked;
         /// Optional element 'ns2:numberOfGuests' of XML schema type 'xsd:integer'
-        std::string *numberOfGuests;
+        wchar_t *numberOfGuests;
         /// Optional element 'ns2:roomBedType' of XML schema type 'xsd:string'
-        std::string *roomBedType;
+        wchar_t *roomBedType;
         /// Optional element 'ns2:roomTaxElements' of XML schema type 'xsd:string'
-        std::string *roomTaxElements;
+        wchar_t *roomTaxElements;
         /// Optional element 'ns2:roomRateType' of XML schema type 'xsd:string'
-        std::string *roomRateType;
+        wchar_t *roomRateType;
         /// Optional element 'ns2:guestName' of XML schema type 'xsd:string'
-        std::string *guestName;
+        wchar_t *guestName;
         /// Optional element 'ns2:customerServicePhoneNumber' of XML schema type 'xsd:string'
-        std::string *customerServicePhoneNumber;
+        wchar_t *customerServicePhoneNumber;
         /// Optional element 'ns2:corporateClientCode' of XML schema type 'xsd:string'
-        std::string *corporateClientCode;
+        wchar_t *corporateClientCode;
         /// Optional element 'ns2:promotionalCode' of XML schema type 'xsd:string'
-        std::string *promotionalCode;
+        wchar_t *promotionalCode;
         /// Optional element 'ns2:additionalCoupon' of XML schema type 'xsd:string'
-        std::string *additionalCoupon;
+        wchar_t *additionalCoupon;
         /// Optional element 'ns2:roomLocation' of XML schema type 'xsd:string'
-        std::string *roomLocation;
+        wchar_t *roomLocation;
         /// Optional element 'ns2:specialProgramCode' of XML schema type 'xsd:string'
-        std::string *specialProgramCode;
+        wchar_t *specialProgramCode;
         /// Optional element 'ns2:tax' of XML schema type 'ns2:amount'
-        std::string *tax;
+        wchar_t *tax;
         /// Optional element 'ns2:prepaidCost' of XML schema type 'ns2:amount'
-        std::string *prepaidCost;
+        wchar_t *prepaidCost;
         /// Optional element 'ns2:foodAndBeverageCost' of XML schema type 'ns2:amount'
-        std::string *foodAndBeverageCost;
+        wchar_t *foodAndBeverageCost;
         /// Optional element 'ns2:roomTax' of XML schema type 'ns2:amount'
-        std::string *roomTax;
+        wchar_t *roomTax;
         /// Optional element 'ns2:adjustmentAmount' of XML schema type 'ns2:amount'
-        std::string *adjustmentAmount;
+        wchar_t *adjustmentAmount;
         /// Optional element 'ns2:phoneCost' of XML schema type 'ns2:amount'
-        std::string *phoneCost;
+        wchar_t *phoneCost;
         /// Optional element 'ns2:restaurantCost' of XML schema type 'ns2:amount'
-        std::string *restaurantCost;
+        wchar_t *restaurantCost;
         /// Optional element 'ns2:roomServiceCost' of XML schema type 'ns2:amount'
-        std::string *roomServiceCost;
+        wchar_t *roomServiceCost;
         /// Optional element 'ns2:miniBarCost' of XML schema type 'ns2:amount'
-        std::string *miniBarCost;
+        wchar_t *miniBarCost;
         /// Optional element 'ns2:laundryCost' of XML schema type 'ns2:amount'
-        std::string *laundryCost;
+        wchar_t *laundryCost;
         /// Optional element 'ns2:miscellaneousCost' of XML schema type 'ns2:amount'
-        std::string *miscellaneousCost;
+        wchar_t *miscellaneousCost;
         /// Optional element 'ns2:giftShopCost' of XML schema type 'ns2:amount'
-        std::string *giftShopCost;
+        wchar_t *giftShopCost;
         /// Optional element 'ns2:movieCost' of XML schema type 'ns2:amount'
-        std::string *movieCost;
+        wchar_t *movieCost;
         /// Optional element 'ns2:healthClubCost' of XML schema type 'ns2:amount'
-        std::string *healthClubCost;
+        wchar_t *healthClubCost;
         /// Optional element 'ns2:valetParkingCost' of XML schema type 'ns2:amount'
-        std::string *valetParkingCost;
+        wchar_t *valetParkingCost;
         /// Optional element 'ns2:cashDisbursementCost' of XML schema type 'ns2:amount'
-        std::string *cashDisbursementCost;
+        wchar_t *cashDisbursementCost;
         /// Optional element 'ns2:nonRoomCost' of XML schema type 'ns2:amount'
-        std::string *nonRoomCost;
+        wchar_t *nonRoomCost;
         /// Optional element 'ns2:businessCenterCost' of XML schema type 'ns2:amount'
-        std::string *businessCenterCost;
+        wchar_t *businessCenterCost;
         /// Optional element 'ns2:loungeBarCost' of XML schema type 'ns2:amount'
-        std::string *loungeBarCost;
+        wchar_t *loungeBarCost;
         /// Optional element 'ns2:transportationCost' of XML schema type 'ns2:amount'
-        std::string *transportationCost;
+        wchar_t *transportationCost;
         /// Optional element 'ns2:gratuityCost' of XML schema type 'ns2:amount'
-        std::string *gratuityCost;
+        wchar_t *gratuityCost;
         /// Optional element 'ns2:conferenceRoomCost' of XML schema type 'ns2:amount'
-        std::string *conferenceRoomCost;
+        wchar_t *conferenceRoomCost;
         /// Optional element 'ns2:audioVisualCost' of XML schema type 'ns2:amount'
-        std::string *audioVisualCost;
+        wchar_t *audioVisualCost;
         /// Optional element 'ns2:banquetCost' of XML schema type 'ns2:amount'
-        std::string *banquetCost;
+        wchar_t *banquetCost;
         /// Optional element 'ns2:internetAccessCost' of XML schema type 'ns2:amount'
-        std::string *internetAccessCost;
+        wchar_t *internetAccessCost;
         /// Optional element 'ns2:earlyCheckOutCost' of XML schema type 'ns2:amount'
-        std::string *earlyCheckOutCost;
+        wchar_t *earlyCheckOutCost;
         /// Optional element 'ns2:nonRoomTax' of XML schema type 'ns2:amount'
-        std::string *nonRoomTax;
+        wchar_t *nonRoomTax;
         /// Optional element 'ns2:travelAgencyCode' of XML schema type 'xsd:string'
-        std::string *travelAgencyCode;
+        wchar_t *travelAgencyCode;
         /// Optional element 'ns2:travelAgencyName' of XML schema type 'xsd:string'
-        std::string *travelAgencyName;
+        wchar_t *travelAgencyName;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17062,86 +17062,86 @@ class SOAP_CMAC ns2__LodgingData {
 
 /* CyberSourceTransaction_nvp_1.183.h:660 */
 #ifndef SOAP_TYPE_ns2__Pos
-#define SOAP_TYPE_ns2__Pos (525)
+#define SOAP_TYPE_ns2__Pos (526)
 /* complex XML schema type 'ns2:Pos': */
 class SOAP_CMAC ns2__Pos {
       public:
         /// Optional element 'ns2:entryMode' of XML schema type 'xsd:string'
-        std::string *entryMode;
+        wchar_t *entryMode;
         /// Optional element 'ns2:cardPresent' of XML schema type 'xsd:string'
-        std::string *cardPresent;
+        wchar_t *cardPresent;
         /// Optional element 'ns2:terminalCapability' of XML schema type 'xsd:string'
-        std::string *terminalCapability;
+        wchar_t *terminalCapability;
         /// Optional element 'ns2:trackData' of XML schema type 'xsd:string'
-        std::string *trackData;
+        wchar_t *trackData;
         /// Optional element 'ns2:terminalID' of XML schema type 'xsd:string'
-        std::string *terminalID;
+        wchar_t *terminalID;
         /// Optional element 'ns2:terminalType' of XML schema type 'xsd:string'
-        std::string *terminalType;
+        wchar_t *terminalType;
         /// Optional element 'ns2:terminalLocation' of XML schema type 'xsd:string'
-        std::string *terminalLocation;
+        wchar_t *terminalLocation;
         /// Optional element 'ns2:transactionSecurity' of XML schema type 'xsd:string'
-        std::string *transactionSecurity;
+        wchar_t *transactionSecurity;
         /// Optional element 'ns2:catLevel' of XML schema type 'xsd:string'
-        std::string *catLevel;
+        wchar_t *catLevel;
         /// Optional element 'ns2:conditionCode' of XML schema type 'xsd:string'
-        std::string *conditionCode;
+        wchar_t *conditionCode;
         /// Optional element 'ns2:environment' of XML schema type 'xsd:string'
-        std::string *environment;
+        wchar_t *environment;
         /// Optional element 'ns2:paymentData' of XML schema type 'xsd:string'
-        std::string *paymentData;
+        wchar_t *paymentData;
         /// Optional element 'ns2:deviceReaderData' of XML schema type 'xsd:string'
-        std::string *deviceReaderData;
+        wchar_t *deviceReaderData;
         /// Optional element 'ns2:encryptionAlgorithm' of XML schema type 'xsd:string'
-        std::string *encryptionAlgorithm;
+        wchar_t *encryptionAlgorithm;
         /// Optional element 'ns2:encodingMethod' of XML schema type 'xsd:string'
-        std::string *encodingMethod;
+        wchar_t *encodingMethod;
         /// Optional element 'ns2:deviceID' of XML schema type 'xsd:string'
-        std::string *deviceID;
+        wchar_t *deviceID;
         /// Optional element 'ns2:serviceCode' of XML schema type 'xsd:string'
-        std::string *serviceCode;
+        wchar_t *serviceCode;
         /// Optional element 'ns2:terminalIDAlternate' of XML schema type 'xsd:string'
-        std::string *terminalIDAlternate;
+        wchar_t *terminalIDAlternate;
         /// Optional element 'ns2:terminalCompliance' of XML schema type 'xsd:integer'
-        std::string *terminalCompliance;
+        wchar_t *terminalCompliance;
         /// Optional element 'ns2:terminalCardCaptureCapability' of XML schema type 'xsd:string'
-        std::string *terminalCardCaptureCapability;
+        wchar_t *terminalCardCaptureCapability;
         /// Optional element 'ns2:terminalOutputCapability' of XML schema type 'xsd:string'
-        std::string *terminalOutputCapability;
+        wchar_t *terminalOutputCapability;
         /// Optional element 'ns2:terminalPINcapability' of XML schema type 'xsd:string'
-        std::string *terminalPINcapability;
+        wchar_t *terminalPINcapability;
         /// Optional element 'ns2:terminalCVMcapabilities_0' of XML schema type 'xsd:string'
-        std::string *terminalCVMcapabilities_USCORE0;
+        wchar_t *terminalCVMcapabilities_USCORE0;
         /// Optional element 'ns2:terminalCVMcapabilities_1' of XML schema type 'xsd:string'
-        std::string *terminalCVMcapabilities_USCORE1;
+        wchar_t *terminalCVMcapabilities_USCORE1;
         /// Optional element 'ns2:terminalCVMcapabilities_2' of XML schema type 'xsd:string'
-        std::string *terminalCVMcapabilities_USCORE2;
+        wchar_t *terminalCVMcapabilities_USCORE2;
         /// Optional element 'ns2:terminalInputCapabilities_0' of XML schema type 'xsd:string'
-        std::string *terminalInputCapabilities_USCORE0;
+        wchar_t *terminalInputCapabilities_USCORE0;
         /// Optional element 'ns2:terminalInputCapabilities_1' of XML schema type 'xsd:string'
-        std::string *terminalInputCapabilities_USCORE1;
+        wchar_t *terminalInputCapabilities_USCORE1;
         /// Optional element 'ns2:terminalInputCapabilities_2' of XML schema type 'xsd:string'
-        std::string *terminalInputCapabilities_USCORE2;
+        wchar_t *terminalInputCapabilities_USCORE2;
         /// Optional element 'ns2:terminalInputCapabilities_3' of XML schema type 'xsd:string'
-        std::string *terminalInputCapabilities_USCORE3;
+        wchar_t *terminalInputCapabilities_USCORE3;
         /// Optional element 'ns2:terminalInputCapabilities_4' of XML schema type 'xsd:string'
-        std::string *terminalInputCapabilities_USCORE4;
+        wchar_t *terminalInputCapabilities_USCORE4;
         /// Optional element 'ns2:terminalInputCapabilities_5' of XML schema type 'xsd:string'
-        std::string *terminalInputCapabilities_USCORE5;
+        wchar_t *terminalInputCapabilities_USCORE5;
         /// Optional element 'ns2:terminalInputCapabilities_6' of XML schema type 'xsd:string'
-        std::string *terminalInputCapabilities_USCORE6;
+        wchar_t *terminalInputCapabilities_USCORE6;
         /// Optional element 'ns2:terminalSerialNumber' of XML schema type 'xsd:string'
-        std::string *terminalSerialNumber;
+        wchar_t *terminalSerialNumber;
         /// Optional element 'ns2:storeAndForwardIndicator' of XML schema type 'xsd:string'
-        std::string *storeAndForwardIndicator;
+        wchar_t *storeAndForwardIndicator;
         /// Optional element 'ns2:panEntryMode' of XML schema type 'xsd:string'
-        std::string *panEntryMode;
+        wchar_t *panEntryMode;
         /// Optional element 'ns2:endlessAisleTransactionIndicator' of XML schema type 'ns2:boolean'
-        std::string *endlessAisleTransactionIndicator;
+        wchar_t *endlessAisleTransactionIndicator;
         /// Optional element 'ns2:terminalModel' of XML schema type 'xsd:string'
-        std::string *terminalModel;
+        wchar_t *terminalModel;
         /// Optional element 'ns2:terminalMake' of XML schema type 'xsd:string'
-        std::string *terminalMake;
+        wchar_t *terminalMake;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17172,12 +17172,12 @@ class SOAP_CMAC ns2__Pos {
 
 /* CyberSourceTransaction_nvp_1.183.h:662 */
 #ifndef SOAP_TYPE_ns2__Pin
-#define SOAP_TYPE_ns2__Pin (526)
+#define SOAP_TYPE_ns2__Pin (527)
 /* complex XML schema type 'ns2:Pin': */
 class SOAP_CMAC ns2__Pin {
       public:
         /// Optional element 'ns2:entryCapability' of XML schema type 'xsd:string'
-        std::string *entryCapability;
+        wchar_t *entryCapability;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17208,24 +17208,24 @@ class SOAP_CMAC ns2__Pin {
 
 /* CyberSourceTransaction_nvp_1.183.h:664 */
 #ifndef SOAP_TYPE_ns2__EncryptedPayment
-#define SOAP_TYPE_ns2__EncryptedPayment (527)
+#define SOAP_TYPE_ns2__EncryptedPayment (528)
 /* complex XML schema type 'ns2:EncryptedPayment': */
 class SOAP_CMAC ns2__EncryptedPayment {
       public:
         /// Optional element 'ns2:descriptor' of XML schema type 'xsd:string'
-        std::string *descriptor;
+        wchar_t *descriptor;
         /// Optional element 'ns2:data' of XML schema type 'xsd:string'
-        std::string *data;
+        wchar_t *data;
         /// Optional element 'ns2:encoding' of XML schema type 'xsd:string'
-        std::string *encoding;
+        wchar_t *encoding;
         /// Optional element 'ns2:wrappedKey' of XML schema type 'xsd:string'
-        std::string *wrappedKey;
+        wchar_t *wrappedKey;
         /// Optional element 'ns2:referenceID' of XML schema type 'xsd:integer'
-        std::string *referenceID;
+        wchar_t *referenceID;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Optional element 'ns2:keySerialNumber' of XML schema type 'xsd:string'
-        std::string *keySerialNumber;
+        wchar_t *keySerialNumber;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17256,74 +17256,74 @@ class SOAP_CMAC ns2__EncryptedPayment {
 
 /* CyberSourceTransaction_nvp_1.183.h:666 */
 #ifndef SOAP_TYPE_ns2__Installment
-#define SOAP_TYPE_ns2__Installment (528)
+#define SOAP_TYPE_ns2__Installment (529)
 /* complex XML schema type 'ns2:Installment': */
 class SOAP_CMAC ns2__Installment {
       public:
         /// Optional element 'ns2:sequence' of XML schema type 'xsd:string'
-        std::string *sequence;
+        wchar_t *sequence;
         /// Optional element 'ns2:totalCount' of XML schema type 'xsd:string'
-        std::string *totalCount;
+        wchar_t *totalCount;
         /// Optional element 'ns2:totalAmount' of XML schema type 'xsd:string'
-        std::string *totalAmount;
+        wchar_t *totalAmount;
         /// Optional element 'ns2:frequency' of XML schema type 'xsd:string'
-        std::string *frequency;
+        wchar_t *frequency;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:planType' of XML schema type 'xsd:string'
-        std::string *planType;
+        wchar_t *planType;
         /// Optional element 'ns2:firstInstallmentDate' of XML schema type 'xsd:string'
-        std::string *firstInstallmentDate;
+        wchar_t *firstInstallmentDate;
         /// Optional element 'ns2:amountFunded' of XML schema type 'xsd:string'
-        std::string *amountFunded;
+        wchar_t *amountFunded;
         /// Optional element 'ns2:amountRequestedPercentage' of XML schema type 'xsd:string'
-        std::string *amountRequestedPercentage;
+        wchar_t *amountRequestedPercentage;
         /// Optional element 'ns2:expenses' of XML schema type 'xsd:string'
-        std::string *expenses;
+        wchar_t *expenses;
         /// Optional element 'ns2:expensesPercentage' of XML schema type 'xsd:string'
-        std::string *expensesPercentage;
+        wchar_t *expensesPercentage;
         /// Optional element 'ns2:fees' of XML schema type 'xsd:string'
-        std::string *fees;
+        wchar_t *fees;
         /// Optional element 'ns2:feesPercentage' of XML schema type 'xsd:string'
-        std::string *feesPercentage;
+        wchar_t *feesPercentage;
         /// Optional element 'ns2:taxes' of XML schema type 'xsd:string'
-        std::string *taxes;
+        wchar_t *taxes;
         /// Optional element 'ns2:taxesPercentage' of XML schema type 'xsd:string'
-        std::string *taxesPercentage;
+        wchar_t *taxesPercentage;
         /// Optional element 'ns2:insurance' of XML schema type 'xsd:string'
-        std::string *insurance;
+        wchar_t *insurance;
         /// Optional element 'ns2:insurancePercentage' of XML schema type 'xsd:string'
-        std::string *insurancePercentage;
+        wchar_t *insurancePercentage;
         /// Optional element 'ns2:additionalCosts' of XML schema type 'xsd:string'
-        std::string *additionalCosts;
+        wchar_t *additionalCosts;
         /// Optional element 'ns2:additionalCostsPercentage' of XML schema type 'xsd:string'
-        std::string *additionalCostsPercentage;
+        wchar_t *additionalCostsPercentage;
         /// Optional element 'ns2:monthlyInterestRate' of XML schema type 'xsd:string'
-        std::string *monthlyInterestRate;
+        wchar_t *monthlyInterestRate;
         /// Optional element 'ns2:annualInterestRate' of XML schema type 'xsd:string'
-        std::string *annualInterestRate;
+        wchar_t *annualInterestRate;
         /// Optional element 'ns2:annualFinancingCost' of XML schema type 'xsd:string'
-        std::string *annualFinancingCost;
+        wchar_t *annualFinancingCost;
         /// Optional element 'ns2:paymentType' of XML schema type 'xsd:string'
-        std::string *paymentType;
+        wchar_t *paymentType;
         /// Optional element 'ns2:invoiceData' of XML schema type 'xsd:string'
-        std::string *invoiceData;
+        wchar_t *invoiceData;
         /// Optional element 'ns2:downPayment' of XML schema type 'xsd:string'
-        std::string *downPayment;
+        wchar_t *downPayment;
         /// Optional element 'ns2:firstInstallmentAmount' of XML schema type 'xsd:string'
-        std::string *firstInstallmentAmount;
+        wchar_t *firstInstallmentAmount;
         /// Optional element 'ns2:minimumTotalCount' of XML schema type 'xsd:string'
-        std::string *minimumTotalCount;
+        wchar_t *minimumTotalCount;
         /// Optional element 'ns2:maximumTotalCount' of XML schema type 'xsd:string'
-        std::string *maximumTotalCount;
+        wchar_t *maximumTotalCount;
         /// Optional element 'ns2:gracePeriodDuration' of XML schema type 'xsd:string'
-        std::string *gracePeriodDuration;
+        wchar_t *gracePeriodDuration;
         /// Optional element 'ns2:gracePeriodDurationType' of XML schema type 'xsd:string'
-        std::string *gracePeriodDurationType;
+        wchar_t *gracePeriodDurationType;
         /// Optional element 'ns2:planID' of XML schema type 'xsd:string'
-        std::string *planID;
+        wchar_t *planID;
         /// Optional element 'ns2:interestAmount' of XML schema type 'xsd:string'
-        std::string *interestAmount;
+        wchar_t *interestAmount;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17354,50 +17354,50 @@ class SOAP_CMAC ns2__Installment {
 
 /* CyberSourceTransaction_nvp_1.183.h:670 */
 #ifndef SOAP_TYPE_ns2__MerchantDefinedData
-#define SOAP_TYPE_ns2__MerchantDefinedData (530)
+#define SOAP_TYPE_ns2__MerchantDefinedData (531)
 /* complex XML schema type 'ns2:MerchantDefinedData': */
 class SOAP_CMAC ns2__MerchantDefinedData {
       public:
         /// Optional element 'ns2:field1' of XML schema type 'xsd:string'
-        std::string *field1;
+        wchar_t *field1;
         /// Optional element 'ns2:field2' of XML schema type 'xsd:string'
-        std::string *field2;
+        wchar_t *field2;
         /// Optional element 'ns2:field3' of XML schema type 'xsd:string'
-        std::string *field3;
+        wchar_t *field3;
         /// Optional element 'ns2:field4' of XML schema type 'xsd:string'
-        std::string *field4;
+        wchar_t *field4;
         /// Optional element 'ns2:field5' of XML schema type 'xsd:string'
-        std::string *field5;
+        wchar_t *field5;
         /// Optional element 'ns2:field6' of XML schema type 'xsd:string'
-        std::string *field6;
+        wchar_t *field6;
         /// Optional element 'ns2:field7' of XML schema type 'xsd:string'
-        std::string *field7;
+        wchar_t *field7;
         /// Optional element 'ns2:field8' of XML schema type 'xsd:string'
-        std::string *field8;
+        wchar_t *field8;
         /// Optional element 'ns2:field9' of XML schema type 'xsd:string'
-        std::string *field9;
+        wchar_t *field9;
         /// Optional element 'ns2:field10' of XML schema type 'xsd:string'
-        std::string *field10;
+        wchar_t *field10;
         /// Optional element 'ns2:field11' of XML schema type 'xsd:string'
-        std::string *field11;
+        wchar_t *field11;
         /// Optional element 'ns2:field12' of XML schema type 'xsd:string'
-        std::string *field12;
+        wchar_t *field12;
         /// Optional element 'ns2:field13' of XML schema type 'xsd:string'
-        std::string *field13;
+        wchar_t *field13;
         /// Optional element 'ns2:field14' of XML schema type 'xsd:string'
-        std::string *field14;
+        wchar_t *field14;
         /// Optional element 'ns2:field15' of XML schema type 'xsd:string'
-        std::string *field15;
+        wchar_t *field15;
         /// Optional element 'ns2:field16' of XML schema type 'xsd:string'
-        std::string *field16;
+        wchar_t *field16;
         /// Optional element 'ns2:field17' of XML schema type 'xsd:string'
-        std::string *field17;
+        wchar_t *field17;
         /// Optional element 'ns2:field18' of XML schema type 'xsd:string'
-        std::string *field18;
+        wchar_t *field18;
         /// Optional element 'ns2:field19' of XML schema type 'xsd:string'
-        std::string *field19;
+        wchar_t *field19;
         /// Optional element 'ns2:field20' of XML schema type 'xsd:string'
-        std::string *field20;
+        wchar_t *field20;
         /// Sequence of 0 to 100 elements 'ns2:mddField' of XML schema type 'ns2:MDDField'
         std::vector<ns2__MDDField> mddField;
         /// Context that manages this object
@@ -17430,7 +17430,7 @@ class SOAP_CMAC ns2__MerchantDefinedData {
 
 /* CyberSourceTransaction_nvp_1.183.h:674 */
 #ifndef SOAP_TYPE_ns2__AuxiliaryData
-#define SOAP_TYPE_ns2__AuxiliaryData (532)
+#define SOAP_TYPE_ns2__AuxiliaryData (533)
 /* complex XML schema type 'ns2:AuxiliaryData': */
 class SOAP_CMAC ns2__AuxiliaryData {
       public:
@@ -17466,18 +17466,18 @@ class SOAP_CMAC ns2__AuxiliaryData {
 
 /* CyberSourceTransaction_nvp_1.183.h:676 */
 #ifndef SOAP_TYPE_ns2__MerchantSecureData
-#define SOAP_TYPE_ns2__MerchantSecureData (533)
+#define SOAP_TYPE_ns2__MerchantSecureData (534)
 /* complex XML schema type 'ns2:MerchantSecureData': */
 class SOAP_CMAC ns2__MerchantSecureData {
       public:
         /// Optional element 'ns2:field1' of XML schema type 'xsd:string'
-        std::string *field1;
+        wchar_t *field1;
         /// Optional element 'ns2:field2' of XML schema type 'xsd:string'
-        std::string *field2;
+        wchar_t *field2;
         /// Optional element 'ns2:field3' of XML schema type 'xsd:string'
-        std::string *field3;
+        wchar_t *field3;
         /// Optional element 'ns2:field4' of XML schema type 'xsd:string'
-        std::string *field4;
+        wchar_t *field4;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17508,7 +17508,7 @@ class SOAP_CMAC ns2__MerchantSecureData {
 
 /* CyberSourceTransaction_nvp_1.183.h:678 */
 #ifndef SOAP_TYPE_ns2__ReplyReserved
-#define SOAP_TYPE_ns2__ReplyReserved (534)
+#define SOAP_TYPE_ns2__ReplyReserved (535)
 /* complex XML schema type 'ns2:ReplyReserved': */
 class SOAP_CMAC ns2__ReplyReserved {
       public:
@@ -17543,14 +17543,14 @@ class SOAP_CMAC ns2__ReplyReserved {
 
 /* CyberSourceTransaction_nvp_1.183.h:680 */
 #ifndef SOAP_TYPE_ns2__RequestReserved
-#define SOAP_TYPE_ns2__RequestReserved (535)
+#define SOAP_TYPE_ns2__RequestReserved (536)
 /* complex XML schema type 'ns2:RequestReserved': */
 class SOAP_CMAC ns2__RequestReserved {
       public:
         /// Required element 'ns2:name' of XML schema type 'xsd:string'
-        std::string name;
+        wchar_t *name;
         /// Required element 'ns2:value' of XML schema type 'xsd:string'
-        std::string value;
+        wchar_t *value;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17581,94 +17581,94 @@ class SOAP_CMAC ns2__RequestReserved {
 
 /* CyberSourceTransaction_nvp_1.183.h:682 */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsReply
-#define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (536)
+#define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (537)
 /* complex XML schema type 'ns2:PayPalGetTxnDetailsReply': */
 class SOAP_CMAC ns2__PayPalGetTxnDetailsReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:payer' of XML schema type 'xsd:string'
-        std::string *payer;
+        wchar_t *payer;
         /// Optional element 'ns2:payerId' of XML schema type 'xsd:string'
-        std::string *payerId;
+        wchar_t *payerId;
         /// Optional element 'ns2:payerStatus' of XML schema type 'xsd:string'
-        std::string *payerStatus;
+        wchar_t *payerStatus;
         /// Optional element 'ns2:payerCountry' of XML schema type 'xsd:string'
-        std::string *payerCountry;
+        wchar_t *payerCountry;
         /// Optional element 'ns2:payerBusiness' of XML schema type 'xsd:string'
-        std::string *payerBusiness;
+        wchar_t *payerBusiness;
         /// Optional element 'ns2:payerSalutation' of XML schema type 'xsd:string'
-        std::string *payerSalutation;
+        wchar_t *payerSalutation;
         /// Optional element 'ns2:payerFirstname' of XML schema type 'xsd:string'
-        std::string *payerFirstname;
+        wchar_t *payerFirstname;
         /// Optional element 'ns2:payerMiddlename' of XML schema type 'xsd:string'
-        std::string *payerMiddlename;
+        wchar_t *payerMiddlename;
         /// Optional element 'ns2:payerLastname' of XML schema type 'xsd:string'
-        std::string *payerLastname;
+        wchar_t *payerLastname;
         /// Optional element 'ns2:payerSuffix' of XML schema type 'xsd:string'
-        std::string *payerSuffix;
+        wchar_t *payerSuffix;
         /// Optional element 'ns2:addressID' of XML schema type 'xsd:string'
-        std::string *addressID;
+        wchar_t *addressID;
         /// Optional element 'ns2:addressStatus' of XML schema type 'xsd:string'
-        std::string *addressStatus;
+        wchar_t *addressStatus;
         /// Optional element 'ns2:shipToName' of XML schema type 'xsd:string'
-        std::string *shipToName;
+        wchar_t *shipToName;
         /// Optional element 'ns2:shipToAddress1' of XML schema type 'xsd:string'
-        std::string *shipToAddress1;
+        wchar_t *shipToAddress1;
         /// Optional element 'ns2:shipToAddress2' of XML schema type 'xsd:string'
-        std::string *shipToAddress2;
+        wchar_t *shipToAddress2;
         /// Optional element 'ns2:shipToCity' of XML schema type 'xsd:string'
-        std::string *shipToCity;
+        wchar_t *shipToCity;
         /// Optional element 'ns2:shipToState' of XML schema type 'xsd:string'
-        std::string *shipToState;
+        wchar_t *shipToState;
         /// Optional element 'ns2:shipToCountry' of XML schema type 'xsd:string'
-        std::string *shipToCountry;
+        wchar_t *shipToCountry;
         /// Optional element 'ns2:shipToZip' of XML schema type 'xsd:string'
-        std::string *shipToZip;
+        wchar_t *shipToZip;
         /// Optional element 'ns2:payerPhone' of XML schema type 'xsd:string'
-        std::string *payerPhone;
+        wchar_t *payerPhone;
         /// Optional element 'ns2:transactionId' of XML schema type 'xsd:string'
-        std::string *transactionId;
+        wchar_t *transactionId;
         /// Optional element 'ns2:parentTransactionId' of XML schema type 'xsd:string'
-        std::string *parentTransactionId;
+        wchar_t *parentTransactionId;
         /// Optional element 'ns2:paypalReceiptId' of XML schema type 'xsd:string'
-        std::string *paypalReceiptId;
+        wchar_t *paypalReceiptId;
         /// Optional element 'ns2:paypalTransactiontype' of XML schema type 'xsd:string'
-        std::string *paypalTransactiontype;
+        wchar_t *paypalTransactiontype;
         /// Optional element 'ns2:paypalPaymentType' of XML schema type 'xsd:string'
-        std::string *paypalPaymentType;
+        wchar_t *paypalPaymentType;
         /// Optional element 'ns2:paypalOrderTime' of XML schema type 'xsd:string'
-        std::string *paypalOrderTime;
+        wchar_t *paypalOrderTime;
         /// Optional element 'ns2:paypalPaymentGrossAmount' of XML schema type 'xsd:string'
-        std::string *paypalPaymentGrossAmount;
+        wchar_t *paypalPaymentGrossAmount;
         /// Optional element 'ns2:paypalFeeAmount' of XML schema type 'xsd:string'
-        std::string *paypalFeeAmount;
+        wchar_t *paypalFeeAmount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:paypalSettleAmount' of XML schema type 'xsd:string'
-        std::string *paypalSettleAmount;
+        wchar_t *paypalSettleAmount;
         /// Optional element 'ns2:paypalTaxAmount' of XML schema type 'xsd:string'
-        std::string *paypalTaxAmount;
+        wchar_t *paypalTaxAmount;
         /// Optional element 'ns2:paypalExchangeRate' of XML schema type 'xsd:string'
-        std::string *paypalExchangeRate;
+        wchar_t *paypalExchangeRate;
         /// Optional element 'ns2:paypalPaymentStatus' of XML schema type 'xsd:string'
-        std::string *paypalPaymentStatus;
+        wchar_t *paypalPaymentStatus;
         /// Optional element 'ns2:paypalPendingReason' of XML schema type 'xsd:string'
-        std::string *paypalPendingReason;
+        wchar_t *paypalPendingReason;
         /// Optional element 'ns2:paypalReasonCode' of XML schema type 'xsd:string'
-        std::string *paypalReasonCode;
+        wchar_t *paypalReasonCode;
         /// Optional element 'ns2:protectionEligibility' of XML schema type 'xsd:string'
-        std::string *protectionEligibility;
+        wchar_t *protectionEligibility;
         /// Optional element 'ns2:protectionEligibilityType' of XML schema type 'xsd:string'
-        std::string *protectionEligibilityType;
+        wchar_t *protectionEligibilityType;
         /// Optional element 'ns2:paypalNote' of XML schema type 'xsd:string'
-        std::string *paypalNote;
+        wchar_t *paypalNote;
         /// Optional element 'ns2:invoiceNumber' of XML schema type 'xsd:string'
-        std::string *invoiceNumber;
+        wchar_t *invoiceNumber;
         /// Sequence of 0 to 1000 elements 'ns2:item' of XML schema type 'ns2:Item'
         std::vector<ns2__Item> item;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17699,16 +17699,16 @@ class SOAP_CMAC ns2__PayPalGetTxnDetailsReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:684 */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchReply
-#define SOAP_TYPE_ns2__PayPalTransactionSearchReply (537)
+#define SOAP_TYPE_ns2__PayPalTransactionSearchReply (538)
 /* complex XML schema type 'ns2:PayPalTransactionSearchReply': */
 class SOAP_CMAC ns2__PayPalTransactionSearchReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Sequence of 0 to 999 elements 'ns2:transaction' of XML schema type 'ns2:PaypalTransaction'
         std::vector<ns2__PaypalTransaction> transaction;
         /// Optional element 'ns2:errorCode' of XML schema type 'xsd:string'
-        std::string *errorCode;
+        wchar_t *errorCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17739,34 +17739,34 @@ class SOAP_CMAC ns2__PayPalTransactionSearchReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:686 */
 #ifndef SOAP_TYPE_ns2__PaypalTransaction
-#define SOAP_TYPE_ns2__PaypalTransaction (538)
+#define SOAP_TYPE_ns2__PaypalTransaction (539)
 /* complex XML schema type 'ns2:PaypalTransaction': */
 class SOAP_CMAC ns2__PaypalTransaction {
       public:
         /// Optional element 'ns2:transactionTime' of XML schema type 'ns2:dateTime'
-        std::string *transactionTime;
+        wchar_t *transactionTime;
         /// Optional element 'ns2:transactionTimeZone' of XML schema type 'xsd:string'
-        std::string *transactionTimeZone;
+        wchar_t *transactionTimeZone;
         /// Optional element 'ns2:transactionType' of XML schema type 'xsd:string'
-        std::string *transactionType;
+        wchar_t *transactionType;
         /// Optional element 'ns2:paypalPayerOrPayeeEmail' of XML schema type 'xsd:string'
-        std::string *paypalPayerOrPayeeEmail;
+        wchar_t *paypalPayerOrPayeeEmail;
         /// Optional element 'ns2:customerDisplayName' of XML schema type 'xsd:string'
-        std::string *customerDisplayName;
+        wchar_t *customerDisplayName;
         /// Optional element 'ns2:transactionID' of XML schema type 'xsd:string'
-        std::string *transactionID;
+        wchar_t *transactionID;
         /// Optional element 'ns2:paypalPaymentStatus' of XML schema type 'xsd:string'
-        std::string *paypalPaymentStatus;
+        wchar_t *paypalPaymentStatus;
         /// Optional element 'ns2:grandTotalAmount' of XML schema type 'xsd:string'
-        std::string *grandTotalAmount;
+        wchar_t *grandTotalAmount;
         /// Optional element 'ns2:currency' of XML schema type 'xsd:string'
-        std::string *currency;
+        wchar_t *currency;
         /// Optional element 'ns2:paypalFeeAmount' of XML schema type 'xsd:string'
-        std::string *paypalFeeAmount;
+        wchar_t *paypalFeeAmount;
         /// Optional element 'ns2:paypalNetAmount' of XML schema type 'xsd:string'
-        std::string *paypalNetAmount;
+        wchar_t *paypalNetAmount;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17797,22 +17797,22 @@ class SOAP_CMAC ns2__PaypalTransaction {
 
 /* CyberSourceTransaction_nvp_1.183.h:688 */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateService
-#define SOAP_TYPE_ns2__CCDCCUpdateService (539)
+#define SOAP_TYPE_ns2__CCDCCUpdateService (540)
 /* complex XML schema type 'ns2:CCDCCUpdateService': */
 class SOAP_CMAC ns2__CCDCCUpdateService {
       public:
         /// Optional element 'ns2:reason' of XML schema type 'xsd:string'
-        std::string *reason;
+        wchar_t *reason;
         /// Optional element 'ns2:action' of XML schema type 'xsd:string'
-        std::string *action;
+        wchar_t *action;
         /// Optional element 'ns2:dccRequestID' of XML schema type 'xsd:string'
-        std::string *dccRequestID;
+        wchar_t *dccRequestID;
         /// Optional element 'ns2:captureRequestID' of XML schema type 'xsd:string'
-        std::string *captureRequestID;
+        wchar_t *captureRequestID;
         /// Optional element 'ns2:creditRequestID' of XML schema type 'xsd:string'
-        std::string *creditRequestID;
+        wchar_t *creditRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17843,16 +17843,16 @@ class SOAP_CMAC ns2__CCDCCUpdateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:690 */
 #ifndef SOAP_TYPE_ns2__ServiceFee
-#define SOAP_TYPE_ns2__ServiceFee (540)
+#define SOAP_TYPE_ns2__ServiceFee (541)
 /* complex XML schema type 'ns2:ServiceFee': */
 class SOAP_CMAC ns2__ServiceFee {
       public:
         /// Optional element 'ns2:merchantDescriptor' of XML schema type 'xsd:string'
-        std::string *merchantDescriptor;
+        wchar_t *merchantDescriptor;
         /// Optional element 'ns2:merchantDescriptorContact' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorContact;
+        wchar_t *merchantDescriptorContact;
         /// Optional element 'ns2:merchantDescriptorState' of XML schema type 'xsd:string'
-        std::string *merchantDescriptorState;
+        wchar_t *merchantDescriptorState;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17883,22 +17883,22 @@ class SOAP_CMAC ns2__ServiceFee {
 
 /* CyberSourceTransaction_nvp_1.183.h:692 */
 #ifndef SOAP_TYPE_ns2__EmvRequest
-#define SOAP_TYPE_ns2__EmvRequest (541)
+#define SOAP_TYPE_ns2__EmvRequest (542)
 /* complex XML schema type 'ns2:EmvRequest': */
 class SOAP_CMAC ns2__EmvRequest {
       public:
         /// Optional element 'ns2:combinedTags' of XML schema type 'xsd:string'
-        std::string *combinedTags;
+        wchar_t *combinedTags;
         /// Optional element 'ns2:repeat' of XML schema type 'xsd:string'
-        std::string *repeat;
+        wchar_t *repeat;
         /// Optional element 'ns2:cardSequenceNumber' of XML schema type 'xsd:string'
-        std::string *cardSequenceNumber;
+        wchar_t *cardSequenceNumber;
         /// Optional element 'ns2:aidAndDFname' of XML schema type 'xsd:string'
-        std::string *aidAndDFname;
+        wchar_t *aidAndDFname;
         /// Optional element 'ns2:fallback' of XML schema type 'xsd:string'
-        std::string *fallback;
+        wchar_t *fallback;
         /// Optional element 'ns2:fallbackCondition' of XML schema type 'xsd:string'
-        std::string *fallbackCondition;
+        wchar_t *fallbackCondition;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17929,18 +17929,18 @@ class SOAP_CMAC ns2__EmvRequest {
 
 /* CyberSourceTransaction_nvp_1.183.h:694 */
 #ifndef SOAP_TYPE_ns2__EmvReply
-#define SOAP_TYPE_ns2__EmvReply (542)
+#define SOAP_TYPE_ns2__EmvReply (543)
 /* complex XML schema type 'ns2:EmvReply': */
 class SOAP_CMAC ns2__EmvReply {
       public:
         /// Optional element 'ns2:combinedTags' of XML schema type 'xsd:string'
-        std::string *combinedTags;
+        wchar_t *combinedTags;
         /// Optional element 'ns2:decryptedRequestTags' of XML schema type 'xsd:string'
-        std::string *decryptedRequestTags;
+        wchar_t *decryptedRequestTags;
         /// Optional element 'ns2:chipValidationResults' of XML schema type 'xsd:string'
-        std::string *chipValidationResults;
+        wchar_t *chipValidationResults;
         /// Optional element 'ns2:chipValidationType' of XML schema type 'xsd:string'
-        std::string *chipValidationType;
+        wchar_t *chipValidationType;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -17971,14 +17971,14 @@ class SOAP_CMAC ns2__EmvReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:696 */
 #ifndef SOAP_TYPE_ns2__OriginalTransaction
-#define SOAP_TYPE_ns2__OriginalTransaction (543)
+#define SOAP_TYPE_ns2__OriginalTransaction (544)
 /* complex XML schema type 'ns2:OriginalTransaction': */
 class SOAP_CMAC ns2__OriginalTransaction {
       public:
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:reasonCode' of XML schema type 'xsd:string'
-        std::string *reasonCode;
+        wchar_t *reasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18009,16 +18009,16 @@ class SOAP_CMAC ns2__OriginalTransaction {
 
 /* CyberSourceTransaction_nvp_1.183.h:698 */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateService
-#define SOAP_TYPE_ns2__HostedDataCreateService (544)
+#define SOAP_TYPE_ns2__HostedDataCreateService (545)
 /* complex XML schema type 'ns2:HostedDataCreateService': */
 class SOAP_CMAC ns2__HostedDataCreateService {
       public:
         /// Optional element 'ns2:profileID' of XML schema type 'xsd:string'
-        std::string *profileID;
+        wchar_t *profileID;
         /// Optional element 'ns2:paymentMethod' of XML schema type 'xsd:string'
-        std::string *paymentMethod;
+        wchar_t *paymentMethod;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18049,16 +18049,16 @@ class SOAP_CMAC ns2__HostedDataCreateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:700 */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveService
-#define SOAP_TYPE_ns2__HostedDataRetrieveService (545)
+#define SOAP_TYPE_ns2__HostedDataRetrieveService (546)
 /* complex XML schema type 'ns2:HostedDataRetrieveService': */
 class SOAP_CMAC ns2__HostedDataRetrieveService {
       public:
         /// Optional element 'ns2:profileID' of XML schema type 'xsd:string'
-        std::string *profileID;
+        wchar_t *profileID;
         /// Optional element 'ns2:tokenValue' of XML schema type 'xsd:string'
-        std::string *tokenValue;
+        wchar_t *tokenValue;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18089,18 +18089,18 @@ class SOAP_CMAC ns2__HostedDataRetrieveService {
 
 /* CyberSourceTransaction_nvp_1.183.h:702 */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateReply
-#define SOAP_TYPE_ns2__HostedDataCreateReply (546)
+#define SOAP_TYPE_ns2__HostedDataCreateReply (547)
 /* complex XML schema type 'ns2:HostedDataCreateReply': */
 class SOAP_CMAC ns2__HostedDataCreateReply {
       public:
         /// Optional element 'ns2:responseMessage' of XML schema type 'xsd:string'
-        std::string *responseMessage;
+        wchar_t *responseMessage;
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:cardAccountNumberToken' of XML schema type 'xsd:string'
-        std::string *cardAccountNumberToken;
+        wchar_t *cardAccountNumberToken;
         /// Optional element 'ns2:customerID' of XML schema type 'xsd:string'
-        std::string *customerID;
+        wchar_t *customerID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18131,56 +18131,56 @@ class SOAP_CMAC ns2__HostedDataCreateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:704 */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveReply
-#define SOAP_TYPE_ns2__HostedDataRetrieveReply (547)
+#define SOAP_TYPE_ns2__HostedDataRetrieveReply (548)
 /* complex XML schema type 'ns2:HostedDataRetrieveReply': */
 class SOAP_CMAC ns2__HostedDataRetrieveReply {
       public:
         /// Optional element 'ns2:responseMessage' of XML schema type 'xsd:string'
-        std::string *responseMessage;
+        wchar_t *responseMessage;
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:aggregatorMerchantIdentifier' of XML schema type 'xsd:string'
-        std::string *aggregatorMerchantIdentifier;
+        wchar_t *aggregatorMerchantIdentifier;
         /// Optional element 'ns2:customerFirstName' of XML schema type 'xsd:string'
-        std::string *customerFirstName;
+        wchar_t *customerFirstName;
         /// Optional element 'ns2:customerLastName' of XML schema type 'xsd:string'
-        std::string *customerLastName;
+        wchar_t *customerLastName;
         /// Optional element 'ns2:customerID' of XML schema type 'xsd:string'
-        std::string *customerID;
+        wchar_t *customerID;
         /// Optional element 'ns2:paymentMethod' of XML schema type 'xsd:string'
-        std::string *paymentMethod;
+        wchar_t *paymentMethod;
         /// Optional element 'ns2:billToStreet1' of XML schema type 'xsd:string'
-        std::string *billToStreet1;
+        wchar_t *billToStreet1;
         /// Optional element 'ns2:billToStreet2' of XML schema type 'xsd:string'
-        std::string *billToStreet2;
+        wchar_t *billToStreet2;
         /// Optional element 'ns2:billToEmail' of XML schema type 'xsd:string'
-        std::string *billToEmail;
+        wchar_t *billToEmail;
         /// Optional element 'ns2:billToState' of XML schema type 'xsd:string'
-        std::string *billToState;
+        wchar_t *billToState;
         /// Optional element 'ns2:billToFirstName' of XML schema type 'xsd:string'
-        std::string *billToFirstName;
+        wchar_t *billToFirstName;
         /// Optional element 'ns2:billToLastName' of XML schema type 'xsd:string'
-        std::string *billToLastName;
+        wchar_t *billToLastName;
         /// Optional element 'ns2:billToCity' of XML schema type 'xsd:string'
-        std::string *billToCity;
+        wchar_t *billToCity;
         /// Optional element 'ns2:billToCountry' of XML schema type 'xsd:string'
-        std::string *billToCountry;
+        wchar_t *billToCountry;
         /// Optional element 'ns2:billToPostalCode' of XML schema type 'xsd:string'
-        std::string *billToPostalCode;
+        wchar_t *billToPostalCode;
         /// Optional element 'ns2:cardAccountNumber' of XML schema type 'xsd:string'
-        std::string *cardAccountNumber;
+        wchar_t *cardAccountNumber;
         /// Optional element 'ns2:cardType' of XML schema type 'xsd:string'
-        std::string *cardType;
+        wchar_t *cardType;
         /// Optional element 'ns2:cardExpirationMonth' of XML schema type 'xsd:string'
-        std::string *cardExpirationMonth;
+        wchar_t *cardExpirationMonth;
         /// Optional element 'ns2:cardExpirationYear' of XML schema type 'xsd:string'
-        std::string *cardExpirationYear;
+        wchar_t *cardExpirationYear;
         /// Optional element 'ns2:cardIssueNumber' of XML schema type 'xsd:string'
-        std::string *cardIssueNumber;
+        wchar_t *cardIssueNumber;
         /// Optional element 'ns2:cardStartMonth' of XML schema type 'xsd:string'
-        std::string *cardStartMonth;
+        wchar_t *cardStartMonth;
         /// Optional element 'ns2:cardStartYear' of XML schema type 'xsd:string'
-        std::string *cardStartYear;
+        wchar_t *cardStartYear;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18211,130 +18211,130 @@ class SOAP_CMAC ns2__HostedDataRetrieveReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:706 */
 #ifndef SOAP_TYPE_ns2__AutoRentalData
-#define SOAP_TYPE_ns2__AutoRentalData (548)
+#define SOAP_TYPE_ns2__AutoRentalData (549)
 /* complex XML schema type 'ns2:AutoRentalData': */
 class SOAP_CMAC ns2__AutoRentalData {
       public:
         /// Optional element 'ns2:adjustmentCost' of XML schema type 'ns2:amount'
-        std::string *adjustmentCost;
+        wchar_t *adjustmentCost;
         /// Optional element 'ns2:adjustmentCode' of XML schema type 'xsd:string'
-        std::string *adjustmentCode;
+        wchar_t *adjustmentCode;
         /// Optional element 'ns2:agreementNumber' of XML schema type 'xsd:string'
-        std::string *agreementNumber;
+        wchar_t *agreementNumber;
         /// Optional element 'ns2:classCode' of XML schema type 'xsd:string'
-        std::string *classCode;
+        wchar_t *classCode;
         /// Optional element 'ns2:customerServicePhoneNumber' of XML schema type 'xsd:string'
-        std::string *customerServicePhoneNumber;
+        wchar_t *customerServicePhoneNumber;
         /// Optional element 'ns2:dailyRate' of XML schema type 'ns2:amount'
-        std::string *dailyRate;
+        wchar_t *dailyRate;
         /// Optional element 'ns2:mileageCost' of XML schema type 'ns2:amount'
-        std::string *mileageCost;
+        wchar_t *mileageCost;
         /// Optional element 'ns2:gasCost' of XML schema type 'ns2:amount'
-        std::string *gasCost;
+        wchar_t *gasCost;
         /// Optional element 'ns2:insuranceCost' of XML schema type 'ns2:amount'
-        std::string *insuranceCost;
+        wchar_t *insuranceCost;
         /// Optional element 'ns2:lateReturnCost' of XML schema type 'ns2:amount'
-        std::string *lateReturnCost;
+        wchar_t *lateReturnCost;
         /// Optional element 'ns2:maximumFreeMiles' of XML schema type 'xsd:integer'
-        std::string *maximumFreeMiles;
+        wchar_t *maximumFreeMiles;
         /// Optional element 'ns2:milesTraveled' of XML schema type 'xsd:integer'
-        std::string *milesTraveled;
+        wchar_t *milesTraveled;
         /// Optional element 'ns2:oneWayCost' of XML schema type 'ns2:amount'
-        std::string *oneWayCost;
+        wchar_t *oneWayCost;
         /// Optional element 'ns2:parkingViolationCost' of XML schema type 'ns2:amount'
-        std::string *parkingViolationCost;
+        wchar_t *parkingViolationCost;
         /// Optional element 'ns2:pickUpCity' of XML schema type 'xsd:string'
-        std::string *pickUpCity;
+        wchar_t *pickUpCity;
         /// Optional element 'ns2:pickUpCountry' of XML schema type 'xsd:string'
-        std::string *pickUpCountry;
+        wchar_t *pickUpCountry;
         /// Optional element 'ns2:pickUpDate' of XML schema type 'xsd:string'
-        std::string *pickUpDate;
+        wchar_t *pickUpDate;
         /// Optional element 'ns2:pickUpState' of XML schema type 'xsd:string'
-        std::string *pickUpState;
+        wchar_t *pickUpState;
         /// Optional element 'ns2:pickUpTime' of XML schema type 'xsd:integer'
-        std::string *pickUpTime;
+        wchar_t *pickUpTime;
         /// Optional element 'ns2:ratePerMile' of XML schema type 'ns2:amount'
-        std::string *ratePerMile;
+        wchar_t *ratePerMile;
         /// Optional element 'ns2:renterName' of XML schema type 'xsd:string'
-        std::string *renterName;
+        wchar_t *renterName;
         /// Optional element 'ns2:returnCity' of XML schema type 'xsd:string'
-        std::string *returnCity;
+        wchar_t *returnCity;
         /// Optional element 'ns2:returnCountry' of XML schema type 'xsd:string'
-        std::string *returnCountry;
+        wchar_t *returnCountry;
         /// Optional element 'ns2:returnDate' of XML schema type 'xsd:string'
-        std::string *returnDate;
+        wchar_t *returnDate;
         /// Optional element 'ns2:returnLocationID' of XML schema type 'xsd:string'
-        std::string *returnLocationID;
+        wchar_t *returnLocationID;
         /// Optional element 'ns2:returnState' of XML schema type 'xsd:string'
-        std::string *returnState;
+        wchar_t *returnState;
         /// Optional element 'ns2:returnTime' of XML schema type 'xsd:integer'
-        std::string *returnTime;
+        wchar_t *returnTime;
         /// Optional element 'ns2:specialProgramCode' of XML schema type 'xsd:string'
-        std::string *specialProgramCode;
+        wchar_t *specialProgramCode;
         /// Optional element 'ns2:noShowIndicator' of XML schema type 'ns2:boolean'
-        std::string *noShowIndicator;
+        wchar_t *noShowIndicator;
         /// Optional element 'ns2:timePeriod' of XML schema type 'xsd:string'
-        std::string *timePeriod;
+        wchar_t *timePeriod;
         /// Optional element 'ns2:weeklyRentalRate' of XML schema type 'ns2:amount'
-        std::string *weeklyRentalRate;
+        wchar_t *weeklyRentalRate;
         /// Optional element 'ns2:distanceUnit' of XML schema type 'xsd:string'
-        std::string *distanceUnit;
+        wchar_t *distanceUnit;
         /// Optional element 'ns2:rentalLocationID' of XML schema type 'xsd:string'
-        std::string *rentalLocationID;
+        wchar_t *rentalLocationID;
         /// Optional element 'ns2:vehicleInsuranceIndicator' of XML schema type 'ns2:boolean'
-        std::string *vehicleInsuranceIndicator;
+        wchar_t *vehicleInsuranceIndicator;
         /// Optional element 'ns2:programCode' of XML schema type 'xsd:string'
-        std::string *programCode;
+        wchar_t *programCode;
         /// Optional element 'ns2:otherCharges' of XML schema type 'ns2:amount'
-        std::string *otherCharges;
+        wchar_t *otherCharges;
         /// Optional element 'ns2:taxRate' of XML schema type 'ns2:amount'
-        std::string *taxRate;
+        wchar_t *taxRate;
         /// Optional element 'ns2:taxIndicator' of XML schema type 'ns2:boolean'
-        std::string *taxIndicator;
+        wchar_t *taxIndicator;
         /// Optional element 'ns2:taxStatusIndicator' of XML schema type 'xsd:string'
-        std::string *taxStatusIndicator;
+        wchar_t *taxStatusIndicator;
         /// Optional element 'ns2:taxAmount' of XML schema type 'ns2:amount'
-        std::string *taxAmount;
+        wchar_t *taxAmount;
         /// Optional element 'ns2:taxType' of XML schema type 'xsd:string'
-        std::string *taxType;
+        wchar_t *taxType;
         /// Optional element 'ns2:taxSummary' of XML schema type 'xsd:string'
-        std::string *taxSummary;
+        wchar_t *taxSummary;
         /// Optional element 'ns2:returnLocation' of XML schema type 'xsd:string'
-        std::string *returnLocation;
+        wchar_t *returnLocation;
         /// Optional element 'ns2:odometerReading' of XML schema type 'xsd:integer'
-        std::string *odometerReading;
+        wchar_t *odometerReading;
         /// Optional element 'ns2:vehicleIdentificationNumber' of XML schema type 'xsd:string'
-        std::string *vehicleIdentificationNumber;
+        wchar_t *vehicleIdentificationNumber;
         /// Optional element 'ns2:commodityCode' of XML schema type 'xsd:string'
-        std::string *commodityCode;
+        wchar_t *commodityCode;
         /// Optional element 'ns2:companyId' of XML schema type 'xsd:string'
-        std::string *companyId;
+        wchar_t *companyId;
         /// Optional element 'ns2:regularMileageCost' of XML schema type 'ns2:amount'
-        std::string *regularMileageCost;
+        wchar_t *regularMileageCost;
         /// Optional element 'ns2:towingCharge' of XML schema type 'ns2:amount'
-        std::string *towingCharge;
+        wchar_t *towingCharge;
         /// Optional element 'ns2:extraCharge' of XML schema type 'ns2:amount'
-        std::string *extraCharge;
+        wchar_t *extraCharge;
         /// Optional element 'ns2:additionalDrivers' of XML schema type 'xsd:integer'
-        std::string *additionalDrivers;
+        wchar_t *additionalDrivers;
         /// Optional element 'ns2:rentalAddress' of XML schema type 'xsd:string'
-        std::string *rentalAddress;
+        wchar_t *rentalAddress;
         /// Optional element 'ns2:driverAge' of XML schema type 'xsd:integer'
-        std::string *driverAge;
+        wchar_t *driverAge;
         /// Optional element 'ns2:vehicleMake' of XML schema type 'xsd:string'
-        std::string *vehicleMake;
+        wchar_t *vehicleMake;
         /// Optional element 'ns2:vehicleModel' of XML schema type 'xsd:string'
-        std::string *vehicleModel;
+        wchar_t *vehicleModel;
         /// Optional element 'ns2:corporateClientCode' of XML schema type 'xsd:string'
-        std::string *corporateClientCode;
+        wchar_t *corporateClientCode;
         /// Optional element 'ns2:phoneCharge' of XML schema type 'ns2:amount'
-        std::string *phoneCharge;
+        wchar_t *phoneCharge;
         /// Optional element 'ns2:gpsCharge' of XML schema type 'ns2:amount'
-        std::string *gpsCharge;
+        wchar_t *gpsCharge;
         /// Optional element 'ns2:pickupLocation' of XML schema type 'xsd:string'
-        std::string *pickupLocation;
+        wchar_t *pickupLocation;
         /// Optional element 'ns2:taxAmountSign' of XML schema type 'xsd:string'
-        std::string *taxAmountSign;
+        wchar_t *taxAmountSign;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18365,7 +18365,7 @@ class SOAP_CMAC ns2__AutoRentalData {
 
 /* CyberSourceTransaction_nvp_1.183.h:708 */
 #ifndef SOAP_TYPE_ns2__AutoRental
-#define SOAP_TYPE_ns2__AutoRental (549)
+#define SOAP_TYPE_ns2__AutoRental (550)
 /* complex XML schema type 'ns2:AutoRental': */
 class SOAP_CMAC ns2__AutoRental {
       public:
@@ -18401,14 +18401,14 @@ class SOAP_CMAC ns2__AutoRental {
 
 /* CyberSourceTransaction_nvp_1.183.h:710 */
 #ifndef SOAP_TYPE_ns2__AgencyInformation
-#define SOAP_TYPE_ns2__AgencyInformation (550)
+#define SOAP_TYPE_ns2__AgencyInformation (551)
 /* complex XML schema type 'ns2:AgencyInformation': */
 class SOAP_CMAC ns2__AgencyInformation {
       public:
         /// Optional element 'ns2:code' of XML schema type 'xsd:string'
-        std::string *code;
+        wchar_t *code;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18439,16 +18439,16 @@ class SOAP_CMAC ns2__AgencyInformation {
 
 /* CyberSourceTransaction_nvp_1.183.h:712 */
 #ifndef SOAP_TYPE_ns2__HealthCare
-#define SOAP_TYPE_ns2__HealthCare (551)
+#define SOAP_TYPE_ns2__HealthCare (552)
 /* complex XML schema type 'ns2:HealthCare': */
 class SOAP_CMAC ns2__HealthCare {
       public:
         /// Optional element 'ns2:amountType' of XML schema type 'xsd:string'
-        std::string *amountType;
+        wchar_t *amountType;
         /// Optional element 'ns2:amount' of XML schema type 'ns2:amount'
-        std::string *amount;
+        wchar_t *amount;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18479,118 +18479,118 @@ class SOAP_CMAC ns2__HealthCare {
 
 /* CyberSourceTransaction_nvp_1.183.h:714 */
 #ifndef SOAP_TYPE_ns2__VCReply
-#define SOAP_TYPE_ns2__VCReply (552)
+#define SOAP_TYPE_ns2__VCReply (553)
 /* complex XML schema type 'ns2:VCReply': */
 class SOAP_CMAC ns2__VCReply {
       public:
         /// Optional element 'ns2:creationTimeStamp' of XML schema type 'xsd:string'
-        std::string *creationTimeStamp;
+        wchar_t *creationTimeStamp;
         /// Optional element 'ns2:alternateShippingAddressCountryCode' of XML schema type 'xsd:string'
-        std::string *alternateShippingAddressCountryCode;
+        wchar_t *alternateShippingAddressCountryCode;
         /// Optional element 'ns2:alternateShippingAddressPostalCode' of XML schema type 'xsd:string'
-        std::string *alternateShippingAddressPostalCode;
+        wchar_t *alternateShippingAddressPostalCode;
         /// Optional element 'ns2:vcAccountLoginName' of XML schema type 'xsd:string'
-        std::string *vcAccountLoginName;
+        wchar_t *vcAccountLoginName;
         /// Optional element 'ns2:vcAccountFirstName' of XML schema type 'xsd:string'
-        std::string *vcAccountFirstName;
+        wchar_t *vcAccountFirstName;
         /// Optional element 'ns2:vcAccountLastName' of XML schema type 'xsd:string'
-        std::string *vcAccountLastName;
+        wchar_t *vcAccountLastName;
         /// Optional element 'ns2:vcAccountEncryptedID' of XML schema type 'xsd:string'
-        std::string *vcAccountEncryptedID;
+        wchar_t *vcAccountEncryptedID;
         /// Optional element 'ns2:vcAccountEmail' of XML schema type 'xsd:string'
-        std::string *vcAccountEmail;
+        wchar_t *vcAccountEmail;
         /// Optional element 'ns2:vcAccountMobilePhoneNumber' of XML schema type 'xsd:string'
-        std::string *vcAccountMobilePhoneNumber;
+        wchar_t *vcAccountMobilePhoneNumber;
         /// Optional element 'ns2:merchantReferenceID' of XML schema type 'xsd:string'
-        std::string *merchantReferenceID;
+        wchar_t *merchantReferenceID;
         /// Optional element 'ns2:subtotalAmount' of XML schema type 'xsd:string'
-        std::string *subtotalAmount;
+        wchar_t *subtotalAmount;
         /// Optional element 'ns2:shippingHandlingAmount' of XML schema type 'xsd:string'
-        std::string *shippingHandlingAmount;
+        wchar_t *shippingHandlingAmount;
         /// Optional element 'ns2:taxAmount' of XML schema type 'xsd:string'
-        std::string *taxAmount;
+        wchar_t *taxAmount;
         /// Optional element 'ns2:discountAmount' of XML schema type 'xsd:string'
-        std::string *discountAmount;
+        wchar_t *discountAmount;
         /// Optional element 'ns2:giftWrapAmount' of XML schema type 'xsd:string'
-        std::string *giftWrapAmount;
+        wchar_t *giftWrapAmount;
         /// Optional element 'ns2:uncategorizedAmount' of XML schema type 'xsd:string'
-        std::string *uncategorizedAmount;
+        wchar_t *uncategorizedAmount;
         /// Optional element 'ns2:totalPurchaseAmount' of XML schema type 'xsd:string'
-        std::string *totalPurchaseAmount;
+        wchar_t *totalPurchaseAmount;
         /// Optional element 'ns2:walletReferenceID' of XML schema type 'xsd:string'
-        std::string *walletReferenceID;
+        wchar_t *walletReferenceID;
         /// Optional element 'ns2:promotionCode' of XML schema type 'xsd:string'
-        std::string *promotionCode;
+        wchar_t *promotionCode;
         /// Optional element 'ns2:paymentInstrumentID' of XML schema type 'xsd:string'
-        std::string *paymentInstrumentID;
+        wchar_t *paymentInstrumentID;
         /// Optional element 'ns2:cardVerificationStatus' of XML schema type 'xsd:string'
-        std::string *cardVerificationStatus;
+        wchar_t *cardVerificationStatus;
         /// Optional element 'ns2:issuerID' of XML schema type 'xsd:string'
-        std::string *issuerID;
+        wchar_t *issuerID;
         /// Optional element 'ns2:paymentInstrumentNickName' of XML schema type 'xsd:string'
-        std::string *paymentInstrumentNickName;
+        wchar_t *paymentInstrumentNickName;
         /// Optional element 'ns2:nameOnCard' of XML schema type 'xsd:string'
-        std::string *nameOnCard;
+        wchar_t *nameOnCard;
         /// Optional element 'ns2:cardType' of XML schema type 'xsd:string'
-        std::string *cardType;
+        wchar_t *cardType;
         /// Optional element 'ns2:cardGroup' of XML schema type 'xsd:string'
-        std::string *cardGroup;
+        wchar_t *cardGroup;
         /// Optional element 'ns2:cardArt' of XML schema type 'ns2:VCCardArt'
         ns2__VCCardArt *cardArt;
         /// Optional element 'ns2:riskAdvice' of XML schema type 'xsd:string'
-        std::string *riskAdvice;
+        wchar_t *riskAdvice;
         /// Optional element 'ns2:riskScore' of XML schema type 'xsd:string'
-        std::string *riskScore;
+        wchar_t *riskScore;
         /// Optional element 'ns2:riskAdditionalData' of XML schema type 'xsd:string'
-        std::string *riskAdditionalData;
+        wchar_t *riskAdditionalData;
         /// Optional element 'ns2:avsCodeRaw' of XML schema type 'xsd:string'
-        std::string *avsCodeRaw;
+        wchar_t *avsCodeRaw;
         /// Optional element 'ns2:cvnCodeRaw' of XML schema type 'xsd:string'
-        std::string *cvnCodeRaw;
+        wchar_t *cvnCodeRaw;
         /// Optional element 'ns2:eciRaw' of XML schema type 'xsd:string'
-        std::string *eciRaw;
+        wchar_t *eciRaw;
         /// Optional element 'ns2:eci' of XML schema type 'xsd:string'
-        std::string *eci;
+        wchar_t *eci;
         /// Optional element 'ns2:cavv' of XML schema type 'xsd:string'
-        std::string *cavv;
+        wchar_t *cavv;
         /// Optional element 'ns2:veresEnrolled' of XML schema type 'xsd:string'
-        std::string *veresEnrolled;
+        wchar_t *veresEnrolled;
         /// Optional element 'ns2:veresTimeStamp' of XML schema type 'xsd:string'
-        std::string *veresTimeStamp;
+        wchar_t *veresTimeStamp;
         /// Optional element 'ns2:paresStatus' of XML schema type 'xsd:string'
-        std::string *paresStatus;
+        wchar_t *paresStatus;
         /// Optional element 'ns2:paresTimeStamp' of XML schema type 'xsd:string'
-        std::string *paresTimeStamp;
+        wchar_t *paresTimeStamp;
         /// Optional element 'ns2:xid' of XML schema type 'xsd:string'
-        std::string *xid;
+        wchar_t *xid;
         /// Optional element 'ns2:customData' of XML schema type 'ns2:VCCustomData'
         ns2__VCCustomData *customData;
         /// Optional element 'ns2:vcAccountFullName' of XML schema type 'xsd:string'
-        std::string *vcAccountFullName;
+        wchar_t *vcAccountFullName;
         /// Optional element 'ns2:paymentDescription' of XML schema type 'xsd:string'
-        std::string *paymentDescription;
+        wchar_t *paymentDescription;
         /// Optional element 'ns2:billingAddressStreetName' of XML schema type 'xsd:string'
-        std::string *billingAddressStreetName;
+        wchar_t *billingAddressStreetName;
         /// Optional element 'ns2:billingAddressAdditionalLocation' of XML schema type 'xsd:string'
-        std::string *billingAddressAdditionalLocation;
+        wchar_t *billingAddressAdditionalLocation;
         /// Optional element 'ns2:billingAddressStreetNumber' of XML schema type 'xsd:string'
-        std::string *billingAddressStreetNumber;
+        wchar_t *billingAddressStreetNumber;
         /// Optional element 'ns2:expiredCard' of XML schema type 'xsd:string'
-        std::string *expiredCard;
+        wchar_t *expiredCard;
         /// Optional element 'ns2:cardFirstName' of XML schema type 'xsd:string'
-        std::string *cardFirstName;
+        wchar_t *cardFirstName;
         /// Optional element 'ns2:cardLastName' of XML schema type 'xsd:string'
-        std::string *cardLastName;
+        wchar_t *cardLastName;
         /// Optional element 'ns2:shippingAddressStreetName' of XML schema type 'xsd:string'
-        std::string *shippingAddressStreetName;
+        wchar_t *shippingAddressStreetName;
         /// Optional element 'ns2:shippingAddressAdditionalLocation' of XML schema type 'xsd:string'
-        std::string *shippingAddressAdditionalLocation;
+        wchar_t *shippingAddressAdditionalLocation;
         /// Optional element 'ns2:shippingAddressStreetNumber' of XML schema type 'xsd:string'
-        std::string *shippingAddressStreetNumber;
+        wchar_t *shippingAddressStreetNumber;
         /// Optional element 'ns2:ageOfAccount' of XML schema type 'xsd:string'
-        std::string *ageOfAccount;
+        wchar_t *ageOfAccount;
         /// Optional element 'ns2:newUser' of XML schema type 'xsd:string'
-        std::string *newUser;
+        wchar_t *newUser;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18621,18 +18621,18 @@ class SOAP_CMAC ns2__VCReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:716 */
 #ifndef SOAP_TYPE_ns2__VCCardArt
-#define SOAP_TYPE_ns2__VCCardArt (553)
+#define SOAP_TYPE_ns2__VCCardArt (554)
 /* complex XML schema type 'ns2:VCCardArt': */
 class SOAP_CMAC ns2__VCCardArt {
       public:
         /// Optional element 'ns2:fileName' of XML schema type 'xsd:string'
-        std::string *fileName;
+        wchar_t *fileName;
         /// Optional element 'ns2:height' of XML schema type 'xsd:string'
-        std::string *height;
+        wchar_t *height;
         /// Optional element 'ns2:width' of XML schema type 'xsd:string'
-        std::string *width;
+        wchar_t *width;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18663,16 +18663,16 @@ class SOAP_CMAC ns2__VCCardArt {
 
 /* CyberSourceTransaction_nvp_1.183.h:718 */
 #ifndef SOAP_TYPE_ns2__VCCustomData
-#define SOAP_TYPE_ns2__VCCustomData (554)
+#define SOAP_TYPE_ns2__VCCustomData (555)
 /* complex XML schema type 'ns2:VCCustomData': */
 class SOAP_CMAC ns2__VCCustomData {
       public:
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:value' of XML schema type 'xsd:string'
-        std::string *value;
+        wchar_t *value;
         /// Optional attribute 'id' of XML schema type 'xsd:integer'
-        std::string *id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18703,12 +18703,12 @@ class SOAP_CMAC ns2__VCCustomData {
 
 /* CyberSourceTransaction_nvp_1.183.h:720 */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply
-#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (555)
+#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (556)
 /* complex XML schema type 'ns2:DecryptVisaCheckoutDataReply': */
 class SOAP_CMAC ns2__DecryptVisaCheckoutDataReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18739,12 +18739,12 @@ class SOAP_CMAC ns2__DecryptVisaCheckoutDataReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:722 */
 #ifndef SOAP_TYPE_ns2__GetVisaCheckoutDataReply
-#define SOAP_TYPE_ns2__GetVisaCheckoutDataReply (556)
+#define SOAP_TYPE_ns2__GetVisaCheckoutDataReply (557)
 /* complex XML schema type 'ns2:GetVisaCheckoutDataReply': */
 class SOAP_CMAC ns2__GetVisaCheckoutDataReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18775,14 +18775,14 @@ class SOAP_CMAC ns2__GetVisaCheckoutDataReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:724 */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataReply
-#define SOAP_TYPE_ns2__EncryptPaymentDataReply (557)
+#define SOAP_TYPE_ns2__EncryptPaymentDataReply (558)
 /* complex XML schema type 'ns2:EncryptPaymentDataReply': */
 class SOAP_CMAC ns2__EncryptPaymentDataReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18813,18 +18813,18 @@ class SOAP_CMAC ns2__EncryptPaymentDataReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:726 */
 #ifndef SOAP_TYPE_ns2__BinLookupService
-#define SOAP_TYPE_ns2__BinLookupService (558)
+#define SOAP_TYPE_ns2__BinLookupService (559)
 /* complex XML schema type 'ns2:BinLookupService': */
 class SOAP_CMAC ns2__BinLookupService {
       public:
         /// Optional element 'ns2:mode' of XML schema type 'xsd:string'
-        std::string *mode;
+        wchar_t *mode;
         /// Optional element 'ns2:networkOrder' of XML schema type 'xsd:string'
-        std::string *networkOrder;
+        wchar_t *networkOrder;
         /// Optional element 'ns2:retrievalReferenceNumber' of XML schema type 'xsd:string'
-        std::string *retrievalReferenceNumber;
+        wchar_t *retrievalReferenceNumber;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18855,16 +18855,16 @@ class SOAP_CMAC ns2__BinLookupService {
 
 /* CyberSourceTransaction_nvp_1.183.h:728 */
 #ifndef SOAP_TYPE_ns2__BinLookupReply
-#define SOAP_TYPE_ns2__BinLookupReply (559)
+#define SOAP_TYPE_ns2__BinLookupReply (560)
 /* complex XML schema type 'ns2:BinLookupReply': */
 class SOAP_CMAC ns2__BinLookupReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:cardCategory' of XML schema type 'xsd:string'
-        std::string *cardCategory;
+        wchar_t *cardCategory;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18895,26 +18895,26 @@ class SOAP_CMAC ns2__BinLookupReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:730 */
 #ifndef SOAP_TYPE_ns2__issuer
-#define SOAP_TYPE_ns2__issuer (560)
+#define SOAP_TYPE_ns2__issuer (561)
 /* complex XML schema type 'ns2:issuer': */
 class SOAP_CMAC ns2__issuer {
       public:
         /// Optional element 'ns2:additionalData' of XML schema type 'xsd:string'
-        std::string *additionalData;
+        wchar_t *additionalData;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:country' of XML schema type 'xsd:string'
-        std::string *country;
+        wchar_t *country;
         /// Optional element 'ns2:countryNumericCode' of XML schema type 'xsd:string'
-        std::string *countryNumericCode;
+        wchar_t *countryNumericCode;
         /// Optional element 'ns2:phoneNumber' of XML schema type 'xsd:string'
-        std::string *phoneNumber;
+        wchar_t *phoneNumber;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:riskAnalysisExemptionResult' of XML schema type 'xsd:string'
-        std::string *riskAnalysisExemptionResult;
+        wchar_t *riskAnalysisExemptionResult;
         /// Optional element 'ns2:trustedMerchantExemptionResult' of XML schema type 'xsd:string'
-        std::string *trustedMerchantExemptionResult;
+        wchar_t *trustedMerchantExemptionResult;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18945,12 +18945,12 @@ class SOAP_CMAC ns2__issuer {
 
 /* CyberSourceTransaction_nvp_1.183.h:732 */
 #ifndef SOAP_TYPE_ns2__GETVisaCheckoutDataService
-#define SOAP_TYPE_ns2__GETVisaCheckoutDataService (561)
+#define SOAP_TYPE_ns2__GETVisaCheckoutDataService (562)
 /* complex XML schema type 'ns2:GETVisaCheckoutDataService': */
 class SOAP_CMAC ns2__GETVisaCheckoutDataService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -18981,14 +18981,14 @@ class SOAP_CMAC ns2__GETVisaCheckoutDataService {
 
 /* CyberSourceTransaction_nvp_1.183.h:734 */
 #ifndef SOAP_TYPE_ns2__TransactionMetadataService
-#define SOAP_TYPE_ns2__TransactionMetadataService (562)
+#define SOAP_TYPE_ns2__TransactionMetadataService (563)
 /* complex XML schema type 'ns2:TransactionMetadataService': */
 class SOAP_CMAC ns2__TransactionMetadataService {
       public:
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19019,14 +19019,14 @@ class SOAP_CMAC ns2__TransactionMetadataService {
 
 /* CyberSourceTransaction_nvp_1.183.h:736 */
 #ifndef SOAP_TYPE_ns2__Loan
-#define SOAP_TYPE_ns2__Loan (563)
+#define SOAP_TYPE_ns2__Loan (564)
 /* complex XML schema type 'ns2:Loan': */
 class SOAP_CMAC ns2__Loan {
       public:
         /// Optional element 'ns2:assetType' of XML schema type 'xsd:string'
-        std::string *assetType;
+        wchar_t *assetType;
         /// Optional element 'ns2:type' of XML schema type 'xsd:string'
-        std::string *type;
+        wchar_t *type;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19057,14 +19057,14 @@ class SOAP_CMAC ns2__Loan {
 
 /* CyberSourceTransaction_nvp_1.183.h:738 */
 #ifndef SOAP_TYPE_ns2__APOrderService
-#define SOAP_TYPE_ns2__APOrderService (564)
+#define SOAP_TYPE_ns2__APOrderService (565)
 /* complex XML schema type 'ns2:APOrderService': */
 class SOAP_CMAC ns2__APOrderService {
       public:
         /// Optional element 'ns2:sessionsRequestID' of XML schema type 'xsd:string'
-        std::string *sessionsRequestID;
+        wchar_t *sessionsRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19095,22 +19095,22 @@ class SOAP_CMAC ns2__APOrderService {
 
 /* CyberSourceTransaction_nvp_1.183.h:740 */
 #ifndef SOAP_TYPE_ns2__APOrderReply
-#define SOAP_TYPE_ns2__APOrderReply (565)
+#define SOAP_TYPE_ns2__APOrderReply (566)
 /* complex XML schema type 'ns2:APOrderReply': */
 class SOAP_CMAC ns2__APOrderReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19141,18 +19141,18 @@ class SOAP_CMAC ns2__APOrderReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:742 */
 #ifndef SOAP_TYPE_ns2__APCancelService
-#define SOAP_TYPE_ns2__APCancelService (566)
+#define SOAP_TYPE_ns2__APCancelService (567)
 /* complex XML schema type 'ns2:APCancelService': */
 class SOAP_CMAC ns2__APCancelService {
       public:
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:orderRequestID' of XML schema type 'xsd:string'
-        std::string *orderRequestID;
+        wchar_t *orderRequestID;
         /// Optional element 'ns2:saleRequestID' of XML schema type 'xsd:string'
-        std::string *saleRequestID;
+        wchar_t *saleRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19183,26 +19183,26 @@ class SOAP_CMAC ns2__APCancelService {
 
 /* CyberSourceTransaction_nvp_1.183.h:744 */
 #ifndef SOAP_TYPE_ns2__APCancelReply
-#define SOAP_TYPE_ns2__APCancelReply (567)
+#define SOAP_TYPE_ns2__APCancelReply (568)
 /* complex XML schema type 'ns2:APCancelReply': */
 class SOAP_CMAC ns2__APCancelReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:paymentStatus' of XML schema type 'xsd:string'
-        std::string *paymentStatus;
+        wchar_t *paymentStatus;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19233,14 +19233,14 @@ class SOAP_CMAC ns2__APCancelReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:746 */
 #ifndef SOAP_TYPE_ns2__APBillingAgreementService
-#define SOAP_TYPE_ns2__APBillingAgreementService (568)
+#define SOAP_TYPE_ns2__APBillingAgreementService (569)
 /* complex XML schema type 'ns2:APBillingAgreementService': */
 class SOAP_CMAC ns2__APBillingAgreementService {
       public:
         /// Optional element 'ns2:sessionsRequestID' of XML schema type 'xsd:string'
-        std::string *sessionsRequestID;
+        wchar_t *sessionsRequestID;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19271,20 +19271,20 @@ class SOAP_CMAC ns2__APBillingAgreementService {
 
 /* CyberSourceTransaction_nvp_1.183.h:748 */
 #ifndef SOAP_TYPE_ns2__APBillingAgreementReply
-#define SOAP_TYPE_ns2__APBillingAgreementReply (569)
+#define SOAP_TYPE_ns2__APBillingAgreementReply (570)
 /* complex XML schema type 'ns2:APBillingAgreementReply': */
 class SOAP_CMAC ns2__APBillingAgreementReply {
       public:
         /// Optional element 'ns2:reasonCode' of XML schema type 'xsd:string'
-        std::string *reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:amount' of XML schema type 'xsd:string'
-        std::string *amount;
+        wchar_t *amount;
         /// Optional element 'ns2:status' of XML schema type 'xsd:string'
-        std::string *status;
+        wchar_t *status;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19315,16 +19315,16 @@ class SOAP_CMAC ns2__APBillingAgreementReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:750 */
 #ifndef SOAP_TYPE_ns2__Passenger
-#define SOAP_TYPE_ns2__Passenger (570)
+#define SOAP_TYPE_ns2__Passenger (571)
 /* complex XML schema type 'ns2:Passenger': */
 class SOAP_CMAC ns2__Passenger {
       public:
         /// Optional element 'ns2:firstName' of XML schema type 'xsd:string'
-        std::string *firstName;
+        wchar_t *firstName;
         /// Optional element 'ns2:lastName' of XML schema type 'xsd:string'
-        std::string *lastName;
+        wchar_t *lastName;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19355,16 +19355,16 @@ class SOAP_CMAC ns2__Passenger {
 
 /* CyberSourceTransaction_nvp_1.183.h:752 */
 #ifndef SOAP_TYPE_ns2__PostdatedTransaction
-#define SOAP_TYPE_ns2__PostdatedTransaction (571)
+#define SOAP_TYPE_ns2__PostdatedTransaction (572)
 /* complex XML schema type 'ns2:PostdatedTransaction': */
 class SOAP_CMAC ns2__PostdatedTransaction {
       public:
         /// Optional element 'ns2:guaranteeIndicator' of XML schema type 'xsd:string'
-        std::string *guaranteeIndicator;
+        wchar_t *guaranteeIndicator;
         /// Optional element 'ns2:guaranteeAmount' of XML schema type 'xsd:string'
-        std::string *guaranteeAmount;
+        wchar_t *guaranteeAmount;
         /// Optional element 'ns2:settlementDate' of XML schema type 'xsd:integer'
-        std::string *settlementDate;
+        wchar_t *settlementDate;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19395,20 +19395,20 @@ class SOAP_CMAC ns2__PostdatedTransaction {
 
 /* CyberSourceTransaction_nvp_1.183.h:754 */
 #ifndef SOAP_TYPE_ns2__APCreateMandateService
-#define SOAP_TYPE_ns2__APCreateMandateService (572)
+#define SOAP_TYPE_ns2__APCreateMandateService (573)
 /* complex XML schema type 'ns2:APCreateMandateService': */
 class SOAP_CMAC ns2__APCreateMandateService {
       public:
         /// Optional element 'ns2:saleRequestID' of XML schema type 'xsd:string'
-        std::string *saleRequestID;
+        wchar_t *saleRequestID;
         /// Optional element 'ns2:cancelURL' of XML schema type 'xsd:string'
-        std::string *cancelURL;
+        wchar_t *cancelURL;
         /// Optional element 'ns2:successURL' of XML schema type 'xsd:string'
-        std::string *successURL;
+        wchar_t *successURL;
         /// Optional element 'ns2:failureURL' of XML schema type 'xsd:string'
-        std::string *failureURL;
+        wchar_t *failureURL;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19439,34 +19439,34 @@ class SOAP_CMAC ns2__APCreateMandateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:756 */
 #ifndef SOAP_TYPE_ns2__APCreateMandateReply
-#define SOAP_TYPE_ns2__APCreateMandateReply (573)
+#define SOAP_TYPE_ns2__APCreateMandateReply (574)
 /* complex XML schema type 'ns2:APCreateMandateReply': */
 class SOAP_CMAC ns2__APCreateMandateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Required element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string mandateID;
+        wchar_t *mandateID;
         /// Required element 'ns2:status' of XML schema type 'xsd:string'
-        std::string status;
+        wchar_t *status;
         /// Required element 'ns2:merchantURL' of XML schema type 'xsd:string'
-        std::string merchantURL;
+        wchar_t *merchantURL;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:riskScore' of XML schema type 'xsd:string'
-        std::string *riskScore;
+        wchar_t *riskScore;
         /// Optional element 'ns2:encodedHTML' of XML schema type 'xsd:string'
-        std::string *encodedHTML;
+        wchar_t *encodedHTML;
         /// Optional element 'ns2:encodedPopupHTML' of XML schema type 'xsd:string'
-        std::string *encodedPopupHTML;
+        wchar_t *encodedPopupHTML;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:dateSigned' of XML schema type 'ns2:dateTime'
-        std::string *dateSigned;
+        wchar_t *dateSigned;
         /// Optional element 'ns2:dateCreated' of XML schema type 'ns2:dateTime'
-        std::string *dateCreated;
+        wchar_t *dateCreated;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19497,12 +19497,12 @@ class SOAP_CMAC ns2__APCreateMandateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:758 */
 #ifndef SOAP_TYPE_ns2__APMandateStatusService
-#define SOAP_TYPE_ns2__APMandateStatusService (574)
+#define SOAP_TYPE_ns2__APMandateStatusService (575)
 /* complex XML schema type 'ns2:APMandateStatusService': */
 class SOAP_CMAC ns2__APMandateStatusService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19533,26 +19533,26 @@ class SOAP_CMAC ns2__APMandateStatusService {
 
 /* CyberSourceTransaction_nvp_1.183.h:760 */
 #ifndef SOAP_TYPE_ns2__APMandateStatusReply
-#define SOAP_TYPE_ns2__APMandateStatusReply (575)
+#define SOAP_TYPE_ns2__APMandateStatusReply (576)
 /* complex XML schema type 'ns2:APMandateStatusReply': */
 class SOAP_CMAC ns2__APMandateStatusReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Required element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string mandateID;
+        wchar_t *mandateID;
         /// Required element 'ns2:status' of XML schema type 'xsd:string'
-        std::string status;
+        wchar_t *status;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:dateCreated' of XML schema type 'ns2:dateTime'
-        std::string *dateCreated;
+        wchar_t *dateCreated;
         /// Optional element 'ns2:dateSigned' of XML schema type 'ns2:dateTime'
-        std::string *dateSigned;
+        wchar_t *dateSigned;
         /// Optional element 'ns2:dateRevoked' of XML schema type 'ns2:dateTime'
-        std::string *dateRevoked;
+        wchar_t *dateRevoked;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19583,20 +19583,20 @@ class SOAP_CMAC ns2__APMandateStatusReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:762 */
 #ifndef SOAP_TYPE_ns2__APUpdateMandateService
-#define SOAP_TYPE_ns2__APUpdateMandateService (576)
+#define SOAP_TYPE_ns2__APUpdateMandateService (577)
 /* complex XML schema type 'ns2:APUpdateMandateService': */
 class SOAP_CMAC ns2__APUpdateMandateService {
       public:
         /// Optional element 'ns2:esign' of XML schema type 'xsd:string'
-        std::string *esign;
+        wchar_t *esign;
         /// Optional element 'ns2:cancelURL' of XML schema type 'xsd:string'
-        std::string *cancelURL;
+        wchar_t *cancelURL;
         /// Optional element 'ns2:successURL' of XML schema type 'xsd:string'
-        std::string *successURL;
+        wchar_t *successURL;
         /// Optional element 'ns2:failureURL' of XML schema type 'xsd:string'
-        std::string *failureURL;
+        wchar_t *failureURL;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19627,12 +19627,12 @@ class SOAP_CMAC ns2__APUpdateMandateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:764 */
 #ifndef SOAP_TYPE_ns2__GetMasterpassDataService
-#define SOAP_TYPE_ns2__GetMasterpassDataService (577)
+#define SOAP_TYPE_ns2__GetMasterpassDataService (578)
 /* complex XML schema type 'ns2:GetMasterpassDataService': */
 class SOAP_CMAC ns2__GetMasterpassDataService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19663,12 +19663,12 @@ class SOAP_CMAC ns2__GetMasterpassDataService {
 
 /* CyberSourceTransaction_nvp_1.183.h:766 */
 #ifndef SOAP_TYPE_ns2__GetMasterpassDataReply
-#define SOAP_TYPE_ns2__GetMasterpassDataReply (578)
+#define SOAP_TYPE_ns2__GetMasterpassDataReply (579)
 /* complex XML schema type 'ns2:GetMasterpassDataReply': */
 class SOAP_CMAC ns2__GetMasterpassDataReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19699,34 +19699,34 @@ class SOAP_CMAC ns2__GetMasterpassDataReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:768 */
 #ifndef SOAP_TYPE_ns2__APUpdateMandateReply
-#define SOAP_TYPE_ns2__APUpdateMandateReply (579)
+#define SOAP_TYPE_ns2__APUpdateMandateReply (580)
 /* complex XML schema type 'ns2:APUpdateMandateReply': */
 class SOAP_CMAC ns2__APUpdateMandateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Required element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string mandateID;
+        wchar_t *mandateID;
         /// Required element 'ns2:status' of XML schema type 'xsd:string'
-        std::string status;
+        wchar_t *status;
         /// Required element 'ns2:merchantURL' of XML schema type 'xsd:string'
-        std::string merchantURL;
+        wchar_t *merchantURL;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:riskScore' of XML schema type 'xsd:string'
-        std::string *riskScore;
+        wchar_t *riskScore;
         /// Optional element 'ns2:encodedHTML' of XML schema type 'xsd:string'
-        std::string *encodedHTML;
+        wchar_t *encodedHTML;
         /// Optional element 'ns2:encodedPopupHTML' of XML schema type 'xsd:string'
-        std::string *encodedPopupHTML;
+        wchar_t *encodedPopupHTML;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Optional element 'ns2:dateSigned' of XML schema type 'ns2:dateTime'
-        std::string *dateSigned;
+        wchar_t *dateSigned;
         /// Optional element 'ns2:dateCreated' of XML schema type 'ns2:dateTime'
-        std::string *dateCreated;
+        wchar_t *dateCreated;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19757,26 +19757,26 @@ class SOAP_CMAC ns2__APUpdateMandateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:770 */
 #ifndef SOAP_TYPE_ns2__APImportMandateReply
-#define SOAP_TYPE_ns2__APImportMandateReply (580)
+#define SOAP_TYPE_ns2__APImportMandateReply (581)
 /* complex XML schema type 'ns2:APImportMandateReply': */
 class SOAP_CMAC ns2__APImportMandateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Required element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string mandateID;
+        wchar_t *mandateID;
         /// Required element 'ns2:status' of XML schema type 'xsd:string'
-        std::string status;
+        wchar_t *status;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:dateSigned' of XML schema type 'ns2:dateTime'
-        std::string *dateSigned;
+        wchar_t *dateSigned;
         /// Optional element 'ns2:dateCreated' of XML schema type 'ns2:dateTime'
-        std::string *dateCreated;
+        wchar_t *dateCreated;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19807,12 +19807,12 @@ class SOAP_CMAC ns2__APImportMandateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:772 */
 #ifndef SOAP_TYPE_ns2__APRevokeMandateService
-#define SOAP_TYPE_ns2__APRevokeMandateService (581)
+#define SOAP_TYPE_ns2__APRevokeMandateService (582)
 /* complex XML schema type 'ns2:APRevokeMandateService': */
 class SOAP_CMAC ns2__APRevokeMandateService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19843,28 +19843,28 @@ class SOAP_CMAC ns2__APRevokeMandateService {
 
 /* CyberSourceTransaction_nvp_1.183.h:774 */
 #ifndef SOAP_TYPE_ns2__APRevokeMandateReply
-#define SOAP_TYPE_ns2__APRevokeMandateReply (582)
+#define SOAP_TYPE_ns2__APRevokeMandateReply (583)
 /* complex XML schema type 'ns2:APRevokeMandateReply': */
 class SOAP_CMAC ns2__APRevokeMandateReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Required element 'ns2:mandateID' of XML schema type 'xsd:string'
-        std::string mandateID;
+        wchar_t *mandateID;
         /// Required element 'ns2:status' of XML schema type 'xsd:string'
-        std::string status;
+        wchar_t *status;
         /// Optional element 'ns2:responseCode' of XML schema type 'xsd:string'
-        std::string *responseCode;
+        wchar_t *responseCode;
         /// Optional element 'ns2:processorTransactionID' of XML schema type 'xsd:string'
-        std::string *processorTransactionID;
+        wchar_t *processorTransactionID;
         /// Optional element 'ns2:dateSigned' of XML schema type 'ns2:dateTime'
-        std::string *dateSigned;
+        wchar_t *dateSigned;
         /// Optional element 'ns2:dateCreated' of XML schema type 'ns2:dateTime'
-        std::string *dateCreated;
+        wchar_t *dateCreated;
         /// Optional element 'ns2:dateRevoked' of XML schema type 'ns2:dateTime'
-        std::string *dateRevoked;
+        wchar_t *dateRevoked;
         /// Optional element 'ns2:dateTime' of XML schema type 'ns2:dateTime'
-        std::string *dateTime;
+        wchar_t *dateTime;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19895,16 +19895,16 @@ class SOAP_CMAC ns2__APRevokeMandateReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:776 */
 #ifndef SOAP_TYPE_ns2__Category
-#define SOAP_TYPE_ns2__Category (583)
+#define SOAP_TYPE_ns2__Category (584)
 /* complex XML schema type 'ns2:Category': */
 class SOAP_CMAC ns2__Category {
       public:
         /// Optional element 'ns2:affiliate' of XML schema type 'xsd:string'
-        std::string *affiliate;
+        wchar_t *affiliate;
         /// Optional element 'ns2:campaign' of XML schema type 'xsd:string'
-        std::string *campaign;
+        wchar_t *campaign;
         /// Optional element 'ns2:group' of XML schema type 'xsd:string'
-        std::string *group;
+        wchar_t *group;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19935,12 +19935,12 @@ class SOAP_CMAC ns2__Category {
 
 /* CyberSourceTransaction_nvp_1.183.h:778 */
 #ifndef SOAP_TYPE_ns2__ECAVSService
-#define SOAP_TYPE_ns2__ECAVSService (584)
+#define SOAP_TYPE_ns2__ECAVSService (585)
 /* complex XML schema type 'ns2:ECAVSService': */
 class SOAP_CMAC ns2__ECAVSService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -19971,16 +19971,16 @@ class SOAP_CMAC ns2__ECAVSService {
 
 /* CyberSourceTransaction_nvp_1.183.h:780 */
 #ifndef SOAP_TYPE_ns2__GiftCardActivationService
-#define SOAP_TYPE_ns2__GiftCardActivationService (585)
+#define SOAP_TYPE_ns2__GiftCardActivationService (586)
 /* complex XML schema type 'ns2:GiftCardActivationService': */
 class SOAP_CMAC ns2__GiftCardActivationService {
       public:
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20011,16 +20011,16 @@ class SOAP_CMAC ns2__GiftCardActivationService {
 
 /* CyberSourceTransaction_nvp_1.183.h:782 */
 #ifndef SOAP_TYPE_ns2__GiftCardBalanceInquiryService
-#define SOAP_TYPE_ns2__GiftCardBalanceInquiryService (586)
+#define SOAP_TYPE_ns2__GiftCardBalanceInquiryService (587)
 /* complex XML schema type 'ns2:GiftCardBalanceInquiryService': */
 class SOAP_CMAC ns2__GiftCardBalanceInquiryService {
       public:
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20051,12 +20051,12 @@ class SOAP_CMAC ns2__GiftCardBalanceInquiryService {
 
 /* CyberSourceTransaction_nvp_1.183.h:784 */
 #ifndef SOAP_TYPE_ns2__GiftCardVoidService
-#define SOAP_TYPE_ns2__GiftCardVoidService (587)
+#define SOAP_TYPE_ns2__GiftCardVoidService (588)
 /* complex XML schema type 'ns2:GiftCardVoidService': */
 class SOAP_CMAC ns2__GiftCardVoidService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20087,12 +20087,12 @@ class SOAP_CMAC ns2__GiftCardVoidService {
 
 /* CyberSourceTransaction_nvp_1.183.h:786 */
 #ifndef SOAP_TYPE_ns2__GiftCardReversalService
-#define SOAP_TYPE_ns2__GiftCardReversalService (588)
+#define SOAP_TYPE_ns2__GiftCardReversalService (589)
 /* complex XML schema type 'ns2:GiftCardReversalService': */
 class SOAP_CMAC ns2__GiftCardReversalService {
       public:
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20123,16 +20123,16 @@ class SOAP_CMAC ns2__GiftCardReversalService {
 
 /* CyberSourceTransaction_nvp_1.183.h:788 */
 #ifndef SOAP_TYPE_ns2__GiftCardRedemptionService
-#define SOAP_TYPE_ns2__GiftCardRedemptionService (589)
+#define SOAP_TYPE_ns2__GiftCardRedemptionService (590)
 /* complex XML schema type 'ns2:GiftCardRedemptionService': */
 class SOAP_CMAC ns2__GiftCardRedemptionService {
       public:
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20163,16 +20163,16 @@ class SOAP_CMAC ns2__GiftCardRedemptionService {
 
 /* CyberSourceTransaction_nvp_1.183.h:790 */
 #ifndef SOAP_TYPE_ns2__GiftCardReloadService
-#define SOAP_TYPE_ns2__GiftCardReloadService (590)
+#define SOAP_TYPE_ns2__GiftCardReloadService (591)
 /* complex XML schema type 'ns2:GiftCardReloadService': */
 class SOAP_CMAC ns2__GiftCardReloadService {
       public:
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20203,16 +20203,16 @@ class SOAP_CMAC ns2__GiftCardReloadService {
 
 /* CyberSourceTransaction_nvp_1.183.h:792 */
 #ifndef SOAP_TYPE_ns2__GiftCardRefundService
-#define SOAP_TYPE_ns2__GiftCardRefundService (591)
+#define SOAP_TYPE_ns2__GiftCardRefundService (592)
 /* complex XML schema type 'ns2:GiftCardRefundService': */
 class SOAP_CMAC ns2__GiftCardRefundService {
       public:
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20243,54 +20243,54 @@ class SOAP_CMAC ns2__GiftCardRefundService {
 
 /* CyberSourceTransaction_nvp_1.183.h:794 */
 #ifndef SOAP_TYPE_ns2__GiftCard
-#define SOAP_TYPE_ns2__GiftCard (592)
+#define SOAP_TYPE_ns2__GiftCard (593)
 /* complex XML schema type 'ns2:GiftCard': */
 class SOAP_CMAC ns2__GiftCard {
       public:
         /// Optional element 'ns2:originalRequestID' of XML schema type 'xsd:string'
-        std::string *originalRequestID;
+        wchar_t *originalRequestID;
         /// Optional element 'ns2:redemptionType' of XML schema type 'xsd:string'
-        std::string *redemptionType;
+        wchar_t *redemptionType;
         /// Optional element 'ns2:count' of XML schema type 'xsd:string'
-        std::string *count;
+        wchar_t *count;
         /// Optional element 'ns2:escheatable' of XML schema type 'ns2:boolean'
-        std::string *escheatable;
+        wchar_t *escheatable;
         /// Optional element 'ns2:groupID' of XML schema type 'xsd:string'
-        std::string *groupID;
+        wchar_t *groupID;
         /// Optional element 'ns2:transactionPostingDate' of XML schema type 'xsd:string'
-        std::string *transactionPostingDate;
+        wchar_t *transactionPostingDate;
         /// Optional element 'ns2:balanceCurrency' of XML schema type 'xsd:string'
-        std::string *balanceCurrency;
+        wchar_t *balanceCurrency;
         /// Optional element 'ns2:previousBalance' of XML schema type 'xsd:string'
-        std::string *previousBalance;
+        wchar_t *previousBalance;
         /// Optional element 'ns2:currentBalance' of XML schema type 'xsd:string'
-        std::string *currentBalance;
+        wchar_t *currentBalance;
         /// Optional element 'ns2:baseCurrencyPreviousBalance' of XML schema type 'xsd:string'
-        std::string *baseCurrencyPreviousBalance;
+        wchar_t *baseCurrencyPreviousBalance;
         /// Optional element 'ns2:baseCurrencyCurrentBalance' of XML schema type 'xsd:string'
-        std::string *baseCurrencyCurrentBalance;
+        wchar_t *baseCurrencyCurrentBalance;
         /// Optional element 'ns2:baseCurrencyCashbackAmount' of XML schema type 'xsd:string'
-        std::string *baseCurrencyCashbackAmount;
+        wchar_t *baseCurrencyCashbackAmount;
         /// Optional element 'ns2:baseCurrency' of XML schema type 'xsd:string'
-        std::string *baseCurrency;
+        wchar_t *baseCurrency;
         /// Optional element 'ns2:expirationDate' of XML schema type 'xsd:string'
-        std::string *expirationDate;
+        wchar_t *expirationDate;
         /// Optional element 'ns2:exchangeRate' of XML schema type 'xsd:string'
-        std::string *exchangeRate;
+        wchar_t *exchangeRate;
         /// Optional element 'ns2:bonusAmount' of XML schema type 'xsd:string'
-        std::string *bonusAmount;
+        wchar_t *bonusAmount;
         /// Optional element 'ns2:discountAmount' of XML schema type 'xsd:string'
-        std::string *discountAmount;
+        wchar_t *discountAmount;
         /// Optional element 'ns2:extendedAccountNumber' of XML schema type 'xsd:string'
-        std::string *extendedAccountNumber;
+        wchar_t *extendedAccountNumber;
         /// Optional element 'ns2:additionalAccountNumber' of XML schema type 'xsd:string'
-        std::string *additionalAccountNumber;
+        wchar_t *additionalAccountNumber;
         /// Optional element 'ns2:physicalCard' of XML schema type 'xsd:string'
-        std::string *physicalCard;
+        wchar_t *physicalCard;
         /// Optional element 'ns2:returnExtendedAccountNumber' of XML schema type 'xsd:string'
-        std::string *returnExtendedAccountNumber;
+        wchar_t *returnExtendedAccountNumber;
         /// Optional element 'ns2:promoCode' of XML schema type 'xsd:string'
-        std::string *promoCode;
+        wchar_t *promoCode;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20321,20 +20321,20 @@ class SOAP_CMAC ns2__GiftCard {
 
 /* CyberSourceTransaction_nvp_1.183.h:796 */
 #ifndef SOAP_TYPE_ns2__GiftCardActivationReply
-#define SOAP_TYPE_ns2__GiftCardActivationReply (593)
+#define SOAP_TYPE_ns2__GiftCardActivationReply (594)
 /* complex XML schema type 'ns2:GiftCardActivationReply': */
 class SOAP_CMAC ns2__GiftCardActivationReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20365,20 +20365,20 @@ class SOAP_CMAC ns2__GiftCardActivationReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:798 */
 #ifndef SOAP_TYPE_ns2__GiftCardBalanceInquiryReply
-#define SOAP_TYPE_ns2__GiftCardBalanceInquiryReply (594)
+#define SOAP_TYPE_ns2__GiftCardBalanceInquiryReply (595)
 /* complex XML schema type 'ns2:GiftCardBalanceInquiryReply': */
 class SOAP_CMAC ns2__GiftCardBalanceInquiryReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20409,20 +20409,20 @@ class SOAP_CMAC ns2__GiftCardBalanceInquiryReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:800 */
 #ifndef SOAP_TYPE_ns2__GiftCardRedemptionReply
-#define SOAP_TYPE_ns2__GiftCardRedemptionReply (595)
+#define SOAP_TYPE_ns2__GiftCardRedemptionReply (596)
 /* complex XML schema type 'ns2:GiftCardRedemptionReply': */
 class SOAP_CMAC ns2__GiftCardRedemptionReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20453,20 +20453,20 @@ class SOAP_CMAC ns2__GiftCardRedemptionReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:802 */
 #ifndef SOAP_TYPE_ns2__GiftCardReversalReply
-#define SOAP_TYPE_ns2__GiftCardReversalReply (596)
+#define SOAP_TYPE_ns2__GiftCardReversalReply (597)
 /* complex XML schema type 'ns2:GiftCardReversalReply': */
 class SOAP_CMAC ns2__GiftCardReversalReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20497,20 +20497,20 @@ class SOAP_CMAC ns2__GiftCardReversalReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:804 */
 #ifndef SOAP_TYPE_ns2__GiftCardVoidReply
-#define SOAP_TYPE_ns2__GiftCardVoidReply (597)
+#define SOAP_TYPE_ns2__GiftCardVoidReply (598)
 /* complex XML schema type 'ns2:GiftCardVoidReply': */
 class SOAP_CMAC ns2__GiftCardVoidReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:requestDeTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDeTime;
+        wchar_t *requestDeTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20541,20 +20541,20 @@ class SOAP_CMAC ns2__GiftCardVoidReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:806 */
 #ifndef SOAP_TYPE_ns2__GiftCardReloadReply
-#define SOAP_TYPE_ns2__GiftCardReloadReply (598)
+#define SOAP_TYPE_ns2__GiftCardReloadReply (599)
 /* complex XML schema type 'ns2:GiftCardReloadReply': */
 class SOAP_CMAC ns2__GiftCardReloadReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20585,20 +20585,20 @@ class SOAP_CMAC ns2__GiftCardReloadReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:808 */
 #ifndef SOAP_TYPE_ns2__GiftCardRefundReply
-#define SOAP_TYPE_ns2__GiftCardRefundReply (599)
+#define SOAP_TYPE_ns2__GiftCardRefundReply (600)
 /* complex XML schema type 'ns2:GiftCardRefundReply': */
 class SOAP_CMAC ns2__GiftCardRefundReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:authorizationCode' of XML schema type 'xsd:string'
-        std::string *authorizationCode;
+        wchar_t *authorizationCode;
         /// Optional element 'ns2:processorResponse' of XML schema type 'xsd:string'
-        std::string *processorResponse;
+        wchar_t *processorResponse;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reconciliationID' of XML schema type 'xsd:string'
-        std::string *reconciliationID;
+        wchar_t *reconciliationID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20629,12 +20629,12 @@ class SOAP_CMAC ns2__GiftCardRefundReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:810 */
 #ifndef SOAP_TYPE_ns2__mPOS
-#define SOAP_TYPE_ns2__mPOS (600)
+#define SOAP_TYPE_ns2__mPOS (601)
 /* complex XML schema type 'ns2:mPOS': */
 class SOAP_CMAC ns2__mPOS {
       public:
         /// Optional element 'ns2:deviceType' of XML schema type 'xsd:string'
-        std::string *deviceType;
+        wchar_t *deviceType;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20665,20 +20665,20 @@ class SOAP_CMAC ns2__mPOS {
 
 /* CyberSourceTransaction_nvp_1.183.h:812 */
 #ifndef SOAP_TYPE_ns2__AbortService
-#define SOAP_TYPE_ns2__AbortService (601)
+#define SOAP_TYPE_ns2__AbortService (602)
 /* complex XML schema type 'ns2:AbortService': */
 class SOAP_CMAC ns2__AbortService {
       public:
         /// Optional element 'ns2:authRequestID' of XML schema type 'xsd:string'
-        std::string *authRequestID;
+        wchar_t *authRequestID;
         /// Optional element 'ns2:creditRequestID' of XML schema type 'xsd:string'
-        std::string *creditRequestID;
+        wchar_t *creditRequestID;
         /// Optional element 'ns2:cardholderVerificationMethod' of XML schema type 'xsd:string'
-        std::string *cardholderVerificationMethod;
+        wchar_t *cardholderVerificationMethod;
         /// Optional element 'ns2:commerceIndicator' of XML schema type 'xsd:string'
-        std::string *commerceIndicator;
+        wchar_t *commerceIndicator;
         /// Required attribute 'run' of XML schema type 'ns2:boolean'
-        std::string run;
+        wchar_t *run;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20709,16 +20709,16 @@ class SOAP_CMAC ns2__AbortService {
 
 /* CyberSourceTransaction_nvp_1.183.h:814 */
 #ifndef SOAP_TYPE_ns2__AbortReply
-#define SOAP_TYPE_ns2__AbortReply (602)
+#define SOAP_TYPE_ns2__AbortReply (603)
 /* complex XML schema type 'ns2:AbortReply': */
 class SOAP_CMAC ns2__AbortReply {
       public:
         /// Required element 'ns2:reasonCode' of XML schema type 'xsd:integer'
-        std::string reasonCode;
+        wchar_t *reasonCode;
         /// Optional element 'ns2:requestDateTime' of XML schema type 'ns2:dateTime'
-        std::string *requestDateTime;
+        wchar_t *requestDateTime;
         /// Optional element 'ns2:reason' of XML schema type 'xsd:integer'
-        std::string *reason;
+        wchar_t *reason;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20749,16 +20749,16 @@ class SOAP_CMAC ns2__AbortReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:816 */
 #ifndef SOAP_TYPE_ns2__merchant
-#define SOAP_TYPE_ns2__merchant (603)
+#define SOAP_TYPE_ns2__merchant (604)
 /* complex XML schema type 'ns2:merchant': */
 class SOAP_CMAC ns2__merchant {
       public:
         /// Optional element 'ns2:acquirerBIN' of XML schema type 'xsd:string'
-        std::string *acquirerBIN;
+        wchar_t *acquirerBIN;
         /// Optional element 'ns2:cardAcceptorID' of XML schema type 'xsd:string'
-        std::string *cardAcceptorID;
+        wchar_t *cardAcceptorID;
         /// Optional element 'ns2:visaMerchantID' of XML schema type 'xsd:string'
-        std::string *visaMerchantID;
+        wchar_t *visaMerchantID;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20789,20 +20789,20 @@ class SOAP_CMAC ns2__merchant {
 
 /* CyberSourceTransaction_nvp_1.183.h:818 */
 #ifndef SOAP_TYPE_ns2__DecisionEarlyReply
-#define SOAP_TYPE_ns2__DecisionEarlyReply (604)
+#define SOAP_TYPE_ns2__DecisionEarlyReply (605)
 /* complex XML schema type 'ns2:DecisionEarlyReply': */
 class SOAP_CMAC ns2__DecisionEarlyReply {
       public:
         /// Optional element 'ns2:casePriority' of XML schema type 'xsd:integer'
-        std::string *casePriority;
+        wchar_t *casePriority;
         /// Optional element 'ns2:decision' of XML schema type 'xsd:string'
-        std::string *decision;
+        wchar_t *decision;
         /// Optional element 'ns2:action' of XML schema type 'xsd:string'
-        std::string *action;
+        wchar_t *action;
         /// Optional element 'ns2:applicableOrderModifications' of XML schema type 'xsd:string'
-        std::string *applicableOrderModifications;
+        wchar_t *applicableOrderModifications;
         /// Optional element 'ns2:appliedOrderModifications' of XML schema type 'xsd:string'
-        std::string *appliedOrderModifications;
+        wchar_t *appliedOrderModifications;
         /// Optional element 'ns2:activeProfileReply' of XML schema type 'ns2:ProfileReplyEarly'
         ns2__ProfileReplyEarly *activeProfileReply;
         /// Context that manages this object
@@ -20835,14 +20835,14 @@ class SOAP_CMAC ns2__DecisionEarlyReply {
 
 /* CyberSourceTransaction_nvp_1.183.h:820 */
 #ifndef SOAP_TYPE_ns2__ProfileReplyEarly
-#define SOAP_TYPE_ns2__ProfileReplyEarly (605)
+#define SOAP_TYPE_ns2__ProfileReplyEarly (606)
 /* complex XML schema type 'ns2:ProfileReplyEarly': */
 class SOAP_CMAC ns2__ProfileReplyEarly {
       public:
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:selectedBy' of XML schema type 'xsd:string'
-        std::string *selectedBy;
+        wchar_t *selectedBy;
         /// Optional element 'ns2:pauseRulesTriggered' of XML schema type 'ns2:PauseRuleResultItems'
         ns2__PauseRuleResultItems *pauseRulesTriggered;
         /// Optional element 'ns2:rulesTriggered' of XML schema type 'ns2:RuleResultItems'
@@ -20877,7 +20877,7 @@ class SOAP_CMAC ns2__ProfileReplyEarly {
 
 /* CyberSourceTransaction_nvp_1.183.h:822 */
 #ifndef SOAP_TYPE_ns2__PauseRuleResultItems
-#define SOAP_TYPE_ns2__PauseRuleResultItems (606)
+#define SOAP_TYPE_ns2__PauseRuleResultItems (607)
 /* complex XML schema type 'ns2:PauseRuleResultItems': */
 class SOAP_CMAC ns2__PauseRuleResultItems {
       public:
@@ -20913,20 +20913,20 @@ class SOAP_CMAC ns2__PauseRuleResultItems {
 
 /* CyberSourceTransaction_nvp_1.183.h:824 */
 #ifndef SOAP_TYPE_ns2__PauseRuleResultItem
-#define SOAP_TYPE_ns2__PauseRuleResultItem (607)
+#define SOAP_TYPE_ns2__PauseRuleResultItem (608)
 /* complex XML schema type 'ns2:PauseRuleResultItem': */
 class SOAP_CMAC ns2__PauseRuleResultItem {
       public:
         /// Optional element 'ns2:ruleID' of XML schema type 'xsd:integer'
-        std::string *ruleID;
+        wchar_t *ruleID;
         /// Optional element 'ns2:name' of XML schema type 'xsd:string'
-        std::string *name;
+        wchar_t *name;
         /// Optional element 'ns2:action' of XML schema type 'xsd:string'
-        std::string *action;
+        wchar_t *action;
         /// Optional element 'ns2:evaluation' of XML schema type 'xsd:string'
-        std::string *evaluation;
+        wchar_t *evaluation;
         /// Optional element 'ns2:orderModification' of XML schema type 'xsd:string'
-        std::string *orderModification;
+        wchar_t *orderModification;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -20957,24 +20957,24 @@ class SOAP_CMAC ns2__PauseRuleResultItem {
 
 /* CyberSourceTransaction_nvp_1.183.h:826 */
 #ifndef SOAP_TYPE_ns2__payByPoints
-#define SOAP_TYPE_ns2__payByPoints (608)
+#define SOAP_TYPE_ns2__payByPoints (609)
 /* complex XML schema type 'ns2:payByPoints': */
 class SOAP_CMAC ns2__payByPoints {
       public:
         /// Optional element 'ns2:indicator' of XML schema type 'xsd:string'
-        std::string *indicator;
+        wchar_t *indicator;
         /// Optional element 'ns2:pointsBeforeRedemption' of XML schema type 'xsd:string'
-        std::string *pointsBeforeRedemption;
+        wchar_t *pointsBeforeRedemption;
         /// Optional element 'ns2:pointsValueBeforeRedemption' of XML schema type 'xsd:string'
-        std::string *pointsValueBeforeRedemption;
+        wchar_t *pointsValueBeforeRedemption;
         /// Optional element 'ns2:pointsRedeemed' of XML schema type 'xsd:string'
-        std::string *pointsRedeemed;
+        wchar_t *pointsRedeemed;
         /// Optional element 'ns2:pointsValueRedeemed' of XML schema type 'xsd:string'
-        std::string *pointsValueRedeemed;
+        wchar_t *pointsValueRedeemed;
         /// Optional element 'ns2:pointsAfterRedemption' of XML schema type 'xsd:string'
-        std::string *pointsAfterRedemption;
+        wchar_t *pointsAfterRedemption;
         /// Optional element 'ns2:pointsValueAfterRedemption' of XML schema type 'xsd:string'
-        std::string *pointsValueAfterRedemption;
+        wchar_t *pointsValueAfterRedemption;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -21005,14 +21005,14 @@ class SOAP_CMAC ns2__payByPoints {
 
 /* CyberSourceTransaction_nvp_1.183.h:668 */
 #ifndef SOAP_TYPE_ns2__MDDField
-#define SOAP_TYPE_ns2__MDDField (529)
+#define SOAP_TYPE_ns2__MDDField (530)
 /* simple XML schema type 'ns2:MDDField': */
 class SOAP_CMAC ns2__MDDField {
       public:
         /// Simple content of XML schema type 'xsd:string' wrapped by this struct
-        std::string __item;
+        wchar_t *__item;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -21043,14 +21043,14 @@ class SOAP_CMAC ns2__MDDField {
 
 /* CyberSourceTransaction_nvp_1.183.h:672 */
 #ifndef SOAP_TYPE_ns2__AuxiliaryField
-#define SOAP_TYPE_ns2__AuxiliaryField (531)
+#define SOAP_TYPE_ns2__AuxiliaryField (532)
 /* simple XML schema type 'ns2:AuxiliaryField': */
 class SOAP_CMAC ns2__AuxiliaryField {
       public:
         /// Simple content of XML schema type 'xsd:string' wrapped by this struct
-        std::string __item;
+        wchar_t *__item;
         /// Required attribute 'id' of XML schema type 'xsd:integer'
-        std::string id;
+        wchar_t *id;
         /// Context that manages this object
         struct soap *soap;
       public:
@@ -21081,12 +21081,12 @@ class SOAP_CMAC ns2__AuxiliaryField {
 
 /* CyberSourceTransaction_nvp_1.183.h:14497 */
 #ifndef SOAP_TYPE___ns1__runTransactionResponse
-#define SOAP_TYPE___ns1__runTransactionResponse (950)
+#define SOAP_TYPE___ns1__runTransactionResponse (944)
 /* Wrapper: */
 struct SOAP_CMAC __ns1__runTransactionResponse {
       public:
         /** Required element 'ns2:nvpReply' of XML schema type 'xsd:string' */
-        std::string ns2__nvpReply;
+        wchar_t *ns2__nvpReply;
       public:
         /** Return unique type id SOAP_TYPE___ns1__runTransactionResponse */
         long soap_type() const { return SOAP_TYPE___ns1__runTransactionResponse; }
@@ -21099,12 +21099,12 @@ struct SOAP_CMAC __ns1__runTransactionResponse {
 
 /* CyberSourceTransaction_nvp_1.183.h:14497 */
 #ifndef SOAP_TYPE___ns1__runTransaction
-#define SOAP_TYPE___ns1__runTransaction (951)
+#define SOAP_TYPE___ns1__runTransaction (945)
 /* Wrapper: */
 struct SOAP_CMAC __ns1__runTransaction {
       public:
-        /** Required element 'ns2:nvpRequest' of XML schema type 'xsd:string' */
-        std::string ns2__nvpRequest;
+        /** Optional element 'ns2:nvpRequest' of XML schema type 'xsd:string' */
+        wchar_t *ns2__nvpRequest;
       public:
         /** Return unique type id SOAP_TYPE___ns1__runTransaction */
         long soap_type() const { return SOAP_TYPE___ns1__runTransaction; }
@@ -21118,7 +21118,7 @@ struct SOAP_CMAC __ns1__runTransaction {
 /* CyberSourceTransaction_nvp_1.183.h:14574 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Code
-#define SOAP_TYPE_SOAP_ENV__Code (952)
+#define SOAP_TYPE_SOAP_ENV__Code (946)
 /* Type SOAP_ENV__Code is a recursive data type, (in)directly referencing itself through its (base or derived class) members */
 /* SOAP_ENV__Code: */
 struct SOAP_CMAC SOAP_ENV__Code {
@@ -21141,7 +21141,7 @@ struct SOAP_CMAC SOAP_ENV__Code {
 /* CyberSourceTransaction_nvp_1.183.h:14574 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
-#define SOAP_TYPE_SOAP_ENV__Detail (954)
+#define SOAP_TYPE_SOAP_ENV__Detail (948)
 /* SOAP_ENV__Detail: */
 struct SOAP_CMAC SOAP_ENV__Detail {
       public:
@@ -21164,7 +21164,7 @@ struct SOAP_CMAC SOAP_ENV__Detail {
 /* CyberSourceTransaction_nvp_1.183.h:14574 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
-#define SOAP_TYPE_SOAP_ENV__Reason (957)
+#define SOAP_TYPE_SOAP_ENV__Reason (951)
 /* SOAP_ENV__Reason: */
 struct SOAP_CMAC SOAP_ENV__Reason {
       public:
@@ -21184,7 +21184,7 @@ struct SOAP_CMAC SOAP_ENV__Reason {
 /* CyberSourceTransaction_nvp_1.183.h:14574 */
 #ifndef WITH_NOGLOBAL
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
-#define SOAP_TYPE_SOAP_ENV__Fault (958)
+#define SOAP_TYPE_SOAP_ENV__Fault (952)
 /* SOAP_ENV__Fault: */
 struct SOAP_CMAC SOAP_ENV__Fault {
       public:
@@ -21616,43 +21616,43 @@ typedef struct saml2__EncryptedElementType _saml2__EncryptedAttribute;
 
 /* CyberSourceTransaction_nvp_1.183.h:163 */
 #ifndef SOAP_TYPE_xsd__decimal
-#define SOAP_TYPE_xsd__decimal (281)
-typedef std::string xsd__decimal;
+#define SOAP_TYPE_xsd__decimal (282)
+typedef wchar_t *xsd__decimal;
 #endif
 
 /* CyberSourceTransaction_nvp_1.183.h:166 */
 #ifndef SOAP_TYPE_xsd__integer
-#define SOAP_TYPE_xsd__integer (282)
-typedef std::string xsd__integer;
+#define SOAP_TYPE_xsd__integer (283)
+typedef wchar_t *xsd__integer;
 #endif
 
 /* CyberSourceTransaction_nvp_1.183.h:846 */
 #ifndef SOAP_TYPE_ns2__amount
-#define SOAP_TYPE_ns2__amount (609)
-typedef std::string ns2__amount;
+#define SOAP_TYPE_ns2__amount (610)
+typedef wchar_t *ns2__amount;
 #endif
 
 /* CyberSourceTransaction_nvp_1.183.h:850 */
 #ifndef SOAP_TYPE_ns2__boolean
-#define SOAP_TYPE_ns2__boolean (610)
-typedef std::string ns2__boolean;
+#define SOAP_TYPE_ns2__boolean (611)
+typedef wchar_t *ns2__boolean;
 #endif
 
 /* CyberSourceTransaction_nvp_1.183.h:854 */
 #ifndef SOAP_TYPE_ns2__dateTime
-#define SOAP_TYPE_ns2__dateTime (611)
-typedef std::string ns2__dateTime;
+#define SOAP_TYPE_ns2__dateTime (612)
+typedef wchar_t *ns2__dateTime;
 #endif
 
 /* CyberSourceTransaction_nvp_1.183.h:859 */
 #ifndef SOAP_TYPE_ns2__RestrictedString
-#define SOAP_TYPE_ns2__RestrictedString (612)
-typedef std::string ns2__RestrictedString;
+#define SOAP_TYPE_ns2__RestrictedString (613)
+typedef wchar_t *ns2__RestrictedString;
 #endif
 
 /* CyberSourceTransaction_nvp_1.183.h:865 */
 #ifndef SOAP_TYPE_ns2__RestrictedDecimal
-#define SOAP_TYPE_ns2__RestrictedDecimal (613)
+#define SOAP_TYPE_ns2__RestrictedDecimal (614)
 typedef xsd__decimal ns2__RestrictedDecimal;
 #endif
 
@@ -21713,1674 +21713,1634 @@ typedef xsd__decimal ns2__RestrictedDecimal;
 #define SOAP_TYPE_wsu__tTimestampFault (7)
 #endif
 
-/* ns2__RestrictedDecimal has binding name 'ns2__RestrictedDecimal' for type 'ns2:RestrictedDecimal' */
-#ifndef SOAP_TYPE_ns2__RestrictedDecimal
-#define SOAP_TYPE_ns2__RestrictedDecimal (613)
-#endif
-
-/* ns2__RestrictedString has binding name 'ns2__RestrictedString' for type 'ns2:RestrictedString' */
-#ifndef SOAP_TYPE_ns2__RestrictedString
-#define SOAP_TYPE_ns2__RestrictedString (612)
-#endif
-
-/* ns2__dateTime has binding name 'ns2__dateTime' for type 'ns2:dateTime' */
-#ifndef SOAP_TYPE_ns2__dateTime
-#define SOAP_TYPE_ns2__dateTime (611)
-#endif
-
-/* ns2__boolean has binding name 'ns2__boolean' for type 'ns2:boolean' */
-#ifndef SOAP_TYPE_ns2__boolean
-#define SOAP_TYPE_ns2__boolean (610)
-#endif
-
-/* ns2__amount has binding name 'ns2__amount' for type 'ns2:amount' */
-#ifndef SOAP_TYPE_ns2__amount
-#define SOAP_TYPE_ns2__amount (609)
-#endif
-
 /* ns2__payByPoints has binding name 'ns2__payByPoints' for type 'ns2:payByPoints' */
 #ifndef SOAP_TYPE_ns2__payByPoints
-#define SOAP_TYPE_ns2__payByPoints (608)
+#define SOAP_TYPE_ns2__payByPoints (609)
 #endif
 
 /* ns2__PauseRuleResultItem has binding name 'ns2__PauseRuleResultItem' for type 'ns2:PauseRuleResultItem' */
 #ifndef SOAP_TYPE_ns2__PauseRuleResultItem
-#define SOAP_TYPE_ns2__PauseRuleResultItem (607)
+#define SOAP_TYPE_ns2__PauseRuleResultItem (608)
 #endif
 
 /* ns2__PauseRuleResultItems has binding name 'ns2__PauseRuleResultItems' for type 'ns2:PauseRuleResultItems' */
 #ifndef SOAP_TYPE_ns2__PauseRuleResultItems
-#define SOAP_TYPE_ns2__PauseRuleResultItems (606)
+#define SOAP_TYPE_ns2__PauseRuleResultItems (607)
 #endif
 
 /* ns2__ProfileReplyEarly has binding name 'ns2__ProfileReplyEarly' for type 'ns2:ProfileReplyEarly' */
 #ifndef SOAP_TYPE_ns2__ProfileReplyEarly
-#define SOAP_TYPE_ns2__ProfileReplyEarly (605)
+#define SOAP_TYPE_ns2__ProfileReplyEarly (606)
 #endif
 
 /* ns2__DecisionEarlyReply has binding name 'ns2__DecisionEarlyReply' for type 'ns2:DecisionEarlyReply' */
 #ifndef SOAP_TYPE_ns2__DecisionEarlyReply
-#define SOAP_TYPE_ns2__DecisionEarlyReply (604)
+#define SOAP_TYPE_ns2__DecisionEarlyReply (605)
 #endif
 
 /* ns2__merchant has binding name 'ns2__merchant' for type 'ns2:merchant' */
 #ifndef SOAP_TYPE_ns2__merchant
-#define SOAP_TYPE_ns2__merchant (603)
+#define SOAP_TYPE_ns2__merchant (604)
 #endif
 
 /* ns2__AbortReply has binding name 'ns2__AbortReply' for type 'ns2:AbortReply' */
 #ifndef SOAP_TYPE_ns2__AbortReply
-#define SOAP_TYPE_ns2__AbortReply (602)
+#define SOAP_TYPE_ns2__AbortReply (603)
 #endif
 
 /* ns2__AbortService has binding name 'ns2__AbortService' for type 'ns2:AbortService' */
 #ifndef SOAP_TYPE_ns2__AbortService
-#define SOAP_TYPE_ns2__AbortService (601)
+#define SOAP_TYPE_ns2__AbortService (602)
 #endif
 
 /* ns2__mPOS has binding name 'ns2__mPOS' for type 'ns2:mPOS' */
 #ifndef SOAP_TYPE_ns2__mPOS
-#define SOAP_TYPE_ns2__mPOS (600)
+#define SOAP_TYPE_ns2__mPOS (601)
 #endif
 
 /* ns2__GiftCardRefundReply has binding name 'ns2__GiftCardRefundReply' for type 'ns2:GiftCardRefundReply' */
 #ifndef SOAP_TYPE_ns2__GiftCardRefundReply
-#define SOAP_TYPE_ns2__GiftCardRefundReply (599)
+#define SOAP_TYPE_ns2__GiftCardRefundReply (600)
 #endif
 
 /* ns2__GiftCardReloadReply has binding name 'ns2__GiftCardReloadReply' for type 'ns2:GiftCardReloadReply' */
 #ifndef SOAP_TYPE_ns2__GiftCardReloadReply
-#define SOAP_TYPE_ns2__GiftCardReloadReply (598)
+#define SOAP_TYPE_ns2__GiftCardReloadReply (599)
 #endif
 
 /* ns2__GiftCardVoidReply has binding name 'ns2__GiftCardVoidReply' for type 'ns2:GiftCardVoidReply' */
 #ifndef SOAP_TYPE_ns2__GiftCardVoidReply
-#define SOAP_TYPE_ns2__GiftCardVoidReply (597)
+#define SOAP_TYPE_ns2__GiftCardVoidReply (598)
 #endif
 
 /* ns2__GiftCardReversalReply has binding name 'ns2__GiftCardReversalReply' for type 'ns2:GiftCardReversalReply' */
 #ifndef SOAP_TYPE_ns2__GiftCardReversalReply
-#define SOAP_TYPE_ns2__GiftCardReversalReply (596)
+#define SOAP_TYPE_ns2__GiftCardReversalReply (597)
 #endif
 
 /* ns2__GiftCardRedemptionReply has binding name 'ns2__GiftCardRedemptionReply' for type 'ns2:GiftCardRedemptionReply' */
 #ifndef SOAP_TYPE_ns2__GiftCardRedemptionReply
-#define SOAP_TYPE_ns2__GiftCardRedemptionReply (595)
+#define SOAP_TYPE_ns2__GiftCardRedemptionReply (596)
 #endif
 
 /* ns2__GiftCardBalanceInquiryReply has binding name 'ns2__GiftCardBalanceInquiryReply' for type 'ns2:GiftCardBalanceInquiryReply' */
 #ifndef SOAP_TYPE_ns2__GiftCardBalanceInquiryReply
-#define SOAP_TYPE_ns2__GiftCardBalanceInquiryReply (594)
+#define SOAP_TYPE_ns2__GiftCardBalanceInquiryReply (595)
 #endif
 
 /* ns2__GiftCardActivationReply has binding name 'ns2__GiftCardActivationReply' for type 'ns2:GiftCardActivationReply' */
 #ifndef SOAP_TYPE_ns2__GiftCardActivationReply
-#define SOAP_TYPE_ns2__GiftCardActivationReply (593)
+#define SOAP_TYPE_ns2__GiftCardActivationReply (594)
 #endif
 
 /* ns2__GiftCard has binding name 'ns2__GiftCard' for type 'ns2:GiftCard' */
 #ifndef SOAP_TYPE_ns2__GiftCard
-#define SOAP_TYPE_ns2__GiftCard (592)
+#define SOAP_TYPE_ns2__GiftCard (593)
 #endif
 
 /* ns2__GiftCardRefundService has binding name 'ns2__GiftCardRefundService' for type 'ns2:GiftCardRefundService' */
 #ifndef SOAP_TYPE_ns2__GiftCardRefundService
-#define SOAP_TYPE_ns2__GiftCardRefundService (591)
+#define SOAP_TYPE_ns2__GiftCardRefundService (592)
 #endif
 
 /* ns2__GiftCardReloadService has binding name 'ns2__GiftCardReloadService' for type 'ns2:GiftCardReloadService' */
 #ifndef SOAP_TYPE_ns2__GiftCardReloadService
-#define SOAP_TYPE_ns2__GiftCardReloadService (590)
+#define SOAP_TYPE_ns2__GiftCardReloadService (591)
 #endif
 
 /* ns2__GiftCardRedemptionService has binding name 'ns2__GiftCardRedemptionService' for type 'ns2:GiftCardRedemptionService' */
 #ifndef SOAP_TYPE_ns2__GiftCardRedemptionService
-#define SOAP_TYPE_ns2__GiftCardRedemptionService (589)
+#define SOAP_TYPE_ns2__GiftCardRedemptionService (590)
 #endif
 
 /* ns2__GiftCardReversalService has binding name 'ns2__GiftCardReversalService' for type 'ns2:GiftCardReversalService' */
 #ifndef SOAP_TYPE_ns2__GiftCardReversalService
-#define SOAP_TYPE_ns2__GiftCardReversalService (588)
+#define SOAP_TYPE_ns2__GiftCardReversalService (589)
 #endif
 
 /* ns2__GiftCardVoidService has binding name 'ns2__GiftCardVoidService' for type 'ns2:GiftCardVoidService' */
 #ifndef SOAP_TYPE_ns2__GiftCardVoidService
-#define SOAP_TYPE_ns2__GiftCardVoidService (587)
+#define SOAP_TYPE_ns2__GiftCardVoidService (588)
 #endif
 
 /* ns2__GiftCardBalanceInquiryService has binding name 'ns2__GiftCardBalanceInquiryService' for type 'ns2:GiftCardBalanceInquiryService' */
 #ifndef SOAP_TYPE_ns2__GiftCardBalanceInquiryService
-#define SOAP_TYPE_ns2__GiftCardBalanceInquiryService (586)
+#define SOAP_TYPE_ns2__GiftCardBalanceInquiryService (587)
 #endif
 
 /* ns2__GiftCardActivationService has binding name 'ns2__GiftCardActivationService' for type 'ns2:GiftCardActivationService' */
 #ifndef SOAP_TYPE_ns2__GiftCardActivationService
-#define SOAP_TYPE_ns2__GiftCardActivationService (585)
+#define SOAP_TYPE_ns2__GiftCardActivationService (586)
 #endif
 
 /* ns2__ECAVSService has binding name 'ns2__ECAVSService' for type 'ns2:ECAVSService' */
 #ifndef SOAP_TYPE_ns2__ECAVSService
-#define SOAP_TYPE_ns2__ECAVSService (584)
+#define SOAP_TYPE_ns2__ECAVSService (585)
 #endif
 
 /* ns2__Category has binding name 'ns2__Category' for type 'ns2:Category' */
 #ifndef SOAP_TYPE_ns2__Category
-#define SOAP_TYPE_ns2__Category (583)
+#define SOAP_TYPE_ns2__Category (584)
 #endif
 
 /* ns2__APRevokeMandateReply has binding name 'ns2__APRevokeMandateReply' for type 'ns2:APRevokeMandateReply' */
 #ifndef SOAP_TYPE_ns2__APRevokeMandateReply
-#define SOAP_TYPE_ns2__APRevokeMandateReply (582)
+#define SOAP_TYPE_ns2__APRevokeMandateReply (583)
 #endif
 
 /* ns2__APRevokeMandateService has binding name 'ns2__APRevokeMandateService' for type 'ns2:APRevokeMandateService' */
 #ifndef SOAP_TYPE_ns2__APRevokeMandateService
-#define SOAP_TYPE_ns2__APRevokeMandateService (581)
+#define SOAP_TYPE_ns2__APRevokeMandateService (582)
 #endif
 
 /* ns2__APImportMandateReply has binding name 'ns2__APImportMandateReply' for type 'ns2:APImportMandateReply' */
 #ifndef SOAP_TYPE_ns2__APImportMandateReply
-#define SOAP_TYPE_ns2__APImportMandateReply (580)
+#define SOAP_TYPE_ns2__APImportMandateReply (581)
 #endif
 
 /* ns2__APUpdateMandateReply has binding name 'ns2__APUpdateMandateReply' for type 'ns2:APUpdateMandateReply' */
 #ifndef SOAP_TYPE_ns2__APUpdateMandateReply
-#define SOAP_TYPE_ns2__APUpdateMandateReply (579)
+#define SOAP_TYPE_ns2__APUpdateMandateReply (580)
 #endif
 
 /* ns2__GetMasterpassDataReply has binding name 'ns2__GetMasterpassDataReply' for type 'ns2:GetMasterpassDataReply' */
 #ifndef SOAP_TYPE_ns2__GetMasterpassDataReply
-#define SOAP_TYPE_ns2__GetMasterpassDataReply (578)
+#define SOAP_TYPE_ns2__GetMasterpassDataReply (579)
 #endif
 
 /* ns2__GetMasterpassDataService has binding name 'ns2__GetMasterpassDataService' for type 'ns2:GetMasterpassDataService' */
 #ifndef SOAP_TYPE_ns2__GetMasterpassDataService
-#define SOAP_TYPE_ns2__GetMasterpassDataService (577)
+#define SOAP_TYPE_ns2__GetMasterpassDataService (578)
 #endif
 
 /* ns2__APUpdateMandateService has binding name 'ns2__APUpdateMandateService' for type 'ns2:APUpdateMandateService' */
 #ifndef SOAP_TYPE_ns2__APUpdateMandateService
-#define SOAP_TYPE_ns2__APUpdateMandateService (576)
+#define SOAP_TYPE_ns2__APUpdateMandateService (577)
 #endif
 
 /* ns2__APMandateStatusReply has binding name 'ns2__APMandateStatusReply' for type 'ns2:APMandateStatusReply' */
 #ifndef SOAP_TYPE_ns2__APMandateStatusReply
-#define SOAP_TYPE_ns2__APMandateStatusReply (575)
+#define SOAP_TYPE_ns2__APMandateStatusReply (576)
 #endif
 
 /* ns2__APMandateStatusService has binding name 'ns2__APMandateStatusService' for type 'ns2:APMandateStatusService' */
 #ifndef SOAP_TYPE_ns2__APMandateStatusService
-#define SOAP_TYPE_ns2__APMandateStatusService (574)
+#define SOAP_TYPE_ns2__APMandateStatusService (575)
 #endif
 
 /* ns2__APCreateMandateReply has binding name 'ns2__APCreateMandateReply' for type 'ns2:APCreateMandateReply' */
 #ifndef SOAP_TYPE_ns2__APCreateMandateReply
-#define SOAP_TYPE_ns2__APCreateMandateReply (573)
+#define SOAP_TYPE_ns2__APCreateMandateReply (574)
 #endif
 
 /* ns2__APCreateMandateService has binding name 'ns2__APCreateMandateService' for type 'ns2:APCreateMandateService' */
 #ifndef SOAP_TYPE_ns2__APCreateMandateService
-#define SOAP_TYPE_ns2__APCreateMandateService (572)
+#define SOAP_TYPE_ns2__APCreateMandateService (573)
 #endif
 
 /* ns2__PostdatedTransaction has binding name 'ns2__PostdatedTransaction' for type 'ns2:PostdatedTransaction' */
 #ifndef SOAP_TYPE_ns2__PostdatedTransaction
-#define SOAP_TYPE_ns2__PostdatedTransaction (571)
+#define SOAP_TYPE_ns2__PostdatedTransaction (572)
 #endif
 
 /* ns2__Passenger has binding name 'ns2__Passenger' for type 'ns2:Passenger' */
 #ifndef SOAP_TYPE_ns2__Passenger
-#define SOAP_TYPE_ns2__Passenger (570)
+#define SOAP_TYPE_ns2__Passenger (571)
 #endif
 
 /* ns2__APBillingAgreementReply has binding name 'ns2__APBillingAgreementReply' for type 'ns2:APBillingAgreementReply' */
 #ifndef SOAP_TYPE_ns2__APBillingAgreementReply
-#define SOAP_TYPE_ns2__APBillingAgreementReply (569)
+#define SOAP_TYPE_ns2__APBillingAgreementReply (570)
 #endif
 
 /* ns2__APBillingAgreementService has binding name 'ns2__APBillingAgreementService' for type 'ns2:APBillingAgreementService' */
 #ifndef SOAP_TYPE_ns2__APBillingAgreementService
-#define SOAP_TYPE_ns2__APBillingAgreementService (568)
+#define SOAP_TYPE_ns2__APBillingAgreementService (569)
 #endif
 
 /* ns2__APCancelReply has binding name 'ns2__APCancelReply' for type 'ns2:APCancelReply' */
 #ifndef SOAP_TYPE_ns2__APCancelReply
-#define SOAP_TYPE_ns2__APCancelReply (567)
+#define SOAP_TYPE_ns2__APCancelReply (568)
 #endif
 
 /* ns2__APCancelService has binding name 'ns2__APCancelService' for type 'ns2:APCancelService' */
 #ifndef SOAP_TYPE_ns2__APCancelService
-#define SOAP_TYPE_ns2__APCancelService (566)
+#define SOAP_TYPE_ns2__APCancelService (567)
 #endif
 
 /* ns2__APOrderReply has binding name 'ns2__APOrderReply' for type 'ns2:APOrderReply' */
 #ifndef SOAP_TYPE_ns2__APOrderReply
-#define SOAP_TYPE_ns2__APOrderReply (565)
+#define SOAP_TYPE_ns2__APOrderReply (566)
 #endif
 
 /* ns2__APOrderService has binding name 'ns2__APOrderService' for type 'ns2:APOrderService' */
 #ifndef SOAP_TYPE_ns2__APOrderService
-#define SOAP_TYPE_ns2__APOrderService (564)
+#define SOAP_TYPE_ns2__APOrderService (565)
 #endif
 
 /* ns2__Loan has binding name 'ns2__Loan' for type 'ns2:Loan' */
 #ifndef SOAP_TYPE_ns2__Loan
-#define SOAP_TYPE_ns2__Loan (563)
+#define SOAP_TYPE_ns2__Loan (564)
 #endif
 
 /* ns2__TransactionMetadataService has binding name 'ns2__TransactionMetadataService' for type 'ns2:TransactionMetadataService' */
 #ifndef SOAP_TYPE_ns2__TransactionMetadataService
-#define SOAP_TYPE_ns2__TransactionMetadataService (562)
+#define SOAP_TYPE_ns2__TransactionMetadataService (563)
 #endif
 
 /* ns2__GETVisaCheckoutDataService has binding name 'ns2__GETVisaCheckoutDataService' for type 'ns2:GETVisaCheckoutDataService' */
 #ifndef SOAP_TYPE_ns2__GETVisaCheckoutDataService
-#define SOAP_TYPE_ns2__GETVisaCheckoutDataService (561)
+#define SOAP_TYPE_ns2__GETVisaCheckoutDataService (562)
 #endif
 
 /* ns2__issuer has binding name 'ns2__issuer' for type 'ns2:issuer' */
 #ifndef SOAP_TYPE_ns2__issuer
-#define SOAP_TYPE_ns2__issuer (560)
+#define SOAP_TYPE_ns2__issuer (561)
 #endif
 
 /* ns2__BinLookupReply has binding name 'ns2__BinLookupReply' for type 'ns2:BinLookupReply' */
 #ifndef SOAP_TYPE_ns2__BinLookupReply
-#define SOAP_TYPE_ns2__BinLookupReply (559)
+#define SOAP_TYPE_ns2__BinLookupReply (560)
 #endif
 
 /* ns2__BinLookupService has binding name 'ns2__BinLookupService' for type 'ns2:BinLookupService' */
 #ifndef SOAP_TYPE_ns2__BinLookupService
-#define SOAP_TYPE_ns2__BinLookupService (558)
+#define SOAP_TYPE_ns2__BinLookupService (559)
 #endif
 
 /* ns2__EncryptPaymentDataReply has binding name 'ns2__EncryptPaymentDataReply' for type 'ns2:EncryptPaymentDataReply' */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataReply
-#define SOAP_TYPE_ns2__EncryptPaymentDataReply (557)
+#define SOAP_TYPE_ns2__EncryptPaymentDataReply (558)
 #endif
 
 /* ns2__GetVisaCheckoutDataReply has binding name 'ns2__GetVisaCheckoutDataReply' for type 'ns2:GetVisaCheckoutDataReply' */
 #ifndef SOAP_TYPE_ns2__GetVisaCheckoutDataReply
-#define SOAP_TYPE_ns2__GetVisaCheckoutDataReply (556)
+#define SOAP_TYPE_ns2__GetVisaCheckoutDataReply (557)
 #endif
 
 /* ns2__DecryptVisaCheckoutDataReply has binding name 'ns2__DecryptVisaCheckoutDataReply' for type 'ns2:DecryptVisaCheckoutDataReply' */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply
-#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (555)
+#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataReply (556)
 #endif
 
 /* ns2__VCCustomData has binding name 'ns2__VCCustomData' for type 'ns2:VCCustomData' */
 #ifndef SOAP_TYPE_ns2__VCCustomData
-#define SOAP_TYPE_ns2__VCCustomData (554)
+#define SOAP_TYPE_ns2__VCCustomData (555)
 #endif
 
 /* ns2__VCCardArt has binding name 'ns2__VCCardArt' for type 'ns2:VCCardArt' */
 #ifndef SOAP_TYPE_ns2__VCCardArt
-#define SOAP_TYPE_ns2__VCCardArt (553)
+#define SOAP_TYPE_ns2__VCCardArt (554)
 #endif
 
 /* ns2__VCReply has binding name 'ns2__VCReply' for type 'ns2:VCReply' */
 #ifndef SOAP_TYPE_ns2__VCReply
-#define SOAP_TYPE_ns2__VCReply (552)
+#define SOAP_TYPE_ns2__VCReply (553)
 #endif
 
 /* ns2__HealthCare has binding name 'ns2__HealthCare' for type 'ns2:HealthCare' */
 #ifndef SOAP_TYPE_ns2__HealthCare
-#define SOAP_TYPE_ns2__HealthCare (551)
+#define SOAP_TYPE_ns2__HealthCare (552)
 #endif
 
 /* ns2__AgencyInformation has binding name 'ns2__AgencyInformation' for type 'ns2:AgencyInformation' */
 #ifndef SOAP_TYPE_ns2__AgencyInformation
-#define SOAP_TYPE_ns2__AgencyInformation (550)
+#define SOAP_TYPE_ns2__AgencyInformation (551)
 #endif
 
 /* ns2__AutoRental has binding name 'ns2__AutoRental' for type 'ns2:AutoRental' */
 #ifndef SOAP_TYPE_ns2__AutoRental
-#define SOAP_TYPE_ns2__AutoRental (549)
+#define SOAP_TYPE_ns2__AutoRental (550)
 #endif
 
 /* ns2__AutoRentalData has binding name 'ns2__AutoRentalData' for type 'ns2:AutoRentalData' */
 #ifndef SOAP_TYPE_ns2__AutoRentalData
-#define SOAP_TYPE_ns2__AutoRentalData (548)
+#define SOAP_TYPE_ns2__AutoRentalData (549)
 #endif
 
 /* ns2__HostedDataRetrieveReply has binding name 'ns2__HostedDataRetrieveReply' for type 'ns2:HostedDataRetrieveReply' */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveReply
-#define SOAP_TYPE_ns2__HostedDataRetrieveReply (547)
+#define SOAP_TYPE_ns2__HostedDataRetrieveReply (548)
 #endif
 
 /* ns2__HostedDataCreateReply has binding name 'ns2__HostedDataCreateReply' for type 'ns2:HostedDataCreateReply' */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateReply
-#define SOAP_TYPE_ns2__HostedDataCreateReply (546)
+#define SOAP_TYPE_ns2__HostedDataCreateReply (547)
 #endif
 
 /* ns2__HostedDataRetrieveService has binding name 'ns2__HostedDataRetrieveService' for type 'ns2:HostedDataRetrieveService' */
 #ifndef SOAP_TYPE_ns2__HostedDataRetrieveService
-#define SOAP_TYPE_ns2__HostedDataRetrieveService (545)
+#define SOAP_TYPE_ns2__HostedDataRetrieveService (546)
 #endif
 
 /* ns2__HostedDataCreateService has binding name 'ns2__HostedDataCreateService' for type 'ns2:HostedDataCreateService' */
 #ifndef SOAP_TYPE_ns2__HostedDataCreateService
-#define SOAP_TYPE_ns2__HostedDataCreateService (544)
+#define SOAP_TYPE_ns2__HostedDataCreateService (545)
 #endif
 
 /* ns2__OriginalTransaction has binding name 'ns2__OriginalTransaction' for type 'ns2:OriginalTransaction' */
 #ifndef SOAP_TYPE_ns2__OriginalTransaction
-#define SOAP_TYPE_ns2__OriginalTransaction (543)
+#define SOAP_TYPE_ns2__OriginalTransaction (544)
 #endif
 
 /* ns2__EmvReply has binding name 'ns2__EmvReply' for type 'ns2:EmvReply' */
 #ifndef SOAP_TYPE_ns2__EmvReply
-#define SOAP_TYPE_ns2__EmvReply (542)
+#define SOAP_TYPE_ns2__EmvReply (543)
 #endif
 
 /* ns2__EmvRequest has binding name 'ns2__EmvRequest' for type 'ns2:EmvRequest' */
 #ifndef SOAP_TYPE_ns2__EmvRequest
-#define SOAP_TYPE_ns2__EmvRequest (541)
+#define SOAP_TYPE_ns2__EmvRequest (542)
 #endif
 
 /* ns2__ServiceFee has binding name 'ns2__ServiceFee' for type 'ns2:ServiceFee' */
 #ifndef SOAP_TYPE_ns2__ServiceFee
-#define SOAP_TYPE_ns2__ServiceFee (540)
+#define SOAP_TYPE_ns2__ServiceFee (541)
 #endif
 
 /* ns2__CCDCCUpdateService has binding name 'ns2__CCDCCUpdateService' for type 'ns2:CCDCCUpdateService' */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateService
-#define SOAP_TYPE_ns2__CCDCCUpdateService (539)
+#define SOAP_TYPE_ns2__CCDCCUpdateService (540)
 #endif
 
 /* ns2__PaypalTransaction has binding name 'ns2__PaypalTransaction' for type 'ns2:PaypalTransaction' */
 #ifndef SOAP_TYPE_ns2__PaypalTransaction
-#define SOAP_TYPE_ns2__PaypalTransaction (538)
+#define SOAP_TYPE_ns2__PaypalTransaction (539)
 #endif
 
 /* ns2__PayPalTransactionSearchReply has binding name 'ns2__PayPalTransactionSearchReply' for type 'ns2:PayPalTransactionSearchReply' */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchReply
-#define SOAP_TYPE_ns2__PayPalTransactionSearchReply (537)
+#define SOAP_TYPE_ns2__PayPalTransactionSearchReply (538)
 #endif
 
 /* ns2__PayPalGetTxnDetailsReply has binding name 'ns2__PayPalGetTxnDetailsReply' for type 'ns2:PayPalGetTxnDetailsReply' */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsReply
-#define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (536)
+#define SOAP_TYPE_ns2__PayPalGetTxnDetailsReply (537)
 #endif
 
 /* ns2__RequestReserved has binding name 'ns2__RequestReserved' for type 'ns2:RequestReserved' */
 #ifndef SOAP_TYPE_ns2__RequestReserved
-#define SOAP_TYPE_ns2__RequestReserved (535)
+#define SOAP_TYPE_ns2__RequestReserved (536)
 #endif
 
 /* ns2__ReplyReserved has binding name 'ns2__ReplyReserved' for type 'ns2:ReplyReserved' */
 #ifndef SOAP_TYPE_ns2__ReplyReserved
-#define SOAP_TYPE_ns2__ReplyReserved (534)
+#define SOAP_TYPE_ns2__ReplyReserved (535)
 #endif
 
 /* ns2__MerchantSecureData has binding name 'ns2__MerchantSecureData' for type 'ns2:MerchantSecureData' */
 #ifndef SOAP_TYPE_ns2__MerchantSecureData
-#define SOAP_TYPE_ns2__MerchantSecureData (533)
+#define SOAP_TYPE_ns2__MerchantSecureData (534)
 #endif
 
 /* ns2__AuxiliaryData has binding name 'ns2__AuxiliaryData' for type 'ns2:AuxiliaryData' */
 #ifndef SOAP_TYPE_ns2__AuxiliaryData
-#define SOAP_TYPE_ns2__AuxiliaryData (532)
+#define SOAP_TYPE_ns2__AuxiliaryData (533)
 #endif
 
 /* ns2__AuxiliaryField has binding name 'ns2__AuxiliaryField' for type 'ns2:AuxiliaryField' */
 #ifndef SOAP_TYPE_ns2__AuxiliaryField
-#define SOAP_TYPE_ns2__AuxiliaryField (531)
+#define SOAP_TYPE_ns2__AuxiliaryField (532)
 #endif
 
 /* ns2__MerchantDefinedData has binding name 'ns2__MerchantDefinedData' for type 'ns2:MerchantDefinedData' */
 #ifndef SOAP_TYPE_ns2__MerchantDefinedData
-#define SOAP_TYPE_ns2__MerchantDefinedData (530)
+#define SOAP_TYPE_ns2__MerchantDefinedData (531)
 #endif
 
 /* ns2__MDDField has binding name 'ns2__MDDField' for type 'ns2:MDDField' */
 #ifndef SOAP_TYPE_ns2__MDDField
-#define SOAP_TYPE_ns2__MDDField (529)
+#define SOAP_TYPE_ns2__MDDField (530)
 #endif
 
 /* ns2__Installment has binding name 'ns2__Installment' for type 'ns2:Installment' */
 #ifndef SOAP_TYPE_ns2__Installment
-#define SOAP_TYPE_ns2__Installment (528)
+#define SOAP_TYPE_ns2__Installment (529)
 #endif
 
 /* ns2__EncryptedPayment has binding name 'ns2__EncryptedPayment' for type 'ns2:EncryptedPayment' */
 #ifndef SOAP_TYPE_ns2__EncryptedPayment
-#define SOAP_TYPE_ns2__EncryptedPayment (527)
+#define SOAP_TYPE_ns2__EncryptedPayment (528)
 #endif
 
 /* ns2__Pin has binding name 'ns2__Pin' for type 'ns2:Pin' */
 #ifndef SOAP_TYPE_ns2__Pin
-#define SOAP_TYPE_ns2__Pin (526)
+#define SOAP_TYPE_ns2__Pin (527)
 #endif
 
 /* ns2__Pos has binding name 'ns2__Pos' for type 'ns2:Pos' */
 #ifndef SOAP_TYPE_ns2__Pos
-#define SOAP_TYPE_ns2__Pos (525)
+#define SOAP_TYPE_ns2__Pos (526)
 #endif
 
 /* ns2__LodgingData has binding name 'ns2__LodgingData' for type 'ns2:LodgingData' */
 #ifndef SOAP_TYPE_ns2__LodgingData
-#define SOAP_TYPE_ns2__LodgingData (524)
+#define SOAP_TYPE_ns2__LodgingData (525)
 #endif
 
 /* ns2__Service has binding name 'ns2__Service' for type 'ns2:Service' */
 #ifndef SOAP_TYPE_ns2__Service
-#define SOAP_TYPE_ns2__Service (523)
+#define SOAP_TYPE_ns2__Service (524)
 #endif
 
 /* ns2__AncillaryData has binding name 'ns2__AncillaryData' for type 'ns2:AncillaryData' */
 #ifndef SOAP_TYPE_ns2__AncillaryData
-#define SOAP_TYPE_ns2__AncillaryData (522)
+#define SOAP_TYPE_ns2__AncillaryData (523)
 #endif
 
 /* ns2__Leg has binding name 'ns2__Leg' for type 'ns2:Leg' */
 #ifndef SOAP_TYPE_ns2__Leg
-#define SOAP_TYPE_ns2__Leg (521)
+#define SOAP_TYPE_ns2__Leg (522)
 #endif
 
 /* ns2__AirlineData has binding name 'ns2__AirlineData' for type 'ns2:AirlineData' */
 #ifndef SOAP_TYPE_ns2__AirlineData
-#define SOAP_TYPE_ns2__AirlineData (520)
+#define SOAP_TYPE_ns2__AirlineData (521)
 #endif
 
 /* ns2__FaultDetails has binding name 'ns2__FaultDetails' for type 'ns2:FaultDetails' */
 #ifndef SOAP_TYPE_ns2__FaultDetails
-#define SOAP_TYPE_ns2__FaultDetails (519)
+#define SOAP_TYPE_ns2__FaultDetails (520)
 #endif
 
 /* ns2__ReplyMessage has binding name 'ns2__ReplyMessage' for type 'ns2:ReplyMessage' */
 #ifndef SOAP_TYPE_ns2__ReplyMessage
-#define SOAP_TYPE_ns2__ReplyMessage (518)
+#define SOAP_TYPE_ns2__ReplyMessage (519)
 #endif
 
 /* ns2__CCCheckStatusReply has binding name 'ns2__CCCheckStatusReply' for type 'ns2:CCCheckStatusReply' */
 #ifndef SOAP_TYPE_ns2__CCCheckStatusReply
-#define SOAP_TYPE_ns2__CCCheckStatusReply (517)
+#define SOAP_TYPE_ns2__CCCheckStatusReply (518)
 #endif
 
 /* ns2__APSessionsReply has binding name 'ns2__APSessionsReply' for type 'ns2:APSessionsReply' */
 #ifndef SOAP_TYPE_ns2__APSessionsReply
-#define SOAP_TYPE_ns2__APSessionsReply (516)
+#define SOAP_TYPE_ns2__APSessionsReply (517)
 #endif
 
 /* ns2__APConfirmPurchaseReply has binding name 'ns2__APConfirmPurchaseReply' for type 'ns2:APConfirmPurchaseReply' */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseReply
-#define SOAP_TYPE_ns2__APConfirmPurchaseReply (515)
+#define SOAP_TYPE_ns2__APConfirmPurchaseReply (516)
 #endif
 
 /* ns2__APTransactionDetailsReply has binding name 'ns2__APTransactionDetailsReply' for type 'ns2:APTransactionDetailsReply' */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsReply
-#define SOAP_TYPE_ns2__APTransactionDetailsReply (514)
+#define SOAP_TYPE_ns2__APTransactionDetailsReply (515)
 #endif
 
 /* ns2__APCheckOutDetailsReply has binding name 'ns2__APCheckOutDetailsReply' for type 'ns2:APCheckOutDetailsReply' */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsReply
-#define SOAP_TYPE_ns2__APCheckOutDetailsReply (513)
+#define SOAP_TYPE_ns2__APCheckOutDetailsReply (514)
 #endif
 
 /* ns2__APSaleReply has binding name 'ns2__APSaleReply' for type 'ns2:APSaleReply' */
 #ifndef SOAP_TYPE_ns2__APSaleReply
-#define SOAP_TYPE_ns2__APSaleReply (512)
+#define SOAP_TYPE_ns2__APSaleReply (513)
 #endif
 
 /* ns2__APRefundReply has binding name 'ns2__APRefundReply' for type 'ns2:APRefundReply' */
 #ifndef SOAP_TYPE_ns2__APRefundReply
-#define SOAP_TYPE_ns2__APRefundReply (511)
+#define SOAP_TYPE_ns2__APRefundReply (512)
 #endif
 
 /* ns2__APOptionsOption has binding name 'ns2__APOptionsOption' for type 'ns2:APOptionsOption' */
 #ifndef SOAP_TYPE_ns2__APOptionsOption
-#define SOAP_TYPE_ns2__APOptionsOption (510)
+#define SOAP_TYPE_ns2__APOptionsOption (511)
 #endif
 
 /* ns2__APOptionsReply has binding name 'ns2__APOptionsReply' for type 'ns2:APOptionsReply' */
 #ifndef SOAP_TYPE_ns2__APOptionsReply
-#define SOAP_TYPE_ns2__APOptionsReply (509)
+#define SOAP_TYPE_ns2__APOptionsReply (510)
 #endif
 
 /* ns2__APCaptureReply has binding name 'ns2__APCaptureReply' for type 'ns2:APCaptureReply' */
 #ifndef SOAP_TYPE_ns2__APCaptureReply
-#define SOAP_TYPE_ns2__APCaptureReply (508)
+#define SOAP_TYPE_ns2__APCaptureReply (509)
 #endif
 
 /* ns2__APAuthReversalReply has binding name 'ns2__APAuthReversalReply' for type 'ns2:APAuthReversalReply' */
 #ifndef SOAP_TYPE_ns2__APAuthReversalReply
-#define SOAP_TYPE_ns2__APAuthReversalReply (507)
+#define SOAP_TYPE_ns2__APAuthReversalReply (508)
 #endif
 
 /* ns2__APAuthReply has binding name 'ns2__APAuthReply' for type 'ns2:APAuthReply' */
 #ifndef SOAP_TYPE_ns2__APAuthReply
-#define SOAP_TYPE_ns2__APAuthReply (506)
+#define SOAP_TYPE_ns2__APAuthReply (507)
 #endif
 
 /* ns2__APReply has binding name 'ns2__APReply' for type 'ns2:APReply' */
 #ifndef SOAP_TYPE_ns2__APReply
-#define SOAP_TYPE_ns2__APReply (505)
+#define SOAP_TYPE_ns2__APReply (506)
 #endif
 
 /* ns2__SellerProtection has binding name 'ns2__SellerProtection' for type 'ns2:SellerProtection' */
 #ifndef SOAP_TYPE_ns2__SellerProtection
-#define SOAP_TYPE_ns2__SellerProtection (504)
+#define SOAP_TYPE_ns2__SellerProtection (505)
 #endif
 
 /* ns2__APCheckStatusReply has binding name 'ns2__APCheckStatusReply' for type 'ns2:APCheckStatusReply' */
 #ifndef SOAP_TYPE_ns2__APCheckStatusReply
-#define SOAP_TYPE_ns2__APCheckStatusReply (503)
+#define SOAP_TYPE_ns2__APCheckStatusReply (504)
 #endif
 
 /* ns2__APInitiateReply has binding name 'ns2__APInitiateReply' for type 'ns2:APInitiateReply' */
 #ifndef SOAP_TYPE_ns2__APInitiateReply
-#define SOAP_TYPE_ns2__APInitiateReply (502)
+#define SOAP_TYPE_ns2__APInitiateReply (503)
 #endif
 
 /* ns2__BoletoPaymentReply has binding name 'ns2__BoletoPaymentReply' for type 'ns2:BoletoPaymentReply' */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentReply
-#define SOAP_TYPE_ns2__BoletoPaymentReply (501)
+#define SOAP_TYPE_ns2__BoletoPaymentReply (502)
 #endif
 
 /* ns2__ChinaRefundReply has binding name 'ns2__ChinaRefundReply' for type 'ns2:ChinaRefundReply' */
 #ifndef SOAP_TYPE_ns2__ChinaRefundReply
-#define SOAP_TYPE_ns2__ChinaRefundReply (500)
+#define SOAP_TYPE_ns2__ChinaRefundReply (501)
 #endif
 
 /* ns2__ChinaPaymentReply has binding name 'ns2__ChinaPaymentReply' for type 'ns2:ChinaPaymentReply' */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentReply
-#define SOAP_TYPE_ns2__ChinaPaymentReply (499)
+#define SOAP_TYPE_ns2__ChinaPaymentReply (500)
 #endif
 
 /* ns2__CCDCCUpdateReply has binding name 'ns2__CCDCCUpdateReply' for type 'ns2:CCDCCUpdateReply' */
 #ifndef SOAP_TYPE_ns2__CCDCCUpdateReply
-#define SOAP_TYPE_ns2__CCDCCUpdateReply (498)
+#define SOAP_TYPE_ns2__CCDCCUpdateReply (499)
 #endif
 
 /* ns2__paymentCurrencyOffer has binding name 'ns2__paymentCurrencyOffer' for type 'ns2:paymentCurrencyOffer' */
 #ifndef SOAP_TYPE_ns2__paymentCurrencyOffer
-#define SOAP_TYPE_ns2__paymentCurrencyOffer (497)
+#define SOAP_TYPE_ns2__paymentCurrencyOffer (498)
 #endif
 
 /* ns2__CCDCCReply has binding name 'ns2__CCDCCReply' for type 'ns2:CCDCCReply' */
 #ifndef SOAP_TYPE_ns2__CCDCCReply
-#define SOAP_TYPE_ns2__CCDCCReply (496)
+#define SOAP_TYPE_ns2__CCDCCReply (497)
 #endif
 
 /* ns2__ProfileReply has binding name 'ns2__ProfileReply' for type 'ns2:ProfileReply' */
 #ifndef SOAP_TYPE_ns2__ProfileReply
-#define SOAP_TYPE_ns2__ProfileReply (495)
+#define SOAP_TYPE_ns2__ProfileReply (496)
 #endif
 
 /* ns2__DMEReply has binding name 'ns2__DMEReply' for type 'ns2:DMEReply' */
 #ifndef SOAP_TYPE_ns2__DMEReply
-#define SOAP_TYPE_ns2__DMEReply (494)
+#define SOAP_TYPE_ns2__DMEReply (495)
 #endif
 
 /* ns2__Travel has binding name 'ns2__Travel' for type 'ns2:Travel' */
 #ifndef SOAP_TYPE_ns2__Travel
-#define SOAP_TYPE_ns2__Travel (493)
+#define SOAP_TYPE_ns2__Travel (494)
 #endif
 
 /* ns2__Element has binding name 'ns2__Element' for type 'ns2:Element' */
 #ifndef SOAP_TYPE_ns2__Element
-#define SOAP_TYPE_ns2__Element (492)
+#define SOAP_TYPE_ns2__Element (493)
 #endif
 
 /* ns2__MorphingElement has binding name 'ns2__MorphingElement' for type 'ns2:MorphingElement' */
 #ifndef SOAP_TYPE_ns2__MorphingElement
-#define SOAP_TYPE_ns2__MorphingElement (491)
+#define SOAP_TYPE_ns2__MorphingElement (492)
 #endif
 
 /* ns2__Field has binding name 'ns2__Field' for type 'ns2:Field' */
 #ifndef SOAP_TYPE_ns2__Field
-#define SOAP_TYPE_ns2__Field (490)
+#define SOAP_TYPE_ns2__Field (491)
 #endif
 
 /* ns2__AdditionalFields has binding name 'ns2__AdditionalFields' for type 'ns2:AdditionalFields' */
 #ifndef SOAP_TYPE_ns2__AdditionalFields
-#define SOAP_TYPE_ns2__AdditionalFields (489)
+#define SOAP_TYPE_ns2__AdditionalFields (490)
 #endif
 
 /* ns2__ProviderField has binding name 'ns2__ProviderField' for type 'ns2:ProviderField' */
 #ifndef SOAP_TYPE_ns2__ProviderField
-#define SOAP_TYPE_ns2__ProviderField (488)
+#define SOAP_TYPE_ns2__ProviderField (489)
 #endif
 
 /* ns2__Provider has binding name 'ns2__Provider' for type 'ns2:Provider' */
 #ifndef SOAP_TYPE_ns2__Provider
-#define SOAP_TYPE_ns2__Provider (487)
+#define SOAP_TYPE_ns2__Provider (488)
 #endif
 
 /* ns2__ProviderFields has binding name 'ns2__ProviderFields' for type 'ns2:ProviderFields' */
 #ifndef SOAP_TYPE_ns2__ProviderFields
-#define SOAP_TYPE_ns2__ProviderFields (486)
+#define SOAP_TYPE_ns2__ProviderFields (487)
 #endif
 
 /* ns2__DecisionReply has binding name 'ns2__DecisionReply' for type 'ns2:DecisionReply' */
 #ifndef SOAP_TYPE_ns2__DecisionReply
-#define SOAP_TYPE_ns2__DecisionReply (485)
+#define SOAP_TYPE_ns2__DecisionReply (486)
 #endif
 
 /* ns2__RuleResultItems has binding name 'ns2__RuleResultItems' for type 'ns2:RuleResultItems' */
 #ifndef SOAP_TYPE_ns2__RuleResultItems
-#define SOAP_TYPE_ns2__RuleResultItems (484)
+#define SOAP_TYPE_ns2__RuleResultItems (485)
 #endif
 
 /* ns2__RuleResultItem has binding name 'ns2__RuleResultItem' for type 'ns2:RuleResultItem' */
 #ifndef SOAP_TYPE_ns2__RuleResultItem
-#define SOAP_TYPE_ns2__RuleResultItem (483)
+#define SOAP_TYPE_ns2__RuleResultItem (484)
 #endif
 
 /* ns2__CaseManagementActionReply has binding name 'ns2__CaseManagementActionReply' for type 'ns2:CaseManagementActionReply' */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionReply
-#define SOAP_TYPE_ns2__CaseManagementActionReply (482)
+#define SOAP_TYPE_ns2__CaseManagementActionReply (483)
 #endif
 
 /* ns2__FraudUpdateReply has binding name 'ns2__FraudUpdateReply' for type 'ns2:FraudUpdateReply' */
 #ifndef SOAP_TYPE_ns2__FraudUpdateReply
-#define SOAP_TYPE_ns2__FraudUpdateReply (481)
+#define SOAP_TYPE_ns2__FraudUpdateReply (482)
 #endif
 
 /* ns2__RiskUpdateReply has binding name 'ns2__RiskUpdateReply' for type 'ns2:RiskUpdateReply' */
 #ifndef SOAP_TYPE_ns2__RiskUpdateReply
-#define SOAP_TYPE_ns2__RiskUpdateReply (480)
+#define SOAP_TYPE_ns2__RiskUpdateReply (481)
 #endif
 
 /* ns2__PayPalDoRefTransactionReply has binding name 'ns2__PayPalDoRefTransactionReply' for type 'ns2:PayPalDoRefTransactionReply' */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionReply
-#define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (479)
+#define SOAP_TYPE_ns2__PayPalDoRefTransactionReply (480)
 #endif
 
 /* ns2__PayPalCreateAgreementReply has binding name 'ns2__PayPalCreateAgreementReply' for type 'ns2:PayPalCreateAgreementReply' */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementReply
-#define SOAP_TYPE_ns2__PayPalCreateAgreementReply (478)
+#define SOAP_TYPE_ns2__PayPalCreateAgreementReply (479)
 #endif
 
 /* ns2__PayPalUpdateAgreementReply has binding name 'ns2__PayPalUpdateAgreementReply' for type 'ns2:PayPalUpdateAgreementReply' */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementReply
-#define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (477)
+#define SOAP_TYPE_ns2__PayPalUpdateAgreementReply (478)
 #endif
 
 /* ns2__PayPalAuthorizationReply has binding name 'ns2__PayPalAuthorizationReply' for type 'ns2:PayPalAuthorizationReply' */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationReply
-#define SOAP_TYPE_ns2__PayPalAuthorizationReply (476)
+#define SOAP_TYPE_ns2__PayPalAuthorizationReply (477)
 #endif
 
 /* ns2__PayPalEcOrderSetupReply has binding name 'ns2__PayPalEcOrderSetupReply' for type 'ns2:PayPalEcOrderSetupReply' */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupReply
-#define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (475)
+#define SOAP_TYPE_ns2__PayPalEcOrderSetupReply (476)
 #endif
 
 /* ns2__PayPalRefundReply has binding name 'ns2__PayPalRefundReply' for type 'ns2:PayPalRefundReply' */
 #ifndef SOAP_TYPE_ns2__PayPalRefundReply
-#define SOAP_TYPE_ns2__PayPalRefundReply (474)
+#define SOAP_TYPE_ns2__PayPalRefundReply (475)
 #endif
 
 /* ns2__PayPalAuthReversalReply has binding name 'ns2__PayPalAuthReversalReply' for type 'ns2:PayPalAuthReversalReply' */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalReply
-#define SOAP_TYPE_ns2__PayPalAuthReversalReply (473)
+#define SOAP_TYPE_ns2__PayPalAuthReversalReply (474)
 #endif
 
 /* ns2__PayPalDoCaptureReply has binding name 'ns2__PayPalDoCaptureReply' for type 'ns2:PayPalDoCaptureReply' */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureReply
-#define SOAP_TYPE_ns2__PayPalDoCaptureReply (472)
+#define SOAP_TYPE_ns2__PayPalDoCaptureReply (473)
 #endif
 
 /* ns2__PayPalEcDoPaymentReply has binding name 'ns2__PayPalEcDoPaymentReply' for type 'ns2:PayPalEcDoPaymentReply' */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentReply
-#define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (471)
+#define SOAP_TYPE_ns2__PayPalEcDoPaymentReply (472)
 #endif
 
 /* ns2__PayPalEcGetDetailsReply has binding name 'ns2__PayPalEcGetDetailsReply' for type 'ns2:PayPalEcGetDetailsReply' */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsReply
-#define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (470)
+#define SOAP_TYPE_ns2__PayPalEcGetDetailsReply (471)
 #endif
 
 /* ns2__PayPalEcSetReply has binding name 'ns2__PayPalEcSetReply' for type 'ns2:PayPalEcSetReply' */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetReply
-#define SOAP_TYPE_ns2__PayPalEcSetReply (469)
+#define SOAP_TYPE_ns2__PayPalEcSetReply (470)
 #endif
 
 /* ns2__PayPalPreapprovedUpdateReply has binding name 'ns2__PayPalPreapprovedUpdateReply' for type 'ns2:PayPalPreapprovedUpdateReply' */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply
-#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (468)
+#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateReply (469)
 #endif
 
 /* ns2__PayPalPreapprovedPaymentReply has binding name 'ns2__PayPalPreapprovedPaymentReply' for type 'ns2:PayPalPreapprovedPaymentReply' */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply
-#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (467)
+#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentReply (468)
 #endif
 
 /* ns2__PayPalButtonCreateReply has binding name 'ns2__PayPalButtonCreateReply' for type 'ns2:PayPalButtonCreateReply' */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateReply
-#define SOAP_TYPE_ns2__PayPalButtonCreateReply (466)
+#define SOAP_TYPE_ns2__PayPalButtonCreateReply (467)
 #endif
 
 /* ns2__PinlessDebitReversalReply has binding name 'ns2__PinlessDebitReversalReply' for type 'ns2:PinlessDebitReversalReply' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalReply
-#define SOAP_TYPE_ns2__PinlessDebitReversalReply (465)
+#define SOAP_TYPE_ns2__PinlessDebitReversalReply (466)
 #endif
 
 /* ns2__PinlessDebitValidateReply has binding name 'ns2__PinlessDebitValidateReply' for type 'ns2:PinlessDebitValidateReply' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateReply
-#define SOAP_TYPE_ns2__PinlessDebitValidateReply (464)
+#define SOAP_TYPE_ns2__PinlessDebitValidateReply (465)
 #endif
 
 /* ns2__PinlessDebitReply has binding name 'ns2__PinlessDebitReply' for type 'ns2:PinlessDebitReply' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReply
-#define SOAP_TYPE_ns2__PinlessDebitReply (463)
+#define SOAP_TYPE_ns2__PinlessDebitReply (464)
 #endif
 
 /* ns2__VoidReply has binding name 'ns2__VoidReply' for type 'ns2:VoidReply' */
 #ifndef SOAP_TYPE_ns2__VoidReply
-#define SOAP_TYPE_ns2__VoidReply (462)
+#define SOAP_TYPE_ns2__VoidReply (463)
 #endif
 
 /* ns2__PayPalCreditReply has binding name 'ns2__PayPalCreditReply' for type 'ns2:PayPalCreditReply' */
 #ifndef SOAP_TYPE_ns2__PayPalCreditReply
-#define SOAP_TYPE_ns2__PayPalCreditReply (461)
+#define SOAP_TYPE_ns2__PayPalCreditReply (462)
 #endif
 
 /* ns2__PayPalPaymentReply has binding name 'ns2__PayPalPaymentReply' for type 'ns2:PayPalPaymentReply' */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentReply
-#define SOAP_TYPE_ns2__PayPalPaymentReply (460)
+#define SOAP_TYPE_ns2__PayPalPaymentReply (461)
 #endif
 
 /* ns2__PaySubscriptionDeleteReply has binding name 'ns2__PaySubscriptionDeleteReply' for type 'ns2:PaySubscriptionDeleteReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteReply
-#define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (459)
+#define SOAP_TYPE_ns2__PaySubscriptionDeleteReply (460)
 #endif
 
 /* ns2__PaySubscriptionRetrieveReply has binding name 'ns2__PaySubscriptionRetrieveReply' for type 'ns2:PaySubscriptionRetrieveReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveReply
-#define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (458)
+#define SOAP_TYPE_ns2__PaySubscriptionRetrieveReply (459)
 #endif
 
 /* ns2__PaySubscriptionEventUpdateReply has binding name 'ns2__PaySubscriptionEventUpdateReply' for type 'ns2:PaySubscriptionEventUpdateReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply
-#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (457)
+#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateReply (458)
 #endif
 
 /* ns2__PaySubscriptionUpdateReply has binding name 'ns2__PaySubscriptionUpdateReply' for type 'ns2:PaySubscriptionUpdateReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateReply
-#define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (456)
+#define SOAP_TYPE_ns2__PaySubscriptionUpdateReply (457)
 #endif
 
 /* ns2__PaySubscriptionCreateReply has binding name 'ns2__PaySubscriptionCreateReply' for type 'ns2:PaySubscriptionCreateReply' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateReply
-#define SOAP_TYPE_ns2__PaySubscriptionCreateReply (455)
+#define SOAP_TYPE_ns2__PaySubscriptionCreateReply (456)
 #endif
 
 /* ns2__DirectDebitRefundReply has binding name 'ns2__DirectDebitRefundReply' for type 'ns2:DirectDebitRefundReply' */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundReply
-#define SOAP_TYPE_ns2__DirectDebitRefundReply (454)
+#define SOAP_TYPE_ns2__DirectDebitRefundReply (455)
 #endif
 
 /* ns2__DirectDebitValidateReply has binding name 'ns2__DirectDebitValidateReply' for type 'ns2:DirectDebitValidateReply' */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateReply
-#define SOAP_TYPE_ns2__DirectDebitValidateReply (453)
+#define SOAP_TYPE_ns2__DirectDebitValidateReply (454)
 #endif
 
 /* ns2__DirectDebitReply has binding name 'ns2__DirectDebitReply' for type 'ns2:DirectDebitReply' */
 #ifndef SOAP_TYPE_ns2__DirectDebitReply
-#define SOAP_TYPE_ns2__DirectDebitReply (452)
+#define SOAP_TYPE_ns2__DirectDebitReply (453)
 #endif
 
 /* ns2__BankTransferRefundReply has binding name 'ns2__BankTransferRefundReply' for type 'ns2:BankTransferRefundReply' */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundReply
-#define SOAP_TYPE_ns2__BankTransferRefundReply (451)
+#define SOAP_TYPE_ns2__BankTransferRefundReply (452)
 #endif
 
 /* ns2__DirectDebitMandateReply has binding name 'ns2__DirectDebitMandateReply' for type 'ns2:DirectDebitMandateReply' */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateReply
-#define SOAP_TYPE_ns2__DirectDebitMandateReply (450)
+#define SOAP_TYPE_ns2__DirectDebitMandateReply (451)
 #endif
 
 /* ns2__BankTransferRealTimeReply has binding name 'ns2__BankTransferRealTimeReply' for type 'ns2:BankTransferRealTimeReply' */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeReply
-#define SOAP_TYPE_ns2__BankTransferRealTimeReply (449)
+#define SOAP_TYPE_ns2__BankTransferRealTimeReply (450)
 #endif
 
 /* ns2__BankTransferReply has binding name 'ns2__BankTransferReply' for type 'ns2:BankTransferReply' */
 #ifndef SOAP_TYPE_ns2__BankTransferReply
-#define SOAP_TYPE_ns2__BankTransferReply (448)
+#define SOAP_TYPE_ns2__BankTransferReply (449)
 #endif
 
 /* ns2__FXRatesReply has binding name 'ns2__FXRatesReply' for type 'ns2:FXRatesReply' */
 #ifndef SOAP_TYPE_ns2__FXRatesReply
-#define SOAP_TYPE_ns2__FXRatesReply (447)
+#define SOAP_TYPE_ns2__FXRatesReply (448)
 #endif
 
 /* ns2__FXQuote has binding name 'ns2__FXQuote' for type 'ns2:FXQuote' */
 #ifndef SOAP_TYPE_ns2__FXQuote
-#define SOAP_TYPE_ns2__FXQuote (446)
+#define SOAP_TYPE_ns2__FXQuote (447)
 #endif
 
 /* ns2__ExportReply has binding name 'ns2__ExportReply' for type 'ns2:ExportReply' */
 #ifndef SOAP_TYPE_ns2__ExportReply
-#define SOAP_TYPE_ns2__ExportReply (445)
+#define SOAP_TYPE_ns2__ExportReply (446)
 #endif
 
 /* ns2__DeniedPartiesMatch has binding name 'ns2__DeniedPartiesMatch' for type 'ns2:DeniedPartiesMatch' */
 #ifndef SOAP_TYPE_ns2__DeniedPartiesMatch
-#define SOAP_TYPE_ns2__DeniedPartiesMatch (444)
+#define SOAP_TYPE_ns2__DeniedPartiesMatch (445)
 #endif
 
 /* ns2__DAVReply has binding name 'ns2__DAVReply' for type 'ns2:DAVReply' */
 #ifndef SOAP_TYPE_ns2__DAVReply
-#define SOAP_TYPE_ns2__DAVReply (443)
+#define SOAP_TYPE_ns2__DAVReply (444)
 #endif
 
 /* ns2__AFSReply has binding name 'ns2__AFSReply' for type 'ns2:AFSReply' */
 #ifndef SOAP_TYPE_ns2__AFSReply
-#define SOAP_TYPE_ns2__AFSReply (442)
+#define SOAP_TYPE_ns2__AFSReply (443)
 #endif
 
 /* ns2__DeviceFingerprint has binding name 'ns2__DeviceFingerprint' for type 'ns2:DeviceFingerprint' */
 #ifndef SOAP_TYPE_ns2__DeviceFingerprint
-#define SOAP_TYPE_ns2__DeviceFingerprint (441)
+#define SOAP_TYPE_ns2__DeviceFingerprint (442)
 #endif
 
 /* ns2__TaxReply has binding name 'ns2__TaxReply' for type 'ns2:TaxReply' */
 #ifndef SOAP_TYPE_ns2__TaxReply
-#define SOAP_TYPE_ns2__TaxReply (440)
+#define SOAP_TYPE_ns2__TaxReply (441)
 #endif
 
 /* ns2__TaxReplyItemJurisdiction has binding name 'ns2__TaxReplyItemJurisdiction' for type 'ns2:TaxReplyItemJurisdiction' */
 #ifndef SOAP_TYPE_ns2__TaxReplyItemJurisdiction
-#define SOAP_TYPE_ns2__TaxReplyItemJurisdiction (439)
+#define SOAP_TYPE_ns2__TaxReplyItemJurisdiction (440)
 #endif
 
 /* ns2__TaxReplyItem has binding name 'ns2__TaxReplyItem' for type 'ns2:TaxReplyItem' */
 #ifndef SOAP_TYPE_ns2__TaxReplyItem
-#define SOAP_TYPE_ns2__TaxReplyItem (438)
+#define SOAP_TYPE_ns2__TaxReplyItem (439)
 #endif
 
 /* ns2__PayerAuthValidateReply has binding name 'ns2__PayerAuthValidateReply' for type 'ns2:PayerAuthValidateReply' */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateReply
-#define SOAP_TYPE_ns2__PayerAuthValidateReply (437)
+#define SOAP_TYPE_ns2__PayerAuthValidateReply (438)
 #endif
 
 /* ns2__PayerAuthEnrollReply has binding name 'ns2__PayerAuthEnrollReply' for type 'ns2:PayerAuthEnrollReply' */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollReply
-#define SOAP_TYPE_ns2__PayerAuthEnrollReply (436)
+#define SOAP_TYPE_ns2__PayerAuthEnrollReply (437)
 #endif
 
 /* ns2__PayerAuthSetupReply has binding name 'ns2__PayerAuthSetupReply' for type 'ns2:PayerAuthSetupReply' */
 #ifndef SOAP_TYPE_ns2__PayerAuthSetupReply
-#define SOAP_TYPE_ns2__PayerAuthSetupReply (435)
+#define SOAP_TYPE_ns2__PayerAuthSetupReply (436)
 #endif
 
 /* ns2__ECAuthenticateReply has binding name 'ns2__ECAuthenticateReply' for type 'ns2:ECAuthenticateReply' */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateReply
-#define SOAP_TYPE_ns2__ECAuthenticateReply (434)
+#define SOAP_TYPE_ns2__ECAuthenticateReply (435)
 #endif
 
 /* ns2__ECCreditReply has binding name 'ns2__ECCreditReply' for type 'ns2:ECCreditReply' */
 #ifndef SOAP_TYPE_ns2__ECCreditReply
-#define SOAP_TYPE_ns2__ECCreditReply (433)
+#define SOAP_TYPE_ns2__ECCreditReply (434)
 #endif
 
 /* ns2__ECDebitReply has binding name 'ns2__ECDebitReply' for type 'ns2:ECDebitReply' */
 #ifndef SOAP_TYPE_ns2__ECDebitReply
-#define SOAP_TYPE_ns2__ECDebitReply (432)
+#define SOAP_TYPE_ns2__ECDebitReply (433)
 #endif
 
 /* ns2__ECAVSReply has binding name 'ns2__ECAVSReply' for type 'ns2:ECAVSReply' */
 #ifndef SOAP_TYPE_ns2__ECAVSReply
-#define SOAP_TYPE_ns2__ECAVSReply (431)
+#define SOAP_TYPE_ns2__ECAVSReply (432)
 #endif
 
 /* ns2__CCAutoAuthReversalReply has binding name 'ns2__CCAutoAuthReversalReply' for type 'ns2:CCAutoAuthReversalReply' */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalReply
-#define SOAP_TYPE_ns2__CCAutoAuthReversalReply (430)
+#define SOAP_TYPE_ns2__CCAutoAuthReversalReply (431)
 #endif
 
 /* ns2__CCAuthReversalReply has binding name 'ns2__CCAuthReversalReply' for type 'ns2:CCAuthReversalReply' */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalReply
-#define SOAP_TYPE_ns2__CCAuthReversalReply (429)
+#define SOAP_TYPE_ns2__CCAuthReversalReply (430)
 #endif
 
 /* ns2__PinDebitReversalReply has binding name 'ns2__PinDebitReversalReply' for type 'ns2:PinDebitReversalReply' */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalReply
-#define SOAP_TYPE_ns2__PinDebitReversalReply (428)
+#define SOAP_TYPE_ns2__PinDebitReversalReply (429)
 #endif
 
 /* ns2__PinDebitCreditReply has binding name 'ns2__PinDebitCreditReply' for type 'ns2:PinDebitCreditReply' */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditReply
-#define SOAP_TYPE_ns2__PinDebitCreditReply (427)
+#define SOAP_TYPE_ns2__PinDebitCreditReply (428)
 #endif
 
 /* ns2__PinDebitPurchaseReply has binding name 'ns2__PinDebitPurchaseReply' for type 'ns2:PinDebitPurchaseReply' */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseReply
-#define SOAP_TYPE_ns2__PinDebitPurchaseReply (426)
+#define SOAP_TYPE_ns2__PinDebitPurchaseReply (427)
 #endif
 
 /* ns2__CCCreditReply has binding name 'ns2__CCCreditReply' for type 'ns2:CCCreditReply' */
 #ifndef SOAP_TYPE_ns2__CCCreditReply
-#define SOAP_TYPE_ns2__CCCreditReply (425)
+#define SOAP_TYPE_ns2__CCCreditReply (426)
 #endif
 
 /* ns2__ServiceFeeCalculateReply has binding name 'ns2__ServiceFeeCalculateReply' for type 'ns2:ServiceFeeCalculateReply' */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateReply
-#define SOAP_TYPE_ns2__ServiceFeeCalculateReply (424)
+#define SOAP_TYPE_ns2__ServiceFeeCalculateReply (425)
 #endif
 
 /* ns2__CCCaptureReply has binding name 'ns2__CCCaptureReply' for type 'ns2:CCCaptureReply' */
 #ifndef SOAP_TYPE_ns2__CCCaptureReply
-#define SOAP_TYPE_ns2__CCCaptureReply (423)
+#define SOAP_TYPE_ns2__CCCaptureReply (424)
 #endif
 
 /* ns2__CCIncrementalAuthReply has binding name 'ns2__CCIncrementalAuthReply' for type 'ns2:CCIncrementalAuthReply' */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthReply
-#define SOAP_TYPE_ns2__CCIncrementalAuthReply (422)
+#define SOAP_TYPE_ns2__CCIncrementalAuthReply (423)
 #endif
 
 /* ns2__CCSaleReversalReply has binding name 'ns2__CCSaleReversalReply' for type 'ns2:CCSaleReversalReply' */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalReply
-#define SOAP_TYPE_ns2__CCSaleReversalReply (421)
+#define SOAP_TYPE_ns2__CCSaleReversalReply (422)
 #endif
 
 /* ns2__CCSaleCreditReply has binding name 'ns2__CCSaleCreditReply' for type 'ns2:CCSaleCreditReply' */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditReply
-#define SOAP_TYPE_ns2__CCSaleCreditReply (420)
+#define SOAP_TYPE_ns2__CCSaleCreditReply (421)
 #endif
 
 /* ns2__CCSaleReply has binding name 'ns2__CCSaleReply' for type 'ns2:CCSaleReply' */
 #ifndef SOAP_TYPE_ns2__CCSaleReply
-#define SOAP_TYPE_ns2__CCSaleReply (419)
+#define SOAP_TYPE_ns2__CCSaleReply (420)
 #endif
 
 /* ns2__VerificationReply has binding name 'ns2__VerificationReply' for type 'ns2:VerificationReply' */
 #ifndef SOAP_TYPE_ns2__VerificationReply
-#define SOAP_TYPE_ns2__VerificationReply (418)
+#define SOAP_TYPE_ns2__VerificationReply (419)
 #endif
 
 /* ns2__OCTReply has binding name 'ns2__OCTReply' for type 'ns2:OCTReply' */
 #ifndef SOAP_TYPE_ns2__OCTReply
-#define SOAP_TYPE_ns2__OCTReply (417)
+#define SOAP_TYPE_ns2__OCTReply (418)
 #endif
 
 /* ns2__CCAuthReply has binding name 'ns2__CCAuthReply' for type 'ns2:CCAuthReply' */
 #ifndef SOAP_TYPE_ns2__CCAuthReply
-#define SOAP_TYPE_ns2__CCAuthReply (416)
+#define SOAP_TYPE_ns2__CCAuthReply (417)
 #endif
 
 /* ns2__BalanceInfo has binding name 'ns2__BalanceInfo' for type 'ns2:BalanceInfo' */
 #ifndef SOAP_TYPE_ns2__BalanceInfo
-#define SOAP_TYPE_ns2__BalanceInfo (415)
+#define SOAP_TYPE_ns2__BalanceInfo (416)
 #endif
 
 /* ns2__PromotionGroupReply has binding name 'ns2__PromotionGroupReply' for type 'ns2:PromotionGroupReply' */
 #ifndef SOAP_TYPE_ns2__PromotionGroupReply
-#define SOAP_TYPE_ns2__PromotionGroupReply (414)
+#define SOAP_TYPE_ns2__PromotionGroupReply (415)
 #endif
 
 /* ns2__PromotionGroup has binding name 'ns2__PromotionGroup' for type 'ns2:PromotionGroup' */
 #ifndef SOAP_TYPE_ns2__PromotionGroup
-#define SOAP_TYPE_ns2__PromotionGroup (413)
+#define SOAP_TYPE_ns2__PromotionGroup (414)
 #endif
 
 /* ns2__Promotion has binding name 'ns2__Promotion' for type 'ns2:Promotion' */
 #ifndef SOAP_TYPE_ns2__Promotion
-#define SOAP_TYPE_ns2__Promotion (412)
+#define SOAP_TYPE_ns2__Promotion (413)
 #endif
 
 /* ns2__DCC has binding name 'ns2__DCC' for type 'ns2:DCC' */
 #ifndef SOAP_TYPE_ns2__DCC
-#define SOAP_TYPE_ns2__DCC (411)
+#define SOAP_TYPE_ns2__DCC (412)
 #endif
 
 /* ns2__DecryptVisaCheckoutDataService has binding name 'ns2__DecryptVisaCheckoutDataService' for type 'ns2:DecryptVisaCheckoutDataService' */
 #ifndef SOAP_TYPE_ns2__DecryptVisaCheckoutDataService
-#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (410)
+#define SOAP_TYPE_ns2__DecryptVisaCheckoutDataService (411)
 #endif
 
 /* ns2__VC has binding name 'ns2__VC' for type 'ns2:VC' */
 #ifndef SOAP_TYPE_ns2__VC
-#define SOAP_TYPE_ns2__VC (409)
+#define SOAP_TYPE_ns2__VC (410)
 #endif
 
 /* ns2__RequestMessage has binding name 'ns2__RequestMessage' for type 'ns2:RequestMessage' */
 #ifndef SOAP_TYPE_ns2__RequestMessage
-#define SOAP_TYPE_ns2__RequestMessage (408)
+#define SOAP_TYPE_ns2__RequestMessage (409)
 #endif
 
 /* ns2__CCCheckStatusService has binding name 'ns2__CCCheckStatusService' for type 'ns2:CCCheckStatusService' */
 #ifndef SOAP_TYPE_ns2__CCCheckStatusService
-#define SOAP_TYPE_ns2__CCCheckStatusService (407)
+#define SOAP_TYPE_ns2__CCCheckStatusService (408)
 #endif
 
 /* ns2__Sender has binding name 'ns2__Sender' for type 'ns2:Sender' */
 #ifndef SOAP_TYPE_ns2__Sender
-#define SOAP_TYPE_ns2__Sender (406)
+#define SOAP_TYPE_ns2__Sender (407)
 #endif
 
 /* ns2__Recipient has binding name 'ns2__Recipient' for type 'ns2:Recipient' */
 #ifndef SOAP_TYPE_ns2__Recipient
-#define SOAP_TYPE_ns2__Recipient (405)
+#define SOAP_TYPE_ns2__Recipient (406)
 #endif
 
 /* ns2__PayPalTransactionSearchService has binding name 'ns2__PayPalTransactionSearchService' for type 'ns2:PayPalTransactionSearchService' */
 #ifndef SOAP_TYPE_ns2__PayPalTransactionSearchService
-#define SOAP_TYPE_ns2__PayPalTransactionSearchService (404)
+#define SOAP_TYPE_ns2__PayPalTransactionSearchService (405)
 #endif
 
 /* ns2__PayPalGetTxnDetailsService has binding name 'ns2__PayPalGetTxnDetailsService' for type 'ns2:PayPalGetTxnDetailsService' */
 #ifndef SOAP_TYPE_ns2__PayPalGetTxnDetailsService
-#define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (403)
+#define SOAP_TYPE_ns2__PayPalGetTxnDetailsService (404)
 #endif
 
 /* ns2__APUI has binding name 'ns2__APUI' for type 'ns2:APUI' */
 #ifndef SOAP_TYPE_ns2__APUI
-#define SOAP_TYPE_ns2__APUI (402)
+#define SOAP_TYPE_ns2__APUI (403)
 #endif
 
 /* ns2__APSessionsService has binding name 'ns2__APSessionsService' for type 'ns2:APSessionsService' */
 #ifndef SOAP_TYPE_ns2__APSessionsService
-#define SOAP_TYPE_ns2__APSessionsService (401)
+#define SOAP_TYPE_ns2__APSessionsService (402)
 #endif
 
 /* ns2__APConfirmPurchaseService has binding name 'ns2__APConfirmPurchaseService' for type 'ns2:APConfirmPurchaseService' */
 #ifndef SOAP_TYPE_ns2__APConfirmPurchaseService
-#define SOAP_TYPE_ns2__APConfirmPurchaseService (400)
+#define SOAP_TYPE_ns2__APConfirmPurchaseService (401)
 #endif
 
 /* ns2__APTransactionDetailsService has binding name 'ns2__APTransactionDetailsService' for type 'ns2:APTransactionDetailsService' */
 #ifndef SOAP_TYPE_ns2__APTransactionDetailsService
-#define SOAP_TYPE_ns2__APTransactionDetailsService (399)
+#define SOAP_TYPE_ns2__APTransactionDetailsService (400)
 #endif
 
 /* ns2__APCheckOutDetailsService has binding name 'ns2__APCheckOutDetailsService' for type 'ns2:APCheckOutDetailsService' */
 #ifndef SOAP_TYPE_ns2__APCheckOutDetailsService
-#define SOAP_TYPE_ns2__APCheckOutDetailsService (398)
+#define SOAP_TYPE_ns2__APCheckOutDetailsService (399)
 #endif
 
 /* ns2__APSaleService has binding name 'ns2__APSaleService' for type 'ns2:APSaleService' */
 #ifndef SOAP_TYPE_ns2__APSaleService
-#define SOAP_TYPE_ns2__APSaleService (397)
+#define SOAP_TYPE_ns2__APSaleService (398)
 #endif
 
 /* ns2__APRefundService has binding name 'ns2__APRefundService' for type 'ns2:APRefundService' */
 #ifndef SOAP_TYPE_ns2__APRefundService
-#define SOAP_TYPE_ns2__APRefundService (396)
+#define SOAP_TYPE_ns2__APRefundService (397)
 #endif
 
 /* ns2__APOptionsService has binding name 'ns2__APOptionsService' for type 'ns2:APOptionsService' */
 #ifndef SOAP_TYPE_ns2__APOptionsService
-#define SOAP_TYPE_ns2__APOptionsService (395)
+#define SOAP_TYPE_ns2__APOptionsService (396)
 #endif
 
 /* ns2__APCaptureService has binding name 'ns2__APCaptureService' for type 'ns2:APCaptureService' */
 #ifndef SOAP_TYPE_ns2__APCaptureService
-#define SOAP_TYPE_ns2__APCaptureService (394)
+#define SOAP_TYPE_ns2__APCaptureService (395)
 #endif
 
 /* ns2__APAuthReversalService has binding name 'ns2__APAuthReversalService' for type 'ns2:APAuthReversalService' */
 #ifndef SOAP_TYPE_ns2__APAuthReversalService
-#define SOAP_TYPE_ns2__APAuthReversalService (393)
+#define SOAP_TYPE_ns2__APAuthReversalService (394)
 #endif
 
 /* ns2__APImportMandateService has binding name 'ns2__APImportMandateService' for type 'ns2:APImportMandateService' */
 #ifndef SOAP_TYPE_ns2__APImportMandateService
-#define SOAP_TYPE_ns2__APImportMandateService (392)
+#define SOAP_TYPE_ns2__APImportMandateService (393)
 #endif
 
 /* ns2__APAuthService has binding name 'ns2__APAuthService' for type 'ns2:APAuthService' */
 #ifndef SOAP_TYPE_ns2__APAuthService
-#define SOAP_TYPE_ns2__APAuthService (391)
+#define SOAP_TYPE_ns2__APAuthService (392)
 #endif
 
 /* ns2__APDevice has binding name 'ns2__APDevice' for type 'ns2:APDevice' */
 #ifndef SOAP_TYPE_ns2__APDevice
-#define SOAP_TYPE_ns2__APDevice (390)
+#define SOAP_TYPE_ns2__APDevice (391)
 #endif
 
 /* ns2__AP has binding name 'ns2__AP' for type 'ns2:AP' */
 #ifndef SOAP_TYPE_ns2__AP
-#define SOAP_TYPE_ns2__AP (389)
+#define SOAP_TYPE_ns2__AP (390)
 #endif
 
 /* ns2__Token has binding name 'ns2__Token' for type 'ns2:Token' */
 #ifndef SOAP_TYPE_ns2__Token
-#define SOAP_TYPE_ns2__Token (388)
+#define SOAP_TYPE_ns2__Token (389)
 #endif
 
 /* ns2__JPO has binding name 'ns2__JPO' for type 'ns2:JPO' */
 #ifndef SOAP_TYPE_ns2__JPO
-#define SOAP_TYPE_ns2__JPO (387)
+#define SOAP_TYPE_ns2__JPO (388)
 #endif
 
 /* ns2__PayPal has binding name 'ns2__PayPal' for type 'ns2:PayPal' */
 #ifndef SOAP_TYPE_ns2__PayPal
-#define SOAP_TYPE_ns2__PayPal (386)
+#define SOAP_TYPE_ns2__PayPal (387)
 #endif
 
 /* ns2__Batch has binding name 'ns2__Batch' for type 'ns2:Batch' */
 #ifndef SOAP_TYPE_ns2__Batch
-#define SOAP_TYPE_ns2__Batch (385)
+#define SOAP_TYPE_ns2__Batch (386)
 #endif
 
 /* ns2__DecisionManagerTravelLeg has binding name 'ns2__DecisionManagerTravelLeg' for type 'ns2:DecisionManagerTravelLeg' */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelLeg
-#define SOAP_TYPE_ns2__DecisionManagerTravelLeg (384)
+#define SOAP_TYPE_ns2__DecisionManagerTravelLeg (385)
 #endif
 
 /* ns2__DecisionManagerTravelData has binding name 'ns2__DecisionManagerTravelData' for type 'ns2:DecisionManagerTravelData' */
 #ifndef SOAP_TYPE_ns2__DecisionManagerTravelData
-#define SOAP_TYPE_ns2__DecisionManagerTravelData (383)
+#define SOAP_TYPE_ns2__DecisionManagerTravelData (384)
 #endif
 
 /* ns2__Authentication has binding name 'ns2__Authentication' for type 'ns2:Authentication' */
 #ifndef SOAP_TYPE_ns2__Authentication
-#define SOAP_TYPE_ns2__Authentication (382)
+#define SOAP_TYPE_ns2__Authentication (383)
 #endif
 
 /* ns2__DecisionManager has binding name 'ns2__DecisionManager' for type 'ns2:DecisionManager' */
 #ifndef SOAP_TYPE_ns2__DecisionManager
-#define SOAP_TYPE_ns2__DecisionManager (381)
+#define SOAP_TYPE_ns2__DecisionManager (382)
 #endif
 
 /* ns2__PaymentNetworkToken has binding name 'ns2__PaymentNetworkToken' for type 'ns2:PaymentNetworkToken' */
 #ifndef SOAP_TYPE_ns2__PaymentNetworkToken
-#define SOAP_TYPE_ns2__PaymentNetworkToken (380)
+#define SOAP_TYPE_ns2__PaymentNetworkToken (381)
 #endif
 
 /* ns2__TokenSource has binding name 'ns2__TokenSource' for type 'ns2:TokenSource' */
 #ifndef SOAP_TYPE_ns2__TokenSource
-#define SOAP_TYPE_ns2__TokenSource (379)
+#define SOAP_TYPE_ns2__TokenSource (380)
 #endif
 
 /* ns2__Subscription has binding name 'ns2__Subscription' for type 'ns2:Subscription' */
 #ifndef SOAP_TYPE_ns2__Subscription
-#define SOAP_TYPE_ns2__Subscription (378)
+#define SOAP_TYPE_ns2__Subscription (379)
 #endif
 
 /* ns2__PaySubscriptionEvent has binding name 'ns2__PaySubscriptionEvent' for type 'ns2:PaySubscriptionEvent' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEvent
-#define SOAP_TYPE_ns2__PaySubscriptionEvent (377)
+#define SOAP_TYPE_ns2__PaySubscriptionEvent (378)
 #endif
 
 /* ns2__RecurringSubscriptionInfo has binding name 'ns2__RecurringSubscriptionInfo' for type 'ns2:RecurringSubscriptionInfo' */
 #ifndef SOAP_TYPE_ns2__RecurringSubscriptionInfo
-#define SOAP_TYPE_ns2__RecurringSubscriptionInfo (376)
+#define SOAP_TYPE_ns2__RecurringSubscriptionInfo (377)
 #endif
 
 /* ns2__BankInfo has binding name 'ns2__BankInfo' for type 'ns2:BankInfo' */
 #ifndef SOAP_TYPE_ns2__BankInfo
-#define SOAP_TYPE_ns2__BankInfo (375)
+#define SOAP_TYPE_ns2__BankInfo (376)
 #endif
 
 /* ns2__FundTransfer has binding name 'ns2__FundTransfer' for type 'ns2:FundTransfer' */
 #ifndef SOAP_TYPE_ns2__FundTransfer
-#define SOAP_TYPE_ns2__FundTransfer (374)
+#define SOAP_TYPE_ns2__FundTransfer (375)
 #endif
 
 /* ns2__Brands has binding name 'ns2__Brands' for type 'ns2:Brands' */
 #ifndef SOAP_TYPE_ns2__Brands
-#define SOAP_TYPE_ns2__Brands (373)
+#define SOAP_TYPE_ns2__Brands (374)
 #endif
 
 /* ns2__Network has binding name 'ns2__Network' for type 'ns2:Network' */
 #ifndef SOAP_TYPE_ns2__Network
-#define SOAP_TYPE_ns2__Network (372)
+#define SOAP_TYPE_ns2__Network (373)
 #endif
 
 /* ns2__UCAF has binding name 'ns2__UCAF' for type 'ns2:UCAF' */
 #ifndef SOAP_TYPE_ns2__UCAF
-#define SOAP_TYPE_ns2__UCAF (371)
+#define SOAP_TYPE_ns2__UCAF (372)
 #endif
 
 /* ns2__GECC has binding name 'ns2__GECC' for type 'ns2:GECC' */
 #ifndef SOAP_TYPE_ns2__GECC
-#define SOAP_TYPE_ns2__GECC (370)
+#define SOAP_TYPE_ns2__GECC (371)
 #endif
 
 /* ns2__FundingTotals has binding name 'ns2__FundingTotals' for type 'ns2:FundingTotals' */
 #ifndef SOAP_TYPE_ns2__FundingTotals
-#define SOAP_TYPE_ns2__FundingTotals (369)
+#define SOAP_TYPE_ns2__FundingTotals (370)
 #endif
 
 /* ns2__PurchaseTotals has binding name 'ns2__PurchaseTotals' for type 'ns2:PurchaseTotals' */
 #ifndef SOAP_TYPE_ns2__PurchaseTotals
-#define SOAP_TYPE_ns2__PurchaseTotals (368)
+#define SOAP_TYPE_ns2__PurchaseTotals (369)
 #endif
 
 /* ns2__Wallet has binding name 'ns2__Wallet' for type 'ns2:Wallet' */
 #ifndef SOAP_TYPE_ns2__Wallet
-#define SOAP_TYPE_ns2__Wallet (367)
+#define SOAP_TYPE_ns2__Wallet (368)
 #endif
 
 /* ns2__Aft has binding name 'ns2__Aft' for type 'ns2:Aft' */
 #ifndef SOAP_TYPE_ns2__Aft
-#define SOAP_TYPE_ns2__Aft (366)
+#define SOAP_TYPE_ns2__Aft (367)
 #endif
 
 /* ns2__OtherTax has binding name 'ns2__OtherTax' for type 'ns2:OtherTax' */
 #ifndef SOAP_TYPE_ns2__OtherTax
-#define SOAP_TYPE_ns2__OtherTax (365)
+#define SOAP_TYPE_ns2__OtherTax (366)
 #endif
 
 /* ns2__BML has binding name 'ns2__BML' for type 'ns2:BML' */
 #ifndef SOAP_TYPE_ns2__BML
-#define SOAP_TYPE_ns2__BML (364)
+#define SOAP_TYPE_ns2__BML (365)
 #endif
 
 /* ns2__Check has binding name 'ns2__Check' for type 'ns2:Check' */
 #ifndef SOAP_TYPE_ns2__Check
-#define SOAP_TYPE_ns2__Check (363)
+#define SOAP_TYPE_ns2__Check (364)
 #endif
 
 /* ns2__Card has binding name 'ns2__Card' for type 'ns2:Card' */
 #ifndef SOAP_TYPE_ns2__Card
-#define SOAP_TYPE_ns2__Card (362)
+#define SOAP_TYPE_ns2__Card (363)
 #endif
 
 /* ns2__ShipFrom has binding name 'ns2__ShipFrom' for type 'ns2:ShipFrom' */
 #ifndef SOAP_TYPE_ns2__ShipFrom
-#define SOAP_TYPE_ns2__ShipFrom (361)
+#define SOAP_TYPE_ns2__ShipFrom (362)
 #endif
 
 /* ns2__ShipTo has binding name 'ns2__ShipTo' for type 'ns2:ShipTo' */
 #ifndef SOAP_TYPE_ns2__ShipTo
-#define SOAP_TYPE_ns2__ShipTo (360)
+#define SOAP_TYPE_ns2__ShipTo (361)
 #endif
 
 /* ns2__BillTo has binding name 'ns2__BillTo' for type 'ns2:BillTo' */
 #ifndef SOAP_TYPE_ns2__BillTo
-#define SOAP_TYPE_ns2__BillTo (359)
+#define SOAP_TYPE_ns2__BillTo (360)
 #endif
 
 /* ns2__BusinessRules has binding name 'ns2__BusinessRules' for type 'ns2:BusinessRules' */
 #ifndef SOAP_TYPE_ns2__BusinessRules
-#define SOAP_TYPE_ns2__BusinessRules (358)
+#define SOAP_TYPE_ns2__BusinessRules (359)
 #endif
 
 /* ns2__InvoiceHeader has binding name 'ns2__InvoiceHeader' for type 'ns2:InvoiceHeader' */
 #ifndef SOAP_TYPE_ns2__InvoiceHeader
-#define SOAP_TYPE_ns2__InvoiceHeader (357)
+#define SOAP_TYPE_ns2__InvoiceHeader (358)
 #endif
 
 /* ns2__EncryptPaymentDataService has binding name 'ns2__EncryptPaymentDataService' for type 'ns2:EncryptPaymentDataService' */
 #ifndef SOAP_TYPE_ns2__EncryptPaymentDataService
-#define SOAP_TYPE_ns2__EncryptPaymentDataService (356)
+#define SOAP_TYPE_ns2__EncryptPaymentDataService (357)
 #endif
 
 /* ns2__CaseManagementActionService has binding name 'ns2__CaseManagementActionService' for type 'ns2:CaseManagementActionService' */
 #ifndef SOAP_TYPE_ns2__CaseManagementActionService
-#define SOAP_TYPE_ns2__CaseManagementActionService (355)
+#define SOAP_TYPE_ns2__CaseManagementActionService (356)
 #endif
 
 /* ns2__FraudUpdateService has binding name 'ns2__FraudUpdateService' for type 'ns2:FraudUpdateService' */
 #ifndef SOAP_TYPE_ns2__FraudUpdateService
-#define SOAP_TYPE_ns2__FraudUpdateService (354)
+#define SOAP_TYPE_ns2__FraudUpdateService (355)
 #endif
 
 /* ns2__RiskUpdateService has binding name 'ns2__RiskUpdateService' for type 'ns2:RiskUpdateService' */
 #ifndef SOAP_TYPE_ns2__RiskUpdateService
-#define SOAP_TYPE_ns2__RiskUpdateService (353)
+#define SOAP_TYPE_ns2__RiskUpdateService (354)
 #endif
 
 /* ns2__APCheckStatusService has binding name 'ns2__APCheckStatusService' for type 'ns2:APCheckStatusService' */
 #ifndef SOAP_TYPE_ns2__APCheckStatusService
-#define SOAP_TYPE_ns2__APCheckStatusService (352)
+#define SOAP_TYPE_ns2__APCheckStatusService (353)
 #endif
 
 /* ns2__APInitiateService has binding name 'ns2__APInitiateService' for type 'ns2:APInitiateService' */
 #ifndef SOAP_TYPE_ns2__APInitiateService
-#define SOAP_TYPE_ns2__APInitiateService (351)
+#define SOAP_TYPE_ns2__APInitiateService (352)
 #endif
 
 /* ns2__Address has binding name 'ns2__Address' for type 'ns2:Address' */
 #ifndef SOAP_TYPE_ns2__Address
-#define SOAP_TYPE_ns2__Address (350)
+#define SOAP_TYPE_ns2__Address (351)
 #endif
 
 /* ns2__Routing has binding name 'ns2__Routing' for type 'ns2:Routing' */
 #ifndef SOAP_TYPE_ns2__Routing
-#define SOAP_TYPE_ns2__Routing (349)
+#define SOAP_TYPE_ns2__Routing (350)
 #endif
 
 /* ns2__PersonalID has binding name 'ns2__PersonalID' for type 'ns2:PersonalID' */
 #ifndef SOAP_TYPE_ns2__PersonalID
-#define SOAP_TYPE_ns2__PersonalID (348)
+#define SOAP_TYPE_ns2__PersonalID (349)
 #endif
 
 /* ns2__BoletoPaymentService has binding name 'ns2__BoletoPaymentService' for type 'ns2:BoletoPaymentService' */
 #ifndef SOAP_TYPE_ns2__BoletoPaymentService
-#define SOAP_TYPE_ns2__BoletoPaymentService (347)
+#define SOAP_TYPE_ns2__BoletoPaymentService (348)
 #endif
 
 /* ns2__ChinaRefundService has binding name 'ns2__ChinaRefundService' for type 'ns2:ChinaRefundService' */
 #ifndef SOAP_TYPE_ns2__ChinaRefundService
-#define SOAP_TYPE_ns2__ChinaRefundService (346)
+#define SOAP_TYPE_ns2__ChinaRefundService (347)
 #endif
 
 /* ns2__ChinaPaymentService has binding name 'ns2__ChinaPaymentService' for type 'ns2:ChinaPaymentService' */
 #ifndef SOAP_TYPE_ns2__ChinaPaymentService
-#define SOAP_TYPE_ns2__ChinaPaymentService (345)
+#define SOAP_TYPE_ns2__ChinaPaymentService (346)
 #endif
 
 /* ns2__PayPalPreapprovedUpdateService has binding name 'ns2__PayPalPreapprovedUpdateService' for type 'ns2:PayPalPreapprovedUpdateService' */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedUpdateService
-#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (344)
+#define SOAP_TYPE_ns2__PayPalPreapprovedUpdateService (345)
 #endif
 
 /* ns2__PayPalPreapprovedPaymentService has binding name 'ns2__PayPalPreapprovedPaymentService' for type 'ns2:PayPalPreapprovedPaymentService' */
 #ifndef SOAP_TYPE_ns2__PayPalPreapprovedPaymentService
-#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (343)
+#define SOAP_TYPE_ns2__PayPalPreapprovedPaymentService (344)
 #endif
 
 /* ns2__PayPalButtonCreateService has binding name 'ns2__PayPalButtonCreateService' for type 'ns2:PayPalButtonCreateService' */
 #ifndef SOAP_TYPE_ns2__PayPalButtonCreateService
-#define SOAP_TYPE_ns2__PayPalButtonCreateService (342)
+#define SOAP_TYPE_ns2__PayPalButtonCreateService (343)
 #endif
 
 /* ns2__PinDebitReversalService has binding name 'ns2__PinDebitReversalService' for type 'ns2:PinDebitReversalService' */
 #ifndef SOAP_TYPE_ns2__PinDebitReversalService
-#define SOAP_TYPE_ns2__PinDebitReversalService (341)
+#define SOAP_TYPE_ns2__PinDebitReversalService (342)
 #endif
 
 /* ns2__PinDebitCreditService has binding name 'ns2__PinDebitCreditService' for type 'ns2:PinDebitCreditService' */
 #ifndef SOAP_TYPE_ns2__PinDebitCreditService
-#define SOAP_TYPE_ns2__PinDebitCreditService (340)
+#define SOAP_TYPE_ns2__PinDebitCreditService (341)
 #endif
 
 /* ns2__PinDebitPurchaseService has binding name 'ns2__PinDebitPurchaseService' for type 'ns2:PinDebitPurchaseService' */
 #ifndef SOAP_TYPE_ns2__PinDebitPurchaseService
-#define SOAP_TYPE_ns2__PinDebitPurchaseService (339)
+#define SOAP_TYPE_ns2__PinDebitPurchaseService (340)
 #endif
 
 /* ns2__PinlessDebitReversalService has binding name 'ns2__PinlessDebitReversalService' for type 'ns2:PinlessDebitReversalService' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitReversalService
-#define SOAP_TYPE_ns2__PinlessDebitReversalService (338)
+#define SOAP_TYPE_ns2__PinlessDebitReversalService (339)
 #endif
 
 /* ns2__PinlessDebitValidateService has binding name 'ns2__PinlessDebitValidateService' for type 'ns2:PinlessDebitValidateService' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitValidateService
-#define SOAP_TYPE_ns2__PinlessDebitValidateService (337)
+#define SOAP_TYPE_ns2__PinlessDebitValidateService (338)
 #endif
 
 /* ns2__PinlessDebitService has binding name 'ns2__PinlessDebitService' for type 'ns2:PinlessDebitService' */
 #ifndef SOAP_TYPE_ns2__PinlessDebitService
-#define SOAP_TYPE_ns2__PinlessDebitService (336)
+#define SOAP_TYPE_ns2__PinlessDebitService (337)
 #endif
 
 /* ns2__VoidService has binding name 'ns2__VoidService' for type 'ns2:VoidService' */
 #ifndef SOAP_TYPE_ns2__VoidService
-#define SOAP_TYPE_ns2__VoidService (335)
+#define SOAP_TYPE_ns2__VoidService (336)
 #endif
 
 /* ns2__PayPalDoRefTransactionService has binding name 'ns2__PayPalDoRefTransactionService' for type 'ns2:PayPalDoRefTransactionService' */
 #ifndef SOAP_TYPE_ns2__PayPalDoRefTransactionService
-#define SOAP_TYPE_ns2__PayPalDoRefTransactionService (334)
+#define SOAP_TYPE_ns2__PayPalDoRefTransactionService (335)
 #endif
 
 /* ns2__PayPalCreateAgreementService has binding name 'ns2__PayPalCreateAgreementService' for type 'ns2:PayPalCreateAgreementService' */
 #ifndef SOAP_TYPE_ns2__PayPalCreateAgreementService
-#define SOAP_TYPE_ns2__PayPalCreateAgreementService (333)
+#define SOAP_TYPE_ns2__PayPalCreateAgreementService (334)
 #endif
 
 /* ns2__PayPalUpdateAgreementService has binding name 'ns2__PayPalUpdateAgreementService' for type 'ns2:PayPalUpdateAgreementService' */
 #ifndef SOAP_TYPE_ns2__PayPalUpdateAgreementService
-#define SOAP_TYPE_ns2__PayPalUpdateAgreementService (332)
+#define SOAP_TYPE_ns2__PayPalUpdateAgreementService (333)
 #endif
 
 /* ns2__PayPalAuthorizationService has binding name 'ns2__PayPalAuthorizationService' for type 'ns2:PayPalAuthorizationService' */
 #ifndef SOAP_TYPE_ns2__PayPalAuthorizationService
-#define SOAP_TYPE_ns2__PayPalAuthorizationService (331)
+#define SOAP_TYPE_ns2__PayPalAuthorizationService (332)
 #endif
 
 /* ns2__PayPalEcOrderSetupService has binding name 'ns2__PayPalEcOrderSetupService' for type 'ns2:PayPalEcOrderSetupService' */
 #ifndef SOAP_TYPE_ns2__PayPalEcOrderSetupService
-#define SOAP_TYPE_ns2__PayPalEcOrderSetupService (330)
+#define SOAP_TYPE_ns2__PayPalEcOrderSetupService (331)
 #endif
 
 /* ns2__PayPalRefundService has binding name 'ns2__PayPalRefundService' for type 'ns2:PayPalRefundService' */
 #ifndef SOAP_TYPE_ns2__PayPalRefundService
-#define SOAP_TYPE_ns2__PayPalRefundService (329)
+#define SOAP_TYPE_ns2__PayPalRefundService (330)
 #endif
 
 /* ns2__PayPalAuthReversalService has binding name 'ns2__PayPalAuthReversalService' for type 'ns2:PayPalAuthReversalService' */
 #ifndef SOAP_TYPE_ns2__PayPalAuthReversalService
-#define SOAP_TYPE_ns2__PayPalAuthReversalService (328)
+#define SOAP_TYPE_ns2__PayPalAuthReversalService (329)
 #endif
 
 /* ns2__PayPalDoCaptureService has binding name 'ns2__PayPalDoCaptureService' for type 'ns2:PayPalDoCaptureService' */
 #ifndef SOAP_TYPE_ns2__PayPalDoCaptureService
-#define SOAP_TYPE_ns2__PayPalDoCaptureService (327)
+#define SOAP_TYPE_ns2__PayPalDoCaptureService (328)
 #endif
 
 /* ns2__PayPalEcDoPaymentService has binding name 'ns2__PayPalEcDoPaymentService' for type 'ns2:PayPalEcDoPaymentService' */
 #ifndef SOAP_TYPE_ns2__PayPalEcDoPaymentService
-#define SOAP_TYPE_ns2__PayPalEcDoPaymentService (326)
+#define SOAP_TYPE_ns2__PayPalEcDoPaymentService (327)
 #endif
 
 /* ns2__PayPalEcGetDetailsService has binding name 'ns2__PayPalEcGetDetailsService' for type 'ns2:PayPalEcGetDetailsService' */
 #ifndef SOAP_TYPE_ns2__PayPalEcGetDetailsService
-#define SOAP_TYPE_ns2__PayPalEcGetDetailsService (325)
+#define SOAP_TYPE_ns2__PayPalEcGetDetailsService (326)
 #endif
 
 /* ns2__PayPalEcSetService has binding name 'ns2__PayPalEcSetService' for type 'ns2:PayPalEcSetService' */
 #ifndef SOAP_TYPE_ns2__PayPalEcSetService
-#define SOAP_TYPE_ns2__PayPalEcSetService (324)
+#define SOAP_TYPE_ns2__PayPalEcSetService (325)
 #endif
 
 /* ns2__PayPalCreditService has binding name 'ns2__PayPalCreditService' for type 'ns2:PayPalCreditService' */
 #ifndef SOAP_TYPE_ns2__PayPalCreditService
-#define SOAP_TYPE_ns2__PayPalCreditService (323)
+#define SOAP_TYPE_ns2__PayPalCreditService (324)
 #endif
 
 /* ns2__PayPalPaymentService has binding name 'ns2__PayPalPaymentService' for type 'ns2:PayPalPaymentService' */
 #ifndef SOAP_TYPE_ns2__PayPalPaymentService
-#define SOAP_TYPE_ns2__PayPalPaymentService (322)
+#define SOAP_TYPE_ns2__PayPalPaymentService (323)
 #endif
 
 /* ns2__PaySubscriptionDeleteService has binding name 'ns2__PaySubscriptionDeleteService' for type 'ns2:PaySubscriptionDeleteService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionDeleteService
-#define SOAP_TYPE_ns2__PaySubscriptionDeleteService (321)
+#define SOAP_TYPE_ns2__PaySubscriptionDeleteService (322)
 #endif
 
 /* ns2__PaySubscriptionRetrieveService has binding name 'ns2__PaySubscriptionRetrieveService' for type 'ns2:PaySubscriptionRetrieveService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionRetrieveService
-#define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (320)
+#define SOAP_TYPE_ns2__PaySubscriptionRetrieveService (321)
 #endif
 
 /* ns2__PaySubscriptionEventUpdateService has binding name 'ns2__PaySubscriptionEventUpdateService' for type 'ns2:PaySubscriptionEventUpdateService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionEventUpdateService
-#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (319)
+#define SOAP_TYPE_ns2__PaySubscriptionEventUpdateService (320)
 #endif
 
 /* ns2__PaySubscriptionUpdateService has binding name 'ns2__PaySubscriptionUpdateService' for type 'ns2:PaySubscriptionUpdateService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionUpdateService
-#define SOAP_TYPE_ns2__PaySubscriptionUpdateService (318)
+#define SOAP_TYPE_ns2__PaySubscriptionUpdateService (319)
 #endif
 
 /* ns2__PaySubscriptionCreateService has binding name 'ns2__PaySubscriptionCreateService' for type 'ns2:PaySubscriptionCreateService' */
 #ifndef SOAP_TYPE_ns2__PaySubscriptionCreateService
-#define SOAP_TYPE_ns2__PaySubscriptionCreateService (317)
+#define SOAP_TYPE_ns2__PaySubscriptionCreateService (318)
 #endif
 
 /* ns2__DeviceFingerprintData has binding name 'ns2__DeviceFingerprintData' for type 'ns2:DeviceFingerprintData' */
 #ifndef SOAP_TYPE_ns2__DeviceFingerprintData
-#define SOAP_TYPE_ns2__DeviceFingerprintData (316)
+#define SOAP_TYPE_ns2__DeviceFingerprintData (317)
 #endif
 
 /* ns2__DirectDebitValidateService has binding name 'ns2__DirectDebitValidateService' for type 'ns2:DirectDebitValidateService' */
 #ifndef SOAP_TYPE_ns2__DirectDebitValidateService
-#define SOAP_TYPE_ns2__DirectDebitValidateService (315)
+#define SOAP_TYPE_ns2__DirectDebitValidateService (316)
 #endif
 
 /* ns2__DirectDebitRefundService has binding name 'ns2__DirectDebitRefundService' for type 'ns2:DirectDebitRefundService' */
 #ifndef SOAP_TYPE_ns2__DirectDebitRefundService
-#define SOAP_TYPE_ns2__DirectDebitRefundService (314)
+#define SOAP_TYPE_ns2__DirectDebitRefundService (315)
 #endif
 
 /* ns2__DirectDebitService has binding name 'ns2__DirectDebitService' for type 'ns2:DirectDebitService' */
 #ifndef SOAP_TYPE_ns2__DirectDebitService
-#define SOAP_TYPE_ns2__DirectDebitService (313)
+#define SOAP_TYPE_ns2__DirectDebitService (314)
 #endif
 
 /* ns2__DirectDebitMandateService has binding name 'ns2__DirectDebitMandateService' for type 'ns2:DirectDebitMandateService' */
 #ifndef SOAP_TYPE_ns2__DirectDebitMandateService
-#define SOAP_TYPE_ns2__DirectDebitMandateService (312)
+#define SOAP_TYPE_ns2__DirectDebitMandateService (313)
 #endif
 
 /* ns2__BankTransferRealTimeService has binding name 'ns2__BankTransferRealTimeService' for type 'ns2:BankTransferRealTimeService' */
 #ifndef SOAP_TYPE_ns2__BankTransferRealTimeService
-#define SOAP_TYPE_ns2__BankTransferRealTimeService (311)
+#define SOAP_TYPE_ns2__BankTransferRealTimeService (312)
 #endif
 
 /* ns2__BankTransferRefundService has binding name 'ns2__BankTransferRefundService' for type 'ns2:BankTransferRefundService' */
 #ifndef SOAP_TYPE_ns2__BankTransferRefundService
-#define SOAP_TYPE_ns2__BankTransferRefundService (310)
+#define SOAP_TYPE_ns2__BankTransferRefundService (311)
 #endif
 
 /* ns2__BankTransferService has binding name 'ns2__BankTransferService' for type 'ns2:BankTransferService' */
 #ifndef SOAP_TYPE_ns2__BankTransferService
-#define SOAP_TYPE_ns2__BankTransferService (309)
+#define SOAP_TYPE_ns2__BankTransferService (310)
 #endif
 
 /* ns2__FXRatesService has binding name 'ns2__FXRatesService' for type 'ns2:FXRatesService' */
 #ifndef SOAP_TYPE_ns2__FXRatesService
-#define SOAP_TYPE_ns2__FXRatesService (308)
+#define SOAP_TYPE_ns2__FXRatesService (309)
 #endif
 
 /* ns2__ExportService has binding name 'ns2__ExportService' for type 'ns2:ExportService' */
 #ifndef SOAP_TYPE_ns2__ExportService
-#define SOAP_TYPE_ns2__ExportService (307)
+#define SOAP_TYPE_ns2__ExportService (308)
 #endif
 
 /* ns2__DAVService has binding name 'ns2__DAVService' for type 'ns2:DAVService' */
 #ifndef SOAP_TYPE_ns2__DAVService
-#define SOAP_TYPE_ns2__DAVService (306)
+#define SOAP_TYPE_ns2__DAVService (307)
 #endif
 
 /* ns2__AFSService has binding name 'ns2__AFSService' for type 'ns2:AFSService' */
 #ifndef SOAP_TYPE_ns2__AFSService
-#define SOAP_TYPE_ns2__AFSService (305)
+#define SOAP_TYPE_ns2__AFSService (306)
 #endif
 
 /* ns2__DMEService has binding name 'ns2__DMEService' for type 'ns2:DMEService' */
 #ifndef SOAP_TYPE_ns2__DMEService
-#define SOAP_TYPE_ns2__DMEService (304)
+#define SOAP_TYPE_ns2__DMEService (305)
 #endif
 
 /* ns2__TaxService has binding name 'ns2__TaxService' for type 'ns2:TaxService' */
 #ifndef SOAP_TYPE_ns2__TaxService
-#define SOAP_TYPE_ns2__TaxService (303)
+#define SOAP_TYPE_ns2__TaxService (304)
 #endif
 
 /* ns2__PayerAuthSetupService has binding name 'ns2__PayerAuthSetupService' for type 'ns2:PayerAuthSetupService' */
 #ifndef SOAP_TYPE_ns2__PayerAuthSetupService
-#define SOAP_TYPE_ns2__PayerAuthSetupService (302)
+#define SOAP_TYPE_ns2__PayerAuthSetupService (303)
 #endif
 
 /* ns2__PayerAuthValidateService has binding name 'ns2__PayerAuthValidateService' for type 'ns2:PayerAuthValidateService' */
 #ifndef SOAP_TYPE_ns2__PayerAuthValidateService
-#define SOAP_TYPE_ns2__PayerAuthValidateService (301)
+#define SOAP_TYPE_ns2__PayerAuthValidateService (302)
 #endif
 
 /* ns2__PayerAuthEnrollService has binding name 'ns2__PayerAuthEnrollService' for type 'ns2:PayerAuthEnrollService' */
 #ifndef SOAP_TYPE_ns2__PayerAuthEnrollService
-#define SOAP_TYPE_ns2__PayerAuthEnrollService (300)
+#define SOAP_TYPE_ns2__PayerAuthEnrollService (301)
 #endif
 
 /* ns2__ECAuthenticateService has binding name 'ns2__ECAuthenticateService' for type 'ns2:ECAuthenticateService' */
 #ifndef SOAP_TYPE_ns2__ECAuthenticateService
-#define SOAP_TYPE_ns2__ECAuthenticateService (299)
+#define SOAP_TYPE_ns2__ECAuthenticateService (300)
 #endif
 
 /* ns2__ECCreditService has binding name 'ns2__ECCreditService' for type 'ns2:ECCreditService' */
 #ifndef SOAP_TYPE_ns2__ECCreditService
-#define SOAP_TYPE_ns2__ECCreditService (298)
+#define SOAP_TYPE_ns2__ECCreditService (299)
 #endif
 
 /* ns2__ECDebitService has binding name 'ns2__ECDebitService' for type 'ns2:ECDebitService' */
 #ifndef SOAP_TYPE_ns2__ECDebitService
-#define SOAP_TYPE_ns2__ECDebitService (297)
+#define SOAP_TYPE_ns2__ECDebitService (298)
 #endif
 
 /* ns2__ServiceFeeCalculateService has binding name 'ns2__ServiceFeeCalculateService' for type 'ns2:ServiceFeeCalculateService' */
 #ifndef SOAP_TYPE_ns2__ServiceFeeCalculateService
-#define SOAP_TYPE_ns2__ServiceFeeCalculateService (296)
+#define SOAP_TYPE_ns2__ServiceFeeCalculateService (297)
 #endif
 
 /* ns2__CCDCCService has binding name 'ns2__CCDCCService' for type 'ns2:CCDCCService' */
 #ifndef SOAP_TYPE_ns2__CCDCCService
-#define SOAP_TYPE_ns2__CCDCCService (295)
+#define SOAP_TYPE_ns2__CCDCCService (296)
 #endif
 
 /* ns2__CCAutoAuthReversalService has binding name 'ns2__CCAutoAuthReversalService' for type 'ns2:CCAutoAuthReversalService' */
 #ifndef SOAP_TYPE_ns2__CCAutoAuthReversalService
-#define SOAP_TYPE_ns2__CCAutoAuthReversalService (294)
+#define SOAP_TYPE_ns2__CCAutoAuthReversalService (295)
 #endif
 
 /* ns2__CCAuthReversalService has binding name 'ns2__CCAuthReversalService' for type 'ns2:CCAuthReversalService' */
 #ifndef SOAP_TYPE_ns2__CCAuthReversalService
-#define SOAP_TYPE_ns2__CCAuthReversalService (293)
+#define SOAP_TYPE_ns2__CCAuthReversalService (294)
 #endif
 
 /* ns2__CCCreditService has binding name 'ns2__CCCreditService' for type 'ns2:CCCreditService' */
 #ifndef SOAP_TYPE_ns2__CCCreditService
-#define SOAP_TYPE_ns2__CCCreditService (292)
+#define SOAP_TYPE_ns2__CCCreditService (293)
 #endif
 
 /* ns2__CCCaptureService has binding name 'ns2__CCCaptureService' for type 'ns2:CCCaptureService' */
 #ifndef SOAP_TYPE_ns2__CCCaptureService
-#define SOAP_TYPE_ns2__CCCaptureService (291)
+#define SOAP_TYPE_ns2__CCCaptureService (292)
 #endif
 
 /* ns2__CCIncrementalAuthService has binding name 'ns2__CCIncrementalAuthService' for type 'ns2:CCIncrementalAuthService' */
 #ifndef SOAP_TYPE_ns2__CCIncrementalAuthService
-#define SOAP_TYPE_ns2__CCIncrementalAuthService (290)
+#define SOAP_TYPE_ns2__CCIncrementalAuthService (291)
 #endif
 
 /* ns2__CCSaleReversalService has binding name 'ns2__CCSaleReversalService' for type 'ns2:CCSaleReversalService' */
 #ifndef SOAP_TYPE_ns2__CCSaleReversalService
-#define SOAP_TYPE_ns2__CCSaleReversalService (289)
+#define SOAP_TYPE_ns2__CCSaleReversalService (290)
 #endif
 
 /* ns2__CCSaleCreditService has binding name 'ns2__CCSaleCreditService' for type 'ns2:CCSaleCreditService' */
 #ifndef SOAP_TYPE_ns2__CCSaleCreditService
-#define SOAP_TYPE_ns2__CCSaleCreditService (288)
+#define SOAP_TYPE_ns2__CCSaleCreditService (289)
 #endif
 
 /* ns2__CCSaleService has binding name 'ns2__CCSaleService' for type 'ns2:CCSaleService' */
 #ifndef SOAP_TYPE_ns2__CCSaleService
-#define SOAP_TYPE_ns2__CCSaleService (287)
+#define SOAP_TYPE_ns2__CCSaleService (288)
 #endif
 
 /* ns2__VerificationService has binding name 'ns2__VerificationService' for type 'ns2:VerificationService' */
 #ifndef SOAP_TYPE_ns2__VerificationService
-#define SOAP_TYPE_ns2__VerificationService (286)
+#define SOAP_TYPE_ns2__VerificationService (287)
 #endif
 
 /* ns2__OCTService has binding name 'ns2__OCTService' for type 'ns2:OCTService' */
 #ifndef SOAP_TYPE_ns2__OCTService
-#define SOAP_TYPE_ns2__OCTService (285)
+#define SOAP_TYPE_ns2__OCTService (286)
 #endif
 
 /* ns2__CCAuthService has binding name 'ns2__CCAuthService' for type 'ns2:CCAuthService' */
 #ifndef SOAP_TYPE_ns2__CCAuthService
-#define SOAP_TYPE_ns2__CCAuthService (284)
+#define SOAP_TYPE_ns2__CCAuthService (285)
 #endif
 
 /* ns2__Item has binding name 'ns2__Item' for type 'ns2:Item' */
 #ifndef SOAP_TYPE_ns2__Item
-#define SOAP_TYPE_ns2__Item (283)
-#endif
-
-/* xsd__integer has binding name 'xsd__integer' for type 'xsd:integer' */
-#ifndef SOAP_TYPE_xsd__integer
-#define SOAP_TYPE_xsd__integer (282)
-#endif
-
-/* xsd__decimal has binding name 'xsd__decimal' for type 'xsd:decimal' */
-#ifndef SOAP_TYPE_xsd__decimal
-#define SOAP_TYPE_xsd__decimal (281)
-#endif
-
-/* std::string has binding name 'std__string' for type 'xsd:string' */
-#ifndef SOAP_TYPE_std__string
-#define SOAP_TYPE_std__string (280)
+#define SOAP_TYPE_ns2__Item (284)
 #endif
 
 /* xsd__base64Binary has binding name 'xsd__base64Binary' for type 'xsd:base64Binary' */
@@ -23390,22 +23350,22 @@ typedef xsd__decimal ns2__RestrictedDecimal;
 
 /* struct SOAP_ENV__Fault has binding name 'SOAP_ENV__Fault' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Fault
-#define SOAP_TYPE_SOAP_ENV__Fault (958)
+#define SOAP_TYPE_SOAP_ENV__Fault (952)
 #endif
 
 /* struct SOAP_ENV__Reason has binding name 'SOAP_ENV__Reason' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Reason
-#define SOAP_TYPE_SOAP_ENV__Reason (957)
+#define SOAP_TYPE_SOAP_ENV__Reason (951)
 #endif
 
 /* struct SOAP_ENV__Detail has binding name 'SOAP_ENV__Detail' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Detail
-#define SOAP_TYPE_SOAP_ENV__Detail (954)
+#define SOAP_TYPE_SOAP_ENV__Detail (948)
 #endif
 
 /* struct SOAP_ENV__Code has binding name 'SOAP_ENV__Code' for type '' */
 #ifndef SOAP_TYPE_SOAP_ENV__Code
-#define SOAP_TYPE_SOAP_ENV__Code (952)
+#define SOAP_TYPE_SOAP_ENV__Code (946)
 #endif
 
 /* struct SOAP_ENV__Header has binding name 'SOAP_ENV__Header' for type '' */
@@ -24080,1532 +24040,1537 @@ typedef xsd__decimal ns2__RestrictedDecimal;
 
 /* struct SOAP_ENV__Reason * has binding name 'PointerToSOAP_ENV__Reason' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Reason
-#define SOAP_TYPE_PointerToSOAP_ENV__Reason (960)
+#define SOAP_TYPE_PointerToSOAP_ENV__Reason (954)
 #endif
 
 /* struct SOAP_ENV__Detail * has binding name 'PointerToSOAP_ENV__Detail' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Detail
-#define SOAP_TYPE_PointerToSOAP_ENV__Detail (959)
+#define SOAP_TYPE_PointerToSOAP_ENV__Detail (953)
 #endif
 
 /* struct SOAP_ENV__Code * has binding name 'PointerToSOAP_ENV__Code' for type '' */
 #ifndef SOAP_TYPE_PointerToSOAP_ENV__Code
-#define SOAP_TYPE_PointerToSOAP_ENV__Code (953)
+#define SOAP_TYPE_PointerToSOAP_ENV__Code (947)
 #endif
 
 /* ns2__PauseRuleResultItems * has binding name 'PointerTons2__PauseRuleResultItems' for type 'ns2:PauseRuleResultItems' */
 #ifndef SOAP_TYPE_PointerTons2__PauseRuleResultItems
-#define SOAP_TYPE_PointerTons2__PauseRuleResultItems (946)
+#define SOAP_TYPE_PointerTons2__PauseRuleResultItems (940)
 #endif
 
 /* ns2__ProfileReplyEarly * has binding name 'PointerTons2__ProfileReplyEarly' for type 'ns2:ProfileReplyEarly' */
 #ifndef SOAP_TYPE_PointerTons2__ProfileReplyEarly
-#define SOAP_TYPE_PointerTons2__ProfileReplyEarly (945)
+#define SOAP_TYPE_PointerTons2__ProfileReplyEarly (939)
 #endif
 
 /* ns2__VCCustomData * has binding name 'PointerTons2__VCCustomData' for type 'ns2:VCCustomData' */
 #ifndef SOAP_TYPE_PointerTons2__VCCustomData
-#define SOAP_TYPE_PointerTons2__VCCustomData (944)
+#define SOAP_TYPE_PointerTons2__VCCustomData (938)
 #endif
 
 /* ns2__VCCardArt * has binding name 'PointerTons2__VCCardArt' for type 'ns2:VCCardArt' */
 #ifndef SOAP_TYPE_PointerTons2__VCCardArt
-#define SOAP_TYPE_PointerTons2__VCCardArt (943)
+#define SOAP_TYPE_PointerTons2__VCCardArt (937)
 #endif
 
 /* ns2__ReplyReserved * has binding name 'PointerTons2__ReplyReserved' for type 'ns2:ReplyReserved' */
 #ifndef SOAP_TYPE_PointerTons2__ReplyReserved
-#define SOAP_TYPE_PointerTons2__ReplyReserved (936)
+#define SOAP_TYPE_PointerTons2__ReplyReserved (930)
 #endif
 
 /* ns2__AbortReply * has binding name 'PointerTons2__AbortReply' for type 'ns2:AbortReply' */
 #ifndef SOAP_TYPE_PointerTons2__AbortReply
-#define SOAP_TYPE_PointerTons2__AbortReply (935)
+#define SOAP_TYPE_PointerTons2__AbortReply (929)
 #endif
 
 /* ns2__ECAVSReply * has binding name 'PointerTons2__ECAVSReply' for type 'ns2:ECAVSReply' */
 #ifndef SOAP_TYPE_PointerTons2__ECAVSReply
-#define SOAP_TYPE_PointerTons2__ECAVSReply (934)
+#define SOAP_TYPE_PointerTons2__ECAVSReply (928)
 #endif
 
 /* ns2__CCCheckStatusReply * has binding name 'PointerTons2__CCCheckStatusReply' for type 'ns2:CCCheckStatusReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCCheckStatusReply
-#define SOAP_TYPE_PointerTons2__CCCheckStatusReply (933)
+#define SOAP_TYPE_PointerTons2__CCCheckStatusReply (927)
 #endif
 
 /* ns2__GiftCardRefundReply * has binding name 'PointerTons2__GiftCardRefundReply' for type 'ns2:GiftCardRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardRefundReply
-#define SOAP_TYPE_PointerTons2__GiftCardRefundReply (932)
+#define SOAP_TYPE_PointerTons2__GiftCardRefundReply (926)
 #endif
 
 /* ns2__GiftCardReloadReply * has binding name 'PointerTons2__GiftCardReloadReply' for type 'ns2:GiftCardReloadReply' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardReloadReply
-#define SOAP_TYPE_PointerTons2__GiftCardReloadReply (931)
+#define SOAP_TYPE_PointerTons2__GiftCardReloadReply (925)
 #endif
 
 /* ns2__GiftCardReversalReply * has binding name 'PointerTons2__GiftCardReversalReply' for type 'ns2:GiftCardReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardReversalReply
-#define SOAP_TYPE_PointerTons2__GiftCardReversalReply (930)
+#define SOAP_TYPE_PointerTons2__GiftCardReversalReply (924)
 #endif
 
 /* ns2__GiftCardVoidReply * has binding name 'PointerTons2__GiftCardVoidReply' for type 'ns2:GiftCardVoidReply' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardVoidReply
-#define SOAP_TYPE_PointerTons2__GiftCardVoidReply (929)
+#define SOAP_TYPE_PointerTons2__GiftCardVoidReply (923)
 #endif
 
 /* ns2__GiftCardRedemptionReply * has binding name 'PointerTons2__GiftCardRedemptionReply' for type 'ns2:GiftCardRedemptionReply' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardRedemptionReply
-#define SOAP_TYPE_PointerTons2__GiftCardRedemptionReply (928)
+#define SOAP_TYPE_PointerTons2__GiftCardRedemptionReply (922)
 #endif
 
 /* ns2__GiftCardBalanceInquiryReply * has binding name 'PointerTons2__GiftCardBalanceInquiryReply' for type 'ns2:GiftCardBalanceInquiryReply' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardBalanceInquiryReply
-#define SOAP_TYPE_PointerTons2__GiftCardBalanceInquiryReply (927)
+#define SOAP_TYPE_PointerTons2__GiftCardBalanceInquiryReply (921)
 #endif
 
 /* ns2__GiftCardActivationReply * has binding name 'PointerTons2__GiftCardActivationReply' for type 'ns2:GiftCardActivationReply' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardActivationReply
-#define SOAP_TYPE_PointerTons2__GiftCardActivationReply (926)
+#define SOAP_TYPE_PointerTons2__GiftCardActivationReply (920)
 #endif
 
 /* ns2__GetMasterpassDataReply * has binding name 'PointerTons2__GetMasterpassDataReply' for type 'ns2:GetMasterpassDataReply' */
 #ifndef SOAP_TYPE_PointerTons2__GetMasterpassDataReply
-#define SOAP_TYPE_PointerTons2__GetMasterpassDataReply (925)
+#define SOAP_TYPE_PointerTons2__GetMasterpassDataReply (919)
 #endif
 
 /* ns2__APRevokeMandateReply * has binding name 'PointerTons2__APRevokeMandateReply' for type 'ns2:APRevokeMandateReply' */
 #ifndef SOAP_TYPE_PointerTons2__APRevokeMandateReply
-#define SOAP_TYPE_PointerTons2__APRevokeMandateReply (924)
+#define SOAP_TYPE_PointerTons2__APRevokeMandateReply (918)
 #endif
 
 /* ns2__APImportMandateReply * has binding name 'PointerTons2__APImportMandateReply' for type 'ns2:APImportMandateReply' */
 #ifndef SOAP_TYPE_PointerTons2__APImportMandateReply
-#define SOAP_TYPE_PointerTons2__APImportMandateReply (923)
+#define SOAP_TYPE_PointerTons2__APImportMandateReply (917)
 #endif
 
 /* ns2__APUpdateMandateReply * has binding name 'PointerTons2__APUpdateMandateReply' for type 'ns2:APUpdateMandateReply' */
 #ifndef SOAP_TYPE_PointerTons2__APUpdateMandateReply
-#define SOAP_TYPE_PointerTons2__APUpdateMandateReply (922)
+#define SOAP_TYPE_PointerTons2__APUpdateMandateReply (916)
 #endif
 
 /* ns2__APMandateStatusReply * has binding name 'PointerTons2__APMandateStatusReply' for type 'ns2:APMandateStatusReply' */
 #ifndef SOAP_TYPE_PointerTons2__APMandateStatusReply
-#define SOAP_TYPE_PointerTons2__APMandateStatusReply (921)
+#define SOAP_TYPE_PointerTons2__APMandateStatusReply (915)
 #endif
 
 /* ns2__APCreateMandateReply * has binding name 'PointerTons2__APCreateMandateReply' for type 'ns2:APCreateMandateReply' */
 #ifndef SOAP_TYPE_PointerTons2__APCreateMandateReply
-#define SOAP_TYPE_PointerTons2__APCreateMandateReply (920)
+#define SOAP_TYPE_PointerTons2__APCreateMandateReply (914)
 #endif
 
 /* ns2__Routing * has binding name 'PointerTons2__Routing' for type 'ns2:Routing' */
 #ifndef SOAP_TYPE_PointerTons2__Routing
-#define SOAP_TYPE_PointerTons2__Routing (919)
+#define SOAP_TYPE_PointerTons2__Routing (913)
 #endif
 
 /* ns2__APBillingAgreementReply * has binding name 'PointerTons2__APBillingAgreementReply' for type 'ns2:APBillingAgreementReply' */
 #ifndef SOAP_TYPE_PointerTons2__APBillingAgreementReply
-#define SOAP_TYPE_PointerTons2__APBillingAgreementReply (917)
+#define SOAP_TYPE_PointerTons2__APBillingAgreementReply (911)
 #endif
 
 /* ns2__APCancelReply * has binding name 'PointerTons2__APCancelReply' for type 'ns2:APCancelReply' */
 #ifndef SOAP_TYPE_PointerTons2__APCancelReply
-#define SOAP_TYPE_PointerTons2__APCancelReply (916)
+#define SOAP_TYPE_PointerTons2__APCancelReply (910)
 #endif
 
 /* ns2__APOrderReply * has binding name 'PointerTons2__APOrderReply' for type 'ns2:APOrderReply' */
 #ifndef SOAP_TYPE_PointerTons2__APOrderReply
-#define SOAP_TYPE_PointerTons2__APOrderReply (915)
+#define SOAP_TYPE_PointerTons2__APOrderReply (909)
 #endif
 
 /* ns2__Token * has binding name 'PointerTons2__Token' for type 'ns2:Token' */
 #ifndef SOAP_TYPE_PointerTons2__Token
-#define SOAP_TYPE_PointerTons2__Token (913)
+#define SOAP_TYPE_PointerTons2__Token (907)
 #endif
 
 /* ns2__BinLookupReply * has binding name 'PointerTons2__BinLookupReply' for type 'ns2:BinLookupReply' */
 #ifndef SOAP_TYPE_PointerTons2__BinLookupReply
-#define SOAP_TYPE_PointerTons2__BinLookupReply (912)
+#define SOAP_TYPE_PointerTons2__BinLookupReply (906)
 #endif
 
 /* ns2__GetVisaCheckoutDataReply * has binding name 'PointerTons2__GetVisaCheckoutDataReply' for type 'ns2:GetVisaCheckoutDataReply' */
 #ifndef SOAP_TYPE_PointerTons2__GetVisaCheckoutDataReply
-#define SOAP_TYPE_PointerTons2__GetVisaCheckoutDataReply (911)
+#define SOAP_TYPE_PointerTons2__GetVisaCheckoutDataReply (905)
 #endif
 
 /* ns2__DecryptVisaCheckoutDataReply * has binding name 'PointerTons2__DecryptVisaCheckoutDataReply' for type 'ns2:DecryptVisaCheckoutDataReply' */
 #ifndef SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataReply
-#define SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataReply (910)
+#define SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataReply (904)
 #endif
 
 /* ns2__VCReply * has binding name 'PointerTons2__VCReply' for type 'ns2:VCReply' */
 #ifndef SOAP_TYPE_PointerTons2__VCReply
-#define SOAP_TYPE_PointerTons2__VCReply (909)
+#define SOAP_TYPE_PointerTons2__VCReply (903)
 #endif
 
 /* ns2__HostedDataRetrieveReply * has binding name 'PointerTons2__HostedDataRetrieveReply' for type 'ns2:HostedDataRetrieveReply' */
 #ifndef SOAP_TYPE_PointerTons2__HostedDataRetrieveReply
-#define SOAP_TYPE_PointerTons2__HostedDataRetrieveReply (908)
+#define SOAP_TYPE_PointerTons2__HostedDataRetrieveReply (902)
 #endif
 
 /* ns2__HostedDataCreateReply * has binding name 'PointerTons2__HostedDataCreateReply' for type 'ns2:HostedDataCreateReply' */
 #ifndef SOAP_TYPE_PointerTons2__HostedDataCreateReply
-#define SOAP_TYPE_PointerTons2__HostedDataCreateReply (907)
+#define SOAP_TYPE_PointerTons2__HostedDataCreateReply (901)
 #endif
 
 /* ns2__OriginalTransaction * has binding name 'PointerTons2__OriginalTransaction' for type 'ns2:OriginalTransaction' */
 #ifndef SOAP_TYPE_PointerTons2__OriginalTransaction
-#define SOAP_TYPE_PointerTons2__OriginalTransaction (906)
+#define SOAP_TYPE_PointerTons2__OriginalTransaction (900)
 #endif
 
 /* ns2__EmvReply * has binding name 'PointerTons2__EmvReply' for type 'ns2:EmvReply' */
 #ifndef SOAP_TYPE_PointerTons2__EmvReply
-#define SOAP_TYPE_PointerTons2__EmvReply (905)
+#define SOAP_TYPE_PointerTons2__EmvReply (899)
 #endif
 
 /* ns2__PayPalTransactionSearchReply * has binding name 'PointerTons2__PayPalTransactionSearchReply' for type 'ns2:PayPalTransactionSearchReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalTransactionSearchReply
-#define SOAP_TYPE_PointerTons2__PayPalTransactionSearchReply (904)
+#define SOAP_TYPE_PointerTons2__PayPalTransactionSearchReply (898)
 #endif
 
 /* ns2__PayPalGetTxnDetailsReply * has binding name 'PointerTons2__PayPalGetTxnDetailsReply' for type 'ns2:PayPalGetTxnDetailsReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsReply
-#define SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsReply (903)
+#define SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsReply (897)
 #endif
 
 /* ns2__Promotion * has binding name 'PointerTons2__Promotion' for type 'ns2:Promotion' */
 #ifndef SOAP_TYPE_PointerTons2__Promotion
-#define SOAP_TYPE_PointerTons2__Promotion (901)
+#define SOAP_TYPE_PointerTons2__Promotion (895)
 #endif
 
 /* ns2__APConfirmPurchaseReply * has binding name 'PointerTons2__APConfirmPurchaseReply' for type 'ns2:APConfirmPurchaseReply' */
 #ifndef SOAP_TYPE_PointerTons2__APConfirmPurchaseReply
-#define SOAP_TYPE_PointerTons2__APConfirmPurchaseReply (900)
+#define SOAP_TYPE_PointerTons2__APConfirmPurchaseReply (894)
 #endif
 
 /* ns2__APTransactionDetailsReply * has binding name 'PointerTons2__APTransactionDetailsReply' for type 'ns2:APTransactionDetailsReply' */
 #ifndef SOAP_TYPE_PointerTons2__APTransactionDetailsReply
-#define SOAP_TYPE_PointerTons2__APTransactionDetailsReply (899)
+#define SOAP_TYPE_PointerTons2__APTransactionDetailsReply (893)
 #endif
 
 /* ns2__APCheckOutDetailsReply * has binding name 'PointerTons2__APCheckOutDetailsReply' for type 'ns2:APCheckOutDetailsReply' */
 #ifndef SOAP_TYPE_PointerTons2__APCheckOutDetailsReply
-#define SOAP_TYPE_PointerTons2__APCheckOutDetailsReply (898)
+#define SOAP_TYPE_PointerTons2__APCheckOutDetailsReply (892)
 #endif
 
 /* ns2__APSaleReply * has binding name 'PointerTons2__APSaleReply' for type 'ns2:APSaleReply' */
 #ifndef SOAP_TYPE_PointerTons2__APSaleReply
-#define SOAP_TYPE_PointerTons2__APSaleReply (897)
+#define SOAP_TYPE_PointerTons2__APSaleReply (891)
 #endif
 
 /* ns2__APRefundReply * has binding name 'PointerTons2__APRefundReply' for type 'ns2:APRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__APRefundReply
-#define SOAP_TYPE_PointerTons2__APRefundReply (896)
+#define SOAP_TYPE_PointerTons2__APRefundReply (890)
 #endif
 
 /* ns2__APOptionsReply * has binding name 'PointerTons2__APOptionsReply' for type 'ns2:APOptionsReply' */
 #ifndef SOAP_TYPE_PointerTons2__APOptionsReply
-#define SOAP_TYPE_PointerTons2__APOptionsReply (895)
+#define SOAP_TYPE_PointerTons2__APOptionsReply (889)
 #endif
 
 /* ns2__APCaptureReply * has binding name 'PointerTons2__APCaptureReply' for type 'ns2:APCaptureReply' */
 #ifndef SOAP_TYPE_PointerTons2__APCaptureReply
-#define SOAP_TYPE_PointerTons2__APCaptureReply (894)
+#define SOAP_TYPE_PointerTons2__APCaptureReply (888)
 #endif
 
 /* ns2__APAuthReversalReply * has binding name 'PointerTons2__APAuthReversalReply' for type 'ns2:APAuthReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__APAuthReversalReply
-#define SOAP_TYPE_PointerTons2__APAuthReversalReply (893)
+#define SOAP_TYPE_PointerTons2__APAuthReversalReply (887)
 #endif
 
 /* ns2__APSessionsReply * has binding name 'PointerTons2__APSessionsReply' for type 'ns2:APSessionsReply' */
 #ifndef SOAP_TYPE_PointerTons2__APSessionsReply
-#define SOAP_TYPE_PointerTons2__APSessionsReply (892)
+#define SOAP_TYPE_PointerTons2__APSessionsReply (886)
 #endif
 
 /* ns2__APAuthReply * has binding name 'PointerTons2__APAuthReply' for type 'ns2:APAuthReply' */
 #ifndef SOAP_TYPE_PointerTons2__APAuthReply
-#define SOAP_TYPE_PointerTons2__APAuthReply (891)
+#define SOAP_TYPE_PointerTons2__APAuthReply (885)
 #endif
 
 /* ns2__APReply * has binding name 'PointerTons2__APReply' for type 'ns2:APReply' */
 #ifndef SOAP_TYPE_PointerTons2__APReply
-#define SOAP_TYPE_PointerTons2__APReply (890)
+#define SOAP_TYPE_PointerTons2__APReply (884)
 #endif
 
 /* ns2__APCheckStatusReply * has binding name 'PointerTons2__APCheckStatusReply' for type 'ns2:APCheckStatusReply' */
 #ifndef SOAP_TYPE_PointerTons2__APCheckStatusReply
-#define SOAP_TYPE_PointerTons2__APCheckStatusReply (889)
+#define SOAP_TYPE_PointerTons2__APCheckStatusReply (883)
 #endif
 
 /* ns2__APInitiateReply * has binding name 'PointerTons2__APInitiateReply' for type 'ns2:APInitiateReply' */
 #ifndef SOAP_TYPE_PointerTons2__APInitiateReply
-#define SOAP_TYPE_PointerTons2__APInitiateReply (888)
+#define SOAP_TYPE_PointerTons2__APInitiateReply (882)
 #endif
 
 /* ns2__PinDebitReversalReply * has binding name 'PointerTons2__PinDebitReversalReply' for type 'ns2:PinDebitReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitReversalReply
-#define SOAP_TYPE_PointerTons2__PinDebitReversalReply (887)
+#define SOAP_TYPE_PointerTons2__PinDebitReversalReply (881)
 #endif
 
 /* ns2__PinDebitCreditReply * has binding name 'PointerTons2__PinDebitCreditReply' for type 'ns2:PinDebitCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitCreditReply
-#define SOAP_TYPE_PointerTons2__PinDebitCreditReply (886)
+#define SOAP_TYPE_PointerTons2__PinDebitCreditReply (880)
 #endif
 
 /* ns2__PinDebitPurchaseReply * has binding name 'PointerTons2__PinDebitPurchaseReply' for type 'ns2:PinDebitPurchaseReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitPurchaseReply
-#define SOAP_TYPE_PointerTons2__PinDebitPurchaseReply (885)
+#define SOAP_TYPE_PointerTons2__PinDebitPurchaseReply (879)
 #endif
 
 /* ns2__BoletoPaymentReply * has binding name 'PointerTons2__BoletoPaymentReply' for type 'ns2:BoletoPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__BoletoPaymentReply
-#define SOAP_TYPE_PointerTons2__BoletoPaymentReply (884)
+#define SOAP_TYPE_PointerTons2__BoletoPaymentReply (878)
 #endif
 
 /* ns2__ChinaRefundReply * has binding name 'PointerTons2__ChinaRefundReply' for type 'ns2:ChinaRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__ChinaRefundReply
-#define SOAP_TYPE_PointerTons2__ChinaRefundReply (883)
+#define SOAP_TYPE_PointerTons2__ChinaRefundReply (877)
 #endif
 
 /* ns2__ChinaPaymentReply * has binding name 'PointerTons2__ChinaPaymentReply' for type 'ns2:ChinaPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__ChinaPaymentReply
-#define SOAP_TYPE_PointerTons2__ChinaPaymentReply (882)
+#define SOAP_TYPE_PointerTons2__ChinaPaymentReply (876)
 #endif
 
 /* ns2__PayPalDoRefTransactionReply * has binding name 'PointerTons2__PayPalDoRefTransactionReply' for type 'ns2:PayPalDoRefTransactionReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalDoRefTransactionReply
-#define SOAP_TYPE_PointerTons2__PayPalDoRefTransactionReply (881)
+#define SOAP_TYPE_PointerTons2__PayPalDoRefTransactionReply (875)
 #endif
 
 /* ns2__PayPalCreateAgreementReply * has binding name 'PointerTons2__PayPalCreateAgreementReply' for type 'ns2:PayPalCreateAgreementReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalCreateAgreementReply
-#define SOAP_TYPE_PointerTons2__PayPalCreateAgreementReply (880)
+#define SOAP_TYPE_PointerTons2__PayPalCreateAgreementReply (874)
 #endif
 
 /* ns2__PayPalUpdateAgreementReply * has binding name 'PointerTons2__PayPalUpdateAgreementReply' for type 'ns2:PayPalUpdateAgreementReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalUpdateAgreementReply
-#define SOAP_TYPE_PointerTons2__PayPalUpdateAgreementReply (879)
+#define SOAP_TYPE_PointerTons2__PayPalUpdateAgreementReply (873)
 #endif
 
 /* ns2__PayPalEcOrderSetupReply * has binding name 'PointerTons2__PayPalEcOrderSetupReply' for type 'ns2:PayPalEcOrderSetupReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcOrderSetupReply
-#define SOAP_TYPE_PointerTons2__PayPalEcOrderSetupReply (878)
+#define SOAP_TYPE_PointerTons2__PayPalEcOrderSetupReply (872)
 #endif
 
 /* ns2__PayPalAuthorizationReply * has binding name 'PointerTons2__PayPalAuthorizationReply' for type 'ns2:PayPalAuthorizationReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalAuthorizationReply
-#define SOAP_TYPE_PointerTons2__PayPalAuthorizationReply (877)
+#define SOAP_TYPE_PointerTons2__PayPalAuthorizationReply (871)
 #endif
 
 /* ns2__PayPalEcSetReply * has binding name 'PointerTons2__PayPalEcSetReply' for type 'ns2:PayPalEcSetReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcSetReply
-#define SOAP_TYPE_PointerTons2__PayPalEcSetReply (876)
+#define SOAP_TYPE_PointerTons2__PayPalEcSetReply (870)
 #endif
 
 /* ns2__PayPalEcGetDetailsReply * has binding name 'PointerTons2__PayPalEcGetDetailsReply' for type 'ns2:PayPalEcGetDetailsReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcGetDetailsReply
-#define SOAP_TYPE_PointerTons2__PayPalEcGetDetailsReply (875)
+#define SOAP_TYPE_PointerTons2__PayPalEcGetDetailsReply (869)
 #endif
 
 /* ns2__PayPalEcDoPaymentReply * has binding name 'PointerTons2__PayPalEcDoPaymentReply' for type 'ns2:PayPalEcDoPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcDoPaymentReply
-#define SOAP_TYPE_PointerTons2__PayPalEcDoPaymentReply (874)
+#define SOAP_TYPE_PointerTons2__PayPalEcDoPaymentReply (868)
 #endif
 
 /* ns2__PayPalDoCaptureReply * has binding name 'PointerTons2__PayPalDoCaptureReply' for type 'ns2:PayPalDoCaptureReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalDoCaptureReply
-#define SOAP_TYPE_PointerTons2__PayPalDoCaptureReply (873)
+#define SOAP_TYPE_PointerTons2__PayPalDoCaptureReply (867)
 #endif
 
 /* ns2__PayPalAuthReversalReply * has binding name 'PointerTons2__PayPalAuthReversalReply' for type 'ns2:PayPalAuthReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalAuthReversalReply
-#define SOAP_TYPE_PointerTons2__PayPalAuthReversalReply (872)
+#define SOAP_TYPE_PointerTons2__PayPalAuthReversalReply (866)
 #endif
 
 /* ns2__PayPalRefundReply * has binding name 'PointerTons2__PayPalRefundReply' for type 'ns2:PayPalRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalRefundReply
-#define SOAP_TYPE_PointerTons2__PayPalRefundReply (871)
+#define SOAP_TYPE_PointerTons2__PayPalRefundReply (865)
 #endif
 
 /* ns2__DecisionReply * has binding name 'PointerTons2__DecisionReply' for type 'ns2:DecisionReply' */
 #ifndef SOAP_TYPE_PointerTons2__DecisionReply
-#define SOAP_TYPE_PointerTons2__DecisionReply (870)
+#define SOAP_TYPE_PointerTons2__DecisionReply (864)
 #endif
 
 /* ns2__DecisionEarlyReply * has binding name 'PointerTons2__DecisionEarlyReply' for type 'ns2:DecisionEarlyReply' */
 #ifndef SOAP_TYPE_PointerTons2__DecisionEarlyReply
-#define SOAP_TYPE_PointerTons2__DecisionEarlyReply (869)
+#define SOAP_TYPE_PointerTons2__DecisionEarlyReply (863)
 #endif
 
 /* ns2__CaseManagementActionReply * has binding name 'PointerTons2__CaseManagementActionReply' for type 'ns2:CaseManagementActionReply' */
 #ifndef SOAP_TYPE_PointerTons2__CaseManagementActionReply
-#define SOAP_TYPE_PointerTons2__CaseManagementActionReply (868)
+#define SOAP_TYPE_PointerTons2__CaseManagementActionReply (862)
 #endif
 
 /* ns2__FraudUpdateReply * has binding name 'PointerTons2__FraudUpdateReply' for type 'ns2:FraudUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__FraudUpdateReply
-#define SOAP_TYPE_PointerTons2__FraudUpdateReply (867)
+#define SOAP_TYPE_PointerTons2__FraudUpdateReply (861)
 #endif
 
 /* ns2__RiskUpdateReply * has binding name 'PointerTons2__RiskUpdateReply' for type 'ns2:RiskUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__RiskUpdateReply
-#define SOAP_TYPE_PointerTons2__RiskUpdateReply (866)
+#define SOAP_TYPE_PointerTons2__RiskUpdateReply (860)
 #endif
 
 /* ns2__PayPalPreapprovedUpdateReply * has binding name 'PointerTons2__PayPalPreapprovedUpdateReply' for type 'ns2:PayPalPreapprovedUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateReply
-#define SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateReply (865)
+#define SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateReply (859)
 #endif
 
 /* ns2__PayPalPreapprovedPaymentReply * has binding name 'PointerTons2__PayPalPreapprovedPaymentReply' for type 'ns2:PayPalPreapprovedPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentReply
-#define SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentReply (864)
+#define SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentReply (858)
 #endif
 
 /* ns2__PayPalButtonCreateReply * has binding name 'PointerTons2__PayPalButtonCreateReply' for type 'ns2:PayPalButtonCreateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalButtonCreateReply
-#define SOAP_TYPE_PointerTons2__PayPalButtonCreateReply (863)
+#define SOAP_TYPE_PointerTons2__PayPalButtonCreateReply (857)
 #endif
 
 /* ns2__PinlessDebitReversalReply * has binding name 'PointerTons2__PinlessDebitReversalReply' for type 'ns2:PinlessDebitReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitReversalReply
-#define SOAP_TYPE_PointerTons2__PinlessDebitReversalReply (862)
+#define SOAP_TYPE_PointerTons2__PinlessDebitReversalReply (856)
 #endif
 
 /* ns2__PinlessDebitValidateReply * has binding name 'PointerTons2__PinlessDebitValidateReply' for type 'ns2:PinlessDebitValidateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitValidateReply
-#define SOAP_TYPE_PointerTons2__PinlessDebitValidateReply (861)
+#define SOAP_TYPE_PointerTons2__PinlessDebitValidateReply (855)
 #endif
 
 /* ns2__PinlessDebitReply * has binding name 'PointerTons2__PinlessDebitReply' for type 'ns2:PinlessDebitReply' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitReply
-#define SOAP_TYPE_PointerTons2__PinlessDebitReply (860)
+#define SOAP_TYPE_PointerTons2__PinlessDebitReply (854)
 #endif
 
 /* ns2__VoidReply * has binding name 'PointerTons2__VoidReply' for type 'ns2:VoidReply' */
 #ifndef SOAP_TYPE_PointerTons2__VoidReply
-#define SOAP_TYPE_PointerTons2__VoidReply (859)
+#define SOAP_TYPE_PointerTons2__VoidReply (853)
 #endif
 
 /* ns2__PayPalCreditReply * has binding name 'PointerTons2__PayPalCreditReply' for type 'ns2:PayPalCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalCreditReply
-#define SOAP_TYPE_PointerTons2__PayPalCreditReply (858)
+#define SOAP_TYPE_PointerTons2__PayPalCreditReply (852)
 #endif
 
 /* ns2__PayPalPaymentReply * has binding name 'PointerTons2__PayPalPaymentReply' for type 'ns2:PayPalPaymentReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPaymentReply
-#define SOAP_TYPE_PointerTons2__PayPalPaymentReply (857)
+#define SOAP_TYPE_PointerTons2__PayPalPaymentReply (851)
 #endif
 
 /* ns2__PaySubscriptionDeleteReply * has binding name 'PointerTons2__PaySubscriptionDeleteReply' for type 'ns2:PaySubscriptionDeleteReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionDeleteReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionDeleteReply (856)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionDeleteReply (850)
 #endif
 
 /* ns2__PaySubscriptionRetrieveReply * has binding name 'PointerTons2__PaySubscriptionRetrieveReply' for type 'ns2:PaySubscriptionRetrieveReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveReply (855)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveReply (849)
 #endif
 
 /* ns2__PaySubscriptionEventUpdateReply * has binding name 'PointerTons2__PaySubscriptionEventUpdateReply' for type 'ns2:PaySubscriptionEventUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateReply (854)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateReply (848)
 #endif
 
 /* ns2__PaySubscriptionUpdateReply * has binding name 'PointerTons2__PaySubscriptionUpdateReply' for type 'ns2:PaySubscriptionUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionUpdateReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionUpdateReply (853)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionUpdateReply (847)
 #endif
 
 /* ns2__PaySubscriptionCreateReply * has binding name 'PointerTons2__PaySubscriptionCreateReply' for type 'ns2:PaySubscriptionCreateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionCreateReply
-#define SOAP_TYPE_PointerTons2__PaySubscriptionCreateReply (852)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionCreateReply (846)
 #endif
 
 /* ns2__DirectDebitRefundReply * has binding name 'PointerTons2__DirectDebitRefundReply' for type 'ns2:DirectDebitRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitRefundReply
-#define SOAP_TYPE_PointerTons2__DirectDebitRefundReply (851)
+#define SOAP_TYPE_PointerTons2__DirectDebitRefundReply (845)
 #endif
 
 /* ns2__DirectDebitValidateReply * has binding name 'PointerTons2__DirectDebitValidateReply' for type 'ns2:DirectDebitValidateReply' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitValidateReply
-#define SOAP_TYPE_PointerTons2__DirectDebitValidateReply (850)
+#define SOAP_TYPE_PointerTons2__DirectDebitValidateReply (844)
 #endif
 
 /* ns2__DirectDebitReply * has binding name 'PointerTons2__DirectDebitReply' for type 'ns2:DirectDebitReply' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitReply
-#define SOAP_TYPE_PointerTons2__DirectDebitReply (849)
+#define SOAP_TYPE_PointerTons2__DirectDebitReply (843)
 #endif
 
 /* ns2__DirectDebitMandateReply * has binding name 'PointerTons2__DirectDebitMandateReply' for type 'ns2:DirectDebitMandateReply' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitMandateReply
-#define SOAP_TYPE_PointerTons2__DirectDebitMandateReply (848)
+#define SOAP_TYPE_PointerTons2__DirectDebitMandateReply (842)
 #endif
 
 /* ns2__BankTransferRealTimeReply * has binding name 'PointerTons2__BankTransferRealTimeReply' for type 'ns2:BankTransferRealTimeReply' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferRealTimeReply
-#define SOAP_TYPE_PointerTons2__BankTransferRealTimeReply (847)
+#define SOAP_TYPE_PointerTons2__BankTransferRealTimeReply (841)
 #endif
 
 /* ns2__BankTransferRefundReply * has binding name 'PointerTons2__BankTransferRefundReply' for type 'ns2:BankTransferRefundReply' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferRefundReply
-#define SOAP_TYPE_PointerTons2__BankTransferRefundReply (846)
+#define SOAP_TYPE_PointerTons2__BankTransferRefundReply (840)
 #endif
 
 /* ns2__BankTransferReply * has binding name 'PointerTons2__BankTransferReply' for type 'ns2:BankTransferReply' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferReply
-#define SOAP_TYPE_PointerTons2__BankTransferReply (845)
+#define SOAP_TYPE_PointerTons2__BankTransferReply (839)
 #endif
 
 /* ns2__FXRatesReply * has binding name 'PointerTons2__FXRatesReply' for type 'ns2:FXRatesReply' */
 #ifndef SOAP_TYPE_PointerTons2__FXRatesReply
-#define SOAP_TYPE_PointerTons2__FXRatesReply (844)
+#define SOAP_TYPE_PointerTons2__FXRatesReply (838)
 #endif
 
 /* ns2__ExportReply * has binding name 'PointerTons2__ExportReply' for type 'ns2:ExportReply' */
 #ifndef SOAP_TYPE_PointerTons2__ExportReply
-#define SOAP_TYPE_PointerTons2__ExportReply (843)
+#define SOAP_TYPE_PointerTons2__ExportReply (837)
 #endif
 
 /* ns2__DAVReply * has binding name 'PointerTons2__DAVReply' for type 'ns2:DAVReply' */
 #ifndef SOAP_TYPE_PointerTons2__DAVReply
-#define SOAP_TYPE_PointerTons2__DAVReply (842)
+#define SOAP_TYPE_PointerTons2__DAVReply (836)
 #endif
 
 /* ns2__AFSReply * has binding name 'PointerTons2__AFSReply' for type 'ns2:AFSReply' */
 #ifndef SOAP_TYPE_PointerTons2__AFSReply
-#define SOAP_TYPE_PointerTons2__AFSReply (841)
+#define SOAP_TYPE_PointerTons2__AFSReply (835)
 #endif
 
 /* ns2__DMEReply * has binding name 'PointerTons2__DMEReply' for type 'ns2:DMEReply' */
 #ifndef SOAP_TYPE_PointerTons2__DMEReply
-#define SOAP_TYPE_PointerTons2__DMEReply (840)
+#define SOAP_TYPE_PointerTons2__DMEReply (834)
 #endif
 
 /* ns2__EncryptPaymentDataReply * has binding name 'PointerTons2__EncryptPaymentDataReply' for type 'ns2:EncryptPaymentDataReply' */
 #ifndef SOAP_TYPE_PointerTons2__EncryptPaymentDataReply
-#define SOAP_TYPE_PointerTons2__EncryptPaymentDataReply (839)
+#define SOAP_TYPE_PointerTons2__EncryptPaymentDataReply (833)
 #endif
 
 /* ns2__TaxReply * has binding name 'PointerTons2__TaxReply' for type 'ns2:TaxReply' */
 #ifndef SOAP_TYPE_PointerTons2__TaxReply
-#define SOAP_TYPE_PointerTons2__TaxReply (838)
+#define SOAP_TYPE_PointerTons2__TaxReply (832)
 #endif
 
 /* ns2__PayerAuthValidateReply * has binding name 'PointerTons2__PayerAuthValidateReply' for type 'ns2:PayerAuthValidateReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthValidateReply
-#define SOAP_TYPE_PointerTons2__PayerAuthValidateReply (837)
+#define SOAP_TYPE_PointerTons2__PayerAuthValidateReply (831)
 #endif
 
 /* ns2__PayerAuthEnrollReply * has binding name 'PointerTons2__PayerAuthEnrollReply' for type 'ns2:PayerAuthEnrollReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthEnrollReply
-#define SOAP_TYPE_PointerTons2__PayerAuthEnrollReply (836)
+#define SOAP_TYPE_PointerTons2__PayerAuthEnrollReply (830)
 #endif
 
 /* ns2__PayerAuthSetupReply * has binding name 'PointerTons2__PayerAuthSetupReply' for type 'ns2:PayerAuthSetupReply' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthSetupReply
-#define SOAP_TYPE_PointerTons2__PayerAuthSetupReply (835)
+#define SOAP_TYPE_PointerTons2__PayerAuthSetupReply (829)
 #endif
 
 /* ns2__ECAuthenticateReply * has binding name 'PointerTons2__ECAuthenticateReply' for type 'ns2:ECAuthenticateReply' */
 #ifndef SOAP_TYPE_PointerTons2__ECAuthenticateReply
-#define SOAP_TYPE_PointerTons2__ECAuthenticateReply (834)
+#define SOAP_TYPE_PointerTons2__ECAuthenticateReply (828)
 #endif
 
 /* ns2__ECCreditReply * has binding name 'PointerTons2__ECCreditReply' for type 'ns2:ECCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__ECCreditReply
-#define SOAP_TYPE_PointerTons2__ECCreditReply (833)
+#define SOAP_TYPE_PointerTons2__ECCreditReply (827)
 #endif
 
 /* ns2__ECDebitReply * has binding name 'PointerTons2__ECDebitReply' for type 'ns2:ECDebitReply' */
 #ifndef SOAP_TYPE_PointerTons2__ECDebitReply
-#define SOAP_TYPE_PointerTons2__ECDebitReply (832)
+#define SOAP_TYPE_PointerTons2__ECDebitReply (826)
 #endif
 
 /* ns2__CCDCCUpdateReply * has binding name 'PointerTons2__CCDCCUpdateReply' for type 'ns2:CCDCCUpdateReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCDCCUpdateReply
-#define SOAP_TYPE_PointerTons2__CCDCCUpdateReply (831)
+#define SOAP_TYPE_PointerTons2__CCDCCUpdateReply (825)
 #endif
 
 /* ns2__CCDCCReply * has binding name 'PointerTons2__CCDCCReply' for type 'ns2:CCDCCReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCDCCReply
-#define SOAP_TYPE_PointerTons2__CCDCCReply (830)
+#define SOAP_TYPE_PointerTons2__CCDCCReply (824)
 #endif
 
 /* ns2__CCAutoAuthReversalReply * has binding name 'PointerTons2__CCAutoAuthReversalReply' for type 'ns2:CCAutoAuthReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCAutoAuthReversalReply
-#define SOAP_TYPE_PointerTons2__CCAutoAuthReversalReply (829)
+#define SOAP_TYPE_PointerTons2__CCAutoAuthReversalReply (823)
 #endif
 
 /* ns2__CCAuthReversalReply * has binding name 'PointerTons2__CCAuthReversalReply' for type 'ns2:CCAuthReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCAuthReversalReply
-#define SOAP_TYPE_PointerTons2__CCAuthReversalReply (828)
+#define SOAP_TYPE_PointerTons2__CCAuthReversalReply (822)
 #endif
 
 /* ns2__CCCreditReply * has binding name 'PointerTons2__CCCreditReply' for type 'ns2:CCCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCCreditReply
-#define SOAP_TYPE_PointerTons2__CCCreditReply (827)
+#define SOAP_TYPE_PointerTons2__CCCreditReply (821)
 #endif
 
 /* ns2__CCCaptureReply * has binding name 'PointerTons2__CCCaptureReply' for type 'ns2:CCCaptureReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCCaptureReply
-#define SOAP_TYPE_PointerTons2__CCCaptureReply (826)
+#define SOAP_TYPE_PointerTons2__CCCaptureReply (820)
 #endif
 
 /* ns2__ServiceFeeCalculateReply * has binding name 'PointerTons2__ServiceFeeCalculateReply' for type 'ns2:ServiceFeeCalculateReply' */
 #ifndef SOAP_TYPE_PointerTons2__ServiceFeeCalculateReply
-#define SOAP_TYPE_PointerTons2__ServiceFeeCalculateReply (825)
+#define SOAP_TYPE_PointerTons2__ServiceFeeCalculateReply (819)
 #endif
 
 /* ns2__CCIncrementalAuthReply * has binding name 'PointerTons2__CCIncrementalAuthReply' for type 'ns2:CCIncrementalAuthReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCIncrementalAuthReply
-#define SOAP_TYPE_PointerTons2__CCIncrementalAuthReply (824)
+#define SOAP_TYPE_PointerTons2__CCIncrementalAuthReply (818)
 #endif
 
 /* ns2__CCSaleReversalReply * has binding name 'PointerTons2__CCSaleReversalReply' for type 'ns2:CCSaleReversalReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleReversalReply
-#define SOAP_TYPE_PointerTons2__CCSaleReversalReply (823)
+#define SOAP_TYPE_PointerTons2__CCSaleReversalReply (817)
 #endif
 
 /* ns2__CCSaleCreditReply * has binding name 'PointerTons2__CCSaleCreditReply' for type 'ns2:CCSaleCreditReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleCreditReply
-#define SOAP_TYPE_PointerTons2__CCSaleCreditReply (822)
+#define SOAP_TYPE_PointerTons2__CCSaleCreditReply (816)
 #endif
 
 /* ns2__CCSaleReply * has binding name 'PointerTons2__CCSaleReply' for type 'ns2:CCSaleReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleReply
-#define SOAP_TYPE_PointerTons2__CCSaleReply (821)
+#define SOAP_TYPE_PointerTons2__CCSaleReply (815)
 #endif
 
 /* ns2__VerificationReply * has binding name 'PointerTons2__VerificationReply' for type 'ns2:VerificationReply' */
 #ifndef SOAP_TYPE_PointerTons2__VerificationReply
-#define SOAP_TYPE_PointerTons2__VerificationReply (820)
+#define SOAP_TYPE_PointerTons2__VerificationReply (814)
 #endif
 
 /* ns2__OCTReply * has binding name 'PointerTons2__OCTReply' for type 'ns2:OCTReply' */
 #ifndef SOAP_TYPE_PointerTons2__OCTReply
-#define SOAP_TYPE_PointerTons2__OCTReply (819)
+#define SOAP_TYPE_PointerTons2__OCTReply (813)
 #endif
 
 /* ns2__CCAuthReply * has binding name 'PointerTons2__CCAuthReply' for type 'ns2:CCAuthReply' */
 #ifndef SOAP_TYPE_PointerTons2__CCAuthReply
-#define SOAP_TYPE_PointerTons2__CCAuthReply (818)
+#define SOAP_TYPE_PointerTons2__CCAuthReply (812)
 #endif
 
 /* ns2__SellerProtection * has binding name 'PointerTons2__SellerProtection' for type 'ns2:SellerProtection' */
 #ifndef SOAP_TYPE_PointerTons2__SellerProtection
-#define SOAP_TYPE_PointerTons2__SellerProtection (815)
+#define SOAP_TYPE_PointerTons2__SellerProtection (809)
 #endif
 
 /* ns2__RuleResultItems * has binding name 'PointerTons2__RuleResultItems' for type 'ns2:RuleResultItems' */
 #ifndef SOAP_TYPE_PointerTons2__RuleResultItems
-#define SOAP_TYPE_PointerTons2__RuleResultItems (813)
-#endif
-
-/* std::string * has binding name 'PointerTons2__RestrictedDecimal' for type 'ns2:RestrictedDecimal' */
-#ifndef SOAP_TYPE_PointerTons2__RestrictedDecimal
-#define SOAP_TYPE_PointerTons2__RestrictedDecimal (812)
-#endif
-
-/* std::string * has binding name 'PointerTons2__RestrictedString' for type 'ns2:RestrictedString' */
-#ifndef SOAP_TYPE_PointerTons2__RestrictedString
-#define SOAP_TYPE_PointerTons2__RestrictedString (811)
+#define SOAP_TYPE_PointerTons2__RuleResultItems (807)
 #endif
 
 /* ns2__Travel * has binding name 'PointerTons2__Travel' for type 'ns2:Travel' */
 #ifndef SOAP_TYPE_PointerTons2__Travel
-#define SOAP_TYPE_PointerTons2__Travel (806)
+#define SOAP_TYPE_PointerTons2__Travel (802)
 #endif
 
 /* ns2__ProviderFields * has binding name 'PointerTons2__ProviderFields' for type 'ns2:ProviderFields' */
 #ifndef SOAP_TYPE_PointerTons2__ProviderFields
-#define SOAP_TYPE_PointerTons2__ProviderFields (805)
+#define SOAP_TYPE_PointerTons2__ProviderFields (801)
 #endif
 
 /* ns2__MorphingElement * has binding name 'PointerTons2__MorphingElement' for type 'ns2:MorphingElement' */
 #ifndef SOAP_TYPE_PointerTons2__MorphingElement
-#define SOAP_TYPE_PointerTons2__MorphingElement (804)
+#define SOAP_TYPE_PointerTons2__MorphingElement (800)
 #endif
 
 /* ns2__AdditionalFields * has binding name 'PointerTons2__AdditionalFields' for type 'ns2:AdditionalFields' */
 #ifndef SOAP_TYPE_PointerTons2__AdditionalFields
-#define SOAP_TYPE_PointerTons2__AdditionalFields (803)
+#define SOAP_TYPE_PointerTons2__AdditionalFields (799)
 #endif
 
 /* ns2__ProfileReply * has binding name 'PointerTons2__ProfileReply' for type 'ns2:ProfileReply' */
 #ifndef SOAP_TYPE_PointerTons2__ProfileReply
-#define SOAP_TYPE_PointerTons2__ProfileReply (802)
+#define SOAP_TYPE_PointerTons2__ProfileReply (798)
 #endif
 
 /* ns2__DeviceFingerprint * has binding name 'PointerTons2__DeviceFingerprint' for type 'ns2:DeviceFingerprint' */
 #ifndef SOAP_TYPE_PointerTons2__DeviceFingerprint
-#define SOAP_TYPE_PointerTons2__DeviceFingerprint (799)
+#define SOAP_TYPE_PointerTons2__DeviceFingerprint (795)
 #endif
 
 /* xsd__base64Binary * has binding name 'PointerToxsd__base64Binary' for type 'xsd:base64Binary' */
 #ifndef SOAP_TYPE_PointerToxsd__base64Binary
-#define SOAP_TYPE_PointerToxsd__base64Binary (796)
+#define SOAP_TYPE_PointerToxsd__base64Binary (792)
 #endif
 
 /* ns2__payByPoints * has binding name 'PointerTons2__payByPoints' for type 'ns2:payByPoints' */
 #ifndef SOAP_TYPE_PointerTons2__payByPoints
-#define SOAP_TYPE_PointerTons2__payByPoints (795)
+#define SOAP_TYPE_PointerTons2__payByPoints (791)
 #endif
 
 /* ns2__AutoRental * has binding name 'PointerTons2__AutoRental' for type 'ns2:AutoRental' */
 #ifndef SOAP_TYPE_PointerTons2__AutoRental
-#define SOAP_TYPE_PointerTons2__AutoRental (793)
+#define SOAP_TYPE_PointerTons2__AutoRental (789)
 #endif
 
 /* ns2__AgencyInformation * has binding name 'PointerTons2__AgencyInformation' for type 'ns2:AgencyInformation' */
 #ifndef SOAP_TYPE_PointerTons2__AgencyInformation
-#define SOAP_TYPE_PointerTons2__AgencyInformation (792)
+#define SOAP_TYPE_PointerTons2__AgencyInformation (788)
 #endif
 
 /* ns2__AbortService * has binding name 'PointerTons2__AbortService' for type 'ns2:AbortService' */
 #ifndef SOAP_TYPE_PointerTons2__AbortService
-#define SOAP_TYPE_PointerTons2__AbortService (791)
+#define SOAP_TYPE_PointerTons2__AbortService (787)
 #endif
 
 /* ns2__mPOS * has binding name 'PointerTons2__mPOS' for type 'ns2:mPOS' */
 #ifndef SOAP_TYPE_PointerTons2__mPOS
-#define SOAP_TYPE_PointerTons2__mPOS (790)
+#define SOAP_TYPE_PointerTons2__mPOS (786)
 #endif
 
 /* ns2__CCCheckStatusService * has binding name 'PointerTons2__CCCheckStatusService' for type 'ns2:CCCheckStatusService' */
 #ifndef SOAP_TYPE_PointerTons2__CCCheckStatusService
-#define SOAP_TYPE_PointerTons2__CCCheckStatusService (789)
+#define SOAP_TYPE_PointerTons2__CCCheckStatusService (785)
 #endif
 
 /* ns2__GetMasterpassDataService * has binding name 'PointerTons2__GetMasterpassDataService' for type 'ns2:GetMasterpassDataService' */
 #ifndef SOAP_TYPE_PointerTons2__GetMasterpassDataService
-#define SOAP_TYPE_PointerTons2__GetMasterpassDataService (788)
+#define SOAP_TYPE_PointerTons2__GetMasterpassDataService (784)
 #endif
 
 /* ns2__PostdatedTransaction * has binding name 'PointerTons2__PostdatedTransaction' for type 'ns2:PostdatedTransaction' */
 #ifndef SOAP_TYPE_PointerTons2__PostdatedTransaction
-#define SOAP_TYPE_PointerTons2__PostdatedTransaction (787)
+#define SOAP_TYPE_PointerTons2__PostdatedTransaction (783)
 #endif
 
 /* ns2__APRevokeMandateService * has binding name 'PointerTons2__APRevokeMandateService' for type 'ns2:APRevokeMandateService' */
 #ifndef SOAP_TYPE_PointerTons2__APRevokeMandateService
-#define SOAP_TYPE_PointerTons2__APRevokeMandateService (786)
+#define SOAP_TYPE_PointerTons2__APRevokeMandateService (782)
 #endif
 
 /* ns2__APImportMandateService * has binding name 'PointerTons2__APImportMandateService' for type 'ns2:APImportMandateService' */
 #ifndef SOAP_TYPE_PointerTons2__APImportMandateService
-#define SOAP_TYPE_PointerTons2__APImportMandateService (785)
+#define SOAP_TYPE_PointerTons2__APImportMandateService (781)
 #endif
 
 /* ns2__APUpdateMandateService * has binding name 'PointerTons2__APUpdateMandateService' for type 'ns2:APUpdateMandateService' */
 #ifndef SOAP_TYPE_PointerTons2__APUpdateMandateService
-#define SOAP_TYPE_PointerTons2__APUpdateMandateService (784)
+#define SOAP_TYPE_PointerTons2__APUpdateMandateService (780)
 #endif
 
 /* ns2__APMandateStatusService * has binding name 'PointerTons2__APMandateStatusService' for type 'ns2:APMandateStatusService' */
 #ifndef SOAP_TYPE_PointerTons2__APMandateStatusService
-#define SOAP_TYPE_PointerTons2__APMandateStatusService (783)
+#define SOAP_TYPE_PointerTons2__APMandateStatusService (779)
 #endif
 
 /* ns2__APCreateMandateService * has binding name 'PointerTons2__APCreateMandateService' for type 'ns2:APCreateMandateService' */
 #ifndef SOAP_TYPE_PointerTons2__APCreateMandateService
-#define SOAP_TYPE_PointerTons2__APCreateMandateService (782)
+#define SOAP_TYPE_PointerTons2__APCreateMandateService (778)
 #endif
 
 /* ns2__APBillingAgreementService * has binding name 'PointerTons2__APBillingAgreementService' for type 'ns2:APBillingAgreementService' */
 #ifndef SOAP_TYPE_PointerTons2__APBillingAgreementService
-#define SOAP_TYPE_PointerTons2__APBillingAgreementService (781)
+#define SOAP_TYPE_PointerTons2__APBillingAgreementService (777)
 #endif
 
 /* ns2__APCancelService * has binding name 'PointerTons2__APCancelService' for type 'ns2:APCancelService' */
 #ifndef SOAP_TYPE_PointerTons2__APCancelService
-#define SOAP_TYPE_PointerTons2__APCancelService (780)
+#define SOAP_TYPE_PointerTons2__APCancelService (776)
 #endif
 
 /* ns2__APOrderService * has binding name 'PointerTons2__APOrderService' for type 'ns2:APOrderService' */
 #ifndef SOAP_TYPE_PointerTons2__APOrderService
-#define SOAP_TYPE_PointerTons2__APOrderService (779)
+#define SOAP_TYPE_PointerTons2__APOrderService (775)
 #endif
 
 /* ns2__Loan * has binding name 'PointerTons2__Loan' for type 'ns2:Loan' */
 #ifndef SOAP_TYPE_PointerTons2__Loan
-#define SOAP_TYPE_PointerTons2__Loan (778)
+#define SOAP_TYPE_PointerTons2__Loan (774)
 #endif
 
 /* ns2__TransactionMetadataService * has binding name 'PointerTons2__TransactionMetadataService' for type 'ns2:TransactionMetadataService' */
 #ifndef SOAP_TYPE_PointerTons2__TransactionMetadataService
-#define SOAP_TYPE_PointerTons2__TransactionMetadataService (777)
+#define SOAP_TYPE_PointerTons2__TransactionMetadataService (773)
 #endif
 
 /* ns2__GETVisaCheckoutDataService * has binding name 'PointerTons2__GETVisaCheckoutDataService' for type 'ns2:GETVisaCheckoutDataService' */
 #ifndef SOAP_TYPE_PointerTons2__GETVisaCheckoutDataService
-#define SOAP_TYPE_PointerTons2__GETVisaCheckoutDataService (776)
+#define SOAP_TYPE_PointerTons2__GETVisaCheckoutDataService (772)
 #endif
 
 /* ns2__issuer * has binding name 'PointerTons2__issuer' for type 'ns2:issuer' */
 #ifndef SOAP_TYPE_PointerTons2__issuer
-#define SOAP_TYPE_PointerTons2__issuer (775)
+#define SOAP_TYPE_PointerTons2__issuer (771)
 #endif
 
 /* ns2__BinLookupService * has binding name 'PointerTons2__BinLookupService' for type 'ns2:BinLookupService' */
 #ifndef SOAP_TYPE_PointerTons2__BinLookupService
-#define SOAP_TYPE_PointerTons2__BinLookupService (774)
+#define SOAP_TYPE_PointerTons2__BinLookupService (770)
 #endif
 
 /* ns2__EncryptPaymentDataService * has binding name 'PointerTons2__EncryptPaymentDataService' for type 'ns2:EncryptPaymentDataService' */
 #ifndef SOAP_TYPE_PointerTons2__EncryptPaymentDataService
-#define SOAP_TYPE_PointerTons2__EncryptPaymentDataService (773)
+#define SOAP_TYPE_PointerTons2__EncryptPaymentDataService (769)
 #endif
 
 /* ns2__Aft * has binding name 'PointerTons2__Aft' for type 'ns2:Aft' */
 #ifndef SOAP_TYPE_PointerTons2__Aft
-#define SOAP_TYPE_PointerTons2__Aft (772)
+#define SOAP_TYPE_PointerTons2__Aft (768)
 #endif
 
 /* ns2__Wallet * has binding name 'PointerTons2__Wallet' for type 'ns2:Wallet' */
 #ifndef SOAP_TYPE_PointerTons2__Wallet
-#define SOAP_TYPE_PointerTons2__Wallet (771)
+#define SOAP_TYPE_PointerTons2__Wallet (767)
 #endif
 
 /* ns2__DecryptVisaCheckoutDataService * has binding name 'PointerTons2__DecryptVisaCheckoutDataService' for type 'ns2:DecryptVisaCheckoutDataService' */
 #ifndef SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataService
-#define SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataService (769)
+#define SOAP_TYPE_PointerTons2__DecryptVisaCheckoutDataService (765)
 #endif
 
 /* ns2__VC * has binding name 'PointerTons2__VC' for type 'ns2:VC' */
 #ifndef SOAP_TYPE_PointerTons2__VC
-#define SOAP_TYPE_PointerTons2__VC (768)
+#define SOAP_TYPE_PointerTons2__VC (764)
 #endif
 
 /* ns2__AutoRentalData * has binding name 'PointerTons2__AutoRentalData' for type 'ns2:AutoRentalData' */
 #ifndef SOAP_TYPE_PointerTons2__AutoRentalData
-#define SOAP_TYPE_PointerTons2__AutoRentalData (767)
+#define SOAP_TYPE_PointerTons2__AutoRentalData (763)
 #endif
 
 /* ns2__Sender * has binding name 'PointerTons2__Sender' for type 'ns2:Sender' */
 #ifndef SOAP_TYPE_PointerTons2__Sender
-#define SOAP_TYPE_PointerTons2__Sender (766)
+#define SOAP_TYPE_PointerTons2__Sender (762)
 #endif
 
 /* ns2__Recipient * has binding name 'PointerTons2__Recipient' for type 'ns2:Recipient' */
 #ifndef SOAP_TYPE_PointerTons2__Recipient
-#define SOAP_TYPE_PointerTons2__Recipient (765)
+#define SOAP_TYPE_PointerTons2__Recipient (761)
 #endif
 
 /* ns2__PaymentNetworkToken * has binding name 'PointerTons2__PaymentNetworkToken' for type 'ns2:PaymentNetworkToken' */
 #ifndef SOAP_TYPE_PointerTons2__PaymentNetworkToken
-#define SOAP_TYPE_PointerTons2__PaymentNetworkToken (764)
+#define SOAP_TYPE_PointerTons2__PaymentNetworkToken (760)
 #endif
 
 /* ns2__HostedDataRetrieveService * has binding name 'PointerTons2__HostedDataRetrieveService' for type 'ns2:HostedDataRetrieveService' */
 #ifndef SOAP_TYPE_PointerTons2__HostedDataRetrieveService
-#define SOAP_TYPE_PointerTons2__HostedDataRetrieveService (763)
+#define SOAP_TYPE_PointerTons2__HostedDataRetrieveService (759)
 #endif
 
 /* ns2__HostedDataCreateService * has binding name 'PointerTons2__HostedDataCreateService' for type 'ns2:HostedDataCreateService' */
 #ifndef SOAP_TYPE_PointerTons2__HostedDataCreateService
-#define SOAP_TYPE_PointerTons2__HostedDataCreateService (762)
+#define SOAP_TYPE_PointerTons2__HostedDataCreateService (758)
 #endif
 
 /* ns2__merchant * has binding name 'PointerTons2__merchant' for type 'ns2:merchant' */
 #ifndef SOAP_TYPE_PointerTons2__merchant
-#define SOAP_TYPE_PointerTons2__merchant (761)
+#define SOAP_TYPE_PointerTons2__merchant (757)
 #endif
 
 /* ns2__EmvRequest * has binding name 'PointerTons2__EmvRequest' for type 'ns2:EmvRequest' */
 #ifndef SOAP_TYPE_PointerTons2__EmvRequest
-#define SOAP_TYPE_PointerTons2__EmvRequest (760)
+#define SOAP_TYPE_PointerTons2__EmvRequest (756)
 #endif
 
 /* ns2__CCDCCUpdateService * has binding name 'PointerTons2__CCDCCUpdateService' for type 'ns2:CCDCCUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__CCDCCUpdateService
-#define SOAP_TYPE_PointerTons2__CCDCCUpdateService (759)
+#define SOAP_TYPE_PointerTons2__CCDCCUpdateService (755)
 #endif
 
 /* ns2__PayPalTransactionSearchService * has binding name 'PointerTons2__PayPalTransactionSearchService' for type 'ns2:PayPalTransactionSearchService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalTransactionSearchService
-#define SOAP_TYPE_PointerTons2__PayPalTransactionSearchService (758)
+#define SOAP_TYPE_PointerTons2__PayPalTransactionSearchService (754)
 #endif
 
 /* ns2__PayPalGetTxnDetailsService * has binding name 'PointerTons2__PayPalGetTxnDetailsService' for type 'ns2:PayPalGetTxnDetailsService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsService
-#define SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsService (757)
+#define SOAP_TYPE_PointerTons2__PayPalGetTxnDetailsService (753)
 #endif
 
 /* ns2__APConfirmPurchaseService * has binding name 'PointerTons2__APConfirmPurchaseService' for type 'ns2:APConfirmPurchaseService' */
 #ifndef SOAP_TYPE_PointerTons2__APConfirmPurchaseService
-#define SOAP_TYPE_PointerTons2__APConfirmPurchaseService (756)
+#define SOAP_TYPE_PointerTons2__APConfirmPurchaseService (752)
 #endif
 
 /* ns2__APTransactionDetailsService * has binding name 'PointerTons2__APTransactionDetailsService' for type 'ns2:APTransactionDetailsService' */
 #ifndef SOAP_TYPE_PointerTons2__APTransactionDetailsService
-#define SOAP_TYPE_PointerTons2__APTransactionDetailsService (755)
+#define SOAP_TYPE_PointerTons2__APTransactionDetailsService (751)
 #endif
 
 /* ns2__APUI * has binding name 'PointerTons2__APUI' for type 'ns2:APUI' */
 #ifndef SOAP_TYPE_PointerTons2__APUI
-#define SOAP_TYPE_PointerTons2__APUI (754)
+#define SOAP_TYPE_PointerTons2__APUI (750)
 #endif
 
 /* ns2__APSessionsService * has binding name 'PointerTons2__APSessionsService' for type 'ns2:APSessionsService' */
 #ifndef SOAP_TYPE_PointerTons2__APSessionsService
-#define SOAP_TYPE_PointerTons2__APSessionsService (753)
+#define SOAP_TYPE_PointerTons2__APSessionsService (749)
 #endif
 
 /* ns2__APCheckOutDetailsService * has binding name 'PointerTons2__APCheckOutDetailsService' for type 'ns2:APCheckOutDetailsService' */
 #ifndef SOAP_TYPE_PointerTons2__APCheckOutDetailsService
-#define SOAP_TYPE_PointerTons2__APCheckOutDetailsService (752)
+#define SOAP_TYPE_PointerTons2__APCheckOutDetailsService (748)
 #endif
 
 /* ns2__APSaleService * has binding name 'PointerTons2__APSaleService' for type 'ns2:APSaleService' */
 #ifndef SOAP_TYPE_PointerTons2__APSaleService
-#define SOAP_TYPE_PointerTons2__APSaleService (751)
+#define SOAP_TYPE_PointerTons2__APSaleService (747)
 #endif
 
 /* ns2__APRefundService * has binding name 'PointerTons2__APRefundService' for type 'ns2:APRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__APRefundService
-#define SOAP_TYPE_PointerTons2__APRefundService (750)
+#define SOAP_TYPE_PointerTons2__APRefundService (746)
 #endif
 
 /* ns2__APOptionsService * has binding name 'PointerTons2__APOptionsService' for type 'ns2:APOptionsService' */
 #ifndef SOAP_TYPE_PointerTons2__APOptionsService
-#define SOAP_TYPE_PointerTons2__APOptionsService (749)
+#define SOAP_TYPE_PointerTons2__APOptionsService (745)
 #endif
 
 /* ns2__APCaptureService * has binding name 'PointerTons2__APCaptureService' for type 'ns2:APCaptureService' */
 #ifndef SOAP_TYPE_PointerTons2__APCaptureService
-#define SOAP_TYPE_PointerTons2__APCaptureService (748)
+#define SOAP_TYPE_PointerTons2__APCaptureService (744)
 #endif
 
 /* ns2__APAuthReversalService * has binding name 'PointerTons2__APAuthReversalService' for type 'ns2:APAuthReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__APAuthReversalService
-#define SOAP_TYPE_PointerTons2__APAuthReversalService (747)
+#define SOAP_TYPE_PointerTons2__APAuthReversalService (743)
 #endif
 
 /* ns2__APAuthService * has binding name 'PointerTons2__APAuthService' for type 'ns2:APAuthService' */
 #ifndef SOAP_TYPE_PointerTons2__APAuthService
-#define SOAP_TYPE_PointerTons2__APAuthService (746)
+#define SOAP_TYPE_PointerTons2__APAuthService (742)
 #endif
 
 /* ns2__AP * has binding name 'PointerTons2__AP' for type 'ns2:AP' */
 #ifndef SOAP_TYPE_PointerTons2__AP
-#define SOAP_TYPE_PointerTons2__AP (745)
+#define SOAP_TYPE_PointerTons2__AP (741)
 #endif
 
 /* ns2__PinDebitReversalService * has binding name 'PointerTons2__PinDebitReversalService' for type 'ns2:PinDebitReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitReversalService
-#define SOAP_TYPE_PointerTons2__PinDebitReversalService (744)
+#define SOAP_TYPE_PointerTons2__PinDebitReversalService (740)
 #endif
 
 /* ns2__PinDebitCreditService * has binding name 'PointerTons2__PinDebitCreditService' for type 'ns2:PinDebitCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitCreditService
-#define SOAP_TYPE_PointerTons2__PinDebitCreditService (743)
+#define SOAP_TYPE_PointerTons2__PinDebitCreditService (739)
 #endif
 
 /* ns2__PinDebitPurchaseService * has binding name 'PointerTons2__PinDebitPurchaseService' for type 'ns2:PinDebitPurchaseService' */
 #ifndef SOAP_TYPE_PointerTons2__PinDebitPurchaseService
-#define SOAP_TYPE_PointerTons2__PinDebitPurchaseService (742)
+#define SOAP_TYPE_PointerTons2__PinDebitPurchaseService (738)
 #endif
 
 /* ns2__APCheckStatusService * has binding name 'PointerTons2__APCheckStatusService' for type 'ns2:APCheckStatusService' */
 #ifndef SOAP_TYPE_PointerTons2__APCheckStatusService
-#define SOAP_TYPE_PointerTons2__APCheckStatusService (741)
+#define SOAP_TYPE_PointerTons2__APCheckStatusService (737)
 #endif
 
 /* ns2__APInitiateService * has binding name 'PointerTons2__APInitiateService' for type 'ns2:APInitiateService' */
 #ifndef SOAP_TYPE_PointerTons2__APInitiateService
-#define SOAP_TYPE_PointerTons2__APInitiateService (740)
+#define SOAP_TYPE_PointerTons2__APInitiateService (736)
 #endif
 
 /* ns2__BoletoPaymentService * has binding name 'PointerTons2__BoletoPaymentService' for type 'ns2:BoletoPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__BoletoPaymentService
-#define SOAP_TYPE_PointerTons2__BoletoPaymentService (739)
+#define SOAP_TYPE_PointerTons2__BoletoPaymentService (735)
 #endif
 
 /* ns2__ChinaRefundService * has binding name 'PointerTons2__ChinaRefundService' for type 'ns2:ChinaRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__ChinaRefundService
-#define SOAP_TYPE_PointerTons2__ChinaRefundService (738)
+#define SOAP_TYPE_PointerTons2__ChinaRefundService (734)
 #endif
 
 /* ns2__ChinaPaymentService * has binding name 'PointerTons2__ChinaPaymentService' for type 'ns2:ChinaPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__ChinaPaymentService
-#define SOAP_TYPE_PointerTons2__ChinaPaymentService (737)
+#define SOAP_TYPE_PointerTons2__ChinaPaymentService (733)
 #endif
 
 /* ns2__PayPalDoRefTransactionService * has binding name 'PointerTons2__PayPalDoRefTransactionService' for type 'ns2:PayPalDoRefTransactionService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalDoRefTransactionService
-#define SOAP_TYPE_PointerTons2__PayPalDoRefTransactionService (736)
+#define SOAP_TYPE_PointerTons2__PayPalDoRefTransactionService (732)
 #endif
 
 /* ns2__PayPalCreateAgreementService * has binding name 'PointerTons2__PayPalCreateAgreementService' for type 'ns2:PayPalCreateAgreementService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalCreateAgreementService
-#define SOAP_TYPE_PointerTons2__PayPalCreateAgreementService (735)
+#define SOAP_TYPE_PointerTons2__PayPalCreateAgreementService (731)
 #endif
 
 /* ns2__PayPalUpdateAgreementService * has binding name 'PointerTons2__PayPalUpdateAgreementService' for type 'ns2:PayPalUpdateAgreementService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalUpdateAgreementService
-#define SOAP_TYPE_PointerTons2__PayPalUpdateAgreementService (734)
+#define SOAP_TYPE_PointerTons2__PayPalUpdateAgreementService (730)
 #endif
 
 /* ns2__PayPalAuthorizationService * has binding name 'PointerTons2__PayPalAuthorizationService' for type 'ns2:PayPalAuthorizationService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalAuthorizationService
-#define SOAP_TYPE_PointerTons2__PayPalAuthorizationService (733)
+#define SOAP_TYPE_PointerTons2__PayPalAuthorizationService (729)
 #endif
 
 /* ns2__PayPalEcOrderSetupService * has binding name 'PointerTons2__PayPalEcOrderSetupService' for type 'ns2:PayPalEcOrderSetupService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcOrderSetupService
-#define SOAP_TYPE_PointerTons2__PayPalEcOrderSetupService (732)
+#define SOAP_TYPE_PointerTons2__PayPalEcOrderSetupService (728)
 #endif
 
 /* ns2__PayPalEcSetService * has binding name 'PointerTons2__PayPalEcSetService' for type 'ns2:PayPalEcSetService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcSetService
-#define SOAP_TYPE_PointerTons2__PayPalEcSetService (731)
+#define SOAP_TYPE_PointerTons2__PayPalEcSetService (727)
 #endif
 
 /* ns2__PayPalEcGetDetailsService * has binding name 'PointerTons2__PayPalEcGetDetailsService' for type 'ns2:PayPalEcGetDetailsService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcGetDetailsService
-#define SOAP_TYPE_PointerTons2__PayPalEcGetDetailsService (730)
+#define SOAP_TYPE_PointerTons2__PayPalEcGetDetailsService (726)
 #endif
 
 /* ns2__PayPalEcDoPaymentService * has binding name 'PointerTons2__PayPalEcDoPaymentService' for type 'ns2:PayPalEcDoPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalEcDoPaymentService
-#define SOAP_TYPE_PointerTons2__PayPalEcDoPaymentService (729)
+#define SOAP_TYPE_PointerTons2__PayPalEcDoPaymentService (725)
 #endif
 
 /* ns2__PayPalDoCaptureService * has binding name 'PointerTons2__PayPalDoCaptureService' for type 'ns2:PayPalDoCaptureService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalDoCaptureService
-#define SOAP_TYPE_PointerTons2__PayPalDoCaptureService (728)
+#define SOAP_TYPE_PointerTons2__PayPalDoCaptureService (724)
 #endif
 
 /* ns2__PayPalAuthReversalService * has binding name 'PointerTons2__PayPalAuthReversalService' for type 'ns2:PayPalAuthReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalAuthReversalService
-#define SOAP_TYPE_PointerTons2__PayPalAuthReversalService (727)
+#define SOAP_TYPE_PointerTons2__PayPalAuthReversalService (723)
 #endif
 
 /* ns2__PayPalRefundService * has binding name 'PointerTons2__PayPalRefundService' for type 'ns2:PayPalRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalRefundService
-#define SOAP_TYPE_PointerTons2__PayPalRefundService (726)
+#define SOAP_TYPE_PointerTons2__PayPalRefundService (722)
 #endif
 
 /* ns2__CaseManagementActionService * has binding name 'PointerTons2__CaseManagementActionService' for type 'ns2:CaseManagementActionService' */
 #ifndef SOAP_TYPE_PointerTons2__CaseManagementActionService
-#define SOAP_TYPE_PointerTons2__CaseManagementActionService (724)
+#define SOAP_TYPE_PointerTons2__CaseManagementActionService (720)
 #endif
 
 /* ns2__FraudUpdateService * has binding name 'PointerTons2__FraudUpdateService' for type 'ns2:FraudUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__FraudUpdateService
-#define SOAP_TYPE_PointerTons2__FraudUpdateService (723)
+#define SOAP_TYPE_PointerTons2__FraudUpdateService (719)
 #endif
 
 /* ns2__RiskUpdateService * has binding name 'PointerTons2__RiskUpdateService' for type 'ns2:RiskUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__RiskUpdateService
-#define SOAP_TYPE_PointerTons2__RiskUpdateService (722)
+#define SOAP_TYPE_PointerTons2__RiskUpdateService (718)
 #endif
 
 /* ns2__PayPalPreapprovedUpdateService * has binding name 'PointerTons2__PayPalPreapprovedUpdateService' for type 'ns2:PayPalPreapprovedUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateService
-#define SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateService (721)
+#define SOAP_TYPE_PointerTons2__PayPalPreapprovedUpdateService (717)
 #endif
 
 /* ns2__PayPalPreapprovedPaymentService * has binding name 'PointerTons2__PayPalPreapprovedPaymentService' for type 'ns2:PayPalPreapprovedPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentService
-#define SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentService (720)
+#define SOAP_TYPE_PointerTons2__PayPalPreapprovedPaymentService (716)
 #endif
 
 /* ns2__PayPalButtonCreateService * has binding name 'PointerTons2__PayPalButtonCreateService' for type 'ns2:PayPalButtonCreateService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalButtonCreateService
-#define SOAP_TYPE_PointerTons2__PayPalButtonCreateService (719)
+#define SOAP_TYPE_PointerTons2__PayPalButtonCreateService (715)
 #endif
 
 /* ns2__LodgingData * has binding name 'PointerTons2__LodgingData' for type 'ns2:LodgingData' */
 #ifndef SOAP_TYPE_PointerTons2__LodgingData
-#define SOAP_TYPE_PointerTons2__LodgingData (718)
+#define SOAP_TYPE_PointerTons2__LodgingData (714)
 #endif
 
 /* ns2__AncillaryData * has binding name 'PointerTons2__AncillaryData' for type 'ns2:AncillaryData' */
 #ifndef SOAP_TYPE_PointerTons2__AncillaryData
-#define SOAP_TYPE_PointerTons2__AncillaryData (717)
+#define SOAP_TYPE_PointerTons2__AncillaryData (713)
 #endif
 
 /* ns2__AirlineData * has binding name 'PointerTons2__AirlineData' for type 'ns2:AirlineData' */
 #ifndef SOAP_TYPE_PointerTons2__AirlineData
-#define SOAP_TYPE_PointerTons2__AirlineData (716)
+#define SOAP_TYPE_PointerTons2__AirlineData (712)
 #endif
 
 /* ns2__Batch * has binding name 'PointerTons2__Batch' for type 'ns2:Batch' */
 #ifndef SOAP_TYPE_PointerTons2__Batch
-#define SOAP_TYPE_PointerTons2__Batch (715)
+#define SOAP_TYPE_PointerTons2__Batch (711)
 #endif
 
 /* ns2__PinlessDebitReversalService * has binding name 'PointerTons2__PinlessDebitReversalService' for type 'ns2:PinlessDebitReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitReversalService
-#define SOAP_TYPE_PointerTons2__PinlessDebitReversalService (714)
+#define SOAP_TYPE_PointerTons2__PinlessDebitReversalService (710)
 #endif
 
 /* ns2__PinlessDebitValidateService * has binding name 'PointerTons2__PinlessDebitValidateService' for type 'ns2:PinlessDebitValidateService' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitValidateService
-#define SOAP_TYPE_PointerTons2__PinlessDebitValidateService (713)
+#define SOAP_TYPE_PointerTons2__PinlessDebitValidateService (709)
 #endif
 
 /* ns2__PinlessDebitService * has binding name 'PointerTons2__PinlessDebitService' for type 'ns2:PinlessDebitService' */
 #ifndef SOAP_TYPE_PointerTons2__PinlessDebitService
-#define SOAP_TYPE_PointerTons2__PinlessDebitService (712)
+#define SOAP_TYPE_PointerTons2__PinlessDebitService (708)
 #endif
 
 /* ns2__BusinessRules * has binding name 'PointerTons2__BusinessRules' for type 'ns2:BusinessRules' */
 #ifndef SOAP_TYPE_PointerTons2__BusinessRules
-#define SOAP_TYPE_PointerTons2__BusinessRules (711)
+#define SOAP_TYPE_PointerTons2__BusinessRules (707)
 #endif
 
 /* ns2__VoidService * has binding name 'PointerTons2__VoidService' for type 'ns2:VoidService' */
 #ifndef SOAP_TYPE_PointerTons2__VoidService
-#define SOAP_TYPE_PointerTons2__VoidService (710)
+#define SOAP_TYPE_PointerTons2__VoidService (706)
 #endif
 
 /* ns2__PayPalCreditService * has binding name 'PointerTons2__PayPalCreditService' for type 'ns2:PayPalCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalCreditService
-#define SOAP_TYPE_PointerTons2__PayPalCreditService (709)
+#define SOAP_TYPE_PointerTons2__PayPalCreditService (705)
 #endif
 
 /* ns2__PayPalPaymentService * has binding name 'PointerTons2__PayPalPaymentService' for type 'ns2:PayPalPaymentService' */
 #ifndef SOAP_TYPE_PointerTons2__PayPalPaymentService
-#define SOAP_TYPE_PointerTons2__PayPalPaymentService (708)
+#define SOAP_TYPE_PointerTons2__PayPalPaymentService (704)
 #endif
 
 /* ns2__PaySubscriptionDeleteService * has binding name 'PointerTons2__PaySubscriptionDeleteService' for type 'ns2:PaySubscriptionDeleteService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionDeleteService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionDeleteService (707)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionDeleteService (703)
 #endif
 
 /* ns2__PaySubscriptionRetrieveService * has binding name 'PointerTons2__PaySubscriptionRetrieveService' for type 'ns2:PaySubscriptionRetrieveService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveService (706)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionRetrieveService (702)
 #endif
 
 /* ns2__PaySubscriptionEventUpdateService * has binding name 'PointerTons2__PaySubscriptionEventUpdateService' for type 'ns2:PaySubscriptionEventUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateService (705)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionEventUpdateService (701)
 #endif
 
 /* ns2__PaySubscriptionUpdateService * has binding name 'PointerTons2__PaySubscriptionUpdateService' for type 'ns2:PaySubscriptionUpdateService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionUpdateService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionUpdateService (704)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionUpdateService (700)
 #endif
 
 /* ns2__PaySubscriptionCreateService * has binding name 'PointerTons2__PaySubscriptionCreateService' for type 'ns2:PaySubscriptionCreateService' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionCreateService
-#define SOAP_TYPE_PointerTons2__PaySubscriptionCreateService (703)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionCreateService (699)
 #endif
 
 /* ns2__DirectDebitValidateService * has binding name 'PointerTons2__DirectDebitValidateService' for type 'ns2:DirectDebitValidateService' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitValidateService
-#define SOAP_TYPE_PointerTons2__DirectDebitValidateService (701)
+#define SOAP_TYPE_PointerTons2__DirectDebitValidateService (697)
 #endif
 
 /* ns2__DirectDebitRefundService * has binding name 'PointerTons2__DirectDebitRefundService' for type 'ns2:DirectDebitRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitRefundService
-#define SOAP_TYPE_PointerTons2__DirectDebitRefundService (700)
+#define SOAP_TYPE_PointerTons2__DirectDebitRefundService (696)
 #endif
 
 /* ns2__DirectDebitService * has binding name 'PointerTons2__DirectDebitService' for type 'ns2:DirectDebitService' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitService
-#define SOAP_TYPE_PointerTons2__DirectDebitService (699)
+#define SOAP_TYPE_PointerTons2__DirectDebitService (695)
 #endif
 
 /* ns2__DirectDebitMandateService * has binding name 'PointerTons2__DirectDebitMandateService' for type 'ns2:DirectDebitMandateService' */
 #ifndef SOAP_TYPE_PointerTons2__DirectDebitMandateService
-#define SOAP_TYPE_PointerTons2__DirectDebitMandateService (698)
+#define SOAP_TYPE_PointerTons2__DirectDebitMandateService (694)
 #endif
 
 /* ns2__BankTransferRealTimeService * has binding name 'PointerTons2__BankTransferRealTimeService' for type 'ns2:BankTransferRealTimeService' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferRealTimeService
-#define SOAP_TYPE_PointerTons2__BankTransferRealTimeService (697)
+#define SOAP_TYPE_PointerTons2__BankTransferRealTimeService (693)
 #endif
 
 /* ns2__BankTransferRefundService * has binding name 'PointerTons2__BankTransferRefundService' for type 'ns2:BankTransferRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferRefundService
-#define SOAP_TYPE_PointerTons2__BankTransferRefundService (696)
+#define SOAP_TYPE_PointerTons2__BankTransferRefundService (692)
 #endif
 
 /* ns2__BankTransferService * has binding name 'PointerTons2__BankTransferService' for type 'ns2:BankTransferService' */
 #ifndef SOAP_TYPE_PointerTons2__BankTransferService
-#define SOAP_TYPE_PointerTons2__BankTransferService (695)
+#define SOAP_TYPE_PointerTons2__BankTransferService (691)
 #endif
 
 /* ns2__FXRatesService * has binding name 'PointerTons2__FXRatesService' for type 'ns2:FXRatesService' */
 #ifndef SOAP_TYPE_PointerTons2__FXRatesService
-#define SOAP_TYPE_PointerTons2__FXRatesService (694)
+#define SOAP_TYPE_PointerTons2__FXRatesService (690)
 #endif
 
 /* ns2__ExportService * has binding name 'PointerTons2__ExportService' for type 'ns2:ExportService' */
 #ifndef SOAP_TYPE_PointerTons2__ExportService
-#define SOAP_TYPE_PointerTons2__ExportService (693)
+#define SOAP_TYPE_PointerTons2__ExportService (689)
 #endif
 
 /* ns2__DAVService * has binding name 'PointerTons2__DAVService' for type 'ns2:DAVService' */
 #ifndef SOAP_TYPE_PointerTons2__DAVService
-#define SOAP_TYPE_PointerTons2__DAVService (692)
+#define SOAP_TYPE_PointerTons2__DAVService (688)
 #endif
 
 /* ns2__AFSService * has binding name 'PointerTons2__AFSService' for type 'ns2:AFSService' */
 #ifndef SOAP_TYPE_PointerTons2__AFSService
-#define SOAP_TYPE_PointerTons2__AFSService (691)
+#define SOAP_TYPE_PointerTons2__AFSService (687)
 #endif
 
 /* ns2__DMEService * has binding name 'PointerTons2__DMEService' for type 'ns2:DMEService' */
 #ifndef SOAP_TYPE_PointerTons2__DMEService
-#define SOAP_TYPE_PointerTons2__DMEService (690)
+#define SOAP_TYPE_PointerTons2__DMEService (686)
 #endif
 
 /* ns2__TaxService * has binding name 'PointerTons2__TaxService' for type 'ns2:TaxService' */
 #ifndef SOAP_TYPE_PointerTons2__TaxService
-#define SOAP_TYPE_PointerTons2__TaxService (689)
+#define SOAP_TYPE_PointerTons2__TaxService (685)
 #endif
 
 /* ns2__PayerAuthValidateService * has binding name 'PointerTons2__PayerAuthValidateService' for type 'ns2:PayerAuthValidateService' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthValidateService
-#define SOAP_TYPE_PointerTons2__PayerAuthValidateService (688)
+#define SOAP_TYPE_PointerTons2__PayerAuthValidateService (684)
 #endif
 
 /* ns2__PayerAuthEnrollService * has binding name 'PointerTons2__PayerAuthEnrollService' for type 'ns2:PayerAuthEnrollService' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthEnrollService
-#define SOAP_TYPE_PointerTons2__PayerAuthEnrollService (687)
+#define SOAP_TYPE_PointerTons2__PayerAuthEnrollService (683)
 #endif
 
 /* ns2__PayerAuthSetupService * has binding name 'PointerTons2__PayerAuthSetupService' for type 'ns2:PayerAuthSetupService' */
 #ifndef SOAP_TYPE_PointerTons2__PayerAuthSetupService
-#define SOAP_TYPE_PointerTons2__PayerAuthSetupService (686)
+#define SOAP_TYPE_PointerTons2__PayerAuthSetupService (682)
 #endif
 
 /* ns2__ECAuthenticateService * has binding name 'PointerTons2__ECAuthenticateService' for type 'ns2:ECAuthenticateService' */
 #ifndef SOAP_TYPE_PointerTons2__ECAuthenticateService
-#define SOAP_TYPE_PointerTons2__ECAuthenticateService (685)
+#define SOAP_TYPE_PointerTons2__ECAuthenticateService (681)
 #endif
 
 /* ns2__ECCreditService * has binding name 'PointerTons2__ECCreditService' for type 'ns2:ECCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__ECCreditService
-#define SOAP_TYPE_PointerTons2__ECCreditService (684)
+#define SOAP_TYPE_PointerTons2__ECCreditService (680)
 #endif
 
 /* ns2__ECDebitService * has binding name 'PointerTons2__ECDebitService' for type 'ns2:ECDebitService' */
 #ifndef SOAP_TYPE_PointerTons2__ECDebitService
-#define SOAP_TYPE_PointerTons2__ECDebitService (683)
+#define SOAP_TYPE_PointerTons2__ECDebitService (679)
 #endif
 
 /* ns2__ServiceFeeCalculateService * has binding name 'PointerTons2__ServiceFeeCalculateService' for type 'ns2:ServiceFeeCalculateService' */
 #ifndef SOAP_TYPE_PointerTons2__ServiceFeeCalculateService
-#define SOAP_TYPE_PointerTons2__ServiceFeeCalculateService (682)
+#define SOAP_TYPE_PointerTons2__ServiceFeeCalculateService (678)
 #endif
 
 /* ns2__CCDCCService * has binding name 'PointerTons2__CCDCCService' for type 'ns2:CCDCCService' */
 #ifndef SOAP_TYPE_PointerTons2__CCDCCService
-#define SOAP_TYPE_PointerTons2__CCDCCService (681)
+#define SOAP_TYPE_PointerTons2__CCDCCService (677)
 #endif
 
 /* ns2__CCAutoAuthReversalService * has binding name 'PointerTons2__CCAutoAuthReversalService' for type 'ns2:CCAutoAuthReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__CCAutoAuthReversalService
-#define SOAP_TYPE_PointerTons2__CCAutoAuthReversalService (680)
+#define SOAP_TYPE_PointerTons2__CCAutoAuthReversalService (676)
 #endif
 
 /* ns2__CCAuthReversalService * has binding name 'PointerTons2__CCAuthReversalService' for type 'ns2:CCAuthReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__CCAuthReversalService
-#define SOAP_TYPE_PointerTons2__CCAuthReversalService (679)
+#define SOAP_TYPE_PointerTons2__CCAuthReversalService (675)
 #endif
 
 /* ns2__CCCreditService * has binding name 'PointerTons2__CCCreditService' for type 'ns2:CCCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__CCCreditService
-#define SOAP_TYPE_PointerTons2__CCCreditService (678)
+#define SOAP_TYPE_PointerTons2__CCCreditService (674)
 #endif
 
 /* ns2__CCCaptureService * has binding name 'PointerTons2__CCCaptureService' for type 'ns2:CCCaptureService' */
 #ifndef SOAP_TYPE_PointerTons2__CCCaptureService
-#define SOAP_TYPE_PointerTons2__CCCaptureService (677)
+#define SOAP_TYPE_PointerTons2__CCCaptureService (673)
 #endif
 
 /* ns2__CCIncrementalAuthService * has binding name 'PointerTons2__CCIncrementalAuthService' for type 'ns2:CCIncrementalAuthService' */
 #ifndef SOAP_TYPE_PointerTons2__CCIncrementalAuthService
-#define SOAP_TYPE_PointerTons2__CCIncrementalAuthService (676)
+#define SOAP_TYPE_PointerTons2__CCIncrementalAuthService (672)
 #endif
 
 /* ns2__CCSaleReversalService * has binding name 'PointerTons2__CCSaleReversalService' for type 'ns2:CCSaleReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleReversalService
-#define SOAP_TYPE_PointerTons2__CCSaleReversalService (675)
+#define SOAP_TYPE_PointerTons2__CCSaleReversalService (671)
 #endif
 
 /* ns2__CCSaleCreditService * has binding name 'PointerTons2__CCSaleCreditService' for type 'ns2:CCSaleCreditService' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleCreditService
-#define SOAP_TYPE_PointerTons2__CCSaleCreditService (674)
+#define SOAP_TYPE_PointerTons2__CCSaleCreditService (670)
 #endif
 
 /* ns2__CCSaleService * has binding name 'PointerTons2__CCSaleService' for type 'ns2:CCSaleService' */
 #ifndef SOAP_TYPE_PointerTons2__CCSaleService
-#define SOAP_TYPE_PointerTons2__CCSaleService (673)
+#define SOAP_TYPE_PointerTons2__CCSaleService (669)
 #endif
 
 /* ns2__VerificationService * has binding name 'PointerTons2__VerificationService' for type 'ns2:VerificationService' */
 #ifndef SOAP_TYPE_PointerTons2__VerificationService
-#define SOAP_TYPE_PointerTons2__VerificationService (672)
+#define SOAP_TYPE_PointerTons2__VerificationService (668)
 #endif
 
 /* ns2__GiftCardRefundService * has binding name 'PointerTons2__GiftCardRefundService' for type 'ns2:GiftCardRefundService' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardRefundService
-#define SOAP_TYPE_PointerTons2__GiftCardRefundService (671)
+#define SOAP_TYPE_PointerTons2__GiftCardRefundService (667)
 #endif
 
 /* ns2__GiftCardReloadService * has binding name 'PointerTons2__GiftCardReloadService' for type 'ns2:GiftCardReloadService' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardReloadService
-#define SOAP_TYPE_PointerTons2__GiftCardReloadService (670)
+#define SOAP_TYPE_PointerTons2__GiftCardReloadService (666)
 #endif
 
 /* ns2__GiftCardReversalService * has binding name 'PointerTons2__GiftCardReversalService' for type 'ns2:GiftCardReversalService' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardReversalService
-#define SOAP_TYPE_PointerTons2__GiftCardReversalService (669)
+#define SOAP_TYPE_PointerTons2__GiftCardReversalService (665)
 #endif
 
 /* ns2__GiftCardVoidService * has binding name 'PointerTons2__GiftCardVoidService' for type 'ns2:GiftCardVoidService' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardVoidService
-#define SOAP_TYPE_PointerTons2__GiftCardVoidService (668)
+#define SOAP_TYPE_PointerTons2__GiftCardVoidService (664)
 #endif
 
 /* ns2__GiftCardRedemptionService * has binding name 'PointerTons2__GiftCardRedemptionService' for type 'ns2:GiftCardRedemptionService' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardRedemptionService
-#define SOAP_TYPE_PointerTons2__GiftCardRedemptionService (667)
+#define SOAP_TYPE_PointerTons2__GiftCardRedemptionService (663)
 #endif
 
 /* ns2__GiftCardBalanceInquiryService * has binding name 'PointerTons2__GiftCardBalanceInquiryService' for type 'ns2:GiftCardBalanceInquiryService' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardBalanceInquiryService
-#define SOAP_TYPE_PointerTons2__GiftCardBalanceInquiryService (666)
+#define SOAP_TYPE_PointerTons2__GiftCardBalanceInquiryService (662)
 #endif
 
 /* ns2__GiftCardActivationService * has binding name 'PointerTons2__GiftCardActivationService' for type 'ns2:GiftCardActivationService' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCardActivationService
-#define SOAP_TYPE_PointerTons2__GiftCardActivationService (665)
+#define SOAP_TYPE_PointerTons2__GiftCardActivationService (661)
 #endif
 
 /* ns2__ECAVSService * has binding name 'PointerTons2__ECAVSService' for type 'ns2:ECAVSService' */
 #ifndef SOAP_TYPE_PointerTons2__ECAVSService
-#define SOAP_TYPE_PointerTons2__ECAVSService (664)
+#define SOAP_TYPE_PointerTons2__ECAVSService (660)
 #endif
 
 /* ns2__OCTService * has binding name 'PointerTons2__OCTService' for type 'ns2:OCTService' */
 #ifndef SOAP_TYPE_PointerTons2__OCTService
-#define SOAP_TYPE_PointerTons2__OCTService (663)
+#define SOAP_TYPE_PointerTons2__OCTService (659)
 #endif
 
 /* ns2__CCAuthService * has binding name 'PointerTons2__CCAuthService' for type 'ns2:CCAuthService' */
 #ifndef SOAP_TYPE_PointerTons2__CCAuthService
-#define SOAP_TYPE_PointerTons2__CCAuthService (662)
+#define SOAP_TYPE_PointerTons2__CCAuthService (658)
 #endif
 
 /* ns2__GiftCard * has binding name 'PointerTons2__GiftCard' for type 'ns2:GiftCard' */
 #ifndef SOAP_TYPE_PointerTons2__GiftCard
-#define SOAP_TYPE_PointerTons2__GiftCard (661)
+#define SOAP_TYPE_PointerTons2__GiftCard (657)
 #endif
 
 /* ns2__ServiceFee * has binding name 'PointerTons2__ServiceFee' for type 'ns2:ServiceFee' */
 #ifndef SOAP_TYPE_PointerTons2__ServiceFee
-#define SOAP_TYPE_PointerTons2__ServiceFee (660)
+#define SOAP_TYPE_PointerTons2__ServiceFee (656)
 #endif
 
 /* ns2__JPO * has binding name 'PointerTons2__JPO' for type 'ns2:JPO' */
 #ifndef SOAP_TYPE_PointerTons2__JPO
-#define SOAP_TYPE_PointerTons2__JPO (659)
+#define SOAP_TYPE_PointerTons2__JPO (655)
 #endif
 
 /* ns2__MerchantSecureData * has binding name 'PointerTons2__MerchantSecureData' for type 'ns2:MerchantSecureData' */
 #ifndef SOAP_TYPE_PointerTons2__MerchantSecureData
-#define SOAP_TYPE_PointerTons2__MerchantSecureData (658)
+#define SOAP_TYPE_PointerTons2__MerchantSecureData (654)
 #endif
 
 /* ns2__AuxiliaryData * has binding name 'PointerTons2__AuxiliaryData' for type 'ns2:AuxiliaryData' */
 #ifndef SOAP_TYPE_PointerTons2__AuxiliaryData
-#define SOAP_TYPE_PointerTons2__AuxiliaryData (657)
+#define SOAP_TYPE_PointerTons2__AuxiliaryData (653)
 #endif
 
 /* ns2__MerchantDefinedData * has binding name 'PointerTons2__MerchantDefinedData' for type 'ns2:MerchantDefinedData' */
 #ifndef SOAP_TYPE_PointerTons2__MerchantDefinedData
-#define SOAP_TYPE_PointerTons2__MerchantDefinedData (656)
+#define SOAP_TYPE_PointerTons2__MerchantDefinedData (652)
 #endif
 
 /* ns2__PayPal * has binding name 'PointerTons2__PayPal' for type 'ns2:PayPal' */
 #ifndef SOAP_TYPE_PointerTons2__PayPal
-#define SOAP_TYPE_PointerTons2__PayPal (655)
+#define SOAP_TYPE_PointerTons2__PayPal (651)
 #endif
 
 /* ns2__OtherTax * has binding name 'PointerTons2__OtherTax' for type 'ns2:OtherTax' */
 #ifndef SOAP_TYPE_PointerTons2__OtherTax
-#define SOAP_TYPE_PointerTons2__OtherTax (654)
+#define SOAP_TYPE_PointerTons2__OtherTax (650)
 #endif
 
 /* ns2__DecisionManager * has binding name 'PointerTons2__DecisionManager' for type 'ns2:DecisionManager' */
 #ifndef SOAP_TYPE_PointerTons2__DecisionManager
-#define SOAP_TYPE_PointerTons2__DecisionManager (653)
+#define SOAP_TYPE_PointerTons2__DecisionManager (649)
 #endif
 
 /* ns2__TokenSource * has binding name 'PointerTons2__TokenSource' for type 'ns2:TokenSource' */
 #ifndef SOAP_TYPE_PointerTons2__TokenSource
-#define SOAP_TYPE_PointerTons2__TokenSource (652)
+#define SOAP_TYPE_PointerTons2__TokenSource (648)
 #endif
 
 /* ns2__RecurringSubscriptionInfo * has binding name 'PointerTons2__RecurringSubscriptionInfo' for type 'ns2:RecurringSubscriptionInfo' */
 #ifndef SOAP_TYPE_PointerTons2__RecurringSubscriptionInfo
-#define SOAP_TYPE_PointerTons2__RecurringSubscriptionInfo (651)
+#define SOAP_TYPE_PointerTons2__RecurringSubscriptionInfo (647)
 #endif
 
 /* ns2__Subscription * has binding name 'PointerTons2__Subscription' for type 'ns2:Subscription' */
 #ifndef SOAP_TYPE_PointerTons2__Subscription
-#define SOAP_TYPE_PointerTons2__Subscription (650)
+#define SOAP_TYPE_PointerTons2__Subscription (646)
 #endif
 
 /* ns2__BankInfo * has binding name 'PointerTons2__BankInfo' for type 'ns2:BankInfo' */
 #ifndef SOAP_TYPE_PointerTons2__BankInfo
-#define SOAP_TYPE_PointerTons2__BankInfo (649)
+#define SOAP_TYPE_PointerTons2__BankInfo (645)
 #endif
 
 /* ns2__FundTransfer * has binding name 'PointerTons2__FundTransfer' for type 'ns2:FundTransfer' */
 #ifndef SOAP_TYPE_PointerTons2__FundTransfer
-#define SOAP_TYPE_PointerTons2__FundTransfer (648)
+#define SOAP_TYPE_PointerTons2__FundTransfer (644)
 #endif
 
 /* ns2__UCAF * has binding name 'PointerTons2__UCAF' for type 'ns2:UCAF' */
 #ifndef SOAP_TYPE_PointerTons2__UCAF
-#define SOAP_TYPE_PointerTons2__UCAF (647)
+#define SOAP_TYPE_PointerTons2__UCAF (643)
 #endif
 
 /* ns2__GECC * has binding name 'PointerTons2__GECC' for type 'ns2:GECC' */
 #ifndef SOAP_TYPE_PointerTons2__GECC
-#define SOAP_TYPE_PointerTons2__GECC (646)
+#define SOAP_TYPE_PointerTons2__GECC (642)
 #endif
 
 /* ns2__BML * has binding name 'PointerTons2__BML' for type 'ns2:BML' */
 #ifndef SOAP_TYPE_PointerTons2__BML
-#define SOAP_TYPE_PointerTons2__BML (645)
+#define SOAP_TYPE_PointerTons2__BML (641)
 #endif
 
 /* ns2__Check * has binding name 'PointerTons2__Check' for type 'ns2:Check' */
 #ifndef SOAP_TYPE_PointerTons2__Check
-#define SOAP_TYPE_PointerTons2__Check (644)
+#define SOAP_TYPE_PointerTons2__Check (640)
 #endif
 
 /* ns2__Category * has binding name 'PointerTons2__Category' for type 'ns2:Category' */
 #ifndef SOAP_TYPE_PointerTons2__Category
-#define SOAP_TYPE_PointerTons2__Category (643)
+#define SOAP_TYPE_PointerTons2__Category (639)
 #endif
 
 /* ns2__Card * has binding name 'PointerTons2__Card' for type 'ns2:Card' */
 #ifndef SOAP_TYPE_PointerTons2__Card
-#define SOAP_TYPE_PointerTons2__Card (642)
+#define SOAP_TYPE_PointerTons2__Card (638)
 #endif
 
 /* ns2__Installment * has binding name 'PointerTons2__Installment' for type 'ns2:Installment' */
 #ifndef SOAP_TYPE_PointerTons2__Installment
-#define SOAP_TYPE_PointerTons2__Installment (641)
+#define SOAP_TYPE_PointerTons2__Installment (637)
 #endif
 
 /* ns2__EncryptedPayment * has binding name 'PointerTons2__EncryptedPayment' for type 'ns2:EncryptedPayment' */
 #ifndef SOAP_TYPE_PointerTons2__EncryptedPayment
-#define SOAP_TYPE_PointerTons2__EncryptedPayment (640)
+#define SOAP_TYPE_PointerTons2__EncryptedPayment (636)
 #endif
 
 /* ns2__Pin * has binding name 'PointerTons2__Pin' for type 'ns2:Pin' */
 #ifndef SOAP_TYPE_PointerTons2__Pin
-#define SOAP_TYPE_PointerTons2__Pin (639)
+#define SOAP_TYPE_PointerTons2__Pin (635)
 #endif
 
 /* ns2__Pos * has binding name 'PointerTons2__Pos' for type 'ns2:Pos' */
 #ifndef SOAP_TYPE_PointerTons2__Pos
-#define SOAP_TYPE_PointerTons2__Pos (638)
+#define SOAP_TYPE_PointerTons2__Pos (634)
 #endif
 
 /* ns2__DCC * has binding name 'PointerTons2__DCC' for type 'ns2:DCC' */
 #ifndef SOAP_TYPE_PointerTons2__DCC
-#define SOAP_TYPE_PointerTons2__DCC (637)
+#define SOAP_TYPE_PointerTons2__DCC (633)
 #endif
 
 /* ns2__FundingTotals * has binding name 'PointerTons2__FundingTotals' for type 'ns2:FundingTotals' */
 #ifndef SOAP_TYPE_PointerTons2__FundingTotals
-#define SOAP_TYPE_PointerTons2__FundingTotals (636)
+#define SOAP_TYPE_PointerTons2__FundingTotals (632)
 #endif
 
 /* ns2__PurchaseTotals * has binding name 'PointerTons2__PurchaseTotals' for type 'ns2:PurchaseTotals' */
 #ifndef SOAP_TYPE_PointerTons2__PurchaseTotals
-#define SOAP_TYPE_PointerTons2__PurchaseTotals (635)
+#define SOAP_TYPE_PointerTons2__PurchaseTotals (631)
 #endif
 
 /* ns2__ShipFrom * has binding name 'PointerTons2__ShipFrom' for type 'ns2:ShipFrom' */
 #ifndef SOAP_TYPE_PointerTons2__ShipFrom
-#define SOAP_TYPE_PointerTons2__ShipFrom (633)
+#define SOAP_TYPE_PointerTons2__ShipFrom (629)
 #endif
 
 /* ns2__PersonalID * has binding name 'PointerTons2__PersonalID' for type 'ns2:PersonalID' */
 #ifndef SOAP_TYPE_PointerTons2__PersonalID
-#define SOAP_TYPE_PointerTons2__PersonalID (632)
+#define SOAP_TYPE_PointerTons2__PersonalID (628)
 #endif
 
 /* ns2__ShipTo * has binding name 'PointerTons2__ShipTo' for type 'ns2:ShipTo' */
 #ifndef SOAP_TYPE_PointerTons2__ShipTo
-#define SOAP_TYPE_PointerTons2__ShipTo (631)
+#define SOAP_TYPE_PointerTons2__ShipTo (627)
 #endif
 
 /* ns2__BillTo * has binding name 'PointerTons2__BillTo' for type 'ns2:BillTo' */
 #ifndef SOAP_TYPE_PointerTons2__BillTo
-#define SOAP_TYPE_PointerTons2__BillTo (630)
+#define SOAP_TYPE_PointerTons2__BillTo (626)
 #endif
 
 /* ns2__InvoiceHeader * has binding name 'PointerTons2__InvoiceHeader' for type 'ns2:InvoiceHeader' */
 #ifndef SOAP_TYPE_PointerTons2__InvoiceHeader
-#define SOAP_TYPE_PointerTons2__InvoiceHeader (629)
+#define SOAP_TYPE_PointerTons2__InvoiceHeader (625)
 #endif
 
 /* ns2__APDevice * has binding name 'PointerTons2__APDevice' for type 'ns2:APDevice' */
 #ifndef SOAP_TYPE_PointerTons2__APDevice
-#define SOAP_TYPE_PointerTons2__APDevice (628)
+#define SOAP_TYPE_PointerTons2__APDevice (624)
 #endif
 
 /* ns2__DecisionManagerTravelData * has binding name 'PointerTons2__DecisionManagerTravelData' for type 'ns2:DecisionManagerTravelData' */
 #ifndef SOAP_TYPE_PointerTons2__DecisionManagerTravelData
-#define SOAP_TYPE_PointerTons2__DecisionManagerTravelData (625)
+#define SOAP_TYPE_PointerTons2__DecisionManagerTravelData (621)
 #endif
 
 /* ns2__Authentication * has binding name 'PointerTons2__Authentication' for type 'ns2:Authentication' */
 #ifndef SOAP_TYPE_PointerTons2__Authentication
-#define SOAP_TYPE_PointerTons2__Authentication (624)
+#define SOAP_TYPE_PointerTons2__Authentication (620)
 #endif
 
 /* ns2__PaySubscriptionEvent * has binding name 'PointerTons2__PaySubscriptionEvent' for type 'ns2:PaySubscriptionEvent' */
 #ifndef SOAP_TYPE_PointerTons2__PaySubscriptionEvent
-#define SOAP_TYPE_PointerTons2__PaySubscriptionEvent (623)
+#define SOAP_TYPE_PointerTons2__PaySubscriptionEvent (619)
 #endif
 
 /* ns2__Address * has binding name 'PointerTons2__Address' for type 'ns2:Address' */
 #ifndef SOAP_TYPE_PointerTons2__Address
-#define SOAP_TYPE_PointerTons2__Address (620)
+#define SOAP_TYPE_PointerTons2__Address (616)
 #endif
 
-/* std::string * has binding name 'PointerTons2__dateTime' for type 'ns2:dateTime' */
-#ifndef SOAP_TYPE_PointerTons2__dateTime
-#define SOAP_TYPE_PointerTons2__dateTime (619)
+/* ns2__RestrictedDecimal has binding name 'ns2__RestrictedDecimal' for type 'ns2:RestrictedDecimal' */
+#ifndef SOAP_TYPE_ns2__RestrictedDecimal
+#define SOAP_TYPE_ns2__RestrictedDecimal (614)
 #endif
 
-/* std::string * has binding name 'PointerToxsd__integer' for type 'xsd:integer' */
-#ifndef SOAP_TYPE_PointerToxsd__integer
-#define SOAP_TYPE_PointerToxsd__integer (617)
+/* ns2__RestrictedString has binding name 'ns2__RestrictedString' for type 'ns2:RestrictedString' */
+#ifndef SOAP_TYPE_ns2__RestrictedString
+#define SOAP_TYPE_ns2__RestrictedString (613)
 #endif
 
-/* std::string * has binding name 'PointerTons2__boolean' for type 'ns2:boolean' */
-#ifndef SOAP_TYPE_PointerTons2__boolean
-#define SOAP_TYPE_PointerTons2__boolean (616)
+/* ns2__dateTime has binding name 'ns2__dateTime' for type 'ns2:dateTime' */
+#ifndef SOAP_TYPE_ns2__dateTime
+#define SOAP_TYPE_ns2__dateTime (612)
 #endif
 
-/* std::string * has binding name 'PointerTostd__string' for type 'xsd:string' */
-#ifndef SOAP_TYPE_PointerTostd__string
-#define SOAP_TYPE_PointerTostd__string (615)
+/* ns2__boolean has binding name 'ns2__boolean' for type 'ns2:boolean' */
+#ifndef SOAP_TYPE_ns2__boolean
+#define SOAP_TYPE_ns2__boolean (611)
 #endif
 
-/* std::string * has binding name 'PointerTons2__amount' for type 'ns2:amount' */
-#ifndef SOAP_TYPE_PointerTons2__amount
-#define SOAP_TYPE_PointerTons2__amount (614)
+/* ns2__amount has binding name 'ns2__amount' for type 'ns2:amount' */
+#ifndef SOAP_TYPE_ns2__amount
+#define SOAP_TYPE_ns2__amount (610)
+#endif
+
+/* xsd__integer has binding name 'xsd__integer' for type 'xsd:integer' */
+#ifndef SOAP_TYPE_xsd__integer
+#define SOAP_TYPE_xsd__integer (283)
+#endif
+
+/* xsd__decimal has binding name 'xsd__decimal' for type 'xsd:decimal' */
+#ifndef SOAP_TYPE_xsd__decimal
+#define SOAP_TYPE_xsd__decimal (282)
+#endif
+
+/* wchar_t * has binding name 'wstring' for type 'xsd:string' */
+#ifndef SOAP_TYPE_wstring
+#define SOAP_TYPE_wstring (281)
 #endif
 
 /* unsigned char * has binding name 'PointerTounsignedByte' for type 'xsd:unsignedByte' */
@@ -26205,152 +26170,152 @@ typedef xsd__decimal ns2__RestrictedDecimal;
 
 /* std::vector<ns2__PauseRuleResultItem>  has binding name 'std__vectorTemplateOfns2__PauseRuleResultItem' for type 'ns2:PauseRuleResultItem' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__PauseRuleResultItem
-#define SOAP_TYPE_std__vectorTemplateOfns2__PauseRuleResultItem (947)
+#define SOAP_TYPE_std__vectorTemplateOfns2__PauseRuleResultItem (941)
 #endif
 
 /* std::vector<ns2__PaypalTransaction>  has binding name 'std__vectorTemplateOfns2__PaypalTransaction' for type 'ns2:PaypalTransaction' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__PaypalTransaction
-#define SOAP_TYPE_std__vectorTemplateOfns2__PaypalTransaction (942)
+#define SOAP_TYPE_std__vectorTemplateOfns2__PaypalTransaction (936)
 #endif
 
 /* std::vector<ns2__AuxiliaryField>  has binding name 'std__vectorTemplateOfns2__AuxiliaryField' for type 'ns2:AuxiliaryField' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__AuxiliaryField
-#define SOAP_TYPE_std__vectorTemplateOfns2__AuxiliaryField (941)
+#define SOAP_TYPE_std__vectorTemplateOfns2__AuxiliaryField (935)
 #endif
 
 /* std::vector<ns2__MDDField>  has binding name 'std__vectorTemplateOfns2__MDDField' for type 'ns2:MDDField' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__MDDField
-#define SOAP_TYPE_std__vectorTemplateOfns2__MDDField (940)
+#define SOAP_TYPE_std__vectorTemplateOfns2__MDDField (934)
 #endif
 
 /* std::vector<ns2__Service>  has binding name 'std__vectorTemplateOfns2__Service' for type 'ns2:Service' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Service
-#define SOAP_TYPE_std__vectorTemplateOfns2__Service (939)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Service (933)
 #endif
 
 /* std::vector<ns2__Leg>  has binding name 'std__vectorTemplateOfns2__Leg' for type 'ns2:Leg' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Leg
-#define SOAP_TYPE_std__vectorTemplateOfns2__Leg (938)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Leg (932)
 #endif
 
 /* std::vector<ns2__Passenger>  has binding name 'std__vectorTemplateOfns2__Passenger' for type 'ns2:Passenger' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Passenger
-#define SOAP_TYPE_std__vectorTemplateOfns2__Passenger (937)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Passenger (931)
 #endif
 
 /* std::vector<ns2__BalanceInfo>  has binding name 'std__vectorTemplateOfns2__BalanceInfo' for type 'ns2:BalanceInfo' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__BalanceInfo
-#define SOAP_TYPE_std__vectorTemplateOfns2__BalanceInfo (918)
+#define SOAP_TYPE_std__vectorTemplateOfns2__BalanceInfo (912)
 #endif
 
 /* std::vector<ns2__Network>  has binding name 'std__vectorTemplateOfns2__Network' for type 'ns2:Network' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Network
-#define SOAP_TYPE_std__vectorTemplateOfns2__Network (914)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Network (908)
 #endif
 
 /* std::vector<ns2__PromotionGroupReply>  has binding name 'std__vectorTemplateOfns2__PromotionGroupReply' for type 'ns2:PromotionGroupReply' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__PromotionGroupReply
-#define SOAP_TYPE_std__vectorTemplateOfns2__PromotionGroupReply (902)
+#define SOAP_TYPE_std__vectorTemplateOfns2__PromotionGroupReply (896)
 #endif
 
 /* std::vector<ns2__DeniedPartiesMatch>  has binding name 'std__vectorTemplateOfns2__DeniedPartiesMatch' for type 'ns2:DeniedPartiesMatch' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__DeniedPartiesMatch
-#define SOAP_TYPE_std__vectorTemplateOfns2__DeniedPartiesMatch (817)
+#define SOAP_TYPE_std__vectorTemplateOfns2__DeniedPartiesMatch (811)
 #endif
 
 /* std::vector<ns2__APOptionsOption>  has binding name 'std__vectorTemplateOfns2__APOptionsOption' for type 'ns2:APOptionsOption' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__APOptionsOption
-#define SOAP_TYPE_std__vectorTemplateOfns2__APOptionsOption (816)
+#define SOAP_TYPE_std__vectorTemplateOfns2__APOptionsOption (810)
 #endif
 
 /* std::vector<ns2__paymentCurrencyOffer>  has binding name 'std__vectorTemplateOfns2__paymentCurrencyOffer' for type 'ns2:paymentCurrencyOffer' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__paymentCurrencyOffer
-#define SOAP_TYPE_std__vectorTemplateOfns2__paymentCurrencyOffer (814)
+#define SOAP_TYPE_std__vectorTemplateOfns2__paymentCurrencyOffer (808)
 #endif
 
 /* std::vector<ns2__Element>  has binding name 'std__vectorTemplateOfns2__Element' for type 'ns2:Element' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Element
-#define SOAP_TYPE_std__vectorTemplateOfns2__Element (810)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Element (806)
 #endif
 
 /* std::vector<ns2__Field>  has binding name 'std__vectorTemplateOfns2__Field' for type 'ns2:Field' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Field
-#define SOAP_TYPE_std__vectorTemplateOfns2__Field (809)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Field (805)
 #endif
 
 /* std::vector<ns2__ProviderField>  has binding name 'std__vectorTemplateOfns2__ProviderField' for type 'ns2:ProviderField' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__ProviderField
-#define SOAP_TYPE_std__vectorTemplateOfns2__ProviderField (808)
+#define SOAP_TYPE_std__vectorTemplateOfns2__ProviderField (804)
 #endif
 
 /* std::vector<ns2__Provider>  has binding name 'std__vectorTemplateOfns2__Provider' for type 'ns2:Provider' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Provider
-#define SOAP_TYPE_std__vectorTemplateOfns2__Provider (807)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Provider (803)
 #endif
 
 /* std::vector<ns2__RuleResultItem>  has binding name 'std__vectorTemplateOfns2__RuleResultItem' for type 'ns2:RuleResultItem' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__RuleResultItem
-#define SOAP_TYPE_std__vectorTemplateOfns2__RuleResultItem (801)
+#define SOAP_TYPE_std__vectorTemplateOfns2__RuleResultItem (797)
 #endif
 
 /* std::vector<ns2__FXQuote>  has binding name 'std__vectorTemplateOfns2__FXQuote' for type 'ns2:FXQuote' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__FXQuote
-#define SOAP_TYPE_std__vectorTemplateOfns2__FXQuote (800)
+#define SOAP_TYPE_std__vectorTemplateOfns2__FXQuote (796)
 #endif
 
 /* std::vector<ns2__TaxReplyItem>  has binding name 'std__vectorTemplateOfns2__TaxReplyItem' for type 'ns2:TaxReplyItem' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__TaxReplyItem
-#define SOAP_TYPE_std__vectorTemplateOfns2__TaxReplyItem (798)
+#define SOAP_TYPE_std__vectorTemplateOfns2__TaxReplyItem (794)
 #endif
 
 /* std::vector<ns2__TaxReplyItemJurisdiction>  has binding name 'std__vectorTemplateOfns2__TaxReplyItemJurisdiction' for type 'ns2:TaxReplyItemJurisdiction' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__TaxReplyItemJurisdiction
-#define SOAP_TYPE_std__vectorTemplateOfns2__TaxReplyItemJurisdiction (797)
+#define SOAP_TYPE_std__vectorTemplateOfns2__TaxReplyItemJurisdiction (793)
 #endif
 
 /* std::vector<ns2__HealthCare>  has binding name 'std__vectorTemplateOfns2__HealthCare' for type 'ns2:HealthCare' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__HealthCare
-#define SOAP_TYPE_std__vectorTemplateOfns2__HealthCare (794)
+#define SOAP_TYPE_std__vectorTemplateOfns2__HealthCare (790)
 #endif
 
 /* std::vector<ns2__PromotionGroup>  has binding name 'std__vectorTemplateOfns2__PromotionGroup' for type 'ns2:PromotionGroup' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__PromotionGroup
-#define SOAP_TYPE_std__vectorTemplateOfns2__PromotionGroup (770)
+#define SOAP_TYPE_std__vectorTemplateOfns2__PromotionGroup (766)
 #endif
 
 /* std::vector<ns2__RequestReserved>  has binding name 'std__vectorTemplateOfns2__RequestReserved' for type 'ns2:RequestReserved' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__RequestReserved
-#define SOAP_TYPE_std__vectorTemplateOfns2__RequestReserved (725)
+#define SOAP_TYPE_std__vectorTemplateOfns2__RequestReserved (721)
 #endif
 
 /* std::vector<ns2__DeviceFingerprintData>  has binding name 'std__vectorTemplateOfns2__DeviceFingerprintData' for type 'ns2:DeviceFingerprintData' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__DeviceFingerprintData
-#define SOAP_TYPE_std__vectorTemplateOfns2__DeviceFingerprintData (702)
+#define SOAP_TYPE_std__vectorTemplateOfns2__DeviceFingerprintData (698)
 #endif
 
 /* std::vector<ns2__Item>  has binding name 'std__vectorTemplateOfns2__Item' for type 'ns2:Item' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Item
-#define SOAP_TYPE_std__vectorTemplateOfns2__Item (634)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Item (630)
 #endif
 
 /* std::vector<char *>  has binding name 'std__vectorTemplateOf_XML' for type '' */
 #ifndef SOAP_TYPE_std__vectorTemplateOf_XML
-#define SOAP_TYPE_std__vectorTemplateOf_XML (627)
+#define SOAP_TYPE_std__vectorTemplateOf_XML (623)
 #endif
 
 /* std::vector<ns2__DecisionManagerTravelLeg>  has binding name 'std__vectorTemplateOfns2__DecisionManagerTravelLeg' for type 'ns2:DecisionManagerTravelLeg' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__DecisionManagerTravelLeg
-#define SOAP_TYPE_std__vectorTemplateOfns2__DecisionManagerTravelLeg (626)
+#define SOAP_TYPE_std__vectorTemplateOfns2__DecisionManagerTravelLeg (622)
 #endif
 
-/* std::vector<std::string>  has binding name 'std__vectorTemplateOfstd__string' for type 'xsd:string' */
-#ifndef SOAP_TYPE_std__vectorTemplateOfstd__string
-#define SOAP_TYPE_std__vectorTemplateOfstd__string (622)
+/* std::vector<wchar_t *>  has binding name 'std__vectorTemplateOfwstring' for type 'xsd:string' */
+#ifndef SOAP_TYPE_std__vectorTemplateOfwstring
+#define SOAP_TYPE_std__vectorTemplateOfwstring (618)
 #endif
 
 /* std::vector<ns2__Brands>  has binding name 'std__vectorTemplateOfns2__Brands' for type 'ns2:Brands' */
 #ifndef SOAP_TYPE_std__vectorTemplateOfns2__Brands
-#define SOAP_TYPE_std__vectorTemplateOfns2__Brands (621)
+#define SOAP_TYPE_std__vectorTemplateOfns2__Brands (617)
 #endif
 
 /******************************************************************************\

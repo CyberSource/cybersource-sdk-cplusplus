@@ -319,7 +319,6 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 	  }
 
 	  PKCS12_free(*p12);
-	  soap_register_plugin((*proxy)->soap, soap_wsse);
 	 /****Read pkcs12 completed*************/
 	  /****Set up configuration for signing the request*************/
    soap_wsse_set_wsu_id((*proxy)->soap, "wsse:BinarySecurityToken SOAP-ENV:Body");
@@ -332,7 +331,6 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 
 	char *token1, *token2;
 	if ( cfg.isEncryptionEnabled ) {
-
 		for (int i = 0; i < sk_X509_num(*ca); i++) {
 			//token1 = strchr(sk_X509_value(*ca, i)->name, '=');
 			//token2 = strchr(token1, '=');
@@ -353,11 +351,9 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
 						return ( 4 );
 					}
-                                
 			}
 		#endif
 		}
-
 	}
 
     /****Set up configuration for signing the request ends*************/
@@ -658,8 +654,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		cybs_log (cfg, CYBS_LT_CONFIG, proxy->soap_endpoint);
 
 	//std:: string rep;
-	string rep;
-	int status = proxy->runTransaction( soap_wchar2s(proxy->soap, convertMaptoString (req).c_str()), rep );
+
+	wchar_t *rep;
+	int status = proxy->runTransaction( const_cast< wchar_t* >(convertMaptoString (req).c_str()), rep );
 
 	sk_X509_pop_free(ca, X509_free);
 	X509_free(cert1);
@@ -668,15 +665,14 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	char *responseMsg = "\0";
 	responseMsg = proxy->soap->msgbuf;
 
-        wchar_t* reply;
-        soap_s2wchar(proxy->soap, rep.c_str(), &reply, 0, -1, -1, NULL);
-	if (reply != NULL) {
-		wstring repCopy(reply);
+	if (rep != NULL) {
+		wstring repCopy(rep);
 	}
 
 	if (status == SOAP_OK) {
-		if(reply != NULL)
-		resMap = convertStringtoMap(reply);
+		if(rep != NULL)
+		resMap = convertStringtoMap(rep);
+
 		if (cfg.isLogEnabled)
 		cybs_log( cfg, CYBS_LT_SUCCESS, responseMsg );
 

@@ -152,7 +152,7 @@
 #import "wsse.h"
 #import "custom/struct_timeval.h"
 ]
-
+xsd__string = | wchar_t* | wchar_t*
 #       Remember: type bindings are given on a single line (use \ to continue
 #       with the next line). Here is an example binding for the XSD int type
 #       that maps to an 'int':

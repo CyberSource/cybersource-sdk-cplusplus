@@ -416,12 +416,12 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 			RETURN_REQUIRED_ERROR( CYBS_C_MERCHANT_ID );
 		}
 		merchantID = temp;
-		//wchar_t *w = NULL;
-		//soap_s2wchar(proxy->soap, merchantID.c_str(), &w, 0, -1, -1, NULL);
-		ns2__requestMessage->merchantID = new std::string(merchantID);
+		wchar_t *w = NULL;
+		soap_s2wchar(proxy->soap, merchantID.c_str(), &w, 0, -1, -1, NULL);
+		ns2__requestMessage->merchantID = w;
 	}
 
-	tempCopy = *ns2__requestMessage->merchantID;
+	tempCopy = soap_wchar2s(proxy->soap, ns2__requestMessage->merchantID);
 	tempCopy.copy(cfg.merchantID, tempCopy.size(), 0);
 	cfg.merchantID[tempCopy.size()]='\0';
 
@@ -620,10 +620,10 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 
 	// Set client library version in request
 	//std::string clientLibVersion (CLIENT_LIBRARY_VERSION_VALUE);
-	ns2__requestMessage->clientLibraryVersion = new std::string(soap_wchar2s(proxy->soap, CLIENT_LIBRARY_VERSION_VALUE));
-	ns2__requestMessage->clientLibrary = new std::string(soap_wchar2s(proxy->soap, CLIENT_LIBRARY_VALUE));
-	ns2__requestMessage->clientEnvironment = new std::string(soap_wchar2s(proxy->soap, CLIENT_ENVIRONMENT_VALUE));
-	ns2__requestMessage->clientApplication = new std::string(soap_wchar2s(proxy->soap, CLIENT_APPLICATION_VALUE));
+	ns2__requestMessage->clientLibraryVersion = const_cast< wchar_t* >(CLIENT_LIBRARY_VERSION_VALUE);
+	ns2__requestMessage->clientLibrary = const_cast< wchar_t* >(CLIENT_LIBRARY_VALUE);
+	ns2__requestMessage->clientEnvironment = const_cast< wchar_t* >(CLIENT_ENVIRONMENT_VALUE);
+	ns2__requestMessage->clientApplication = const_cast< wchar_t* >(CLIENT_APPLICATION_VALUE);
 
 	/* converting ns2__requestMessage to xml */
 	std::stringstream ss;
