@@ -243,15 +243,14 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 	soap_ssl_init();
 	soap_register_plugin((*proxy)->soap, soap_wsse);
 
-/*	FILE *fp;
 
-	if (!(fp = fopen(cfg.keyFile, "rb"))) {
-		return ( 1 );
-	}*/
-
-	//*p12 = d2i_PKCS12_fp(fp, NULL);
 	BIO* bio1;
     bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
+
+    if (!bio1) {
+    		return ( 1 );
+    }
+
 	*p12 = d2i_PKCS12_bio(bio1, NULL);
 	BIO_free(bio1);
 
@@ -300,9 +299,8 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 			{
 				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0){
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
-			       			return ( 4 );
+						return ( 4 );
 					}
-                }
 			}
 		#endif
 		}

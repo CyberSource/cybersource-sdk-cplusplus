@@ -20,8 +20,7 @@ void printRequest(ITransactionProcessorProxy proxy, ns2__RequestMessage *request
 void printResponse(ITransactionProcessorProxy proxy, ns2__ReplyMessage *reply);
 
 const char CYBS_INI_FILE[]   = "../cybs.ini";
-const char AUTH_XML_FILE[] = "../auth.xml";
-
+const char AUTH_XML_FILE[]   = "../auth.xml";
 
 char* getInputXML (const char* xmlfile) {
 	FILE *fp;
