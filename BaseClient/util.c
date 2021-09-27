@@ -64,32 +64,31 @@ static void trim( char **pszString )
 void cybs_load_config (const char *configFilename, CybsMap *map) {
 	char szLine[256];
 	char *szName, *szValue;
-        std::string nextLine;
+    std::string nextLine;
 	int i = 0;
 
-        std::ifstream f(configFilename);
-        if(!f.is_open()) {
-		(CybsMap *) 0;
+    std::ifstream f(configFilename);
+    if(!f.is_open()) {
+        (CybsMap *) 0;
 	}else {
   	   //CybsMap *cybsConfig = cybs_create_map();
-	   while (getline(f, nextLine)) {
-                strcpy(szLine, nextLine.c_str());
-		split( szLine, &szName, &szValue );
-		string szValueCopy(szValue);
-		if (szValue && !szValueCopy.size() == 0)
-		{
-			trim( &szName );
-			if (szName[0] != INI_COMMENT_CHAR) 
-			{
-				trim( &szValue );
-				cybs_add(map, szName, szValue);
-				i = i + 1;
-			}
-		} 
-	   }
-
-	   f.close();
-        }
+  	    while (getline(f, nextLine)) {
+  	        strcpy(szLine, nextLine.c_str());
+		    split( szLine, &szName, &szValue );
+		    string szValueCopy(szValue);
+		    if (szValue && !szValueCopy.size() == 0)
+		    {
+			    trim( &szName );
+			    if (szName[0] != INI_COMMENT_CHAR)
+			    {
+				    trim( &szValue );
+				    cybs_add(map, szName, szValue);
+				    i = i + 1;
+			    }
+		    }
+	    }
+	    f.close();
+    }
 }
 
 

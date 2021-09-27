@@ -32,7 +32,7 @@ char* getInputXML (const char* xmlfile) {
 	if (fp) {
 		fseek( fp, 0, SEEK_END );
 		size = ftell( fp );
-                fseek( fp, 0, SEEK_SET );
+        fseek( fp, 0, SEEK_SET );
 		src = (char *) malloc( size+1 );
 
 		if( src ) {

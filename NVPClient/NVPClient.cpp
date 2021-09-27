@@ -632,18 +632,17 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		
 	}
 
-        if(CLIENT_LIBRARY_VERSION != NULL)
-           req[CLIENT_LIBRARY_VERSION] = CLIENT_LIBRARY_VERSION_VALUE;
+    if(CLIENT_LIBRARY_VERSION != NULL)
+        req[CLIENT_LIBRARY_VERSION] = CLIENT_LIBRARY_VERSION_VALUE;
 
-        if(CLIENT_LIBRARY != NULL)
-	   req[CLIENT_LIBRARY] = CLIENT_LIBRARY_VALUE;
+    if(CLIENT_LIBRARY != NULL)
+        req[CLIENT_LIBRARY] = CLIENT_LIBRARY_VALUE;
 
-        if(CLIENT_ENVIRONMENT != NULL)
-   	   req[CLIENT_ENVIRONMENT] = CLIENT_ENVIRONMENT_VALUE;
+    if(CLIENT_ENVIRONMENT != NULL)
+        req[CLIENT_ENVIRONMENT] = CLIENT_ENVIRONMENT_VALUE;
 
-        if(CLIENT_APPLICATION != NULL)
-	   req[CLIENT_APPLICATION] = CLIENT_APPLICATION_VALUE;
-
+    if(CLIENT_APPLICATION != NULL)
+        req[CLIENT_APPLICATION] = CLIENT_APPLICATION_VALUE;
 
 	if (cfg.isLogEnabled)
 	  cybs_log_NVP(cfg, req, CYBS_LT_REQUEST);
@@ -706,10 +705,10 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 	szDirCopy.copy(szDest, szDirCopy.size(), 0);
 	if (fAddSeparator)
 	{
-             if(nDirLen < 0)
-             {
-                 throw std::out_of_range("Invalid index");
-             }
+         if(nDirLen < 0)
+         {
+             throw std::out_of_range("Invalid index");
+         }
 	     szDest[nDirLen] = DIR_SEPARATOR;
 	     szDest[nDirLen + 1] = '\0';
 	}
@@ -719,10 +718,10 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 	for(i = 0; i < szDestCopy.size(); i++) {
 		szDest[i]=szDestCopy[i];
 	}
-        if(i < 0 || i > szDestCopy.size())
-        {
-            throw std::out_of_range("Invalid index");  
-        }
+    if(i < 0 || i > szDestCopy.size())
+    {
+        throw std::out_of_range("Invalid index");
+    }
 	szDest[i]='\0';
 	return( 0 );
 	

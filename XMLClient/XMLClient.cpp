@@ -690,10 +690,10 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 
 	if (fAddSeparator)
 	{
-                if(nDirLen < 0)
-                {
-                     throw std::out_of_range("Invalid index");
-                }
+        if(nDirLen < 0)
+        {
+            throw std::out_of_range("Invalid index");
+        }
 		szDest[nDirLen] = DIR_SEPARATOR;
 		szDest[nDirLen + 1] = '\0';
 	}
@@ -704,10 +704,10 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 		szDest[i]=szDestCopy[i];
 	}
 
-        if(i < 0 || i > szDestCopy.size())
-        {
-            throw std::out_of_range("Invalid index");
-        }
+    if(i < 0 || i > szDestCopy.size())
+    {
+         throw std::out_of_range("Invalid index");
+    }
 	szDest[i]='\0';
 	return( 0 );
 	
