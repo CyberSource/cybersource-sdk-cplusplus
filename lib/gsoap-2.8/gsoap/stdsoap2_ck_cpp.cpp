@@ -1,0 +1,1 @@
+../gsoap/stdsoap2.cpp

@@ -12,7 +12,7 @@ Use soapcpp2 option -Ipath:path:... to specify the path(s) for #import
 gSOAP XML Web services tools
 Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -52,7 +52,8 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 --------------------------------------------------------------------------------
 */
 
-//gsoap xop schema import: http://www.w3.org/2004/08/xop/include
+//gsoap xop schema namespace:   http://www.w3.org/2004/08/xop/include
+//gsoap xop schema import:      https://www.w3.org/2004/08/xop/include
 
 struct _xop__Include
 { unsigned char *__ptr; ///< pointer to binary data

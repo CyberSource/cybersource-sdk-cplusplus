@@ -3,10 +3,18 @@
 
 	Usage: See import/wsrx.h and plugin/wsrmapi.c
 
+        Requires:
+        - plugin/wsrmapi.h and plugin/wsrmapi.c
+        - plugin/wsaapi.h and plugin/wsaapi.c
+        - custom/duration.c
+
 	Generated with:
 	wsdl2h -cyex -o wsrm.h -t WS/WS-typemap.dat WS/WS-ReliableMessaging.xsd
 
-	Modified by Robert van Engelen:
+        This file imports:
+        - wsa5.h
+        - custom/duration.h
+        - wsrx.h
 
 	- Removed //gsoapopt
 	- Changed //gsoap wsrm schema namespace directive to import directive
@@ -66,7 +74,7 @@ typedef struct wsrm__AckRequestedType wsrm__AckRequestedType;
 /// Typedef synonym for struct wsrm__SequenceFaultType.
 typedef struct wsrm__SequenceFaultType wsrm__SequenceFaultType;
 
-/// Imported complexType "http://docs.oasis-open.org/ws-rx/wsrm/200702":DetailType from typemap /Users/engelen/Projects/gsoap/WS/WS-typemap.dat.
+/// Imported complexType "http://docs.oasis-open.org/ws-rx/wsrm/200702":DetailType from typemap WS/WS-typemap.dat.
 // complexType definition intentionally left blank.
 
 /// Typedef synonym for struct wsrm__CreateSequenceType.
@@ -96,14 +104,14 @@ typedef struct wsrm__AcceptType wsrm__AcceptType;
 /// Typedef synonym for struct _wsrm__SequenceAcknowledgement.
 typedef struct _wsrm__SequenceAcknowledgement _wsrm__SequenceAcknowledgement;
 
-/// Imported complexType "http://docs.oasis-open.org/ws-rx/wsrm/200702":Identifier from typemap /Users/engelen/Projects/gsoap/WS/WS-typemap.dat.
+/// Imported complexType "http://docs.oasis-open.org/ws-rx/wsrm/200702":Identifier from typemap WS/WS-typemap.dat.
 /// @brief This type is for elements whose [children] is an anyURI and can have arbitrary attributes.
 typedef char *_wsrm__Identifier;
 
-/// Imported complexType "http://docs.oasis-open.org/ws-rx/wsrm/200702":Address from typemap /Users/engelen/Projects/gsoap/WS/WS-typemap.dat.
+/// Imported complexType "http://docs.oasis-open.org/ws-rx/wsrm/200702":Address from typemap WS/WS-typemap.dat.
 // complexType definition intentionally left blank.
 
-/// Imported complexType "http://docs.oasis-open.org/ws-rx/wsrm/200702":Expires from typemap /Users/engelen/Projects/gsoap/WS/WS-typemap.dat.
+/// Imported complexType "http://docs.oasis-open.org/ws-rx/wsrm/200702":Expires from typemap WS/WS-typemap.dat.
 #import "custom/duration.h"
 
 /// Typedef synonym for struct _wsrm__UsesSequenceSTR.
@@ -120,7 +128,7 @@ typedef struct _wsrm__UsesSequenceSSL _wsrm__UsesSequenceSSL;
 \******************************************************************************/
 
 
-/// Imported simpleType "http://docs.oasis-open.org/ws-rx/wsrm/200702":MessageNumberType from typemap /Users/engelen/Projects/gsoap/WS/WS-typemap.dat.
+/// Imported simpleType "http://docs.oasis-open.org/ws-rx/wsrm/200702":MessageNumberType from typemap WS/WS-typemap.dat.
 // simpleType definition intentionally left blank.
 
 /// "http://docs.oasis-open.org/ws-rx/wsrm/200702":FaultCodes is a simpleType restriction of xs:QName.

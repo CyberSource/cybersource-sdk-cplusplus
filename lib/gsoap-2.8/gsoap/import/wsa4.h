@@ -1,13 +1,14 @@
 /*
 
-	wsa4.h
+	wsa4.h WS-Addressing 2004/03
 
 	Usage: See plugin/wsaapi.c
 
 	Generated with:
 	wsdl2h -cgye -o wsa4.h -t WS/WS-typemap.dat WS/WS-Addressing04.xsd
 
-	Modified by Robert van Engelen:
+        Requires:
+        - plugin/wsaapi.h and plugin/wsaapi.c
 
 	- Removed //gsoapopt
 	- Added the following directive to import WS-Addressing namespace:
@@ -42,6 +43,7 @@
  *                                                                            *
 \******************************************************************************/
 
+#define SOAP_NAMESPACE_OF_wsa4	"http://schemas.xmlsoap.org/ws/2004/03/addressing"
 //gsoap wsa4  schema import:	http://schemas.xmlsoap.org/ws/2004/03/addressing
 //gsoap wsa4  schema elementForm:	qualified
 //gsoap wsa4  schema attributeForm:	unqualified

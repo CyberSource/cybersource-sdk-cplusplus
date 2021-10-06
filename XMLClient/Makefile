@@ -2,19 +2,19 @@ CC = g++
 #DEBUG = -g
 
 CFLAGS = -DWITH_OPENSSL -DWITH_DOM -DLINUX -DCERTC_SW_PLATFORM=CERTC_SW_LINUX -DPTHREADS -DOPENSSL_SYS_UNIX -D_POSIX_THREADS
-source = XMLClient.cpp soapC.cpp soapITransactionProcessorProxy.cpp ../NVPClient/log.cpp ../NVPClient/safefields.cpp ../lib/gsoap-2.8/gsoap/stdsoap2.cpp ../lib/gsoap-2.8/gsoap/plugin/threads.c ../lib/gsoap-2.8/gsoap/dom.cpp ../lib/gsoap-2.8/gsoap/plugin/smdevp.c ../lib/gsoap-2.8/gsoap/plugin/mecevp.c ../lib/gsoap-2.8/gsoap/plugin/wsseapi.c
-OBJS =  XMLClient.o soapC.o soapITransactionProcessorProxy.o log.o safefields.o stdsoap2.o threads.o dom.o smdevp.o mecevp.o wsseapi.o
+source = XMLClient.cpp soapC.cpp soapITransactionProcessorProxy.cpp ../NVPClient/log.cpp ../NVPClient/safefields.cpp ../lib/gsoap-2.8/gsoap/stdsoap2.cpp ../lib/gsoap-2.8/gsoap/plugin/threads.c ../lib/gsoap-2.8/gsoap/dom.cpp ../lib/gsoap-2.8/gsoap/plugin/smdevp.c ../lib/gsoap-2.8/gsoap/plugin/mecevp.c ../lib/gsoap-2.8/gsoap/plugin/wsseapi.c ../lib/gsoap-2.8/gsoap/custom/struct_timeval.c
+OBJS =  XMLClient.o soapC.o soapITransactionProcessorProxy.o log.o safefields.o stdsoap2.o threads.o dom.o smdevp.o mecevp.o wsseapi.o struct_timeval.o
 FPIC=-fPIC
 
-EXTERNAL32 = ../lib/openssl-1.0.1t/linux32/lib
+EXTERNAL32 = ../lib/openssl-1.1.1l/linux32/lib
 LIBDIRS32 = -L$(EXTERNAL32) -L$(EXTERNAL32) -L../BaseClient -L../lib/libxml2/linux32/lib
 LIBS_DYNAMIC32 = -lssl -lcrypto -lbaseclient -lxml2
-INCLUDES32 = -I../lib/gsoap-2.8/gsoap -I../lib/gsoap-2.8/gsoap/import -I../lib/gsoap-2.8/gsoap/plugin -I../lib/openssl-1.0.1t/linux32/include -I../BaseClient -I../lib/libxml2/linux32/include/libxml2
+INCLUDES32 = -I../lib/gsoap-2.8/gsoap -I../lib/gsoap-2.8/gsoap/import -I../lib/gsoap-2.8/gsoap/plugin -I../lib/openssl-1.1.1l/linux32/include -I../BaseClient -I../lib/libxml2/linux32/include/libxml2
 
-EXTERNAL64 = ../lib/openssl-1.0.1t/linux64/lib
+EXTERNAL64 = ../lib/openssl-1.1.1l/linux64/lib
 LIBDIRS64 = -L$(EXTERNAL64) -L$(EXTERNAL64) -L../BaseClient -L../lib/libxml2/linux64/lib
 LIBS_DYNAMIC64 = -lssl -lcrypto -lbaseclient -lxml2
-INCLUDES64 = -I../lib/gsoap-2.8/gsoap -I../lib/gsoap-2.8/gsoap/import -I../lib/gsoap-2.8/gsoap/plugin -I../lib/openssl-1.0.1t/linux64/include -I../BaseClient -I../lib/libxml2/linux64/include/libxml2
+INCLUDES64 = -I../lib/gsoap-2.8/gsoap -I../lib/gsoap-2.8/gsoap/import -I../lib/gsoap-2.8/gsoap/plugin -I../lib/openssl-1.1.1l/linux64/include -I../BaseClient -I../lib/libxml2/linux64/include/libxml2
 
 32 : .cpp.o32 dynamic32 static
 64 : .cpp.o64 dynamic64 static

@@ -20,7 +20,7 @@ Use soapcpp2 option -Ipath:path:... to specify the path(s) for #import
 gSOAP XML Web services tools
 Copyright (C) 2000-2005, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -60,8 +60,9 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 --------------------------------------------------------------------------------
 */
 
-//gsoap xmime5 schema import: http://www.w3.org/2005/05/xmlmime
-//gsoap xmime5 schema namespace2: http://www.w3.org/2004/11/xmlmime
+//gsoap xmime5 schema namespace:        http://www.w3.org/2005/05/xmlmime
+//gsoap xmime5 schema namespace2:       http://www.w3.org/2004/11/xmlmime
+//gsoap xmime5 schema import:           https://www.w3.org/2005/05/xmlmime
 
 /** base64 type, can be used as MIME attachment (when id and type are set) */
 struct xmime5__base64Binary

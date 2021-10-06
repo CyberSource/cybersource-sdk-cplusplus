@@ -1,7 +1,7 @@
 /*
 	struct_timeval.h
 
-	Custom serializer for struct timeval as xsd::dateTime
+	Custom serializer for struct timeval as xsd:dateTime
 
 	Because time_t (binds to xsd:dateTime) lacks fractional seconds, struct
 	timeval can be used to represent microseconds since 1970-01-01.
@@ -34,7 +34,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2007, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under ONE of the following licenses:
-GPL, the gSOAP public license, OR Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 

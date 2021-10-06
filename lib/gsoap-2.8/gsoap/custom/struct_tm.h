@@ -43,7 +43,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2007, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under ONE of the following licenses:
-GPL, the gSOAP public license, OR Genivia's license for commercial use.
+GPL the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -85,7 +85,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 
 #include <time.h>
 
-/** externally declared ("volatila"e).
+/** externally declared (and "volatile" to avoid redeclaration).
     Declared here for soapcpp2 to produce soap_dup_xsd__dateTime() */
 extern typedef volatile struct tm
 {	int	tm_sec;		///< seconds (0 - 60)

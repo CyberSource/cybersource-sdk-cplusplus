@@ -6,7 +6,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2005, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -60,7 +60,13 @@ int md5_handler(struct soap *soap, void **context, enum md5_action action, char 
   { case MD5_INIT:
       soap_ssl_init();
       if (!*context)
-      { *context = (void*)SOAP_MALLOC(soap, sizeof(EVP_MD_CTX));
+      {
+#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+        *context = (void*)SOAP_MALLOC(soap, sizeof(EVP_MD_CTX));
+        EVP_MD_CTX_init((EVP_MD_CTX*)*context);
+#else
+        *context = EVP_MD_CTX_new();
+#endif
         EVP_MD_CTX_init((EVP_MD_CTX*)*context);
       }
       ctx = (EVP_MD_CTX*)*context;
@@ -80,14 +86,19 @@ int md5_handler(struct soap *soap, void **context, enum md5_action action, char 
       DBGLOG(TEST, SOAP_MESSAGE(fdebug, "-- MD5 Final %p --\n", ctx));
       DBGHEX(TEST, hash, size);
       DBGLOG(TEST, SOAP_MESSAGE(fdebug, "\n--"));
-      soap_memcpy((void*)buf, 16, (const void*)hash, 16);
+      (void)soap_memcpy((void*)buf, 16, (const void*)hash, 16);
       break;
     case MD5_DELETE:
       ctx = (EVP_MD_CTX*)*context;
       DBGLOG(TEST, SOAP_MESSAGE(fdebug, "-- MD5 Delete %p --\n", ctx));
       if (ctx)
-      { EVP_MD_CTX_cleanup(ctx);
+      {
+#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+        EVP_MD_CTX_cleanup(ctx);
         SOAP_FREE(soap, ctx);
+#else
+        EVP_MD_CTX_free(ctx);
+#endif
       }
       *context = NULL;
   }

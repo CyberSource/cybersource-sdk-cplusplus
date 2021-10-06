@@ -15,7 +15,7 @@ Link with OpenSSL (for md5evp.c), httpmd5.c, and md5evp.c
 gSOAP XML Web services tools
 Copyright (C) 2000-2005, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -65,7 +65,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 extern "C" {
 #endif
 
-#define HTTP_MD5_ID "HTTP-MD5-1.2" /* plugin identification */
+#define HTTP_MD5_ID "SOAP-HTTP-MD5/1.2" /* plugin identification */
 
 extern const char http_md5_id[];
 

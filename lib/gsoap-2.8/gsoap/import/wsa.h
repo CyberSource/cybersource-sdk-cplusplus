@@ -1,12 +1,13 @@
 /*
-	wsa.h WS-Addressing 2004/08
+	wsa.h WS-Addressing 2004/08, accepts WS-Addressing 2005/08
 
 	Usage: See plugin/wsaapi.c
 
 	Generated with:
 	wsdl2h -cgye -o wsa.h -t WS/WS-typemap.dat WS/WS-Addressing.xsd
 
-	Modified by Robert van Engelen:
+        Requires:
+        - plugin/wsaapi.h and plugin/wsaapi.c
 
 	- Removed //gsoapopt
 	- Added the following directive to import WS-Addressing namespace:
@@ -14,6 +15,8 @@
 	This ensures that the WS-Addressing schemas are not copied into the
 	generated WSDL by soapcpp2 but are referenced with schema import in the
 	generated WSDL.
+        - Added the following directive to accept WS-Addressing 2005/08:
+        //gsoap wsa schema namespace2: http://www.w3.org/2005/08/addressing
 	- Added mutable SOAP_ENV__Header struct
 	- Added SOAP_ENV__Fault one-way operation
 
@@ -78,7 +81,9 @@ int soap_ns__method(struct soap *soap, ...)
  *                                                                            *
 \******************************************************************************/
 
+#define SOAP_NAMESPACE_OF_wsa	"http://schemas.xmlsoap.org/ws/2004/08/addressing"
 //gsoap wsa   schema import:	http://schemas.xmlsoap.org/ws/2004/08/addressing
+//gsoap wsa   schema namespace2:	http://www.w3.org/2005/08/addressing
 //gsoap wsa   schema elementForm:	qualified
 //gsoap wsa   schema attributeForm:	unqualified
 

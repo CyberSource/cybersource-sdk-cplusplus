@@ -7,7 +7,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2016, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -105,6 +105,16 @@ with:
       ... // error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+or if you use a proxy object generated with saopcpp2 option -j:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+    Proxy proxy(...);
+    proxy.soap->userid = "<userid>";
+    proxy.soap->passed = "<passwd>";
+    if (proxy.method(...))
+      ... // error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 HTTP basic authentication should **never** be used over plain HTTP, because the
 credentials (the ID and password) are transmitted in the clear in base64
 encoded form which is easily reversible.  This mechanism is safer to use over
@@ -121,7 +131,22 @@ follows:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
     #include "httpda.h"
-    soap_register_plugin(&soap, http_da);
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
+    ...
+    soap_destroy(soap); // deallocate data
+    soap_end(soap);     // deallocate temp data
+    soap_free(soap);    // deregister plugin and deallocate context
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+or if you use a proxy object generated with saopcpp2 option -j:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+    #include "httpda.h"
+    Proxy proxy(...);
+    soap_register_plugin(proxy.soap, http_da);
+    ...
+    proxy.destroy(); // deallocate data and temps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To make a client-side service call you will need to create a digest store
@@ -138,38 +163,59 @@ locks.
 Here is an example:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
     struct http_da_info info;
-    if (soap_call_ns__method(&soap, ...))
+
+    if (soap_call_ns__method(soap, ...)) // make a call without authentication
     {
       if (soap.error == 401) // HTTP authentication is required
       {
-        http_da_save(&soap, &info, "<authrealm>", "<userid>", "<passwd>");
-        if (soap_call_ns__method(&soap, ...)) // try again
+        http_da_save(soap, &info, "<authrealm>", "<userid>", "<passwd>");
+        if (soap_call_ns__method(soap, ...)) // make a call with authentication
           ... // error
-        http_da_release(&soap, &info);
+        http_da_release(soap, &info); // release if auth is no longer needed
       }
       else
         ... // other error
     }
+
+    soap_destroy(soap);
+    soap_end(soap);
+    soap_free(soap);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `"<authrealm>"` string is the protected realm of the server that requires
+Again, if you use a proxy object then replace the `soap_call_ns__method` with
+the proxy method invocation, as was shown earlier.
+
+The `<authrealm>` string is the protected realm of the server that requires
 authorization.  This string can be obtained with the `soap.authrealm` string
 after an unsuccessful non-authenticated call so you can use it to save
 credentials to the digest store:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-    if (soap_call_ns__method(&soap, ...))
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
+    struct http_da_info info;
+
+    if (soap_call_ns__method(soap, ...)) // make a call without authentication
     {
       if (soap.error == 401) // HTTP authentication is required
       {
         const char *realm = soap.authrealm;
-        http_da_save(&soap, &info, realm, "<userid>", "<passwd>");
-        ...
+        http_da_save(soap, &info, realm, "<userid>", "<passwd>");
+        if (soap_call_ns__method(soap, ...)) // make a call with authentication
+          ... // error
+	...
+        http_da_release(soap, &info); // deallocate authentication info if auth is no longer needed
       }
       else
         ... // error
     }
+
+    soap_destroy(soap);
+    soap_end(soap);
+    soap_free(soap);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before a second call is made to the same endpoint that requires authentication,
@@ -177,55 +223,56 @@ you must restore the authentication state with `http_da_restore()`, then use
 it, and finally release it with `http_da_release()`:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
     struct http_da_info info;
     bool auth = false;
 
-    if (soap_call_ns__method(&soap, ...))
+    if (soap_call_ns__method(soap, ...)) // make a call without authentication
     {
       if (soap.error == 401) // HTTP authentication is required
       {
-        http_da_save(&soap, &info, "<authrealm>", "<userid>", "<passwd>");
+        http_da_save(soap, &info, "<authrealm>", "<userid>", "<passwd>");
         auth = true;
       }
       else
         ... // other error
     }
 
-    if (soap_call_ns__method(&soap, ...))
+    if (auth)
+      http_da_restore(soap, &info);
+    if (soap_call_ns__method(soap, ...)) // make a call with authentication
+      ... // error
+
+    soap_destroy(soap); // okay to dealloc data
+    soap_end(soap);     // okay to dealloc data
+
+    if (auth)
+      http_da_restore(soap, &info);
+    if (soap_call_ns__method(soap, ...)) // make a call with authentication
       ... // error
 
     if (auth)
-      http_da_restore(&soap, &info);
-    if (soap_call_ns__method(&soap, ...))
-      ... // error
+      http_da_release(soap, &info); // deallocate authentication info
 
-    soap_destroy(&soap); // okay to dealloc data
-    soap_end(&soap);     // okay to dealloc data
-
-    if (auth)
-      http_da_restore(&soap, &info);
-    if (soap_call_ns__method(&soap, ...))
-      ... // error
-
-    if (auth)
-      http_da_release(&soap, &info);
-
-    soap_destroy(&soap);
-    soap_end(&soap);
-    soap_done(&soap);
+    soap_destroy(soap);
+    soap_end(soap);
+    soap_free(soap);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For HTTP proxies requiring HTTP digest authenticaiton, use the 'proxy'
 functions of the plugin:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
     struct http_da_info info;
-    ...
-    if (soap_call_ns__method(&soap, ...))
+
+    if (soap_call_ns__method(soap, ...)) // make a call without authentication
     {
       if (soap.error == 407) // HTTP proxy authentication is required
       {
-        http_da_proxy_save(&soap, &info, "<authrealm>", "<userid>", "<passwd>");
+        http_da_proxy_save(soap, &info, "<authrealm>", "<userid>", "<passwd>");
         auth = true;
       }
       else
@@ -233,15 +280,15 @@ functions of the plugin:
     }
 
     if (auth)
-      http_da_proxy_restore(&soap, &info);
-    if (soap_call_ns__method(&soap, ...))
+      http_da_proxy_restore(soap, &info);
+    if (soap_call_ns__method(soap, ...))
       ... // error
 
-    http_da_proxy_release(&soap, &info);
+    http_da_proxy_release(soap, &info); // deallocate authentication info
 
-    soap_destroy(&soap);
-    soap_end(&soap);
-    soap_done(&soap);
+    soap_destroy(soap);
+    soap_end(soap);
+    soap_free(soap);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @section httpda_2 Client example
@@ -249,51 +296,53 @@ functions of the plugin:
 A client authenticating against a server:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-    soap_register_plugin(&soap, http_da);
-    // try calling without authenticating
-    if (soap_call_ns__method(&soap, ...))
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
+
+    if (soap_call_ns__method(soap, ...)) // make a call without authentication
     {
       if (soap.error == 401) // HTTP authentication is required
       {
         if (!strcmp(soap.authrealm, authrealm)) // check authentication realm
         {
           struct http_da_info info; // to store userid and passwd
-          http_da_save(&soap, &info, authrealm, userid, passwd);
+          http_da_save(soap, &info, authrealm, userid, passwd);
           // call again, now with credentials
-          if (soap_call_ns__method(&soap, ...) == SOAP_OK)
+          if (soap_call_ns__method(soap, ...) == SOAP_OK)
           {
             ... // process response data
-            soap_end(&soap);
+            soap_end(soap);
             ... // userid and passwd were deallocated (!)
-            http_da_restore(&soap, &info); // get userid and passwd after soap_end()
-            if (!soap_call_ns__method(&soap, ...) == SOAP_OK)
+            http_da_restore(soap, &info); // get userid and passwd after soap_end()
+            if (!soap_call_ns__method(soap, ...) == SOAP_OK)
               ... // error
-            http_da_release(&soap, &info); // free data and remove userid and passwd
+            http_da_release(soap, &info); // deallocate authentication info
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A client authenticating against a proxy:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-    soap_register_plugin(&soap, http_da);
-    // try calling without authenticating
-    if (soap_call_ns__method(&soap, ...))
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
+
+    if (soap_call_ns__method(soap, ...))  // make a call without authentication
     {
       if (soap.error == 407) // HTTP authentication is required
       {
         if (!strcmp(soap.authrealm, authrealm)) // check authentication realm
         {
           struct http_da_info info; // to store userid and passwd
-          http_da_proxy_save(&soap, &info, authrealm, userid, passwd);
+          http_da_proxy_save(soap, &info, authrealm, userid, passwd);
           // call again, now with credentials
-          if (soap_call_ns__method(&soap, ...) == SOAP_OK)
+          if (soap_call_ns__method(soap, ...) == SOAP_OK)
           {
             ... // process response data
-            soap_end(&soap);
+            soap_end(soap);
             ... // userid and passwd were deallocated (!)
-            http_da_proxy_restore(&soap, &info); // get userid and passwd after soap_end()
-            if (!soap_call_ns__method(&soap, ...) == SOAP_OK)
+            http_da_proxy_restore(soap, &info); // get userid and passwd after soap_end()
+            if (!soap_call_ns__method(soap, ...) == SOAP_OK)
               ... // error
-            http_da_proxy_release(&soap, &info); // free data and remove userid and passwd
+            http_da_proxy_release(soap, &info); // deallocate authentication info
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @section httpda_3 Server-side usage
@@ -303,10 +352,12 @@ enforced by simply checking the `soap.userid` and `soap.passwd` values in a
 service method that requires client authentication:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-    soap_register_plugin(&soap, http_da);
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
     ...
-    soap_serve(&soap);
+    soap_serve(soap); // see gSOAP documentation and examples on how to serve requests
     ...
+
     int ns__method(struct soap *soap, ...)
     {
       if (!soap->userid || !soap->passwd || strcmp(soap->userid, "<userid>") || strcmp(soap->passwd, "<passwd>"))
@@ -319,10 +370,12 @@ HTTP digest authentication is verified differently, because digests are
 compared, not passwords:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-    soap_register_plugin(&soap, http_da);
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
     ...
-    soap_serve(&soap);
+    soap_serve(soap); // see gSOAP documentation and examples on how to serve requests
     ...
+
     int ns__method(struct soap *soap, ...)
     {
       if (soap->authrealm && soap->userid)
@@ -342,20 +395,38 @@ compared, not passwords:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `http_da_verify_post()` function checks the HTTP POST credentials by
-computing and comparing a digest of the password.  To verify an HTTP GET
-operation, use `http_da_verify_get()` instead.
+computing and comparing a digest of the password.  The HTTP POST method is used
+for two-way SOAP/XML communications with request and response messages.
+One-way SOAP/XML messaging may use HTTP POST or HTTP GET.  To verify an HTTP
+GET operation, use `http_da_verify_get()` instead, for example in the HTTP GET
+handler implemented with the HTTP GET plugin.  Likewise, use `http_da_verify_put()`
+for HTTP PUT, `http_da_verify_patch()` for HTTP PATCH, and `http_da_verify_del()`
+for HTTP DELETE.  To verify other HTTP methods, use the `http_da_verify_method()`
+function with the method as a string argument, for example:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+    if (!http_da_verify_method(soap, "HEAD", passwd))
+    {
+      ... // process the request
+    }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Server-side operations that handle other methods than HTTP POST and GET, such
+as PATCH, PUT, and DELETE should be implemented with the HTTP POST plugin.
+This plugin uses a dispatch table with a handler corresponding to the HTTP
+method to serve.
 
 RFC7616 recommends SHA2 over MD5.  The MD5 algorithm is not allowed in FIPS and
-SHA-256 or SHA-512-256 are mandatory.  The upgrade plugin uses SHA-256 as the
-default algorithm and reverts to MD5 only if required by a client that does not
-support RFC7616.
+SHA-256 or SHA-512-256 are mandatory.  This upgraded HTTP digest plugin uses
+SHA-256 as the default algorithm and reverts to MD5 only if required by a
+client that does not support RFC7616.
 
 The default SHA-256 digest algorithm is enabled automatically.  However, at the
 server side you can also use a plugin registry option to set a different
 algorithm as the default:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-    soap_register_plugin_arg(&soap, http_da, <option>);
+    soap_register_plugin_arg(soap, http_da, <option>);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 where `<option>` is one of:
@@ -369,7 +440,7 @@ where `<option>` is one of:
 
 When non-MD5 option is selected, the server will present that digest algorithm
 together with the MD5 authentication algorithm as challenge to the client.  If
-the client is upgraded to RFC7616 it selects the newer protcol.  If the client
+the client is upgraded to RFC7616 it selects the newer protocol.  If the client
 is not upgraded it will select the older MD5-based protocol.
 
 To revert to RFC2617 use `http_da_md5()`.
@@ -377,10 +448,12 @@ To revert to RFC2617 use `http_da_md5()`.
 @section httpda_4 Server example
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-    soap_register_plugin(&soap, http_da);
+    struct soap *soap = soap_new();
+    soap_register_plugin(soap, http_da);
     ...
-    soap_serve(&soap);
+    soap_serve(soap); // see gSOAP documentation and examples on how to serve requests
     ...
+
     int ns__method(struct soap *soap, ...)
     {
       if (soap->userid && soap->passwd) // Basic authentication
@@ -454,7 +527,6 @@ static int http_da_preparesend(struct soap *soap, const char *buf, size_t len);
 static int http_da_preparerecv(struct soap *soap, const char *buf, size_t len);
 static int http_da_preparefinalrecv(struct soap *soap);
 
-static int http_da_verify_method(struct soap *soap, const char *method, const char *passwd);
 static void http_da_session_start(const char *realm, const char *nonce, const char *opaque);
 static int http_da_session_update(const char *realm, const char *nonce, const char *opaque, const char *cnonce, const char *ncount);
 static void http_da_session_cleanup();
@@ -480,13 +552,12 @@ http_da(struct soap *soap, struct soap_plugin *p, void *arg)
   p->data = (void*)SOAP_MALLOC(soap, sizeof(struct http_da_data));
   p->fcopy = http_da_copy;
   p->fdelete = http_da_delete;
-  if (p->data)
+  if (!p->data)
+    return SOAP_EOM;
+  if (http_da_init(soap, (struct http_da_data*)p->data, (int*)arg))
   {
-    if (http_da_init(soap, (struct http_da_data*)p->data, (int*)arg))
-    {
-      SOAP_FREE(soap, p->data);
-      return SOAP_EOM;
-    }
+    SOAP_FREE(soap, p->data);
+    return SOAP_EOM;
   }
   return SOAP_OK;
 }
@@ -531,7 +602,9 @@ http_da_copy(struct soap *soap, struct soap_plugin *dst, struct soap_plugin *src
 {
   (void)soap;
   dst->data = (void*)SOAP_MALLOC(soap, sizeof(struct http_da_data));
-  soap_memcpy((void*)dst->data, sizeof(struct http_da_data), (const void*)src->data, sizeof(struct http_da_data));
+  if (!dst->data)
+    return SOAP_EOM;
+  (void)soap_memcpy((void*)dst->data, sizeof(struct http_da_data), (const void*)src->data, sizeof(struct http_da_data));
   ((struct http_da_data*)dst->data)->smd_data.ctx = NULL;
   memset((void*)((struct http_da_data*)dst->data)->digest, 0, sizeof(((struct http_da_data*)dst->data)->digest));
   ((struct http_da_data*)dst->data)->nonce = NULL;
@@ -552,8 +625,7 @@ http_da_delete(struct soap *soap, struct soap_plugin *p)
 {
   if (((struct http_da_data*)p->data)->smd_data.ctx)
     soap_smd_final(soap, &((struct http_da_data*)p->data)->smd_data, NULL, NULL);
-  if (p->data)
-    SOAP_FREE(soap, p->data);
+  SOAP_FREE(soap, p->data);
 }
 
 /******************************************************************************\
@@ -696,17 +768,31 @@ http_da_post_header(struct soap *soap, const char *key, const char *val)
 	qop = NULL;
       }
 
-      if (soap->status == SOAP_GET)
+      switch (soap->status)
       {
-	method = "GET";
-      }
-      else if (soap->status == SOAP_CONNECT)
-      {
-	method = "CONNECT";
-      }
-      else
-      {
-	method = "POST";
+        case SOAP_GET:
+          method = "GET";
+          break;
+        case SOAP_PUT:
+          method = "PUT";
+          break;
+        case SOAP_PATCH:
+          method = "PATCH";
+          break;
+        case SOAP_DEL:
+          method = "DELETE";
+          break;
+        case SOAP_HEAD:
+          method = "HEAD";
+          break;
+        case SOAP_OPTIONS:
+          method = "OPTIONS";
+          break;
+        case SOAP_CONNECT:
+          method = "CONNECT";
+          break;
+        default:
+          method = "POST";
       }
 
       (SOAP_SNPRINTF(ncount, sizeof(ncount), 8), "%8.8lx", data->nc++);
@@ -815,35 +901,35 @@ http_da_parse_header(struct soap *soap, const char *key, const char *val)
   /* check if server received Authorization Digest HTTP header from client */
   if (!soap_tag_cmp(key, "Authorization") && !soap_tag_cmp(val, "Digest *"))
   {
-    data->alg = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "algorithm"));
-    soap->authrealm = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "realm"));
-    soap->userid = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "username"));
+    data->alg = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "algorithm"));
+    soap->authrealm = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "realm"));
+    soap->userid = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "username"));
     soap->passwd = NULL;
-    data->nonce = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "nonce"));
-    data->opaque = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "opaque"));
-    data->qop = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "qop"));
-    data->ncount = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "nc"));
-    data->cnonce = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "cnonce"));
-    (void)soap_hex2s(soap, soap_get_header_attribute(soap, val + 7, "response"), data->response, 32, NULL);
+    data->nonce = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "nonce"));
+    data->opaque = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "opaque"));
+    data->qop = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "qop"));
+    data->ncount = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "nc"));
+    data->cnonce = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "cnonce"));
+    (void)soap_hex2s(soap, soap_http_header_attribute(soap, val + 7, "response"), data->response, 32, NULL);
     return SOAP_OK;
   }
 
   /* check if client received WWW-Authenticate Digest HTTP header from server */
   if ((!soap_tag_cmp(key, "WWW-Authenticate") || !soap_tag_cmp(key, "Proxy-Authenticate")) && !soap_tag_cmp(val, "Digest *"))
   {
-    const char *authrealm = soap_get_header_attribute(soap, val + 7, "realm");
+    const char *authrealm = soap_http_header_attribute(soap, val + 7, "realm");
     if (authrealm && (!soap->authrealm || strcmp(authrealm, soap->authrealm)))
     {
       const char *alg;
       soap->authrealm = soap_strdup(soap, authrealm);
-      alg = soap_get_header_attribute(soap, val + 7, "algorithm");
+      alg = soap_http_header_attribute(soap, val + 7, "algorithm");
       if (!alg || soap_tag_cmp(alg, "SHA-512-256*"))
       {
         /* got the first authenticate header for this realm that we can accept */
         data->alg = soap_strdup(soap, alg);
-        data->nonce = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "nonce"));
-        data->opaque = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "opaque"));
-        data->qop = soap_strdup(soap, soap_get_header_attribute(soap, val + 7, "qop"));
+        data->nonce = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "nonce"));
+        data->opaque = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "opaque"));
+        data->qop = soap_strdup(soap, soap_http_header_attribute(soap, val + 7, "qop"));
         data->nc = 1;
         data->ncount = NULL;
         data->cnonce = NULL;
@@ -891,6 +977,13 @@ http_da_prepareinitsend(struct soap *soap)
       }
       if ((soap->mode & SOAP_IO) == SOAP_IO_CHUNK)
         soap->mode |= SOAP_IO_LENGTH;
+    }
+    else
+    {
+      if (soap->fpreparesend == http_da_preparesend)
+      {
+        soap->fpreparesend = data->fpreparesend;
+      }
     }
   }
 
@@ -1211,7 +1304,64 @@ http_da_verify_get(struct soap *soap, const char *passwd)
 
 /******************************************************************************/
 
-static int
+/**
+@brief Verifies the password credentials at the server side when used in an HTTP PUT service operation.
+@param soap context
+@param passwd the user password string
+@return SOAP_OK or error when verification failed
+*/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+http_da_verify_put(struct soap *soap, const char *passwd)
+{
+  return http_da_verify_method(soap, "PUT", passwd);
+}
+
+/******************************************************************************/
+
+/**
+@brief Verifies the password credentials at the server side when used in an HTTP PATCH service operation.
+@param soap context
+@param passwd the user password string
+@return SOAP_OK or error when verification failed
+*/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+http_da_verify_patch(struct soap *soap, const char *passwd)
+{
+  return http_da_verify_method(soap, "PATCH", passwd);
+}
+
+/******************************************************************************/
+
+/**
+@brief Verifies the password credentials at the server side when used in an HTTP DELETE service operation.
+@param soap context
+@param passwd the user password string
+@return SOAP_OK or error when verification failed
+*/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+http_da_verify_del(struct soap *soap, const char *passwd)
+{
+  return http_da_verify_method(soap, "DELETE", passwd);
+}
+
+/******************************************************************************/
+
+/**
+@brief Verifies the password credentials at the server side when used in the specified HTTP method.
+@param soap context
+@param method the HTTP method, e.g. "POST", "GET", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"
+@param passwd the user password string
+@return SOAP_OK or error when verification failed
+*/
+SOAP_FMAC1
+int
+SOAP_FMAC2
 http_da_verify_method(struct soap *soap, const char *method, const char *passwd)
 {
   struct http_da_data *data = (struct http_da_data*)soap_lookup_plugin(soap, http_da_id);
@@ -1310,7 +1460,7 @@ http_da_session_update(const char *realm, const char *nonce, const char *opaque,
   MUTEX_LOCK(http_da_session_lock);
 
   for (session = http_da_session; session; session = session->next)
-    if (!strcmp(session->realm, realm) && !strcmp(session->nonce, nonce) && !strcmp(session->opaque, opaque))
+    if (session->realm && session->nonce && session->opaque && !strcmp(session->realm, realm) && !strcmp(session->nonce, nonce) && !strcmp(session->opaque, opaque))
       break;
 
   if (session)
