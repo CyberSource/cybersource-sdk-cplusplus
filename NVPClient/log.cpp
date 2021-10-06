@@ -99,8 +99,8 @@ CybsLogError cybs_prepare_log(config cfg)
 		char szArchiveName[CYBS_MAX_PATH + 1];
 
 		get_formatted_time( ARCHIVE_TIMESTAMP, szFormattedTime );
-		sprintf(
-			szArchiveName, "%s.%s", cfg.logFilePath, szFormattedTime );
+		snprintf(
+			szArchiveName, sizeof(szArchiveName), "%s.%s", cfg.logFilePath, szFormattedTime );
 		// TODO: test this, esp. on Linux.  Not sure if the new name has to include the path on Linux.  On Windows, it doesn't.
 		if (rename( cfg.logFilePath, szArchiveName ))
 		{
@@ -487,8 +487,8 @@ void get_formatted_time( const char *szFormat, char *szDest )
 
 	SYSTEMTIME time;
 	GetLocalTime( &time );
-	sprintf(
-		szDest, szFormat, time.wYear, time.wMonth, time.wDay,
+	snprintf(
+		szDest, sizeof(szDest), szFormat, time.wYear, time.wMonth, time.wDay,
 		time.wHour, time.wMinute, time.wSecond, time.wMilliseconds );
 #else
 
@@ -501,8 +501,8 @@ void get_formatted_time( const char *szFormat, char *szDest )
 	   functions so this is not an issue. */
 	loc = localtime( &clock );
 
-	sprintf(
-		szDest, szFormat, loc->tm_year + 1900, loc->tm_mon + 1, loc->tm_mday,
+	snprintf(
+		szDest, sizeof(szDest), szFormat, loc->tm_year + 1900, loc->tm_mon + 1, loc->tm_mday,
 		loc->tm_hour, loc->tm_min, loc->tm_sec );
 
 #endif

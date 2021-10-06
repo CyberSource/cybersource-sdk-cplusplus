@@ -7,7 +7,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2015, Robert van Engelen, Genivia Inc. All Rights Reserved.
 This software is released under one of the following licenses:
-GPL or Genivia's license for commercial use.
+GPL.
 --------------------------------------------------------------------------------
 GPL license.
 
@@ -53,19 +53,22 @@ class xs__list;                         // forward declaration
 class xs__union;                        // forward declaration
 
 class xs__annotation
-{ public:
-        char*                           documentation;
+{
+  public:
+        std::vector<char*>              documentation;
 };
 
 class xs__assert
-{ public:
+{
+  public:
         @xsd__string                    test;
         @xsd__anyURI                    xpathDefaultNamespace;
         xs__annotation                  *annotation;
 };
 
 class xs__alternative
-{ public:
+{
+  public:
         @xsd__string                    test;
         @xsd__QName                     type;
         @xsd__anyURI                    xpathDefaultNamespace;
@@ -75,7 +78,8 @@ class xs__alternative
 enum xs__formChoice { unqualified, qualified };
 
 class xs__element
-{ public:
+{
+  public:
         @xsd__NCName                    name;
         @xsd__QName                     ref;
         @xsd__QName                     type;
@@ -87,8 +91,8 @@ class xs__element
         @xsd__boolean                   nillable                = false;
         @xsd__boolean                   abstract                = false;
         @xsd__QName                     substitutionGroup;
-        @xsd__string                    minOccurs;              // xsd:nonNegativeInteger
-        @xsd__string                    maxOccurs;              // xsd:nonNegativeInteger|unbounded
+        @xsd__token                     minOccurs;              // xsd:nonNegativeInteger
+        @xsd__token                     maxOccurs;              // xsd:nonNegativeInteger|unbounded
         @xsd__anyURI                    targetNamespace;        // XSD 1.1
         @xsd__string                    xmime__expectedContentTypes;
         xs__annotation                  *annotation;
@@ -102,6 +106,7 @@ class xs__element
         xs__simpleType                  *simpleTypeRef;         // traverse() finds type or = simpleType above
         xs__complexType                 *complexTypeRef;        // traverse() finds type or = complexType above
         std::vector<xs__element*>       substitutions;          // traverse() finds substitutionGroup elements
+        bool                            used;
   public:
                                         xs__element();
         int                             traverse(xs__schema&);
@@ -114,12 +119,15 @@ class xs__element
         xs__simpleType                  *simpleTypePtr() const;
         xs__complexType                 *complexTypePtr() const;
         const std::vector<xs__element*> *substitutionsPtr() const;
+        void                            mark();
+        bool                            is_used() const;
 };
 
 enum xs__attribute_use { optional, prohibited, required, default_, fixed_ };
 
 class xs__attribute
-{ public:
+{
+  public:
         @xsd__NCName                    name;
         @xsd__QName                     ref;
         @xsd__QName                     type;
@@ -138,6 +146,7 @@ class xs__attribute
         xs__schema                      *schemaRef;             // schema to which this belongs
         xs__attribute                   *attributeRef;          // traverse() finds ref
         xs__simpleType                  *simpleTypeRef;         // traverse() finds type or = simpleType above
+        bool                            used;
   public:
                                         xs__attribute();
         int                             traverse(xs__schema&);
@@ -147,13 +156,17 @@ class xs__attribute
         xs__schema                      *schemaPtr() const;
         xs__attribute                   *attributePtr() const;
         xs__simpleType                  *simpleTypePtr() const;
+        void                            mark();
+        bool                            is_used() const;
 };
 
 class xs__all
-{ public:
+{
+  public:
         std::vector<xs__element>        element;
   public:
         int                             traverse(xs__schema&);
+        void                            mark();
 };
 
 enum xs__processContents { strict, skip, lax };
@@ -161,21 +174,25 @@ enum xs__processContents { strict, skip, lax };
 typedef char *xs__namespaceList;        // "##any" or "##other" or list of URI, "##targetNamespace", "##local"
 
 class xs__any
-{ public:
+{
+  public:
         @xs__namespaceList              namespace_              = "##any";
         @enum xs__processContents       processContents         = strict;
-        @xsd__string                    minOccurs;              // xsd:nonNegativeInteger
-        @xsd__string                    maxOccurs;              // xsd:nonNegativeInteger|unbounded
+        @xsd__token                     minOccurs;              // xsd:nonNegativeInteger
+        @xsd__token                     maxOccurs;              // xsd:nonNegativeInteger|unbounded
         std::vector<xs__element>        element;
   public:
         int                             traverse(xs__schema&);
+        void                            mark();
 };
 
 class xs__contents
-{ public:
+{
+  public:
         $int                            __union;                        
         union xs__union_content
-        {       xs__element             *element;
+        {
+                xs__element             *element;
                 xs__group               *group;
                 xs__seqchoice           *choice;
                 xs__seqchoice           *sequence;
@@ -183,12 +200,14 @@ class xs__contents
         }                               __content;
   public:
         int                             traverse(xs__schema&);
+        void                            mark();
 };
 
 class xs__seqchoice
-{ public:
-        @xsd__string                    minOccurs;              // xsd:nonNegativeInteger
-        @xsd__string                    maxOccurs;              // xsd:nonNegativeInteger|unbounded
+{
+  public:
+        @xsd__token                     minOccurs;              // xsd:nonNegativeInteger
+        @xsd__token                     maxOccurs;              // xsd:nonNegativeInteger|unbounded
         xs__annotation                  *annotation;
         std::vector<xs__contents>       __contents;
   private:
@@ -198,14 +217,16 @@ class xs__seqchoice
         int                             traverse(xs__schema&);
         void                            schemaPtr(xs__schema*);
         xs__schema                      *schemaPtr() const;
+        void                            mark();
 };
 
 class xs__group
-{ public:
+{
+  public:
         @xsd__NCName                    name;
         @xsd__QName                     ref;
-        @xsd__string                    minOccurs;              // xsd:nonNegativeInteger
-        @xsd__string                    maxOccurs;              // xsd:nonNegativeInteger|unbounded
+        @xsd__token                     minOccurs;              // xsd:nonNegativeInteger
+        @xsd__token                     maxOccurs;              // xsd:nonNegativeInteger|unbounded
         xs__annotation                  *annotation;
         xs__all                         *all;
         xs__seqchoice                   *choice;
@@ -213,6 +234,7 @@ class xs__group
   private:
         xs__schema                      *schemaRef;             // schema to which this belongs
         xs__group                       *groupRef;              // traverse() finds ref
+        bool                            used;
   public:
                                         xs__group();
         int                             traverse(xs__schema&);
@@ -220,16 +242,19 @@ class xs__group
         void                            groupPtr(xs__group*);
         xs__schema                      *schemaPtr() const;
         xs__group                       *groupPtr() const;
+        void                            mark();
 };
 
 class xs__anyAttribute
-{ public:
+{
+  public:
         @xs__namespaceList              namespace_              = "##any";
         @enum xs__processContents       processContents         = strict;
 };
 
 class xs__attributeGroup
-{ public:
+{
+  public:
         @xsd__NCName                    name;
         @xsd__QName                     ref;
         xs__annotation                  *annotation;
@@ -239,6 +264,7 @@ class xs__attributeGroup
   private:
         xs__schema                      *schemaRef;
         xs__attributeGroup              *attributeGroupRef;
+        bool                            used;
   public:
                                         xs__attributeGroup();
         int                             traverse(xs__schema&);
@@ -246,10 +272,12 @@ class xs__attributeGroup
         void                            attributeGroupPtr(xs__attributeGroup*);
         xs__schema                      *schemaPtr() const;
         xs__attributeGroup              *attributeGroupPtr() const;
+        void                            mark();
 };
 
 class xs__enumeration
-{ public:
+{
+  public:
         @xsd__string                    value;
         @xsd__QName                     value_; // also get QName value if base type is QName
         xs__annotation                  *annotation;
@@ -258,22 +286,26 @@ class xs__enumeration
 };
 
 class xs__pattern
-{ public:
+{
+  public:
         @xsd__string                    value;
   public:
         int                             traverse(xs__schema&);
 };
 
 class xs__simpleContent
-{ public:
+{
+  public:
         xs__extension                   *extension;     // choice
         xs__restriction                 *restriction;   // choice
   public:
         int                             traverse(xs__schema&);
+        void                            mark();
 };
 
 class xs__simpleType
-{ public:
+{
+  public:
         @xsd__NMTOKEN                   name;
         @xsd__string                    vc__minVersion;         // XSD 1.1 (unused)
         @xsd__string                    vc__maxVersion;         // XSD 1.1 (unused)
@@ -283,17 +315,28 @@ class xs__simpleType
         xs__union                       *union_;                // choice
   private:
         xs__schema                      *schemaRef;
+        std::vector<xs__complexType*>   complextype_extensions;
+        std::vector<xsd__QName>         extensions;
+        std::vector<xsd__QName>         restrictions;
         int                             level;
+        bool                            used;
   public:
                                         xs__simpleType();
         int                             traverse(xs__schema&);
         void                            schemaPtr(xs__schema*);
         xs__schema                      *schemaPtr() const;
         int                             baseLevel();
+        void                            mark();
+        bool                            is_used() const;
+        void                            add_extension(xs__complexType*, xs__schema&, xsd__NCName);
+        void                            add_restriction(xs__schema&, xsd__NCName);
+        const std::vector<xsd__QName>&  get_extensions() const;
+        const std::vector<xsd__QName>&  get_restrictions() const;
 };
 
 class xs__extension
-{ public:
+{
+  public:
         @xsd__QName                     base;
         xs__group                       *group;
         xs__all                         *all;
@@ -314,22 +357,26 @@ class xs__extension
         void                            complexTypePtr(xs__complexType*);
         xs__simpleType                  *simpleTypePtr() const;
         xs__complexType                 *complexTypePtr() const;
+        void                            mark();
 };
 
 class xs__length
-{ public:
+{
+  public:
         @xsd__string                    value;
         @xsd__boolean                   fixed;
         xs__annotation                  *annotation;
 };
 
 class xs__whiteSpace
-{ public:
+{
+  public:
         @xsd__string                    value;
 };
 
 class xs__restriction
-{ public:
+{
+  public:
         @xsd__QName                     base;
         xs__simpleType                  *simpleType;            // used in <simpleType><restriction>
         xs__attributeGroup              *attributeGroup;        // not used in <simpleType><restriction>
@@ -359,6 +406,8 @@ class xs__restriction
   private:
         xs__simpleType                  *simpleTypeRef;         // traverse() finds type
         xs__complexType                 *complexTypeRef;        // traverse() finds type
+        xs__simpleType                  *simpleArrayTypeRef;    // traverse() finds type
+        xs__complexType                 *complexArrayTypeRef;   // traverse() finds type
   public:
                                         xs__restriction();
         int                             traverse(xs__schema&);
@@ -366,10 +415,14 @@ class xs__restriction
         void                            complexTypePtr(xs__complexType*);
         xs__simpleType                  *simpleTypePtr() const;
         xs__complexType                 *complexTypePtr() const;
+        xs__simpleType                  *simpleArrayTypePtr() const;
+        xs__complexType                 *complexArrayTypePtr() const;
+        void                            mark();
 };
 
 class xs__list
-{ public:
+{
+  public:
         @xsd__QName                     itemType;
         xs__restriction                 *restriction;   // choice
         std::vector<xs__simpleType>     simpleType;     // choice
@@ -380,28 +433,34 @@ class xs__list
         int                             traverse(xs__schema&);
         void                            itemTypePtr(xs__simpleType*);
         xs__simpleType                  *itemTypePtr() const;
+        void                            mark();
 };
 
 class xs__union
-{ public:
+{
+  public:
         @xsd__NMTOKENS                  memberTypes;            // check if NMTOKENS is ok???
         std::vector<xs__simpleType>     simpleType;
   public:
         int                             traverse(xs__schema&);
+        void                            mark();
 };
 
 class xs__complexContent
-{ public:
+{
+  public:
         @xsd__boolean                   mixed                   = false;
         xs__extension                   *extension;
         xs__restriction                 *restriction;
         xs__annotation                  *annotation;
   public:
         int                             traverse(xs__schema&);
+        void                            mark();
 };
 
 class xs__complexType
-{ public:
+{
+  public:
         @xsd__NMTOKEN                   name;
         @xsd__boolean                   abstract                = false;
         @xsd__boolean                   mixed                   = false;
@@ -422,30 +481,45 @@ class xs__complexType
         std::vector<xs__assert>         assert;                 // XSD 1.1
   private:
         xs__schema                      *schemaRef;
+        std::vector<xs__complexType*>   complextype_extensions;
+        std::vector<xsd__QName>         extensions;
+        std::vector<xsd__QName>         restrictions;
         int                             level;
+        bool                            used;
   public:
                                         xs__complexType();
         int                             traverse(xs__schema&);
         void                            schemaPtr(xs__schema*);
         xs__schema                      *schemaPtr() const;
         int                             baseLevel();
+        void                            mark();
+        bool                            is_used() const;
+        void                            add_extension(xs__complexType*, xs__schema&, xsd__NCName);
+        void                            add_restriction(xs__schema&, xsd__NCName);
+        const std::vector<xsd__QName>&  get_extensions() const;
+        const std::vector<xsd__QName>&  get_restrictions() const;
 };
 
 class xs__import
-{ public:
+{
+  public:
         @xsd__anyURI                    namespace_;
         @xsd__anyURI                    schemaLocation;
+        @xsd__anyURI                    location;		// work around a Microsoft bug
   private:
         xs__schema                      *schemaRef;             // set by WSDL parser or via schemaLocation
   public:
                                         xs__import();
+        int                             preprocess(xs__schema&);
         int                             traverse(xs__schema&);
         void                            schemaPtr(xs__schema*);
         xs__schema                      *schemaPtr() const;
+        void                            mark();
 };
 
 class xs__include
-{ public:
+{
+  public:
         @xsd__anyURI                    schemaLocation;
   private:
         xs__schema                      *schemaRef;
@@ -458,7 +532,8 @@ class xs__include
 };
 
 class xs__override
-{ public:
+{
+  public:
         @xsd__anyURI                    schemaLocation;
         std::vector<xs__attribute>      attribute;
         std::vector<xs__element>        element;
@@ -477,7 +552,8 @@ class xs__override
 };
 
 class xs__redefine
-{ public:
+{
+  public:
         @xsd__anyURI                    schemaLocation;
         std::vector<xs__group>          group;
         std::vector<xs__attributeGroup> attributeGroup;
@@ -494,7 +570,8 @@ class xs__redefine
 };
 
 class xs__schema
-{ public:
+{
+  public:
         @xsd__anyURI                    targetNamespace         = "";
         @xsd__string                    version;
         @xsd__NCName                    defaultAttributes;      // XSD 1.1
@@ -517,35 +594,41 @@ class xs__schema
         bool                            updated;
         char*                           location;
         int                             redirs;
+        MapOfStringToString             builtinTypeMap;
         SetOfString                     builtinTypeSet;
         SetOfString                     builtinElementSet;
         SetOfString                     builtinAttributeSet;
+        bool                            used;
   public:
                                         xs__schema();
                                         xs__schema(struct soap*);
-                                        xs__schema(struct soap*, const char*, const char*);
+                                        xs__schema(struct soap*, const char*, const char*, const char*);
         virtual                         ~xs__schema();
-        int                             get(struct soap*);      // gSOAP getter is triggered after parsing
+        int                             get(struct soap*);      // getter is triggered after parsing
         int                             preprocess();
         int                             insert(xs__schema&);
         int                             traverse();
-        int                             read(const char*, const char*);
+        int                             read(const char*, const char*, const char*);
         void                            sourceLocation(const char*);
         const char*                     sourceLocation();
+        char*                           absoluteLocation(const char*) const;
         xs__attributeGroup              *attributeGroupPtr() const;     // defaultAttributes group
         int                             error();
         void                            print_fault();
         void                            builtinType(const char*);
+        void                            builtinTypeDerivation(xs__schema&, const char*, const char*);
         void                            builtinElement(const char*);
         void                            builtinAttribute(const char*);
         const SetOfString&              builtinTypes() const;
+        const MapOfStringToString&      builtinTypeDerivations() const;
         const SetOfString&              builtinElements() const;
         const SetOfString&              builtinAttributes() const;
         bool                            empty() const;
-        friend ostream&                 operator<<(ostream&, const xs__schema&);
-        friend istream&                 operator>>(istream&, xs__schema&);
+        void                            mark();
+        friend std::ostream&            operator<<(std::ostream&, const xs__schema&);
+        friend std::istream&            operator>>(std::istream&, xs__schema&);
 };
 
-extern ostream &operator<<(ostream &o, const xs__schema &e);
-extern istream &operator>>(istream &i, xs__schema &e);
+extern std::ostream &operator<<(std::ostream &o, const xs__schema &e);
+extern std::istream &operator>>(std::istream &i, xs__schema &e);
 

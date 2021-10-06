@@ -6,7 +6,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2010, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -54,7 +54,9 @@ The threads.h and threads.c code define the following portable API:
 
 - THREAD_TYPE            portable thread type
 - THREAD_ID              returns current thread ID of type THREAD_TYPE*
-- THREAD_CREATE(t,f,a)   start a thread (THREAD_TYPE*)t that calls f(a)
+- THREAD_CREATE(t,f,a)   start thread (THREAD_TYPE*)t for f(a), return 0 if OK
+- THREAD_CREATEX(t,f,a)  Windows only: start joinable thread (THREAD_TYPE*)t for f(a), return 0 if OK
+- THREAD_CLOSE(t)        Windows only: close and destroy thread ID (a handle) when done
 - THREAD_DETACH(t)       detach thread (THREAD_TYPE*)t
 - THREAD_JOIN(t)         wait to join (THREAD_TYPE*)t
 - THREAD_EXIT            exit the current thread
@@ -77,7 +79,9 @@ The threads.h and threads.c code define the following portable API:
 
 #ifndef THREADS_H
 #define THREADS_H
+
 #include "stdsoap2.h"
+
 #ifndef WIN32
 # include <unistd.h>	/* defines _POSIX_THREADS if pthreads are available */
 #else
@@ -101,11 +105,13 @@ The threads.h and threads.c code define the following portable API:
 #if defined(WIN32)
 # define THREAD_TYPE		HANDLE
 # define THREAD_ID		GetCurrentThreadId()
-# define THREAD_CREATE(x,y,z)	*(x) = (HANDLE)_beginthread((y), 8*4096, (z))
+# define THREAD_CREATE(x,y,z)	((*(x) = (HANDLE)_beginthread((void(__cdecl*)(void*))(y), 0, (z))) == (HANDLE)-1L)
+# define THREAD_CREATEX(x,y,z)  ((*(x) = (HANDLE)_beginthreadex(NULL, 0, (void(__cdecl*)(void*))(y), (z), 0, NULL)) == (HANDLE)0L)
+# define THREAD_CLOSE(x)	CloseHandle(x)
 # define THREAD_DETACH(x)	
-# define THREAD_JOIN(x)		WaitForSingleObject((x), INFINITE)
+# define THREAD_JOIN(x)		(WaitForSingleObject((x), INFINITE) == (DWORD)0xFFFFFFFF)
 # define THREAD_EXIT		_endthread()
-# define THREAD_CANCEL(x)       TerminateThread(x, 0)
+# define THREAD_CANCEL(x)       (TerminateThread(x, 0) == 0)
 # define MUTEX_TYPE		HANDLE
 # define MUTEX_INITIALIZER	NULL
 # define MUTEX_SETUP(x)		(x) = CreateMutex(NULL, FALSE, NULL)
@@ -136,6 +142,8 @@ SOAP_FMAC1 int SOAP_FMAC2 emulate_pthread_cond_wait(COND_TYPE*, MUTEX_TYPE*);
 # define THREAD_TYPE		pthread_t
 # define THREAD_ID		pthread_self()
 # define THREAD_CREATE(x,y,z)	pthread_create((x), NULL, (y), (z))
+# define THREAD_CREATEX(x,y,z)	pthread_create((x), NULL, (y), (z))
+# define THREAD_CLOSE(x)
 # define THREAD_DETACH(x)	pthread_detach((x))
 # define THREAD_JOIN(x)		pthread_join((x), NULL)
 # define THREAD_EXIT		pthread_exit(NULL)

@@ -163,8 +163,10 @@ int run_tests(int argc, char **argv)
 	http_da_save(soap, &info, authrealm, "Mufasa", "Circle Of Life");
         if (!soap_call_ns__echoString(soap, endpoint, NULL, arg, &r))
 	{
+          /* clean up */
+          soap_destroy(soap);
 	  soap_end(soap);
-	  /* need to restore for authentication */
+	  /* need to restore digest auth info for authentication */
 	  http_da_restore(soap, &info);
 	  if (!soap_call_ns__echoString(soap, endpoint, NULL, arg, &r))
           {
@@ -174,6 +176,7 @@ int run_tests(int argc, char **argv)
               printf("Transmission error\n");
 	  } 
         }
+        /* release and free digest auth data */
 	http_da_release(soap, &info);
 	/* regular calls may follow */
       }
@@ -182,6 +185,7 @@ int run_tests(int argc, char **argv)
   if (soap->error)
     soap_print_fault(soap, stderr);
   ret = soap->error;
+  /* clean up and free the context and plugins */
   soap_destroy(soap);
   soap_end(soap);
   soap_free(soap);

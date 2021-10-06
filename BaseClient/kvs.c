@@ -53,6 +53,11 @@ static void resize_pairs(CybsMap *store) {
 	store->pairs = (CybsTable*)realloc(store->pairs, kvs_pair_size * store->length);
 }
 
+static void mem_alloc_error()
+{
+    fprintf(stderr, "Failed to allocate memory");
+}
+
 static void create_pair(CybsMap *store, const void *key, void *value) {
 	CybsTable *pair;
     if (!store) {
@@ -70,6 +75,10 @@ static void create_pair(CybsMap *store, const void *key, void *value) {
     //pair->key = key;
     //pair->value = value;
 	pair->value = (char *) malloc(valueCopy.size() + sizeof(char));
+    if(!pair->value) {
+         mem_alloc_error();
+         exit(0);
+    }
 	valueCopy.copy((char *)pair->value, valueCopy.size(), 0);
 	((char *) pair->value)[valueCopy.size()]='\0';
     sort_pairs(store);
@@ -88,7 +97,11 @@ static void remove_pair(CybsMap *store, CybsTable *pair) {
 }
 
 CybsMap *cybs_create_map(void) {
-	CybsMap *store = (CybsMap *)malloc(kvs_store_size);
+    CybsMap *store = (CybsMap *)malloc(kvs_store_size);
+    if(!store) {
+       mem_alloc_error();
+       exit(0);
+    }
     store->pairs = NULL;
     store->length = 0;
 	store->totallength = 0;
@@ -137,6 +150,10 @@ void cybs_add(CybsMap *store, const void *key, void *value) {
 			free (pair->value);
 			string valueCopy((char *)value);
 			pair->value = (char *) malloc(valueCopy.size() + sizeof(char));
+            if(!pair->value) {
+                mem_alloc_error();
+                exit(0);
+            }
 			valueCopy.copy((char *) pair->value, valueCopy.size(), 0);
 			((char *) pair->value)[valueCopy.size()]='\0';
         } else {
@@ -152,6 +169,7 @@ void cybs_add(CybsMap *store, const void *key, void *value) {
 }
 
 void *cybs_get(CybsMap *store, const void *key) {
-	CybsTable *pair = get_pair(store, key);
+    CybsTable *pair = get_pair(store, key);
     return pair ? pair->value : NULL;
 }
+

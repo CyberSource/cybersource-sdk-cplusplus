@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdexcept>
 #include "log.h"
 #include <map>
 
@@ -63,7 +64,7 @@ static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 #define RETURN_ERROR1( status, info, arg1 ) \
 { \
 	char szErrorBuf[128]; \
-	sprintf( szErrorBuf, info, arg1 ); \
+	snprintf( szErrorBuf, 128, info, arg1 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
@@ -71,7 +72,7 @@ static const wchar_t CLIENT_APPLICATION[] = L"clientApplication";
 #define RETURN_ERROR2( status, info, arg1, arg2 ) \
 { \
 	char szErrorBuf[128]; \
-	sprintf( szErrorBuf, info, arg1, arg2 ); \
+	snprintf( szErrorBuf, 128, info, arg1, arg2 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
@@ -284,23 +285,23 @@ char cybs_flag_value( const char *szFlagString )
 
 int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, EVP_PKEY **pkey1, X509 **cert1, STACK_OF(X509) **ca) 
 {
-	
+
 	char *sslCertFile = cfg.sslCertFile;
-	
+
 	soap_ssl_init();
 	soap_register_plugin((*proxy)->soap, soap_wsse);
 
 	/****Read pkcs12*************/
-	 FILE *fp;
+	 BIO* bio1;
+	 bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
 
-	 if (!(fp = fopen(cfg.keyFile, "rb"))) {
+	 if (!bio1) {
 		return ( 1 );
         fprintf(stderr, "Error opening file %s\n");
-        //exit(1);
      }
 
-	 *p12 = d2i_PKCS12_fp(fp, NULL);
-	 fclose(fp);
+	 *p12 = d2i_PKCS12_bio(bio1, NULL);
+	 BIO_free(bio1);
 
 	  if (!p12) {
 		  return ( 1 );
@@ -330,9 +331,10 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 		for (int i = 0; i < sk_X509_num(*ca); i++) {
 			//token1 = strchr(sk_X509_value(*ca, i)->name, '=');
 			//token2 = strchr(token1, '=');
-
+                char subj[1024];
+                X509_NAME_oneline(X509_get_subject_name(sk_X509_value(*ca, i)), subj, sizeof(subj));
 		#ifdef WIN32
-			for (token1 = strtok_s(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
+			for (token1 = strtok_s(subj, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
 			{
 				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
@@ -340,8 +342,7 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 					}
 			}
 		#else
-
-			for (token1 = strtok_r(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
+			for (token1 = strtok_r(subj, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
 			{
 				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
@@ -376,8 +377,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 	const char *temp;
 
-	config cfg;
-	memset(&cfg, '\0', sizeof (cfg));
+	config cfg = {'\0'};
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_ENABLE_LOG);
 	if (temp)
@@ -415,9 +415,9 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_MAXIMUM_SIZE);
 		if (temp)
-			cfg.nLogMaxSizeInMB = atoi(temp);
+			cfg.nLogMaxSizeInMB = strtol(temp, NULL, 10);
 		else
-			cfg.nLogMaxSizeInMB = atoi(DEFAULT_LOG_MAX_SIZE);
+			cfg.nLogMaxSizeInMB = strtol(DEFAULT_LOG_MAX_SIZE, NULL, 10);
 		szDestCopy = szDest;
 		szDestCopy.copy(cfg.logFilePath, szDestCopy.size(), 0);
 		cfg.logFilePath[szDestCopy.size()]='\0';
@@ -452,7 +452,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 
 		// convert char to wchar and put it in request
 		wchar_t *w = NULL;
-		soap_s2wchar(proxy->soap, mercID, &w, -1, -1, NULL);
+		soap_s2wchar(proxy->soap, mercID, &w, 0, -1, -1, NULL);
 		req[L"merchantID"] = w;
 	}
 	wcstombs(cfg.merchantID, req.find(L"merchantID")->second.c_str(), (req.find(L"merchantID")->second).length() + 1);
@@ -500,7 +500,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		tempCopy.copy(cfg.keyFileName, tempCopy.size(), 0);
 		cfg.keyFileName[tempCopy.size()]='\0';
 	}
-	
+
 	if(getKeyFilePath (szDest, keyDir, cfg.keyFileName, ".p12" ) == -1) 
 	{
 		RETURN_LENGTH_ERROR(CYBS_C_KEYS_DIRECTORY, CYBS_MAX_PATH);
@@ -522,7 +522,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
 
 	if (temp) {
-		cfg.proxyPort = atoi(temp);
+		cfg.proxyPort = strtol(temp, NULL, 10);
 		proxy->soap->proxy_port = cfg.proxyPort;
 	}
 
@@ -595,6 +595,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	}
 
 	temp = (const char *)cybs_get(configMap, CYBS_C_USE_SIGN_AND_ENCRYPTION);
+
 	if (temp)
 		cfg.isEncryptionEnabled = cybs_flag_value(temp);
 
@@ -631,26 +632,29 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 		
 	}
 
-	req[CLIENT_LIBRARY_VERSION] = CLIENT_LIBRARY_VERSION_VALUE;
+    if(CLIENT_LIBRARY_VERSION != NULL)
+        req[CLIENT_LIBRARY_VERSION] = CLIENT_LIBRARY_VERSION_VALUE;
 
-	req[CLIENT_LIBRARY] = CLIENT_LIBRARY_VALUE;
+    if(CLIENT_LIBRARY != NULL)
+        req[CLIENT_LIBRARY] = CLIENT_LIBRARY_VALUE;
 
-	req[CLIENT_ENVIRONMENT] = CLIENT_ENVIRONMENT_VALUE;
+    if(CLIENT_ENVIRONMENT != NULL)
+        req[CLIENT_ENVIRONMENT] = CLIENT_ENVIRONMENT_VALUE;
 
-	req[CLIENT_APPLICATION] = CLIENT_APPLICATION_VALUE;
-
+    if(CLIENT_APPLICATION != NULL)
+        req[CLIENT_APPLICATION] = CLIENT_APPLICATION_VALUE;
 
 	if (cfg.isLogEnabled)
 	  cybs_log_NVP(cfg, req, CYBS_LT_REQUEST);
 
 	proxy->soap_endpoint = cfg.serverURL;
-	
+
 	if (cfg.isLogEnabled)
 		cybs_log (cfg, CYBS_LT_CONFIG, proxy->soap_endpoint);
 
 	//std:: string rep;
-	
-	wchar_t *rep;
+
+	wchar_t *rep = NULL;
 	int status = proxy->runTransaction( const_cast< wchar_t* >(convertMaptoString (req).c_str()), rep );
 
 	sk_X509_pop_free(ca, X509_free);
@@ -667,7 +671,7 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	if (status == SOAP_OK) {
 		if(rep != NULL)
 		resMap = convertStringtoMap(rep);
-		
+
 		if (cfg.isLogEnabled)
 		cybs_log( cfg, CYBS_LT_SUCCESS, responseMsg );
 
@@ -701,8 +705,12 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 	szDirCopy.copy(szDest, szDirCopy.size(), 0);
 	if (fAddSeparator)
 	{
-		szDest[nDirLen] = DIR_SEPARATOR;
-		szDest[nDirLen + 1] = '\0';
+         if(nDirLen < 0)
+         {
+             throw std::out_of_range("Invalid index");
+         }
+	     szDest[nDirLen] = DIR_SEPARATOR;
+	     szDest[nDirLen + 1] = '\0';
 	}
 	szDestCopy = szDest;
 	szDestCopy.append(szFilenameCopy);
@@ -710,6 +718,10 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 	for(i = 0; i < szDestCopy.size(); i++) {
 		szDest[i]=szDestCopy[i];
 	}
+    if(i < 0 || i > szDestCopy.size())
+    {
+        throw std::out_of_range("Invalid index");
+    }
 	szDest[i]='\0';
 	return( 0 );
 	

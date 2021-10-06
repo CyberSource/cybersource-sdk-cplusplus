@@ -6,7 +6,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2015, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -57,7 +57,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 
 /**
 
-@page wsa_0 The WS-Addressing plugin
+@page wsa_0 The WS-Addressing Plugin
 
 [TOC]
 
@@ -169,8 +169,8 @@ To generate a UUID for the RequestMessageID, use:
 
 To relay the response to another destination, the WS-Addressing ReplyTo
 information header is added with `soap_wsa_add_ReplyTo` by passing a reply
-address URI string. The service returns "HTTP 202 ACCEPTED" to the client when
-the response message relay was successful.
+address URI string. The service returns "HTTP 200 OK" or "HTTP 202 ACCEPTED" to
+the client when the response message relay was successful.
 
 For example:
 
@@ -185,7 +185,7 @@ For example:
 
     if (soap_call_ns__example(soap, ToAddress, NULL, ...))
     {
-      if (soap->error == 202) // HTTP ACCEPTED
+      if (soap->error == 200 || soap->error == 202) // HTTP OK or ACCEPTED
         printf("Request was accepted and results were forwarded\n");
       else
         soap_print_fault(soap, stderr); // an error occurred
@@ -201,8 +201,8 @@ different than the ReplyTo address
 
 To relay a server fault message to another destination, the WS-Addressing
 FaultTo information header is added with `soap_wsa_add_FaultTo` by passing a
-relay address URI string. The service returns "HTTP 202 ACCEPTED" to the client
-when the fault was relayed.
+relay address URI string. The service returns "HTTP 200 OK" or "HTTP 202
+ACCEPTED" to the client when the fault was relayed.
 
 For example:
 
@@ -217,7 +217,7 @@ For example:
 
     if (soap_call_ns__example(soap, ToAddress, NULL, ...))
     {
-      if (soap->error == 202) // HTTP ACCEPTED
+      if (soap->error == 200 || soap->error == 202) // HTTP OK or ACCEPTED
         printf("A fault occurred and the fault details were forwarded\n");
       else
         soap_print_fault(soap, stderr); // a connection error occurred
@@ -237,7 +237,7 @@ SOAP and HTTP errors set the soap->error attribute, as shown in this example:
 @code
     if (soap_call_ns__example(soap, ToAddress, NULL, ...))
     {
-      if (soap->error == 202) // HTTP ACCEPTED
+      if (soap->error == 200 || soap->error == 202) // HTTP OK or ACCEPTED
         printf("A fault occurred and the fault details were forwarded\n");
       else
         soap_print_fault(soap, stderr); // a connection error occurred
@@ -288,7 +288,8 @@ additional parameter (SOAP Fault detail):
 WS-Security can be combined with WS-Addressing. To sign WS-Addressing header
 blocks, use the `soap_wsse_set_wsu_id` WSSE-plugin call to set the wsu:Id
 attribute and signing of these attributed elements. For example, suppose we use
-WS-Addressing 2005:
+WS-Addressing 2005 headers (which are activated with an `#import "wsa5.h"` in
+the header file for soapcpp2):
 
 @code
     #include "wsaapi.h"
@@ -296,13 +297,20 @@ WS-Addressing 2005:
     soap_register_plugin(soap, soap_wsa);
     soap_register_plugin(soap, soap_wsse);
 
-    soap_wsse_set_wsu_id(soap, "wsa5:From wsa5:To wsa5:ReplyTo wsa5:FaultTo wsa5:Action");
+    soap_wsse_set_wsu_id(soap, "wsa5:From wsa5:To wsa5:ReplyTo wsa5:FaultTo wsa5:Action wsa5:MessageID");
     if (soap_wsa_request(soap, RequestMessageID, ToAddress, RequestAction)
      || soap_wsa_add_From(soap, FromAddress) // optional: add a 'From' address
      || soap_wsa_add_FaultTo(soap, FaultToAddress))
       ... // error: out of memory
     if (soap_call_ns__example(soap, ToAddress, NULL, ...))
       ... // error
+@endcode
+
+If your are using WS-Addressing 2004 (which is activated with an
+`#import "wsa.h"` in the header file for soapcpp2) then change one line:
+
+@code
+    soap_wsse_set_wsu_id(soap, "wsa:From wsa:To wsa:ReplyTo wsa:FaultTo wsa:Action wsa:MessageID");
 @endcode
 
 Note: `soap_wsse_set_wsu_id` should only be set once. Each new call overrides
@@ -512,6 +520,22 @@ similar to:
 Note that SOAP 1.1 or SOAP 1.2 parameters are set based on the 1.1/1.2
 messaging requirements.
 
+@section wsa_7 Using the WS-Addressing plugin with the Apache gSOAP module
+
+The WS-Addressing plugin may be used with the Apache `mod_gsoap` module.  The
+server-side logic is the same.  However, registering the WS-Addressing plugin
+requires a parameter `SOAP_WSA_NEW_TRANSFER`:
+
+@code
+    #include "plugin/wsaapi.h"
+    #include "apache_gsoap.h"
+    void mod_gsoap_init(struct soap *soap, request_rec *r)
+    {
+      soap_register_plugin_arg(soap, http_wsa, SOAP_WSA_NEW_TRANSFER) 
+    }
+    IMPLEMENT_GSOAP_SERVER_INIT(mod_gsoap_init)
+@endcode
+
 */
 
 #include "wsaapi.h"
@@ -558,12 +582,12 @@ const char *soap_wsa_allAnonymousURI = "http://schemas.xmlsoap.org/ws/2004/03/ad
  *
 \******************************************************************************/
 
-static int soap_wsa_init(struct soap *soap, struct soap_wsa_data *data);
+static int soap_wsa_init(struct soap *soap, struct soap_wsa_data *data, void *arg);
 static void soap_wsa_delete(struct soap *soap, struct soap_plugin *p);
 
 static int soap_wsa_header(struct soap *soap);
 static void soap_wsa_set_error(struct soap *soap, const char **c, const char **s);
-static int soap_wsa_response(struct soap *soap, int status, size_t count);
+static int soap_wsa_response(struct soap *soap, int status, ULONG64 count);
 static int soap_wsa_disconnect(struct soap *soap);
 
 static int soap_wsa_alloc_header(struct soap *soap);
@@ -577,46 +601,16 @@ static int soap_wsa_alloc_header(struct soap *soap);
 /**
 @fn const char *soap_wsa_rand_uuid(struct soap *soap)
 @brief Generates a random UUID (UUID algorithm version 4). Compile all source
-codes with -DWITH_OPENSSL for better randomness results.
+codes with -DWITH_OPENSSL for better randomness.
 @param soap context
-@return UUID "urn:uuid:xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+@return UUID "urn:uuid:xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx" or NULL if out of memory
 */
 SOAP_FMAC1
 const char*
 SOAP_FMAC2
 soap_wsa_rand_uuid(struct soap *soap)
 {
-  const int uuidlen = 48;
-  char *uuid = (char*)soap_malloc(soap, uuidlen);
-  int r1, r2, r3, r4;
-#ifdef WITH_OPENSSL
-  r1 = soap_random;
-  r2 = soap_random;
-#else
-  size_t i;
-  static int k = 0xFACEB00B;
-  int lo = k % 127773;
-  int hi = k / 127773;
-# ifdef HAVE_GETTIMEOFDAY
-  struct timeval tv;
-  gettimeofday(&tv, NULL);
-  r1 = 10000000 * tv.tv_sec + tv.tv_usec;
-#else
-  r1 = (int)time(NULL);
-# endif
-  k = 16807 * lo - 2836 * hi;
-  if (k <= 0)
-    k += 0x7FFFFFFF;
-  r2 = k;
-  k &= 0x8FFFFFFF;
-  for (i = 0; i < (sizeof(soap->buf) < 16UL ? sizeof(soap->buf) : 16UL); i++)
-    r2 += soap->buf[i];
-#endif
-  r3 = soap_random;
-  r4 = soap_random;
-  (SOAP_SNPRINTF(uuid, uuidlen, 45), "urn:uuid:%8.8x-%4.4hx-4%3.3hx-%4.4hx-%4.4hx%8.8x", r1, (short)(r2 >> 16), (short)(((short)r2 >> 4) & 0x0FFF), (short)(((short)(r3 >> 16) & 0x3FFF) | 0x8000), (short)r3, r4);
-  DBGFUN1("soap_wsa_rand_uuid", "%s", uuid);
-  return uuid;
+  return soap_strdup(soap, soap_rand_uuid(soap, "urn:uuid:"));
 }
 
 /******************************************************************************\
@@ -953,23 +947,20 @@ soap_wsa_reply(struct soap *soap, const char *id, const char *action)
   */
   if (oldheader && oldheader->SOAP_WSA(ReplyTo) && oldheader->SOAP_WSA(ReplyTo)->ReferenceParameters && oldheader->SOAP_WSA(ReplyTo)->ReferenceParameters->chan__ChannelInstance)
   {
-    if (newheader)
+    if (!newheader->chan__ChannelInstance)
     {
-      if (!newheader->chan__ChannelInstance)
+      newheader->chan__ChannelInstance = (struct chan__ChannelInstanceType*)soap_malloc(soap, sizeof(struct chan__ChannelInstanceType));
+      if (newheader->chan__ChannelInstance)
       {
-        newheader->chan__ChannelInstance = (struct chan__ChannelInstanceType*)soap_malloc(soap, sizeof(struct chan__ChannelInstanceType));
-        if (newheader->chan__ChannelInstance)
-        {
-          soap_default_chan__ChannelInstanceType(soap, newheader->chan__ChannelInstance);
-          newheader->chan__ChannelInstance->__item = *(oldheader->SOAP_WSA(ReplyTo)->ReferenceParameters->chan__ChannelInstance);
-          newheader->chan__ChannelInstance->wsa5__IsReferenceParameter = _wsa5__IsReferenceParameter__true;
-        }
+	soap_default_chan__ChannelInstanceType(soap, newheader->chan__ChannelInstance);
+	newheader->chan__ChannelInstance->__item = *(oldheader->SOAP_WSA(ReplyTo)->ReferenceParameters->chan__ChannelInstance);
+	newheader->chan__ChannelInstance->wsa5__IsReferenceParameter = _wsa5__IsReferenceParameter__true;
       }
-      else
-      {
-        newheader->chan__ChannelInstance->__item = *(oldheader->SOAP_WSA(ReplyTo)->ReferenceParameters->chan__ChannelInstance);
-        newheader->chan__ChannelInstance->wsa5__IsReferenceParameter = _wsa5__IsReferenceParameter__true;
-      }
+    }
+    else
+    {
+      newheader->chan__ChannelInstance->__item = *(oldheader->SOAP_WSA(ReplyTo)->ReferenceParameters->chan__ChannelInstance);
+      newheader->chan__ChannelInstance->wsa5__IsReferenceParameter = _wsa5__IsReferenceParameter__true;
     }
   }
 #endif
@@ -979,20 +970,83 @@ soap_wsa_reply(struct soap *soap, const char *id, const char *action)
     /* (re)connect to ReplyTo endpoint if From != ReplyTo */
     if (!oldheader->SOAP_WSA(From) || !oldheader->SOAP_WSA(From)->Address || strcmp(oldheader->SOAP_WSA(From)->Address, oldheader->SOAP_WSA(ReplyTo)->Address))
     {
-      struct soap *reply_soap = soap_copy(soap);
+      struct soap *reply_soap = soap_new();
       if (reply_soap)
       {
+        soap_mode omode = soap->omode;
+        /* get the default callbacks */
+        int (*fposthdr)(struct soap*, const char*, const char*) = reply_soap->fposthdr;
+        int (*fparse)(struct soap*) = reply_soap->fparse;
+        int (*fparsehdr)(struct soap*, const char*, const char*) = reply_soap->fparsehdr;
+        int (*fresolve)(struct soap*, const char*, struct in_addr* inaddr) = reply_soap->fresolve;
+        int (*fconnect)(struct soap*, const char*, const char*, int) = reply_soap->fconnect;
+        int (*fclosesocket)(struct soap*, SOAP_SOCKET) = reply_soap->fclosesocket;
+        int (*fshutdownsocket)(struct soap*, SOAP_SOCKET, int) = reply_soap->fshutdownsocket;
+        SOAP_SOCKET (*fopen)(struct soap*, const char*, const char*, int) = reply_soap->fopen;
+        int (*fclose)(struct soap*) = reply_soap->fclose;
+        int (*fsend)(struct soap*, const char*, size_t) = reply_soap->fsend;
+        size_t (*frecv)(struct soap*, char*, size_t) = reply_soap->frecv;
+        int (*fpoll)(struct soap*) = reply_soap->fpoll;
+        /* copy the context and active stream */
+        soap_copy_context(reply_soap, soap);
         soap_copy_stream(reply_soap, soap);
-        soap_free_stream(soap); /* prevents close in soap_connect() below */
-        soap->omode |= SOAP_ENC_XML; /* omit HTTP header ("encode XML body only") */
+        /* prevent close in soap_connect() below */
+        soap_free_stream(soap);
+        soap->omode |= SOAP_ENC_PLAIN; /* omit HTTP header ("encode XML body only") */
+        if (data->transfer)
+        {
+          /* save callbacks */
+          data->fposthdr = soap->fposthdr;
+          data->fparse = soap->fparse;
+          data->fparsehdr = soap->fparsehdr;
+          data->fresolve = soap->fresolve;
+          data->fconnect = soap->fconnect;
+          data->fclosesocket = soap->fclosesocket;
+          data->fshutdownsocket = soap->fshutdownsocket;
+          data->fopen = soap->fopen;
+          data->fclose = soap->fclose;
+          data->fsend = soap->fsend;
+          data->frecv = soap->frecv;
+          data->fpoll = soap->fpoll;
+          /* assign default callbacks */
+          soap->fposthdr = fposthdr;
+          soap->fparse = fparse;
+          soap->fparsehdr = fparsehdr;
+          soap->fresolve = fresolve;
+          soap->fconnect = fconnect;
+          soap->fclosesocket = fclosesocket;
+          soap->fshutdownsocket = fshutdownsocket;
+          soap->fopen = fopen;
+          soap->fclose = fclose;
+          soap->fsend = fsend;
+          soap->frecv = frecv;
+          soap->fpoll = fpoll;
+        }
         if (soap_connect(soap, newheader->SOAP_WSA(To), newheader->SOAP_WSA(Action)))
         {
           int err;
+          if (data->transfer)
+          {
+            /* restore callbacks */
+            soap->fposthdr = data->fposthdr;
+            soap->fparse = data->fparse;
+            soap->fparsehdr = data->fparsehdr;
+            soap->fresolve = data->fresolve;
+            soap->fconnect = data->fconnect;
+            soap->fclosesocket = data->fclosesocket;
+            soap->fshutdownsocket = data->fshutdownsocket;
+            soap->fopen = data->fopen;
+            soap->fclose = data->fclose;
+            soap->fsend = data->fsend;
+            soap->frecv = data->frecv;
+            soap->fpoll = data->fpoll;
+          }
           soap_copy_stream(soap, reply_soap);
           soap_free_stream(reply_soap);
           soap_end(reply_soap);
           soap_free(reply_soap);
           soap->header = oldheader;
+          soap->omode = omode; /* restore omode */
 #if defined(SOAP_WSA_2005)
           err = soap_wsa_error(soap, SOAP_WSA(DestinationUnreachable), newheader->SOAP_WSA(To));
 #elif defined(SOAP_WSA_2003)
@@ -1004,20 +1058,24 @@ soap_wsa_reply(struct soap *soap, const char *id, const char *action)
           return err;
         }
         if (soap_valid_socket(reply_soap->socket))
-          soap_send_empty_response(reply_soap, SOAP_OK);        /* HTTP ACCEPTED */
+          soap_send_empty_response(reply_soap, SOAP_OK); /* HTTP ACCEPTED */
         soap->header = newheader;
-        soap->omode &= ~SOAP_ENC_XML;           /* HTTP header required */
         soap_end(reply_soap);
         soap_free(reply_soap);
         data->fresponse = soap->fresponse;
         soap->fresponse = soap_wsa_response;    /* response will be a POST */
+        soap->omode = omode; /* restore omode */
       }
     }
   }
   else if (oldheader && oldheader->SOAP_WSA(From))
+  {
     newheader->SOAP_WSA(To) = oldheader->SOAP_WSA(From)->Address;
+  }
   else
+  {
     newheader->SOAP_WSA(To) = (char*)soap_wsa_anonymousURI;
+  }
   soap->header = newheader;
   soap->action = newheader->SOAP_WSA(Action);
   return SOAP_OK;
@@ -1065,11 +1123,8 @@ int
 SOAP_FMAC2
 soap_wsa_fault_subcode_action(struct soap *soap, int flag, const char *faultsubcode, const char *faultstring, const char *faultdetail, const char *action)
 {
-  struct soap_wsa_data *data = (struct soap_wsa_data*)soap_lookup_plugin(soap, soap_wsa_id);
   struct SOAP_ENV__Header *oldheader, *newheader;
-  DBGFUN2("soap_wsa_fault_subcode", "faultsubcode=%s", faultsubcode?faultsubcode:"(null)", "faultstring=%s", faultstring?faultstring:"(null)");
-  if (!data)
-    return soap->error = SOAP_PLUGIN_ERROR;
+  DBGFUN2("soap_wsa_fault_subcode_action", "faultsubcode=%s", faultsubcode ? faultsubcode : "(null)", "faultstring=%s", faultstring ? faultstring : "(null)");
   oldheader = soap->header;
   /* no FaultTo: use ReplyTo */
   if (oldheader && oldheader->SOAP_WSA(ReplyTo) && (!oldheader->SOAP_WSA(FaultTo) || soap_tagsearch(soap_wsa_allAnonymousURI, oldheader->SOAP_WSA(FaultTo)->Address)))
@@ -1077,55 +1132,115 @@ soap_wsa_fault_subcode_action(struct soap *soap, int flag, const char *faultsubc
     if (!oldheader->SOAP_WSA(FaultTo))
     {
       oldheader->SOAP_WSA(FaultTo) = (SOAP_WSA_(,FaultTo)*)soap_malloc(soap, sizeof(SOAP_WSA_(,FaultTo)));
-      SOAP_WSA_(soap_default,EndpointReferenceType)(soap, soap->header->SOAP_WSA(FaultTo));
+      if (oldheader->SOAP_WSA(FaultTo))
+	SOAP_WSA_(soap_default,EndpointReferenceType)(soap, soap->header->SOAP_WSA(FaultTo));
     }
-    oldheader->SOAP_WSA(FaultTo)->Address = oldheader->SOAP_WSA(ReplyTo)->Address;
+    if (oldheader->SOAP_WSA(FaultTo))
+      oldheader->SOAP_WSA(FaultTo)->Address = oldheader->SOAP_WSA(ReplyTo)->Address;
   }
-  if (oldheader && oldheader->SOAP_WSA(FaultTo))
-  {
-    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "WSA FaultTo='%s'\n", oldheader->SOAP_WSA(FaultTo)->Address));
-  }
-  if (oldheader && oldheader->SOAP_WSA(FaultTo) && !strcmp(oldheader->SOAP_WSA(FaultTo)->Address, soap_wsa_noneURI))
+  /* use FaultTo */
+  if (oldheader && oldheader->SOAP_WSA(FaultTo) && oldheader->SOAP_WSA(FaultTo)->Address && !strcmp(oldheader->SOAP_WSA(FaultTo)->Address, soap_wsa_noneURI))
     return soap_send_empty_response(soap, SOAP_OK);     /* HTTP ACCEPTED */
   soap->header = NULL;
   /* allocate a new header */
-  if (soap_wsa_alloc_header(soap))
-    return soap->error;
+  soap_header(soap);
   newheader = soap->header;
-  soap_default_SOAP_ENV__Header(soap, newheader); /* remove/clear SOAP Header */
-  /* check header */
-  if (oldheader && oldheader->SOAP_WSA(MessageID))
+  if (newheader)
   {
-    newheader->SOAP_WSA(RelatesTo) = (SOAP_WSA_(,RelatesTo)*)soap_malloc(soap, sizeof(SOAP_WSA_(,RelatesTo)));
-    SOAP_WSA_(soap_default_,RelatesTo)(soap, newheader->SOAP_WSA(RelatesTo));
-    newheader->SOAP_WSA(RelatesTo)->__item = oldheader->SOAP_WSA(MessageID);
-  }
-  /* header->wsa__MessageID = "..."; */
-  newheader->SOAP_WSA(Action) = (char*)soap_wsa_faultAction;
-  if (oldheader && oldheader->SOAP_WSA(FaultTo) && oldheader->SOAP_WSA(FaultTo)->Address && !soap_tagsearch(soap_wsa_allAnonymousURI, oldheader->SOAP_WSA(FaultTo)->Address))
-  {
-    newheader->SOAP_WSA(To) = oldheader->SOAP_WSA(FaultTo)->Address;
-    /* (re)connect to FaultTo endpoint if From != FaultTo */
-    if (!oldheader->SOAP_WSA(From) || !oldheader->SOAP_WSA(From)->Address || strcmp(oldheader->SOAP_WSA(From)->Address, oldheader->SOAP_WSA(FaultTo)->Address))
+    soap_default_SOAP_ENV__Header(soap, newheader); /* remove/clear SOAP Header */
+    /* check header */
+    if (oldheader && oldheader->SOAP_WSA(MessageID))
     {
-      soap->keep_alive = 0;
-      soap_send_empty_response(soap, SOAP_OK);  /* HTTP ACCEPTED */
-      if (soap_connect(soap, newheader->SOAP_WSA(To), newheader->SOAP_WSA(Action)))
-        return soap->error = SOAP_STOP; /* nowhere to go */
-      soap_set_endpoint(soap, newheader->SOAP_WSA(To));
-      if (action)
-        soap->action = (char*)action;
-      else
-        soap->action = newheader->SOAP_WSA(Action);
-      data->fresponse = soap->fresponse;
-      soap->fresponse = soap_wsa_response;      /* response will be a POST */
+      newheader->SOAP_WSA(RelatesTo) = (SOAP_WSA_(,RelatesTo)*)soap_malloc(soap, sizeof(SOAP_WSA_(,RelatesTo)));
+      SOAP_WSA_(soap_default_,RelatesTo)(soap, newheader->SOAP_WSA(RelatesTo));
+      newheader->SOAP_WSA(RelatesTo)->__item = oldheader->SOAP_WSA(MessageID);
     }
+    /* header->wsa__MessageID = "..."; */
+    newheader->SOAP_WSA(Action) = (char*)soap_wsa_faultAction;
+    if (oldheader && oldheader->SOAP_WSA(FaultTo) && oldheader->SOAP_WSA(FaultTo)->Address && !soap_tagsearch(soap_wsa_allAnonymousURI, oldheader->SOAP_WSA(FaultTo)->Address))
+    {
+      newheader->SOAP_WSA(To) = oldheader->SOAP_WSA(FaultTo)->Address;
+      /* (re)connect to FaultTo endpoint if From != FaultTo */
+      if (!oldheader->SOAP_WSA(From) || !oldheader->SOAP_WSA(From)->Address || strcmp(oldheader->SOAP_WSA(From)->Address, oldheader->SOAP_WSA(FaultTo)->Address))
+      {
+	struct soap_wsa_data *data = (struct soap_wsa_data*)soap_lookup_plugin(soap, soap_wsa_id);
+	if (!data)
+	  return soap->error = SOAP_PLUGIN_ERROR;
+	soap->keep_alive = 0;
+	soap_send_empty_response(soap, SOAP_OK);  /* HTTP ACCEPTED */
+        if (data->transfer)
+        {
+          struct soap reply_soap;
+          soap_init(&reply_soap);
+          /* save callbacks */
+          data->fposthdr = soap->fposthdr;
+          data->fparse = soap->fparse;
+          data->fparsehdr = soap->fparsehdr;
+          data->fresolve = soap->fresolve;
+          data->fconnect = soap->fconnect;
+          data->fclosesocket = soap->fclosesocket;
+          data->fshutdownsocket = soap->fshutdownsocket;
+          data->fopen = soap->fopen;
+          data->fclose = soap->fclose;
+          data->fsend = soap->fsend;
+          data->frecv = soap->frecv;
+          data->fpoll = soap->fpoll;
+          /* assign default callbacks */
+          soap->fposthdr = reply_soap.fposthdr;
+          soap->fparse = reply_soap.fparse;
+          soap->fparsehdr = reply_soap.fparsehdr;
+          soap->fresolve = reply_soap.fresolve;
+          soap->fconnect = reply_soap.fconnect;
+          soap->fclosesocket = reply_soap.fclosesocket;
+          soap->fshutdownsocket = reply_soap.fshutdownsocket;
+          soap->fopen = reply_soap.fopen;
+          soap->fclose = reply_soap.fclose;
+          soap->fsend = reply_soap.fsend;
+          soap->frecv = reply_soap.frecv;
+          soap->fpoll = reply_soap.fpoll;
+
+          soap_end(&reply_soap);
+          soap_done(&reply_soap);
+        }
+	if (soap_connect(soap, newheader->SOAP_WSA(To), newheader->SOAP_WSA(Action)))
+        {
+          if (data->transfer)
+          {
+            /* restore callbacks */
+            soap->fposthdr = data->fposthdr;
+            soap->fparse = data->fparse;
+            soap->fparsehdr = data->fparsehdr;
+            soap->fresolve = data->fresolve;
+            soap->fconnect = data->fconnect;
+            soap->fclosesocket = data->fclosesocket;
+            soap->fshutdownsocket = data->fshutdownsocket;
+            soap->fopen = data->fopen;
+            soap->fclose = data->fclose;
+            soap->fsend = data->fsend;
+            soap->frecv = data->frecv;
+            soap->fpoll = data->fpoll;
+          }
+	  return soap->error = SOAP_STOP; /* nowhere to go */
+        }
+	soap_set_endpoint(soap, newheader->SOAP_WSA(To));
+	if (action)
+	  soap->action = (char*)action;
+	else
+	  soap->action = newheader->SOAP_WSA(Action);
+	data->fresponse = soap->fresponse;
+	soap->fresponse = soap_wsa_response;      /* response will be a POST */
+      }
+    }
+    else if (oldheader && oldheader->SOAP_WSA(From))
+    {
+      newheader->SOAP_WSA(To) = oldheader->SOAP_WSA(From)->Address;
+    }
+    else
+    {
+      newheader->SOAP_WSA(To) = (char*)soap_wsa_anonymousURI;
+    }
+    soap->header = newheader;
   }
-  else if (oldheader && oldheader->SOAP_WSA(From))
-    newheader->SOAP_WSA(To) = oldheader->SOAP_WSA(From)->Address;
-  else
-    newheader->SOAP_WSA(To) = (char*)soap_wsa_anonymousURI;
-  soap->header = newheader;
   if (flag)
     return soap_sender_fault_subcode(soap, faultsubcode, faultstring, faultdetail);
   return soap_receiver_fault_subcode(soap, faultsubcode, faultstring, faultdetail);
@@ -1268,7 +1383,7 @@ soap_wsa_check_fault(struct soap *soap, SOAP_WSA(FaultCodesType) *fault, const c
 {
   if (soap->error && soap->fault && soap->fault->SOAP_ENV__Code)
   {
-    const char *code = soap_check_faultsubcode(soap);
+    const char *code = soap_fault_subcode(soap);
     if (code)
     {
       SOAP_WSA__(soap_s2,FaultCodesType)(soap, code, fault);
@@ -1343,7 +1458,7 @@ soap_wsa_check_fault(struct soap *soap, SOAP_WSA(FaultSubcodeValues) *fault)
 {
   if (soap->error && soap->fault && soap->fault->SOAP_ENV__Code)
   {
-    const char *code = soap_check_faultsubcode(soap);
+    const char *code = soap_fault_subcode(soap);
     if (code)
     {
       SOAP_WSA__(soap_s2,FaultSubcodeValues)(soap, code, fault);
@@ -1380,7 +1495,7 @@ soap_wsa_error(struct soap *soap, SOAP_WSA(FaultCodesType) fault, const char *in
         soap->fault->detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemHeaderQName);
         soap->fault->detail->fault = (void*)info;
       }
-      else
+      else if (soap->version == 2)
       {
         soap->fault->SOAP_ENV__Detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemHeaderQName);
         soap->fault->SOAP_ENV__Detail->fault = (void*)info;
@@ -1412,7 +1527,7 @@ soap_wsa_error(struct soap *soap, SOAP_WSA(FaultCodesType) fault, const char *in
         soap->fault->detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemHeaderQName);
         soap->fault->detail->fault = (void*)info;
       }
-      else
+      else if (soap->version == 2)
       {
         soap->fault->SOAP_ENV__Detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemHeaderQName);
         soap->fault->SOAP_ENV__Detail->fault = (void*)info;
@@ -1426,7 +1541,7 @@ soap_wsa_error(struct soap *soap, SOAP_WSA(FaultCodesType) fault, const char *in
         soap->fault->detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemIRI);
         soap->fault->detail->fault = (void*)info;
       }
-      else
+      else if (soap->version == 2)
       {
         soap->fault->SOAP_ENV__Detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemIRI);
         soap->fault->SOAP_ENV__Detail->fault = (void*)info;
@@ -1442,7 +1557,7 @@ soap_wsa_error(struct soap *soap, SOAP_WSA(FaultCodesType) fault, const char *in
         SOAP_WSA_(soap_default_,ProblemAction)(soap, (SOAP_WSA_(,ProblemAction)*)soap->fault->detail->fault);
         ((SOAP_WSA_(,ProblemAction)*)soap->fault->detail->fault)->Action = (char*)info;
       }
-      else
+      else if (soap->version == 2)
       {
         soap->fault->SOAP_ENV__Detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemAction);
         soap->fault->SOAP_ENV__Detail->fault = (void*)soap_malloc(soap, sizeof(SOAP_WSA_(,ProblemAction)));
@@ -1458,7 +1573,7 @@ soap_wsa_error(struct soap *soap, SOAP_WSA(FaultCodesType) fault, const char *in
         soap->fault->detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemIRI);
         soap->fault->detail->fault = (void*)info;
       }
-      else
+      else if (soap->version == 2)
       {
         soap->fault->SOAP_ENV__Detail->__type = SOAP_WSA_(SOAP_TYPE_,ProblemIRI);
         soap->fault->SOAP_ENV__Detail->fault = (void*)info;
@@ -1525,7 +1640,7 @@ soap_wsa_error(struct soap *soap, SOAP_WSA(FaultSubcodeValues) fault)
 
 /**
 @fn int soap_wsa(struct soap *soap, struct soap_plugin *p, void *arg)
-@brief Plugin registry function, used with soap_register_plugin.
+@brief Plugin registry function, used with soap_register_plugin and soap_register_plugin_arg.
 @param soap context
 @param[in,out] p plugin created in registry
 @param[in] arg passed from soap_register_plugin_arg
@@ -1536,19 +1651,17 @@ int
 SOAP_FMAC2
 soap_wsa(struct soap *soap, struct soap_plugin *p, void *arg)
 {
-  (void)arg;
   DBGFUN("soap_wsa");
   p->id = soap_wsa_id;
   p->data = (void*)SOAP_MALLOC(soap, sizeof(struct soap_wsa_data));
   p->fcopy = NULL;
   p->fdelete = soap_wsa_delete;
-  if (p->data)
+  if (!p->data)
+    return SOAP_EOM;
+  if (soap_wsa_init(soap, (struct soap_wsa_data*)p->data, arg))
   {
-    if (soap_wsa_init(soap, (struct soap_wsa_data*)p->data))
-    {
-      SOAP_FREE(soap, p->data);
-      return SOAP_EOM;
-    }
+    SOAP_FREE(soap, p->data);
+    return SOAP_EOM;
   }
   return SOAP_OK;
 }
@@ -1563,7 +1676,7 @@ soap_wsa(struct soap *soap, struct soap_plugin *p, void *arg)
 @return SOAP_OK
 */
 static int
-soap_wsa_init(struct soap *soap, struct soap_wsa_data *data)
+soap_wsa_init(struct soap *soap, struct soap_wsa_data *data, void *arg)
 {
   DBGFUN("soap_wsa_init");
   data->fheader = soap->fheader;
@@ -1572,6 +1685,10 @@ soap_wsa_init(struct soap *soap, struct soap_wsa_data *data)
   soap->fseterror = soap_wsa_set_error;
   data->fresponse = NULL;
   data->fdisconnect = NULL;
+  data->transfer = arg;
+  data->fsend = NULL;
+  data->frecv = NULL;
+  data->fpoll = NULL;
   return SOAP_OK;
 }
 
@@ -1637,7 +1754,7 @@ static void
 soap_wsa_set_error(struct soap *soap, const char **c, const char **s)
 {
   struct soap_wsa_data *data = (struct soap_wsa_data*)soap_lookup_plugin(soap, soap_wsa_id);
-  DBGFUN("soap_wsa_set_error");
+  DBGFUN2("soap_wsa_set_error", "code=%s", c && *c ? *c : "(null)", "string=%s", s && *s ? *s : "(null)");
   if (!data)
     return;
   if (data->fseterror)
@@ -1657,14 +1774,14 @@ soap_wsa_set_error(struct soap *soap, const char **c, const char **s)
 /******************************************************************************/
 
 /**
-@fn int soap_wsa_response(struct soap *soap, int status, size_t count)
+@fn int soap_wsa_response(struct soap *soap, int status, ULONG64 count)
 @brief Overrides the HTTP response operations to send an HTTP POST
 @param soap context
 @param status code
 @param count message length (if non-chunked)
 */
 static int
-soap_wsa_response(struct soap *soap, int status, size_t count)
+soap_wsa_response(struct soap *soap, int status, ULONG64 count)
 {
   struct soap_wsa_data *data = (struct soap_wsa_data*)soap_lookup_plugin(soap, soap_wsa_id);
   (void)status;
@@ -1673,7 +1790,7 @@ soap_wsa_response(struct soap *soap, int status, size_t count)
     return SOAP_PLUGIN_ERROR;
   soap->fresponse = data->fresponse;    /* reset (HTTP response) */
   data->fdisconnect = soap->fdisconnect;
-  soap->fdisconnect = soap_wsa_disconnect; /* to accept HTTP 202 */
+  soap->fdisconnect = soap_wsa_disconnect; /* to accept HTTP 200 or 202 */
   return soap->fpost(soap, soap_strdup(soap, soap->endpoint), soap->host, soap->port, soap->path, soap->action, count);
 }
 
@@ -1681,18 +1798,36 @@ soap_wsa_response(struct soap *soap, int status, size_t count)
 
 /**
 @fn int soap_wsa_disconnect(struct soap *soap)
-@brief Accepts HTTP 202 response upon HTTP POST response relay
+@brief Accepts HTTP 200 or 202 response upon HTTP POST response relay
 @param soap context
 */
 static int
 soap_wsa_disconnect(struct soap *soap)
 {
+  int err;
   struct soap_wsa_data *data = (struct soap_wsa_data*)soap_lookup_plugin(soap, soap_wsa_id);
   DBGFUN("soap_wsa_disconnect");
   if (!data)
     return SOAP_PLUGIN_ERROR;
   soap->fdisconnect = data->fdisconnect; /* reset */
-  return soap_recv_empty_response(soap);
+  err = soap_recv_empty_response(soap);
+  if (data->transfer)
+  {
+    /* restore callbacks */
+    soap->fposthdr = data->fposthdr;
+    soap->fparse = data->fparse;
+    soap->fparsehdr = data->fparsehdr;
+    soap->fresolve = data->fresolve;
+    soap->fconnect = data->fconnect;
+    soap->fclosesocket = data->fclosesocket;
+    soap->fshutdownsocket = data->fshutdownsocket;
+    soap->fopen = data->fopen;
+    soap->fclose = data->fclose;
+    soap->fsend = data->fsend;
+    soap->frecv = data->frecv;
+    soap->fpoll = data->fpoll;
+  }
+  return err;
 }
 
 /******************************************************************************\
@@ -1710,6 +1845,8 @@ soap_wsa_disconnect(struct soap *soap)
 static int
 soap_wsa_alloc_header(struct soap *soap)
 {
+  if (soap->header)
+    return SOAP_OK;
   soap_header(soap);
   if (soap->header)
     return SOAP_OK;

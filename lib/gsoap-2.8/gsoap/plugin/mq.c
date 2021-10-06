@@ -1,12 +1,12 @@
 /*
         mq.c
 
-        Inbound message queues
+        Inbound message queues to support WS-RM NoDiscard behavior
 
 gSOAP XML Web services tools
 Copyright (C) 2000-2013, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under ONE of the following licenses:
-GPL, or the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -65,11 +65,12 @@ are out of sequence as per WS-RM protocol and should be handled by one thread
 invocation. If an unlimited number of threads is available, the simplest WS-RM
 protocol NoDiscard behavior is implemented by starting a thread for each
 inbound message and letting the thread block with the
-soap_wsrm_check_and_wait() or soap_wsrm_check_send_empty_response_and_wait()
-calls. However, that approach is not efficient with HTTP keep-alive because the
-next messages on the keep-alive socket will be blocked from being processes.
-This plugin is designed to process messages on an HTTP keep-alive socket even
-when operations block.
+`soap_wsrm_check_and_wait()` or
+`soap_wsrm_check_send_empty_response_and_wait()` calls. However, that approach
+is not efficient with HTTP keep-alive because the next messages on the
+keep-alive socket will be blocked from being processed.  This plugin is
+designed to process messages on an HTTP keep-alive socket even when operations
+block.
 
 @section mq_1 Server-Side Queueing of One-Way Messages
 
@@ -77,22 +78,24 @@ Queueing one-way messages for internal replay is implemented with the message
 queueing plugin as follows, by queueing inbound messages received on a single
 socket and then replaying them all in sequence as received from the socket:
 
-@code
+~~~{.cpp}
 #include "mq.h"
 
+int main()
+{
   struct soap *soap = soap_new1(SOAP_IO_KEEPALIVE);
   soap_register_plugin(soap, soap_mq);
   ...
-  // port bind etc
+  // initializations, port bind etc.
   ...
   while (soap_valid_socket(soap_accept(soap)))
   {
     // queue all messages on this socket (socket is HTTP keep alive)
-    // for each message received, we send HTTP 202 Accepted
+    // for each message received, we immediately respond with HTTP 202 Accepted
     struct ms_queue *queue = soap_mq_queue(soap);
     struct ms_msg *msg;
     while (soap_mq_get(soap, queue))
-      soap_send_empty_response(soap, 202); // 202 Accept
+      soap_send_empty_response(soap, 202); // 202 Accepted
 
     // we now internally replay all messages to invoke services
     // services are assumed to NOT send a response message back
@@ -100,21 +103,27 @@ socket and then replaying them all in sequence as received from the socket:
     for (msg = soap_mq_begin(queue); msg; msg = soap_mq_next(msg))
       soap_serve(&msg->soap);
 
-    // delete all queued messages, also calls these on each queued msg state:
-    // soap_destroy(&msg->soap);
-    // soap_end(&msg->soap);
-    // soap_done(&msg->soap);
+    // delete all queued messages, this also calls the following functions on each queued msg context:
+    //   soap_destroy(&msg->soap);
+    //   soap_end(&msg->soap);
+    //   soap_done(&msg->soap);
     soap_mq_del(queue, NULL);
 
     // delete the queue (allocated in current context)
     soap_destroy(soap);
     soap_end(soap);
   }
-@endcode
+  ...
+  // finalize
+  ...
+  soap_free(soap);
+}
+~~~
 
-Alternatively, it is also possible to call soap_mq_del(queue, msg) after
-soap_serve(&msg->soap) to immediately delete the message after processing
-(calling soap_mq_next(msg) next in the loop is still valid).
+Alternatively, it is also possible to call `soap_mq_del(queue, msg)` after
+`soap_serve(&msg->soap)` to immediately delete the message after processing.
+Calling `soap_mq_next(msg)` for the next loop iteration is still valid, of
+course.
 
 @section mq_2 WS-RM Server-Side Message Queueing for NoDiscard Behavior with Callback Services
 
@@ -124,30 +133,36 @@ is restored and queued messages can be dispatched. This WS-RM behavior is
 desirable with WS-RM NoDiscard. To implement this approach, we use an inbound
 message queue for each socket accepted and processed by a thread.
 
-@code
+~~~{.cpp}
 #include "wsaapi.h"
 #include "wsrmapi.h"
 #include "mq.h"
 #include "threads.h"
 
+int main()
+{
   struct soap *soap = soap_new1(SOAP_IO_KEEPALIVE);
   soap_register_plugin(soap, soap_wsa);
   soap_register_plugin(soap, soap_wsrm);
   soap_register_plugin(soap, soap_mq);
   ...
-  // port bind etc
+  // initializations, port bind etc.
   ...
   while (soap_valid_socket(soap_accept(soap)))
   {
     THREAD_TYPE tid;
     struct soap *tsoap = soap_copy(soap);
     if (!tsoap)
-    {
       soap_closesock(soap);
-      continue;
-    }
-    THREAD_CREATE(&tid, (void*(*)(void*))process_request, (void*)tsoap);
+    else
+      while (THREAD_CREATE(&tid, (void*(*)(void*))process_request, (void*)tsoap))
+        sleep(1);
   }
+  ...
+  // finalize
+  ...
+  soap_free(soap);
+}
 
 void *process_request(void *tsoap)
 {
@@ -212,7 +227,7 @@ void *process_request(void *tsoap)
   }
   return NULL;
 }
-@endcode
+~~~
 
 In the first loop that runs over the messages received on the same keep-alive
 socket, the messages will be processed and services dispatched immediately for
@@ -268,13 +283,12 @@ soap_mq(struct soap *soap, struct soap_plugin *p, void *arg)
   /* register the destructor */
   p->fdelete = soap_mq_delete;
   /* if OK then initialize */
-  if (p->data)
+  if (!p->data)
+    return SOAP_EOM;
+  if (soap_mq_init(soap, (struct soap_mq_data*)p->data))
   {
-    if (soap_mq_init(soap, (struct soap_mq_data*)p->data))
-    {
-      SOAP_FREE(soap, p->data); /* error: could not init */
-      return SOAP_EOM; /* return error */
-    }
+    SOAP_FREE(soap, p->data); /* error: could not init */
+    return SOAP_EOM; /* return error */
   }
   return SOAP_OK;
 }
@@ -324,7 +338,7 @@ soap_mq_recv(struct soap *soap, char *buf, size_t len)
     len = data->len;
     data->len = 0;
   }
-  soap_memcpy(buf, len, data->buf, len);
+  (void)soap_memcpy(buf, len, data->buf, len);
   data->buf += len;
   return len;
 }
@@ -334,6 +348,7 @@ soap_mq_recv(struct soap *soap, char *buf, size_t len)
 static int
 soap_mq_serveloop(struct soap *soap)
 {
+  soap->keep_alive = 0;
   return soap->error = SOAP_STOP;
 }
 
@@ -387,8 +402,9 @@ soap_mq_get(struct soap *soap, struct soap_mq_queue *mq)
   }
   msg->next = NULL;
   soap_copy_context(&msg->soap, soap);
-  msg->buf = soap_get_http_body(soap, &msg->len);
-  soap_end_recv(soap);
+  msg->buf = soap_http_get_body(soap, &msg->len);
+  if (!msg->buf || soap_end_recv(soap))
+    return NULL;
   if (!msg->buf)
     return NULL;
   soap_mq_set(msg);

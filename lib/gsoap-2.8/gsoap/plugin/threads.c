@@ -6,7 +6,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2010, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -47,7 +47,6 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 */
 
 #include "threads.h"
-
 
 #ifdef WIN32
 

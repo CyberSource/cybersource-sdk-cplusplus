@@ -39,20 +39,20 @@ In VS2008, there is UI available to help you create the custom build rule.
 Make sure you have `flex.exe`, `bison.exe`, and `m4.exe` on the system search
 path.
 
-- Right click on the `.l` file and select properties
-- Configuration -> All Configurations
-- General -> Item Typ e-> Custom Build Tool
-- Apply
-- Custom Build Tool -> General -> Command Line -> `flex -olexer.c lexer.l`
-- Custom Build Tool -> General -> Outputs -> `lexer.c`
-- Custom Build Tool -> General -> Additional Dependencies -> `parser.y parser.c`
-- Apply
-- Select the `.y` file in the solution explorer
+- Right click on the `soapcpp2_lex.l` file and select properties
 - Configuration -> All Configurations
 - General -> Item Type -> Custom Build Tool
 - Apply
-- Custom Build Tool -> General -> Command Line -> `bison -oparser.c parser.y`
-- Custom Build Tool -> General -> Outputs -> `parser.c parser.h`
+- Custom Build Tool -> General -> Command Line -> `flex soapcpp2_lex.l`
+- Custom Build Tool -> General -> Outputs -> `lex.yy.c`
+- Custom Build Tool -> General -> Additional Dependencies -> `soapcpp2.h soapcpp2_yacc.tab.h`
+- Apply
+- Select the `soapcpp2_yacc.y` file in the solution explorer
+- Configuration -> All Configurations
+- General -> Item Type -> Custom Build Tool
+- Apply
+- Custom Build Tool -> General -> Command Line -> `bison -d -v soapcpp2_yacc.y`
+- Custom Build Tool -> General -> Outputs -> `soapcpp2_yacc.tab.c soapcpp2_yacc.tab.h`
 
 In VS2010, there may not be a UI available to create the custom build rules.
 To add or modify build rules in VS2010 you need to edit:

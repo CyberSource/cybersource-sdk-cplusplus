@@ -15,7 +15,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2005, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under one of the following licenses:
-GPL, the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -82,7 +82,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 extern "C" {
 #endif
 
-const char http_md5_id[13] = HTTP_MD5_ID;
+const char http_md5_id[18] = HTTP_MD5_ID;
 
 static int http_md5_init(struct soap *soap, struct http_md5_data *data);
 static int http_md5_copy(struct soap *soap, struct soap_plugin *dst, struct soap_plugin *src);
@@ -102,11 +102,12 @@ int http_md5(struct soap *soap, struct soap_plugin *p, void *arg)
   p->data = (void*)SOAP_MALLOC(soap, sizeof(struct http_md5_data));
   p->fcopy = http_md5_copy;
   p->fdelete = http_md5_delete;
-  if (p->data)
-    if (http_md5_init(soap, (struct http_md5_data*)p->data))
-    { SOAP_FREE(soap, p->data); /* error: could not init */
-      return SOAP_EOM; /* return error */
-    }
+  if (!p->data)
+    return SOAP_EOM;
+  if (http_md5_init(soap, (struct http_md5_data*)p->data))
+  { SOAP_FREE(soap, p->data); /* error: could not init */
+    return SOAP_EOM; /* return error */
+  }
   return SOAP_OK;
 }
 
@@ -129,7 +130,7 @@ static int http_md5_init(struct soap *soap, struct http_md5_data *data)
 static int http_md5_copy(struct soap *soap, struct soap_plugin *dst, struct soap_plugin *src)
 { *dst = *src;
   dst->data = (void*)SOAP_MALLOC(soap, sizeof(struct http_md5_data));
-  soap_memcpy((void*)dst->data, sizeof(struct http_md5_data), (const void*)src->data, sizeof(struct http_md5_data));
+  (void)soap_memcpy((void*)dst->data, sizeof(struct http_md5_data), (const void*)src->data, sizeof(struct http_md5_data));
   ((struct http_md5_data*)dst->data)->context = NULL;
   return SOAP_OK;
 }

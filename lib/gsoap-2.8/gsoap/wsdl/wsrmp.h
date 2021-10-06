@@ -7,7 +7,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2001-2010, Robert van Engelen, Genivia Inc. All Rights Reserved.
 This software is released under one of the following licenses:
-GPL or Genivia's license for commercial use.
+GPL.
 --------------------------------------------------------------------------------
 GPL license.
 
@@ -52,7 +52,7 @@ class wsrmp__Timeout
 class wsrmp__RMAssertion : public wsp__Assertion
 { public:
   wsrmp__Timeout *InactivityTimeout;
-  wsrmp__Timeout *BaseRetransmissionInterval;;
+  wsrmp__Timeout *BaseRetransmissionInterval;
   wsrmp__Timeout *AcknowledgementInterval;
   char           *ExponentialBackoff;
 // TODO: WCF netrmp extension elements go here, as necessary
@@ -66,7 +66,7 @@ class wsrmp5__Timeout
 class wsrmp5__RMAssertion : public wsp__Assertion
 { public:
   wsrmp5__Timeout *InactivityTimeout;
-  wsrmp5__Timeout *BaseRetransmissionInterval;;
+  wsrmp5__Timeout *BaseRetransmissionInterval;
   wsrmp5__Timeout *AcknowledgementInterval;
   char           *ExponentialBackoff;
 // TODO: WCF netrmp extension elements go here, as necessary

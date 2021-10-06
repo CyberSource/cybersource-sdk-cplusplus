@@ -1,12 +1,15 @@
 /*
         wsc.h
 
-	WS-SecureConversation 2005/12
+	WS-SecureConversation 2005/12, also accepts 2005/02
         Generated with:
         wsdl2h -cex -o wsc.h -t WS/WS-typemap.dat WS/WS-SecureConversation.xsd
 
         - Removed //gsoapopt
+        - Removed #import "wsse.h"
+        - Removed #import "wsu.h"
         - Changed //gsoap wsc schema namespace directive to import directive
+        - Added //gsoap wsc schema namespace2 directive
 */
 
 /******************************************************************************\
@@ -23,9 +26,6 @@
  *                                                                            *
 \******************************************************************************/
 
-#import "wsse.h"	// wsse = <http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd>
-#import "wsu.h"	// wsu = <http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd>
-
 /******************************************************************************\
  *                                                                            *
  * Schema Namespaces                                                          *
@@ -34,6 +34,7 @@
 
 #define SOAP_NAMESPACE_OF_wsc	"http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"
 //gsoap wsc   schema import:	http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512
+//gsoap wsc   schema namespace2:	http://schemas.xmlsoap.org/ws/2005/02/sc
 //gsoap wsc   schema elementForm:	qualified
 //gsoap wsc   schema attributeForm:	unqualified
 
@@ -43,7 +44,7 @@
  *                                                                            *
 \******************************************************************************/
 
-/// Imported element ""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd":SecurityTokenReference" from typemap "/Users/engelen/Projects/gsoap/WS/WS-typemap.dat".
+/// Imported element ""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd":SecurityTokenReference" from typemap "WS/WS-typemap.dat".
 
 
 /******************************************************************************\
@@ -97,9 +98,9 @@ struct wsc__SecurityContextTokenType
 ///       Consult the protocol documentation to change or insert declarations.
 ///       Use wsdl2h option -x to remove this attribute.
 ///       Use wsdl2h option -d for xsd__anyAttribute DOM (soap_dom_attribute).
-/// Member declared in /Users/engelen/Projects/gsoap/WS/WS-typemap.dat
+/// Member declared in WS/WS-typemap.dat
        char*                                Identifier;
-/// Member declared in /Users/engelen/Projects/gsoap/WS/WS-typemap.dat
+/// Member declared in WS/WS-typemap.dat
        char*                                Instance;
 };
 
