@@ -1,17 +1,15 @@
 /*
         httpform.c
 
-        gSOAP HTTP POST application/x-www-form-urlencoded plugin.
+        gSOAP HTTP POST application/x-www-form-urlencoded data plugin.
 
-        Requires linkage with httpget.c (for query_key and query_val)
-
-        Note: multipart/related and multipart/form-data are already handled in
-        gSOAP.
+        Note: multipart/related and multipart/form-data are handled in gSOAP as
+        MIME attachments.
 
 gSOAP XML Web services tools
 Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under ONE of the following licenses:
-GPL, the gSOAP public license, OR Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -68,18 +66,18 @@ compiling, linking, and/or using OpenSSL is allowed.
 
         To parse form data in the handler, use:
 
-        char *s = form(soap);
+        char *s = soap_http_get_form(soap);
         while (s)
         {
-          char *key = query_key(soap, &s); // decode next form string key
-          char *val = query_val(soap, &s); // decode next form string value (if any)
+          char *key = soap_query_key(soap, &s); // decode next form string key
+          char *val = soap_query_val(soap, &s); // decode next form string value (if any)
           ...
         }
 
-        The form() function reads an HTTP body and stores it in an internal
-        buffer that is returned as a char*. This buffer can be used to process
-        HTTP POST body content. The query_key/val functions simply extract
-        key-value pairs from this buffer.
+        The soap_http_get_form() function reads an HTTP body and stores it in an
+        internal buffer that is returned as a char*. This buffer can be used to
+        process HTTP POST body content. The soap_query_key/val functions simply
+        extract key-value pairs from this buffer.
 
         The handler should also produce a valid HTTP response, for example:
         soap_response(soap, SOAP_HTML); // use this to return HTML ...
@@ -90,6 +88,8 @@ compiling, linking, and/or using OpenSSL is allowed.
         soap_end_send(soap);
 
         See samples/webserver for an example HTTP POST form handling server.
+
+        Warning: this plugin MUST be registered AFTER the httppost plugin.
 */
 
 #include "httpform.h"
@@ -98,7 +98,7 @@ compiling, linking, and/or using OpenSSL is allowed.
 extern "C" {
 #endif
 
-const char http_form_id[14] = HTTP_FORM_ID;
+const char http_form_id[] = HTTP_FORM_ID;
 
 static int http_form_init(struct soap *soap, struct http_form_data *data, int (*handler)(struct soap*));
 static void http_form_delete(struct soap *soap, struct soap_plugin *p);
@@ -107,14 +107,15 @@ static int http_form_parse_header(struct soap *soap, const char*, const char*);
 int http_form(struct soap *soap, struct soap_plugin *p, void *arg)
 {
   p->id = http_form_id;
-  p->data = (void*)malloc(sizeof(struct http_form_data));
+  p->data = (void*)SOAP_MALLOC(soap, sizeof(struct http_form_data));
   p->fdelete = http_form_delete;
-  if (p->data)
-    if (http_form_init(soap, (struct http_form_data*)p->data, (int (*)(struct soap*))arg))
-    {
-      free(p->data); /* error: could not init */
-      return SOAP_EOM; /* return error */
-    }
+  if (!p->data)
+    return SOAP_EOM;
+  if (http_form_init(soap, (struct http_form_data*)p->data, (int (*)(struct soap*))arg))
+  {
+    SOAP_FREE(soap, p->data); /* error: could not init */
+    return SOAP_EOM; /* return error */
+  }
   return SOAP_OK;
 }
 
@@ -130,7 +131,7 @@ static int http_form_init(struct soap *soap, struct http_form_data *data, int (*
 static void http_form_delete(struct soap *soap, struct soap_plugin *p)
 {
   (void)soap;
-  free(p->data); /* free allocated plugin data (this function is not called for shared plugin data, but only when the final soap_done() is invoked on the original soap struct) */
+  SOAP_FREE(soap, p->data); /* free allocated plugin data (this function is not called for shared plugin data, but only when the final soap_done() is invoked on the original soap struct) */
 }
 
 static int http_form_parse_header(struct soap *soap, const char *key, const char *val)
@@ -138,86 +139,21 @@ static int http_form_parse_header(struct soap *soap, const char *key, const char
   struct http_form_data *data = (struct http_form_data*)soap_lookup_plugin(soap, http_form_id);
   if (!data)
     return SOAP_PLUGIN_ERROR;
-  soap->error = data->fparsehdr(soap, key, val); /* parse HTTP header */
-  if (soap->error == SOAP_OK)
+  if (!soap_tag_cmp(key, "Content-Type"))
   {
-    if (!soap_tag_cmp(key, "Content-Type"))
+    /* check content type: you can filter any type of payloads here */
+    if (!soap_tag_cmp(val, "application/x-www-form-urlencoded")
+     || !soap_tag_cmp(val, "application/x-www-form-urlencoded;*")) /* skip charset=UTF-8 etc */
     {
-      /* check content type: you can filter any type of payloads here */
-      if (!soap_tag_cmp(val, "application/x-www-form-urlencoded"))
-      {
-        soap->fform = data->handler;
-        soap->error = SOAP_FORM; /* delegate body parsing to form handler */
-      }
-      /* it is possible to add other payload types to handle via forms
-      if (!soap_tag_cmp(val, "image/jpg"))
-        soap->error = SOAP_FORM;
-      */
+      soap->fform = data->handler;
+      return soap->error = SOAP_FORM; /* delegate body parsing to form handler */
     }
+    /* it is possible to add other payload types to handle via forms and use * as a wildcard:
+       if (!soap_tag_cmp(val, "image/jpg") || !soap_tag_cmp(val, "image/jpg;*"))
+       soap->error = SOAP_FORM;
+     */
   }
-  return soap->error;
-}
-
-char* form(struct soap *soap)
-{
-  char *s = NULL;
-  /* It is unlikely chunked and/or compressed POST forms are sent by browsers, but we need to handle them */
-  if ((soap->mode & SOAP_IO) == SOAP_IO_CHUNK
-#ifdef WITH_ZLIB
-   || soap->zlib_in != SOAP_ZLIB_NONE
-#endif
-   )
-  {
-    soap_wchar c = EOF;
-    soap->labidx = 0;
-    if (soap_append_lab(soap, "?", 1))
-      return NULL;
-    do
-    {
-      size_t k;
-      if (soap_append_lab(soap, NULL, 0))
-        return NULL;
-      s = soap->labbuf + soap->labidx;
-      k = soap->lablen - soap->labidx;
-      soap->labidx = soap->lablen;
-      while (k--)
-      {
-        c = soap_getchar(soap);
-        if (c == (int)EOF)
-          break;
-        *s++ = c;
-      }
-    } while (c != (int)EOF);
-    *s = '\0';
-    s = soap->labbuf;
-  }
-  else
-  {
-    if (soap->length)
-    {
-      s = (char*)soap_malloc(soap, soap->length + 2);
-      if (s)
-      {
-        char *t = s;
-        size_t i;
-        *t++ = '?';
-        for (i = soap->length; i; i--)
-        {
-          soap_wchar c;
-          c = soap_getchar(soap);
-          if (c == (int)EOF)
-          {
-            soap->error = SOAP_EOF;
-            return NULL;
-          }
-          *t++ = c;
-        }
-        *t = '\0';
-      }
-    }
-  }
-  soap_end_recv(soap);
-  return s;
+  return data->fparsehdr(soap, key, val); /* parse HTTP header */
 }
 
 /******************************************************************************/

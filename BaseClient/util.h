@@ -30,10 +30,8 @@ extern "C" {
 #endif
 #endif
 
-
 #include <stdlib.h>
 
-	
 #define CYBS_NUM_BUCKETS 256;
 
 #define CYBS_MAX_NAMESPACE_URI	64
@@ -68,7 +66,7 @@ const char CYBS_C_USE_AKAMAI[]              = "sendToAkamai";
 
 
 /* Please do not modify these values */
-static const wchar_t CLIENT_LIBRARY_VERSION_VALUE[] = L"6.0.3";
+static const wchar_t CLIENT_LIBRARY_VERSION_VALUE[] = L"6.0.4";
 static const wchar_t CLIENT_LIBRARY_VALUE[] = L"C SOAP";
 static const wchar_t CLIENT_APPLICATION_VALUE[] = L"Simple Order API";
 
@@ -115,6 +113,7 @@ BASECLIENT_API void *cybs_get(CybsMap *store, const void *key);
 BASECLIENT_API void cybs_load_config (const char *configFilename, CybsMap *map);
 
 void printdata(CybsMap *store);
+
 
 #ifdef __cplusplus
 }

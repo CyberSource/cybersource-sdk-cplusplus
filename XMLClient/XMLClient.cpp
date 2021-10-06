@@ -14,6 +14,10 @@
 #include <openssl/pem.h>
 #include <openssl/err.h>
 #include <string>
+#include <stdexcept>
+#include <stdio.h>
+#include <wchar.h>
+
 #ifdef WIN32
 	#include "..\NVPClient\log.h"
 #else
@@ -64,14 +68,14 @@ unsigned long pthreads_thread_id(void );
 #define RETURN_ERROR1( status, info, arg1 ) \
 { \
 	char szErrorBuf[128]; \
-	sprintf( szErrorBuf, info, arg1 ); \
+	snprintf( szErrorBuf, 128, info, arg1 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
 #define RETURN_ERROR2( status, info, arg1, arg2 ) \
 { \
 	char szErrorBuf[128]; \
-	sprintf( szErrorBuf, info, arg1, arg2 ); \
+	snprintf( szErrorBuf, 128, info, arg1, arg2 ); \
 	RETURN_ERROR( status, szErrorBuf ); \
 }
 
@@ -240,14 +244,16 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 	soap_ssl_init();
 	soap_register_plugin((*proxy)->soap, soap_wsse);
 
-	FILE *fp;
 
-	if (!(fp = fopen(cfg.keyFile, "rb"))) {
-		return ( 1 );
-	}
+	BIO* bio1;
+    bio1 = BIO_new_file((const char*)cfg.keyFile, "rb");
 
-	*p12 = d2i_PKCS12_fp(fp, NULL);
-	fclose(fp);
+    if (!bio1) {
+    		return ( 1 );
+    }
+
+	*p12 = d2i_PKCS12_bio(bio1, NULL);
+	BIO_free(bio1);
 
 	if (!p12) {
 		return ( 1 );
@@ -267,34 +273,36 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 
 	/* Decalre tags that will have wsu id */
 	soap_wsse_set_wsu_id((*proxy)->soap, "wsse:BinarySecurityToken SOAP-ENV:Body");
-	
+
 	if ( soap_wsse_add_BinarySecurityTokenX509((*proxy)->soap, "X509Token", *cert1 )
 	|| soap_wsse_add_KeyInfo_SecurityTokenReferenceX509((*proxy)->soap, "#X509Token")
 	|| soap_wsse_sign_body((*proxy)->soap, SOAP_SMD_SIGN_RSA_SHA256, *pkey1, 0)
-	|| soap_wsse_sign_only((*proxy)->soap, "SOAP-ENV:Body") ) {
+	|| soap_wsse_sign_only((*proxy)->soap, "SOAP-ENV-Body") ) {
 		return ( 3 );
 	}
 
 	char *token1, *token2;
 	if ( cfg.isEncryptionEnabled ) {
 		for (int i = 0; i < sk_X509_num(*ca); i++) {
-
+            char subj[1024];
+            X509_NAME_oneline(X509_get_subject_name(sk_X509_value(*ca, i)), subj, sizeof(subj));
 			#ifdef WIN32
-			for (token1 = strtok_s(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
+			for (token1 = strtok_s(subj, "=", &token2); token1; token1 = strtok_s(NULL, "=", &token2))
 			{
-				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
+				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0){
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
 						return ( 4 );
 					}
+                             }
 			}
 		#else
-
-			for (token1 = strtok_r(sk_X509_value(*ca, i)->name, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
+			for (token1 = strtok_r(subj, "=", &token2); token1; token1 = strtok_r(NULL, "=", &token2))
 			{
-				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0)
+				if (strcmp(SERVER_PUBLIC_KEY_NAME, token1) == 0){
 					if (soap_wsse_add_EncryptedKey((*proxy)->soap, SOAP_MEC_AES256_CBC, "Cert", sk_X509_value(*ca, i), NULL, NULL, NULL)) {
 						return ( 4 );
 					}
+			    }
 			}
 		#endif
 		}
@@ -326,9 +334,8 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	string szDestCopy;
 	string tempCopy;
 	
-	config cfg;
-	memset(&cfg, '\0', sizeof (cfg));
-
+	config cfg = {'\0'};
+        
 	temp = (const char *)cybs_get(configMap, CYBS_C_ENABLE_LOG);
 	if (temp)
 		cfg.isLogEnabled = cybs_flag_value(temp);
@@ -361,9 +368,9 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_MAXIMUM_SIZE);
 		if (temp)
-			cfg.nLogMaxSizeInMB = atoi(temp);
+			cfg.nLogMaxSizeInMB = strtol(temp, NULL, 10);
 		else
-			cfg.nLogMaxSizeInMB = atoi(DEFAULT_LOG_MAX_SIZE);
+			cfg.nLogMaxSizeInMB = strtol(DEFAULT_LOG_MAX_SIZE, NULL, 10);
 
 		szDestCopy = szDest;
 		szDestCopy.copy(cfg.logFilePath, szDestCopy.size(), 0);
@@ -409,7 +416,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		}
 		merchantID = temp;
 		wchar_t *w = NULL;
-		soap_s2wchar(proxy->soap, merchantID.c_str(), &w, -1, -1, NULL);
+		soap_s2wchar(proxy->soap, merchantID.c_str(), &w, 0, -1, -1, NULL);
 		ns2__requestMessage->merchantID = w;
 	}
 
@@ -492,7 +499,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	/* Get proxy port from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
 	if (temp) {
-		cfg.proxyPort = atoi(temp);
+		cfg.proxyPort = strtol(temp, NULL, 10);
 		proxy->soap->proxy_port = cfg.proxyPort;
 	}
 
@@ -622,7 +629,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	proxy->soap->os = &ss;
 	soap_write_ns2__RequestMessage(proxy->soap, ns2__requestMessage);
 	proxy->soap->os = NULL;
-	
+
 	/* Log request */
 	if (cfg.isLogEnabled)
 		cybs_log_xml(cfg, CYBS_LT_REQUEST, (char *)ss.str().c_str());
@@ -683,6 +690,10 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 
 	if (fAddSeparator)
 	{
+        if(nDirLen < 0)
+        {
+            throw std::out_of_range("Invalid index");
+        }
 		szDest[nDirLen] = DIR_SEPARATOR;
 		szDest[nDirLen + 1] = '\0';
 	}
@@ -692,6 +703,11 @@ int getKeyFilePath (char szDest[], char *szDir, const char *szFilename, char *ex
 	for(i = 0; i < szDestCopy.size(); i++) {
 		szDest[i]=szDestCopy[i];
 	}
+
+    if(i < 0 || i > szDestCopy.size())
+    {
+         throw std::out_of_range("Invalid index");
+    }
 	szDest[i]='\0';
 	return( 0 );
 	

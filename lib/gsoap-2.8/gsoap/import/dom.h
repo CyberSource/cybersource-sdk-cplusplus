@@ -18,7 +18,7 @@
 gSOAP XML Web services tools
 Copyright (C) 2000-2016, Robert van Engelen, Genivia, Inc. All Rights Reserved.
 This part of the software is released under ONE of the following licenses:
-GPL, or the gSOAP public license, or Genivia's license for commercial use.
+GPL or the gSOAP public license.
 --------------------------------------------------------------------------------
 gSOAP public license.
 
@@ -61,5 +61,5 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 // The custom serializer for DOM element nodes is represented by xsd__anyType.
 extern typedef struct soap_dom_element xsd__anyType;
 
-// The custom serializer for DOM attribute nodes is represented by xsd__anyAttribute.
+// The custom serializer for DOM attribute nodes is represented by @xsd__anyAttribute.
 extern typedef struct soap_dom_attribute xsd__anyAttribute;

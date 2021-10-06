@@ -12,16 +12,12 @@ Overview                                                             {#overview}
 
 The WinInet plugin for gSOAP enables client applications (not servers) to
 communicate through Microsoft's WinInet API on Windows. This offers all of the
-advantages of WinInet managed through the `Internet Options` control panel of
-Windows, such as HTTP (proxy) authentication, TLS/SSL, and HTTP compression.
-Therefore, "if IE works, gSOAP works." since these options are shared by IE.
+advantages of WinInet-managed internet access through the `Internet Options`
+control panel of Windows, such as HTTP (proxy) authentication, TLS/SSL, and
+HTTP compression.  Therefore, "if IE works, gSOAP works." since these options
+are shared by IE.
 
 The WinInet project home is at <http://code.google.com/p/gsoapwininet>.
-
-This plugin is licensed differently than the other plugins for gSOAP. It is
-licensed under the [MIT license](#license) and can be used with GPLv2 and the
-commercial license for gSOAP.
-
 
 Features                                                             {#features}
 ========
@@ -33,6 +29,8 @@ Features                                                             {#features}
   the user via standard system dialog boxes.
 - Timeouts for connect, receive, and send operations are obeyed when these are
   set BEFORE the plugin is registered with the engine.
+- HTTP proxy settings are also obeyed when these are set BEFORE the plugin is
+  registered with the engine.
 - Supports all `SOAP_IO` modes of gSOAP (see [limitations](#limitations)).
 - Can be used with C, C++, and MFC projects.
 - Can be used in both MBCS and UNICODE projects.
@@ -65,13 +63,30 @@ In your source code for the client, register the WinInet plugin with
 `soap_register_plugin(soap, wininet_plugin)` after creation and initialization
 of the `soap` context.
 
+For example, when using a proxy object in C++ generated with soapcpp2 -j:
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+     #include "gsoapWinInet.h"
+     #include "soapProxy.h"
+     Proxy proxy;
+     proxy.soap->connect_timeout = 15; // 15 sec max connect time
+     proxy.soap->recv_timeout = 10;    // 10 sec max recv time
+     proxy.soap->send_timeout = 10;    // 10 sec max send time
+     soap_register_plugin(proxy.soap, wininet_plugin);
+     ...
+     proxy.destroy(); // delete deserialized data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+and in plain C/C++, that is, without a proxy object:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
+     #include "soapH.h"
      #include "gsoapWinInet.h"
      struct soap soap;
      soap_init(&soap);
-     soap.connect_timeout = 15; // 15 sec: this will be used by wininet too
-     soap.recv_timeout = 10; // 10 sec: this will be used by wininet too
-     soap.send_timeout = 10; // 10 sec: this will be used by wininet too
+     soap.connect_timeout = 15;  // 15 sec max connect time
+     soap.recv_timeout = 10;     // 10 sec max recv time
+     soap.send_timeout = 10;     // 10 sec max send time
      soap_register_plugin(&soap, wininet_plugin);
      ...
      soap_destroy(&soap); // delete deserialized data
@@ -79,9 +94,18 @@ of the `soap` context.
      soap_done(&soap);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Note that the receive and send timeouts limit the time to receive and send
+data, respectively.  **This behavior differs from the gSOAP engine's timeouts
+that limit the socket receive and send operation idle times.**  The gSOAP
+engine uses `transfer_timeout` to limit the receive and send times.
+
+To specify HTTP proxy settings, set the `soap.proxy_host` and `soap.proxy_port`
+to the HTTP proxy host and port, respectively, and optionally set
+`soap.proxy_userid` and `soap.proxy_passwd` to authenticate to the proxy.
+
 Please make sure to compile all sources in C++ compilation mode. If you migrate
-to a project file `.vcproj`, please set `CompileAs="2"` in your `.vcproj`
-file.
+to a project file such as `.vcproj`, please set `CompileAs="2"` in your
+`.vcproj` file.
 
 
 WinInet plugin options                                                {#options}
@@ -92,8 +116,7 @@ with `soap_register_plugin_arg()` and supply an argument that is passed on to
 HttpOpenRequest. For example:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}
-     soap_register_plugin_arg(&soap, wininet_plugin,
-         (void*)INTERNET_FLAG_IGNORE_CERT_CN_INVALID);
+     soap_register_plugin_arg(&soap, wininet_plugin, (void*)INTERNET_FLAG_IGNORE_CERT_CN_INVALID);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See the MSDN documentation on HttpOpenRequest for details of the
@@ -122,6 +145,11 @@ errors programmatically, or supply the appropriate flags to
 License                                                               {#license}
 =======
 
+MIT open source license.
+
+This open source license is replaced by Genivia's license for commercial use
+when a commercial-use license is purchased by customer.
+
 The licence text below is the boilerplate "MIT Licence" used from:
 http://www.opensource.org/licenses/mit-license.php
 
@@ -149,7 +177,7 @@ Contributors                                                     {#contributors}
 ============
 
 - 26 May 2003: Jack Kustanowitz (jackk@atomica.com):
-  Original version
+  Original prototype version
 - 29 September 2003: Brodie Thiesfield (code@jellycan.com):
   Rewritten as C plugin for gsoap. Bugs fixed and features added.
 - 14 January 2004: Brodie Thiesfield (code@jellycan.com):
@@ -157,7 +185,7 @@ Contributors                                                     {#contributors}
 - 17 March 2009: Brodie Thiesfield (code@jellycan.com):
   Clean up and re-release.
 - 8 October 2010: Robert van Engelen (engelen@genivia.com):
-  Cleanup and fixes for error handling.
+  Cleanup and bug fixes for error handling.
 - 28 October 2015: Robert van Engelen (engelen@genivia.com):
-  Plugin copy.
+  Plugin copy code added.
 

@@ -4,6 +4,22 @@
 	Generated with:
 	wsdl2h -cegxy -o wsse.h -t WS/WS-typemap.dat WS/wsse.xsd
 
+        Requires:
+        - plugin/wsseapi.h and plugin/wsseapi.c
+        - plugin/mecevp.c
+        - plugin/smdevp.c
+        - custom/struct_timeval.c
+
+        This file imports:
+        - saml1.h       (optional, remove #import below to remove SAMLv1)
+        - saml2.h       (optional, remove #import below to remove SAMLv2)
+        - custom/struct_timeval.h
+        - wsu.h
+        - xenc.h
+        - ds.h
+        - c14n.h
+        - wsc.h
+
 	- Removed //gsoapopt
 	- Added //gsoap wsse  schema import: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
 	- Added //gsoap wsse  schema namespace2: http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd
@@ -32,6 +48,7 @@
  *                                                                            *
 \******************************************************************************/
 
+#define SOAP_NAMESPACE_OF_wsse	"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
 //gsoap wsse  schema import:		http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
 //gsoap wsse  schema namespace2:	http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd
 //gsoap wsse  schema elementForm:	qualified
@@ -128,6 +145,8 @@ typedef struct _wsse__UsernameToken
 {	char*					Username;
 	struct _wsse__Password*			Password;
 	struct wsse__EncodedString*		Nonce;
+        char*                                   Salt;
+        unsigned int*                           Iteration;
 	char*					wsu__Created;
 	@char*					wsu__Id;
 } _wsse__UsernameToken;
@@ -187,6 +206,8 @@ typedef struct _wsse__SecurityTokenReference
 /// Imported element _wsse__Security from typemap WS/WS-typemap.dat.
 #import "xenc.h"
 #import "wsc.h"
+#import "saml1.h" // remove this line to disable SAML1 and reduce generated code size
+#import "saml2.h" // remove this line to disable SAML2 and reduce generated code size
 typedef struct _wsse__Security
 {	struct _wsu__Timestamp*			wsu__Timestamp;
 	struct _wsse__UsernameToken*		UsernameToken;
@@ -195,6 +216,8 @@ typedef struct _wsse__Security
 	struct _xenc__ReferenceList*		xenc__ReferenceList;
 	struct wsc__SecurityContextTokenType*	wsc__SecurityContextToken;
 	struct ds__SignatureType*		ds__Signature;
+	struct saml1__AssertionType*		saml1__Assertion; // remove this line to disable SAML1 and reduce generated code size
+	struct saml2__AssertionType*		saml2__Assertion; // remove this line to disable SAML2 and reduce generated code size
 	@char*					SOAP_ENV__actor;
 	@char*					SOAP_ENV__role;
 } _wsse__Security;

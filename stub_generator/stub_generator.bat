@@ -12,7 +12,7 @@ GOTO ISNVPWSDLEXIST
 
 REM set /p DUMMY=Add #import "wsse.h" to CyberSourceTransaction_nvp_%targetAPIVersion%.h and hit ENTER to continue...
 
-..\..\lib\gsoap-2.8\gsoap\bin\win32\soapcpp2 -C -L -j -I ..\..\lib\gsoap-2.8\gsoap\import -w -x CyberSourceTransaction_nvp_%targetAPIVersion%.h
+..\..\lib\gsoap-2.8\gsoap\bin\win32\soapcpp2 -C -L -j -I ..\..\lib\gsoap-2.8\gsoap;..\..\lib\gsoap-2.8\gsoap\import;..\..\lib\gsoap-2.8\gsoap\custom -w -x CyberSourceTransaction_nvp_%targetAPIVersion%.h
 
 set /p "copyDecision= Copy generated code to workspace (Y or N) ?"
 
@@ -55,7 +55,7 @@ GOTO ISXMLWSDLEXIST
 
 REM set /p DUMMY=Add #import "wsse.h" to CyberSourceTransaction_xml_%targetAPIVersion%.h and hit ENTER to continue...
 
-..\..\lib\gsoap-2.8\gsoap\bin\win32\soapcpp2 -C -L -j -I ..\..\lib\gsoap-2.8\gsoap\import -w -x CyberSourceTransaction_xml_%targetAPIVersion%.h
+..\..\lib\gsoap-2.8\gsoap\bin\win32\soapcpp2 -C -L -j -I ..\..\lib\gsoap-2.8\gsoap;..\..\lib\gsoap-2.8\gsoap\import;..\..\lib\gsoap-2.8\gsoap\custom -w -x CyberSourceTransaction_xml_%targetAPIVersion%.h
 
 set /p "copyDecision= Copy generated code to workspace (Y or N) ?"
 

@@ -1,13 +1,14 @@
 /*
 
-	wsa3.h
+	wsa3.h WS-Addressing 2003/03
 
 	Usage: See plugin/wsaapi.c
 
 	Generated with:
 	wsdl2h -cgye -o wsa3.h -t WS/WS-typemap.dat WS/WS-Addressing03.xsd
 
-	Modified by Robert van Engelen:
+        Requires:
+        - plugin/wsaapi.h and plugin/wsaapi.c
 
 	- Removed //gsoapopt
 	- Added the following directive to import WS-Addressing namespace:
@@ -43,6 +44,7 @@
  *                                                                            *
 \******************************************************************************/
 
+#define SOAP_NAMESPACE_OF_wsa3	"http://schemas.xmlsoap.org/ws/2003/03/addressing"
 //gsoap wsa3  schema import:	http://schemas.xmlsoap.org/ws/2003/03/addressing
 //gsoap wsa3  schema elementForm:	qualified
 //gsoap wsa3  schema attributeForm:	unqualified

@@ -22,32 +22,32 @@
     <ProjectGuid>{050FDA60-057C-4D81-B3AB-46BB6450E1EB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>NVPClient</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -94,7 +94,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;NVPCYBERSOURCE_EXPORTS;SOAP_STD_EXPORTS;WITH_DOM;WITH_OPENSSL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\lib\gsoap-2.8\gsoap;..\lib\gsoap-2.8\gsoap\import;..\lib\gsoap-2.8\gsoap\plugin;..\lib\openssl-1.0.1t\win32\include;..\BaseClient;..\lib\libxml2\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lib\gsoap-2.8\gsoap;..\lib\gsoap-2.8\gsoap\import;..\lib\gsoap-2.8\gsoap\plugin;..\lib\openssl-1.1.1l\win32\include;..\BaseClient;..\lib\libxml2\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -102,8 +102,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>Debug/win32/NVPClient.dll</OutputFile>
       <ImportLibrary>.\Debug\win32\NVPClient.lib</ImportLibrary>
-      <AdditionalLibraryDirectories>..\lib\openssl-1.0.1t\win32\lib;..\BaseClient\Debug\win32;..\lib\libxml2\win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libeay32.lib;ssleay32.lib;BASECLIENT.lib;libxml2.lib;libxml2_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\lib\openssl-1.1.1l\win32\lib;..\BaseClient\Debug\win32;..\lib\libxml2\win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;libssl.lib;BASECLIENT.lib;libxml2.lib;libxml2_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -113,7 +113,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;NVPCYBERSOURCE_EXPORTS;SOAP_STD_EXPORTS;WITH_DOM;WITH_OPENSSL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\lib\gsoap-2.8\gsoap;..\lib\gsoap-2.8\gsoap\import;..\lib\gsoap-2.8\gsoap\plugin;..\lib\openssl-1.0.1t\win64\include;..\BaseClient;..\lib\libxml2\win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lib\gsoap-2.8\gsoap;..\lib\gsoap-2.8\gsoap\import;..\lib\gsoap-2.8\gsoap\plugin;..\lib\openssl-1.1.1l\win64\include;..\BaseClient;..\lib\libxml2\win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -121,8 +121,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>Debug/win64/NVPClient.dll</OutputFile>
       <ImportLibrary>.\Debug\win64\NVPClient.lib</ImportLibrary>
-      <AdditionalLibraryDirectories>..\lib\openssl-1.0.1t\win64\lib;..\BaseClient\Debug\win64;..\lib\libxml2\win64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libeay64.lib;ssleay64.lib;BASECLIENT.lib;libxml2.lib;libxml2_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\lib\openssl-1.1.1l\win64\lib;..\BaseClient\Debug\win64;..\lib\libxml2\win64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;libssl.lib;BASECLIENT.lib;libxml2.lib;libxml2_a.lib;libxml2_a_dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -133,7 +133,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;NVPCLIENT_EXPORTS;NVPCYBERSOURCE_EXPORTS;SOAP_STD_EXPORTS;WITH_DOM;WITH_OPENSSL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\lib\gsoap-2.8\gsoap;..\lib\gsoap-2.8\gsoap\import;..\lib\gsoap-2.8\gsoap\plugin;..\lib\openssl-1.0.1t\win32\include;..\BaseClient;..\lib\libxml2\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lib\gsoap-2.8\gsoap;..\lib\gsoap-2.8\gsoap\import;..\lib\gsoap-2.8\gsoap\plugin;..\lib\openssl-1.1.1l\win32\include;..\BaseClient;..\lib\libxml2\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -141,8 +141,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>Release/win32/NVPClient.dll</OutputFile>
       <ImportLibrary>.\Release\win32\NVPClient.lib</ImportLibrary>
-      <AdditionalLibraryDirectories>..\lib\openssl-1.0.1t\win32\lib;..\BaseClient\Release\win32;..\lib\libxml2\win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libeay32.lib;ssleay32.lib;BASECLIENT.lib;libxml2.lib;libxml2_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\lib\openssl-1.1.1l\win32\lib;..\BaseClient\Release\win32;..\lib\libxml2\win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;libssl.lib;BASECLIENT.lib;libxml2.lib;libxml2_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
@@ -156,7 +156,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;NVPCLIENT_EXPORTS;NVPCYBERSOURCE_EXPORTS;SOAP_STD_EXPORTS;WITH_DOM;WITH_OPENSSL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\lib\gsoap-2.8\gsoap;..\lib\gsoap-2.8\gsoap\import;..\lib\gsoap-2.8\gsoap\plugin;..\lib\openssl-1.0.1t\win64\include;..\BaseClient;..\lib\libxml2\win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lib\gsoap-2.8\gsoap;..\lib\gsoap-2.8\gsoap\import;..\lib\gsoap-2.8\gsoap\plugin;..\lib\openssl-1.1.1l\win64\include;..\BaseClient;..\lib\libxml2\win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -164,8 +164,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>Release/win64/NVPClient.dll</OutputFile>
       <ImportLibrary>.\Release\win64\NVPClient.lib</ImportLibrary>
-      <AdditionalLibraryDirectories>..\lib\openssl-1.0.1t\win64\lib;..\BaseClient\Release\win64;..\lib\libxml2\win64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libeay64.lib;ssleay64.lib;BASECLIENT.lib;libxml2.lib;libxml2_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\lib\openssl-1.1.1l\win64\lib;..\BaseClient\Release\win64;..\lib\libxml2\win64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;libssl.lib;BASECLIENT.lib;libxml2.lib;libxml2_a.lib;libxml2_a_dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
@@ -188,6 +188,14 @@
     <ClInclude Include="..\lib\gsoap-2.8\gsoap\plugin\wsseapi.h" />
   </ItemGroup>
   <ItemGroup>
+   <ClCompile Include="..\lib\gsoap-2.8\gsoap\custom\struct_timeval.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsCpp</CompileAs>
+   </ClCompile>
     <ClCompile Include="..\lib\gsoap-2.8\gsoap\stdsoap2.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
