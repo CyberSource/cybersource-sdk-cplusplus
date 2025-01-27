@@ -78,6 +78,8 @@ void runAuthTest(){
     ics_fadd(icsorder, "offer0", "offerid:0^amount:4.59");
 
     ics_msg *icsResponse = processRequest(icsorder);
+    ics_destroy(icsorder);
+    ics_destroy(icsResponse);
 }
 
 /**
@@ -214,6 +216,59 @@ std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_
                     soRequest[icsAppSingle] = L"true";
                 }
             }       
+        }
+        else if(icsRequestKey.find(L"offer") != std::wstring::npos){
+            //handle offer/item fields. 
+            // SCMP pattern is "amount:4.59^merchant_product_sku:GC1^product_name:Gift Certificate^product_code:123^quantity:1"
+            /*
+                    // "amount" = "item_i_unitPrice"
+                    // "quantity" "item_i_quantity"
+                    // "product_name" = "item_i_productName"
+                    // "product_description" = "item_i_productDescription"
+                    // "product_code" = "item_i_productCode
+                    // "merchant_product_sku" = "item_i_productSKU"
+                    // "tax_amount" = "item_i_taxAmount"
+            */
+
+           //first get the item number(offer0,offer1,offer2,etc)
+           std::wstring offerNumber = icsRequestKey.substr(5);
+           //get the offer text value
+           std::wstring offerValue = charToWString(ics_fget(icsRequest, i));
+           //split using delimeter "^"
+           std::vector<std::wstring> offerValueSplit = splitWString(offerValue,'^');
+
+           if(!offerValueSplit.empty()){
+                std::wstring itemKey, itemValue;
+                for (const std::wstring token : offerValueSplit) {
+                    if (token.find(L':') != std::wstring::npos){
+                        //valid key value pair
+                        itemKey = token.substr(0, token.find(L':'));//amount:
+                        itemValue = token.substr(token.find(L':') + 1);
+                        if(itemKey == L"amount"){
+                            soRequest[L"item_" + offerNumber + L"_unitPrice"] = itemValue;
+                        }
+                        else if(itemKey == L"quantity"){
+                            soRequest[L"item_" + offerNumber + L"_quantity"] = itemValue;
+                        }
+                        else if(itemKey == L"product_name"){
+                            soRequest[L"item_" + offerNumber + L"_productName"] = itemValue;
+                        }
+                        else if(itemKey == L"product_description"){
+                            soRequest[L"item_" + offerNumber + L"_productDescription"] = itemValue;
+                        }
+                        else if(itemKey == L"product_code"){
+                            soRequest[L"item_" + offerNumber + L"_productCode"] = itemValue;
+                        }
+                        else if(itemKey == L"merchant_product_sku"){
+                            soRequest[L"item_" + offerNumber + L"_productSKU"] = itemValue;
+                        }
+                        else if(itemKey == L"tax_amount"){
+                            soRequest[L"item_" + offerNumber + L"_taxAmount"] = itemValue;
+                        }
+                    }
+                }
+           }  
+
         }
         else{
             //look up this key from our request map to get the Simple Order key equivalent
