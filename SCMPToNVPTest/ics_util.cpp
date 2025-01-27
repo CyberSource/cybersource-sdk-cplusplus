@@ -6,6 +6,11 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
+#include <locale>
+#include <stdexcept>
+#include <codecvt>
+#include <fstream>
+#include <sstream>
 #include "ics.h"
 #include "soapINVPTransactionProcessorProxy.h"
 #include "NVPCybersource.h"
@@ -17,14 +22,16 @@
 const char CYBS_INI_FILE[]   = "..resources/cybs.ini";
 
 void printMap (std::map <std::wstring, std::wstring> m);
-std::map<std::string, std::string> loadPropertiesFile(const std::string& filename);
+std::map<std::wstring, std::wstring> loadPropertiesFile(const std::string& filename);
 void runAuthTest();
 ics_msg *processRequest(ics_msg *icsRequest);
 std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_msg* icsRequest);
 ics_msg* convertSimpleOrderResponseToICSResponse(std::map <std::wstring, std::wstring> soResponse);
 char* wstring_to_char(const std::wstring& wstr);
 std::wstring charToWString(const char* charArray);
-std::vector<std::string> splitString(const char* str, const char delimiter);
+std::vector<std::wstring> splitWString(const std::wstring& str, wchar_t delimiter);
+std::wstring stringToWString(const std::string& str);
+std::string wstringToString(const std::wstring& wstr)
 
 int main(){
     printf("Running auth transaction");
@@ -78,6 +85,8 @@ void runAuthTest(){
  */
 ics_msg *processRequest(ics_msg *icsRequest){
     ics_msg * icsResponse = NULL;
+    wprintf("SCMP request\n");
+    ics_print(icsRequest);
 
     INVPTransactionProcessorProxy proxy = INVPTransactionProcessorProxy();
 
@@ -119,7 +128,7 @@ ics_msg *processRequest(ics_msg *icsRequest){
     */
    
 	request = convertICSRequestToSimpleOrderRequest(icsRequest);
-	printf("Simple Order CREDIT CARD AUTHORIZATION REQUEST: \n" );
+	wprintf("Simple Order REQUEST: \n" );
 	printMap (request);
 	std::map <std::wstring, std::wstring> resMap;
 
@@ -130,18 +139,32 @@ ics_msg *processRequest(ics_msg *icsRequest){
 
     // send the simple order transaction to the gateway. Response map is populated with the response.
 	int status = runTransaction(&proxy, cfgMap, request, resMap);
-    printf("Simple Order Response:\n");
-    printMap (resMap);
+    wprintf("\nSimple Order Response:\n");
+    printMap(resMap);
 
     //Convert the map response to ICS response object
     icsResponse = convertSimpleOrderResponseToICSResponse(resMap);
   
+    wprintf("\nSCMP Response:\n");
+    ics_print(icsResponse);
+
+
+    //free the proxy
+    proxy.destroy();
+	soap_delete(proxy.soap, NULL);
+	soap_dealloc(proxy.soap, NULL);
+	soap_destroy(proxy.soap);
+	soap_end(proxy.soap);
+	soap_done(proxy.soap);
+
+    cybs_destroy_map(cfgMap);
     return iscResponse;
 }
 
 std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_msg *icsRequest){
     std::map <std::wstring, std::wstring> soRequest;
-
+    
+    /* hard-coded static request
     soRequest[L"merchantReferenceCode"] =  charToWString(ics_fgetbyname(icsRequest, "merchant_ref_number"));
 	soRequest[L"billTo_firstName"] = charToWString(ics_fgetbyname(icsRequest, "customer_firstname"));
 	soRequest[L"billTo_lastName"] = charToWString(ics_fgetbyname(icsRequest, "customer_lastname"));
@@ -164,23 +187,48 @@ std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_
 	soRequest[L"card_expirationMonth"] = charToWString(ics_fgetbyname(icsRequest, "customer_cc_expmo"));
 	soRequest[L"card_expirationYear"] = charToWString(ics_fgetbyname(icsRequest, "customer_cc_expyr"));
 	soRequest[L"purchaseTotals_currency"] = charToWString(ics_fgetbyname(icsRequest, "currency"));
+    */
 
-    //TODO: parse the item/offer text here
-	soRequest[L"item_0_unitPrice"] = charToWString(ics_fgetbyname(icsRequest, "customer_firstname"));
-	
-    //soRequest[L"ccAuthService_run"] = L"true";
+    // loads the request mapping table
+    std::map<std::wstring, std::wstring> requestMap = loadPropertiesFile("scmp_so_mapping.properties");
 
-    //dynamically lookup the ics_application and to support bundle call(ex. ics_auth,ics_capture for sale)
-    char* icsApplication = ics_fgetbyname(icsRequest, "ics_applications");
-    std::vector<std::string> tokens = splitString(icsApplication, ',');
-    std::map<std::string, std::string> icsApplicationMap = loadPropertiesFile("ics_applications.properties");
+    for(int i=0; i<ics_fcount(icsRequest); ++i){
+        std::wstring icsRequestKey = charToWString(ics_fname(icsRequest, i));
 
-    for (const auto& token : tokens) {
-        auto icsApp = icsApplicationMap.find(token);
-        if (icsApp != icsApplicationMap.end()){
-            soRequest[icsApp] = "Ltrue";
+        //check for the ics_applications request field
+        if(icsRequestKey == L"ics_applications"){
+            std::map<std::wstring, std::wstring> icsApplicationMap = loadPropertiesFile("ics_applications.properties");
+            if (icsRequestKey.find(L',') != std::wstring::npos){
+                //this is a bundle call
+                std::vector<std::wstring> tokens = splitWString(icsRequestKey, ',');
+                for (const auto& token : tokens) {
+                    auto icsApp = icsApplicationMap.find(token);
+                    if (icsApp != icsApplicationMap.end()){
+                        soRequest[icsApp] = L"true";
+                    }
+                }
+            }
+            else{
+                auto icsAppSingle = icsApplicationMap.find(charToWString(ics_fget(icsRequest, i)));
+                if(icsAppSingle != icsApplicationMap.end()){
+                    soRequest[icsAppSingle] = L"true";
+                }
+            }       
+        }
+        else{
+            //look up this key from our request map to get the Simple Order key equivalent
+            std::wstring soRequestKey = requestMap.find(icsRequestKey);
+            if(soRequestKey != requestMap.end()){
+                // we have a mapping, send it
+                soRequest[soRequestKey] = charToWString(ics_fget(icsRequest, i));
+            }
         }
     }
+
+    //TODO: parse the item/offer text here
+	soRequest[L"item_0_unitPrice"] = L"4.59";
+	
+    //soRequest[L"ccAuthService_run"] = L"true";
 
     return soRequest;
 }
@@ -282,8 +330,8 @@ void printMap (std::map <std::wstring, std::wstring> m) {
 	}
 }
 
-std::map<std::string, std::string> loadPropertiesFile(const std::string& filename) {
-    std::map<std::string, std::string> properties;
+std::map<std::wstring, std::wstring> loadPropertiesFile(const std::string& filename) {
+    std::map<std::wstring, std::wstring> properties;
     std::ifstream file(filename);
     std::string line;
 
@@ -302,7 +350,7 @@ std::map<std::string, std::string> loadPropertiesFile(const std::string& filenam
         if (std::getline(is_line, key, '=')) {
             std::string value;
             if (std::getline(is_line, value)) {
-                properties[key] = value;
+                properties[stringToWString(key)] = stringToWString(value);
             }
         }
     }
@@ -311,19 +359,25 @@ std::map<std::string, std::string> loadPropertiesFile(const std::string& filenam
     return properties;
 }
 
-std::vector<std::string> splitString(const char* str, const char delimiter) {
-    std::vector<std::string> result;
-    char* strCopy = new char[strlen(str) + 1];
-    std::strcpy(strCopy, str);
+std::vector<std::wstring> splitWString(const std::wstring& str, wchar_t delimiter) {
+    std::vector<std::wstring> result;
+    std::wstringstream wss(str);
+    std::wstring token;
 
-    char* token = std::strtok(strCopy, &delimiter);
-    while (token != nullptr) {
-        result.push_back(std::string(token));
-        token = std::strtok(nullptr, &delimiter);
+    while (std::getline(wss, token, delimiter)) {
+        result.push_back(token);
     }
 
-    delete[] strCopy;
     return result;
+}
+
+std::wstring stringToWString(const std::string& str) {
+    std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+    return converter.from_bytes(str);
+}
+std::string wstringToString(const std::wstring& wstr) {
+    std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+    return converter.to_bytes(wstr);
 }
 
 	
