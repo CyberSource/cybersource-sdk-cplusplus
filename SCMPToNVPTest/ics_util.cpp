@@ -6,6 +6,7 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
+#include <iterator>
 #include <locale>
 #include <stdexcept>
 #include <codecvt>
@@ -19,7 +20,8 @@
 #define MAX_KEY_LENGTH 100
 #define MAX_VALUE_LENGTH 100
 
-const char CYBS_INI_FILE[]   = "..resources/cybs.ini";
+//const char CYBS_INI_FILE[]   = "..resources/cybs.ini";
+const char CYBS_INI_FILE[] = "..\\resources\\cybs.ini";
 
 void printMap (std::map <std::wstring, std::wstring> m);
 std::map<std::wstring, std::wstring> loadPropertiesFile(const std::string& filename);
@@ -31,10 +33,10 @@ char* wstring_to_char(const std::wstring& wstr);
 std::wstring charToWString(const char* charArray);
 std::vector<std::wstring> splitWString(const std::wstring& str, wchar_t delimiter);
 std::wstring stringToWString(const std::string& str);
-std::string wstringToString(const std::wstring& wstr)
+std::string wstringToString(const std::wstring& wstr);
 
 int main(){
-    printf("Running auth transaction");
+    printf("Running auth transaction\n");
     runAuthTest();
     return 0;
 }
@@ -59,23 +61,23 @@ void printMap(std::map <std::wstring, std::wstring> m) {
 void runAuthTest(){
     ics_msg *icsorder;
     icsorder = ics_init(0);
-    ics_fadd(icsorder, "ics_applications", "ics_auth");
-    ics_fadd(icsorder, "merchant_id", "visa_acceptance_sf_bill_pmt");
-    ics_fadd(icsorder, "customer_firstname", "John");
-    ics_fadd(icsorder, "customer_lastname", "Doe");
-    ics_fadd(icsorder, "customer_email", "nobody@cybersource.com");
-    ics_fadd(icsorder, "customer_phone", "408-556-9100");
-    ics_fadd(icsorder, "bill_address1", "1295 Charleston Rd.");
-    ics_fadd(icsorder, "bill_city", "Mountain View");
-    ics_fadd(icsorder, "bill_state", "CA");
-    ics_fadd(icsorder, "bill_zip", "94043-1307");
-    ics_fadd(icsorder, "bill_country", "US");
-    ics_fadd(icsorder, "customer_cc_number", "4111111111111111");
-    ics_fadd(icsorder, "customer_cc_expmo", "12");
-    ics_fadd(icsorder, "customer_cc_expyr", "2030");
-    ics_fadd(icsorder, "merchant_ref_number", "12");
-    ics_fadd(icsorder, "currency", "USD");
-    ics_fadd(icsorder, "offer0", "offerid:0^amount:4.59");
+    ics_fadd(icsorder, (char*)"ics_applications", (char*)"ics_auth");
+    ics_fadd(icsorder, (char*)"merchant_id", (char*)"ng_gpn");
+    ics_fadd(icsorder, (char*)"customer_firstname", (char*)"John");
+    ics_fadd(icsorder, (char*)"customer_lastname", (char*)"Doe");
+    ics_fadd(icsorder, (char*)"customer_email", (char*)"nobody@cybersource.com");
+    ics_fadd(icsorder, (char*)"customer_phone", (char*)"408-556-9100");
+    ics_fadd(icsorder, (char*)"bill_address1", (char*)"1295 Charleston Rd.");
+    ics_fadd(icsorder, (char*)"bill_city", (char*)"Mountain View");
+    ics_fadd(icsorder, (char*)"bill_state", (char*)"CA");
+    ics_fadd(icsorder, (char*)"bill_zip", (char*)"94043-1307");
+    ics_fadd(icsorder, (char*)"bill_country", (char*)"US");
+    ics_fadd(icsorder, (char*)"customer_cc_number", (char*)"4111111111111111");
+    ics_fadd(icsorder, (char*)"customer_cc_expmo", (char*)"12");
+    ics_fadd(icsorder, (char*)"customer_cc_expyr", (char*)"2030");
+    ics_fadd(icsorder, (char*)"merchant_ref_number", (char*)"12");
+    ics_fadd(icsorder, (char*)"currency", (char*)"USD");
+    ics_fadd(icsorder, (char*)"offer0", (char*)"offerid:0^amount:4.59");
 
     ics_msg *icsResponse = processRequest(icsorder);
     ics_destroy(icsorder);
@@ -87,7 +89,7 @@ void runAuthTest(){
  */
 ics_msg *processRequest(ics_msg *icsRequest){
     ics_msg * icsResponse = NULL;
-    wprintf("SCMP request\n");
+    printf("==== SCMP Request ====\n");
     ics_print(icsRequest);
 
     INVPTransactionProcessorProxy proxy = INVPTransactionProcessorProxy();
@@ -102,7 +104,7 @@ ics_msg *processRequest(ics_msg *icsRequest){
 	
 	std::map <std::wstring, std::wstring> request;
 
-    /* Original SO request 
+    /* Original SO request
 	request[L"merchantReferenceCode"] = L"your_merchant_reference_code";
 	request[L"billTo_firstName"] = L"AJŠAß";
 	request[L"billTo_lastName"] = L"Doe";
@@ -130,7 +132,7 @@ ics_msg *processRequest(ics_msg *icsRequest){
     */
    
 	request = convertICSRequestToSimpleOrderRequest(icsRequest);
-	wprintf("Simple Order REQUEST: \n" );
+	printf("\n==== Simple Order Request ====\n" );
 	printMap (request);
 	std::map <std::wstring, std::wstring> resMap;
 
@@ -141,13 +143,13 @@ ics_msg *processRequest(ics_msg *icsRequest){
 
     // send the simple order transaction to the gateway. Response map is populated with the response.
 	int status = runTransaction(&proxy, cfgMap, request, resMap);
-    wprintf("\nSimple Order Response:\n");
+    printf("\n==== Simple Order Response ====\n");
     printMap(resMap);
 
     //Convert the map response to ICS response object
     icsResponse = convertSimpleOrderResponseToICSResponse(resMap);
   
-    wprintf("\nSCMP Response:\n");
+    printf("\n==== SCMP Response ====\n");
     ics_print(icsResponse);
 
 
@@ -160,7 +162,7 @@ ics_msg *processRequest(ics_msg *icsRequest){
 	soap_done(proxy.soap);
 
     cybs_destroy_map(cfgMap);
-    return iscResponse;
+    return icsResponse;
 }
 
 std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_msg *icsRequest){
@@ -206,14 +208,14 @@ std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_
                 for (const auto& token : tokens) {
                     auto icsApp = icsApplicationMap.find(token);
                     if (icsApp != icsApplicationMap.end()){
-                        soRequest[icsApp] = L"true";
+                        soRequest[icsApp->second] = L"true";
                     }
                 }
             }
             else{
                 auto icsAppSingle = icsApplicationMap.find(charToWString(ics_fget(icsRequest, i)));
                 if(icsAppSingle != icsApplicationMap.end()){
-                    soRequest[icsAppSingle] = L"true";
+                    soRequest[icsAppSingle->second] = L"true";
                 }
             }       
         }
@@ -272,10 +274,10 @@ std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_
         }
         else{
             //look up this key from our request map to get the Simple Order key equivalent
-            std::wstring soRequestKey = requestMap.find(icsRequestKey);
+            auto soRequestKey = requestMap.find(icsRequestKey);
             if(soRequestKey != requestMap.end()){
                 // we have a mapping, send it
-                soRequest[soRequestKey] = charToWString(ics_fget(icsRequest, i));
+                soRequest[soRequestKey->second] = charToWString(ics_fget(icsRequest, i));
             }
         }
     }
@@ -290,6 +292,8 @@ std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_
 
 ics_msg *convertSimpleOrderResponseToICSResponse(std::map <std::wstring, std::wstring> soResponse){
     ics_msg *icsResponse;
+    icsResponse = ics_init(0);
+
     /*
     Sample Simple Order response for reference
 
@@ -323,17 +327,17 @@ ics_msg *convertSimpleOrderResponseToICSResponse(std::map <std::wstring, std::ws
     ccAuthReply_avsCodeRaw=I1
     decisionEarlyReply_reasonCode=100
     */
-    std::map<std::string, std::string> responseMap = loadPropertiesFile("so_scmp_response_mapping.properties");
+    std::map<std::wstring, std::wstring> responseMap = loadPropertiesFile("so_scmp_response_mapping.properties");
 
     for (const auto& pair : soResponse) {
-        const std::string& key = pair.first;
-        const std::string& value = pair.second;
+        const std::wstring& key = pair.first;
+        const std::wstring& value = pair.second;
 
         if (!value.empty()) {
             // look up the key from the properties map. the value will be the key for our SCMP response object
             auto scmpKey = responseMap.find(key);
             if (scmpKey != responseMap.end()){
-                 ics_fadd(icsResponse, scmpKey, wstring_to_char(value));
+                 ics_fadd(icsResponse, wstring_to_char(scmpKey->second), wstring_to_char(value));
             }         
         }
     }
@@ -367,6 +371,7 @@ char* wstring_to_char(const std::wstring& wstr) {
     return char_array;
 }
 
+/*
 void printMap (std::map <std::wstring, std::wstring> m) {
 	typedef std::map <std::wstring, std::wstring>::const_iterator it_type;
 	for(it_type iterator = m.begin(); iterator != m.end(); iterator++) {
@@ -384,6 +389,7 @@ void printMap (std::map <std::wstring, std::wstring> m) {
 
 	}
 }
+*/
 
 std::map<std::wstring, std::wstring> loadPropertiesFile(const std::string& filename) {
     std::map<std::wstring, std::wstring> properties;
