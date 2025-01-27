@@ -59,6 +59,8 @@ void printMap(std::map <std::wstring, std::wstring> m) {
     }
 }
 void runAuthTest(){
+    float amount = 20.00;
+    char offer[1024];
     ics_msg *icsorder;
     icsorder = ics_init(0);
     ics_fadd(icsorder, (char*)"ics_applications", (char*)"ics_auth");
@@ -77,7 +79,11 @@ void runAuthTest(){
     ics_fadd(icsorder, (char*)"customer_cc_expyr", (char*)"2030");
     ics_fadd(icsorder, (char*)"merchant_ref_number", (char*)"12");
     ics_fadd(icsorder, (char*)"currency", (char*)"USD");
-    ics_fadd(icsorder, (char*)"offer0", (char*)"offerid:0^amount:4.59");
+   
+    //add 1 item
+    sprintf(offer, "amount:%.2f^merchant_product_sku:GC1^product_name:Gift Certificate^quantity:1", 
+	  amount);
+    ics_fadd(icsorder, "offer0", offer);
 
     ics_msg *icsResponse = processRequest(icsorder);
     ics_destroy(icsorder);
