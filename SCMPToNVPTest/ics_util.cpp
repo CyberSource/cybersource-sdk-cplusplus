@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <iostream>
+#include <cstring>
+#include <vector>
 #include "ics.h"
 #include "soapINVPTransactionProcessorProxy.h"
 #include "NVPCybersource.h"
@@ -21,6 +24,7 @@ std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_
 ics_msg* convertSimpleOrderResponseToICSResponse(std::map <std::wstring, std::wstring> soResponse);
 char* wstring_to_char(const std::wstring& wstr);
 std::wstring charToWString(const char* charArray);
+std::vector<std::string> splitString(const char* str, const char delimiter);
 
 int main(){
     printf("Running auth transaction");
@@ -164,8 +168,19 @@ std::map <std::wstring, std::wstring> convertICSRequestToSimpleOrderRequest(ics_
     //TODO: parse the item/offer text here
 	soRequest[L"item_0_unitPrice"] = charToWString(ics_fgetbyname(icsRequest, "customer_firstname"));
 	
-    //TODO: expand to support other ics_applications like capture, etc and also bundle calls like auth+capture.
-    soRequest[L"ccAuthService_run"] = L"true";
+    //soRequest[L"ccAuthService_run"] = L"true";
+
+    //dynamically lookup the ics_application and to support bundle call(ex. ics_auth,ics_capture for sale)
+    char* icsApplication = ics_fgetbyname(icsRequest, "ics_applications");
+    std::vector<std::string> tokens = splitString(icsApplication, ',');
+    std::map<std::string, std::string> icsApplicationMap = loadPropertiesFile("ics_applications.properties");
+
+    for (const auto& token : tokens) {
+        auto icsApp = icsApplicationMap.find(token);
+        if (icsApp != icsApplicationMap.end()){
+            soRequest[icsApp] = "Ltrue";
+        }
+    }
 
     return soRequest;
 }
@@ -294,6 +309,21 @@ std::map<std::string, std::string> loadPropertiesFile(const std::string& filenam
 
     file.close();
     return properties;
+}
+
+std::vector<std::string> splitString(const char* str, const char delimiter) {
+    std::vector<std::string> result;
+    char* strCopy = new char[strlen(str) + 1];
+    std::strcpy(strCopy, str);
+
+    char* token = std::strtok(strCopy, &delimiter);
+    while (token != nullptr) {
+        result.push_back(std::string(token));
+        token = std::strtok(nullptr, &delimiter);
+    }
+
+    delete[] strCopy;
+    return result;
 }
 
 	
