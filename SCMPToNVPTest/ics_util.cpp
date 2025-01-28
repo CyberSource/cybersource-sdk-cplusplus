@@ -1,3 +1,4 @@
+//GENAI=YES
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,8 +21,7 @@
 #define MAX_KEY_LENGTH 100
 #define MAX_VALUE_LENGTH 100
 
-//const char CYBS_INI_FILE[]   = "..resources/cybs.ini";
-const char CYBS_INI_FILE[] = "..\\resources\\cybs.ini";
+const char CYBS_INI_FILE[]   = "../resources/cybs.ini";
 
 void printMap(std::map <std::wstring, std::wstring> m);
 std::map<std::wstring, std::wstring> loadPropertiesFile(const std::string& filename);
