@@ -155,8 +155,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ics.h" />
+    <ClInclude Include="ics_util.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ics_auth_test.cpp" />
     <ClCompile Include="ics_util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

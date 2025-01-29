@@ -18,9 +18,15 @@
     <ClInclude Include="ics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ics_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ics_util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ics_auth_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
