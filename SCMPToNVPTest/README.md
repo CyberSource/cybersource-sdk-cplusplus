@@ -6,7 +6,7 @@ This README.md file is specific to SCMPToNVPTest. For further details on the C++
 
 
 ## C++ SCMP to Simple Order Sample Client
-1. Add the SCMP sample files to your project. The files mentioned here can be found in GitHub: https://github.com/CyberSource/cybersource-sdk-cplusplus/tree/scmp-sample/SCMPToNVPTest
+1. Add the SCMP sample files to your project. The files mentioned here can be found in GitHub: https://github.com/CyberSource/cybersource-sdk-cplusplus/tree/master/SCMPToNVPTest
 1. Add a cybs.ini file to your application.
 1. Update the cybs.ini file to contain the following list of values:
 ```properties
