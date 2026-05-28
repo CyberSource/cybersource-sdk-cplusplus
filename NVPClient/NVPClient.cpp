@@ -258,6 +258,12 @@ std::map <std::wstring, std::wstring> convertStringtoMap (wchar_t *res) {
 	while(temp1 != NULL) 
 	{	
 		token = wcschr(temp1, L'=');
+
+		if (token == NULL) {
+			temp1 = wcstok(NULL, L"\n", &buf);
+			continue;
+		}
+
 		*token = L'\0';
 		std::wstring ws(temp1);
 		std::wstring temp2(token+1);
@@ -355,7 +361,7 @@ int configure (INVPTransactionProcessorProxy **proxy, config cfg, PKCS12 **p12, 
 
     /****Set up configuration for signing the request ends*************/
 
-    if (soap_ssl_client_context((*proxy)->soap, SOAP_SSL_SKIP_HOST_CHECK, NULL, NULL, 
+    if (soap_ssl_client_context((*proxy)->soap, SOAP_SSL_DEFAULT, NULL, NULL,
 		cfg.sslCertFile, NULL, NULL ))
      {
 		return ( 5 );
@@ -390,22 +396,22 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 			temp = DEFAULT_LOG_FILENAME;
 		tempCopy = temp;
 
+		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, tempCopy);
+
 		tempCopy.copy(cfg.logFileName, tempCopy.size(), 0);
 		cfg.logFileName[tempCopy.size()]='\0';
-
-		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName);
 
 		// Log File Directory
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_DIRECTORY);
 
 		if (!temp)
 			temp = DEFAULT_LOG_DIRECTORY;
-			tempCopy = temp;
+		tempCopy = temp;
 
-			tempCopy.copy(cfg.logFileDir, tempCopy.size(), 0);
-			cfg.logFileDir[tempCopy.size()]='\0';
+		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, tempCopy);
 
-		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir);
+		tempCopy.copy(cfg.logFileDir, tempCopy.size(), 0);
+		cfg.logFileDir[tempCopy.size()]='\0';
 
 		// Get complete log path
 		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "") == -1) 

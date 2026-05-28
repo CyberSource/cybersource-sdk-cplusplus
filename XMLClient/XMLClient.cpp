@@ -311,7 +311,7 @@ int configure (ITransactionProcessorProxy **proxy, config cfg,  PKCS12 **p12, EV
 	/****Set up configuration for signing the request ends*************/
 
 	/****Set up SSL context to enable SSL*******	*****/
-	if (soap_ssl_client_context((*proxy)->soap, SOAP_SSL_SKIP_HOST_CHECK, NULL, NULL, 
+	if (soap_ssl_client_context((*proxy)->soap, SOAP_SSL_DEFAULT, NULL, NULL,
 		cfg.sslCertFile, NULL, NULL ))
 	{
 		return ( 5 );
@@ -347,18 +347,18 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		if (!temp)
 			temp = DEFAULT_LOG_FILENAME;
 		tempCopy = temp;
+		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, tempCopy);
 		tempCopy.copy(cfg.logFileName, tempCopy.size(), 0);
 		cfg.logFileName[tempCopy.size()]='\0';
-		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, cfg.logFileName);
 
 		// Log File Directory
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_DIRECTORY);
 		if (!temp)
 			temp = DEFAULT_LOG_DIRECTORY;
 		tempCopy = temp;
+		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, tempCopy);
 		tempCopy.copy(cfg.logFileDir, tempCopy.size(), 0);
 		cfg.logFileDir[tempCopy.size()]='\0';
-		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, cfg.logFileDir);
 
 		// Get complete log path
 		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "") == -1) 

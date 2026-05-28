@@ -52,8 +52,6 @@ ics_msg* processRequest(ics_msg* icsRequest) {
     std::map <std::wstring, std::wstring> request;
 
     request = convertICSRequestToSimpleOrderRequest(icsRequest);
-    printf("\n==== Simple Order Request ====\n");
-    printMap(request);
     std::map <std::wstring, std::wstring> resMap;
 
     CybsMap* cfgMap = cybs_create_map();
@@ -63,8 +61,6 @@ ics_msg* processRequest(ics_msg* icsRequest) {
 
     // send the simple order transaction to the gateway. Response map is populated with the response.
     int status = runTransaction(&proxy, cfgMap, request, resMap);
-    printf("\n==== Simple Order Response ====\n");
-    printMap(resMap);
 
     //Convert the map response to ICS response object
     icsResponse = convertSimpleOrderResponseToICSResponse(resMap);
