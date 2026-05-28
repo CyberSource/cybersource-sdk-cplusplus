@@ -90,6 +90,24 @@ unsigned long pthreads_thread_id(void );
 		RETURN_LENGTH_ERROR( name, maxlen ); \
 }
 
+/*
+ * CYBS_SAFE_COPY( name, dst, src )
+ *   Bounded copy + NUL-terminate from std::string-convertible `src` into
+ *   the fixed-size char-array destination `dst`. Uses sizeof(dst), so `dst`
+ *   MUST be a fixed-size array (not a pointer). Returns a length error via
+ *   the surrounding function if src would not fit (incl. the NUL).
+ *   Replaces the recurring CHECK_LENGTH + std::string::copy + manual NUL
+ *   pattern so the check-then-copy contract cannot be silently inverted.
+ */
+#define CYBS_SAFE_COPY( name, dst, src ) \
+{ \
+	string _cybsCopySrc(src); \
+	if (_cybsCopySrc.size() >= sizeof(dst)) \
+		RETURN_LENGTH_ERROR( name, (int)(sizeof(dst) - 1) ); \
+	_cybsCopySrc.copy((dst), _cybsCopySrc.size(), 0); \
+	(dst)[_cybsCopySrc.size()] = '\0'; \
+}
+
 #ifdef WIN32
 void cybs_openssl_init(void)
 {
@@ -346,19 +364,13 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_FILENAME);
 		if (!temp)
 			temp = DEFAULT_LOG_FILENAME;
-		tempCopy = temp;
-		CHECK_LENGTH(CYBS_C_LOG_FILENAME, CYBS_MAX_PATH, tempCopy);
-		tempCopy.copy(cfg.logFileName, tempCopy.size(), 0);
-		cfg.logFileName[tempCopy.size()]='\0';
+		CYBS_SAFE_COPY(CYBS_C_LOG_FILENAME, cfg.logFileName, temp);
 
 		// Log File Directory
 		temp = (const char *)cybs_get(configMap, CYBS_C_LOG_DIRECTORY);
 		if (!temp)
 			temp = DEFAULT_LOG_DIRECTORY;
-		tempCopy = temp;
-		CHECK_LENGTH(CYBS_C_LOG_DIRECTORY, CYBS_MAX_PATH, tempCopy);
-		tempCopy.copy(cfg.logFileDir, tempCopy.size(), 0);
-		cfg.logFileDir[tempCopy.size()]='\0';
+		CYBS_SAFE_COPY(CYBS_C_LOG_DIRECTORY, cfg.logFileDir, temp);
 
 		// Get complete log path
 		if(getKeyFilePath (szDest, cfg.logFileDir, cfg.logFileName, "") == -1) 
@@ -421,9 +433,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	}
 
 	tempCopy = soap_wchar2s(proxy->soap, ns2__requestMessage->merchantID);
-	CHECK_LENGTH(CYBS_C_MERCHANT_ID, CYBS_MAX_MERCHANT_ID, tempCopy);
-	tempCopy.copy(cfg.merchantID, tempCopy.size(), 0);
-	cfg.merchantID[tempCopy.size()]='\0';
+	CYBS_SAFE_COPY(CYBS_C_MERCHANT_ID, cfg.merchantID, tempCopy);
 
 	/* Check whether ssl cert file path is present in config file if not
 	then check in key directory with default config file name (ca-bundle) */
@@ -431,11 +441,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	temp = (const char *)cybs_get(configMap, CYBS_C_SSL_CERT_FILE);
 	if (temp)
 	{
-		CHECK_LENGTH(
-			CYBS_C_SSL_CERT_FILE, CYBS_MAX_PATH, temp );
-		tempCopy = temp;
-		tempCopy.copy(cfg.sslCertFile, tempCopy.size(), 0);
-		cfg.sslCertFile[tempCopy.size()]='\0';
+		CYBS_SAFE_COPY(CYBS_C_SSL_CERT_FILE, cfg.sslCertFile, temp);
 	}
 	else
 	{
@@ -470,9 +476,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 			cfg.keyFileName[i]=cfgKeyFileNameCopy[i];
 		}
 	} else {
-		tempCopy = temp;
-		tempCopy.copy(cfg.keyFileName, tempCopy.size(), 0);
-		cfg.keyFileName[tempCopy.size()]='\0';
+		CYBS_SAFE_COPY(CYBS_C_KEY_FILENAME, cfg.keyFileName, temp);
 	}
 	
 	/* Get effective key file path */
@@ -492,10 +496,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	{
 		temp = cfg.merchantID;
 	}
-	tempCopy = temp;
-	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, tempCopy);
-	tempCopy.copy(cfg.password, tempCopy.size(), 0);
-	cfg.password[tempCopy.size()]='\0';
+	CYBS_SAFE_COPY(CYBS_C_PWD, cfg.password, temp);
 
 	/* Get proxy port from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PORT);
@@ -507,30 +508,21 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	/* Get proxy server from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_SERVER);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_SERVER, CYBS_MAX_URL, temp);
-		tempCopy = temp;
-		tempCopy.copy(cfg.proxyServer, tempCopy.size(), 0);
-		cfg.proxyServer[tempCopy.size()]='\0';
+		CYBS_SAFE_COPY(CYBS_C_PROXY_SERVER, cfg.proxyServer, temp);
 		proxy->soap->proxy_host = cfg.proxyServer;
 	}
 
 	/* Get proxy password from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_PWD);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_PWD, CYBS_MAX_PASSWORD, temp);
-		tempCopy = temp;
-		tempCopy.copy(cfg.proxyPassword, tempCopy.size(), 0);
-		cfg.proxyPassword[tempCopy.size()]='\0';
+		CYBS_SAFE_COPY(CYBS_C_PROXY_PWD, cfg.proxyPassword, temp);
 		proxy->soap->proxy_passwd = cfg.proxyPassword;
 	}
 
 	/* Get proxy username from config file */
 	temp = (const char *)cybs_get(configMap, CYBS_C_PROXY_USERNAME);
 	if (temp) {
-		CHECK_LENGTH(CYBS_C_PROXY_USERNAME, CYBS_MAX_PASSWORD, temp);
-		tempCopy = temp;
-		tempCopy.copy(cfg.proxyUsername, tempCopy.size(), 0);
-		cfg.proxyUsername[tempCopy.size()]='\0';
+		CYBS_SAFE_COPY(CYBS_C_PROXY_USERNAME, cfg.proxyUsername, temp);
 		proxy->soap->proxy_userid = cfg.proxyUsername;
 	}
 
@@ -551,10 +543,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	temp = (char *)cybs_get(configMap, CYBS_C_SERVER_URL);
 
 	if ( temp ) {
-		CHECK_LENGTH(CYBS_C_SERVER_URL, CYBS_MAX_URL, temp);
-		tempCopy = temp;
-		tempCopy.copy(cfg.serverURL, tempCopy.size(), 0);
-		cfg.serverURL[tempCopy.size()]='\0';
+		CYBS_SAFE_COPY(CYBS_C_SERVER_URL, cfg.serverURL, temp);
 	} else {
 		if ( strcmp(prodFlag, "true") == 0 ) {
 			if ( cfg.useAkamai ) {
