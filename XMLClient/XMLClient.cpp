@@ -421,6 +421,7 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	}
 
 	tempCopy = soap_wchar2s(proxy->soap, ns2__requestMessage->merchantID);
+	CHECK_LENGTH(CYBS_C_MERCHANT_ID, CYBS_MAX_MERCHANT_ID, tempCopy);
 	tempCopy.copy(cfg.merchantID, tempCopy.size(), 0);
 	cfg.merchantID[tempCopy.size()]='\0';
 
@@ -491,8 +492,8 @@ int cybs_runTransaction(ITransactionProcessorProxy *proxy, ns2__RequestMessage *
 	{
 		temp = cfg.merchantID;
 	}
-	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password);
 	tempCopy = temp;
+	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, tempCopy);
 	tempCopy.copy(cfg.password, tempCopy.size(), 0);
 	cfg.password[tempCopy.size()]='\0';
 

@@ -520,8 +520,8 @@ int runTransaction(INVPTransactionProcessorProxy *proxy, CybsMap *configMap, std
 	{
 		temp = cfg.merchantID;
 	}
-	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, cfg.password);
 	tempCopy = temp;
+	CHECK_LENGTH(CYBS_C_PWD, CYBS_MAX_PASSWORD, tempCopy);
 	tempCopy.copy(cfg.password, tempCopy.size(), 0);
 	cfg.password[tempCopy.size()]='\0';
 	
